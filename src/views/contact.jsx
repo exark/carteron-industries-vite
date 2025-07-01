@@ -19,84 +19,8 @@ const Contact = (props) => {
           content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/5538c453-0d0c-4da8-bbdf-7b23b6da0b32/19a10c86-c4c4-4c1d-a945-c030937c573e?org_if_sml=1&amp;force_format=original"
         />
       </Helmet>
-      <Navbar81
-        link1={
-          <Fragment>
-            <span className="contact-text10">Nos Services</span>
-          </Fragment>
-        }
-        link2={
-          <Fragment>
-            <span className="contact-text11">Prop Content</span>
-          </Fragment>
-        }
-        link3={
-          <Fragment>
-            <span className="contact-text12">Témoignage</span>
-          </Fragment>
-        }
-        link4={
-          <Fragment>
-            <span className="contact-text13">Autres</span>
-          </Fragment>
-        }
-        page1={
-          <Fragment>
-            <span className="contact-text14">Home</span>
-          </Fragment>
-        }
-        page2={
-          <Fragment>
-            <span className="contact-text15">Agricultural Machinery</span>
-          </Fragment>
-        }
-        page3={
-          <Fragment>
-            <span className="contact-text16">Baby Strollers</span>
-          </Fragment>
-        }
-        page4={
-          <Fragment>
-            <span className="contact-text17">Golf Gear</span>
-          </Fragment>
-        }
-        link31={
-          <Fragment>
-            <span className="contact-text18">FAQ</span>
-          </Fragment>
-        }
-        action1={
-          <Fragment>
-            <span className="contact-text19">Accueil</span>
-          </Fragment>
-        }
-        action2={
-          <Fragment>
-            <span className="contact-text20">Contactez nous</span>
-          </Fragment>
-        }
-        logoSrc="/modern%20logo%20blending%20wheat%20stalks%20with%20technology%20elements%20(1)-1500h.png"
-        page1Description={
-          <Fragment>
-            <span className="contact-text21">Page One Description</span>
-          </Fragment>
-        }
-        page2Description={
-          <Fragment>
-            <span className="contact-text22">Page Two Description</span>
-          </Fragment>
-        }
-        page3Description={
-          <Fragment>
-            <span className="contact-text23">Page Three Description</span>
-          </Fragment>
-        }
-        page4Description={
-          <Fragment>
-            <span className="contact-text24">Page Four Description</span>
-          </Fragment>
-        }
-      ></Navbar81>
+      <Navbar81>
+      </Navbar81>
       <div className="contact-container2">
         <ContactForm3
           action={

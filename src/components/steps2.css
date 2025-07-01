@@ -154,8 +154,27 @@
 }
  
 .steps2root-class-name {
-  background-color: #D9D9D9;
+  background: linear-gradient(
+    120deg,
+    #f7f6f4 0%,
+    #f3e9da 40%,
+    #e3d7c1 70%,
+    #b89d77 100%
+  );
+  background-size: 200% 200%;
+  animation: movebg 9s cubic-bezier(0.4,0,0.2,1) infinite;
+  box-shadow: 0 4px 28px 0 rgba(107, 63, 24, 0.08),   /* soft brown shadow */
+              0 1.5px 10px 0 rgba(185, 157, 119, 0.12); /* beige highlight */
+  border-radius: 18px; /* optional: smooth corners */
+  border: 1.5px solid #e3d7c1; /* subtle beige border */
 }
+
+@keyframes movebg {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
  
 @media(max-width: 991px) {
   .steps2-max-width {

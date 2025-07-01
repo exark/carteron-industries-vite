@@ -1,80 +1,104 @@
-import React, { useState, Fragment } from 'react'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import React, { useState, Fragment } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import "./navbar81.css";
 
-import './navbar81.css'
+import "./navbar81.css";
 
 const Navbar81 = (props) => {
-  const [link5DropdownVisible, setLink5DropdownVisible] = useState(false)
-  const [link5AccordionOpen, setLink5AccordionOpen] = useState(false)
+  const [link5DropdownVisible, setLink5DropdownVisible] = useState(false);
+  const [link5AccordionOpen, setLink5AccordionOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // ADD THIS FUNCTION
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === "/home" || location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/home", { replace: true });
+      setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+    }
+  };
+
+  // AND THIS FUNCTION
+  const handleAnchorClick = (e, anchorId) => {
+    e.preventDefault();
+    if (location.pathname === "/home" || location.pathname === "/") {
+      const el = document.getElementById(anchorId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/home", { state: { anchorId } });
+    }
+  };
 
   return (
     <header className="navbar81-container1">
       <header data-thq="thq-navbar" className="navbar81-navbar-interactive">
-        <Link to="/" className="navbar81-navlink">
+        <a href="/home" onClick={handleLogoClick} className="navbar81-navlink">
           <img
-            alt={props.logoAlt}
-            src={props.logoSrc}
+            src="/modern%20logo%20blending%20wheat%20stalks%20with%20technology%20elements%20(1)-1500h.png"
             loading="lazy"
             className="navbar81-image1"
           />
-        </Link>
+        </a>
         <div data-thq="thq-navbar-nav" className="navbar81-desktop-menu">
           <nav className="navbar81-links1">
             <a
-              href={props.link1Url}
+              href="#Features24"
+              onClick={(e) => handleAnchorClick(e, "Features24")}
               className="navbar81-link11 thq-link thq-body-small"
             >
               {props.link1 ?? (
                 <Fragment>
-                  <span className="navbar81-text14">accueil</span>
+                  <span className="navbar81-text14">Nos Service</span>
                 </Fragment>
               )}
             </a>
             <a
-              href={props.link3Url}
-              target="_blank"
-              rel="noreferrer noopener"
+              href="#Testimonial17"
+              onClick={(e) => handleAnchorClick(e, "Testimonial17")}
               className="navbar81-link31 thq-link thq-body-small"
             >
-              {props.link3 ?? (
-                <Fragment>
-                  <span className="navbar81-text18">Services</span>
-                </Fragment>
-              )}
+              <Fragment>
+                <span className="navbar81-text18">Temoignage</span>
+              </Fragment>
             </a>
             <a
-              href={props.link3Url1}
-              target="_blank"
-              rel="noreferrer noopener"
+              href="#FAQ9"
+              onClick={(e) => handleAnchorClick(e, "FAQ9")}
               className="navbar81-link32 thq-link thq-body-small"
             >
               {props.link31 ?? (
                 <Fragment>
-                  <span className="navbar81-text26">témoignage</span>
+                  <span className="navbar81-text26">FAQ</span>
                 </Fragment>
               )}
             </a>
             <div
-              onClick={() => setLink5DropdownVisible(!link5DropdownVisible)}
               className="navbar81-link4-dropdown-trigger"
+              onMouseEnter={() => setLink5DropdownVisible(true)}
+              onMouseLeave={() => setLink5DropdownVisible(false)}
+              style={{ position: "relative" }}
             >
               <span className="thq-link thq-body-small">
                 {props.link4 ?? (
                   <Fragment>
-                    <span className="navbar81-text21">Prop Content</span>
+                    <span className="navbar81-text21">autre</span>
                   </Fragment>
                 )}
               </span>
               <div className="navbar81-icon-container1">
-                {link5DropdownVisible === true && (
+                {link5DropdownVisible ? (
                   <div className="navbar81-container2">
                     <svg viewBox="0 0 1024 1024" className="navbar81-icon10">
                       <path d="M298 426h428l-214 214z"></path>
                     </svg>
                   </div>
-                )}
-                {link5DropdownVisible === false && (
+                ) : (
                   <div className="navbar81-container3">
                     <svg viewBox="0 0 1024 1024" className="navbar81-icon12">
                       <path d="M426 726v-428l214 214z"></path>
@@ -84,9 +108,144 @@ const Navbar81 = (props) => {
               </div>
             </div>
           </nav>
+          <div
+            className={
+              "navbar81-container7 thq-box-shadow" +
+              (link5DropdownVisible ? " dropdown-open" : " dropdown-closed")
+            }
+          >
+            <div className="navbar81-link5-menu-list">
+              <a href={props.linkUrlPage1}>
+                <div className="navbar81-menu-item5">
+                  <img
+                    src="/images/fjord.jpg"
+                    className="navbar81-page1-image2 thq-img-ratio-1-1"
+                  />
+                  <div className="navbar81-content5">
+                    <span className="navbar81-page12 thq-body-large">
+                      {props.page1 ?? (
+                        <Fragment>
+                          <span className="navbar81-text19">Home</span>
+                        </Fragment>
+                      )}
+                    </span>
+                    <span className="thq-body-small">
+                      {props.page1Description ?? (
+                        <Fragment>
+                          <span className="navbar81-text20">
+                            Page One Description
+                          </span>
+                        </Fragment>
+                      )}
+                    </span>
+                  </div>
+                </div>
+              </a>
+              <a>
+                <div className="navbar81-menu-item6">
+                  <img
+                    src="/images/livre.jpg"
+                    className="navbar81-page2-image2 thq-img-ratio-1-1"
+                  />
+                  <div className="navbar81-content6">
+                    <span className="navbar81-page22 thq-body-large">
+                      {props.page2 ?? (
+                        <Fragment>
+                          <span className="navbar81-text27">
+                            Agricultural Machinery
+                          </span>
+                        </Fragment>
+                      )}
+                    </span>
+                    <span className="thq-body-small">
+                      {props.page2Description ?? (
+                        <Fragment>
+                          <span className="navbar81-text17">
+                            Page Two Description
+                          </span>
+                        </Fragment>
+                      )}
+                    </span>
+                  </div>
+                </div>
+              </a>
+              <a>
+                <div className="navbar81-menu-item7">
+                  <img
+                    alt={props.page3ImageAlt}
+                    src={props.page3ImageSrc}
+                    className="navbar81-page3-image2 thq-img-ratio-1-1"
+                  />
+                  <div className="navbar81-content7">
+                    <span className="navbar81-page32 thq-body-large">
+                      {props.page3 ?? (
+                        <Fragment>
+                          <span className="navbar81-text16">
+                            Baby Strollers
+                          </span>
+                        </Fragment>
+                      )}
+                    </span>
+                    <span className="thq-body-small">
+                      {props.page3Description ?? (
+                        <Fragment>
+                          <span className="navbar81-text28">
+                            Page Three Description
+                          </span>
+                        </Fragment>
+                      )}
+                    </span>
+                  </div>
+                </div>
+              </a>
+              <a>
+                <div className="navbar81-menu-item8">
+                  <img
+                    alt={props.page4ImageAlt}
+                    src="/images/bouquins.jpg"
+                    className="navbar81-page4-image2 thq-img-ratio-1-1"
+                  />
+                  <div className="navbar81-content8">
+                    <span className="navbar81-page42 thq-body-large">
+                      {props.page4 ?? (
+                        <Fragment>
+                          <span className="navbar81-text25">Golf Gear</span>
+                        </Fragment>
+                      )}
+                    </span>
+                    <span className="thq-body-small">
+                      {props.page4Description ?? (
+                        <Fragment>
+                          <span className="navbar81-text15">
+                            Page Four Description
+                          </span>
+                        </Fragment>
+                      )}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
           <div className="navbar81-buttons1">
-            <Link
-              to="/"
+            <a
+              href="/home"
+              onClick={(e) => {
+                e.preventDefault();
+                if (
+                  location.pathname === "/home" ||
+                  location.pathname === "/"
+                ) {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                } else {
+                  navigate("/home", { replace: true });
+                  setTimeout(
+                    () => window.scrollTo({ top: 0, behavior: "smooth" }),
+                    100
+                  );
+                }
+              }}
               className="navbar81-action21 thq-button-outline thq-button-animated"
             >
               <span>
@@ -96,9 +255,21 @@ const Navbar81 = (props) => {
                   </Fragment>
                 )}
               </span>
-            </Link>
-            <Link
-              to="/contact"
+            </a>
+            <a
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                if (location.pathname === "/contact") {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                } else {
+                  navigate("/contact", { replace: true });
+                  setTimeout(
+                    () => window.scrollTo({ top: 0, behavior: "smooth" }),
+                    100
+                  );
+                }
+              }}
               className="navbar81-action21 thq-button-outline thq-button-animated"
             >
               <span>
@@ -108,7 +279,7 @@ const Navbar81 = (props) => {
                   </Fragment>
                 )}
               </span>
-            </Link>
+            </a>
           </div>
         </div>
         <div data-thq="thq-burger-menu" className="navbar81-burger-menu">
@@ -152,9 +323,9 @@ const Navbar81 = (props) => {
                 href={props.link3Url}
                 className="navbar81-link33 thq-link thq-body-small"
               >
-                {props.link3 ?? (
+                {props.link1 ?? (
                   <Fragment>
-                    <span className="navbar81-text18">Prop Content</span>
+                    <span className="navbar81-text18">services</span>
                   </Fragment>
                 )}
               </a>
@@ -355,124 +526,6 @@ const Navbar81 = (props) => {
             </svg>
           </div>
         </div>
-        {link5DropdownVisible === true && (
-          <div className="navbar81-container7 thq-box-shadow">
-            <div className="navbar81-link5-menu-list">
-              <a href={props.linkUrlPage1}>
-                <div className="navbar81-menu-item5">
-                  <img
-                    alt={props.page1ImageAlt}
-                    src="/images/agricole.jpg"
-                    className="navbar81-page1-image2 thq-img-ratio-1-1"
-                  />
-                  <div className="navbar81-content5">
-                    <span className="navbar81-page12 thq-body-large">
-                      {props.page1 ?? (
-                        <Fragment>
-                          <span className="navbar81-text19">Home</span>
-                        </Fragment>
-                      )}
-                    </span>
-                    <span className="thq-body-small">
-                      {props.page1Description ?? (
-                        <Fragment>
-                          <span className="navbar81-text20">
-                            Page One Description
-                          </span>
-                        </Fragment>
-                      )}
-                    </span>
-                  </div>
-                </div>
-              </a>
-              <a href={props.linkUrlPage2}>
-                <div className="navbar81-menu-item6">
-                  <img
-                    alt={props.page2ImageAlt}
-                    src="/images/bebe.jpg"
-                    className="navbar81-page2-image2 thq-img-ratio-1-1"
-                  />
-                  <div className="navbar81-content6">
-                    <span className="navbar81-page22 thq-body-large">
-                      {props.page2 ?? (
-                        <Fragment>
-                          <span className="navbar81-text27">
-                            Agricultural Machinery
-                          </span>
-                        </Fragment>
-                      )}
-                    </span>
-                    <span className="thq-body-small">
-                      {props.page2Description ?? (
-                        <Fragment>
-                          <span className="navbar81-text17">
-                            Page Two Description
-                          </span>
-                        </Fragment>
-                      )}
-                    </span>
-                  </div>
-                </div>
-              </a>
-              <a href={props.linkUrlPage3}>
-                <div className="navbar81-menu-item7">
-                  <img
-                    alt={props.page3ImageAlt}
-                    src={props.page3ImageSrc}
-                    className="navbar81-page3-image2 thq-img-ratio-1-1"
-                  />
-                  <div className="navbar81-content7">
-                    <span className="navbar81-page32 thq-body-large">
-                      {props.page3 ?? (
-                        <Fragment>
-                          <span className="navbar81-text16">
-                            Baby Strollers
-                          </span>
-                        </Fragment>
-                      )}
-                    </span>
-                    <span className="thq-body-small">
-                      {props.page3Description ?? (
-                        <Fragment>
-                          <span className="navbar81-text28">
-                            Page Three Description
-                          </span>
-                        </Fragment>
-                      )}
-                    </span>
-                  </div>
-                </div>
-              </a>
-              <a href={props.linkUrlPage4}>
-                <div className="navbar81-menu-item8">
-                  <img
-                    alt={props.page4ImageAlt}
-                    src="/images/bouquins.jpg"
-                    className="navbar81-page4-image2 thq-img-ratio-1-1"
-                  />
-                  <div className="navbar81-content8">
-                    <span className="navbar81-page42 thq-body-large">
-                      {props.page4 ?? (
-                        <Fragment>
-                          <span className="navbar81-text25">Golf Gear</span>
-                        </Fragment>
-                      )}
-                    </span>
-                    <span className="thq-body-small">
-                      {props.page4Description ?? (
-                        <Fragment>
-                          <span className="navbar81-text15">
-                            Page Four Description
-                          </span>
-                        </Fragment>
-                      )}
-                    </span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        )}
       </header>
       {link5DropdownVisible === true && (
         <div
@@ -481,15 +534,15 @@ const Navbar81 = (props) => {
         ></div>
       )}
     </header>
-  )
-}
+  );
+};
 
 Navbar81.defaultProps = {
   link1: undefined,
   page4Description: undefined,
   linkUrlPage3: undefined,
-  page2ImageSrc:undefined,
-    page3: undefined,
+  page2ImageSrc: undefined,
+  page3: undefined,
   link3Url1: undefined,
   page2Description: undefined,
   link3: undefined,
@@ -499,7 +552,7 @@ Navbar81.defaultProps = {
   linkUrlPage1: undefined,
   action1: undefined,
   link2Url: undefined,
-  page1ImageSrc:undefined,
+  page1ImageSrc: undefined,
   linkUrlPage2: undefined,
   link2: undefined,
   action2: undefined,
@@ -507,18 +560,18 @@ Navbar81.defaultProps = {
   page4: undefined,
   link31: undefined,
   link1Url: undefined,
-  logoAlt: 'Smart Tech Systems Engineer Logo',
+  logoAlt: "Smart Tech Systems Engineer Logo",
   page1ImageAlt: undefined,
   page4ImageAlt: undefined,
   link3Url: undefined,
   page2: undefined,
   page3ImageAlt: undefined,
-  page3ImageSrc:undefined,
-    page4ImageSrc: undefined,
-      logoSrc: undefined,
+  page3ImageSrc: undefined,
+  page4ImageSrc: undefined,
+  logoSrc: undefined,
   page2ImageAlt: undefined,
   page3Description: undefined,
-}
+};
 
 Navbar81.propTypes = {
   link1: PropTypes.element,
@@ -554,8 +607,6 @@ Navbar81.propTypes = {
   logoSrc: PropTypes.string,
   page2ImageAlt: PropTypes.string,
   page3Description: PropTypes.element,
-}
+};
 
-export default Navbar81
-
-
+export default Navbar81;
