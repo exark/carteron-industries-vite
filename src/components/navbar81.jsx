@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useRef, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./navbar81.css";
@@ -10,6 +10,27 @@ const Navbar81 = (props) => {
   const [link5AccordionOpen, setLink5AccordionOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const autreRef = useRef(null);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    if (!link5DropdownVisible) return;
+
+    const handleClick = (event) => {
+      // Check if click is outside BOTH "autre" and dropdown
+      if (
+        autreRef.current &&
+        !autreRef.current.contains(event.target) &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setLink5DropdownVisible(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [link5DropdownVisible]);
 
   // ADD THIS FUNCTION
   const handleLogoClick = (e) => {
@@ -40,7 +61,7 @@ const Navbar81 = (props) => {
       <header data-thq="thq-navbar" className="navbar81-navbar-interactive">
         <a href="/home" onClick={handleLogoClick} className="navbar81-navlink">
           <img
-            src="/modern%20logo%20blending%20wheat%20stalks%20with%20technology%20elements%20(1)-1500h.png"
+            src="/images/Logo.png"
             loading="lazy"
             className="navbar81-image1"
           />
@@ -80,9 +101,9 @@ const Navbar81 = (props) => {
             </a>
             <div
               className="navbar81-link4-dropdown-trigger"
-              onMouseEnter={() => setLink5DropdownVisible(true)}
-              onMouseLeave={() => setLink5DropdownVisible(false)}
+              onClick={() => setLink5DropdownVisible((v) => !v)}
               style={{ position: "relative" }}
+              ref={autreRef}
             >
               <span className="thq-link thq-body-small">
                 {props.link4 ?? (
@@ -113,6 +134,7 @@ const Navbar81 = (props) => {
               "navbar81-container7 thq-box-shadow" +
               (link5DropdownVisible ? " dropdown-open" : " dropdown-closed")
             }
+            ref={dropdownRef}
           >
             <div className="navbar81-link5-menu-list">
               <a href={props.linkUrlPage1}>
@@ -172,9 +194,8 @@ const Navbar81 = (props) => {
               <a>
                 <div className="navbar81-menu-item7">
                   <img
-                    alt={props.page3ImageAlt}
-                    src={props.page3ImageSrc}
-                    className="navbar81-page3-image2 thq-img-ratio-1-1"
+                    src="/images/livre.jpg"
+                    className="navbar81-page2-image2 thq-img-ratio-1-1"
                   />
                   <div className="navbar81-content7">
                     <span className="navbar81-page32 thq-body-large">
@@ -201,9 +222,8 @@ const Navbar81 = (props) => {
               <a>
                 <div className="navbar81-menu-item8">
                   <img
-                    alt={props.page4ImageAlt}
-                    src="/images/bouquins.jpg"
-                    className="navbar81-page4-image2 thq-img-ratio-1-1"
+                    src="/images/livre.jpg"
+                    className="navbar81-page2-image2 thq-img-ratio-1-1"
                   />
                   <div className="navbar81-content8">
                     <span className="navbar81-page42 thq-body-large">

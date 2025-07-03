@@ -55,6 +55,7 @@
 }
 
 .navbar81-navbar-interactive {
+  position: relative;
   width: 100%;
   display: flex;
   z-index: 100;
@@ -95,13 +96,14 @@
   text-decoration: none;
 }
 .navbar81-link4-dropdown-trigger {
-  gap: 4px;
-  cursor: pointer;
-  display: flex;
-  align-self: stretch;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-end;
+  gap: 4px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  /* align-self: stretch;   <-- REMOVE THIS LINE */
+  align-self: center !important;       /* <-- Add this if you want to be explicit */
+  align-items: center !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
 }
 .navbar81-icon-container1,
 .navbar81-container2,
@@ -280,15 +282,17 @@
 }
 .navbar81-container7 {
   top: 100%;
-  left: 0px;
+  left: 0;
   width: 100%;
   display: flex;
   position: absolute;
   align-items: center;
   justify-content: center;
-  background-color: var(--dl-color-theme-neutral-light);
-
-  /* --- NEW ANIMATION --- */
+  background: transparent !important;   /* This is the fix! */
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  /* --- keep your animation/visibility properties --- */
   opacity: 0;
   pointer-events: none;
   transform: translateY(-15px);
@@ -318,15 +322,24 @@
 
 .navbar81-link5-menu-list {
   width: 100%;
-  display: grid;
-  padding: var(--dl-layout-space-oneandhalfunits);
-  grid-gap: var(--dl-layout-space-halfunit);
   max-width: var(--dl-layout-size-maxwidth);
+  margin: 0 auto;
+  display: grid;
+  grid-gap: var(--dl-layout-space-halfunit);
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background: #fff !important; /* Always white */
-  color: #191818 !important; /* Text always black */
-  box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.12) !important; /* Bottom shadow */
-  border-bottom: 2px solid #b89d77 !important; /* Subtle beige/marron border */
+  background: #fff !important;
+  color: #191818 !important;
+  padding: 0 24px 24px 24px !important;   /* No top padding! */
+  border-top: none !important;
+  border-bottom: 2px solid #b89d77 !important;
+  box-shadow: 0 8px 24px -6px rgba(0,0,0,0.10) !important;
+
+    background: #fff !important;
+  border-top: none !important;         /* No top border */
+  border-bottom: 2px solid #b89d77 !important;
+  box-shadow: 0 8px 24px -6px rgba(0,0,0,0.10) !important;
+  padding-top: 0 !important;           /* Attach to navbar */
+  margin-top: 0 !important;
 }
 .navbar81-container8 {
   top: 0px;
