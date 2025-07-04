@@ -401,47 +401,6 @@ const Home = () => {
         }
       ></Contact10>
       <Footer31
-        link1={
-          <Fragment>
-            <span className="home-text75">Prop Content</span>
-          </Fragment>
-        }
-        link2={
-          <Fragment>
-            <span className="home-text76">Prop Content</span>
-          </Fragment>
-        }
-        link3={
-          <Fragment>
-            <span className="home-text77">Prop Content</span>
-          </Fragment>
-        }
-        link4={
-          <Fragment>
-            <span className="home-text78">Prop Content</span>
-          </Fragment>
-        }
-        link5={
-          <Fragment>
-            <span className="home-text79">Prop Content</span>
-          </Fragment>
-        }
-        logoSrc="/modern%20logo%20blending%20wheat%20stalks%20with%20technology%20elements%20(1)-1500h.png"
-        termsLink={
-          <Fragment>
-            <span className="home-text80">Prop Content</span>
-          </Fragment>
-        }
-        cookiesLink={
-          <Fragment>
-            <span className="home-text81">Prop Content</span>
-          </Fragment>
-        }
-        privacyLink={
-          <Fragment>
-            <span className="home-text82">Prop Content</span>
-          </Fragment>
-        }
       ></Footer31>
     </div>
   );
