@@ -88,12 +88,39 @@
   flex-direction: row;
   justify-content: flex-start;
 }
+
 .navbar81-link11,
 .navbar81-link31,
 .navbar81-link32,
-.navbar81-link12,
-.navbar81-link33 {
-  text-decoration: none;
+.navbar81-link4-dropdown-trigger {
+  display: inline-block !important;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar81-link11::after,
+.navbar81-link31::after,
+.navbar81-link32::after,
+.navbar81-link4-dropdown-trigger::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;    /* <<--- ADD THIS LINE */
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.navbar81-link11:hover::after,
+.navbar81-link31:hover::after,
+.navbar81-link32:hover::after,
+.navbar81-link4-dropdown-trigger:hover::after {
+  transform: scaleX(1);
 }
 .navbar81-link4-dropdown-trigger {
   gap: 4px !important;
@@ -229,7 +256,6 @@
 .navbar81-menu-item7,
 .navbar81-menu-item8 {
   gap: var(--dl-layout-space-unit);
-  width: 100%;
   cursor: pointer;
   display: flex;
   padding: var(--dl-layout-space-oneandhalfunits);
@@ -238,6 +264,26 @@
   flex-shrink: 0;
   text-decoration: none;
 }
+
+.navbar81-menu-item1:hover,
+.navbar81-menu-item2:hover,
+.navbar81-menu-item3:hover,
+.navbar81-menu-item4:hover,
+.navbar81-menu-item5:hover,
+.navbar81-menu-item6:hover,
+.navbar81-menu-item7:hover,
+.navbar81-menu-item8:hover {
+  background: #fff; /* keep white or use a very subtle color if you want */
+  transform: scale(1.04); /* Slight zoom-in effect */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05); /* optional, subtle shadow for pop */
+  z-index: 2; /* keeps the item above its siblings */
+  transition:
+    background 0.18s,
+    transform 0.18s cubic-bezier(0.5,1.6,0.4,0.7),
+    box-shadow 0.18s cubic-bezier(0.5,1.6,0.4,0.7);
+}
+
+
 .navbar81-page1-image1,
 .navbar81-page2-image1,
 .navbar81-page3-image1,
@@ -321,9 +367,8 @@
 }
 
 .navbar81-link5-menu-list {
+  gap: 32px !important; /* Default is 16px */
   width: 100%;
-  max-width: var(--dl-layout-size-maxwidth);
-  margin: 0 auto;
   display: grid;
   grid-gap: var(--dl-layout-space-halfunit);
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -333,8 +378,7 @@
   border-top: none !important;
   border-bottom: 2px solid #b89d77 !important;
   box-shadow: 0 8px 24px -6px rgba(0,0,0,0.10) !important;
-
-    background: #fff !important;
+  background: #fff !important;
   border-top: none !important;         /* No top border */
   border-bottom: 2px solid #b89d77 !important;
   box-shadow: 0 8px 24px -6px rgba(0,0,0,0.10) !important;

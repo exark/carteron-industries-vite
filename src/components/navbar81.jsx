@@ -71,31 +71,31 @@ const Navbar81 = (props) => {
             <a
               href="#Features24"
               onClick={(e) => handleAnchorClick(e, "Features24")}
-              className="navbar81-link11 thq-link thq-body-small"
+              className="navbar81-link11 thq-body-small"
             >
               {props.link1 ?? (
                 <Fragment>
-                  <span className="navbar81-text14">Nos Service</span>
+                  <span className="navbar81-text14 thq-link">Nos Service</span>
                 </Fragment>
               )}
             </a>
             <a
               href="#Testimonial17"
               onClick={(e) => handleAnchorClick(e, "Testimonial17")}
-              className="navbar81-link31 thq-link thq-body-small"
+              className="navbar81-link31  thq-body-small"
             >
               <Fragment>
-                <span className="navbar81-text18">Temoignage</span>
+                <span className="navbar81-text18 thq-link">Temoignage</span>
               </Fragment>
             </a>
             <a
               href="#FAQ9"
               onClick={(e) => handleAnchorClick(e, "FAQ9")}
-              className="navbar81-link32 thq-link thq-body-small"
+              className="navbar81-link32  thq-body-small"
             >
               {props.link31 ?? (
                 <Fragment>
-                  <span className="navbar81-text26">FAQ</span>
+                  <span className="navbar81-text26 thq-link">FAQ</span>
                 </Fragment>
               )}
             </a>
@@ -105,10 +105,10 @@ const Navbar81 = (props) => {
               style={{ position: "relative" }}
               ref={autreRef}
             >
-              <span className="thq-link thq-body-small">
+              <span className="thq-body-small">
                 {props.link4 ?? (
                   <Fragment>
-                    <span className="navbar81-text21">autre</span>
+                    <span className="navbar81-text21 thq-link">autre</span>
                   </Fragment>
                 )}
               </span>

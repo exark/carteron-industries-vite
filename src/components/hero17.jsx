@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
-import Script from 'dangerous-html/react'
-import PropTypes from 'prop-types'
+import React, { Fragment } from "react";
+import Script from "dangerous-html/react";
+import PropTypes from "prop-types";
 
-import './hero17.css'
+import "./hero17.css";
 
 const Hero17 = (props) => {
   return (
@@ -211,39 +211,39 @@ const Hero17 = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 Hero17.defaultProps = {
-  image6Alt: 'Hero Image',
-  image10Alt: 'Hero Image',
-  image3Alt: 'Hero Image',
+  image6Alt: "Hero Image",
+  image10Alt: "Hero Image",
+  image3Alt: "Hero Image",
   action2: undefined,
-  image4Alt: 'Hero Image',
+  image4Alt: "Hero Image",
   image9Src: undefined,
   image4Src: undefined,
   image8Src: undefined,
-  image5Alt: 'Hero Image',
+  image5Alt: "Hero Image",
   image10Src: undefined,
-  image2Alt: 'Hero Image',
-  image8Alt: 'Hero Image',
+  image2Alt: "Hero Image",
+  image8Alt: "Hero Image",
   image11Src: undefined,
   image7Src: undefined,
   content1: undefined,
   image1Src: undefined,
   action1: undefined,
-  image12Alt: 'Hero Image',
-  image12Src:undefined,
-    image9Alt: 'Hero Image',
-  image11Alt: 'Hero Image',
-  image2Src:undefined,  
-  image5Src:undefined,
-  image3Src:undefined,
+  image12Alt: "Hero Image",
+  image12Src: undefined,
+  image9Alt: "Hero Image",
+  image11Alt: "Hero Image",
+  image2Src: undefined,
+  image5Src: undefined,
+  image3Src: undefined,
   heading1: undefined,
-  image7Alt: 'Hero Image',
-  image1Alt: 'Smart Tech Solutions Hero Image',
-  image6Src:undefined
-}
+  image7Alt: "Hero Image",
+  image1Alt: "Smart Tech Solutions Hero Image",
+  image6Src: undefined,
+};
 
 Hero17.propTypes = {
   image6Alt: PropTypes.string,
@@ -274,7 +274,6 @@ Hero17.propTypes = {
   image7Alt: PropTypes.string,
   image1Alt: PropTypes.string,
   image6Src: PropTypes.string,
-}
+};
 
-export default Hero17
-
+export default Hero17;
