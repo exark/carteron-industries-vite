@@ -6,6 +6,7 @@ import Footer31 from "../components/footer31";
 
 import "./contact.css";
 import ContactForm3 from "../components/contact-form3";
+import Contact10 from "../components/contact10";
 
 const Contact = (props) => {
   return (
@@ -20,6 +21,7 @@ const Contact = (props) => {
       </Helmet>
       <Navbar81 />
       <ContactForm3></ContactForm3>
+      <Contact10></Contact10>
       <Footer31 />
     </div>
   );
