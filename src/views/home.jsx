@@ -10,21 +10,26 @@ import Testimonial17 from "../components/testimonial17";
 import FAQ9 from "../components/faq9";
 import Contact10 from "../components/contact10";
 import Footer31 from "../components/footer31";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import "./home.css";
+import HeroCarousel from "../components/HeroCarousel";
 
 const Home = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.state && location.state.anchorId) {
       const el = document.getElementById(location.state.anchorId);
       if (el) {
         setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
+        navigate(location.pathname, { replace: true, state: {} });
       }
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [location]);
+  }, [location, navigate]);
   return (
     <div className="home-container1">
       <Helmet>
@@ -37,33 +42,21 @@ const Home = () => {
       </Helmet>
       {/* All your sections stay as-is */}
       <Navbar81></Navbar81>
-      <Hero17
-        action1={
-          <Fragment>
-            <span className="home-text25">Learn More</span>
-          </Fragment>
-        }
-        action2={
-          <Fragment>
-            <span className="home-text26">Contact Us</span>
-          </Fragment>
-        }
-        content1={
-          <Fragment>
-            <span className="home-text27">
-              Nous développons des solutions technologiques avancées pour
-              optimiser les performances des machines agricoles, en intégrant
-              des systèmes intelligents pour une agriculture plus précise et
-              efficace.
-            </span>
-          </Fragment>
-        }
-        heading1={
-          <Fragment>
-            <span className="home-text28">Carteron Industries</span>
-          </Fragment>
-        }
-      ></Hero17>
+      <section
+        style={{
+          minHeight: 370,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          width: "100%",
+          maxWidth: 1000,
+          margin: "0 auto",
+        }}
+      >
+        <HeroCarousel />
+      </section>
+
+      
       <div id="Nos-Services" className="home-services">
         <Features24
           features24Id="Features24"
@@ -400,8 +393,7 @@ const Home = () => {
           </Fragment>
         }
       ></Contact10>
-      <Footer31
-      ></Footer31>
+      <Footer31></Footer31>
     </div>
   );
 };

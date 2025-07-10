@@ -1,0 +1,323 @@
+.hero-carousel-wrapper {
+  width: 100%;
+  max-width: 100%; /* ou ta valeur préférée */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center; /* centre le contenu à l’intérieur */
+  background: transparent;
+  gap: 0px;
+}
+
+.hero-carousel-side-content {
+  min-width: 310px;
+  max-width: 380px;
+  padding: 48px 32px 48px 16px;
+  background: #fff;
+  border-radius: 28px 0 0 28px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center !important;
+  margin-right: 0px;
+}
+
+.side-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 18px 0;
+}
+
+.side-desc {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 26px;
+  font-weight: 400;
+}
+
+.side-btn {
+  background: #b89d77 !important;
+  color: #fff !important;
+  font-weight: 700;
+  padding: 10px 28px;
+  border-radius: 26px;
+  box-shadow: 0 2px 16px rgba(32, 101, 209, 0.06);
+  font-size: 1.02rem;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  margin-top: 15% !important;
+}
+
+.hero-carousel-root {
+  flex: 1 1 0;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 56px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hero-carousel-align-right {
+  margin-left: auto;
+  margin-right: 1.2vw; /* Pour accentuer l’alignement à droite */
+}
+
+.hero-swiper {
+  padding-bottom: 0 !important;
+  width: 100%;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  display: none !important;
+}
+
+.hero-carousel-slide {
+  background-size: cover;
+  background-position: center;
+  border-radius: 22px;
+  min-height: 500px;
+  height: 500px;
+  position: relative;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.hero-carousel-header-overlay {
+  width: 100%;
+  padding: 28px 22px 10px 24px;
+  border-radius: 22px 22px 0 0;
+  text-align: left;
+  color: #fff;
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hero-carousel-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin-left: 2px;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-carousel-desc {
+  font-size: 1.12rem;
+  color: #fff;
+  opacity: 0.96;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.13);
+}
+
+.hero-carousel-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  bottom: -38px;
+  right: 52px;
+  width: auto;
+  z-index: 12;
+}
+
+.hero-nav-btn {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(50, 50, 50, 0.08);
+  background: #b89d77 !important;
+  color: #ffff !important;
+  font-size: 1.23rem;
+  transition: background 0.18s, color 0.18s;
+  pointer-events: auto;
+  margin: 0 2px;
+  border: none;
+}
+
+.hero-nav-btn:hover {
+  background: #fff !important;
+  color: #b89d77 !important;
+}
+
+.swiper-slide {
+  margin-right: 4px !important;
+  margin-left: 0 !important;
+}
+
+@media (max-width: 991px) {
+  .hero-carousel-root {
+    max-width: 98vw;
+  }
+  .hero-carousel-slide {
+    min-height: 340px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-carousel-slide {
+    min-height: 210px;
+    height: 210px;
+  }
+  .hero-carousel-root {
+    max-width: 99vw;
+  }
+  .hero-carousel-nav {
+    position: static;
+    margin: 14px 0 0 0;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-carousel-slide {
+    min-height: 160px;
+    height: 160px;
+  }
+  .hero-carousel-root {
+    max-width: 100vw;
+  }
+}
+
+@media (max-width: 950px) {
+  .hero-carousel-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 99vw;
+  }
+  .hero-carousel-side-content {
+    border-radius: 22px 22px 0 0;
+    min-width: 0;
+    max-width: 100vw;
+    margin-bottom: 18px;
+    padding: 32px 18px 20px 18px;
+  }
+}
+
+.carousel-modal {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.carousel-modal-box {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(20, 20, 20, 0.13);
+  padding: 40px 48px 36px 48px;
+  max-width: 900px;
+  width: 96vw;
+  min-height: 420px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  outline: none;
+  text-align: left;
+  gap: 40px;
+}
+
+.carousel-modal-img {
+  width: 350px;
+  max-width: 350px;
+  min-height: 350px; /* pour donner un effet plus vertical */
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.09);
+}
+
+.carousel-modal-content {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 100%;
+  min-width: 0;
+  min-height: 350px;
+  position: relative;
+}
+
+.carousel-modal-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #202020;
+  text-align: center;
+}
+
+.carousel-modal-desc {
+  color: #444;
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.carousel-modal-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.carousel-modal-close {
+  background: #b89d77 !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding-left: 22px;
+  padding-right: 22px;
+  border-radius: 22px;
+}
+@media (max-width: 900px) {
+  .carousel-modal-box {
+    flex-direction: column;
+    padding: 22px 12px 22px 12px;
+    max-width: 98vw;
+    gap: 18px;
+    text-align: center;
+  }
+  .carousel-modal-img {
+    width: 100%;
+    max-width: 340px;
+    margin-bottom: 18px;
+    min-height: unset;
+    max-height: 220px;
+  }
+  .carousel-modal-content {
+    min-height: 0;
+    height: auto;
+    position: static;
+  }
+  .carousel-modal-actions {
+    position: static;
+    margin-top: 16px;
+    padding-bottom: 0;
+  }
+}

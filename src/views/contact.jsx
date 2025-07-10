@@ -1,12 +1,11 @@
-import React, { Fragment } from 'react'
+import React from "react";
+import { Helmet } from "react-helmet";
 
-import { Helmet } from 'react-helmet'
+import Navbar81 from "../components/navbar81";
+import Footer31 from "../components/footer31";
 
-import Navbar81 from '../components/navbar81'
-import ContactForm3 from '../components/contact-form3'
-import Contact10 from '../components/contact10'
-import Footer31 from '../components/footer31'
-import './contact.css'
+import "./contact.css";
+import ContactForm3 from "../components/contact-form3";
 
 const Contact = (props) => {
   return (
@@ -19,128 +18,11 @@ const Contact = (props) => {
           content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/5538c453-0d0c-4da8-bbdf-7b23b6da0b32/19a10c86-c4c4-4c1d-a945-c030937c573e?org_if_sml=1&amp;force_format=original"
         />
       </Helmet>
-      <Navbar81>
-      </Navbar81>
-      <div className="contact-container2">
-        <ContactForm3
-          action={
-            <Fragment>
-              <span className="contact-text25">Submit</span>
-            </Fragment>
-          }
-          content1={
-            <Fragment>
-              <span className="contact-text26">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: ' ',
-                  }}
-                />
-              </span>
-            </Fragment>
-          }
-          content2={
-            <Fragment>
-              <span className="contact-text27">Get in touch with us</span>
-            </Fragment>
-          }
-          heading1={
-            <Fragment>
-              <span className="contact-text28">Contact us</span>
-            </Fragment>
-          }
-        ></ContactForm3>
-        <Contact10
-          content1={
-            <Fragment>
-              <span className="contact-text29">
-                Feel free to reach out for inquiries or collaborations.
-              </span>
-            </Fragment>
-          }
-          heading1={
-            <Fragment>
-              <span className="contact-text30">Get in Touch</span>
-            </Fragment>
-          }
-          location1={
-            <Fragment>
-              <span className="contact-text31">
-                Address: 123 Smart Tech Street, City, Country
-              </span>
-            </Fragment>
-          }
-          location2={
-            <Fragment>
-              <span className="contact-text32">
-                Email: info@smarttechengineer.com
-              </span>
-            </Fragment>
-          }
-          contact10Id="Contact10"
-          rootClassName="contact10root-class-name1"
-          location1Description={
-            <Fragment>
-              <span className="contact-text33">
-                Visit us at our main office location.
-              </span>
-            </Fragment>
-          }
-          location2Description={
-            <Fragment>
-              <span className="contact-text34">
-                Send us an email for any questions or proposals.
-              </span>
-            </Fragment>
-          }
-        ></Contact10>
-      </div>
-      <Footer31
-        link1={
-          <Fragment>
-            <span className="contact-text35">Prop Content</span>
-          </Fragment>
-        }
-        link2={
-          <Fragment>
-            <span className="contact-text36">Prop Content</span>
-          </Fragment>
-        }
-        link3={
-          <Fragment>
-            <span className="contact-text37">Prop Content</span>
-          </Fragment>
-        }
-        link4={
-          <Fragment>
-            <span className="contact-text38">Prop Content</span>
-          </Fragment>
-        }
-        link5={
-          <Fragment>
-            <span className="contact-text39">Prop Content</span>
-          </Fragment>
-        }
-        logoSrc="/modern%20logo%20blending%20wheat%20stalks%20with%20technology%20elements%20(1)-1500h.png"
-        termsLink={
-          <Fragment>
-            <span className="contact-text40">Prop Content</span>
-          </Fragment>
-        }
-        cookiesLink={
-          <Fragment>
-            <span className="contact-text41">Prop Content</span>
-          </Fragment>
-        }
-        privacyLink={
-          <Fragment>
-            <span className="contact-text42">Prop Content</span>
-          </Fragment>
-        }
-      ></Footer31>
+      <Navbar81 />
+      <ContactForm3></ContactForm3>
+      <Footer31 />
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

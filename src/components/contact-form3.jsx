@@ -1,141 +1,311 @@
-import React, { Fragment } from 'react'
+import React from "react";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Grid,
+} from "@mui/material";
+import "./contact-form3.css";
 
-import PropTypes from 'prop-types'
+const initialState = {
+  name: "",
+  email: "",
+  phone: "",
+  company: "",
+  website: "",
+  message: "",
+  accept: false,
+};
 
-import './contact-form3.css'
+export default function ContactForm3() {
+  const [form, setForm] = React.useState(initialState);
+  const [errors, setErrors] = React.useState({});
+  const [touched, setTouched] = React.useState({});
+  const [submitted, setSubmitted] = React.useState(false);
 
-const ContactForm3 = (props) => {
+  // Regex validations
+  const validators = {
+    name: {
+      test: (v) => /^[\p{L}\s'-]{2,}$/u.test(v),
+      msg: "Entrez un nom/prénom valide (au moins 2 lettres, lettres, tirets, espaces).",
+    },
+    email: {
+      test: (v) =>
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v),
+      msg: "Entrez une adresse mail valide.",
+    },
+    phone: {
+      test: (v) =>
+        v === "" ||
+        /^(\+?\d{1,3}[-.\s]?)?(\(?\d{1,4}\)?[-.\s]?){1,3}\d{3,8}$/.test(v),
+      msg: "Entrez un numéro valide (ex: +216 99 123 456 ou 0612345678).",
+    },
+    website: {
+      test: (v) =>
+        v === "" ||
+        /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-./?%&=]*)?$/.test(v),
+      msg: "Entrez une URL valide (https://monsite.com) ou laissez vide.",
+    },
+    company: {
+      test: (v) => v.length === 0 || v.length >= 2,
+      msg: "Nom de société trop court.",
+    },
+    message: {
+      test: (v) => v.length >= 10,
+      msg: "Le message doit contenir au moins 10 caractères.",
+    },
+    accept: {
+      test: (v) => !!v,
+      msg: "Vous devez accepter les conditions.",
+    },
+  };
+
+  // Validation on field
+  const validateField = (name, value) => {
+    if (validators[name]) {
+      return validators[name].test(value) ? "" : validators[name].msg;
+    }
+    return "";
+  };
+
+  // Validate all fields
+  const validateAll = () => {
+    const newErrors = {};
+    Object.keys(validators).forEach((k) => {
+      const error = validateField(k, form[k]);
+      if (error) newErrors[k] = error;
+    });
+    setErrors(newErrors);
+    return newErrors;
+  };
+
+  // Handle field change
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+    if (touched[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: validateField(name, type === "checkbox" ? checked : value),
+      }));
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value, type, checked } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    setErrors((prev) => ({
+      ...prev,
+      [name]: validateField(name, type === "checkbox" ? checked : value),
+    }));
+  };
+
+  // Handle submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    const newErrors = validateAll();
+    if (Object.keys(newErrors).length === 0) {
+      // Envoyer le formulaire ici (API, etc.)
+      alert("Formulaire envoyé avec succès !");
+      setForm(initialState);
+      setTouched({});
+      setErrors({});
+      setSubmitted(false);
+    }
+  };
+
   return (
-    <div className="contact-form3-contact9 thq-section-padding">
-      <div className="thq-flex-row thq-section-max-width contact-form3-max-width">
-        <img
-          alt={props.imageAlt}
-          src="/images/contact-form-image.jpg"
-          className="contact-form3-image1 thq-img-ratio-4-3"
-        />
-        <div className="contact-form3-content1 thq-flex-column">
-          <div className="contact-form3-section-title thq-card">
-            <span className="thq-body-small">
-              {props.content2 ?? (
-                <Fragment>
-                  <span className="contact-form3-text17">
-                    Get in touch with us
-                  </span>
-                </Fragment>
-              )}
-            </span>
-            <div className="contact-form3-content2">
-              <h2 className="thq-heading-2">
-                {props.heading1 ?? (
-                  <Fragment>
-                    <span className="contact-form3-text20">Contact us</span>
-                  </Fragment>
+    <div className="contact-form3-root">
+      <div className="contact-form3-container">
+        {/* Image (gauche) */}
+        <div className="contact-form3-imgbox">
+          <img
+            src="/images/contact-form-image.jpg"
+            alt="Contact"
+            className="contact-form3-img"
+          />
+        </div>
+
+        {/* Formulaire (droite) */}
+        <div className="contact-form3-paper">
+          <Typography variant="subtitle2" color="text.secondary" mb={0.5}>
+            Get in touch with us
+          </Typography>
+          <Typography variant="h4" fontWeight={700} mb={1}>
+            Contact us
+          </Typography>
+          <Typography variant="body1" mb={2}>
+            Our team will respond as soon as possible.
+          </Typography>
+          <Box component="form" autoComplete="off" onSubmit={handleSubmit}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  fullWidth
+                  required
+                  label="Name"
+                  name="name"
+                  variant="outlined"
+                  value={form.name}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  error={!!errors.name && (touched.name || submitted)}
+                  helperText={
+                    !!errors.name && (touched.name || submitted)
+                      ? errors.name
+                      : " "
+                  }
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  fullWidth
+                  required
+                  label="Email"
+                  name="email"
+                  variant="outlined"
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  error={!!errors.email && (touched.email || submitted)}
+                  helperText={
+                    !!errors.email && (touched.email || submitted)
+                      ? errors.email
+                      : " "
+                  }
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  fullWidth
+                  label="Phone"
+                  name="phone"
+                  variant="outlined"
+                  value={form.phone}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  error={!!errors.phone && (touched.phone || submitted)}
+                  helperText={
+                    !!errors.phone && (touched.phone || submitted)
+                      ? errors.phone
+                      : " "
+                  }
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  fullWidth
+                  label="Company"
+                  name="company"
+                  variant="outlined"
+                  value={form.company}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  error={!!errors.company && (touched.company || submitted)}
+                  helperText={
+                    !!errors.company && (touched.company || submitted)
+                      ? errors.company
+                      : " "
+                  }
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  label="Website"
+                  name="website"
+                  variant="outlined"
+                  value={form.website}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  error={!!errors.website && (touched.website || submitted)}
+                  helperText={
+                    !!errors.website && (touched.website || submitted)
+                      ? errors.website
+                      : " "
+                  }
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  required
+                  label="Message"
+                  name="message"
+                  variant="outlined"
+                  value={form.message}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  error={!!errors.message && (touched.message || submitted)}
+                  helperText={
+                    !!errors.message && (touched.message || submitted)
+                      ? errors.message
+                      : " "
+                  }
+                  multiline
+                  rows={4}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      name="accept"
+                      checked={form.accept}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      color="primary"
+                      required
+                    />
+                  }
+                  label="J’accepte les conditions d’utilisation et la politique de confidentialité"
+                />
+                {!!errors.accept && (touched.accept || submitted) && (
+                  <Typography
+                    variant="caption"
+                    color="error"
+                    sx={{ display: "block", mt: -1.5, mb: 1 }}
+                  >
+                    {errors.accept}
+                  </Typography>
                 )}
-              </h2>
-              <span className="thq-body-small">
-                {props.content1 ?? (
-                  <Fragment>
-                    <span className="contact-form3-text18">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: ' ',
-                        }}
-                      />
-                    </span>
-                  </Fragment>
-                )}
-              </span>
-            </div>
-          </div>
-          <form className="thq-card">
-            <div className="contact-form3-input1">
-              <label htmlFor="contact-form-3-name" className="thq-body-small">
-                Name
-              </label>
-              <input
-                type="text"
-                id="contact-form-3-name"
-                placeholder="Name"
-                className="thq-input"
-              />
-            </div>
-            <div className="contact-form3-input2">
-              <label htmlFor="contact-form-3-email" className="thq-body-small">
-                Email
-              </label>
-              <input
-                type="email"
-                id="contact-form-3-email"
-                required="true"
-                placeholder="Email"
-                className="thq-input"
-              />
-            </div>
-            <div className="contact-form3-container">
-              <label
-                htmlFor="contact-form-3-message"
-                className="thq-body-small"
-              >
-                Message
-              </label>
-              <textarea
-                id="contact-form-3-message"
-                rows="3"
-                placeholder="Enter your message"
-                className="thq-input"
-              ></textarea>
-            </div>
-            <div className="contact-form3-checkbox1">
-              <input
-                type="checkbox"
-                id="contact-form-3-check"
-                checked="true"
-                required="true"
-                className="thq-checkbox"
-              />
-              <label
-                htmlFor="contact-form-3-check"
-                className="contact-form3-text16 thq-body-small"
-              >
-                I accept the Terms
-              </label>
-            </div>
-            <button
-              type="submit"
-              className="contact-form3-button thq-button-filled"
-            >
-              <span className="thq-body-small">
-                {props.action ?? (
-                  <Fragment>
-                    <span className="contact-form3-text19">Submit</span>
-                  </Fragment>
-                )}
-              </span>
-            </button>
-          </form>
+              </Grid>
+              <Grid item xs={12}>
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    fontWeight: 600,
+                    boxShadow: 1,
+                    borderRadius: 2,
+                    py: 1.2,
+                    fontSize: "1rem",
+                  }}
+                  disabled={
+                    Object.values(errors).some((v) => v) ||
+                    !form.accept ||
+                    !form.name ||
+                    !form.email ||
+                    !form.message
+                  }
+                >
+                  Send Message
+                </Button>
+              </Grid>
+            </Grid>
+          </Box>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-ContactForm3.defaultProps = {
-  content2: undefined,
-  imageSrc: '/images/contact-form-image.jpg', // ✅ correct path
-  content1: undefined,
-  imageAlt: 'Image1',
-  action: undefined,
-  heading1: undefined,
-}
-
-ContactForm3.propTypes = {
-  content2: PropTypes.element,
-  imageSrc: PropTypes.string,
-  content1: PropTypes.element,
-  imageAlt: PropTypes.string,
-  action: PropTypes.element,
-  heading1: PropTypes.element,
-}
-
-export default ContactForm3
