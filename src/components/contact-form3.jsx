@@ -127,7 +127,7 @@ export default function ContactForm3() {
         {/* Image (gauche) */}
         <div className="contact-form3-imgbox">
           <img
-            src="/images/contact-form-image.jpg"
+            src="/public/images/tracteur1.png"
             alt="Contact"
             className="contact-form3-img"
           />

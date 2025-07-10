@@ -15,7 +15,7 @@
   width: 100%;
   overflow: hidden;
   background: linear-gradient(
-    120deg,
+    -120deg,
     #f7f6f4 0%,
     #f3e9da 40%,
     #e3d7c1 70%,
@@ -39,7 +39,7 @@
 
 .contact-form3-img {
   width: 100%;
-  max-width: 360px;
+  max-width: 390px;
   border-radius: 16px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.12);
 }
