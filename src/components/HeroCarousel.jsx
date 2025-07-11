@@ -75,8 +75,6 @@ function HeroCarousel() {
 
   const [aboutModalOpen, setAboutModalOpen] = useState(false);
 
-  
-
   return (
     <div className="hero-carousel-wrapper">
       <div className="hero-carousel-side-content">
@@ -205,123 +203,61 @@ function HeroCarousel() {
         closeAfterTransition
       >
         <Fade in={aboutModalOpen} timeout={400}>
-          <Box className="carousel-modal-box about-modal-anim" sx={{ position: "relative" }}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "flex-start",
-                width: "100%",
-                gap: 40,
-              }}
-            >
-              {/* Profil à gauche */}
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  minWidth: 180,
-                }}
-              >
+          <Box
+            className="carousel-modal-box about-modal-anim"
+            sx={{ position: "relative" }}
+          >
+            <div className="about-modal-content-vertical">
+              {/* Header centré */}
+              <div className="about-modal-profile">
                 <img
                   src="/images/lamiaCarteron.jpeg"
                   alt="Portrait de Lamia Carteron"
-                  style={{
-                    width: 120,
-                    height: 120,
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    boxShadow: "0 2px 8px rgba(80,80,80,0.12)",
-                    marginBottom: 16,
-                    border: "4px solid #b89d77",
-                  }}
+                  className="about-modal-img"
                 />
-                <div
-                  style={{
-                    fontWeight: 700,
-                    fontSize: "1.17rem",
-                    marginBottom: 2,
-                  }}
-                >
-                  Lamia Carteron
-                </div>
-                <div
-                  style={{
-                    color: "#b89d77",
-                    fontWeight: 600,
-                    fontSize: "1rem",
-                  }}
-                >
-                  Fondatrice
-                </div>
+                <div className="about-modal-name">Lamia Carteron</div>
+                <div className="about-modal-post">Fondatrice</div>
               </div>
-              {/* Contenu à droite */}
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <h2
-                  className="carousel-modal-title"
-                  id="about-modal-title"
-                  style={{
-                    textAlign: "left",
-                    color: "#b89d77",
-                    fontWeight: 800,
-                    fontSize: "2.2rem",
-                    marginBottom: 28,
-                    letterSpacing: ".02em",
-                    textShadow: "0 1px 8px rgba(100, 80, 40, 0.07)",
-                    borderBottom: "2px solid #e3d7c1",
-                    paddingBottom: "8px",
-                    width: "fit-content",
-                    minWidth: 220,
-                  }}
+              <h2 className="about-modal-title" id="about-modal-title">
+                Carteron Industries
+              </h2>
+              {/* Texte à gauche même sur mobile */}
+              <div id="about-modal-description" className="about-modal-desc">
+                <section>
+                  <strong>Parcours&nbsp;:</strong>
+                  <br />
+                  Ingénieure en technologies agricoles, Lamia Carteron a fondé
+                  Carteron Industries après 10 ans d’expérience dans
+                  l’optimisation des systèmes pour machines agricoles, avec une
+                  passion pour l’innovation et l’accompagnement des acteurs du
+                  secteur.
+                </section>
+                <section>
+                  <strong>Mission&nbsp;:</strong>
+                  <br />
+                  Offrir des solutions intelligentes pour moderniser
+                  l’agriculture, améliorer les rendements, réduire l’impact
+                  environnemental et accompagner les agriculteurs dans leur
+                  transformation digitale.
+                </section>
+                <section>
+                  <strong>Équipe&nbsp;:</strong>
+                  <br />
+                  Notre équipe pluridisciplinaire regroupe ingénieurs,
+                  développeurs et experts terrain, tous animés par la volonté de
+                  faire évoluer l’agriculture grâce à la technologie.
+                </section>
+              </div>
+              <div className="carousel-modal-actions">
+                <Button
+                  onClick={() => setAboutModalOpen(false)}
+                  variant="contained"
+                  color="primary"
+                  className="carousel-modal-close"
+                  aria-label="Fermer la fenêtre à propos"
                 >
-                  Carteron Industries
-                </h2>
-
-                <div
-                  id="about-modal-description"
-                  className="carousel-modal-desc"
-                  style={{ textAlign: "left", marginBottom: 44 }}
-                >
-                  <section style={{ marginBottom: 22 }}>
-                    <strong style={{ color: "#73553c" }}>
-                      Parcours&nbsp;:
-                    </strong>
-                    <br />
-                    Ingénieure en technologies agricoles, Lamia Carteron a fondé
-                    Carteron Industries après 10 ans d’expérience dans
-                    l’optimisation des systèmes pour machines agricoles, avec
-                    une passion pour l’innovation et l’accompagnement des
-                    acteurs du secteur.
-                  </section>
-                  <section style={{ marginBottom: 22 }}>
-                    <strong style={{ color: "#73553c" }}>Mission&nbsp;:</strong>
-                    <br />
-                    Offrir des solutions intelligentes pour moderniser
-                    l’agriculture, améliorer les rendements, réduire l’impact
-                    environnemental et accompagner les agriculteurs dans leur
-                    transformation digitale.
-                  </section>
-                  <section style={{ marginBottom: 14 }}>
-                    <strong style={{ color: "#73553c" }}>Équipe&nbsp;:</strong>
-                    <br />
-                    Notre équipe pluridisciplinaire regroupe ingénieurs,
-                    développeurs et experts terrain, tous animés par la volonté
-                    de faire évoluer l’agriculture grâce à la technologie.
-                  </section>
-                </div>
-                {/* Bouton fermer */}
-                <div className="carousel-modal-actions">
-                  <Button
-                    onClick={() => setAboutModalOpen(false)}
-                    variant="contained"
-                    color="primary"
-                    className="carousel-modal-close"
-                    aria-label="Fermer la fenêtre à propos"
-                  >
-                    Fermer
-                  </Button>
-                </div>
+                  Fermer
+                </Button>
               </div>
             </div>
           </Box>
