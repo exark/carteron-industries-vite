@@ -310,16 +310,33 @@
 }
 
 .about-modal-anim {
-  /* Pour le scale animé */
+  position: relative;
+  border: 3px solid transparent;         /* Nécessaire pour l'effet */
+  border-radius: 18px;
+  background: 
+    linear-gradient(#fff, #fff) padding-box, /* fond blanc à l'intérieur */
+    linear-gradient(135deg, #c7a17a, #73553c, #c7a17a 70%) border-box; /* dégradé marron clair → foncé */
+  background-size: 200% 200%;            /* Plus large pour l'animation */
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: border-move-accelerate 2s linear infinite;
+  /* effet scale/fade */
   transform: scale(0.96);
-  transition: transform 0.38s cubic-bezier(0.33,1,0.68,1), box-shadow 0.3s, border-color 0.3s;
-  border: 3px solid #b89d77; /* marron clair, adapte la couleur si besoin */
+  transition: transform 0.38s cubic-bezier(0.33,1,0.68,1), box-shadow 0.3s;
   box-shadow: 0 8px 32px rgba(20, 20, 20, 0.13);
 }
 
-/* Quand Fade in, on passe à 1 */
 .MuiFade-entered .about-modal-anim {
   transform: scale(1);
+}
+
+@keyframes border-move {
+  0% {
+    background-position: 0% 50%, 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%, 100% 50%;
+  }
 }
 
 @media (max-width: 900px) {
@@ -348,3 +365,79 @@
     padding-bottom: 0;
   }
 }
+
+@media (max-width: 900px) {
+  .carousel-modal-box.about-modal-anim {
+    flex-direction: column !important;
+    padding: 18px 6vw 16px 6vw !important;
+    gap: 18px !important;
+    max-width: 99vw;
+    min-width: 0;
+    align-items: center !important;
+    box-sizing: border-box;
+  }
+
+  .carousel-modal-img,
+  .about-modal-anim img {
+    width: 96px !important;
+    height: 96px !important;
+    max-width: 120px !important;
+    min-width: 70px !important;
+    margin-bottom: 12px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+  }
+
+  .carousel-modal-content {
+    padding: 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    position: static !important;
+    text-align: center !important;
+  }
+
+  .carousel-modal-title {
+    font-size: 1.2rem !important;
+    min-width: 0 !important;
+    text-align: center !important;
+    border-bottom: 1.2px solid #e3d7c1 !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .carousel-modal-desc {
+    font-size: 1rem !important;
+    text-align: center !important;
+    margin-bottom: 24px !important;
+  }
+
+  .carousel-modal-actions {
+    position: static !important;
+    margin-top: 8px !important;
+    padding-bottom: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-modal-box.about-modal-anim {
+    padding: 10px 2vw 8px 2vw !important;
+    gap: 10px !important;
+    min-width: 0 !important;
+    max-width: 99vw !important;
+    border-radius: 12px !important;
+  }
+
+  .carousel-modal-title {
+    font-size: 1.02rem !important;
+    padding-bottom: 3px !important;
+  }
+  .carousel-modal-desc {
+    font-size: 0.93rem !important;
+  }
+}
+
