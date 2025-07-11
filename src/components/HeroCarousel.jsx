@@ -100,6 +100,7 @@ function HeroCarousel() {
           modules={[Navigation]}
           spaceBetween={8}
           slidesPerView={2.5}
+          centeredSlides={true}
           navigation={{
             prevEl: ".custom-prev-btn",
             nextEl: ".custom-next-btn",
