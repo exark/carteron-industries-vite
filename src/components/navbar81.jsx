@@ -65,24 +65,28 @@ const Navbar81 = (props) => {
   const lastScrollY = useRef(window.scrollY);
 
   useEffect(() => {
-  const handleScroll = () => {
-    if (window.scrollY < 30) {
-      setShowNavbar(true); // Toujours visible en haut de page
-    } else if (window.scrollY > lastScrollY.current) {
-      setShowNavbar(false); // On descend -> cache la navbar
-    } else {
-      setShowNavbar(true); // On monte -> affiche la navbar
+    if (isDesktop) {
+      setShowNavbar(true); // Toujours visible sur desktop
+      return;
     }
-    lastScrollY.current = window.scrollY;
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
+    const handleScroll = () => {
+      if (window.scrollY < 30) {
+        setShowNavbar(true);
+      } else if (window.scrollY > lastScrollY.current) {
+        setShowNavbar(false); // Descend → cache
+      } else {
+        setShowNavbar(true); // Monte → affiche
+      }
+      lastScrollY.current = window.scrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isDesktop]);
 
   return (
-    <header className={`navbar81-container1${showNavbar ? "" : " navbar81-hidden"}`}>
+    <header
+      className={`navbar81-container1${showNavbar ? "" : " navbar81-hidden"}`}
+    >
       <header data-thq="thq-navbar" className="navbar81-navbar-interactive">
         <a href="/home" onClick={handleLogoClick} className="navbar81-navlink">
           <img
