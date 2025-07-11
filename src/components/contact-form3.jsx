@@ -33,8 +33,7 @@ export default function ContactForm3() {
       msg: "Entrez un nom/prénom valide (au moins 2 lettres, lettres, tirets, espaces).",
     },
     email: {
-      test: (v) =>
-        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v),
+      test: (v) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v),
       msg: "Entrez une adresse mail valide.",
     },
     phone: {
@@ -262,7 +261,7 @@ export default function ContactForm3() {
                       checked={form.accept}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      color="primary"
+                      className="custom-checkbox"
                       required
                     />
                   }
@@ -272,6 +271,7 @@ export default function ContactForm3() {
                   <Typography
                     variant="caption"
                     color="error"
+                    className="accept-error"
                     sx={{ display: "block", mt: -1.5, mb: 1 }}
                   >
                     {errors.accept}
@@ -283,14 +283,7 @@ export default function ContactForm3() {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  color="primary"
-                  sx={{
-                    fontWeight: 600,
-                    boxShadow: 1,
-                    borderRadius: 2,
-                    py: 1.2,
-                    fontSize: "1rem",
-                  }}
+                  className="custom-btn"
                   disabled={
                     Object.values(errors).some((v) => v) ||
                     !form.accept ||
