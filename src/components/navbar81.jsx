@@ -61,9 +61,28 @@ const Navbar81 = (props) => {
     setDrawerOpen(false);
   };
 
-  // ---- JSX principal
+  const [showNavbar, setShowNavbar] = useState(true);
+  const lastScrollY = useRef(window.scrollY);
+
+  useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY < 30) {
+      setShowNavbar(true); // Toujours visible en haut de page
+    } else if (window.scrollY > lastScrollY.current) {
+      setShowNavbar(false); // On descend -> cache la navbar
+    } else {
+      setShowNavbar(true); // On monte -> affiche la navbar
+    }
+    lastScrollY.current = window.scrollY;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+
   return (
-    <header className="navbar81-container1">
+    <header className={`navbar81-container1${showNavbar ? "" : " navbar81-hidden"}`}>
       <header data-thq="thq-navbar" className="navbar81-navbar-interactive">
         <a href="/home" onClick={handleLogoClick} className="navbar81-navlink">
           <img
