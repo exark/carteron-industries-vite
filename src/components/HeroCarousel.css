@@ -311,18 +311,18 @@
 
 .about-modal-anim {
   position: relative;
-  border: 3px solid transparent;         /* Nécessaire pour l'effet */
+  border: 3px solid transparent; /* Nécessaire pour l'effet */
   border-radius: 18px;
-  background: 
-    linear-gradient(#fff, #fff) padding-box, /* fond blanc à l'intérieur */
-    linear-gradient(135deg, #c7a17a, #73553c, #c7a17a 70%) border-box; /* dégradé marron clair → foncé */
-  background-size: 200% 200%;            /* Plus large pour l'animation */
+  background: linear-gradient(#fff, #fff) padding-box,
+    /* fond blanc à l'intérieur */
+      linear-gradient(135deg, #c7a17a, #73553c, #c7a17a 70%) border-box; /* dégradé marron clair → foncé */
+  background-size: 200% 200%; /* Plus large pour l'animation */
   background-origin: border-box;
   background-clip: padding-box, border-box;
   animation: border-move-accelerate 2s linear infinite;
   /* effet scale/fade */
   transform: scale(0.96);
-  transition: transform 0.38s cubic-bezier(0.33,1,0.68,1), box-shadow 0.3s;
+  transition: transform 0.38s cubic-bezier(0.33, 1, 0.68, 1), box-shadow 0.3s;
   box-shadow: 0 8px 32px rgba(20, 20, 20, 0.13);
 }
 
@@ -365,6 +365,29 @@
     padding-bottom: 0;
   }
 }
+/* --------------------------------------
+   MODAL ABOUT - SCROLLABLE (desktop/tablette uniquement)
+----------------------------------------- */
+.carousel-modal-box.about-modal-anim {
+  max-height: 90vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #b89d77 #eee;
+}
+.carousel-modal-box.about-modal-anim::-webkit-scrollbar {
+  width: 7px;
+  background: #eee;
+  border-radius: 6px;
+}
+.carousel-modal-box.about-modal-anim::-webkit-scrollbar-thumb {
+  background: #b89d77;
+  border-radius: 6px;
+}
+
+/* ---------------------------
+   MEDIA QUERIES POUR MOBILE
+--------------------------- */
 
 @media (max-width: 900px) {
   .carousel-modal-box.about-modal-anim {
@@ -440,4 +463,3 @@
     font-size: 0.93rem !important;
   }
 }
-
