@@ -4,6 +4,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Button, Modal, Box } from "@mui/material";
+import { Fade } from "@mui/material";
 import "./HeroCarousel.css";
 
 const items = [
@@ -72,6 +73,10 @@ function HeroCarousel() {
     setModalOpen(true);
   };
 
+  const [aboutModalOpen, setAboutModalOpen] = useState(false);
+
+  
+
   return (
     <div className="hero-carousel-wrapper">
       <div className="hero-carousel-side-content">
@@ -86,8 +91,10 @@ function HeroCarousel() {
           color="primary"
           className="side-btn"
           size="large"
+          onClick={() => setAboutModalOpen(true)}
+          aria-label="Ouvrir la fenêtre à propos"
         >
-          contactez nous
+          À propos de nous
         </Button>
       </div>
       <div className="hero-carousel-root hero-carousel-align-right">
@@ -151,7 +158,8 @@ function HeroCarousel() {
           </Button>
         </div>
       </div>
-      {/* ----- MODAL POPUP ----- */}
+      {/* ----- MODAL POPUP pour les carousel ----- */}
+
       <Modal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
@@ -186,6 +194,138 @@ function HeroCarousel() {
             </>
           )}
         </Box>
+      </Modal>
+      {/* ----- MODAL POPUP à propos de nous ----- */}
+      <Modal
+        open={aboutModalOpen}
+        onClose={() => setAboutModalOpen(false)}
+        className="carousel-modal"
+        aria-labelledby="about-modal-title"
+        aria-describedby="about-modal-description"
+        closeAfterTransition
+      >
+        <Fade in={aboutModalOpen} timeout={400}>
+          <Box className="carousel-modal-box about-modal-anim" sx={{ position: "relative" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "flex-start",
+                width: "100%",
+                gap: 40,
+              }}
+            >
+              {/* Profil à gauche */}
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  minWidth: 180,
+                }}
+              >
+                <img
+                  src="/images/lamiaCarteron.jpeg"
+                  alt="Portrait de Lamia Carteron"
+                  style={{
+                    width: 120,
+                    height: 120,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    boxShadow: "0 2px 8px rgba(80,80,80,0.12)",
+                    marginBottom: 16,
+                    border: "4px solid #b89d77",
+                  }}
+                />
+                <div
+                  style={{
+                    fontWeight: 700,
+                    fontSize: "1.17rem",
+                    marginBottom: 2,
+                  }}
+                >
+                  Lamia Carteron
+                </div>
+                <div
+                  style={{
+                    color: "#b89d77",
+                    fontWeight: 600,
+                    fontSize: "1rem",
+                  }}
+                >
+                  Fondatrice
+                </div>
+              </div>
+              {/* Contenu à droite */}
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <h2
+                  className="carousel-modal-title"
+                  id="about-modal-title"
+                  style={{
+                    textAlign: "left",
+                    color: "#b89d77",
+                    fontWeight: 800,
+                    fontSize: "2.2rem",
+                    marginBottom: 28,
+                    letterSpacing: ".02em",
+                    textShadow: "0 1px 8px rgba(100, 80, 40, 0.07)",
+                    borderBottom: "2px solid #e3d7c1",
+                    paddingBottom: "8px",
+                    width: "fit-content",
+                    minWidth: 220,
+                  }}
+                >
+                  Carteron Industries
+                </h2>
+
+                <div
+                  id="about-modal-description"
+                  className="carousel-modal-desc"
+                  style={{ textAlign: "left", marginBottom: 44 }}
+                >
+                  <section style={{ marginBottom: 22 }}>
+                    <strong style={{ color: "#73553c" }}>
+                      Parcours&nbsp;:
+                    </strong>
+                    <br />
+                    Ingénieure en technologies agricoles, Lamia Carteron a fondé
+                    Carteron Industries après 10 ans d’expérience dans
+                    l’optimisation des systèmes pour machines agricoles, avec
+                    une passion pour l’innovation et l’accompagnement des
+                    acteurs du secteur.
+                  </section>
+                  <section style={{ marginBottom: 22 }}>
+                    <strong style={{ color: "#73553c" }}>Mission&nbsp;:</strong>
+                    <br />
+                    Offrir des solutions intelligentes pour moderniser
+                    l’agriculture, améliorer les rendements, réduire l’impact
+                    environnemental et accompagner les agriculteurs dans leur
+                    transformation digitale.
+                  </section>
+                  <section style={{ marginBottom: 14 }}>
+                    <strong style={{ color: "#73553c" }}>Équipe&nbsp;:</strong>
+                    <br />
+                    Notre équipe pluridisciplinaire regroupe ingénieurs,
+                    développeurs et experts terrain, tous animés par la volonté
+                    de faire évoluer l’agriculture grâce à la technologie.
+                  </section>
+                </div>
+                {/* Bouton fermer */}
+                <div className="carousel-modal-actions">
+                  <Button
+                    onClick={() => setAboutModalOpen(false)}
+                    variant="contained"
+                    color="primary"
+                    className="carousel-modal-close"
+                    aria-label="Fermer la fenêtre à propos"
+                  >
+                    Fermer
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Box>
+        </Fade>
       </Modal>
     </div>
   );

@@ -308,6 +308,20 @@
   padding-right: 22px;
   border-radius: 22px;
 }
+
+.about-modal-anim {
+  /* Pour le scale animé */
+  transform: scale(0.96);
+  transition: transform 0.38s cubic-bezier(0.33,1,0.68,1), box-shadow 0.3s, border-color 0.3s;
+  border: 3px solid #b89d77; /* marron clair, adapte la couleur si besoin */
+  box-shadow: 0 8px 32px rgba(20, 20, 20, 0.13);
+}
+
+/* Quand Fade in, on passe à 1 */
+.MuiFade-entered .about-modal-anim {
+  transform: scale(1);
+}
+
 @media (max-width: 900px) {
   .carousel-modal-box {
     flex-direction: column;
