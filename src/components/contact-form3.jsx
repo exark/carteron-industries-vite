@@ -8,6 +8,8 @@ import {
   FormControlLabel,
   Grid,
 } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { Fade } from "@mui/material";
 import "./contact-form3.css";
 
 const initialState = {
@@ -120,17 +122,21 @@ export default function ContactForm3() {
     }
   };
 
+  const isSmallScreen = useMediaQuery("(max-width:900px)");
+  
   return (
     <div className="contact-form3-root">
       <div className="contact-form3-container">
         {/* Image (gauche) */}
-        <div className="contact-form3-imgbox">
-          <img
-            src="/images/tracteur1.png"
-            alt="Contact"
-            className="contact-form3-img"
-          />
-        </div>
+        <Fade in={!isSmallScreen} timeout={400} unmountOnExit>
+          <div className="contact-form3-imgbox">
+            <img
+              src="/images/tracteur1.png"
+              alt="Contact"
+              className="contact-form3-img"
+            />
+          </div>
+        </Fade>
 
         {/* Formulaire (droite) */}
         <div className="contact-form3-paper">

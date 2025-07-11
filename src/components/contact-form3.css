@@ -7,6 +7,8 @@
   padding: 32px 0;
 }
 
+
+
 .contact-form3-container {
   display: flex;
   flex-direction: row;
@@ -95,6 +97,9 @@
 
 
 @media (max-width: 900px) {
+  .contact-form3-root{
+    width: 92%;
+  }
   .contact-form3-container {
     flex-direction: column;
     border-radius: 18px;
