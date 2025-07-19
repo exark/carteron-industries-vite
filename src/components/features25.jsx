@@ -38,7 +38,7 @@ function FeatureCard({ title, description, image }) {
 
 export default function Features25(props) {
   return (
-    <div id="Services" className="features25-row">
+    <div id="Features25" className="features25-row">
       <FeatureCard
         title={props.feature1Title}
         description={props.feature1Description}

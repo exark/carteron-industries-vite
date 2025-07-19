@@ -8,6 +8,10 @@
   margin-bottom: 10% ;
 }
 
+#Features25 {
+  scroll-margin-top: 90px; /* ajuste selon la hauteur réelle de ta navbar */
+}
+
 
 .features25-card {
   transition: 
