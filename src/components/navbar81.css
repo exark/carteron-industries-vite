@@ -10,6 +10,20 @@
     color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.navbar81-navlink {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 1.5rem; /* ajuste selon besoin */
+  font-weight: 800; /* très gras */
+  color: #0b2244;   /* bleu foncé, adapte si tu veux un autre ton */
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none; /* enlève le soulignement */
+  transition: color 0.2s;
+}
+.navbar81-navlink:hover {
+  color: #21517a; /* optionnel : bleu plus clair au hover */
+}
+
 .navbar81-link5-menu-list,
 .navbar81-link5-menu-list * {
   color: #191818 !important;
@@ -40,9 +54,7 @@
   padding-bottom: var(--dl-layout-space-oneandhalfunits);
   justify-content: space-between;
 }
-.navbar81-navlink {
-  display: contents;
-}
+
 .navbar81-image1 {
   height: 3rem;
   text-decoration: none;

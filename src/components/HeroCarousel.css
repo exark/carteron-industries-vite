@@ -1,47 +1,61 @@
 .hero-carousel-wrapper {
-  width: 83%;
-  max-width: 83%; /* ou ta valeur préférée */
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  width: 100%;
+  max-width: 1400px;
+  margin: 6% auto 10% auto;
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  justify-content: center; /* centre le contenu à l’intérieur */
+  justify-content: flex-start;
   background: transparent;
-  gap: 0px;
+  gap: 0;
 }
 
 @media (max-width: 1200px) {
   .hero-carousel-wrapper {
-    width: 70%;
-    max-width: 70%;
+    max-width: 99vw;
+    width: 99vw;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .hero-carousel-wrapper {
-    width: 75%;
-    max-width: 75%;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 99vw;
+  }
+}
+@media (max-width: 600px) {
+  .hero-carousel-wrapper {
+    flex-direction: column;
+    align-items: center;
+    max-width: 99vw;
   }
 }
 
 .hero-carousel-side-content {
+  flex: 0 0 350px;
   min-width: 310px;
-  max-width: 380px;
-  padding: 48px 32px 0px 16px;
+  max-width: 350px;
+  padding: 48px 32px 0 16px;
   background: #fff;
   border-radius: 28px 0 0 28px;
   box-shadow: none;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center !important;
-  margin-right: 0px;
+  align-items: center;
+}
+@media (max-width: 950px) {
+  .hero-carousel-side-content {
+    border-radius: 22px 22px 0 0;
+    min-width: 0;
+    max-width: 100vw;
+    margin-bottom: 18px;
+    padding: 32px 18px 20px 18px;
+  }
 }
 
 .side-title {
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #111;
   margin: 0 0 18px 0;
@@ -55,58 +69,97 @@
 }
 
 .side-btn {
-  background: #ffffff !important;
-  color: #000000 !important;
-  font-weight: 900;              /* texte encore plus gras */
+  background: #fff !important;
+  width: 70%;
+  color: #000 !important;
+  font-weight: 900;
   padding: 10px 28px;
   box-shadow: 0 2px 16px rgba(32, 101, 209, 0.06);
-  font-size: 5rem;              /* corrige l'erreur (700rem est une faute de frappe) */
+  font-size: 5rem; /* Confirme si tu veux vraiment ce size ! */
   letter-spacing: 0.03em;
-  text-transform: none;
   margin-top: 15% !important;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  border-radius: 8px;           /* suggestion : angles arrondis pour moderniser */
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  border-radius: 8px;
   transition: box-shadow 0.2s, border-color 0.2s;
   font-weight: 600 !important;
 }
 
-
-.hero-carousel-root {
+/* --- NAV/SLIDER CONTAINER --- */
+.hero-carousel-nav-outer {
   flex: 1 1 0;
-  width: 100%;
-  max-width: 1150px;
-  margin: 0 auto;
-  position: relative;
-  padding-bottom: 2.5%;
-  overflow: visible;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: stretch;
+  min-width: 0;
+  gap: 0;
+  max-width: 100vw;
 }
-
-.hero-carousel-align-right {
-  margin-left: auto;
-  margin-right: 1.2vw; /* Pour accentuer l’alignement à droite */
-}
-
-.hero-swiper {
-  padding-bottom: 0 !important;
+.hero-carousel-swiper-container {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 1008px;  
   width: 100%;
+  display: flex;
 }
 
-.swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-  display: none !important;
+@media (max-width: 1200px) {
+  .hero-carousel-nav-outer,
+  .hero-carousel-swiper-container {
+    max-width: 98vw;
+  }
+}
+@media (max-width: 950px) {
+  .hero-carousel-nav-outer {
+    flex-direction: row;
+    align-items: center;
+    max-width: 99vw;
+  }
+  .hero-carousel-swiper-container {
+    max-width: 97vw;
+  }
+}
+@media (max-width: 700px) {
+  .hero-carousel-nav-outer {
+    width: 100vw;
+    max-width: 100vw;
+    justify-content: center;
+    padding: 0;
+  }
+  .hero-carousel-swiper-container {
+    max-width: 97vw;
+    min-width: 0;
+  }
+}
+@media (max-width: 600px) {
+  .hero-carousel-nav-outer {
+    width: 80vw;
+    max-width: 80vw;
+    justify-content: center;
+    padding: 0;
+  }
+  .hero-carousel-swiper-container {
+    max-width: 97vw;
+    min-width: 0;
+  }
 }
 
+/* --- SLIDES --- */
+.hero-swiper {
+  width: 100%;
+  padding-bottom: 0 !important;
+}
+.swiper-slide {
+  width: 320px !important;  /* taille fixe de chaque slide (ajuste si besoin) */
+  margin-right: 8px !important;
+  margin-left: 0 !important;
+  flex-shrink: 0;
+}
 .hero-carousel-slide {
   background-size: cover;
   background-position: center;
   border-radius: 22px;
   min-height: 400px;
-  height: 400px;
+  height: 450px;
   position: relative;
   margin: 0;
   display: flex;
@@ -114,7 +167,15 @@
   justify-content: flex-start;
   overflow: hidden;
 }
+@media (max-width: 991px), (max-width: 700px), (max-width: 480px) {
+  .hero-carousel-slide {
+    min-height: 340px;
+    height: 340px;
+    max-width: 98vw;
+  }
+}
 
+/* --- SLIDE OVERLAY --- */
 .hero-carousel-header-overlay {
   width: 100%;
   padding: 28px 22px 10px 24px;
@@ -127,7 +188,6 @@
   left: 0;
   z-index: 1;
 }
-
 .hero-carousel-title {
   font-size: 1.8rem;
   font-weight: 700;
@@ -137,7 +197,6 @@
   color: #fff;
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
 }
-
 .hero-carousel-desc {
   font-size: 1.12rem;
   color: #fff;
@@ -147,92 +206,61 @@
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.13);
 }
 
-.hero-carousel-nav {
+/* --- ARROWS --- */
+.custom-prev-btn,
+.custom-next-btn {
+  position: relative;
+  z-index: 11;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 16px;
-  position: absolute;
-  bottom: -38px;
-  right: 52px;
-  width: auto;
-  z-index: 12;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(50, 50, 50, 0.09);
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: 1.5px solid #ececec;
+  transition: background 0.16s, color 0.16s, border-color 0.16s;
+  margin: 0 18px;
+  outline: none;
+  pointer-events: all;
+  user-select: none;
 }
-
-.hero-nav-btn {
-  min-width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(50, 50, 50, 0.08);
-  background: #ffffff !important;
-  color: #000000 !important;
-  font-weight: 600 !important;
-  transition: background 0.18s, color 0.18s;
-  pointer-events: auto;
-  margin: 0 2px;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+.custom-prev-btn:hover,
+.custom-next-btn:hover {
+  background: #1976d2 !important;
+  color: #fff !important;
+  border-color: #1976d2 !important;
 }
-
-.hero-nav-btn:hover {
-  background: #000000 !important;
-  color: #ffffff !important;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-}
-
-.swiper-slide {
-  margin-right: 4px !important;
-  margin-left: 0 !important;
-}
-
-@media (max-width: 991px) {
-  .hero-carousel-root {
-    max-width: 98vw;
-  }
-  .hero-carousel-slide {
-    min-height: 340px;
-    height: 340px;
+@media (max-width: 900px) {
+  .custom-prev-btn,
+  .custom-next-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1.1rem;
+    margin: 0 4px;
+    border-radius: 7px;
   }
 }
-
 @media (max-width: 700px) {
-  .hero-carousel-slide {
-    min-height: 340px;
-    height: 340px;
-  }
-  .hero-carousel-root {
-    max-width: 99vw;
-  }
-  .hero-carousel-nav {
-    position: static;
-    margin: 14px 0 0 0;
-    gap: 10px;
+  .custom-prev-btn,
+  .custom-next-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+    margin: 0 2px;
   }
 }
 
-@media (max-width: 480px) {
-  .hero-carousel-slide {
-    min-height: 340px;
-    height: 340px;
-    max-width: 90%;
-  }
-  .hero-carousel-root {
-    max-width: 100vw;
-  }
-}
-
-@media (max-width: 950px) {
-  .hero-carousel-wrapper {
-    flex-direction: column;
-    align-items: stretch;
-    max-width: 99vw;
-  }
-  .hero-carousel-side-content {
-    border-radius: 22px 22px 0 0;
-    min-width: 0;
-    max-width: 100vw;
-    margin-bottom: 18px;
-    padding: 32px 18px 20px 18px;
-  }
+/* --- SWIPER PAGINATION (masqué) --- */
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  display: none !important;
 }
 
 .carousel-modal {

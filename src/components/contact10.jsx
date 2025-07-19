@@ -43,41 +43,6 @@ const Contact10 = ({
           </div>
         </div>
         <div className="contact10-content3 thq-flex-row">
-          <div className="contact10-container2">
-            <img
-              alt={location1ImageAlt}
-              src="/images/office.jpg"
-              className="contact10-image1 thq-img-ratio-16-9"
-            />
-            <h3 className="contact10-text12 thq-heading-3">
-              {location1 ?? (
-                <Fragment>
-                  <span className="contact10-text20">
-                    Address: 123 Smart Tech Street, City, Country
-                  </span>
-                </Fragment>
-              )}
-            </h3>
-            <p className="thq-body-large">
-              {location1Description ?? (
-                <Fragment>
-                  <span className="contact10-text19">
-                    Visit us at our main office location.
-                  </span>
-                </Fragment>
-              )}
-            </p>
-            <div className="contact10-container3">
-              <a
-                href="https://example.com"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="thq-button-flat thq-body-small"
-              >
-                Get directions
-              </a>
-            </div>
-          </div>
           <div className="contact10-container4">
             <img
               alt={location2ImageAlt}

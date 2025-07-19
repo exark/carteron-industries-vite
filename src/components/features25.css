@@ -1,26 +1,28 @@
 .features25-row {
-  display: flex ;
-  gap: 32px ;
-  justify-content: center ;
-  align-items: stretch ;
-  margin: 32px 0 ;
-  flex-wrap: wrap ; /* responsive, les cards passent en colonne sur petit écran */
-  margin-bottom: 10% ;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+  margin: 32px 0 10% 0;
+  padding: 0;
+  width: 100%;
 }
-
-#Features25 {
-  scroll-margin-top: 90px; /* ajuste selon la hauteur réelle de ta navbar */
-}
-
 
 .features25-card {
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(32,101,209,0.07);
+  border-radius: 14px;
+  text-decoration: none;
   transition: 
     box-shadow 0.25s cubic-bezier(.42,0,.58,1),
     border-color 0.2s;
-  background: #fff;
-  cursor: pointer; /* curseur main */
-  box-shadow: 0 2px 8px rgba(32,101,209,0.07);
-  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  flex: 1 1 320px;
+  min-width: 240px;
 }
 
 .features25-card:hover,
@@ -30,17 +32,24 @@
   outline: none;
 }
 
-/* Responsive : 3 cards côte à côte sur grand écran */
-@media (max-width: 1280px) {
+#Features25 {
+  scroll-margin-top: 90px; /* ajuste selon la hauteur réelle de ta navbar */
+}
+
+/* ----------- Responsive ----------- */
+
+/* Desktop : 3 cards par ligne */
+@media (min-width: 992px) {
   .features25-row {
-    gap: 24px;
+    flex-direction: row;
   }
   .features25-card {
-    max-width: 290px;
+    max-width: 320px;
+    flex: 1 1 320px;
   }
 }
 
-/* 2 cards par ligne sur tablette */
+/* Tablette : 2 cards par ligne */
 @media (max-width: 991px) {
   .features25-row {
     gap: 20px;
@@ -48,31 +57,46 @@
   .features25-card {
     max-width: 340px;
     flex: 1 1 47%;
+    min-width: 180px;
   }
 }
 
-/* 1 card par ligne sur mobile */
+/* Mobile : cards moins larges et images plus hautes */
 @media (max-width: 767px) {
   .features25-row {
     flex-direction: column;
     gap: 18px;
     align-items: center;
+    margin: 18px 0 8% 0;
   }
   .features25-card {
-    max-width: 98vw;
+    max-width: 87vw;   /* <--- réduit la largeur */
     width: 100%;
     min-width: 0;
+    flex: 1 1 100%;
+  }
+  .features25-card img,
+  .features25-card .MuiCardMedia-root {
+    height: 200px;     /* <--- image plus haute */
+    border-radius: 10px 10px 0 0;
   }
 }
 
-/* Ajustement petits mobiles */
+/* Petits mobiles encore plus étroit, image encore plus haute */
 @media (max-width: 480px) {
   .features25-row {
-    margin: 12px 0;
+    margin: 12px 0 6% 0;
+    gap: 12px;
   }
   .features25-card {
-    max-width: 99vw;
+    max-width: 93vw;   /* encore moins large */
     border-radius: 10px;
     padding: 0;
   }
+  .features25-card img,
+  .features25-card .MuiCardMedia-root {
+    height: 165px;     /* ajuste à ton goût */
+    border-radius: 8px 8px 0 0;
+  }
 }
+

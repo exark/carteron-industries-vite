@@ -90,12 +90,7 @@ const Navbar81 = (props) => {
     >
       <header data-thq="thq-navbar" className="navbar81-navbar-interactive">
         <a href="/home" onClick={handleLogoClick} className="navbar81-navlink">
-          <img
-            src="/images/Logo.png"
-            loading="lazy"
-            className="navbar81-image1"
-            alt={props.logoAlt}
-          />
+          Carteron Indutries
         </a>
         {/* Desktop Version */}
         {isDesktop ? (

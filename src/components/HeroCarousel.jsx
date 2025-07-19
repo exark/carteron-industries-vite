@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Button, Modal, Box } from "@mui/material";
@@ -60,14 +60,41 @@ const items = [
 ];
 
 function HeroCarousel() {
-  const swiperRef = useRef(null);
+  const [swiper, setSwiper] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [activeSlide, setActiveSlide] = useState(null);
+  const [centered, setCentered] = useState(window.innerWidth <= 600);
+
+  useEffect(() => {
+    if (!swiper) return;
+
+    const realignSwiper = () => {
+      if (swiper && swiper.slideTo) {
+        swiper.update();
+        swiper.slideTo(swiper.activeIndex, 0, false);
+      }
+    };
+
+    swiper.on("slideChangeTransitionEnd", realignSwiper);
+    swiper.on("resize", realignSwiper);
+    swiper.on("navigationNext", realignSwiper);
+    swiper.on("navigationPrev", realignSwiper);
+
+    return () => {
+      swiper.off("slideChangeTransitionEnd", realignSwiper);
+      swiper.off("resize", realignSwiper);
+      swiper.off("navigationNext", realignSwiper);
+      swiper.off("navigationPrev", realignSwiper);
+    };
+  }, [swiper]);
 
   const handleSlideClick = (item, idx) => {
-    // Swiper slideTo (0-based)
-    if (swiperRef.current) {
-      swiperRef.current.slideToLoop(idx, 350); // slideToLoop pour que le loop fonctionne bien
+    if (swiper) {
+      if (swiper.realIndex === idx) {
+        swiper.slideNext(350);
+      } else {
+        swiper.slideToLoop(idx, 350);
+      }
     }
     setActiveSlide({ ...item });
     setModalOpen(true);
@@ -78,7 +105,7 @@ function HeroCarousel() {
   return (
     <div className="hero-carousel-wrapper">
       <div className="hero-carousel-side-content">
-        <h2 className="side-title">Carteron Industries</h2>
+        <h2 className="side-title">Notre Mission</h2>
         <p className="side-desc">
           Nous développons des solutions technologiques avancées pour optimiser
           les performances des machines agricoles, en intégrant des systèmes
@@ -92,69 +119,70 @@ function HeroCarousel() {
           onClick={() => setAboutModalOpen(true)}
           aria-label="Ouvrir la fenêtre à propos"
         >
-          À propos de nous
+          À propos
         </Button>
       </div>
-      <div className="hero-carousel-root hero-carousel-align-right">
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={8}
-          slidesPerView={2.5}
-          centeredSlides={true}
-          navigation={{
-            prevEl: ".custom-prev-btn",
-            nextEl: ".custom-next-btn",
-          }}
-          loop={true}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          className="hero-swiper"
-          breakpoints={{
-            0: { slidesPerView: 1 },
-            600: { slidesPerView: 2 },
-            900: { slidesPerView: 2.5 },
-          }}
+      <div className="hero-carousel-nav-outer">
+        <div
+          className="custom-prev-btn hero-nav-btn"
+          tabIndex={0}
+          role="button"
+          aria-label="Précédent"
         >
-          {items.map((item, idx) => (
-            <SwiperSlide key={idx}>
-              <div
-                className="hero-carousel-slide"
-                style={{
-                  backgroundImage: `url(${item.image})`,
-                  cursor: "pointer",
-                }}
-                onClick={() => handleSlideClick(item, idx)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) =>
-                  (e.key === "Enter" || e.key === " ") &&
-                  handleSlideClick(item, idx)
-                }
-              >
-                <div className="hero-carousel-header-overlay">
-                  <div className="hero-carousel-title">{item.name}</div>
-                  <div className="hero-carousel-desc">{item.description}</div>
+          &lt;
+        </div>
+        <div className="hero-carousel-swiper-container">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={8}
+            slidesPerView={3}
+            centeredSlides={centered}
+            navigation={{
+              prevEl: ".custom-prev-btn",
+              nextEl: ".custom-next-btn",
+            }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }} // ← 4 secondes
+            loop={true}
+            onSwiper={setSwiper}
+            className="hero-swiper"
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              600: { slidesPerView: 2 },
+              900: { slidesPerView: 3 },
+            }}
+          >
+            {items.map((item, idx) => (
+              <SwiperSlide key={idx}>
+                <div
+                  className="hero-carousel-slide"
+                  style={{
+                    backgroundImage: `url(${item.image})`,
+                    cursor: "pointer",
+                  }}
+                  onClick={() => handleSlideClick(item, idx)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) =>
+                    (e.key === "Enter" || e.key === " ") &&
+                    handleSlideClick(item, idx)
+                  }
+                >
+                  <div className="hero-carousel-header-overlay">
+                    <div className="hero-carousel-title">{item.name}</div>
+                    <div className="hero-carousel-desc">{item.description}</div>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="hero-carousel-nav">
-          <Button
-            className="custom-prev-btn hero-nav-btn"
-            variant="contained"
-            color="primary"
-          >
-            &lt;
-          </Button>
-          <Button
-            className="custom-next-btn hero-nav-btn"
-            variant="contained"
-            color="primary"
-          >
-            &gt;
-          </Button>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div
+          className="custom-next-btn hero-nav-btn"
+          tabIndex={0}
+          role="button"
+          aria-label="Suivant"
+        >
+          &gt;
         </div>
       </div>
       {/* ----- MODAL POPUP pour les carousel ----- */}

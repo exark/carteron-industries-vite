@@ -3,11 +3,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import './features25.css';
+import { motion, useAnimation } from "framer-motion";
+import "./features25.css";
 
 function FeatureCard({ title, description, image }) {
   return (
-    <Card className="features25-card" sx={{ maxWidth: 320, flex: "1 1 0" }}>
+    <Card className="features25-card">
       <CardMedia
         component="img"
         image={image}
@@ -37,8 +38,28 @@ function FeatureCard({ title, description, image }) {
 }
 
 export default function Features25(props) {
+  const controls = useAnimation();
+
   return (
-    <div id="Features25" className="features25-row">
+    <motion.div
+      id="Features25"
+      className="features25-row"
+      initial={{ opacity: 0, y: 48 }}
+      animate={controls}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 1.7, ease: [0.33, 1, 0.68, 1] }, // Apparition lente (1.7s)
+      }}
+      viewport={{ once: false, amount: 0.2 }}
+      onViewportLeave={() =>
+        controls.start({
+          opacity: 0,
+          y: 64,
+          transition: { duration: 1.7, ease: [0.33, 1, 0.68, 1] }, // Disparition lente (1.7s)
+        })
+      }
+    >
       <FeatureCard
         title={props.feature1Title}
         description={props.feature1Description}
@@ -54,6 +75,6 @@ export default function Features25(props) {
         description={props.feature3Description}
         image="images/argicole.jpg"
       />
-    </div>
+    </motion.div>
   );
 }

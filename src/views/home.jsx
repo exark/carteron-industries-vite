@@ -40,19 +40,7 @@ const Home = () => {
       </Helmet>
       {/* All your sections stay as-is */}
       <Navbar81></Navbar81>
-      <section
-        style={{
-          minHeight: 370,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          width: "100%",
-          maxWidth: 1000,
-          margin: "0 auto",
-        }}
-      >
-        <HeroCarousel />
-      </section>
+      <HeroCarousel></HeroCarousel>
 
       
       <div id="Nos-Services" className="home-services">

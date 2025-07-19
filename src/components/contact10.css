@@ -3,6 +3,7 @@
   position: relative;
   align-items: flex-start;
   flex-direction: column;
+  max-width: 600px;
 }
  
 .contact10-max-width {
