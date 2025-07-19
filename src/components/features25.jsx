@@ -42,17 +42,17 @@ export default function Features25(props) {
       <FeatureCard
         title={props.feature1Title}
         description={props.feature1Description}
-        image="/public/images/argicole.jpg"
+        image="images/argicole.jpg"
       />
       <FeatureCard
         title={props.feature2Title}
         description={props.feature2Description}
-        image="/public/images/argicole.jpg"
+        image="images/argicole.jpg"
       />
       <FeatureCard
         title={props.feature3Title}
         description={props.feature3Description}
-        image="/public/images/argicole.jpg"
+        image="images/argicole.jpg"
       />
     </div>
   );
