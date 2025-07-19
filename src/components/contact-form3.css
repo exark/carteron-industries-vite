@@ -17,18 +17,18 @@
   width: 100%;
   overflow: hidden;
   background: linear-gradient(
-    -120deg,
-    #f7f6f4 0%,
-    #f3e9da 40%,
-    #e3d7c1 70%,
-    #b89d77 100%
-  );
+  -120deg,
+  #e6f0fa 0%,     /* Bleu très clair */
+  #b5daf7 40%,    /* Bleu pastel */
+  #90caf9 70%,    /* Bleu clair un peu plus soutenu */
+  #64b5f6 100%    /* Bleu clair soutenu */
+);
   background-size: 200% 200%;
   animation: movebg 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   box-shadow: 0 4px 28px 0 rgba(107, 63, 24, 0.08),
-    /* soft brown shadow */ 0 1.5px 10px 0 rgba(185, 157, 119, 0.12); /* beige highlight */
+    /* soft brown shadow */ 0 1.5px 10px 0 rgba(80, 82, 166, 0.12); /* beige highlight */
   border-radius: 18px; /* optional: smooth corners */
-  border: 1.5px solid #e3d7c1; /* subtle beige border */
+  border: 1.5px solid #000000; /* subtle blue border */
 }
 
 .contact-form3-imgbox {
@@ -57,10 +57,10 @@
 }
 
 .custom-checkbox.MuiCheckbox-root {
-  color: #a67c52; /* couleur marron/beige quand décoché */
+  color: #000000; /* couleur marron/beige quand décoché */
 }
 .custom-checkbox.MuiCheckbox-root.Mui-checked {
-  color: #73553c; /* couleur marron foncé quand coché */
+  color: #000000; /* couleur marron foncé quand coché */
 }
 /* Pour l'effet de survol */
 .custom-checkbox.MuiCheckbox-root:hover {
@@ -112,4 +112,11 @@
   .contact-form3-paper {
     border-radius: 0 0 18px 18px;
   }
+}
+
+body, html {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+}
+* {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
 }

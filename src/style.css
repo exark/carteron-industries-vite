@@ -6,11 +6,11 @@
   --dl-layout-size-xlarge: 192px;
   --dl-layout-size-xsmall: 16px;
   --dl-color-theme-accent1: #fff;
-  --dl-color-theme-accent2: #F5D1B0;
+  --dl-color-theme-accent2: #000000;
   --dl-layout-radius-round: 50%;
   --dl-layout-size-xxlarge: 288px;
   --dl-color-theme-primary1: #000000;
-  --dl-color-theme-primary2: #F5D1B0;
+  --dl-color-theme-primary2: #ffffff;
   --dl-layout-size-maxwidth: 1400px;
   --dl-layout-radius-radius2: 2px;
   --dl-layout-radius-radius4: 4px;
@@ -23,13 +23,20 @@
   --dl-layout-space-fiveunits: 80px;
   --dl-layout-space-fourunits: 64px;
   --dl-layout-space-threeunits: 48px;
-  --dl-color-theme-neutral-dark: #F5D1B0;
+  --dl-color-theme-neutral-dark: #1976D2;
   --dl-layout-radius-cardradius: 8px;
   --dl-color-theme-neutral-light: #ffffff;
   --dl-layout-radius-imageradius: 8px;
   --dl-layout-radius-inputradius: 24px;
   --dl-layout-radius-buttonradius: 24px;
   --dl-layout-space-oneandhalfunits: 24px;
+}
+
+body, html {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+}
+* {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
 }
 
 body {

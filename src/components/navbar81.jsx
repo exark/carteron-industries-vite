@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Button from "@mui/material/Button";
 import "./navbar81.css";
 
 const Navbar81 = (props) => {
@@ -101,8 +102,8 @@ const Navbar81 = (props) => {
           <div data-thq="thq-navbar-nav" className="navbar81-desktop-menu">
             <nav className="navbar81-links1">
               <a
-                href="#Features24"
-                onClick={(e) => handleAnchorClick(e, "Features24")}
+                href="#Features25"
+                onClick={(e) => handleAnchorClick(e, "Features25")}
                 className="navbar81-link11 thq-body-small"
               >
                 {props.link1 ?? (
@@ -285,35 +286,9 @@ const Navbar81 = (props) => {
               </div>
             </div>
             <div className="navbar81-buttons1">
-              <a
-                href="/home"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (
-                    location.pathname === "/home" ||
-                    location.pathname === "/"
-                  ) {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  } else {
-                    navigate("/home", { replace: true });
-                    setTimeout(
-                      () => window.scrollTo({ top: 0, behavior: "smooth" }),
-                      100
-                    );
-                  }
-                }}
-                className="navbar81-action21 thq-button-outline thq-button-animated"
-              >
-                <span>
-                  {props.action1 ?? (
-                    <Fragment>
-                      <span className="navbar81-text22">Accueil</span>
-                    </Fragment>
-                  )}
-                </span>
-              </a>
-              <a
-                href="/contact"
+              <Button
+                variant="contained"
+                color="primary"
                 onClick={(e) => {
                   e.preventDefault();
                   if (location.pathname === "/contact") {
@@ -326,34 +301,43 @@ const Navbar81 = (props) => {
                     );
                   }
                 }}
-                className="navbar81-action21 thq-button-outline thq-button-animated"
+                sx={{ color: "#fff", fontWeight: 600, borderRadius: 2 }}
               >
-                <span>
-                  {props.action2 ?? (
-                    <Fragment>
-                      <span className="navbar81-text24">contactez nous</span>
-                    </Fragment>
-                  )}
-                </span>
-              </a>
+                Contactez-nous
+              </Button>
             </div>
           </div>
         ) : (
           // MOBILE/TABLETTE
           <>
-            <IconButton
+            <button
               aria-label="open drawer"
               onClick={() => setDrawerOpen(true)}
               className="navbar81-burger"
+              style={{
+                fontSize: 18,
+                color: "#000",
+                fontWeight: 600,
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                padding: 0,
+                fontFamily: "Montserrat, Arial, sans-serif",
+              }}
             >
-              <MenuIcon style={{ fontSize: 32, color: "#b89d77" }} />
-            </IconButton>
+              Menu
+            </button>
             <Drawer
-              anchor="left"
+              anchor="top"
               open={drawerOpen}
               onClose={() => setDrawerOpen(false)}
               PaperProps={{
-                style: { width: "100vw", background: "#fff", padding: 0 },
+                style: {
+                  width: "100vw",
+                  height: "100%",
+                  background: "#fff",
+                  padding: 0,
+                },
               }}
             >
               <nav
@@ -365,24 +349,9 @@ const Navbar81 = (props) => {
                   padding: "36px 24px 24px 24px",
                 }}
               >
-                {/* Accueil en haut */}
                 <a
-                  onClick={() => setDrawerOpen(false)}
-                  href="/home"
-                  className="mobile-menu-link"
-                  style={{
-                    color: "#191818",
-                    fontWeight: "bold",
-                    textDecoration: "none",
-                    fontSize: "1.12rem",
-                    marginBottom: 8,
-                  }}
-                >
-                  Accueil
-                </a>
-                <a
-                  href="#Features24"
-                  onClick={(e) => handleAnchorClick(e, "Features24")}
+                  href="#Features25"
+                  onClick={(e) => handleAnchorClick(e, "Features25")}
                   className="mobile-menu-link"
                   style={{
                     color: "#191818",
@@ -460,7 +429,7 @@ const Navbar81 = (props) => {
                         marginLeft: 0,
                       }}
                     >
-                      <path d="M8 5v14l11-7z" fill="#b89d77" />
+                      <path d="M8 5v14l11-7z" fill="#000000ff" />
                     </svg>
                   </button>
                   {mobileDropdownOpen && (
@@ -470,7 +439,7 @@ const Navbar81 = (props) => {
                         flexDirection: "column",
                         gap: "18px",
                         paddingLeft: "18px",
-                        borderLeft: "2px solid #b89d77",
+                        borderLeft: "2px solid #000000ff",
                       }}
                     >
                       <a

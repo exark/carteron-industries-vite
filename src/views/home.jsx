@@ -2,8 +2,6 @@ import React, { Fragment, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
 import Navbar81 from "../components/navbar81";
-import Hero17 from "../components/hero17";
-import Features24 from "../components/features24";
 import Features25 from "../components/features25";
 import Steps2 from "../components/steps2";
 import Testimonial17 from "../components/testimonial17";
@@ -58,48 +56,6 @@ const Home = () => {
 
       
       <div id="Nos-Services" className="home-services">
-        <Features24
-          features24Id="Features24"
-          feature1Title={
-            <Fragment>
-              <span className="home-text29">Smart Agricultural Machinery</span>
-            </Fragment>
-          }
-          feature2Title={
-            <Fragment>
-              <span className="home-text30">Smart Baby Strollers</span>
-            </Fragment>
-          }
-          feature3Title={
-            <Fragment>
-              <span className="home-text31">Golf Gear</span>
-            </Fragment>
-          }
-          feature1Description={
-            <Fragment>
-              <span className="home-text32">
-                Optimize your agricultural processes with cutting-edge smart
-                technology.
-              </span>
-            </Fragment>
-          }
-          feature2Description={
-            <Fragment>
-              <span className="home-text33">
-                Ensure the safety and comfort of your little ones with smart
-                baby strollers.
-              </span>
-            </Fragment>
-          }
-          feature3Description={
-            <Fragment>
-              <span className="home-text34">
-                Enhance your golf game with smart tech solutions tailored to
-                your needs.
-              </span>
-            </Fragment>
-          }
-        ></Features24>
         <Features25
           features25Id="Features25"
           feature1Title={

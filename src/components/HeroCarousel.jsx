@@ -208,23 +208,26 @@ function HeroCarousel() {
             className="carousel-modal-box about-modal-anim"
             sx={{ position: "relative" }}
           >
-            <div className="about-modal-content-vertical">
+            <div className="about-modal-content-horizontal">
               {/* Header centré */}
-              <div className="about-modal-profile">
-                <img
-                  src="/images/lamiaCarteron.jpeg"
-                  alt="Portrait de Lamia Carteron"
-                  className="about-modal-img"
-                />
-                <div className="about-modal-name">Lamia Carteron</div>
-                <div className="about-modal-post">Fondatrice</div>
+              <div className="about-modal-profile-col">
+                <div className="about-modal-profile">
+                  <img
+                    src="/images/lamiaCarteron.jpeg"
+                    alt="Portrait de Lamia Carteron"
+                    className="about-modal-img"
+                  />
+                  <div className="about-modal-name">Lamia Carteron</div>
+                  <div className="about-modal-post">Fondatrice</div>
+                </div>
               </div>
-              <h2 className="about-modal-title" id="about-modal-title">
-                Carteron Industries
-              </h2>
+
               {/* Texte à gauche même sur mobile */}
               <div id="about-modal-description" className="about-modal-desc">
                 <section>
+                  <h2 className="about-modal-title" id="about-modal-title">
+                    Carteron Industries
+                  </h2>
                   <strong>Parcours&nbsp;:</strong>
                   <br />
                   Ingénieure en technologies agricoles, Lamia Carteron a fondé

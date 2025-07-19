@@ -29,7 +29,7 @@
 .hero-carousel-side-content {
   min-width: 310px;
   max-width: 380px;
-  padding: 48px 32px 48px 16px;
+  padding: 48px 32px 0px 16px;
   background: #fff;
   border-radius: 28px 0 0 28px;
   box-shadow: none;
@@ -55,17 +55,21 @@
 }
 
 .side-btn {
-  background: #b89d77 !important;
-  color: #fff !important;
-  font-weight: 700;
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-weight: 900;              /* texte encore plus gras */
   padding: 10px 28px;
-  border-radius: 26px;
   box-shadow: 0 2px 16px rgba(32, 101, 209, 0.06);
-  font-size: 1.02rem;
+  font-size: 5rem;              /* corrige l'erreur (700rem est une faute de frappe) */
   letter-spacing: 0.03em;
   text-transform: none;
   margin-top: 15% !important;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  border-radius: 8px;           /* suggestion : angles arrondis pour moderniser */
+  transition: box-shadow 0.2s, border-color 0.2s;
+  font-weight: 600 !important;
 }
+
 
 .hero-carousel-root {
   flex: 1 1 0;
@@ -160,18 +164,19 @@
   height: 40px;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(50, 50, 50, 0.08);
-  background: #b89d77 !important;
-  color: #ffff !important;
-  font-size: 1.23rem;
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
   transition: background 0.18s, color 0.18s;
   pointer-events: auto;
   margin: 0 2px;
-  border: none;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 .hero-nav-btn:hover {
-  background: #fff !important;
-  color: #b89d77 !important;
+  background: #000000 !important;
+  color: #ffffff !important;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 .swiper-slide {
@@ -288,6 +293,7 @@
   font-size: 1.25rem;
   margin-bottom: 40px;
   text-align: left;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 .carousel-modal-actions {
@@ -302,21 +308,26 @@
 }
 
 .carousel-modal-close {
-  background: #b89d77 !important;
-  font-weight: 700;
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
   letter-spacing: 1px;
   padding-left: 22px;
   padding-right: 22px;
   border-radius: 22px;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+
 }
 
 .about-modal-anim {
   position: relative;
   border: 3px solid transparent; /* Nécessaire pour l'effet */
   border-radius: 18px;
-  background: linear-gradient(#fff, #fff) padding-box,
-    /* fond blanc à l'intérieur */
-      linear-gradient(135deg, #c7a17a, #73553c, #c7a17a 70%) border-box; /* dégradé marron clair → foncé */
+  background: 
+  linear-gradient(#fff, #fff) padding-box, /* fond blanc à l'intérieur */
+  linear-gradient(135deg, #b5daf7, #64b5f6, #b5daf7 70%) border-box; /* dégradé bleu clair */
+
+
   background-size: 200% 200%; /* Plus large pour l'animation */
   background-origin: border-box;
   background-clip: padding-box, border-box;
@@ -369,20 +380,14 @@
 /* --------------------------------------
    MODAL ABOUT - SCROLLABLE (desktop/tablette uniquement)
 ----------------------------------------- */
-.carousel-modal-box.about-modal-anim {
-  max-height: 90vh;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: #b89d77 #eee;
-}
+
 .carousel-modal-box.about-modal-anim::-webkit-scrollbar {
   width: 7px;
   background: #eee;
   border-radius: 6px;
 }
 .carousel-modal-box.about-modal-anim::-webkit-scrollbar-thumb {
-  background: #b89d77;
+  background: #000000;
   border-radius: 6px;
 }
 
@@ -487,21 +492,22 @@
   object-fit: cover;
   box-shadow: 0 2px 8px rgba(80,80,80,0.12);
   margin-bottom: 8px;
-  border: 4px solid #b89d77;
 }
 
 .about-modal-name {
   font-weight: 700;
   font-size: 1.17rem;
   margin-bottom: 2px;
-  color: #333;
+  color: #000000;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 .about-modal-post {
-  color: #b89d77;
+  color: #000000;
   font-weight: 600;
   font-size: 1rem;
   margin-bottom: 10px;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 .about-modal-title {
@@ -510,27 +516,28 @@
   margin-bottom: 24px;
   letter-spacing: .02em;
   text-shadow: 0 1px 8px rgba(100, 80, 40, 0.07);
-  border-bottom: 2px solid #e3d7c1;
   padding-bottom: 8px;
   min-width: 180px;
-  color: #b89d77;
+  color: #000000;
   text-align: center;
   width: fit-content;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 .about-modal-desc {
   width: 100%;
-  color: #444;
+  color: #000000;
   font-size: 1.22rem;
   margin-bottom: 38px;
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 18px;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 .about-modal-desc section strong {
-  color: #73553c;
+  color: #000000;
 }
 
 @media (max-width: 900px) {
@@ -556,9 +563,70 @@
 }
 @media (max-width: 600px) {
   .about-modal-title {
-    font-size: 1.01rem !important;
+    font-size: 1.20rem !important;
   }
   .about-modal-desc {
     font-size: 0.96rem !important;
+  }
+}
+
+body, html {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+}
+* {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+}
+
+/* Desktop : deux colonnes */
+.about-modal-content-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  align-items: center;
+  width: 100%;
+}
+
+.about-modal-profile-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+  max-width: 220px;
+  flex: 0 0 210px;
+  justify-content: center;
+  margin-bottom: 30%;
+}
+
+.about-modal-details-col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.about-modal-desc {
+  text-align: left;
+}
+
+
+
+/* Mobile (<900px) : tout repasse en colonne et centré */
+@media (max-width: 900px) {
+  .about-modal-content-horizontal {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+  .about-modal-profile-col,
+  .about-modal-details-col {
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+    align-items: center !important;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+  .about-modal-desc {
+    text-align: left !important;
   }
 }

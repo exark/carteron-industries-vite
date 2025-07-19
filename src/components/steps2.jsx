@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from "react";
+import Button from '@mui/material/Button';
 
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-import './steps2.css'
+import "./steps2.css";
 
 const Steps2 = (props) => {
   return (
@@ -22,9 +23,21 @@ const Steps2 = (props) => {
               libero vitae erat.
             </p>
             <div className="steps2-actions">
-              <button className="thq-button-animated thq-button-filled steps2-button">
-                <span className="thq-body-small">Main action</span>
-              </button>
+              <Button
+                variant="contained"
+                className="steps2-button"
+                style={{
+                  background: "#fff",
+                  color: "#000",
+                  fontWeight: 700,
+                  boxShadow: "0 2px 8px rgba(32, 101, 209, 0.10)",
+                  fontFamily: "Montserrat, Arial, Helvetica, sans-serif",
+                  textTransform: "none",
+                  padding: "10px 28px",
+                }}
+              >
+                Main action
+              </Button>
             </div>
           </div>
           <div className="steps2-container3">
@@ -118,8 +131,8 @@ const Steps2 = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 Steps2.defaultProps = {
   step3Title: undefined,
@@ -129,9 +142,9 @@ Steps2.defaultProps = {
   step2Description: undefined,
   step4Description: undefined,
   step2Title: undefined,
-  rootClassName: '',
+  rootClassName: "",
   step1Title: undefined,
-}
+};
 
 Steps2.propTypes = {
   step3Title: PropTypes.element,
@@ -143,6 +156,6 @@ Steps2.propTypes = {
   step2Title: PropTypes.element,
   rootClassName: PropTypes.string,
   step1Title: PropTypes.element,
-}
+};
 
-export default Steps2
+export default Steps2;

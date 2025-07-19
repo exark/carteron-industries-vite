@@ -1,5 +1,11 @@
+body, html {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+}
+* {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+}
+
 .steps2-container1 {
-  width: 80%;
   display: flex;
   position: relative;
   align-items: center;
@@ -11,7 +17,6 @@
   gap: var(--dl-layout-space-fourunits);
   width: 100%;
   display: flex;
-  align-items: flex-start;
   flex-direction: row;
 }
  
@@ -26,6 +31,7 @@
   position: sticky;
   align-items: flex-start;
   flex-direction: column;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
  
 .steps2-actions {
@@ -43,7 +49,7 @@
   position: sticky;
   transform: rotate(-2deg);
   margin-bottom: var(--dl-layout-space-twounits);
-  background-color: var(--dl-color-theme-accent1);
+  background-color: #ffffff;
 }
  
 .steps2-text14 {
@@ -64,7 +70,7 @@
   position: sticky;
   transform: rotate(2deg);
   margin-bottom: var(--dl-layout-space-twounits);
-  background-color: var(--dl-color-theme-accent2);
+  background-color: #ffffff;
 }
  
 .steps2-text17 {
@@ -85,7 +91,7 @@
   position: sticky;
   transform: rotate(-2deg);
   margin-bottom: var(--dl-layout-space-twounits);
-  background-color: var(--dl-color-theme-accent1);
+  background-color: #ffffff;
 }
  
 .steps2-text20 {
@@ -105,7 +111,7 @@
   top: 10%;
   position: sticky;
   transform: rotate(2deg);
-  background-color: var(--dl-color-theme-accent2);
+  background-color: #ffffff;
 }
  
 .steps2-text23 {
@@ -155,18 +161,48 @@
  
 .steps2root-class-name {
   background: linear-gradient(
-    120deg,
-    #f7f6f4 0%,
-    #f3e9da 40%,
-    #e3d7c1 70%,
-    #b89d77 100%
-  );
+  -120deg,
+  #e6f0fa 0%,     /* Bleu très clair */
+  #b5daf7 40%,    /* Bleu pastel */
+  #90caf9 70%,    /* Bleu clair un peu plus soutenu */
+  #64b5f6 100%    /* Bleu clair soutenu */
+);
   background-size: 200% 200%;
   animation: movebg 9s cubic-bezier(0.4,0,0.2,1) infinite;
-  box-shadow: 0 4px 28px 0 rgba(107, 63, 24, 0.08),   /* soft brown shadow */
-              0 1.5px 10px 0 rgba(185, 157, 119, 0.12); /* beige highlight */
+  box-shadow: 0 4px 28px 0 rgba(24, 60, 107, 0.08),   /* soft brown shadow */
+              0 1.5px 10px 0 rgba(119, 130, 185, 0.12); /* beige highlight */
   border-radius: 18px; /* optional: smooth corners */
-  border: 1.5px solid #e3d7c1; /* subtle beige border */
+  border: 1.5px solid #4d68ac; /* subtle beige border */
+
+  width: 100%;
+  max-width: 1200px;         /* largeur max sur desktop, ajuste à ta convenance */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 32px;        /* espace interne */
+}
+
+@media (max-width: 991px) {
+  .steps2root-class-name {
+    max-width: 100%;
+    padding: 28px 12px;
+  }
+}
+
+/* TABLETTE */
+@media (max-width: 900px) {
+  .steps2root-class-name {
+    max-width: 80vw;
+    padding: 28px 12px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .steps2root-class-name {
+    max-width: 90vw;
+    padding: 18px 4vw;
+    border-radius: 10px;
+  }
 }
 
 @keyframes movebg {
@@ -176,37 +212,159 @@
 }
 
  
-@media(max-width: 991px) {
+@media (max-width: 991px) {
   .steps2-max-width {
     flex-direction: column;
+    gap: 32px;
+  }
+  .steps2-container3 {
+    width: 100%;
   }
 }
- 
-@media(max-width: 767px) {
+
+/* Tablette */
+@media (max-width: 767px) {
   .steps2-section-header {
     position: static;
-    margin-bottom: var(--dl-layout-space-twounits);
+    margin-bottom: 32px;
+    align-items: center;
+    text-align: center;
   }
   .steps2-actions {
     width: 100%;
-    align-self: flex-start;
+    justify-content: center;
   }
-  .steps2-container4 {
+  .steps2-container3 {
     width: 100%;
+    flex-direction: column;
+    gap: 24px;
+    display: flex;
   }
-  .steps2-container5 {
-    width: 100%;
-  }
-  .steps2-container6 {
-    width: 100%;
-  }
+  .steps2-container4,
+  .steps2-container5,
+  .steps2-container6,
   .steps2-container7 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 479px) {
+  .steps2-button {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 0;
+  }
+  .steps2-section-header {
+    padding: 0 8px;
+  }
+  .steps2-container4,
+  .steps2-container5,
+  .steps2-container6,
+  .steps2-container7 {
+    padding: 16px 8px;
+  }
+}
+
+/* Desktop > 991px : rien à changer */
+
+@media (max-width: 1200px) {
+  .steps2-container1 {
+    width: 95%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* Tablette */
+@media (max-width: 991px) {
+  .steps2-container1 {
+    width: 98%;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .steps2-max-width {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .steps2-container3 {
     width: 100%;
   }
 }
- 
-@media(max-width: 479px) {
+
+/* Petit écran/tablette */
+@media (max-width: 767px) {
+  .steps2-container1 {
+    width: 100%;
+    padding: 0 4px;
+  }
+  .steps2-section-header {
+    position: static;
+    margin-bottom: 32px;
+    align-items: center;
+    text-align: center;
+    padding: 0 4px;
+  }
+  .steps2-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  .steps2-max-width {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .steps2-container2 {
+    width: 100%;
+    padding: 0;
+  }
+  .steps2-container3 {
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+    display: flex;
+  }
+  .steps2-container4,
+  .steps2-container5,
+  .steps2-container6,
+  .steps2-container7 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+    padding-left: 4px;
+    padding-right: 4px;
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .thq-heading-2, .thq-heading-3, .thq-body-large, .thq-body-small {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Mobile */
+@media (max-width: 479px) {
+  .steps2-container1 {
+    padding: 0 2px;
+  }
+  .steps2-section-header {
+    padding: 0 2px;
+  }
+  .steps2-container4,
+  .steps2-container5,
+  .steps2-container6,
+  .steps2-container7 {
+    padding: 12px 2px;
+    font-size: 14px;
+    min-width: 0;
+  }
   .steps2-button {
     width: 100%;
+    font-size: 16px;
+    padding: 10px 0;
   }
 }

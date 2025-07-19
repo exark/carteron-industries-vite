@@ -1,6 +1,6 @@
 .custom-footer {
   background: #fafafc;
-  border-top: 1.5px solid #e6bb7b;
+  border-top: 1.5px solid #000000;
   color: #232323;
   padding: 40px 0 15px 0;
   font-family: inherit;
@@ -55,7 +55,7 @@
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 9px;
-  border-bottom: 2px solid #e6bb7b;
+  border-bottom: 2px solid #3E6AE1;
   display: inline-block;
   padding-bottom: 3px;
 }
@@ -78,13 +78,13 @@
 }
 
 .footer-links-group a:hover {
-  color: #b6852c;
+  color: #3E6AE1;
   text-decoration: underline;
 }
 
 .footer-divider {
   border: none;
-  border-top: 1px solid #e6bb7b;
+  border-top: 1px solid #3E6AE1;
   margin: 26px 0 18px 0; /* remove auto */
   width: 100%; /* instead of 96% */
   max-width: none;
@@ -116,7 +116,7 @@
 }
 
 .footer-icons a:hover {
-  color: #b6852c;
+  color: #3E6AE1;
   transform: scale(1.18);
 }
 
@@ -130,4 +130,11 @@
   .footer-links-group {
     gap: 30px;
   }
+}
+
+body, html {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+}
+* {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
 }
