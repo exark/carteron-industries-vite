@@ -7,52 +7,52 @@ import "./HeroCarousel.css";
 
 const items = [
   {
-    name: "Artificial Intelligence",
-    description: "You can do more with AI.",
+    name: "Intelligence Artificielle",
+    description: "L'IA au service de l'agriculture.",
     image: "/images/basket.jpg",
     popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
   },
   {
-    name: "Productivity",
-    description: "Enhance your productivity.",
+    name: "Astrologie & Précision",
+    description: "Des solutions sur-mesure.",
     image: "/images/astrology.jpg",
     popupText: "Boostez votre productivité grâce à nos solutions innovantes.",
   },
   {
-    name: "Product",
-    description: "Launching Apple Vision Pro.",
-    image: "/images/argicole.jpg",
-    popupText: "bla bla",
+    name: "Innovation Agricole",
+    description: "Modernisez vos machines.",
+    image: "/images/tracteur1.png",
+    popupText: "L'innovation au cœur de vos exploitations.",
   },
   {
-    name: "Product",
-    description: "Launching Apple Vision Pro.",
-    image: "/images/argicole.jpg",
-    popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
+    name: "Start-up & Croissance",
+    description: "Accompagner l'essor de votre activité.",
+    image: "/images/startup.jpg",
+    popupText: "Entreprendre avec des outils adaptés au monde agricole.",
   },
   {
-    name: "Product",
-    description: "Launching Apple Vision Pro.",
-    image: "/images/argicole.jpg",
-    popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
+    name: "Travail & Performance",
+    description: "Optimisez vos rendements.",
+    image: "/images/workhard.jpg",
+    popupText: "Des solutions pour travailler mieux, chaque jour.",
   },
   {
-    name: "Product",
-    description: "Launching Apple Vision Pro.",
-    image: "/images/argicole.jpg",
-    popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
+    name: "Technologie & Mobilité",
+    description: "Le numérique au service du terrain.",
+    image: "/images/macbookpro.jpg",
+    popupText: "La technologie pour une agriculture connectée.",
   },
   {
-    name: "Product",
-    description: "Launching Apple Vision Pro.",
-    image: "/images/argicole.jpg",
-    popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
+    name: "Nature & Croissance",
+    description: "L'importance de la biodiversité.",
+    image: "/images/fleur.jpg",
+    popupText: "Préserver la nature tout en innovant.",
   },
   {
-    name: "Product",
-    description: "Launching Apple Vision Pro.",
-    image: "/images/argicole.jpg",
-    popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
+    name: "Projet & Vision",
+    description: "Construisons l'avenir ensemble.",
+    image: "/images/projet.jpg",
+    popupText: "Votre projet, notre expertise pour demain.",
   },
 ];
 
@@ -308,65 +308,54 @@ function HeroCarousel() {
       <Modal
         open={aboutModalOpen}
         onClose={() => setAboutModalOpen(false)}
-        className="carousel-modal"
+        className="carousel-modal about-modal-light"
         aria-labelledby="about-modal-title"
         aria-describedby="about-modal-description"
         closeAfterTransition
       >
         <Fade in={aboutModalOpen} timeout={400}>
           <Box
-            className="carousel-modal-box about-modal-anim"
-            sx={{ position: "relative" }}
+            className="carousel-modal-box about-modal-light-box"
+            sx={{ position: "relative", padding: 0, overflow: "hidden" }}
           >
-            <div className="about-modal-content-horizontal">
-              {/* Header centré */}
-              <div className="about-modal-profile-col">
-                <div className="about-modal-profile">
-                  <img
-                    src="/images/lamiaCarteron.jpeg"
-                    alt="Portrait de Lamia Carteron"
-                    className="about-modal-img"
-                  />
-                  <div className="about-modal-name">Lamia Carteron</div>
-                  <div className="about-modal-post">Fondatrice</div>
-                </div>
+            <div className="about-modal-light-content">
+              {/* Avatar en haut */}
+              <div className="about-modal-light-avatar-block">
+                <img
+                  src="/images/lamiaCarteron.jpeg"
+                  alt="Portrait de Lamia Carteron"
+                  className="about-modal-light-avatar-img"
+                />
+                <div className="about-modal-light-name">Lamia Carteron</div>
+                <div className="about-modal-light-post">Fondatrice</div>
               </div>
-              {/* Texte à gauche même sur mobile */}
-              <div id="about-modal-description" className="about-modal-desc">
-                <section>
-                  <h2 className="about-modal-title" id="about-modal-title">
-                    Carteron Industries
-                  </h2>
-                  <strong>Parcours&nbsp;:</strong>
-                  <br />
-                  Ingénieure en technologies agricoles, Lamia Carteron a fondé
-                  Carteron Industries après 10 ans d’expérience dans
-                  l’optimisation des systèmes pour machines agricoles, avec une
-                  passion pour l’innovation et l’accompagnement des acteurs du
-                  secteur.
+              {/* Paragraphes */}
+              <div className="about-modal-light-sections">
+                <section className="about-modal-light-section">
+                  <div className="about-modal-light-section-title">Parcours</div>
+                  <div className="about-modal-light-section-desc">
+                    Ingénieure en technologies agricoles, Lamia Carteron a fondé Carteron Industries après 10 ans d’expérience dans l’optimisation des systèmes pour machines agricoles, avec une passion pour l’innovation et l’accompagnement des acteurs du secteur.
+                  </div>
                 </section>
-                <section>
-                  <strong>Mission&nbsp;:</strong>
-                  <br />
-                  Offrir des solutions intelligentes pour moderniser
-                  l’agriculture, améliorer les rendements, réduire l’impact
-                  environnemental et accompagner les agriculteurs dans leur
-                  transformation digitale.
+                <section className="about-modal-light-section">
+                  <div className="about-modal-light-section-title">Mission</div>
+                  <div className="about-modal-light-section-desc">
+                    Offrir des solutions intelligentes pour moderniser l’agriculture, améliorer les rendements, réduire l’impact environnemental et accompagner les agriculteurs dans leur transformation digitale.
+                  </div>
                 </section>
-                <section>
-                  <strong>Équipe&nbsp;:</strong>
-                  <br />
-                  Notre équipe pluridisciplinaire regroupe ingénieurs,
-                  développeurs et experts terrain, tous animés par la volonté de
-                  faire évoluer l’agriculture grâce à la technologie.
+                <section className="about-modal-light-section">
+                  <div className="about-modal-light-section-title">Équipe</div>
+                  <div className="about-modal-light-section-desc">
+                    Notre équipe pluridisciplinaire regroupe ingénieurs, développeurs et experts terrain, tous animés par la volonté de faire évoluer l’agriculture grâce à la technologie.
+                  </div>
                 </section>
               </div>
-              <div className="carousel-modal-actions">
+              <div className="carousel-modal-actions about-modal-light-actions">
                 <Button
                   onClick={() => setAboutModalOpen(false)}
                   variant="contained"
                   color="primary"
-                  className="carousel-modal-close"
+                  className="carousel-modal-close about-modal-light-close-btn"
                   aria-label="Fermer la fenêtre à propos"
                 >
                   Fermer

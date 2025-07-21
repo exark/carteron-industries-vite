@@ -146,8 +146,8 @@ const Navbar81 = (props) => {
           <div data-thq="thq-navbar-nav" className="navbar81-desktop-menu">
             <nav className="navbar81-links1">
               <a
-                href="#accompagnement"
-                onClick={(e) => handleAnchorClick(e, "accompagnement")}
+                href="#services"
+                onClick={(e) => handleAnchorClick(e, "services")}
                 className="navbar81-link11 thq-body-small"
               >
                 <span className="navbar81-text14 thq-link">
@@ -262,22 +262,22 @@ const Navbar81 = (props) => {
                 <div style={{ position: "relative", height: "100%" }}>
                   <nav className="navbar81-mobile-links">
                     <a
-                      href="#Features25"
-                      onClick={(e) => handleMobileNav(e, "Features25")}
+                      href="#services"
+                      onClick={(e) => handleMobileNav(e, "services")}
                       className="mobile-menu-link"
                     >
-                      Nos Service
+                      Nos services
                     </a>
                     <a
-                      href="#Testimonial17"
-                      onClick={(e) => handleMobileNav(e, "Testimonial17")}
+                      href="#temoignages"
+                      onClick={(e) => handleMobileNav(e, "temoignages")}
                       className="mobile-menu-link"
                     >
-                      Temoignage
+                      Témoignages
                     </a>
                     <a
-                      href="#FAQ9"
-                      onClick={(e) => handleMobileNav(e, "FAQ9")}
+                      href="#faq"
+                      onClick={(e) => handleMobileNav(e, "faq")}
                       className="mobile-menu-link"
                     >
                       FAQ
