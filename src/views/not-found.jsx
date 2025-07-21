@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 
 import './not-found.css'
 
-const NotFound = (props) => {
+const NotFound = () => {
   return (
     <div className="not-found-container1">
       <Helmet>

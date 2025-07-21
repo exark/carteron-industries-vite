@@ -4,220 +4,112 @@ import PropTypes from 'prop-types'
 
 import './testimonial17.css'
 
-const Testimonial17 = (props) => {
+const Testimonial17 = ({
+  testimonial17Id = '',
+  heading1 = "Témoignages Clients",
+  content1 = "Découvrez ce que nos clients disent de nos solutions innovantes pour l'agriculture moderne. Leur satisfaction est notre plus grande récompense.",
+  author1Name = "Pierre Dubois",
+  author1Position = "Agriculteur, Ferme Dubois",
+  author1Alt = "Pierre Dubois",
+  review1 = "Carteron Industries a révolutionné notre façon de travailler. Leurs solutions technologiques nous ont permis d'augmenter notre productivité de 40% tout en réduisant nos coûts.",
+  author2Name = "Marie Laurent",
+  author2Position = "Directrice, Coopérative Agricole",
+  author2Alt = "Marie Laurent",
+  review2 = "L'équipe de Carteron Industries est exceptionnelle. Leur expertise technique et leur accompagnement personnalisé ont transformé notre exploitation. Je recommande vivement !",
+  author3Name = "Jean-Claude Moreau",
+  author3Position = "Propriétaire, Domaine Moreau",
+  author3Alt = "Jean-Claude Moreau",
+  review3 = "Après 30 ans d'agriculture traditionnelle, j'ai découvert Carteron Industries. Leurs innovations m'ont permis de moderniser mon exploitation tout en préservant nos traditions.",
+  author4Name = "Sophie Martin",
+  author4Position = "Ingénieure Agronome, Institut Agricole",
+  author4Alt = "Sophie Martin",
+  review4 = "En tant qu'experte du secteur, je peux affirmer que Carteron Industries est à la pointe de l'innovation agricole. Leurs solutions sont non seulement efficaces mais aussi durables.",
+}) => {
   return (
-    <div id={props.testimonial17Id} className="thq-section-padding">
+    <div id={testimonial17Id} className="thq-section-padding">
       <div className="testimonial17-max-width thq-section-max-width">
-        <div className="testimonial17-container10">
-          <h2 className="thq-heading-2">
-            {props.heading1 ?? (
-              <Fragment>
-                <span className="testimonial17-text27">Testimonials</span>
-              </Fragment>
-            )}
-          </h2>
-          <span className="testimonial17-text11 thq-body-small">
-            {props.content1 ?? (
-              <Fragment>
-                <span className="testimonial17-text35">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse varius enim in eros elementum tristique. Duis
-                  cursus, mi quis viverra ornare, eros dolor interdum nulla.
-                </span>
-              </Fragment>
-            )}
-          </span>
+        <div className="testimonial17-header">
+          <h2 className="testimonial17-title">{heading1}</h2>
+          <p className="testimonial17-subtitle">{content1}</p>
         </div>
-        <div className="thq-grid-2">
-          <div className="thq-animated-card-bg-2">
-            <div className="thq-animated-card-bg-1">
-              <div
-                data-animated="true"
-                className="thq-card testimonial17-card1"
-              >
-                <div className="testimonial17-container12">
+        
+        <div className="testimonial17-container">
+          {/* Premier témoignage - Aligné à droite */}
+          <div className="testimonial17-item testimonial17-right">
+            <div className="testimonial17-content">
+              <div className="testimonial17-text">
+                <p className="testimonial17-quote">{review1}</p>
+                <div className="testimonial17-author">
                   <img
-                    alt={props.author1Alt}
+                    alt={author1Alt}
                     src="/images/stoick.jpg"
-                    className="testimonial17-image1"
+                    className="testimonial17-avatar"
                   />
-                  <div className="testimonial17-container13">
-                    <strong className="thq-body-large">
-                      {props.author1Name ?? (
-                        <Fragment>
-                          <span className="testimonial17-text34">
-                            Author Name
-                          </span>
-                        </Fragment>
-                      )}
-                    </strong>
-                    <span className="thq-body-small">
-                      {props.author1Position ?? (
-                        <Fragment>
-                          <span className="testimonial17-text28">
-                            Position, Company name
-                          </span>
-                        </Fragment>
-                      )}
-                    </span>
+                  <div className="testimonial17-author-info">
+                    <h4 className="testimonial17-name">{author1Name}</h4>
+                    <p className="testimonial17-position">{author1Position}</p>
                   </div>
                 </div>
-                <span className="testimonial17-text14 thq-body-small">
-                  {props.review1 ?? (
-                    <Fragment>
-                      <span className="testimonial17-text37">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse varius enim in eros elementum tristique.
-                        Duis cursus, mi quis viverra ornare, eros dolor interdum
-                        nulla.
-                      </span>
-                    </Fragment>
-                  )}
-                </span>
               </div>
             </div>
           </div>
-          <div className="thq-animated-card-bg-2">
-            <div className="thq-animated-card-bg-1">
-              <div
-                data-animated="true"
-                className="thq-card testimonial17-card2"
-              >
-                <div className="testimonial17-container14">
+
+          {/* Deuxième témoignage - Aligné à gauche */}
+          <div className="testimonial17-item testimonial17-left">
+            <div className="testimonial17-content">
+              <div className="testimonial17-text">
+                <p className="testimonial17-quote">{review2}</p>
+                <div className="testimonial17-author">
                   <img
-                    alt={props.author2Alt}
+                    alt={author2Alt}
                     src="/images/fille en boite.jpg"
-                    className="testimonial17-image2"
+                    className="testimonial17-avatar"
                   />
-                  <div className="testimonial17-container15">
-                    <strong className="thq-body-large">
-                      {props.author2Name ?? (
-                        <Fragment>
-                          <span className="testimonial17-text26">
-                            Author Name
-                          </span>
-                        </Fragment>
-                      )}
-                    </strong>
-                    <span className="thq-body-small">
-                      {props.author2Position ?? (
-                        <Fragment>
-                          <span className="testimonial17-text33">
-                            Position, Company name
-                          </span>
-                        </Fragment>
-                      )}
-                    </span>
+                  <div className="testimonial17-author-info">
+                    <h4 className="testimonial17-name">{author2Name}</h4>
+                    <p className="testimonial17-position">{author2Position}</p>
                   </div>
                 </div>
-                <span className="testimonial17-text17 thq-body-small">
-                  {props.review2 ?? (
-                    <Fragment>
-                      <span className="testimonial17-text25">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse varius enim in eros elementum tristique.
-                        Duis cursus, mi quis viverra ornare, eros dolor interdum
-                        nulla.
-                      </span>
-                    </Fragment>
-                  )}
-                </span>
               </div>
             </div>
           </div>
-          <div className="thq-animated-card-bg-2">
-            <div className="thq-animated-card-bg-1">
-              <div
-                data-animated="true"
-                className="thq-card testimonial17-card3"
-              >
-                <div className="testimonial17-container16">
+
+          {/* Troisième témoignage - Aligné à droite */}
+          <div className="testimonial17-item testimonial17-right">
+            <div className="testimonial17-content">
+              <div className="testimonial17-text">
+                <p className="testimonial17-quote">{review3}</p>
+                <div className="testimonial17-author">
                   <img
-                    alt={props.author3Alt}
+                    alt={author3Alt}
                     src="/images/rousse.jpg"
-                    className="testimonial17-image3"
+                    className="testimonial17-avatar"
                   />
-                  <div className="testimonial17-container17">
-                    <strong className="thq-body-large">
-                      {props.author3Name ?? (
-                        <Fragment>
-                          <span className="testimonial17-text31">
-                            Author Name
-                          </span>
-                        </Fragment>
-                      )}
-                    </strong>
-                    <span className="thq-body-small">
-                      {props.author3Position ?? (
-                        <Fragment>
-                          <span className="testimonial17-text30">
-                            Position, Company name
-                          </span>
-                        </Fragment>
-                      )}
-                    </span>
+                  <div className="testimonial17-author-info">
+                    <h4 className="testimonial17-name">{author3Name}</h4>
+                    <p className="testimonial17-position">{author3Position}</p>
                   </div>
                 </div>
-                <span className="testimonial17-text20 thq-body-small">
-                  {props.review3 ?? (
-                    <Fragment>
-                      <span className="testimonial17-text32">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse varius enim in eros elementum tristique.
-                        Duis cursus, mi quis viverra ornare, eros dolor interdum
-                        nulla.
-                      </span>
-                    </Fragment>
-                  )}
-                </span>
               </div>
             </div>
           </div>
-          <div className="thq-animated-card-bg-2">
-            <div className="thq-animated-card-bg-1">
-              <div
-                data-animated="true"
-                className="thq-card testimonial17-card4"
-              >
-                <div className="testimonial17-container18">
+
+          {/* Quatrième témoignage - Aligné à gauche */}
+          <div className="testimonial17-item testimonial17-left">
+            <div className="testimonial17-content">
+              <div className="testimonial17-text">
+                <p className="testimonial17-quote">{review4}</p>
+                <div className="testimonial17-author">
                   <img
-                    alt={props.author4Alt}
+                    alt={author4Alt}
                     src="/images/graffiti.jpg"
-                    className="testimonial17-image4"
+                    className="testimonial17-avatar"
                   />
-                  <div className="testimonial17-container19">
-                    <strong className="thq-body-large">
-                      {props.author4Name ?? (
-                        <Fragment>
-                          <span className="testimonial17-text36">
-                            Author Name
-                          </span>
-                        </Fragment>
-                      )}
-                    </strong>
-                    <span className="thq-body-small">
-                      {props.author4Position ?? (
-                        <Fragment>
-                          <span className="testimonial17-text24">
-                            Position, Company name
-                          </span>
-                        </Fragment>
-                      )}
-                    </span>
+                  <div className="testimonial17-author-info">
+                    <h4 className="testimonial17-name">{author4Name}</h4>
+                    <p className="testimonial17-position">{author4Position}</p>
                   </div>
                 </div>
-                <span className="testimonial17-text23 thq-body-small">
-                  {props.review4 ?? (
-                    <Fragment>
-                      <span className="testimonial17-text29">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse varius enim in eros elementum tristique.
-                        Duis cursus, mi quis viverra ornare, eros dolor interdum
-                        nulla.
-                      </span>
-                    </Fragment>
-                  )}
-                </span>
               </div>
             </div>
           </div>
@@ -227,56 +119,26 @@ const Testimonial17 = (props) => {
   )
 }
 
-Testimonial17.defaultProps = {
-  author2Src:undefined,
-    author4Position: undefined,
-  review2: undefined,
-  author2Name: undefined,
-  author1Src:undefined,
-  heading1: undefined,
-  testimonial17Id: '',
-  author2Alt: 'image',
-  author1Position: undefined,
-  review4: undefined,
-  author3Src:undefined,
-  author3Position: undefined,
-  author3Name: undefined,
-  review3: undefined,
-  author4Alt: 'image',
-  author1Alt: 'image',
-  author4Src: undefined,
-  author2Position: undefined,
-  author1Name: undefined,
-  content1: undefined,
-  author4Name: undefined,
-  review1: undefined,
-  author3Alt: 'image',
-}
-
 Testimonial17.propTypes = {
-  author2Src: PropTypes.string,
-  author4Position: PropTypes.element,
-  review2: PropTypes.element,
-  author2Name: PropTypes.element,
-  author1Src: PropTypes.string,
-  heading1: PropTypes.element,
   testimonial17Id: PropTypes.string,
-  author2Alt: PropTypes.string,
-  author1Position: PropTypes.element,
-  review4: PropTypes.element,
-  author3Src: PropTypes.string,
-  author3Position: PropTypes.element,
-  author3Name: PropTypes.element,
-  review3: PropTypes.element,
-  author4Alt: PropTypes.string,
+  heading1: PropTypes.string,
+  content1: PropTypes.string,
+  author1Name: PropTypes.string,
+  author1Position: PropTypes.string,
   author1Alt: PropTypes.string,
-  author4Src: PropTypes.string,
-  author2Position: PropTypes.element,
-  author1Name: PropTypes.element,
-  content1: PropTypes.element,
-  author4Name: PropTypes.element,
-  review1: PropTypes.element,
+  review1: PropTypes.string,
+  author2Name: PropTypes.string,
+  author2Position: PropTypes.string,
+  author2Alt: PropTypes.string,
+  review2: PropTypes.string,
+  author3Name: PropTypes.string,
+  author3Position: PropTypes.string,
   author3Alt: PropTypes.string,
+  review3: PropTypes.string,
+  author4Name: PropTypes.string,
+  author4Position: PropTypes.string,
+  author4Alt: PropTypes.string,
+  review4: PropTypes.string,
 }
 
 export default Testimonial17

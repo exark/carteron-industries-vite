@@ -13,33 +13,44 @@ const Navbar81 = (props) => {
   const [link5DropdownVisible, setLink5DropdownVisible] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [mobileSubMenuOpen, setMobileSubMenuOpen] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
   const isDesktop = useMediaQuery("(min-width:1024px)");
 
-  // Same as your original (desktop dropdown)
+  // Refs pour la gestion du dropdown
+  const navbarRef = useRef(null);
+  const megaMenuRef = useRef(null);
   const autreRef = useRef(null);
-  const dropdownRef = useRef(null);
 
-  useEffect(() => {
-    if (!link5DropdownVisible) return;
-    const handleClick = (event) => {
-      if (
-        autreRef.current &&
-        !autreRef.current.contains(event.target) &&
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target)
-      ) {
-        setLink5DropdownVisible(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
-  }, [link5DropdownVisible]);
+  // Gestion du hover pour le mega menu
+  const handleMegaMenuMouseEnter = () => {
+    if (isDesktop) {
+      setLink5DropdownVisible(true);
+    }
+  };
+
+  const handleMegaMenuMouseLeave = () => {
+    if (isDesktop) {
+      setLink5DropdownVisible(false);
+    }
+  };
+
+  // Gestion spécifique pour le bouton "autre"
+  const handleAutreMouseEnter = () => {
+    if (isDesktop) {
+      setLink5DropdownVisible(true);
+    }
+  };
+
+  const handleAutreMouseLeave = () => {
+    // Ne pas fermer ici, laisser le mega menu gérer la fermeture
+  };
 
   const handleLogoClick = (e) => {
     e.preventDefault();
+    setLink5DropdownVisible(false); // Ferme le mega menu
     if (location.pathname === "/home" || location.pathname === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
@@ -51,6 +62,7 @@ const Navbar81 = (props) => {
 
   const handleAnchorClick = (e, anchorId) => {
     e.preventDefault();
+    setLink5DropdownVisible(false); // Ferme le mega menu
     if (location.pathname === "/home" || location.pathname === "/") {
       const el = document.getElementById(anchorId);
       if (el) {
@@ -60,6 +72,30 @@ const Navbar81 = (props) => {
       navigate("/home", { state: { anchorId } });
     }
     setDrawerOpen(false);
+  };
+
+  // Remplacer handleMobileLinkClick par une version harmonisée
+  const handleMobileNav = (e, anchorId) => {
+    e.preventDefault();
+    setDrawerOpen(false);
+    setMobileSubMenuOpen(false);
+    if (location.pathname === "/home" || location.pathname === "/") {
+      if (anchorId) {
+        const el = document.getElementById(anchorId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    } else {
+      if (anchorId) {
+        navigate("/home", { state: { anchorId } });
+      } else {
+        navigate("/home", { replace: true });
+        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+      }
+    }
   };
 
   const [showNavbar, setShowNavbar] = useState(true);
@@ -84,9 +120,22 @@ const Navbar81 = (props) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isDesktop]);
 
+  // Fonction de scroll ou redirection smooth
+  const handleNavScroll = (anchorId) => {
+    if (location.pathname === "/home") {
+      const el = document.getElementById(anchorId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/home", { state: { anchorId } });
+    }
+  };
+
   return (
     <header
       className={`navbar81-container1${showNavbar ? "" : " navbar81-hidden"}`}
+      ref={navbarRef}
     >
       <header data-thq="thq-navbar" className="navbar81-navbar-interactive">
         <a href="/home" onClick={handleLogoClick} className="navbar81-navlink">
@@ -97,51 +146,38 @@ const Navbar81 = (props) => {
           <div data-thq="thq-navbar-nav" className="navbar81-desktop-menu">
             <nav className="navbar81-links1">
               <a
-                href="#Features25"
-                onClick={(e) => handleAnchorClick(e, "Features25")}
+                href="#accompagnement"
+                onClick={(e) => handleAnchorClick(e, "accompagnement")}
                 className="navbar81-link11 thq-body-small"
               >
-                {props.link1 ?? (
-                  <Fragment>
-                    <span className="navbar81-text14 thq-link">
-                      Nos Service
-                    </span>
-                  </Fragment>
-                )}
+                <span className="navbar81-text14 thq-link">
+                  Nos services
+                </span>
               </a>
               <a
-                href="#Testimonial17"
-                onClick={(e) => handleAnchorClick(e, "Testimonial17")}
+                href="#temoignages"
+                onClick={(e) => handleAnchorClick(e, "temoignages")}
                 className="navbar81-link31  thq-body-small"
               >
-                <Fragment>
-                  <span className="navbar81-text18 thq-link">Temoignage</span>
-                </Fragment>
+                <span className="navbar81-text18 thq-link">Témoignages</span>
               </a>
               <a
-                href="#FAQ9"
-                onClick={(e) => handleAnchorClick(e, "FAQ9")}
+                href="#faq"
+                onClick={(e) => handleAnchorClick(e, "faq")}
                 className="navbar81-link32  thq-body-small"
               >
-                {props.link31 ?? (
-                  <Fragment>
-                    <span className="navbar81-text26 thq-link">FAQ</span>
-                  </Fragment>
-                )}
+                <span className="navbar81-text26 thq-link">FAQ</span>
               </a>
-              {/* Dropdown Desktop */}
+              {/* Dropdown Desktop avec hover */}
               <div
                 className="navbar81-link4-dropdown-trigger"
-                onClick={() => setLink5DropdownVisible((v) => !v)}
+                onMouseEnter={handleAutreMouseEnter}
+                onMouseLeave={handleAutreMouseLeave}
                 style={{ position: "relative" }}
                 ref={autreRef}
               >
                 <span className="thq-body-small">
-                  {props.link4 ?? (
-                    <Fragment>
-                      <span className="navbar81-text21 thq-link">autre</span>
-                    </Fragment>
-                  )}
+                  <span className="navbar81-text21 thq-link">autre</span>
                 </span>
                 <div className="navbar81-icon-container1">
                   {link5DropdownVisible ? (
@@ -160,132 +196,13 @@ const Navbar81 = (props) => {
                 </div>
               </div>
             </nav>
-            {/* Dropdown Content Desktop */}
-            <div
-              className={
-                "navbar81-container7 thq-box-shadow" +
-                (link5DropdownVisible ? " dropdown-open" : " dropdown-closed")
-              }
-              ref={dropdownRef}
-            >
-              <div className="navbar81-link5-menu-list">
-                {/* Même structure que ton menu d'origine */}
-                <a href={props.linkUrlPage1}>
-                  <div className="navbar81-menu-item5">
-                    <img
-                      src="/images/fjord.jpg"
-                      className="navbar81-page1-image2 thq-img-ratio-1-1"
-                    />
-                    <div className="navbar81-content5">
-                      <span className="navbar81-page12 thq-body-large">
-                        {props.page1 ?? (
-                          <Fragment>
-                            <span className="navbar81-text19">Home</span>
-                          </Fragment>
-                        )}
-                      </span>
-                      <span className="thq-body-small">
-                        {props.page1Description ?? (
-                          <Fragment>
-                            <span className="navbar81-text20">
-                              Page One Description
-                            </span>
-                          </Fragment>
-                        )}
-                      </span>
-                    </div>
-                  </div>
-                </a>
-                <a>
-                  <div className="navbar81-menu-item6">
-                    <img
-                      src="/images/livre.jpg"
-                      className="navbar81-page2-image2 thq-img-ratio-1-1"
-                    />
-                    <div className="navbar81-content6">
-                      <span className="navbar81-page22 thq-body-large">
-                        {props.page2 ?? (
-                          <Fragment>
-                            <span className="navbar81-text27">
-                              Agricultural Machinery
-                            </span>
-                          </Fragment>
-                        )}
-                      </span>
-                      <span className="thq-body-small">
-                        {props.page2Description ?? (
-                          <Fragment>
-                            <span className="navbar81-text17">
-                              Page Two Description
-                            </span>
-                          </Fragment>
-                        )}
-                      </span>
-                    </div>
-                  </div>
-                </a>
-                <a>
-                  <div className="navbar81-menu-item7">
-                    <img
-                      src="/images/livre.jpg"
-                      className="navbar81-page2-image2 thq-img-ratio-1-1"
-                    />
-                    <div className="navbar81-content7">
-                      <span className="navbar81-page32 thq-body-large">
-                        {props.page3 ?? (
-                          <Fragment>
-                            <span className="navbar81-text16">
-                              Baby Strollers
-                            </span>
-                          </Fragment>
-                        )}
-                      </span>
-                      <span className="thq-body-small">
-                        {props.page3Description ?? (
-                          <Fragment>
-                            <span className="navbar81-text28">
-                              Page Three Description
-                            </span>
-                          </Fragment>
-                        )}
-                      </span>
-                    </div>
-                  </div>
-                </a>
-                <a>
-                  <div className="navbar81-menu-item8">
-                    <img
-                      src="/images/livre.jpg"
-                      className="navbar81-page2-image2 thq-img-ratio-1-1"
-                    />
-                    <div className="navbar81-content8">
-                      <span className="navbar81-page42 thq-body-large">
-                        {props.page4 ?? (
-                          <Fragment>
-                            <span className="navbar81-text25">Golf Gear</span>
-                          </Fragment>
-                        )}
-                      </span>
-                      <span className="thq-body-small">
-                        {props.page4Description ?? (
-                          <Fragment>
-                            <span className="navbar81-text15">
-                              Page Four Description
-                            </span>
-                          </Fragment>
-                        )}
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
             <div className="navbar81-buttons1">
               <Button
                 variant="contained"
                 color="primary"
                 onClick={(e) => {
                   e.preventDefault();
+                  setLink5DropdownVisible(false); // Ferme le mega menu
                   if (location.pathname === "/contact") {
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   } else {
@@ -296,7 +213,15 @@ const Navbar81 = (props) => {
                     );
                   }
                 }}
-                sx={{ color: "#fff", fontWeight: 600, borderRadius: 2 }}
+                sx={{ 
+                  color: "#fff", 
+                  fontWeight: 600, 
+                  borderRadius: 2,
+                  backgroundColor: "#0b2244",
+                  "&:hover": {
+                    backgroundColor: "#21517a"
+                  }
+                }}
               >
                 Contactez-nous
               </Button>
@@ -306,20 +231,11 @@ const Navbar81 = (props) => {
           // MOBILE/TABLETTE
           <>
             <button
-              aria-label="open drawer"
+              aria-label="Ouvrir le menu"
               onClick={() => setDrawerOpen(true)}
               className="navbar81-burger"
-              style={{
-                fontSize: 18,
-                color: "#000",
-                fontWeight: 600,
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                padding: 0,
-                fontFamily: "Montserrat, Arial, sans-serif",
-              }}
             >
+              <MenuIcon style={{ fontSize: 24, marginRight: 8 }} />
               Menu
             </button>
             <Drawer
@@ -329,192 +245,234 @@ const Navbar81 = (props) => {
               PaperProps={{
                 style: {
                   width: "100vw",
-                  height: "100%",
+                  height: "100vh",
                   background: "#fff",
                   padding: 0,
+                  border: "none",
+                },
+              }}
+              sx={{
+                "& .MuiDrawer-paper": {
+                  border: "none",
                 },
               }}
             >
-              <nav
-                className="navbar81-mobile-links"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "24px",
-                  padding: "36px 24px 24px 24px",
-                }}
-              >
-                <a
-                  href="#Features25"
-                  onClick={(e) => handleAnchorClick(e, "Features25")}
-                  className="mobile-menu-link"
-                  style={{
-                    color: "#191818",
-                    fontWeight: "bold",
-                    textDecoration: "none",
-                    fontSize: "1.12rem",
-                  }}
-                >
-                  Nos Service
-                </a>
-                <a
-                  href="#Testimonial17"
-                  onClick={(e) => handleAnchorClick(e, "Testimonial17")}
-                  className="mobile-menu-link"
-                  style={{
-                    color: "#191818",
-                    fontWeight: "bold",
-                    textDecoration: "none",
-                    fontSize: "1.12rem",
-                  }}
-                >
-                  Temoignage
-                </a>
-                <a
-                  href="#FAQ9"
-                  onClick={(e) => handleAnchorClick(e, "FAQ9")}
-                  className="mobile-menu-link"
-                  style={{
-                    color: "#191818",
-                    fontWeight: "bold",
-                    textDecoration: "none",
-                    fontSize: "1.12rem",
-                  }}
-                >
-                  FAQ
-                </a>
-                {/* Accordéon Autre */}
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "4px",
-                  }}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setMobileDropdownOpen((o) => !o)}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "7px",
-                      background: "none",
-                      border: "none",
-                      fontSize: "1.12rem",
-                      fontWeight: "bold",
-                      cursor: "pointer",
-                      color: "#191818",
-                      padding: "12px 0",
-                      outline: "none",
-                    }}
-                  >
-                    <span>Autre</span>
-                    <svg
-                      className={`mobile-dropdown-arrow${
-                        mobileDropdownOpen ? " open" : ""
-                      }`}
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      style={{
-                        transition: "transform 0.25s cubic-bezier(.4,2,.6,1)",
-                        transform: mobileDropdownOpen
-                          ? "rotate(90deg)"
-                          : "rotate(0deg)",
-                        marginLeft: 0,
-                      }}
+              {/* Menu principal mobile/tablette */}
+              {!mobileSubMenuOpen ? (
+                <div style={{ position: "relative", height: "100%" }}>
+                  <nav className="navbar81-mobile-links">
+                    <a
+                      href="#Features25"
+                      onClick={(e) => handleMobileNav(e, "Features25")}
+                      className="mobile-menu-link"
                     >
-                      <path d="M8 5v14l11-7z" fill="#000000ff" />
-                    </svg>
-                  </button>
-                  {mobileDropdownOpen && (
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "18px",
-                        paddingLeft: "18px",
-                        borderLeft: "2px solid #000000ff",
-                      }}
+                      Nos Service
+                    </a>
+                    <a
+                      href="#Testimonial17"
+                      onClick={(e) => handleMobileNav(e, "Testimonial17")}
+                      className="mobile-menu-link"
                     >
-                      <a
-                        href={props.linkUrlPage1}
-                        onClick={() => setDrawerOpen(false)}
-                        className="mobile-menu-link"
+                      Temoignage
+                    </a>
+                    <a
+                      href="#FAQ9"
+                      onClick={(e) => handleMobileNav(e, "FAQ9")}
+                      className="mobile-menu-link"
+                    >
+                      FAQ
+                    </a>
+                    {/* Bouton pour ouvrir le sous-menu Autre */}
+                    <div style={{ marginBottom: 16 }}>
+                      <button
+                        type="button"
+                        onClick={() => setMobileSubMenuOpen(true)}
+                        className="mobile-menu-autre-btn"
                         style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          background: "none",
+                          border: "none",
+                          fontSize: "1.1rem",
+                          fontWeight: "600",
+                          cursor: "pointer",
                           color: "#191818",
-                          fontWeight: "bold",
-                          textDecoration: "none",
-                          fontSize: "1.04rem",
+                          padding: "16px 0",
+                          outline: "none",
+                          width: "100%",
+                          textAlign: "left",
+                          borderBottom: "1px solid #f0f0f0",
                         }}
                       >
-                        {props.page1 ?? "Home"}
-                      </a>
-                      <a
-                        href="#"
-                        className="mobile-menu-link"
-                        style={{
-                          color: "#191818",
-                          fontWeight: "bold",
-                          textDecoration: "none",
-                          fontSize: "1.04rem",
-                        }}
-                      >
-                        {props.page2 ?? "Agricultural Machinery"}
-                      </a>
-                      <a
-                        href="#"
-                        className="mobile-menu-link"
-                        style={{
-                          color: "#191818",
-                          fontWeight: "bold",
-                          textDecoration: "none",
-                          fontSize: "1.04rem",
-                        }}
-                      >
-                        {props.page3 ?? "Baby Strollers"}
-                      </a>
-                      <a
-                        href="#"
-                        className="mobile-menu-link"
-                        style={{
-                          color: "#191818",
-                          fontWeight: "bold",
-                          textDecoration: "none",
-                          fontSize: "1.04rem",
-                        }}
-                      >
-                        {props.page4 ?? "Golf Gear"}
-                      </a>
+                        <span>Autre</span>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          style={{ marginLeft: "auto" }}
+                        >
+                          <path d="M8 5v14l11-7z" fill="#000000ff" />
+                        </svg>
+                      </button>
                     </div>
-                  )}
+                    <a
+                      onClick={() => setDrawerOpen(false)}
+                      href="/contact"
+                      className="mobile-menu-link"
+                    >
+                      Contactez-nous
+                    </a>
+                  </nav>
+                  <button
+                    onClick={() => setDrawerOpen(false)}
+                    className="mobile-close-button"
+                    aria-label="Fermer le menu"
+                  >
+                    <CloseIcon style={{ fontSize: 20, color: "#0b2244" }} />
+                  </button>
                 </div>
-                <a
-                  onClick={() => setDrawerOpen(false)}
-                  href="/contact"
-                  className="mobile-menu-link"
-                  style={{
-                    color: "#191818",
-                    fontWeight: "bold",
-                    textDecoration: "none",
-                    fontSize: "1.12rem",
-                  }}
-                >
-                  Contactez-nous
-                </a>
-                <div style={{ height: 24 }} />
-              </nav>
-              <IconButton
-                onClick={() => setDrawerOpen(false)}
-                style={{ position: "absolute", top: 8, right: 8, zIndex: 2000 }}
-                aria-label="Fermer le menu"
-              >
-                <CloseIcon />
-              </IconButton>
+              ) : (
+                // Sous-menu Autre
+                <div style={{ position: "relative", height: "100%" }}>
+                  <nav className="navbar81-mobile-links">
+                    <div style={{ display: "flex", alignItems: "center", marginBottom: 24 }}>
+                      {/* Flèche retour */}
+                      <button
+                        onClick={() => setMobileSubMenuOpen(false)}
+                        style={{
+                          background: "none",
+                          border: "none",
+                          cursor: "pointer",
+                          marginRight: 16,
+                          padding: 0,
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                        aria-label="Retour au menu principal"
+                      >
+                        <svg width="28" height="28" viewBox="0 0 24 24">
+                          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="#0b2244" />
+                        </svg>
+                      </button>
+                      <span
+                        style={{ fontWeight: 700, fontSize: "1.2rem", color: "#0b2244", cursor: "pointer" }}
+                        className="mobile-menu-autre-span"
+                        onClick={() => setMobileSubMenuOpen(false)}
+                        tabIndex={0}
+                        role="button"
+                        aria-label="Retour au menu principal"
+                        onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') setMobileSubMenuOpen(false); }}
+                      >
+                        Autre
+                      </span>
+                    </div>
+                    <a
+                      href="/home"
+                      onClick={(e) => handleMobileNav(e, null)}
+                      className="mobile-menu-link"
+                      style={{ paddingLeft: "16px", borderBottom: "none" }}
+                    >
+                      Accueil
+                    </a>
+                    <a
+                      href="#"
+                      className="mobile-menu-link"
+                      style={{ paddingLeft: "16px", borderBottom: "none" }}
+                    >
+                      Machines Agricoles
+                    </a>
+                    <a
+                      href="#"
+                      className="mobile-menu-link"
+                      style={{ paddingLeft: "16px", borderBottom: "none" }}
+                    >
+                      Solutions Intelligentes
+                    </a>
+                    <a
+                      href="#"
+                      className="mobile-menu-link"
+                      style={{ paddingLeft: "16px", borderBottom: "none" }}
+                    >
+                      Innovation Technologique
+                    </a>
+                  </nav>
+                  <button
+                    onClick={() => {
+                      setDrawerOpen(false);
+                      setMobileSubMenuOpen(false);
+                    }}
+                    className="mobile-close-button"
+                    aria-label="Fermer le menu"
+                  >
+                    <CloseIcon style={{ fontSize: 20, color: "#0b2244" }} />
+                  </button>
+                </div>
+              )}
             </Drawer>
           </>
         )}
       </header>
+      
+      {/* Mega Menu en overlay */}
+      {isDesktop && (
+        <div
+          className={
+            "navbar81-mega-menu" +
+            (link5DropdownVisible ? " mega-menu-open" : " mega-menu-closed")
+          }
+          ref={megaMenuRef}
+          onMouseEnter={handleMegaMenuMouseEnter}
+          onMouseLeave={handleMegaMenuMouseLeave}
+        >
+          <div className="navbar81-mega-menu-content">
+            <div className="navbar81-mega-menu-item">
+              <img
+                src="/images/fjord.jpg"
+                alt="Accueil"
+                className="navbar81-mega-menu-image"
+              />
+              <div className="navbar81-mega-menu-text">
+                <h3>Accueil</h3>
+                <p>Découvrez notre page d'accueil avec toutes nos solutions innovantes pour l'agriculture moderne.</p>
+              </div>
+            </div>
+            <div className="navbar81-mega-menu-item">
+              <img
+                src="/images/livre.jpg"
+                alt="Machines Agricoles"
+                className="navbar81-mega-menu-image"
+              />
+              <div className="navbar81-mega-menu-text">
+                <h3>Machines Agricoles</h3>
+                <p>Nos solutions technologiques avancées pour optimiser les performances des machines agricoles.</p>
+              </div>
+            </div>
+            <div className="navbar81-mega-menu-item">
+              <img
+                src="/images/livre.jpg"
+                alt="Solutions Intelligentes"
+                className="navbar81-mega-menu-image"
+              />
+              <div className="navbar81-mega-menu-text">
+                <h3>Solutions Intelligentes</h3>
+                <p>Systèmes intelligents pour une agriculture plus précise et efficace.</p>
+              </div>
+            </div>
+            <div className="navbar81-mega-menu-item">
+              <img
+                src="/images/livre.jpg"
+                alt="Innovation Technologique"
+                className="navbar81-mega-menu-image"
+              />
+              <div className="navbar81-mega-menu-text">
+                <h3>Innovation Technologique</h3>
+                <p>Découvrez nos dernières innovations en matière de technologie agricole.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

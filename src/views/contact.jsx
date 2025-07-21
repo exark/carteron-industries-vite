@@ -8,7 +8,7 @@ import "./contact.css";
 import ContactForm3 from "../components/contact-form3";
 import Contact10 from "../components/contact10";
 
-const Contact = (props) => {
+const Contact = () => {
   return (
     <div className="contact-container1">
       <Helmet>

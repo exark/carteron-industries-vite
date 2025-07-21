@@ -1,138 +1,201 @@
+/* Contact Section - Design homogène et élégant */
 .contact10-container1 {
   display: flex;
   position: relative;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  max-width: 600px;
+  width: 100%;
+  background: linear-gradient(135deg, var(--neutral-gray-50) 0%, var(--neutral-gray-100) 100%);
+  padding: var(--space-2xl) 0;
 }
- 
+
 .contact10-max-width {
-  align-self: center;
+  width: 100%;
+  max-width: var(--max-width-lg);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
- 
+
 .contact10-content1 {
   width: 100%;
-  margin-bottom: var(--dl-layout-space-threeunits);
-  justify-content: flex-start;
-}
- 
-.contact10-content2 {
-  gap: var(--dl-layout-space-unit);
+  margin-bottom: var(--space-xl);
   display: flex;
-  align-self: stretch;
-  align-items: flex-start;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
- 
+
+.contact10-content2 {
+  gap: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact10-content2 h2 {
+  font-size: var(--font-size-3xl);
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-blue);
+  margin-bottom: var(--space-md);
+}
+
+.contact10-content2 p {
+  font-size: var(--font-size-lg);
+  color: var(--neutral-gray-600);
+  line-height: var(--line-height-relaxed);
+}
+
 .contact10-content3 {
   width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: flex-start;
   flex-direction: row;
-  justify-content: space-between;
+  gap: var(--space-xl);
 }
- 
-.contact10-container2 {
-  gap: var(--dl-layout-space-oneandhalfunits);
-  flex: 1;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
- 
-.contact10-image1 {
-  object-fit: cover;
-}
- 
-.contact10-text12 {
-  text-align: center;
-}
- 
-.contact10-container3 {
-  flex: 0 0 auto;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
- 
+
 .contact10-container4 {
-  gap: var(--dl-layout-space-oneandhalfunits);
-  flex: 1;
+  background: var(--neutral-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--neutral-gray-200);
+  padding: var(--space-xl) var(--space-lg);
   display: flex;
+  flex-direction: row;
   align-items: center;
-  flex-direction: column;
-}
- 
-.contact10-image2 {
-  object-fit: cover;
-}
- 
-.contact10-text14 {
-  text-align: center;
-}
- 
-.contact10-container5 {
-  flex: 0 0 auto;
+  gap: var(--space-xl);
+  max-width: 700px;
   width: 100%;
-  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.contact10-image2 {
+  width: 200px;
+  min-width: 140px;
+  max-width: 200px;
+  height: 200px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 0;
+  object-fit: cover;
+  display: block;
+}
+
+.contact10-info {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  gap: var(--space-md);
+  flex: 1;
+  min-width: 0;
 }
- 
-.contact10-text16 {
-  display: inline-block;
+
+.contact10-text14 {
+  font-size: var(--font-size-xl);
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary-blue);
+  margin-bottom: var(--space-xs);
+  text-align: left;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  max-width: 100%;
 }
- 
-.contact10-text17 {
-  display: inline-block;
+
+.contact10-info p {
+  font-size: var(--font-size-base);
+  color: var(--neutral-gray-600);
+  text-align: left;
+  margin-bottom: var(--space-xs);
+  max-width: 100%;
+  word-break: break-word;
 }
- 
-.contact10-text18 {
-  display: inline-block;
+
+.contact10-container5 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
- 
-.contact10-text19 {
-  display: inline-block;
+
+.contact10-container5 a {
+  min-width: 140px;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xs) var(--space-lg);
+  background: var(--primary-blue);
+  color: var(--neutral-white);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-normal), color var(--transition-normal), box-shadow var(--transition-normal);
+  text-decoration: none;
+  text-align: center;
 }
- 
-.contact10-text20 {
-  display: inline-block;
+
+.contact10-container5 a:hover {
+  background: var(--primary-blue-light);
+  color: var(--neutral-white);
+  box-shadow: var(--shadow-md);
 }
- 
-.contact10-text21 {
-  display: inline-block;
-}
- 
-.contact10root-class-name {
-  display: none;
-}
- 
-.contact10root-class-name1 {
-  display: none;
-}
- 
-@media(max-width: 991px) {
-  .contact10-content1 {
-    align-items: flex-start;
-    justify-content: flex-start;
+
+@media (max-width: 991px) {
+  .contact10-max-width {
+    padding: 0 var(--space-md);
   }
   .contact10-content3 {
-    position: relative;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
   }
-}
- 
-@media(max-width: 767px) {
-  .contact10-content1 {
-    gap: var(--dl-layout-space-oneandhalfunits);
-  }
-  .contact10-image1 {
-    width: 100%;
+  .contact10-container4 {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-lg) var(--space-md);
+    gap: var(--space-lg);
   }
   .contact10-image2 {
     width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin-bottom: var(--space-md);
+  }
+  .contact10-info {
+    align-items: center;
+    text-align: center;
+  }
+  .contact10-container5 {
+    justify-content: center;
+  }
+  .contact10-text14 {
+    font-size: var(--font-size-lg);
+    word-break: break-all;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact10-max-width {
+    padding: 0 var(--space-sm);
+  }
+  .contact10-content1 {
+    margin-bottom: var(--space-lg);
+  }
+  .contact10-container4 {
+    padding: var(--space-md);
+  }
+  .contact10-image2 {
+    max-width: 100%;
+    margin-bottom: var(--space-md);
+    height: auto;
+  }
+  .contact10-text14 {
+    font-size: var(--font-size-base);
   }
 }

@@ -1,8 +1,6 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import { Button, Modal, Box } from "@mui/material";
 import { Fade } from "@mui/material";
 import "./HeroCarousel.css";
@@ -11,7 +9,7 @@ const items = [
   {
     name: "Artificial Intelligence",
     description: "You can do more with AI.",
-    image: "images/basket.jpg",
+    image: "/images/basket.jpg",
     popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
   },
   {
@@ -23,84 +21,136 @@ const items = [
   {
     name: "Product",
     description: "Launching Apple Vision Pro.",
-    image: "images/argicole.jpg",
+    image: "/images/argicole.jpg",
     popupText: "bla bla",
   },
   {
     name: "Product",
     description: "Launching Apple Vision Pro.",
-    image: "images/argicole.jpg",
+    image: "/images/argicole.jpg",
     popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
   },
   {
     name: "Product",
     description: "Launching Apple Vision Pro.",
-    image: "images/argicole.jpg",
+    image: "/images/argicole.jpg",
     popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
   },
   {
     name: "Product",
     description: "Launching Apple Vision Pro.",
-    image: "images/argicole.jpg",
+    image: "/images/argicole.jpg",
     popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
   },
   {
     name: "Product",
     description: "Launching Apple Vision Pro.",
-    image: "images/argicole.jpg",
+    image: "/images/argicole.jpg",
     popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
   },
   {
     name: "Product",
     description: "Launching Apple Vision Pro.",
-    image: "images/argicole.jpg",
+    image: "/images/argicole.jpg",
     popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
   },
-  // Ajoute d'autres slides si tu veux
 ];
 
+function getSlidesToShow() {
+  if (window.innerWidth < 600) return 1;
+  if (window.innerWidth < 950) return 2;
+  if (window.innerWidth < 1300) return 2;
+  return 3;
+}
+
+function getSlideWidth() {
+  const width = window.innerWidth;
+  if (width < 600) return "calc(100% - 4px)";
+  if (width < 950) return "calc(50% - 6px)";
+  if (width < 1300) return "calc(50% - 9px)";
+  return "calc(33.333% - 12px)";
+}
+
+function getSlideHeight() {
+  const width = window.innerWidth;
+  if (width < 600) return "240px";
+  if (width < 900) return "320px";
+  if (width < 1200) return "400px";
+  return "450px";
+}
+
+function getSlideTitleSize() {
+  const width = window.innerWidth;
+  if (width < 600) return "1.2rem";
+  if (width < 900) return "1.4rem";
+  if (width < 1200) return "1.6rem";
+  return "1.45rem";
+}
+
+function getSlideDescSize() {
+  const width = window.innerWidth;
+  if (width < 600) return "0.8rem";
+  if (width < 900) return "0.9rem";
+  if (width < 1200) return "1rem";
+  return "1.13rem";
+}
+
 function HeroCarousel() {
-  const [swiper, setSwiper] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [activeSlide, setActiveSlide] = useState(null);
-  const [centered, setCentered] = useState(window.innerWidth <= 600);
+  const [aboutModalOpen, setAboutModalOpen] = useState(false);
 
+  // Slides per view responsive
+  const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow());
+  const [slideWidth, setSlideWidth] = useState(getSlideWidth());
+  const [slideHeight, setSlideHeight] = useState(getSlideHeight());
+  const [slideTitleSize, setSlideTitleSize] = useState(getSlideTitleSize());
+  const [slideDescSize, setSlideDescSize] = useState(getSlideDescSize());
   useEffect(() => {
-    if (!swiper) return;
-
-    const realignSwiper = () => {
-      if (swiper && swiper.slideTo) {
-        swiper.update();
-        swiper.slideTo(swiper.activeIndex, 0, false);
-      }
+    const onResize = () => {
+      setSlidesToShow(getSlidesToShow());
+      setSlideWidth(getSlideWidth());
+      setSlideHeight(getSlideHeight());
+      setSlideTitleSize(getSlideTitleSize());
+      setSlideDescSize(getSlideDescSize());
     };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
-    swiper.on("slideChangeTransitionEnd", realignSwiper);
-    swiper.on("resize", realignSwiper);
-    swiper.on("navigationNext", realignSwiper);
-    swiper.on("navigationPrev", realignSwiper);
+  // Embla setup
+  const autoplay = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      slidesToScroll: 1,
+      align: "start",
+      dragFree: false,
+    },
+    [autoplay.current]
+  );
 
-    return () => {
-      swiper.off("slideChangeTransitionEnd", realignSwiper);
-      swiper.off("resize", realignSwiper);
-      swiper.off("navigationNext", realignSwiper);
-      swiper.off("navigationPrev", realignSwiper);
-    };
-  }, [swiper]);
+  // Navigation
+  const scrollPrev = useCallback(
+    () => emblaApi && emblaApi.scrollPrev(),
+    [emblaApi]
+  );
+  const scrollNext = useCallback(
+    () => emblaApi && emblaApi.scrollNext(),
+    [emblaApi]
+  );
 
-  const handleSlideClick = (item, idx) => {
-    if (swiper) {
-      if (swiper.realIndex === idx) {
-        swiper.slideNext(350);
-      } else {
-        swiper.slideToLoop(idx, 350);
-      }
-    }
+  // Keyboard accessibility for arrows
+  const onArrowKeyDown = (cb) => (e) => {
+    if (e.key === "Enter" || e.key === " ") cb();
+  };
+
+  const handleSlideClick = (item) => {
     setActiveSlide({ ...item });
     setModalOpen(true);
   };
-
-  const [aboutModalOpen, setAboutModalOpen] = useState(false);
 
   return (
     <div className="hero-carousel-wrapper">
@@ -128,65 +178,97 @@ function HeroCarousel() {
           tabIndex={0}
           role="button"
           aria-label="Précédent"
+          onClick={scrollPrev}
+          onKeyDown={onArrowKeyDown(scrollPrev)}
         >
           &lt;
         </div>
         <div className="hero-carousel-swiper-container">
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            spaceBetween={8}
-            slidesPerView={3}
-            centeredSlides={centered}
-            navigation={{
-              prevEl: ".custom-prev-btn",
-              nextEl: ".custom-next-btn",
-            }}
-            autoplay={{ delay: 4000, disableOnInteraction: false }} // ← 4 secondes
-            loop={true}
-            onSwiper={setSwiper}
-            className="hero-swiper"
-            breakpoints={{
-              0: { slidesPerView: 1 },
-              600: { slidesPerView: 2 },
-              900: { slidesPerView: 3 },
-            }}
+          <div
+            className="embla"
+            ref={emblaRef}
+            style={{ width: "100%" }}
           >
-            {items.map((item, idx) => (
-              <SwiperSlide key={idx}>
+            <div className="embla__container" style={{ display: "flex" }}>
+              {items.slice(0, 6).map((item, idx) => (
                 <div
-                  className="hero-carousel-slide"
+                  className="embla__slide"
+                  key={idx}
                   style={{
-                    backgroundImage: `url(${item.image})`,
-                    cursor: "pointer",
+                    width: slideWidth,
                   }}
-                  onClick={() => handleSlideClick(item, idx)}
-                  role="button"
                   tabIndex={0}
+                  role="button"
+                  onClick={() => handleSlideClick(item)}
                   onKeyDown={(e) =>
                     (e.key === "Enter" || e.key === " ") &&
-                    handleSlideClick(item, idx)
+                    handleSlideClick(item)
                   }
                 >
-                  <div className="hero-carousel-header-overlay">
-                    <div className="hero-carousel-title">{item.name}</div>
-                    <div className="hero-carousel-desc">{item.description}</div>
+                  <div
+                    className="hero-carousel-slide"
+                    style={{
+                      backgroundImage: `url(${item.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      borderRadius: "22px",
+                      height: slideHeight,
+                      position: "relative",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "flex-start",
+                    }}
+                  >
+                    {/* Titre en haut */}
+                    <div
+                      style={{
+                        width: "100%",
+                        padding: "26px 22px 12px 22px",
+                        borderRadius: "22px 22px 0 0",
+                        color: "#fff",
+                        fontWeight: 700,
+                        fontSize: slideTitleSize,
+                        textShadow: "0 2px 14px rgba(0,0,0,0.38)",
+                        background: "rgba(0,0,0,0.35)",
+                      }}
+                    >
+                      {item.name}
+                    </div>
+                    {/* Description centrée verticalement */}
+                    <div
+                      style={{
+                        color: "#fff",
+                        fontSize: slideDescSize,
+                        margin: "auto 0 30px 0",
+                        padding: "12px 18px",
+                        borderRadius: "10px",
+                        background: "rgba(0,0,0,0.28)",
+                        textShadow: "0 2px 8px rgba(0,0,0,0.25)",
+                        textAlign: "center",
+                      }}
+                    >
+                      {item.description}
+                    </div>
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              ))}
+            </div>
+          </div>
         </div>
+
         <div
           className="custom-next-btn hero-nav-btn"
           tabIndex={0}
           role="button"
           aria-label="Suivant"
+          onClick={scrollNext}
+          onKeyDown={onArrowKeyDown(scrollNext)}
         >
           &gt;
         </div>
       </div>
-      {/* ----- MODAL POPUP pour les carousel ----- */}
 
+      {/* ----- MODAL POPUP pour les carousel ----- */}
       <Modal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
@@ -249,7 +331,6 @@ function HeroCarousel() {
                   <div className="about-modal-post">Fondatrice</div>
                 </div>
               </div>
-
               {/* Texte à gauche même sur mobile */}
               <div id="about-modal-description" className="about-modal-desc">
                 <section>

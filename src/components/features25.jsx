@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { motion, useAnimation } from "framer-motion";
+import Button from "@mui/material/Button";
 import "./features25.css";
 
 function FeatureCard({ title, description, image }) {
@@ -15,9 +15,9 @@ function FeatureCard({ title, description, image }) {
         alt={typeof title === "string" ? title : "Feature"}
         sx={{
           width: "100%",
-          height: 180,
+          height: 240,
           objectFit: "cover",
-          borderRadius: "6px 6px 0 0",
+          borderRadius: "18px 18px 0 0",
         }}
       />
       <CardContent>
@@ -25,56 +25,45 @@ function FeatureCard({ title, description, image }) {
           gutterBottom
           variant="h5"
           component="div"
-          sx={{ fontWeight: 700, color: "#1a1a1a" }}
+          sx={{ fontWeight: 700, color: "#1a1a1a", marginBottom: 2 }}
         >
           {title}
         </Typography>
-        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+        <Typography variant="body1" sx={{ color: "#444", marginBottom: 2 }}>
           {description}
         </Typography>
+        <Button
+          variant="contained"
+          sx={{
+            background: "#1976D2",
+            color: "#fff",
+            fontWeight: 600,
+            borderRadius: 2,
+            textTransform: "none",
+            boxShadow: "0 2px 8px rgba(32,101,209,0.10)",
+            '&:hover': { background: "#2157d9" },
+          }}
+        >
+          En savoir plus
+        </Button>
       </CardContent>
     </Card>
   );
 }
 
-export default function Features25(props) {
-  const controls = useAnimation();
-
+export default function Features25() {
   return (
-    <motion.div
-      id="Features25"
-      className="features25-row"
-      initial={{ opacity: 0, y: 48 }}
-      animate={controls}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        transition: { duration: 1.7, ease: [0.33, 1, 0.68, 1] }, // Apparition lente (1.7s)
-      }}
-      viewport={{ once: false, amount: 0.2 }}
-      onViewportLeave={() =>
-        controls.start({
-          opacity: 0,
-          y: 64,
-          transition: { duration: 1.7, ease: [0.33, 1, 0.68, 1] }, // Disparition lente (1.7s)
-        })
-      }
-    >
+    <div id="Features25" className="features25-row">
       <FeatureCard
-        title={props.feature1Title}
-        description={props.feature1Description}
-        image="images/argicole.jpg"
+        title="Projet SmartAgri Connect"
+        description="Une plateforme connectée pour le suivi en temps réel des parcelles agricoles, l’optimisation de l’irrigation et la gestion intelligente des ressources."
+        image="/images/argicole.jpg"
       />
       <FeatureCard
-        title={props.feature2Title}
-        description={props.feature2Description}
-        image="images/argicole.jpg"
+        title="Application Mobile Bovin+"
+        description="Une application mobile dédiée à la gestion du cheptel, au suivi sanitaire et à la traçabilité des animaux pour les éleveurs modernes."
+        image="/images/tracteur1.png"
       />
-      <FeatureCard
-        title={props.feature3Title}
-        description={props.feature3Description}
-        image="images/argicole.jpg"
-      />
-    </motion.div>
+    </div>
   );
 }
