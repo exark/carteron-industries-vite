@@ -8,15 +8,26 @@ const resources = {
   en: { translation: en },
 };
 
+// Détection de la langue préférée
+const savedLang = localStorage.getItem('i18nextLng');
+const browserLang = navigator.language?.slice(0, 2);
+const initialLang = savedLang || (['fr', 'en'].includes(browserLang) ? browserLang : 'fr');
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'fr', // langue par défaut
+    lng: initialLang, // langue initiale
     fallbackLng: 'fr',
     interpolation: {
       escapeValue: false,
     },
   });
+
+// Sauvegarde automatique de la langue à chaque changement
+// (utile si un autre composant change la langue)
+i18n.on('languageChanged', (lng) => {
+  localStorage.setItem('i18nextLng', lng);
+});
 
 export default i18n; 
