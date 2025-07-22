@@ -51,8 +51,22 @@
     "left_caption": "Prenez contact avec notre équipe ! Nous sommes à votre écoute pour tous vos projets."
   },
   "privacy": {
-    "title": "Politique de confidentialité"
+    "title": "Politique de confidentialité",
+    "intro": "Chez Carteron Industries, nous accordons une grande importance à la protection de vos données personnelles et à votre vie privée.",
+    "section1_title": "1. Données collectées",
+    "section1_text": "Nous ne collectons que les informations strictement nécessaires au fonctionnement du site et à la gestion de vos demandes via notre formulaire de contact (nom, adresse e-mail, message, etc.).\nAucune donnée n’est transmise à des tiers sans votre consentement.",
+    "section2_title": "2. Cookies",
+    "section2_text": "Notre site n’utilise pas de cookies à des fins de suivi, de publicité ou d’analyse.\nSeuls des cookies techniques, indispensables au bon fonctionnement du site, peuvent être utilisés.",
+    "section3_title": "3. Utilisation des données",
+    "section3_text": "Les informations que vous nous transmettez via le formulaire de contact sont utilisées uniquement pour répondre à vos demandes.\nElles ne sont ni revendues, ni utilisées à des fins commerciales.",
+    "section4_title": "4. Sécurité",
+    "section4_text": "Nous mettons en œuvre toutes les mesures nécessaires pour garantir la sécurité de vos données.",
+    "section5_title": "5. Vos droits",
+    "section5_text": "Conformément à la réglementation en vigueur, vous disposez d’un droit d’accès, de rectification et de suppression de vos données personnelles.\nPour exercer ces droits, contactez-nous à l’adresse suivante : <a href=\"mailto:ton-email@domaine.com\">ton-email@domaine.com</a>",
+    "section6_title": "6. Modifications",
+    "section6_text": "Cette politique de confidentialité peut être modifiée à tout moment. Nous vous invitons à la consulter régulièrement."
   },
+  "privacy_banner": "Nous ne collectons aucune donnée personnelle à des fins commerciales ou publicitaires. Votre vie privée est respectée.",
   "carousel": {
     "ai": {
       "name": "Intelligence Artificielle",
