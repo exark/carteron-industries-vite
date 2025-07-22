@@ -256,9 +256,9 @@ const Navbar81 = (props) => {
                 style: {
                   width: "100vw",
                   height: "100vh",
-                  background: "#fff",
                   padding: 0,
                   border: "none",
+                  position: "relative",
                 },
               }}
               sx={{
@@ -267,10 +267,6 @@ const Navbar81 = (props) => {
                 },
               }}
             >
-              {/* Sélecteur de langue en haut à côté du bouton de fermeture */}
-              <div style={{ position: "absolute", top: 12, right: 48, zIndex: 1100 }}>
-                <LanguageSwitcher direction="row" />
-              </div>
               {/* Menu principal mobile/tablette */}
               {!mobileSubMenuOpen ? (
                 <div style={{ position: "relative", height: "100%" }}>
@@ -338,6 +334,10 @@ const Navbar81 = (props) => {
                       {t('navbar.contact')}
                     </a>
                   </nav>
+                  {/* Sélecteur de langue en bas du menu */}
+                  <div className="navbar81-lang-switcher-mobile-bottom">
+                    <LanguageSwitcher direction="row" />
+                  </div>
                   <button
                     onClick={() => setDrawerOpen(false)}
                     className="mobile-close-button"

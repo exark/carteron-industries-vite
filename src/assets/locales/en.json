@@ -46,7 +46,8 @@
     "subtitle": "Get in touch with us",
     "title": "Contact form",
     "desc": "Our team will respond as soon as possible.",
-    "send_message": "Send message"
+    "send_message": "Send message",
+    "left_caption": "Get in touch with our team! We are here to listen to all your projects."
   },
   "privacy": {
     "title": "Privacy Policy"

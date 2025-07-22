@@ -143,10 +143,13 @@ export default function ContactForm3() {
         <Fade in={!isSmallScreen} timeout={400} unmountOnExit>
           <div className="contact-form3-imgbox">
             <img
-              src="/images/tracteur1.png"
-              alt="Contact"
+              src="/images/contact-form-image.jpg"
+              alt="Contact entreprise"
               className="contact-form3-img"
             />
+            <div className="contact-form3-caption">
+              {t('contact_form.left_caption', 'Prenez contact avec notre équipe ! Nous sommes à votre écoute pour tous vos projets.')}
+            </div>
           </div>
         </Fade>
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const flagStyle = {
-  fontSize: 24,
+  fontSize: 20,
   cursor: 'pointer',
   marginLeft: 8,
   marginRight: 0,
