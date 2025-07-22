@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+
+const SESSION_KEY = 'privacyBannerClosed';
 
 const PrivacyBanner = () => {
   const { t } = useTranslation();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
+
+  useEffect(() => {
+    const closed = sessionStorage.getItem(SESSION_KEY);
+    if (!closed) setOpen(true);
+  }, []);
 
   const handleClose = () => {
     setClosing(true);
-    setTimeout(() => setOpen(false), 400); // Durée de l'animation
+    sessionStorage.setItem(SESSION_KEY, '1');
+    setTimeout(() => setOpen(false), 400);
   };
 
   if (!open) return null;
