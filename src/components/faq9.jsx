@@ -3,16 +3,10 @@ import React, { useState, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import './faq9.css'
+import { useTranslation } from 'react-i18next';
 
-const FAQ9 = ({
-  fAQ9Id = '',
-  heading1 = "Questions Fréquemment Posées",
-  content1 = "Trouvez rapidement les réponses à vos questions sur nos solutions innovantes pour l'agriculture moderne et nos services d'ingénierie.",
-  faq1Question = "Quelles sont les solutions technologiques proposées par Carteron Industries ?",
-  faq2Question = "Comment puis-je bénéficier des services d'ingénierie de Carteron Industries ?",
-  faq3Question = "Carteron Industries propose-t-il un support de maintenance pour ses solutions ?",
-  faq4Question = "Carteron Industries peut-il personnaliser les solutions selon mes besoins spécifiques ?",
-}) => {
+const FAQ9 = ({ fAQ9Id = '' }) => {
+  const { t } = useTranslation();
   const [faq4Visible, setFaq4Visible] = useState(false)
   const [faq3Visible, setFaq3Visible] = useState(false)
   const [faq1Visible, setfaq1Visible] = useState(false)
@@ -22,18 +16,15 @@ const FAQ9 = ({
       <div className="faq9-max-width thq-flex-column thq-section-max-width">
         <div className="faq9-section-title thq-flex-column">
           <div className="faq9-content">
-            <h2 className="thq-heading-2">{heading1}</h2>
-            <p className="thq-body-large">{content1}</p>
+            <h2 className="thq-heading-2">{t('faq.title')}</h2>
+            <p className="thq-body-large">{t('faq.subtitle')}</p>
           </div>
         </div>
         <div className="faq9-list thq-flex-column">
           <div className="faq9-faq1 thq-box-shadow thq-section-max-width">
-            <div
-              onClick={() => setfaq1Visible(!faq1Visible)}
-              className="faq9-trigger1"
-            >
+            <div onClick={() => setfaq1Visible(!faq1Visible)} className="faq9-trigger1">
               <p className="faq9-faq1-question thq-body-large">
-                {faq1Question}
+                {t('faq.faq1.q')}
               </p>
               <div className="faq9-icons-container1">
                 <div className="faq9-icon-wrapper">
@@ -52,18 +43,15 @@ const FAQ9 = ({
             <div className={`faq9-answer ${faq1Visible ? 'faq9-answer-visible' : ''}`}>
               <div className="faq9-container12">
                 <span className="thq-body-small">
-                  Carteron Industries propose une gamme complète de solutions technologiques innovantes pour l'agriculture moderne. Nos solutions incluent des systèmes d'automatisation intelligents, des capteurs IoT pour la surveillance des cultures, des logiciels de gestion d'exploitation agricole, et des équipements de précision pour l'optimisation des ressources. Nous développons également des solutions sur mesure pour répondre aux besoins spécifiques de chaque exploitation agricole.
+                  {t('faq.faq1.a')}
                 </span>
               </div>
             </div>
           </div>
           <div className="faq9-faq2 thq-box-shadow thq-section-max-width">
-            <div
-              onClick={() => setFaq2Visible(!faq2Visible)}
-              className="faq9-trigger2"
-            >
+            <div onClick={() => setFaq2Visible(!faq2Visible)} className="faq9-trigger2">
               <p className="faq9-faq2-question1 thq-body-large">
-                {faq2Question}
+                {t('faq.faq2.q')}
               </p>
               <div className="faq9-icons-container2">
                 <div className="faq9-icon-wrapper">
@@ -82,18 +70,15 @@ const FAQ9 = ({
             <div className={`faq9-answer ${faq2Visible ? 'faq9-answer-visible' : ''}`}>
               <div className="faq9-container15">
                 <span className="thq-body-small">
-                  Nos services d'ingénierie vous permettent d'optimiser vos processus agricoles grâce à une approche personnalisée. Nous analysons votre exploitation, identifions les points d'amélioration, et concevons des solutions sur mesure. Nos ingénieurs vous accompagnent de la conception à l'implémentation, garantissant une intégration parfaite et une formation complète de vos équipes pour maximiser les bénéfices de nos solutions.
+                  {t('faq.faq2.a')}
                 </span>
               </div>
             </div>
           </div>
           <div className="faq9-faq3 thq-box-shadow thq-section-max-width">
-            <div
-              onClick={() => setFaq3Visible(!faq3Visible)}
-              className="faq9-trigger3"
-            >
+            <div onClick={() => setFaq3Visible(!faq3Visible)} className="faq9-trigger3">
               <p className="faq9-faq2-question2 thq-body-large">
-                {faq3Question}
+                {t('faq.faq3.q')}
               </p>
               <div className="faq9-icons-container3">
                 <div className="faq9-icon-wrapper">
@@ -112,18 +97,15 @@ const FAQ9 = ({
             <div className={`faq9-answer ${faq3Visible ? 'faq9-answer-visible' : ''}`}>
               <div className="faq9-container18">
                 <span className="thq-body-small">
-                  Oui, Carteron Industries propose un support de maintenance complet pour toutes ses solutions. Notre équipe technique est disponible 24h/24 et 7j/7 pour assurer le bon fonctionnement de vos équipements. Nous proposons des contrats de maintenance préventive, des interventions d'urgence, et des mises à jour logicielles régulières pour garantir la performance optimale de vos installations.
+                  {t('faq.faq3.a')}
                 </span>
               </div>
             </div>
           </div>
           <div className="faq9-faq4 thq-box-shadow thq-section-max-width">
-            <div
-              onClick={() => setFaq4Visible(!faq4Visible)}
-              className="faq9-trigger4"
-            >
+            <div onClick={() => setFaq4Visible(!faq4Visible)} className="faq9-trigger4">
               <p className="faq9-faq2-question3 thq-body-large">
-                {faq4Question}
+                {t('faq.faq4.q')}
               </p>
               <div className="faq9-icons-container4">
                 <div className="faq9-icon-wrapper">
@@ -142,7 +124,7 @@ const FAQ9 = ({
             <div className={`faq9-answer ${faq4Visible ? 'faq9-answer-visible' : ''}`}>
               <div className="faq9-container21">
                 <span className="thq-body-small">
-                  Absolument ! La personnalisation est au cœur de notre approche. Chaque exploitation agricole a ses spécificités, et nous adaptons nos solutions en conséquence. Nos ingénieurs travaillent en étroite collaboration avec vous pour comprendre vos besoins, analyser votre environnement de travail, et développer des solutions parfaitement adaptées à votre contexte et à vos objectifs de production.
+                  {t('faq.faq4.a')}
                 </span>
               </div>
             </div>
@@ -151,16 +133,6 @@ const FAQ9 = ({
       </div>
     </div>
   )
-}
-
-FAQ9.propTypes = {
-  content1: PropTypes.string,
-  faq3Question: PropTypes.string,
-  faq4Question: PropTypes.string,
-  fAQ9Id: PropTypes.string,
-  faq2Question: PropTypes.string,
-  faq1Question: PropTypes.string,
-  heading1: PropTypes.string,
 }
 
 export default FAQ9

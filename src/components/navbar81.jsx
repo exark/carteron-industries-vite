@@ -8,8 +8,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Button from "@mui/material/Button";
 import "./navbar81.css";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const Navbar81 = (props) => {
+  const { t } = useTranslation();
   const [link5DropdownVisible, setLink5DropdownVisible] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
@@ -60,13 +63,19 @@ const Navbar81 = (props) => {
     setDrawerOpen(false);
   };
 
+  // Fonction utilitaire pour scroller avec un offset (par exemple, hauteur de la navbar)
+  const scrollToWithOffset = (element, offset = 80) => {
+    const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   const handleAnchorClick = (e, anchorId) => {
     e.preventDefault();
     setLink5DropdownVisible(false); // Ferme le mega menu
     if (location.pathname === "/home" || location.pathname === "/") {
       const el = document.getElementById(anchorId);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+        scrollToWithOffset(el); // Utilise le scroll avec offset
       }
     } else {
       navigate("/home", { state: { anchorId } });
@@ -83,7 +92,7 @@ const Navbar81 = (props) => {
       if (anchorId) {
         const el = document.getElementById(anchorId);
         if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
+          scrollToWithOffset(el); // Utilise le scroll avec offset
         }
       } else {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -139,7 +148,7 @@ const Navbar81 = (props) => {
     >
       <header data-thq="thq-navbar" className="navbar81-navbar-interactive">
         <a href="/home" onClick={handleLogoClick} className="navbar81-navlink">
-          Carteron Indutries
+          Carteron Industries
         </a>
         {/* Desktop Version */}
         {isDesktop ? (
@@ -151,7 +160,7 @@ const Navbar81 = (props) => {
                 className="navbar81-link11 thq-body-small"
               >
                 <span className="navbar81-text14 thq-link">
-                  Nos services
+                  {t('navbar.services')}
                 </span>
               </a>
               <a
@@ -159,14 +168,14 @@ const Navbar81 = (props) => {
                 onClick={(e) => handleAnchorClick(e, "temoignages")}
                 className="navbar81-link31  thq-body-small"
               >
-                <span className="navbar81-text18 thq-link">Témoignages</span>
+                <span className="navbar81-text18 thq-link">{t('navbar.testimonials')}</span>
               </a>
               <a
                 href="#faq"
                 onClick={(e) => handleAnchorClick(e, "faq")}
                 className="navbar81-link32  thq-body-small"
               >
-                <span className="navbar81-text26 thq-link">FAQ</span>
+                <span className="navbar81-text26 thq-link">{t('navbar.faq')}</span>
               </a>
               {/* Dropdown Desktop avec hover */}
               <div
@@ -177,7 +186,7 @@ const Navbar81 = (props) => {
                 ref={autreRef}
               >
                 <span className="thq-body-small">
-                  <span className="navbar81-text21 thq-link">autre</span>
+                  <span className="navbar81-text21 thq-link">{t('navbar.other')}</span>
                 </span>
                 <div className="navbar81-icon-container1">
                   {link5DropdownVisible ? (
@@ -223,8 +232,9 @@ const Navbar81 = (props) => {
                   }
                 }}
               >
-                Contactez-nous
+                {t('navbar.contact')}
               </Button>
+              <LanguageSwitcher />
             </div>
           </div>
         ) : (
@@ -257,6 +267,10 @@ const Navbar81 = (props) => {
                 },
               }}
             >
+              {/* Sélecteur de langue en haut à côté du bouton de fermeture */}
+              <div style={{ position: "absolute", top: 12, right: 48, zIndex: 1100 }}>
+                <LanguageSwitcher direction="row" />
+              </div>
               {/* Menu principal mobile/tablette */}
               {!mobileSubMenuOpen ? (
                 <div style={{ position: "relative", height: "100%" }}>
@@ -266,21 +280,21 @@ const Navbar81 = (props) => {
                       onClick={(e) => handleMobileNav(e, "services")}
                       className="mobile-menu-link"
                     >
-                      Nos services
+                      {t('navbar.services')}
                     </a>
                     <a
                       href="#temoignages"
                       onClick={(e) => handleMobileNav(e, "temoignages")}
                       className="mobile-menu-link"
                     >
-                      Témoignages
+                      {t('navbar.testimonials')}
                     </a>
                     <a
                       href="#faq"
                       onClick={(e) => handleMobileNav(e, "faq")}
                       className="mobile-menu-link"
                     >
-                      FAQ
+                      {t('navbar.faq')}
                     </a>
                     {/* Bouton pour ouvrir le sous-menu Autre */}
                     <div style={{ marginBottom: 16 }}>
@@ -305,7 +319,7 @@ const Navbar81 = (props) => {
                           borderBottom: "1px solid #f0f0f0",
                         }}
                       >
-                        <span>Autre</span>
+                        <span>{t('navbar.other')}</span>
                         <svg
                           width="20"
                           height="20"
@@ -321,7 +335,7 @@ const Navbar81 = (props) => {
                       href="/contact"
                       className="mobile-menu-link"
                     >
-                      Contactez-nous
+                      {t('navbar.contact')}
                     </a>
                   </nav>
                   <button
@@ -373,7 +387,7 @@ const Navbar81 = (props) => {
                       className="mobile-menu-link"
                       style={{ paddingLeft: "16px", borderBottom: "none" }}
                     >
-                      Accueil
+                      {t('navbar.home')}
                     </a>
                     <a
                       href="#"
@@ -433,8 +447,8 @@ const Navbar81 = (props) => {
                 className="navbar81-mega-menu-image"
               />
               <div className="navbar81-mega-menu-text">
-                <h3>Accueil</h3>
-                <p>Découvrez notre page d'accueil avec toutes nos solutions innovantes pour l'agriculture moderne.</p>
+                <h3>{t('navbar.home')}</h3>
+                <p>{t('navbar.mega_home_desc', 'Découvrez notre page d\'accueil avec toutes nos solutions innovantes pour l\'agriculture moderne.')}</p>
               </div>
             </div>
             <div className="navbar81-mega-menu-item">
@@ -445,7 +459,7 @@ const Navbar81 = (props) => {
               />
               <div className="navbar81-mega-menu-text">
                 <h3>Machines Agricoles</h3>
-                <p>Nos solutions technologiques avancées pour optimiser les performances des machines agricoles.</p>
+                <p>{t('navbar.mega_machines_desc', 'Nos solutions technologiques avancées pour optimiser les performances des machines agricoles.')}</p>
               </div>
             </div>
             <div className="navbar81-mega-menu-item">
@@ -456,7 +470,7 @@ const Navbar81 = (props) => {
               />
               <div className="navbar81-mega-menu-text">
                 <h3>Solutions Intelligentes</h3>
-                <p>Systèmes intelligents pour une agriculture plus précise et efficace.</p>
+                <p>{t('navbar.mega_solutions_desc', 'Systèmes intelligents pour une agriculture plus précise et efficace.')}</p>
               </div>
             </div>
             <div className="navbar81-mega-menu-item">
@@ -467,7 +481,7 @@ const Navbar81 = (props) => {
               />
               <div className="navbar81-mega-menu-text">
                 <h3>Innovation Technologique</h3>
-                <p>Découvrez nos dernières innovations en matière de technologie agricole.</p>
+                <p>{t('navbar.mega_innovation_desc', 'Découvrez nos dernières innovations en matière de technologie agricole.')}</p>
               </div>
             </div>
           </div>

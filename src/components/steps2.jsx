@@ -1,30 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import "./steps2.css";
+import { useTranslation } from "react-i18next";
 
-const stepsData = [
-  {
-    title: "1. Prise de contact",
-    desc: "Nous échangeons sur vos besoins, vos objectifs et vos contraintes pour bien comprendre votre projet.",
-  },
-  {
-    title: "2. Conception sur-mesure",
-    desc: "Nos experts imaginent et conçoivent une solution personnalisée, adaptée à votre activité et à vos attentes.",
-  },
-  {
-    title: "3. Déploiement & tests",
-    desc: "Nous installons, testons et ajustons la solution dans votre environnement pour garantir son efficacité.",
-  },
-  {
-    title: "4. Suivi & accompagnement",
-    desc: "Nous restons à vos côtés pour assurer la maintenance, l’évolution et la performance de votre solution dans la durée.",
-  },
+const stepsKeys = [
+  'step1',
+  'step2',
+  'step3',
+  'step4',
 ];
 
 const Steps2 = ({ rootClassName = "" }) => {
+  const { t } = useTranslation();
   const timelineRef = useRef(null);
   const progressBarRef = useRef(null);
   const [progress, setProgress] = useState(0);
+
+  const stepsData = stepsKeys.map((key, idx) => ({
+    title: t(`steps.${key}.title`, `Étape ${idx + 1}`),
+    desc: t(`steps.${key}.desc`, ''),
+  }));
 
   // Animation d'apparition des étapes
   useEffect(() => {
@@ -73,9 +68,9 @@ const Steps2 = ({ rootClassName = "" }) => {
     <div className={`steps2-container1 thq-section-padding full-width-bg ${rootClassName}`}> 
       <div className="steps2-max-width thq-section-max-width">
         <div className="steps2-section-header">
-          <h2 className="thq-heading-2">Notre accompagnement, étape par étape</h2>
+          <h2 className="thq-heading-2">{t('steps.title')}</h2>
           <p className="thq-body-large">
-            Découvrez comment nous transformons vos besoins en solutions concrètes et innovantes, grâce à un parcours client fluide, humain et sur-mesure.
+            {t('steps.description')}
           </p>
         </div>
         <div className="steps2-timeline" ref={timelineRef}>

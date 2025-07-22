@@ -4,55 +4,40 @@ import Autoplay from "embla-carousel-autoplay";
 import { Button, Modal, Box } from "@mui/material";
 import { Fade } from "@mui/material";
 import "./HeroCarousel.css";
+import { useTranslation } from "react-i18next";
 
-const items = [
+const itemsData = [
   {
-    name: "Intelligence Artificielle",
-    description: "L'IA au service de l'agriculture.",
+    key: "ai",
     image: "/images/basket.jpg",
-    popupText: "Découvrez comment l'IA révolutionne votre quotidien.",
   },
   {
-    name: "Astrologie & Précision",
-    description: "Des solutions sur-mesure.",
+    key: "astrology",
     image: "/images/astrology.jpg",
-    popupText: "Boostez votre productivité grâce à nos solutions innovantes.",
   },
   {
-    name: "Innovation Agricole",
-    description: "Modernisez vos machines.",
+    key: "innovation",
     image: "/images/tracteur1.png",
-    popupText: "L'innovation au cœur de vos exploitations.",
   },
   {
-    name: "Start-up & Croissance",
-    description: "Accompagner l'essor de votre activité.",
+    key: "startup",
     image: "/images/startup.jpg",
-    popupText: "Entreprendre avec des outils adaptés au monde agricole.",
   },
   {
-    name: "Travail & Performance",
-    description: "Optimisez vos rendements.",
+    key: "work",
     image: "/images/workhard.jpg",
-    popupText: "Des solutions pour travailler mieux, chaque jour.",
   },
   {
-    name: "Technologie & Mobilité",
-    description: "Le numérique au service du terrain.",
+    key: "tech",
     image: "/images/macbookpro.jpg",
-    popupText: "La technologie pour une agriculture connectée.",
   },
   {
-    name: "Nature & Croissance",
-    description: "L'importance de la biodiversité.",
+    key: "nature",
     image: "/images/fleur.jpg",
-    popupText: "Préserver la nature tout en innovant.",
   },
   {
-    name: "Projet & Vision",
-    description: "Construisons l'avenir ensemble.",
+    key: "project",
     image: "/images/projet.jpg",
-    popupText: "Votre projet, notre expertise pour demain.",
   },
 ];
 
@@ -95,7 +80,14 @@ function getSlideDescSize() {
   return "1.13rem";
 }
 
-function HeroCarousel() {
+export default function HeroCarousel() {
+  const { t } = useTranslation();
+  const items = itemsData.map(item => ({
+    ...item,
+    name: t(`carousel.${item.key}.name`),
+    description: t(`carousel.${item.key}.desc`),
+    popupText: t(`carousel.${item.key}.popup`),
+  }));
   const [modalOpen, setModalOpen] = useState(false);
   const [activeSlide, setActiveSlide] = useState(null);
   const [aboutModalOpen, setAboutModalOpen] = useState(false);
@@ -155,11 +147,9 @@ function HeroCarousel() {
   return (
     <div className="hero-carousel-wrapper">
       <div className="hero-carousel-side-content">
-        <h2 className="side-title">Notre Mission</h2>
+        <h2 className="side-title">{t('carousel.side_title', 'Notre Mission')}</h2>
         <p className="side-desc">
-          Nous développons des solutions technologiques avancées pour optimiser
-          les performances des machines agricoles, en intégrant des systèmes
-          intelligents pour une agriculture plus précise et efficace.
+          {t('carousel.side_desc', 'Nous développons des solutions technologiques avancées pour optimiser les performances des machines agricoles, en intégrant des systèmes intelligents pour une agriculture plus précise et efficace.')}
         </p>
         <Button
           variant="contained"
@@ -167,9 +157,9 @@ function HeroCarousel() {
           className="side-btn"
           size="large"
           onClick={() => setAboutModalOpen(true)}
-          aria-label="Ouvrir la fenêtre à propos"
+          aria-label={t('carousel.about_aria', 'Ouvrir la fenêtre à propos')}
         >
-          À propos
+          {t('carousel.about_btn', 'À propos')}
         </Button>
       </div>
       <div className="hero-carousel-nav-outer">
@@ -296,7 +286,7 @@ function HeroCarousel() {
                     color="primary"
                     className="carousel-modal-close"
                   >
-                    Fermer
+                    {t('carousel.close', 'Fermer')}
                   </Button>
                 </div>
               </div>
@@ -334,19 +324,19 @@ function HeroCarousel() {
                 <section className="about-modal-light-section">
                   <div className="about-modal-light-section-title">Parcours</div>
                   <div className="about-modal-light-section-desc">
-                    Ingénieure en technologies agricoles, Lamia Carteron a fondé Carteron Industries après 10 ans d’expérience dans l’optimisation des systèmes pour machines agricoles, avec une passion pour l’innovation et l’accompagnement des acteurs du secteur.
+                    {t('carousel.about_parcours', 'Ingénieure en technologies agricoles, Lamia Carteron a fondé Carteron Industries après 10 ans d’expérience dans l’optimisation des systèmes pour machines agricoles, avec une passion pour l’innovation et l’accompagnement des acteurs du secteur.')}
                   </div>
                 </section>
                 <section className="about-modal-light-section">
                   <div className="about-modal-light-section-title">Mission</div>
                   <div className="about-modal-light-section-desc">
-                    Offrir des solutions intelligentes pour moderniser l’agriculture, améliorer les rendements, réduire l’impact environnemental et accompagner les agriculteurs dans leur transformation digitale.
+                    {t('carousel.about_mission', 'Offrir des solutions intelligentes pour moderniser l’agriculture, améliorer les rendements, réduire l’impact environnemental et accompagner les agriculteurs dans leur transformation digitale.')}
                   </div>
                 </section>
                 <section className="about-modal-light-section">
                   <div className="about-modal-light-section-title">Équipe</div>
                   <div className="about-modal-light-section-desc">
-                    Notre équipe pluridisciplinaire regroupe ingénieurs, développeurs et experts terrain, tous animés par la volonté de faire évoluer l’agriculture grâce à la technologie.
+                    {t('carousel.about_equipe', 'Notre équipe pluridisciplinaire regroupe ingénieurs, développeurs et experts terrain, tous animés par la volonté de faire évoluer l’agriculture grâce à la technologie.')}
                   </div>
                 </section>
               </div>
@@ -358,7 +348,7 @@ function HeroCarousel() {
                   className="carousel-modal-close about-modal-light-close-btn"
                   aria-label="Fermer la fenêtre à propos"
                 >
-                  Fermer
+                  {t('carousel.close', 'Fermer')}
                 </Button>
               </div>
             </div>
@@ -368,5 +358,3 @@ function HeroCarousel() {
     </div>
   );
 }
-
-export default HeroCarousel;

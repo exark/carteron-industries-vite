@@ -11,6 +11,11 @@ import {
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Fade } from "@mui/material";
 import "./contact-form3.css";
+import { useTranslation } from "react-i18next";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+import Modal from '@mui/material/Modal';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const initialState = {
   name: "",
@@ -23,44 +28,52 @@ const initialState = {
 };
 
 export default function ContactForm3() {
+  const { t } = useTranslation();
   const [form, setForm] = React.useState(initialState);
   const [errors, setErrors] = React.useState({});
   const [touched, setTouched] = React.useState({});
   const [submitted, setSubmitted] = React.useState(false);
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
+  const [modalOpen, setModalOpen] = React.useState(false);
+  React.useEffect(() => {
+    if (modalOpen) {
+      const timer = setTimeout(() => setModalOpen(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [modalOpen]);
 
   // Regex validations
   const validators = {
     name: {
       test: (v) => /^[\p{L}\s'-]{2,}$/u.test(v),
-      msg: "Entrez un nom/prénom valide (au moins 2 lettres, lettres, tirets, espaces).",
+      msg: t('contact_form.name_error', 'Entrez un nom/prénom valide (au moins 2 lettres, lettres, tirets, espaces).'),
     },
     email: {
       test: (v) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v),
-      msg: "Entrez une adresse mail valide.",
+      msg: t('contact_form.email_error', 'Entrez une adresse mail valide.'),
     },
     phone: {
       test: (v) =>
-        v === "" ||
         /^(\+?\d{1,3}[-.\s]?)?(\(?\d{1,4}\)?[-.\s]?){1,3}\d{3,8}$/.test(v),
-      msg: "Entrez un numéro valide (ex: +216 99 123 456 ou 0612345678).",
+      msg: t('contact_form.phone_error_required', 'Le numéro de téléphone est obligatoire et doit être valide (ex: +216 99 123 456 ou 0612345678).'),
     },
     website: {
       test: (v) =>
         v === "" ||
         /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-./?%&=]*)?$/.test(v),
-      msg: "Entrez une URL valide (https://monsite.com) ou laissez vide.",
+      msg: t('contact_form.website_error', 'Entrez une URL valide (https://monsite.com) ou laissez vide.'),
     },
     company: {
       test: (v) => v.length === 0 || v.length >= 2,
-      msg: "Nom de société trop court.",
+      msg: t('contact_form.company_error', 'Nom de société trop court.'),
     },
     message: {
       test: (v) => v.length >= 10,
-      msg: "Le message doit contenir au moins 10 caractères.",
+      msg: t('contact_form.message_error', 'Le message doit contenir au moins 10 caractères.'),
     },
     accept: {
       test: (v) => !!v,
-      msg: "Vous devez accepter les conditions.",
+      msg: t('contact_form.accept_error', 'Vous devez accepter les conditions.'),
     },
   };
 
@@ -113,8 +126,7 @@ export default function ContactForm3() {
     setSubmitted(true);
     const newErrors = validateAll();
     if (Object.keys(newErrors).length === 0) {
-      // Envoyer le formulaire ici (API, etc.)
-      alert("Formulaire envoyé avec succès !");
+      setModalOpen(true);
       setForm(initialState);
       setTouched({});
       setErrors({});
@@ -141,13 +153,13 @@ export default function ContactForm3() {
         {/* Formulaire (droite) */}
         <div className="contact-form3-paper">
           <Typography variant="subtitle2" color="text.secondary" mb={0.5}>
-            Get in touch with us
+            {t('contact_form.subtitle', 'Get in touch with us')}
           </Typography>
           <Typography variant="h4" fontWeight={700} mb={1}>
-            Contact us
+            {t('contact_form.title', 'Contact us')}
           </Typography>
           <Typography variant="body1" mb={2}>
-            Our team will respond as soon as possible.
+            {t('contact_form.desc', 'Our team will respond as soon as possible.')}
           </Typography>
           <Box component="form" autoComplete="off" onSubmit={handleSubmit}>
             <Grid container spacing={2}>
@@ -155,7 +167,7 @@ export default function ContactForm3() {
                 <TextField
                   fullWidth
                   required
-                  label="Name"
+                  label={t('contact_form.name', 'Name')}
                   name="name"
                   variant="outlined"
                   value={form.name}
@@ -173,7 +185,7 @@ export default function ContactForm3() {
                 <TextField
                   fullWidth
                   required
-                  label="Email"
+                  label={t('contact_form.email', 'Email')}
                   name="email"
                   variant="outlined"
                   type="email"
@@ -191,7 +203,8 @@ export default function ContactForm3() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
-                  label="Phone"
+                  required
+                  label={t('contact_form.phone', 'Téléphone')}
                   name="phone"
                   variant="outlined"
                   value={form.phone}
@@ -208,7 +221,7 @@ export default function ContactForm3() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
-                  label="Company"
+                  label={t('contact_form.company', 'Société')}
                   name="company"
                   variant="outlined"
                   value={form.company}
@@ -225,7 +238,7 @@ export default function ContactForm3() {
               <Grid item xs={12}>
                 <TextField
                   fullWidth
-                  label="Website"
+                  label={t('contact_form.website', 'Site web')}
                   name="website"
                   variant="outlined"
                   value={form.website}
@@ -243,7 +256,7 @@ export default function ContactForm3() {
                 <TextField
                   fullWidth
                   required
-                  label="Message"
+                  label={t('contact_form.message', 'Message')}
                   name="message"
                   variant="outlined"
                   value={form.message}
@@ -271,7 +284,7 @@ export default function ContactForm3() {
                       required
                     />
                   }
-                  label="J’accepte les conditions d’utilisation et la politique de confidentialité"
+                  label={t('contact_form.accept', 'J’accepte les conditions d’utilisation et la politique de confidentialité')}
                 />
                 {!!errors.accept && (touched.accept || submitted) && (
                   <Typography
@@ -280,9 +293,13 @@ export default function ContactForm3() {
                     className="accept-error"
                     sx={{ display: "block", mt: -1.5, mb: 1 }}
                   >
-                    {errors.accept}
+                    {t('contact_form.accept_error', 'Vous devez accepter les conditions d\'utilisation et la politique de confidentialité.')}
                   </Typography>
                 )}
+                <Typography variant="caption" sx={{ display: "block", mt: 1 }}>
+                  {t('contact_form.accept_info', 'En soumettant ce formulaire, vous acceptez notre ')}
+                  <a href="/privacy" target="_blank" rel="noopener noreferrer">{t('footer.privacy')}</a>.
+                </Typography>
               </Grid>
               <Grid item xs={12}>
                 <Button
@@ -298,13 +315,52 @@ export default function ContactForm3() {
                     !form.message
                   }
                 >
-                  Send Message
+                  {t('contact_form.send_message', 'Send Message')}
                 </Button>
               </Grid>
             </Grid>
           </Box>
         </div>
       </div>
+      <Modal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        aria-labelledby="modal-success-title"
+        aria-describedby="modal-success-desc"
+        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2000 }}
+      >
+        <div style={{
+          background: '#fff',
+          borderRadius: 24,
+          boxShadow: '0 8px 32px rgba(11,34,68,0.18)',
+          padding: '48px 36px 36px 36px',
+          minWidth: 340,
+          minHeight: 260,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+        }}>
+          <CheckCircleIcon
+            sx={{
+              fontSize: 80,
+              color: '#0b2244',
+              mb: 2,
+              animation: 'pop 0.7s cubic-bezier(.4,2,.6,1)',
+            }}
+            className="success-pop-anim"
+          />
+          <h2 id="modal-success-title" style={{
+            fontFamily: 'Montserrat, Arial, sans-serif',
+            fontWeight: 800,
+            fontSize: '1.5rem',
+            color: '#0b2244',
+            margin: 0,
+            textAlign: 'center',
+          }}>{t('contact_form.success', 'Formulaire envoyé avec succès !')}</h2>
+        </div>
+      </Modal>
     </div>
   );
 }

@@ -1,0 +1,180 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "services": "Nos services",
+    "testimonials": "Témoignages",
+    "faq": "FAQ",
+    "other": "autre",
+    "contact": "Contactez-nous"
+  },
+  "footer": {
+    "about": "À propos",
+    "our_company": "Notre entreprise",
+    "our_services": "Nos services",
+    "follow_us": "Suivez-nous",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions générales",
+    "copyright": "© {{year}} Carteron Industries™"
+  },
+  "home": {
+    "title": "Carteron Industries",
+    "services_title": "Nos services",
+    "accompagnement_title": "Accompagnement",
+    "testimonials_title": "Témoignages",
+    "faq_title": "FAQ",
+    "contact_title": "Contact"
+  },
+  "contact_form": {
+    "name": "Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "company": "Société",
+    "website": "Site web",
+    "message": "Message",
+    "accept": "J’accepte les conditions d’utilisation et la politique de confidentialité",
+    "submit": "Envoyer",
+    "accept_info": "En soumettant ce formulaire, vous acceptez notre politique de confidentialité.",
+    "success": "Formulaire envoyé avec succès !",
+    "name_error": "Entrez un nom/prénom valide (au moins 2 lettres, lettres, tirets, espaces).",
+    "email_error": "Entrez une adresse mail valide.",
+    "phone_error": "Entrez un numéro valide (ex: +216 99 123 456 ou 0612345678).",
+    "phone_error_required": "Le numéro de téléphone est obligatoire et doit être valide (ex: +216 99 123 456 ou 0612345678).",
+    "website_error": "Entrez une URL valide (https://monsite.com) ou laissez vide.",
+    "company_error": "Nom de société trop court.",
+    "message_error": "Le message doit contenir au moins 10 caractères.",
+    "accept_error": "Vous devez accepter les conditions.",
+    "subtitle": "Prenez contact avec nous",
+    "title": "Formulaire de contact",
+    "desc": "Notre équipe vous répondra dans les plus brefs délais.",
+    "send_message": "Envoyer le message"
+  },
+  "privacy": {
+    "title": "Politique de confidentialité"
+  },
+  "carousel": {
+    "ai": {
+      "name": "Intelligence Artificielle",
+      "desc": "L'IA au service de l'agriculture.",
+      "popup": "Découvrez comment l'IA révolutionne votre quotidien."
+    },
+    "astrology": {
+      "name": "Astrologie & Précision",
+      "desc": "Des solutions sur-mesure.",
+      "popup": "Boostez votre productivité grâce à nos solutions innovantes."
+    },
+    "innovation": {
+      "name": "Innovation Agricole",
+      "desc": "Modernisez vos machines.",
+      "popup": "L'innovation au cœur de vos exploitations."
+    },
+    "startup": {
+      "name": "Start-up & Croissance",
+      "desc": "Accompagner l'essor de votre activité.",
+      "popup": "Entreprendre avec des outils adaptés au monde agricole."
+    },
+    "work": {
+      "name": "Travail & Performance",
+      "desc": "Optimisez vos rendements.",
+      "popup": "Des solutions pour travailler mieux, chaque jour."
+    },
+    "tech": {
+      "name": "Technologie & Mobilité",
+      "desc": "Le numérique au service du terrain.",
+      "popup": "La technologie pour une agriculture connectée."
+    },
+    "nature": {
+      "name": "Nature & Croissance",
+      "desc": "L'importance de la biodiversité.",
+      "popup": "Préserver la nature tout en innovant."
+    },
+    "project": {
+      "name": "Projet & Vision",
+      "desc": "Construisons l'avenir ensemble.",
+      "popup": "Votre projet, notre expertise pour demain."
+    }
+  },
+  "features25": {
+    "card1": {
+      "title": "Projet SmartAgri Connect",
+      "desc": "Une plateforme connectée pour le suivi en temps réel des parcelles agricoles, l’optimisation de l’irrigation et la gestion intelligente des ressources.",
+      "button": "En savoir plus"
+    },
+    "card2": {
+      "title": "Application Mobile Bovin+",
+      "desc": "Une application mobile dédiée à la gestion du cheptel, au suivi sanitaire et à la traçabilité des animaux pour les éleveurs modernes.",
+      "button": "En savoir plus"
+    }
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "subtitle": "Trouvez rapidement les réponses à vos questions sur nos solutions innovantes pour l'agriculture moderne et nos services d'ingénierie.",
+    "faq1": {
+      "q": "Quelles sont les solutions technologiques proposées par Carteron Industries ?",
+      "a": "Carteron Industries propose une gamme complète de solutions technologiques innovantes pour l'agriculture moderne. Nos solutions incluent des systèmes d'automatisation intelligents, des capteurs IoT pour la surveillance des cultures, des logiciels de gestion d'exploitation agricole, et des équipements de précision pour l'optimisation des ressources. Nous développons également des solutions sur mesure pour répondre aux besoins spécifiques de chaque exploitation agricole."
+    },
+    "faq2": {
+      "q": "Comment puis-je bénéficier des services d'ingénierie de Carteron Industries ?",
+      "a": "Nos services d'ingénierie vous permettent d'optimiser vos processus agricoles grâce à une approche personnalisée. Nous analysons votre exploitation, identifions les points d'amélioration, et concevons des solutions sur mesure. Nos ingénieurs vous accompagnent de la conception à l'implémentation, garantissant une intégration parfaite et une formation complète de vos équipes pour maximiser les bénéfices de nos solutions."
+    },
+    "faq3": {
+      "q": "Carteron Industries propose-t-il un support de maintenance pour ses solutions ?",
+      "a": "Oui, Carteron Industries propose un support de maintenance complet pour toutes ses solutions. Notre équipe technique est disponible 24h/24 et 7j/7 pour assurer le bon fonctionnement de vos équipements. Nous proposons des contrats de maintenance préventive, des interventions d'urgence, et des mises à jour logicielles régulières pour garantir la performance optimale de vos installations."
+    },
+    "faq4": {
+      "q": "Carteron Industries peut-il personnaliser les solutions selon mes besoins spécifiques ?",
+      "a": "Absolument ! La personnalisation est au cœur de notre approche. Chaque exploitation agricole a ses spécificités, et nous adaptons nos solutions en conséquence. Nos ingénieurs travaillent en étroite collaboration avec vous pour comprendre vos besoins, analyser votre environnement de travail, et développer des solutions parfaitement adaptées à votre contexte et à vos objectifs de production."
+    }
+  },
+  "testimonials": {
+    "title": "Témoignages Clients",
+    "subtitle": "Découvrez ce que nos clients disent de nos solutions innovantes pour l'agriculture moderne. Leur satisfaction est notre plus grande récompense.",
+    "t1": {
+      "name": "Pierre Dubois",
+      "title": "Agriculteur, Ferme Dubois",
+      "text": "Carteron Industries a révolutionné notre façon de travailler. Leurs solutions technologiques nous ont permis d'augmenter notre productivité de 40% tout en réduisant nos coûts."
+    },
+    "t2": {
+      "name": "Marie Laurent",
+      "title": "Directrice, Coopérative Agricole",
+      "text": "L'équipe de Carteron Industries est exceptionnelle. Leur expertise technique et leur accompagnement personnalisé ont transformé notre exploitation. Je recommande vivement !"
+    },
+    "t3": {
+      "name": "Jean-Claude Moreau",
+      "title": "Propriétaire, Domaine Moreau",
+      "text": "Après 30 ans d'agriculture traditionnelle, j'ai découvert Carteron Industries. Leurs innovations m'ont permis de moderniser mon exploitation tout en préservant nos traditions."
+    },
+    "t4": {
+      "name": "Sophie Martin",
+      "title": "Ingénieure Agronome, Institut Agricole",
+      "text": "En tant qu'experte du secteur, je peux affirmer que Carteron Industries est à la pointe de l'innovation agricole. Leurs solutions sont non seulement efficaces mais aussi durables."
+    }
+  },
+  "steps": {
+    "title": "Notre accompagnement, étape par étape",
+    "description": "Découvrez comment nous transformons vos besoins en solutions concrètes et innovantes, grâce à un parcours client fluide, humain et sur-mesure.",
+    "step1": {
+      "title": "1. Prise de contact",
+      "desc": "Nous échangeons sur vos besoins, vos objectifs et vos contraintes pour bien comprendre votre projet."
+    },
+    "step2": {
+      "title": "2. Conception sur-mesure",
+      "desc": "Nos experts imaginent et conçoivent une solution personnalisée, adaptée à votre activité et à vos attentes."
+    },
+    "step3": {
+      "title": "3. Déploiement & tests",
+      "desc": "Nous installons, testons et ajustons la solution dans votre environnement pour garantir son efficacité."
+    },
+    "step4": {
+      "title": "4. Suivi & accompagnement",
+      "desc": "Nous restons à vos côtés pour assurer la maintenance, l’évolution et la performance de votre solution dans la durée."
+    }
+  },
+  "contact10": {
+    "heading1": "Contactez-nous",
+    "content1": "N'hésitez pas à nous contacter pour toute question ou collaboration.",
+    "location2": "Email : lamia.benhamouda.ap@gmail.com",
+    "location2Description": "Envoyez-nous un email pour toute question ou proposition.",
+    "get_directions": "Obtenir l'itinéraire"
+  }
+} 

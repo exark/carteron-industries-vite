@@ -5,8 +5,9 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import "./features25.css";
+import { useTranslation } from "react-i18next";
 
-function FeatureCard({ title, description, image }) {
+function FeatureCard({ title, description, image, buttonLabel }) {
   return (
     <Card className="features25-card">
       <CardMedia
@@ -44,7 +45,7 @@ function FeatureCard({ title, description, image }) {
             '&:hover': { background: "#2157d9" },
           }}
         >
-          En savoir plus
+          {buttonLabel}
         </Button>
       </CardContent>
     </Card>
@@ -52,17 +53,20 @@ function FeatureCard({ title, description, image }) {
 }
 
 export default function Features25() {
+  const { t } = useTranslation();
   return (
     <div id="Features25" className="features25-row">
       <FeatureCard
-        title="Projet SmartAgri Connect"
-        description="Une plateforme connectée pour le suivi en temps réel des parcelles agricoles, l’optimisation de l’irrigation et la gestion intelligente des ressources."
+        title={t('features25.card1.title', 'Projet SmartAgri Connect')}
+        description={t('features25.card1.desc', "Une plateforme connectée pour le suivi en temps réel des parcelles agricoles, l’optimisation de l’irrigation et la gestion intelligente des ressources.")}
         image="/images/argicole.jpg"
+        buttonLabel={t('features25.card1.button', 'En savoir plus')}
       />
       <FeatureCard
-        title="Application Mobile Bovin+"
-        description="Une application mobile dédiée à la gestion du cheptel, au suivi sanitaire et à la traçabilité des animaux pour les éleveurs modernes."
+        title={t('features25.card2.title', 'Application Mobile Bovin+')}
+        description={t('features25.card2.desc', "Une application mobile dédiée à la gestion du cheptel, au suivi sanitaire et à la traçabilité des animaux pour les éleveurs modernes.")}
         image="/images/tracteur1.png"
+        buttonLabel={t('features25.card2.button', 'En savoir plus')}
       />
     </div>
   );
