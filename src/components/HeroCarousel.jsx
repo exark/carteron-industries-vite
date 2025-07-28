@@ -327,7 +327,7 @@ export default function HeroCarousel() {
                     className="about-modal-light-avatar-img"
                   />
                   <div className="about-modal-light-name">Lamia Carteron</div>
-                  <div className="about-modal-light-post">Fondatrice</div>
+                  <div className="about-modal-light-post">{t('carousel.about_founder', 'Fondatrice')}</div>
                 </div>
               </div>
               
@@ -341,7 +341,7 @@ export default function HeroCarousel() {
                     </div>
                   </section>
                   <section className="about-modal-light-section">
-                    <div className="about-modal-light-section-title">Parcours</div>
+                    <div className="about-modal-light-section-title">{t('carousel.about_parcours_title', 'Parcours')}</div>
                     <div className="about-modal-light-section-desc">
                       {t('carousel.about_parcours', 'Docteure ingénieure en électronique et physique, Lamia Carteron fonde Carteron Industries après plus de 15 ans d\'expérience en R&D dans l\'optimisation de véhicules thermiques, hybrides, électriques et de machines agricoles. Elle a collaboré avec de grands noms de l\'industrie automobile et du secteur agricole. Aujourd\'hui, elle met son expertise au service d\'une solution innovante dans le domaine du loisir, fruit d\'un croisement unique entre sa passion pour l\'ingénierie automobile, son goût pour le golf et sa vie de famille.')}
                     </div>

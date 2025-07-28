@@ -53,15 +53,16 @@ body, html {
   display: flex;
   flex-direction: column;
   gap: var(--space-3xl);
+  overflow: hidden;
 }
 
 /* Barre de progression verticale animée */
 .steps2-timeline-progress-bar {
   position: absolute;
   left: 32px;
-  top: 0;
+  top: 32px;
   width: 8px;
-  height: 100%;
+  height: calc(100% - 64px);
   background: var(--neutral-gray-200);
   border-radius: 8px;
   z-index: 0;
@@ -183,7 +184,9 @@ body, html {
   }
   .steps2-timeline-progress-bar {
     left: 20px;
+    top: 24px;
     width: 6px;
+    height: calc(100% - 48px);
     border-radius: 6px;
   }
   .steps2-timeline-progress-bar-fill {
@@ -219,7 +222,9 @@ body, html {
   }
   .steps2-timeline-progress-bar {
     left: 10px;
+    top: 18px;
     width: 4px;
+    height: calc(100% - 36px);
     border-radius: 4px;
   }
   .steps2-timeline-progress-bar-fill {

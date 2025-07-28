@@ -409,6 +409,14 @@
   pointer-events: all;
   user-select: none;
 }
+
+/* Masquer les flèches sur tablette et mobile */
+@media (max-width: 950px) {
+  .custom-prev-btn,
+  .custom-next-btn {
+    display: none !important;
+  }
+}
 .custom-prev-btn:hover,
 .custom-next-btn:hover {
   background: #1976d2 !important;

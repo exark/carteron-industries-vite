@@ -9,7 +9,12 @@ import { useTranslation } from "react-i18next";
 
 function FeatureCard({ title, description, image, buttonLabel }) {
   return (
-    <Card className="features25-card">
+    <Card className="features25-card" sx={{ 
+      borderRadius: '20px !important',
+      border: 'none !important',
+      boxShadow: '0 8px 32px rgba(32,101,209,0.08) !important',
+      overflow: 'hidden'
+    }}>
       <CardMedia
         component="img"
         image={image}
@@ -18,15 +23,27 @@ function FeatureCard({ title, description, image, buttonLabel }) {
           width: "100%",
           height: 240,
           objectFit: "cover",
-          borderRadius: "18px 18px 0 0",
+          borderRadius: "20px 20px 0 0",
         }}
       />
-      <CardContent>
+      <CardContent sx={{ 
+        padding: '24px !important',
+        borderRadius: '0 0 20px 20px !important',
+        background: '#fff !important'
+      }}>
         <Typography
           gutterBottom
           variant="h5"
           component="div"
-          sx={{ fontWeight: 700, color: "#1a1a1a", marginBottom: 2 }}
+          sx={{ 
+            fontWeight: 700, 
+            color: "#1a1a1a", 
+            marginBottom: 2,
+            background: 'linear-gradient(135deg, #1a1a1a 0%, #1976D2 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}
         >
           {title}
         </Typography>
@@ -36,13 +53,22 @@ function FeatureCard({ title, description, image, buttonLabel }) {
         <Button
           variant="contained"
           sx={{
-            background: "#1976D2",
+            background: "linear-gradient(135deg, #1976D2 0%, #1565C0 100%)",
             color: "#fff",
             fontWeight: 600,
-            borderRadius: 2,
+            borderRadius: 3,
             textTransform: "none",
-            boxShadow: "0 2px 8px rgba(32,101,209,0.10)",
-            '&:hover': { background: "#2157d9" },
+            boxShadow: "0 4px 16px rgba(25,118,210,0.3)",
+            transition: "all 0.3s ease",
+            position: "relative",
+            overflow: "hidden",
+            border: 'none !important',
+            '&:hover': { 
+              background: "linear-gradient(135deg, #1565C0 0%, #0D47A1 100%)",
+              boxShadow: "0 8px 24px rgba(25,118,210,0.4)",
+              transform: "translateY(-2px)",
+              border: 'none !important'
+            },
           }}
         >
           {buttonLabel}
@@ -58,7 +84,7 @@ export default function Features25() {
     <div id="Features25" className="features25-row">
       <FeatureCard
         title={t('features25.card1.title', 'Projet SmartAgri Connect')}
-        description={t('features25.card1.desc', "Une plateforme connectée pour le suivi en temps réel des parcelles agricoles, l’optimisation de l’irrigation et la gestion intelligente des ressources.")}
+        description={t('features25.card1.desc', "Une plateforme connectée pour le suivi en temps réel des parcelles agricoles, l'optimisation de l'irrigation et la gestion intelligente des ressources.")}
         image="/images/argicole.jpg"
         buttonLabel={t('features25.card1.button', 'En savoir plus')}
       />
@@ -67,6 +93,18 @@ export default function Features25() {
         description={t('features25.card2.desc', "Une application mobile dédiée à la gestion du cheptel, au suivi sanitaire et à la traçabilité des animaux pour les éleveurs modernes.")}
         image="/images/tracteur1.png"
         buttonLabel={t('features25.card2.button', 'En savoir plus')}
+      />
+      <FeatureCard
+        title={t('features25.card3.title', 'Chariots de Golf Électriques')}
+        description={t('features25.card3.desc', "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l'expérience sur le green.")}
+        image="/images/basket.jpg"
+        buttonLabel={t('features25.card3.button', 'En savoir plus')}
+      />
+      <FeatureCard
+        title={t('features25.card4.title', 'Poussette & Chariot Golf Hybride 2-en-1')}
+        description={t('features25.card4.desc', "Une innovation unique : un chariot hybride pensé pour les jeunes parents actifs, combinant les fonctions d'une poussette et d'un chariot de golf motorisé. Idéal pour concilier sport et famille sans compromis.")}
+        image="/images/bebe.jpg"
+        buttonLabel={t('features25.card4.button', 'En savoir plus')}
       />
     </div>
   );
