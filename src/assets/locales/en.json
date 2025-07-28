@@ -4,17 +4,17 @@
     "services": "Our Services",
     "testimonials": "Testimonials",
     "faq": "FAQ",
-    "other": "other",
-    "contact": "Contact us"
+    "other": "Other",
+    "contact": "Contact Us"
   },
   "footer": {
     "about": "About",
     "our_company": "Our Company",
     "our_services": "Our Services",
     "follow_us": "Follow Us",
-    "legal": "Legal",
+    "legal": "Legal Notice",
     "privacy": "Privacy Policy",
-    "terms": "Terms & Conditions",
+    "terms": "Terms and Conditions",
     "copyright": "© {{year}} Carteron Industries™"
   },
   "home": {
@@ -32,171 +32,181 @@
     "company": "Company",
     "website": "Website",
     "message": "Message",
-    "accept": "I accept the terms of use and the privacy policy",
-    "submit": "Send",
+    "accept": "I accept the terms of use and privacy policy",
+    "submit": "Submit",
     "accept_info": "By submitting this form, you accept our privacy policy.",
     "success": "Form successfully sent!",
     "name_error": "Enter a valid name (at least 2 letters, letters, hyphens, spaces).",
     "email_error": "Enter a valid email address.",
     "phone_error": "Enter a valid number (e.g.: +216 99 123 456 or 0612345678).",
-    "website_error": "Enter a valid URL (https://mysite.com) or leave blank.",
-    "company_error": "Company name too short.",
-    "message_error": "The message must contain at least 10 characters.",
+    "phone_error_required": "Phone number is required and must be valid (e.g.: +216 99 123 456 or 0612345678).",
+    "website_error": "Enter a valid URL (https://mysite.com) or leave it blank.",
+    "company_error": "Company name is too short.",
+    "message_error": "Message must contain at least 10 characters.",
     "accept_error": "You must accept the terms.",
     "subtitle": "Get in touch with us",
-    "title": "Contact form",
-    "desc": "Our team will respond as soon as possible.",
-    "send_message": "Send message",
-    "left_caption": "Get in touch with our team! We are here to listen to all your projects."
+    "title": "Contact Form",
+    "desc": "Our team will get back to you as soon as possible.",
+    "send_message": "Send Message",
+    "left_caption": "Get in touch with our team! We're here to support all your projects."
   },
   "privacy": {
     "title": "Privacy Policy",
-    "intro": "At Carteron Industries, we place great importance on the protection of your personal data and your privacy.",
+    "intro": "At Carteron Industries, we highly value the protection of your personal data and privacy.",
     "section1_title": "1. Data Collected",
-    "section1_text": "We only collect information strictly necessary for the operation of the site and the management of your requests via our contact form (name, email address, message, etc.).\nNo data is transmitted to third parties without your consent.",
+    "section1_text": "We only collect the information strictly necessary for the site's operation and to handle your requests via our contact form (name, email address, message, etc.).\nNo data is shared with third parties without your consent.",
     "section2_title": "2. Cookies",
-    "section2_text": "Our site does not use cookies for tracking, advertising, or analytics purposes.\nOnly technical cookies, essential for the proper functioning of the site, may be used.",
+    "section2_text": "Our site does not use cookies for tracking, advertising, or analytics purposes.\nOnly technical cookies essential for the site's proper functioning may be used.",
     "section3_title": "3. Use of Data",
-    "section3_text": "The information you provide to us via the contact form is used solely to respond to your requests.\nIt is neither sold nor used for commercial purposes.",
+    "section3_text": "The information you send via the contact form is only used to respond to your inquiries.\nIt is not sold or used for commercial purposes.",
     "section4_title": "4. Security",
     "section4_text": "We implement all necessary measures to ensure the security of your data.",
     "section5_title": "5. Your Rights",
-    "section5_text": "In accordance with current regulations, you have the right to access, rectify, and delete your personal data.\nTo exercise these rights, contact us at the following address: <a href=\"mailto:ton-email@domaine.com\">ton-email@domaine.com</a>",
+    "section5_text": "In accordance with applicable regulations, you have the right to access, correct, and delete your personal data.\nTo exercise these rights, contact us at: <a href=\"mailto:ton-email@domaine.com\">ton-email@domaine.com</a>",
     "section6_title": "6. Changes",
-    "section6_text": "This privacy policy may be modified at any time. We invite you to consult it regularly."
+    "section6_text": "This privacy policy may be updated at any time. We encourage you to check it regularly."
   },
+  "privacy_banner": "We do not collect any personal data for commercial or advertising purposes. Your privacy is respected.",
   "carousel": {
+    "side_title": "Our Areas of Expertise",
+    "side_desc": "At Carteron Industries, we place innovation and technology at the service of agriculture and well-being. Our products and services are designed to meet concrete needs, with both a human and technological approach.",
+    "about_btn": "About",
+    "about_aria": "Open about window",
+    "close": "Close",
+    "about_intro": "Carteron Industries represents a modern vision of agriculture and mobility. Founded on systems engineering expertise, the company develops intelligent solutions for the agricultural world and outdoor leisure. We believe in useful, sustainable technology adapted to field realities.",
+    "about_parcours": "PhD engineer in electronics and physics, Lamia Carteron founded Carteron Industries after more than 15 years of R&D experience in optimizing thermal, hybrid, electric vehicles and agricultural machinery. She has collaborated with major names in the automotive industry and agricultural sector. Today, she puts her expertise at the service of an innovative solution in the leisure domain, the result of a unique combination between her passion for automotive engineering, her love for golf and her family life.",
     "ai": {
-      "name": "Artificial Intelligence",
-      "desc": "AI serving agriculture.",
-      "popup": "Discover how AI is revolutionizing your daily life."
+      "name": "Agricultural System Engineering",
+      "desc": "Discover our services in agricultural system engineering",
+      "popup": "Innovation at the heart of farming operations. At CARTERON Industries, we understand the challenges faced by agricultural equipment manufacturers. Whether improving the efficiency of your equipment, complying with environmental standards, or developing innovative solutions, we are here to support you. We work with farm equipment manufacturers, tractor and machinery producers, and agricultural suppliers to deliver custom-made solutions tailored to their specific needs."
     },
     "astrology": {
-      "name": "Astrology & Precision",
-      "desc": "Tailor-made solutions.",
-      "popup": "Boost your productivity with our innovative solutions."
+      "name": "Web & Mobile Apps for Agricultural Weighing",
+      "desc": "View our weighing solution",
+      "popup": "Boost your productivity with our innovative solutions. We offer connected tools for farmers to track their weighing operations, monitor inventory, prepare weighing environments, and follow their activities from mobile, tablet, or computer."
     },
     "innovation": {
-      "name": "Agricultural Innovation",
-      "desc": "Modernize your machines.",
-      "popup": "Innovation at the heart of your operations."
+      "name": "Electric Golf Trolleys",
+      "desc": "Explore the golf trolley",
+      "popup": "We offer lightweight, foldable, connected electric golf trolleys with navigation systems. Our mission is to provide market alternatives at lower cost than our competitors."
     },
     "startup": {
-      "name": "Start-up & Growth",
-      "desc": "Supporting your business growth.",
-      "popup": "Entrepreneurship with tools adapted to agriculture."
+      "name": "2-in-1 Stroller & Golf Trolley Hybrid",
+      "desc": "Discover our hybrid trolley",
+      "popup": "to be developed"
     },
     "work": {
       "name": "Work & Performance",
       "desc": "Optimize your yields.",
-      "popup": "Solutions to work better, every day."
+      "popup": "Solutions to work better every day."
     },
     "tech": {
       "name": "Technology & Mobility",
-      "desc": "Digital technology for the field.",
+      "desc": "Digital tools for the field.",
       "popup": "Technology for connected agriculture."
     },
     "nature": {
       "name": "Nature & Growth",
       "desc": "The importance of biodiversity.",
-      "popup": "Preserve nature while innovating."
+      "popup": "Preserving nature while innovating."
     },
     "project": {
       "name": "Project & Vision",
       "desc": "Let's build the future together.",
       "popup": "Your project, our expertise for tomorrow."
-    },
-    "side_title": "Our Mission",
-    "side_desc": "We develop advanced technological solutions to optimize the performance of agricultural machinery, integrating intelligent systems for more precise and efficient agriculture.",
-    "about_btn": "About",
-    "about_aria": "Open about window",
-    "about_parcours": "An agricultural technology engineer, Lamia Carteron founded Carteron Industries after 10 years of experience optimizing systems for agricultural machinery, with a passion for innovation and supporting sector stakeholders.",
-    "about_mission": "Providing intelligent solutions to modernize agriculture, improve yields, reduce environmental impact, and support farmers in their digital transformation.",
-    "about_equipe": "Our multidisciplinary team brings together engineers, developers, and field experts, all driven by the desire to advance agriculture through technology.",
-    "close": "Close"
+    }
   },
   "features25": {
     "card1": {
-      "title": "SmartAgri Connect Project",
-      "desc": "A connected platform for real-time monitoring of agricultural plots, irrigation optimization, and intelligent resource management.",
+      "title": "Agricultural System Engineering",
+      "desc": "We support agricultural manufacturers and equipment suppliers in the design, development, and optimization of their technical systems. Our approach relies on systems engineering, functional analysis, and field expertise to ensure robust, sustainable, and profitable solutions.",
       "button": "Learn more"
     },
     "card2": {
-      "title": "Bovin+ Mobile App",
-      "desc": "A mobile app dedicated to herd management, health monitoring, and animal traceability for modern breeders.",
+      "title": "Web & Mobile Apps for Agricultural Weighing",
+      "desc": "Our digital solution allows logging and managing weighing operations via intuitive interfaces connected to tractors with front loaders. Optimize your logistics, save time, and enjoy full traceability.",
+      "button": "Learn more"
+    },
+    "card3": {
+      "title": "Electric Golf Trolleys",
+      "desc": "Designed for demanding golfers, our electric trolleys combine performance, range, and ergonomics. Developed with silent motors and intuitive navigation, they enhance the experience on the green.",
+      "button": "Learn more"
+    },
+    "card4": {
+      "title": "2-in-1 Stroller & Golf Trolley Hybrid",
+      "desc": "A unique innovation: a hybrid trolley designed for active parents, combining the functionality of a stroller and a motorized golf cart. Perfect to balance sport and family without compromise.",
       "button": "Learn more"
     }
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Quickly find answers to your questions about our innovative solutions for modern agriculture and our engineering services.",
+    "subtitle": "Find quick answers about our innovative solutions for modern agriculture and engineering services.",
     "faq1": {
-      "q": "What technological solutions does Carteron Industries offer?",
-      "a": "Carteron Industries offers a complete range of innovative technological solutions for modern agriculture. Our solutions include intelligent automation systems, IoT sensors for crop monitoring, farm management software, and precision equipment for resource optimization. We also develop tailor-made solutions to meet the specific needs of each farm."
+      "q": "What technology solutions does Carteron Industries offer?",
+      "a": "Carteron Industries offers a comprehensive range of innovative technology solutions for modern agriculture. Our solutions include smart automation systems, IoT sensors for crop monitoring, farm management software, and precision equipment for resource optimization. We also develop custom solutions tailored to the specific needs of each farm."
     },
     "faq2": {
-      "q": "How can I benefit from Carteron Industries' engineering services?",
-      "a": "Our engineering services help you optimize your agricultural processes through a personalized approach. We analyze your farm, identify areas for improvement, and design tailor-made solutions. Our engineers support you from design to implementation, ensuring perfect integration and comprehensive training for your teams to maximize the benefits of our solutions."
+      "q": "How can I benefit from Carteron Industries’ engineering services?",
+      "a": "Our engineering services help optimize your agricultural processes through a personalized approach. We analyze your farm, identify areas for improvement, and design custom solutions. Our engineers support you from design to implementation, ensuring perfect integration and comprehensive training for your teams to maximize the benefits."
     },
     "faq3": {
-      "q": "Does Carteron Industries provide maintenance support for its solutions?",
-      "a": "Yes, Carteron Industries provides comprehensive maintenance support for all its solutions. Our technical team is available 24/7 to ensure your equipment runs smoothly. We offer preventive maintenance contracts, emergency interventions, and regular software updates to guarantee the optimal performance of your installations."
+      "q": "Does Carteron Industries offer maintenance support for its solutions?",
+      "a": "Yes, Carteron Industries offers full maintenance support for all its solutions. Our technical team is available 24/7 to ensure your equipment operates smoothly. We offer preventive maintenance contracts, emergency repairs, and regular software updates to guarantee optimal performance."
     },
     "faq4": {
       "q": "Can Carteron Industries customize solutions to my specific needs?",
-      "a": "Absolutely! Customization is at the heart of our approach. Each farm has its own specificities, and we adapt our solutions accordingly. Our engineers work closely with you to understand your needs, analyze your work environment, and develop solutions perfectly suited to your context and production objectives."
+      "a": "Absolutely! Customization is at the core of our approach. Every farm is unique, and we adapt our solutions accordingly. Our engineers work closely with you to understand your needs, assess your working environment, and develop perfectly tailored solutions."
     }
   },
   "testimonials": {
     "title": "Client Testimonials",
-    "subtitle": "Discover what our clients say about our innovative solutions for modern agriculture. Their satisfaction is our greatest reward.",
+    "subtitle": "See what our clients are saying about our innovative solutions for modern agriculture. Their satisfaction is our greatest reward.",
     "t1": {
       "name": "Pierre Dubois",
       "title": "Farmer, Dubois Farm",
-      "text": "Carteron Industries has revolutionized our way of working. Their technological solutions have increased our productivity by 40% while reducing our costs."
+      "text": "Carteron Industries revolutionized our workflow. Their tech solutions increased our productivity by 40% while reducing our costs."
     },
     "t2": {
       "name": "Marie Laurent",
       "title": "Director, Agricultural Cooperative",
-      "text": "The Carteron Industries team is exceptional. Their technical expertise and personalized support have transformed our farm. I highly recommend them!"
+      "text": "The Carteron Industries team is outstanding. Their technical expertise and personalized support transformed our operation. Highly recommended!"
     },
     "t3": {
       "name": "Jean-Claude Moreau",
       "title": "Owner, Moreau Estate",
-      "text": "After 30 years of traditional farming, I discovered Carteron Industries. Their innovations allowed me to modernize my farm while preserving our traditions."
+      "text": "After 30 years of traditional farming, I discovered Carteron Industries. Their innovations helped modernize my farm while preserving our traditions."
     },
     "t4": {
       "name": "Sophie Martin",
-      "title": "Agronomist Engineer, Agricultural Institute",
-      "text": "As an expert in the field, I can say that Carteron Industries is at the forefront of agricultural innovation. Their solutions are not only effective but also sustainable."
+      "title": "Agricultural Engineer, Agricultural Institute",
+      "text": "As an industry expert, I can say Carteron Industries is at the forefront of agricultural innovation. Their solutions are effective and sustainable."
     }
   },
   "steps": {
-    "title": "Our support, step by step",
-    "description": "Discover how we turn your needs into concrete and innovative solutions, thanks to a smooth, human, and tailor-made customer journey.",
+    "title": "Our Support, Step by Step",
+    "description": "Discover how we transform your needs into concrete and innovative solutions, with a smooth, human, and personalized customer journey.",
     "step1": {
       "title": "1. Initial Contact",
-      "desc": "We discuss your needs, goals, and constraints to fully understand your project."
+      "desc": "We discuss your needs, goals, and constraints to understand your project thoroughly."
     },
     "step2": {
       "title": "2. Custom Design",
-      "desc": "Our experts design a personalized solution tailored to your business and expectations."
+      "desc": "We design a personalized solution tailored to your business and expectations."
     },
     "step3": {
       "title": "3. Deployment & Testing",
-      "desc": "We install, test, and adjust the solution in your environment to ensure its effectiveness."
+      "desc": "We install, test, and adjust the solution in your environment to ensure efficiency."
     },
     "step4": {
-      "title": "4. Follow-up & Support",
-      "desc": "We stay by your side to ensure the maintenance, evolution, and performance of your solution over time."
+      "title": "4. Ongoing Support",
+      "desc": "We remain by your side to ensure maintenance, evolution, and performance over time."
     }
   },
   "contact10": {
-    "heading1": "Contact us",
-    "content1": "Do not hesitate to contact us for any questions or collaboration.",
+    "heading1": "Contact Us",
+    "content1": "Feel free to contact us for any questions or collaborations.",
     "location2": "Email: lamia.benhamouda.ap@gmail.com",
-    "location2Description": "Send us an email for any question or proposal.",
-    "get_directions": "Get directions"
-  },
-  "privacy_banner": "We do not collect any personal data for commercial or advertising purposes. Your privacy is respected."
-} 
+    "location2Description": "Send us an email for any questions or proposals.",
+    "get_directions": "Get Directions"
+  }
+}

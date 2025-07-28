@@ -308,48 +308,45 @@ export default function HeroCarousel() {
             className="carousel-modal-box about-modal-light-box"
             sx={{ position: "relative", padding: 0, overflow: "hidden" }}
           >
+            {/* Croix de fermeture */}
+            <button
+              onClick={() => setAboutModalOpen(false)}
+              className="about-modal-close-x"
+              aria-label="Fermer la fenêtre à propos"
+            >
+              ×
+            </button>
+            
             <div className="about-modal-light-content">
-              {/* Avatar en haut */}
-              <div className="about-modal-light-avatar-block">
-                <img
-                  src="/images/lamiaCarteron.jpeg"
-                  alt="Portrait de Lamia Carteron"
-                  className="about-modal-light-avatar-img"
-                />
-                <div className="about-modal-light-name">Lamia Carteron</div>
-                <div className="about-modal-light-post">Fondatrice</div>
+              {/* Colonne gauche - Avatar et infos */}
+              <div className="about-modal-light-left-col">
+                <div className="about-modal-light-avatar-block">
+                  <img
+                    src="/images/lamiaCarteron.jpeg"
+                    alt="Portrait de Lamia Carteron"
+                    className="about-modal-light-avatar-img"
+                  />
+                  <div className="about-modal-light-name">Lamia Carteron</div>
+                  <div className="about-modal-light-post">Fondatrice</div>
+                </div>
               </div>
-              {/* Paragraphes */}
-              <div className="about-modal-light-sections">
-                <section className="about-modal-light-section">
-                  <div className="about-modal-light-section-title">Parcours</div>
-                  <div className="about-modal-light-section-desc">
-                    {t('carousel.about_parcours', 'Ingénieure en technologies agricoles, Lamia Carteron a fondé Carteron Industries après 10 ans d’expérience dans l’optimisation des systèmes pour machines agricoles, avec une passion pour l’innovation et l’accompagnement des acteurs du secteur.')}
-                  </div>
-                </section>
-                <section className="about-modal-light-section">
-                  <div className="about-modal-light-section-title">Mission</div>
-                  <div className="about-modal-light-section-desc">
-                    {t('carousel.about_mission', 'Offrir des solutions intelligentes pour moderniser l’agriculture, améliorer les rendements, réduire l’impact environnemental et accompagner les agriculteurs dans leur transformation digitale.')}
-                  </div>
-                </section>
-                <section className="about-modal-light-section">
-                  <div className="about-modal-light-section-title">Équipe</div>
-                  <div className="about-modal-light-section-desc">
-                    {t('carousel.about_equipe', 'Notre équipe pluridisciplinaire regroupe ingénieurs, développeurs et experts terrain, tous animés par la volonté de faire évoluer l’agriculture grâce à la technologie.')}
-                  </div>
-                </section>
-              </div>
-              <div className="carousel-modal-actions about-modal-light-actions">
-                <Button
-                  onClick={() => setAboutModalOpen(false)}
-                  variant="contained"
-                  color="primary"
-                  className="carousel-modal-close about-modal-light-close-btn"
-                  aria-label="Fermer la fenêtre à propos"
-                >
-                  {t('carousel.close', 'Fermer')}
-                </Button>
+              
+              {/* Colonne droite - Contenu */}
+              <div className="about-modal-light-right-col">
+                {/* Introduction et Parcours */}
+                <div className="about-modal-light-sections">
+                  <section className="about-modal-light-section">
+                    <div className="about-modal-light-section-desc">
+                      {t('carousel.about_intro', 'Carteron Industries, c\'est une vision moderne de l\'agriculture et de la mobilité. Fondée sur une expertise en ingénierie système, l\'entreprise développe des solutions intelligentes pour le monde agricole et les loisirs outdoor. Nous croyons en une technologie utile, durable et adaptée aux réalités du terrain.')}
+                    </div>
+                  </section>
+                  <section className="about-modal-light-section">
+                    <div className="about-modal-light-section-title">Parcours</div>
+                    <div className="about-modal-light-section-desc">
+                      {t('carousel.about_parcours', 'Docteure ingénieure en électronique et physique, Lamia Carteron fonde Carteron Industries après plus de 15 ans d\'expérience en R&D dans l\'optimisation de véhicules thermiques, hybrides, électriques et de machines agricoles. Elle a collaboré avec de grands noms de l\'industrie automobile et du secteur agricole. Aujourd\'hui, elle met son expertise au service d\'une solution innovante dans le domaine du loisir, fruit d\'un croisement unique entre sa passion pour l\'ingénierie automobile, son goût pour le golf et sa vie de famille.')}
+                    </div>
+                  </section>
+                </div>
               </div>
             </div>
           </Box>

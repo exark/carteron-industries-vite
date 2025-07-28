@@ -68,25 +68,32 @@
   },
   "privacy_banner": "Nous ne collectons aucune donnée personnelle à des fins commerciales ou publicitaires. Votre vie privée est respectée.",
   "carousel": {
+    "side_title": "Nos Domaines d'Expertise",
+    "side_desc": "Chez Carteron Industries, nous plaçons l'innovation et la technologie au service de l'agriculture et du bien-être. Nos produits et services sont conçus pour répondre à des besoins concrets, avec une approche à la fois humaine et technologique.",
+    "about_btn": "À propos",
+    "about_aria": "Ouvrir la fenêtre à propos",
+    "close": "Fermer",
+    "about_intro": "Carteron Industries, c'est une vision moderne de l'agriculture et de la mobilité. Fondée sur une expertise en ingénierie système, l'entreprise développe des solutions intelligentes pour le monde agricole et les loisirs outdoor. Nous croyons en une technologie utile, durable et adaptée aux réalités du terrain.",
+    "about_parcours": "Docteure ingénieure en électronique et physique, Lamia Carteron fonde Carteron Industries après plus de 15 ans d'expérience en R&D dans l'optimisation de véhicules thermiques, hybrides, électriques et de machines agricoles. Elle a collaboré avec de grands noms de l'industrie automobile et du secteur agricole. Aujourd'hui, elle met son expertise au service d'une solution innovante dans le domaine du loisir, fruit d'un croisement unique entre sa passion pour l'ingénierie automobile, son goût pour le golf et sa vie de famille.",
     "ai": {
-      "name": "Intelligence Artificielle",
-      "desc": "L'IA au service de l'agriculture.",
-      "popup": "Découvrez comment l'IA révolutionne votre quotidien."
+      "name": "Ingénierie Système Agricole",
+      "desc": "Découvrir nos prestations en ingénierie système agricole",
+      "popup": "L'innovation au cœur des exploitations des agriculteurs. Chez CARTERON industries, nous comprenons les enjeux auxquels sont confrontés les fabricants de matériel agricole. Qu'il s'agisse d'améliorer l'efficacité de vos équipements, de répondre aux normes environnementales ou de développer des solutions innovantes, nous sommes là pour vous accompagner. Nous collaborons avec les constructeurs agroéquipements, les fabricants de tracteurs et de machines agricoles, ainsi que les équipementiers agricoles pour leur fournir des solutions sur mesure, adaptées à leurs besoins spécifiques. "
     },
     "astrology": {
-      "name": "Astrologie & Précision",
-      "desc": "Des solutions sur-mesure.",
-      "popup": "Boostez votre productivité grâce à nos solutions innovantes."
+      "name": "Applications Web & Mobile pour Pesées Agricoles",
+      "desc": "Voir notre solution de pesée",
+      "popup": "Boostez votre productivité grâce à nos solutions innovantes. Nous proposons des solutions connectées pour l’agriculteur afin de lui permettre de tracer son travail de pesé, de suivre son inventaire, de préparer son environnement de pesé et de suivre ses activités à partir son mobile, tablette ou son ordinateur.  "
     },
     "innovation": {
-      "name": "Innovation Agricole",
-      "desc": "Modernisez vos machines.",
-      "popup": "L'innovation au cœur de vos exploitations."
+      "name": "Chariots de Golf Électriques",
+      "desc": "Explorer le chariot de golf",
+      "popup": " Nous proposons des chariots électriques de golf légers, faciles à plier, connectés et avec un système de navigation. Notre mission est de proposer des solutions existantes sur le marché à moindre coût que nos concurrents."
     },
     "startup": {
-      "name": "Start-up & Croissance",
-      "desc": "Accompagner l'essor de votre activité.",
-      "popup": "Entreprendre avec des outils adaptés au monde agricole."
+      "name": "Poussette & Chariot Golf Hybride 2-en-1",
+      "desc": "Découvrir notre chariot hybride",
+      "popup": "à developper"
     },
     "work": {
       "name": "Travail & Performance",
@@ -111,13 +118,23 @@
   },
   "features25": {
     "card1": {
-      "title": "Projet SmartAgri Connect",
-      "desc": "Une plateforme connectée pour le suivi en temps réel des parcelles agricoles, l’optimisation de l’irrigation et la gestion intelligente des ressources.",
+      "title": "Ingénierie Système Agricole",
+      "desc": "Nous accompagnons les constructeurs et équipementiers agricoles dans la conception, le développement et l’optimisation de leurs systèmes techniques. Notre approche s’appuie sur l’ingénierie système, l’analyse fonctionnelle, et une expertise terrain pour garantir des solutions robustes, durables et rentables.",
       "button": "En savoir plus"
     },
     "card2": {
-      "title": "Application Mobile Bovin+",
-      "desc": "Une application mobile dédiée à la gestion du cheptel, au suivi sanitaire et à la traçabilité des animaux pour les éleveurs modernes.",
+      "title": "Applications Web & Mobile pour Pesées Agricoles",
+      "desc": "Notre solution numérique permet l’enregistrement et la gestion des pesées via des interfaces intuitives, connectées aux tracteurs équipés de chargeurs frontaux. Optimisez vos flux logistiques, gagnez du temps et bénéficiez d’une traçabilité complète.",
+      "button": "En savoir plus"
+    },
+    "card3": {
+      "title": "Chariots de Golf Électriques",
+      "desc": "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l’expérience sur le green.",
+      "button": "En savoir plus"
+    },
+    "card4": {
+      "title": "Poussette & Chariot Golf Hybride 2-en-1",
+      "desc": "Une innovation unique : un chariot hybride pensé pour les jeunes parents actifs, combinant les fonctions d’une poussette et d’un chariot de golf motorisé. Idéal pour concilier sport et famille sans compromis.",
       "button": "En savoir plus"
     }
   },
@@ -174,7 +191,7 @@
     },
     "step2": {
       "title": "2. Conception sur-mesure",
-      "desc": "Nos experts imaginent et conçoivent une solution personnalisée, adaptée à votre activité et à vos attentes."
+      "desc": "Nous conçevons une solution personnalisée, adaptée à votre activité et à vos attentes."
     },
     "step3": {
       "title": "3. Déploiement & tests",
@@ -192,4 +209,4 @@
     "location2Description": "Envoyez-nous un email pour toute question ou proposition.",
     "get_directions": "Obtenir l'itinéraire"
   }
-} 
+}
