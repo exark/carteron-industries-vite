@@ -1558,13 +1558,13 @@ html {
   position: absolute;
   top: 8px;
   right: 8px;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: #0b2244;
   border: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -1633,11 +1633,11 @@ html {
     font-size: var(--font-size-sm);
   }
   .about-modal-close-x {
-    top: 6px;
-    right: 6px;
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
+    top: 8px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
   }
 }
 @media (max-width: 600px) {
@@ -1676,10 +1676,10 @@ html {
     font-size: 0.93rem;
   }
   .about-modal-close-x {
-    top: 4px;
-    right: 4px;
-    width: 28px;
-    height: 28px;
-    font-size: 14px;
+    top: 6px;
+    right: 6px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
   }
 }

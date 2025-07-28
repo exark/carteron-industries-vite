@@ -111,23 +111,9 @@ const Navbar81 = (props) => {
   const lastScrollY = useRef(window.scrollY);
 
   useEffect(() => {
-    if (isDesktop) {
-      setShowNavbar(true); // Toujours visible sur desktop
-      return;
-    }
-    const handleScroll = () => {
-      if (window.scrollY < 30) {
-        setShowNavbar(true);
-      } else if (window.scrollY > lastScrollY.current) {
-        setShowNavbar(false); // Descend → cache
-      } else {
-        setShowNavbar(true); // Monte → affiche
-      }
-      lastScrollY.current = window.scrollY;
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isDesktop]);
+    // La navbar reste toujours visible sur tous les appareils
+    setShowNavbar(true);
+  }, []);
 
   // Fonction de scroll ou redirection smooth
   const handleNavScroll = (anchorId) => {
@@ -245,7 +231,6 @@ const Navbar81 = (props) => {
               onClick={() => setDrawerOpen(true)}
               className="navbar81-burger"
             >
-              <MenuIcon style={{ fontSize: 24, marginRight: 8 }} />
               Menu
             </button>
             <Drawer

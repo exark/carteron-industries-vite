@@ -5,7 +5,9 @@
   z-index: 1000;
   position: sticky;
   justify-content: center;
-  background-color: #FFFF;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -185,8 +187,10 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: #fff;
-  border-top: 1px solid #e0e0e0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(224, 224, 224, 0.5);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -378,7 +382,7 @@
   transition: all 0.2s ease !important;
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  margin-left: auto !important;
 }
 
 .navbar81-burger:hover {
@@ -518,8 +522,7 @@
     padding-right: 0.5rem;
   }
   .navbar81-burger {
-    margin-left: auto;
-    padding-right: 32px !important;
+    padding-right: 2px !important;
   }
 }
 
