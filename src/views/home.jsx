@@ -48,9 +48,11 @@ const Home = () => {
       <div id="accompagnement">
         <Steps2></Steps2>
       </div>
+      {/*
       <div id="temoignages">
         <Testimonial17></Testimonial17>
       </div>
+      */}
       <div id="faq">
         <FAQ9></FAQ9>
       </div>

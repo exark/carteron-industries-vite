@@ -163,13 +163,13 @@ const Navbar81 = (props) => {
                   {t('navbar.services')}
                 </span>
               </a>
-              <a
+              {/* <a
                 href="#temoignages"
                 onClick={(e) => handleAnchorClick(e, "temoignages")}
                 className="navbar81-link31  thq-body-small"
               >
                 <span className="navbar81-text18 thq-link">{t('navbar.testimonials')}</span>
-              </a>
+              </a> */}
               <a
                 href="#faq"
                 onClick={(e) => handleAnchorClick(e, "faq")}
@@ -278,13 +278,13 @@ const Navbar81 = (props) => {
                     >
                       {t('navbar.services')}
                     </a>
-                    <a
+                    {/* <a
                       href="#temoignages"
                       onClick={(e) => handleMobileNav(e, "temoignages")}
                       className="mobile-menu-link"
                     >
                       {t('navbar.testimonials')}
-                    </a>
+                    </a> */}
                     <a
                       href="#faq"
                       onClick={(e) => handleMobileNav(e, "faq")}
