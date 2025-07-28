@@ -1430,8 +1430,8 @@ html {
 }
 
 .about-modal-light-avatar-img {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: var(--radius-full);
   object-fit: cover;
   box-shadow: 0 4px 20px rgba(25, 118, 210, 0.15);
@@ -1589,7 +1589,8 @@ html {
 @media (max-width: 900px) {
   .about-modal-light-box {
     max-width: 90vw !important;
-    max-height: 85vh !important;
+    max-height: 70vh !important;
+    height: 70vh !important;
     border-radius: var(--radius-lg) !important;
     padding: 0 !important;
     overflow-y: auto;
@@ -1599,6 +1600,8 @@ html {
     padding: var(--space-lg) var(--space-md) var(--space-md) var(--space-md);
     gap: var(--space-lg) !important;
     min-height: auto;
+    height: 100%;
+    overflow-y: auto;
   }
   .about-modal-light-left-col {
     flex: none !important;
@@ -1610,8 +1613,8 @@ html {
     width: 100% !important;
   }
   .about-modal-light-avatar-img {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
   }
   .about-modal-light-avatar-block {
     margin-bottom: var(--space-lg);
@@ -1640,7 +1643,8 @@ html {
 @media (max-width: 600px) {
   .about-modal-light-box {
     max-width: 85vw !important;
-    max-height: 80vh !important;
+    max-height: 65vh !important;
+    height: 65vh !important;
     border-radius: var(--radius-md) !important;
     padding: 0 !important;
     overflow-y: auto;
@@ -1648,10 +1652,12 @@ html {
   .about-modal-light-content {
     padding: var(--space-md) var(--space-xs) var(--space-xs) var(--space-xs);
     min-height: auto;
+    height: 100%;
+    overflow-y: auto;
   }
   .about-modal-light-avatar-img {
-    width: 48px;
-    height: 48px;
+    width: 70px;
+    height: 70px;
   }
   .about-modal-light-avatar-block {
     margin-bottom: var(--space-md);
