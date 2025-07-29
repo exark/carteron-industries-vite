@@ -377,33 +377,56 @@ const Navbar81 = (props) => {
                       </span>
                     </div>
                     <a
-                      href="/home"
-                      onClick={(e) => handleMobileNav(e, null)}
+                      href="/services"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setDrawerOpen(false);
+                        setMobileSubMenuOpen(false);
+                        navigate("/services");
+                      }}
                       className="mobile-menu-link"
                       style={{ paddingLeft: "16px", borderBottom: "none" }}
                     >
-                      {t('navbar.home')}
+                      {t('features25.card1.title', 'Projet SmartAgri Connect')}
                     </a>
                     <a
-                      href="#"
+                      href="/services"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setDrawerOpen(false);
+                        setMobileSubMenuOpen(false);
+                        navigate("/services");
+                      }}
                       className="mobile-menu-link"
                       style={{ paddingLeft: "16px", borderBottom: "none" }}
                     >
-                      Machines Agricoles
+                      {t('features25.card2.title', 'Application Mobile Bovin+')}
                     </a>
                     <a
-                      href="#"
+                      href="/services"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setDrawerOpen(false);
+                        setMobileSubMenuOpen(false);
+                        navigate("/services");
+                      }}
                       className="mobile-menu-link"
                       style={{ paddingLeft: "16px", borderBottom: "none" }}
                     >
-                      Solutions Intelligentes
+                      {t('features25.card3.title', 'Chariots de Golf Électriques')}
                     </a>
                     <a
-                      href="#"
+                      href="/services"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setDrawerOpen(false);
+                        setMobileSubMenuOpen(false);
+                        navigate("/services");
+                      }}
                       className="mobile-menu-link"
                       style={{ paddingLeft: "16px", borderBottom: "none" }}
                     >
-                      Innovation Technologique
+                      {t('features25.card4.title', 'Poussette & Chariot Golf Hybride 2-en-1')}
                     </a>
                   </nav>
                   <button
