@@ -201,10 +201,10 @@
 }
 
 .navbar81-mega-menu.mega-menu-open {
-  max-height: 300px;
+  max-height: 240px;
   opacity: 1;
   transform: translateY(0);
-  padding: 20px 0;
+  padding: 12px 0;
 }
 
 .navbar81-mega-menu.mega-menu-closed {
@@ -219,23 +219,23 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  padding: 0 32px;
+  gap: 24px;
+  padding: 0 24px;
 }
 
 .navbar81-mega-menu-item {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 32px;
-  border-radius: 16px;
+  padding: 20px;
+  border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   text-decoration: none;
   color: #191818;
-  height: 160px;
-  min-height: 160px;
-  max-height: 160px;
+  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -247,12 +247,12 @@
 }
 
 .navbar81-mega-menu-image {
-  width: 80px;
-  height: 80px;
-  min-width: 80px;
-  min-height: 80px;
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   flex-shrink: 0;
 }
@@ -266,12 +266,13 @@
   overflow: hidden;
   height: 100%;
   justify-content: center;
+  padding: 4px 0;
 }
 
 .navbar81-mega-menu-text h3 {
   font-style: normal;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #191818;
   line-height: 1.3;
   margin: 0;
@@ -284,10 +285,11 @@
   -webkit-box-orient: vertical;
   min-height: 4.2em;
   max-height: 4.2em;
+  padding: 2px 0;
 }
 
 .navbar81-mega-menu-text p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #666;
   line-height: 1.4;
   margin: 0;
@@ -297,6 +299,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   white-space: normal;
+  padding: 1px 0;
 }
 
 .navbar81-icon-group {
@@ -433,14 +436,15 @@
   }
   
   .navbar81-mega-menu.mega-menu-open {
-    padding: 32px 0;
+    padding: 16px 0;
   }
   
   .navbar81-mega-menu-item {
-    height: 100px;
-    min-height: 100px;
-    max-height: 100px;
-    padding: 20px;
+    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    padding: 16px;
+    gap: 16px;
   }
 }
 
@@ -452,29 +456,30 @@
   }
   
   .navbar81-mega-menu-item {
-    height: 90px;
-    min-height: 90px;
-    max-height: 90px;
-    padding: 16px;
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    padding: 12px;
+    gap: 12px;
   }
   
   .navbar81-mega-menu.mega-menu-open {
-    padding: 28px 0;
+    padding: 12px 0;
   }
   
   .navbar81-mega-menu-image {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-    min-height: 50px;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
   }
   
   .navbar81-mega-menu-text h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
   .navbar81-mega-menu-text p {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 }
 
