@@ -266,31 +266,23 @@ export default function HeroCarousel() {
         aria-describedby="carousel-modal-desc"
         className="carousel-modal"
       >
-        <Box className="carousel-modal-box">
+        <Box className="carousel-modal-box" sx={{ position: "relative" }}>
+          {/* Croix de fermeture */}
+          <button
+            onClick={() => setModalOpen(false)}
+            className="about-modal-close-x"
+            aria-label="Fermer la fenêtre"
+          >
+            ×
+          </button>
+          
           {activeSlide && (
-            <>
-              <img
-                src={activeSlide.image}
-                alt={activeSlide.name}
-                className="carousel-modal-img"
-              />
-              <div className="carousel-modal-content">
-                <h2 className="carousel-modal-title">{activeSlide.name}</h2>
-                <div className="carousel-modal-desc">
-                  {activeSlide.popupText}
-                </div>
-                <div className="carousel-modal-actions">
-                  <Button
-                    onClick={() => setModalOpen(false)}
-                    variant="contained"
-                    color="primary"
-                    className="carousel-modal-close"
-                  >
-                    {t('carousel.close', 'Fermer')}
-                  </Button>
-                </div>
+            <div className="carousel-modal-content">
+              <h2 className="carousel-modal-title">{activeSlide.name}</h2>
+              <div className="carousel-modal-desc">
+                {activeSlide.popupText}
               </div>
-            </>
+            </div>
           )}
         </Box>
       </Modal>
