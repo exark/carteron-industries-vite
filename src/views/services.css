@@ -1,0 +1,128 @@
+.services-page {
+  background: '#f8f9fa';
+  padding-top: 0;
+}
+
+.video-background {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #1976D2 100%);
+  color: white;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  overflow: hidden;
+  margin-bottom: 32px;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.08);
+  border-color: rgba(25,118,210,0.2);
+}
+
+.service-card .MuiGrid-container {
+  height: 100%;
+}
+
+.service-card .MuiGrid-item:first-child {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card .MuiGrid-item:first-child .MuiBox-root {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: brightness(0.9) contrast(1.1);
+  height: 100%;
+  width: 100%;
+  background-size: 110% !important;
+  background-position: center 25% !important;
+}
+
+.service-card:hover .MuiGrid-item:first-child .MuiBox-root {
+  transform: scale(1.08);
+  filter: brightness(1.1) contrast(1.2);
+}
+
+.service-card .MuiChip-root {
+  transition: all 0.3s ease;
+  margin: 4px;
+}
+
+.service-card .MuiChip-root:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(25,118,210,0.3);
+}
+
+.service-card .MuiButton-root {
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card .MuiButton-root::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.service-card:hover .MuiButton-root::before {
+  left: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .video-background {
+    height: 40vh;
+  }
+  
+  .service-card {
+    margin-bottom: 24px;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 480px) {
+  .video-background {
+    height: 30vh;
+  }
+  
+  .service-card {
+    margin-bottom: 20px;
+  }
+} 

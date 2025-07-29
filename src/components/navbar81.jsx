@@ -73,12 +73,22 @@ const Navbar81 = (props) => {
     e.preventDefault();
     setLink5DropdownVisible(false); // Ferme le mega menu
     if (location.pathname === "/home" || location.pathname === "/") {
-      const el = document.getElementById(anchorId);
-      if (el) {
-        scrollToWithOffset(el); // Utilise le scroll avec offset
+      if (anchorId) {
+        const el = document.getElementById(anchorId);
+        if (el) {
+          scrollToWithOffset(el); // Utilise le scroll avec offset
+        }
+      } else {
+        // Si anchorId est null, remonter en haut de la page
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     } else {
-      navigate("/home", { state: { anchorId } });
+      if (anchorId) {
+        navigate("/home", { state: { anchorId } });
+      } else {
+        navigate("/home", { replace: true });
+        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+      }
     }
     setDrawerOpen(false);
   };
@@ -141,12 +151,12 @@ const Navbar81 = (props) => {
           <div data-thq="thq-navbar-nav" className="navbar81-desktop-menu">
             <nav className="navbar81-links1">
               <a
-                href="#services"
-                onClick={(e) => handleAnchorClick(e, "services")}
+                href="#home"
+                onClick={(e) => handleAnchorClick(e, null)}
                 className="navbar81-link11 thq-body-small"
               >
                 <span className="navbar81-text14 thq-link">
-                  {t('navbar.services')}
+                  {t('navbar.home')}
                 </span>
               </a>
               {/* <a
@@ -156,13 +166,6 @@ const Navbar81 = (props) => {
               >
                 <span className="navbar81-text18 thq-link">{t('navbar.testimonials')}</span>
               </a> */}
-              <a
-                href="#faq"
-                onClick={(e) => handleAnchorClick(e, "faq")}
-                className="navbar81-link32  thq-body-small"
-              >
-                <span className="navbar81-text26 thq-link">{t('navbar.faq')}</span>
-              </a>
               {/* Dropdown Desktop avec hover */}
               <div
                 className="navbar81-link4-dropdown-trigger"
@@ -172,7 +175,7 @@ const Navbar81 = (props) => {
                 ref={autreRef}
               >
                 <span className="thq-body-small">
-                  <span className="navbar81-text21 thq-link">{t('navbar.other')}</span>
+                  <span className="navbar81-text21 thq-link">{t('navbar.services')}</span>
                 </span>
                 <div className="navbar81-icon-container1">
                   {link5DropdownVisible ? (
@@ -190,6 +193,13 @@ const Navbar81 = (props) => {
                   )}
                 </div>
               </div>
+              <a
+                href="#faq"
+                onClick={(e) => handleAnchorClick(e, "faq")}
+                className="navbar81-link32  thq-body-small"
+              >
+                <span className="navbar81-text26 thq-link">{t('navbar.faq')}</span>
+              </a>
             </nav>
             <div className="navbar81-buttons1">
               <Button
@@ -257,11 +267,11 @@ const Navbar81 = (props) => {
                 <div style={{ position: "relative", height: "100%" }}>
                   <nav className="navbar81-mobile-links">
                     <a
-                      href="#services"
-                      onClick={(e) => handleMobileNav(e, "services")}
+                      href="#home"
+                      onClick={(e) => handleMobileNav(e, null)}
                       className="mobile-menu-link"
                     >
-                      {t('navbar.services')}
+                      {t('navbar.home')}
                     </a>
                     {/* <a
                       href="#temoignages"
@@ -270,13 +280,6 @@ const Navbar81 = (props) => {
                     >
                       {t('navbar.testimonials')}
                     </a> */}
-                    <a
-                      href="#faq"
-                      onClick={(e) => handleMobileNav(e, "faq")}
-                      className="mobile-menu-link"
-                    >
-                      {t('navbar.faq')}
-                    </a>
                     {/* Bouton pour ouvrir le sous-menu Autre */}
                     <div style={{ marginBottom: 16 }}>
                       <button
@@ -300,7 +303,7 @@ const Navbar81 = (props) => {
                           borderBottom: "1px solid #f0f0f0",
                         }}
                       >
-                        <span>{t('navbar.other')}</span>
+                        <span>{t('navbar.services')}</span>
                         <svg
                           width="20"
                           height="20"
@@ -311,6 +314,13 @@ const Navbar81 = (props) => {
                         </svg>
                       </button>
                     </div>
+                    <a
+                      href="#faq"
+                      onClick={(e) => handleMobileNav(e, "faq")}
+                      className="mobile-menu-link"
+                    >
+                      {t('navbar.faq')}
+                    </a>
                     <a
                       onClick={() => setDrawerOpen(false)}
                       href="/contact"
@@ -363,7 +373,7 @@ const Navbar81 = (props) => {
                         aria-label="Retour au menu principal"
                         onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') setMobileSubMenuOpen(false); }}
                       >
-                        Autre
+                        Nos services
                       </span>
                     </div>
                     <a
@@ -425,48 +435,68 @@ const Navbar81 = (props) => {
           onMouseLeave={handleMegaMenuMouseLeave}
         >
           <div className="navbar81-mega-menu-content">
-            <div className="navbar81-mega-menu-item">
+            <div 
+              className="navbar81-mega-menu-item"
+              onClick={() => {
+                setLink5DropdownVisible(false);
+                navigate("/services");
+              }}
+            >
               <img
-                src="/images/fjord.jpg"
-                alt="Accueil"
+                src="/images/service1.jpg"
+                alt="Projet SmartAgri Connect"
                 className="navbar81-mega-menu-image"
               />
               <div className="navbar81-mega-menu-text">
-                <h3>{t('navbar.home')}</h3>
-                <p>{t('navbar.mega_home_desc', 'Découvrez notre page d\'accueil avec toutes nos solutions innovantes pour l\'agriculture moderne.')}</p>
+                <h3>{t('features25.card1.title', 'Projet SmartAgri Connect')}</h3>
               </div>
             </div>
-            <div className="navbar81-mega-menu-item">
+            <div 
+              className="navbar81-mega-menu-item"
+              onClick={() => {
+                setLink5DropdownVisible(false);
+                navigate("/services");
+              }}
+            >
               <img
-                src="/images/livre.jpg"
-                alt="Machines Agricoles"
+                src="/images/service2.png"
+                alt="Application Mobile Bovin+"
                 className="navbar81-mega-menu-image"
               />
               <div className="navbar81-mega-menu-text">
-                <h3>Machines Agricoles</h3>
-                <p>{t('navbar.mega_machines_desc', 'Nos solutions technologiques avancées pour optimiser les performances des machines agricoles.')}</p>
+                <h3>{t('features25.card2.title', 'Application Mobile Bovin+')}</h3>
               </div>
             </div>
-            <div className="navbar81-mega-menu-item">
+            <div 
+              className="navbar81-mega-menu-item"
+              onClick={() => {
+                setLink5DropdownVisible(false);
+                navigate("/services");
+              }}
+            >
               <img
-                src="/images/livre.jpg"
-                alt="Solutions Intelligentes"
+                src="/images/serivce3.jpg"
+                alt="Chariots de Golf Électriques"
                 className="navbar81-mega-menu-image"
               />
               <div className="navbar81-mega-menu-text">
-                <h3>Solutions Intelligentes</h3>
-                <p>{t('navbar.mega_solutions_desc', 'Systèmes intelligents pour une agriculture plus précise et efficace.')}</p>
+                <h3>{t('features25.card3.title', 'Chariots de Golf Électriques')}</h3>
               </div>
             </div>
-            <div className="navbar81-mega-menu-item">
+            <div 
+              className="navbar81-mega-menu-item"
+              onClick={() => {
+                setLink5DropdownVisible(false);
+                navigate("/services");
+              }}
+            >
               <img
-                src="/images/livre.jpg"
-                alt="Innovation Technologique"
+                src="/images/service4.jpg"
+                alt="Poussette & Chariot Golf Hybride 2-en-1"
                 className="navbar81-mega-menu-image"
               />
               <div className="navbar81-mega-menu-text">
-                <h3>Innovation Technologique</h3>
-                <p>{t('navbar.mega_innovation_desc', 'Découvrez nos dernières innovations en matière de technologie agricole.')}</p>
+                <h3>{t('features25.card4.title', 'Poussette & Chariot Golf Hybride 2-en-1')}</h3>
               </div>
             </div>
           </div>
