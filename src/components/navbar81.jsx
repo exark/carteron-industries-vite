@@ -382,7 +382,7 @@ const Navbar81 = (props) => {
                         e.preventDefault();
                         setDrawerOpen(false);
                         setMobileSubMenuOpen(false);
-                        navigate("/services");
+                        navigate("/services#service-1");
                       }}
                       className="mobile-menu-link"
                       style={{ paddingLeft: "16px", borderBottom: "none" }}
@@ -395,7 +395,7 @@ const Navbar81 = (props) => {
                         e.preventDefault();
                         setDrawerOpen(false);
                         setMobileSubMenuOpen(false);
-                        navigate("/services");
+                        navigate("/services#service-2");
                       }}
                       className="mobile-menu-link"
                       style={{ paddingLeft: "16px", borderBottom: "none" }}
@@ -408,7 +408,7 @@ const Navbar81 = (props) => {
                         e.preventDefault();
                         setDrawerOpen(false);
                         setMobileSubMenuOpen(false);
-                        navigate("/services");
+                        navigate("/services#service-3");
                       }}
                       className="mobile-menu-link"
                       style={{ paddingLeft: "16px", borderBottom: "none" }}
@@ -421,7 +421,7 @@ const Navbar81 = (props) => {
                         e.preventDefault();
                         setDrawerOpen(false);
                         setMobileSubMenuOpen(false);
-                        navigate("/services");
+                        navigate("/services#service-4");
                       }}
                       className="mobile-menu-link"
                       style={{ paddingLeft: "16px", borderBottom: "none" }}
@@ -462,7 +462,7 @@ const Navbar81 = (props) => {
               className="navbar81-mega-menu-item"
               onClick={() => {
                 setLink5DropdownVisible(false);
-                navigate("/services");
+                navigate("/services#service-1");
               }}
             >
               <img
@@ -478,7 +478,7 @@ const Navbar81 = (props) => {
               className="navbar81-mega-menu-item"
               onClick={() => {
                 setLink5DropdownVisible(false);
-                navigate("/services");
+                navigate("/services#service-2");
               }}
             >
               <img
@@ -494,7 +494,7 @@ const Navbar81 = (props) => {
               className="navbar81-mega-menu-item"
               onClick={() => {
                 setLink5DropdownVisible(false);
-                navigate("/services");
+                navigate("/services#service-3");
               }}
             >
               <img
@@ -510,7 +510,7 @@ const Navbar81 = (props) => {
               className="navbar81-mega-menu-item"
               onClick={() => {
                 setLink5DropdownVisible(false);
-                navigate("/services");
+                navigate("/services#service-4");
               }}
             >
               <img

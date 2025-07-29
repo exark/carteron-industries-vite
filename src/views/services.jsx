@@ -6,6 +6,8 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Chip from "@mui/material/Chip";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar81 from "../components/navbar81";
 import Footer31 from "../components/footer31";
 import "./services.css";
@@ -15,6 +17,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
   
   return (
     <Box 
+      id={`service-${index + 1}`}
       className="service-card"
       sx={{
         background: '#fff',
@@ -169,6 +172,22 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
 
 export default function Services() {
   const { t } = useTranslation();
+  const location = useLocation();
+  
+  // Gestion du scroll automatique vers les sections
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
   
   const services = [
     {
