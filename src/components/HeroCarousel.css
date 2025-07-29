@@ -1,7 +1,6 @@
 .hero-carousel-wrapper {
   width: 100%;
   max-width: 1400px;
-  margin: 6% auto 10% auto;
   display: flex;
   flex-direction: row;
   align-items: stretch;
