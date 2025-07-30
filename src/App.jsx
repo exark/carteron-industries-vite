@@ -12,6 +12,7 @@ import NotFound from './views/not-found'
 import Privacy from './views/privacy'
 import Services from './views/services'
 import PrivacyBanner from './components/PrivacyBanner';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ScrollToTop />
     </BrowserRouter>
   )
 }
