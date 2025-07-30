@@ -48,7 +48,8 @@
     "title": "Formulaire de contact",
     "desc": "Notre équipe vous répondra dans les plus brefs délais.",
     "send_message": "Envoyer le message",
-    "left_caption": "Prenez contact avec notre équipe ! Nous sommes à votre écoute pour tous vos projets."
+    "left_caption": "Prenez contact avec notre équipe ! Nous sommes à votre écoute pour tous vos projets.",
+    "email_error_send": "Erreur lors de l'envoi du message. Veuillez réessayer."
   },
   "privacy": {
     "title": "Politique de confidentialité",
@@ -121,24 +122,55 @@
   "features25": {
     "card1": {
       "title": "Ingénierie Système Agricole",
-      "desc": "Nous accompagnons les constructeurs et équipementiers agricoles dans la conception, le développement et l’optimisation de leurs systèmes techniques. Notre approche s’appuie sur l’ingénierie système, l’analyse fonctionnelle, et une expertise terrain pour garantir des solutions robustes, durables et rentables.",
-      "button": "En savoir plus"
+      "desc": "Nous accompagnons les constructeurs et équipementiers agricoles dans la conception, le développement et l'optimisation de leurs systèmes techniques. Notre approche s'appuie sur l'ingénierie système, l'analyse fonctionnelle, et une expertise terrain pour garantir des solutions robustes, durables et rentables.",
+      "button": "En savoir plus",
+      "features": {
+        "0": "Suivi en temps réel",
+        "1": "Optimisation irrigation",
+        "2": "Gestion intelligente",
+        "3": "Alertes météo",
+        "4": "Analyse prédictive"
+      }
     },
     "card2": {
       "title": "Applications Web & Mobile pour Pesées Agricoles",
-      "desc": "Notre solution numérique permet l’enregistrement et la gestion des pesées via des interfaces intuitives, connectées aux tracteurs équipés de chargeurs frontaux. Optimisez vos flux logistiques, gagnez du temps et bénéficiez d’une traçabilité complète.",
-      "button": "En savoir plus"
+      "desc": "Notre solution numérique permet l'enregistrement et la gestion des pesées via des interfaces intuitives, connectées aux tracteurs équipés de chargeurs frontaux. Optimisez vos flux logistiques, gagnez du temps et bénéficiez d'une traçabilité complète.",
+      "button": "En savoir plus",
+      "features": {
+        "0": "Gestion du cheptel",
+        "1": "Suivi sanitaire",
+        "2": "Traçabilité",
+        "3": "Soins vétérinaires",
+        "4": "Statistiques"
+      }
     },
     "card3": {
       "title": "Chariots de Golf Électriques",
-      "desc": "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l’expérience sur le green.",
-      "button": "En savoir plus"
+      "desc": "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l'expérience sur le green.",
+      "button": "En savoir plus",
+      "features": {
+        "0": "Motorisation silencieuse",
+        "1": "Navigation intuitive",
+        "2": "Autonomie étendue",
+        "3": "Design ergonomique",
+        "4": "Technologie avancée"
+      }
     },
     "card4": {
       "title": "Poussette & Chariot Golf Hybride 2-en-1",
-      "desc": "Une innovation unique : un chariot hybride pensé pour les jeunes parents actifs, combinant les fonctions d’une poussette et d’un chariot de golf motorisé. Idéal pour concilier sport et famille sans compromis.",
-      "button": "En savoir plus"
-    }
+      "desc": "Une innovation unique : un chariot hybride pensé pour les jeunes parents actifs, combinant les fonctions d'une poussette et d'un chariot de golf motorisé. Idéal pour concilier sport et famille sans compromis.",
+      "button": "En savoir plus",
+      "features": {
+        "0": "Transformation rapide",
+        "1": "Sécurité enfants",
+        "2": "Motorisation adaptée",
+        "3": "Design compact",
+        "4": "Accessoires modulaires"
+      }
+    },
+    "page_title": "Nos Services",
+    "page_subtitle": "Découvrez nos solutions innovantes",
+    "features_label": "Fonctionnalités clés :"
   },
   "faq": {
     "title": "Questions Fréquemment Posées",
@@ -209,6 +241,6 @@
     "content1": "N'hésitez pas à nous contacter pour toute question ou collaboration.",
     "location2": "Email : lamia.benhamouda.ap@gmail.com",
     "location2Description": "Envoyez-nous un email pour toute question ou proposition.",
-    "get_directions": "Obtenir l'itinéraire"
+    "get_directions": "Envoyer email"
   }
 }

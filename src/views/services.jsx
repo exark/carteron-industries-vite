@@ -115,7 +115,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
                     fontSize: '1rem'
                   }}
                 >
-                  Fonctionnalités clés :
+                  {t('features25.features_label', 'Fonctionnalités clés :')}
                 </Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                   {features.map((feature, idx) => (
@@ -196,11 +196,11 @@ export default function Services() {
       image: "/images/service1.jpg",
       buttonLabel: t('features25.card1.button', 'En savoir plus'),
       features: [
-        "Suivi en temps réel",
-        "Optimisation irrigation",
-        "Gestion intelligente",
-        "Alertes météo",
-        "Analyse prédictive"
+        t('features25.card1.features.0', 'Suivi en temps réel'),
+        t('features25.card1.features.1', 'Optimisation irrigation'),
+        t('features25.card1.features.2', 'Gestion intelligente'),
+        t('features25.card1.features.3', 'Alertes météo'),
+        t('features25.card1.features.4', 'Analyse prédictive')
       ]
     },
     {
@@ -209,11 +209,11 @@ export default function Services() {
       image: "/images/service2.png",
       buttonLabel: t('features25.card2.button', 'En savoir plus'),
       features: [
-        "Gestion du cheptel",
-        "Suivi sanitaire",
-        "Traçabilité",
-        "Soins vétérinaires",
-        "Statistiques"
+        t('features25.card2.features.0', 'Gestion du cheptel'),
+        t('features25.card2.features.1', 'Suivi sanitaire'),
+        t('features25.card2.features.2', 'Traçabilité'),
+        t('features25.card2.features.3', 'Soins vétérinaires'),
+        t('features25.card2.features.4', 'Statistiques')
       ]
     },
     {
@@ -222,11 +222,11 @@ export default function Services() {
       image: "/images/serivce3.jpg",
       buttonLabel: t('features25.card3.button', 'En savoir plus'),
       features: [
-        "Motorisation silencieuse",
-        "Navigation intuitive",
-        "Autonomie étendue",
-        "Design ergonomique",
-        "Technologie avancée"
+        t('features25.card3.features.0', 'Motorisation silencieuse'),
+        t('features25.card3.features.1', 'Navigation intuitive'),
+        t('features25.card3.features.2', 'Autonomie étendue'),
+        t('features25.card3.features.3', 'Design ergonomique'),
+        t('features25.card3.features.4', 'Technologie avancée')
       ]
     },
     {
@@ -235,11 +235,11 @@ export default function Services() {
       image: "/images/service4.jpg",
       buttonLabel: t('features25.card4.button', 'En savoir plus'),
       features: [
-        "Transformation rapide",
-        "Sécurité enfants",
-        "Motorisation adaptée",
-        "Design compact",
-        "Accessoires modulaires"
+        t('features25.card4.features.0', 'Transformation rapide'),
+        t('features25.card4.features.1', 'Sécurité enfants'),
+        t('features25.card4.features.2', 'Motorisation adaptée'),
+        t('features25.card4.features.3', 'Design compact'),
+        t('features25.card4.features.4', 'Accessoires modulaires')
       ]
     }
   ];
@@ -311,7 +311,7 @@ export default function Services() {
               color: 'white'
             }}
           >
-            Nos Services
+            {t('features25.page_title', 'Nos Services')}
           </Typography>
           <Typography 
             variant="h5" 
@@ -324,7 +324,7 @@ export default function Services() {
               color: 'white'
             }}
           >
-            Découvrez nos solutions innovantes
+            {t('features25.page_subtitle', 'Découvrez nos solutions innovantes')}
           </Typography>
         </Box>
       </Box>

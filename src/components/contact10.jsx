@@ -30,9 +30,7 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
               <p className="thq-body-large">{t('contact10.location2Description')}</p>
               <div className="contact10-container5">
                 <a
-                  href="https://example.com"
-                  target="_blank"
-                  rel="noreferrer noopener"
+                  href="mailto:lamia.benhamouda.ap@gmail.com"
                   className="thq-button-flat thq-body-small"
                 >
                   {t('contact10.get_directions')}

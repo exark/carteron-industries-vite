@@ -16,6 +16,8 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Modal from '@mui/material/Modal';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../config/emailjs';
 
 const initialState = {
   name: "",
@@ -121,16 +123,42 @@ export default function ContactForm3() {
   };
 
   // Handle submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitted(true);
     const newErrors = validateAll();
     if (Object.keys(newErrors).length === 0) {
-      setModalOpen(true);
-      setForm(initialState);
-      setTouched({});
-      setErrors({});
-      setSubmitted(false);
+      try {
+        // Préparer les données pour l'email
+        const templateParams = {
+          from_name: form.name,
+          from_email: form.email,
+          from_phone: form.phone,
+          from_company: form.company || 'Non spécifié',
+          from_website: form.website || 'Non spécifié',
+          message: form.message,
+          to_name: 'Carteron Industries',
+        };
+
+        // Envoyer l'email via EmailJS
+        const result = await emailjs.send(
+          EMAILJS_CONFIG.SERVICE_ID,
+          EMAILJS_CONFIG.TEMPLATE_ID,
+          templateParams,
+          EMAILJS_CONFIG.PUBLIC_KEY
+        );
+
+        console.log('Email envoyé avec succès:', result);
+        setModalOpen(true);
+        setForm(initialState);
+        setTouched({});
+        setErrors({});
+        setSubmitted(false);
+      } catch (error) {
+        console.error('Erreur lors de l\'envoi de l\'email:', error);
+        // Vous pouvez ajouter ici une notification d'erreur
+        alert(t('contact_form.email_error_send', 'Erreur lors de l\'envoi du message. Veuillez réessayer.'));
+      }
     }
   };
 
