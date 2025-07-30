@@ -180,9 +180,14 @@ export default function Services() {
       const element = document.querySelector(location.hash);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+          // Calculer la position avec un offset pour la navbar
+          const navbarHeight = 100; // Hauteur approximative de la navbar
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - navbarHeight - 20; // 20px d'espace supplémentaire
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
           });
         }, 100);
       }

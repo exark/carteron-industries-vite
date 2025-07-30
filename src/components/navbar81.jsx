@@ -64,7 +64,7 @@ const Navbar81 = (props) => {
   };
 
   // Fonction utilitaire pour scroller avec un offset (par exemple, hauteur de la navbar)
-  const scrollToWithOffset = (element, offset = 80) => {
+  const scrollToWithOffset = (element, offset = 100) => {
     const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
