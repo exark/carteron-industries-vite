@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 import { useNavigate } from "react-router-dom";
 import "./features25.css";
 import { useTranslation } from "react-i18next";
@@ -37,54 +38,63 @@ function FeatureCard({ title, description, image, buttonLabel }) {
       <CardContent sx={{ 
         padding: '24px !important',
         borderRadius: '0 0 20px 20px !important',
-        background: '#fff !important'
+        background: '#fff !important',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column'
       }}>
-        <Typography
-          gutterBottom
-          variant="h5"
-          component="div"
-          sx={{ 
-            fontWeight: 700, 
-            color: "#1a1a1a", 
-            marginBottom: 2,
-            background: 'linear-gradient(135deg, #1a1a1a 0%, #1976D2 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}
-        >
-          {title}
-        </Typography>
-        <Typography variant="body1" sx={{ color: "#444", marginBottom: 2 }}>
-          {description}
-        </Typography>
-        <Button
-          variant="contained"
-          onClick={(e) => {
-            e.stopPropagation();
-            navigate("/services");
-          }}
-          sx={{
-            background: "linear-gradient(135deg, #1976D2 0%, #1565C0 100%)",
-            color: "#fff",
-            fontWeight: 600,
-            borderRadius: 3,
-            textTransform: "none",
-            boxShadow: "0 4px 16px rgba(25,118,210,0.3)",
-            transition: "all 0.3s ease",
-            position: "relative",
-            overflow: "hidden",
-            border: 'none !important',
-            '&:hover': { 
-              background: "linear-gradient(135deg, #1565C0 0%, #0D47A1 100%)",
-              boxShadow: "0 8px 24px rgba(25,118,210,0.4)",
-              transform: "translateY(-2px)",
-              border: 'none !important'
-            },
-          }}
-        >
-          {buttonLabel}
-        </Button>
+        <Box>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{ 
+              fontWeight: 700, 
+              color: "#1a1a1a", 
+              marginBottom: 2,
+              background: 'linear-gradient(135deg, #1a1a1a 0%, #1976D2 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
+            {title}
+          </Typography>
+          <Typography variant="body1" sx={{ color: "#444", marginBottom: 3 }}>
+            {description}
+          </Typography>
+        </Box>
+        <Box sx={{ mt: 'auto', pt: 2 }}>
+          <Button
+          className="features25-button"
+            variant="contained"
+            onClick={(e) => {
+              e.stopPropagation();
+              navigate("/services");
+            }}
+            sx={{
+              background: "linear-gradient(135deg, #1976D2 0%, #1565C0 100%)",
+              color: "#fff",
+              fontWeight: 600,
+              marginBottom:0,
+              borderRadius: 3,
+              textTransform: "none",
+              boxShadow: "0 4px 16px rgba(25,118,210,0.3)",
+              transition: "all 0.3s ease",
+              position: "relative",
+              overflow: "hidden",
+              border: 'none !important',
+              '&:hover': { 
+                background: "linear-gradient(135deg, #1565C0 0%, #0D47A1 100%)",
+                boxShadow: "0 8px 24px rgba(25,118,210,0.4)",
+                transform: "translateY(-2px)",
+                border: 'none !important'
+              },
+            }}
+          >
+            {buttonLabel}
+          </Button> 
+        </Box>
       </CardContent>
     </Card>
   );
@@ -94,7 +104,7 @@ export default function Features25() {
   const { t } = useTranslation();
   return (
     <div id="Features25" className="features25-row">
-      <FeatureCard
+      {/* <FeatureCard
         title={t('features25.card1.title', 'Projet SmartAgri Connect')}
         description={t('features25.card1.desc', "Une plateforme connectée pour le suivi en temps réel des parcelles agricoles, l'optimisation de l'irrigation et la gestion intelligente des ressources.")}
         image="/images/service1.jpg"
@@ -105,7 +115,7 @@ export default function Features25() {
         description={t('features25.card2.desc', "Une application mobile dédiée à la gestion du cheptel, au suivi sanitaire et à la traçabilité des animaux pour les éleveurs modernes.")}
         image="/images/service2.png"
         buttonLabel={t('features25.card2.button', 'En savoir plus')}
-      />
+      /> */}
       <FeatureCard
         title={t('features25.card3.title', 'Chariots de Golf Électriques')}
         description={t('features25.card3.desc', "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l'expérience sur le green.")}

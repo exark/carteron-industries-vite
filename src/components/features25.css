@@ -3,7 +3,7 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 32px;
   justify-content: center;
-  align-items: start;
+  align-items: stretch;
   margin: 48px 0 10% 0;
   padding: 0;
   width: 100%;
@@ -21,6 +21,7 @@
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: flex;
   flex-direction: column;
+  height: 100%;
   overflow: hidden;
   position: relative;
   transform: translateY(0);
@@ -45,6 +46,9 @@
   }
 }
 
+.features25-button {
+  margin-bottom:0% !important;
+}
 .features25-card:hover,
 .features25-card:focus {
   transform: translateY(-8px) scale(1.02);
@@ -93,6 +97,22 @@
   background: #fff !important;
   padding: 24px !important;
   border-radius: 0 0 20px 20px !important;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.features25-card .MuiCardContent-root .MuiBox-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.features25-card .MuiCardContent-root .MuiButton-root {
+  margin-top: auto;
+  align-self: center;
 }
 
 .features25-card .MuiTypography-h5 {
