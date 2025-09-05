@@ -14,9 +14,9 @@ import "./services.css";
 
 function ServiceCard({ title, description, image, buttonLabel, features, index }) {
   const { t } = useTranslation();
-  
+
   return (
-    <Box 
+    <Box
       id={`service-${index + 1}`}
       className="service-card"
       sx={{
@@ -70,9 +70,9 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
             }} />
           </Box>
         </Grid>
-        
+
         <Grid item xs={12} md={8}>
-          <Box sx={{ 
+          <Box sx={{
             padding: { xs: 3, md: 4 },
             height: '100%',
             display: 'flex',
@@ -82,20 +82,20 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
             <Typography
               variant="h4"
               component="h2"
-              sx={{ 
-                fontWeight: 700, 
-                color: "#1a1a1a", 
+              sx={{
+                fontWeight: 700,
+                color: "#1a1a1a",
                 marginBottom: 3,
                 fontSize: { xs: '1.5rem', md: '2rem' }
               }}
             >
               {title}
             </Typography>
-            
-            <Typography 
-              variant="body1" 
-              sx={{ 
-                color: "#666", 
+
+            <Typography
+              variant="body1"
+              sx={{
+                color: "#666",
                 marginBottom: 4,
                 lineHeight: 1.8,
                 fontSize: '1.1rem'
@@ -103,14 +103,14 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
             >
               {description}
             </Typography>
-            
+
             {features && features.length > 0 && (
               <Box sx={{ mb: 4 }}>
-                <Typography 
-                  variant="h6" 
-                  sx={{ 
-                    fontWeight: 600, 
-                    color: "#1976D2", 
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 600,
+                    color: "#1976D2",
                     mb: 2,
                     fontSize: '1rem'
                   }}
@@ -139,7 +139,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
                 </Box>
               </Box>
             )}
-            
+
             <Button
               variant="contained"
               size="large"
@@ -154,7 +154,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
                 fontSize: '1rem',
                 padding: '12px 32px',
                 alignSelf: 'flex-start',
-                '&:hover': { 
+                '&:hover': {
                   background: "linear-gradient(135deg, #1565C0 0%, #0D47A1 100%)",
                   boxShadow: "0 8px 24px rgba(25,118,210,0.4)",
                   transform: "translateY(-2px)",
@@ -173,7 +173,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
 export default function Services() {
   const { t } = useTranslation();
   const location = useLocation();
-  
+
   // Gestion du scroll automatique vers les sections
   useEffect(() => {
     if (location.hash) {
@@ -184,7 +184,7 @@ export default function Services() {
           const navbarHeight = 100; // Hauteur approximative de la navbar
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
           const offsetPosition = elementPosition - navbarHeight - 20; // 20px d'espace supplémentaire
-          
+
           window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth'
@@ -193,7 +193,7 @@ export default function Services() {
       }
     }
   }, [location.hash]);
-  
+
   const services = [
     {
       title: t('features25.card1.title', 'Projet SmartAgri Connect'),
@@ -252,9 +252,9 @@ export default function Services() {
   return (
     <>
       <Navbar81 />
-      
+
       {/* Section vidéo en arrière-plan */}
-      <Box 
+      <Box
         className="video-background"
         sx={{
           position: 'relative',
@@ -283,9 +283,10 @@ export default function Services() {
             zIndex: 0
           }}
         >
-          <source src="https://github.com/exark/carteron-industries-vite/releases/download/video/background-video.mp4" type="video/mp4" />
+          <source src="https://github.com/exark/carteron-industries-vite/releases/latest/download/background-video.webm" type="video/webm" />
+          <source src="https://github.com/exark/carteron-industries-vite/releases/latest/download/background-video.mp4" type="video/mp4" />
         </video>
-        
+
         {/* Overlay sombre pour améliorer la lisibilité */}
         <Box sx={{
           position: 'absolute',
@@ -296,7 +297,7 @@ export default function Services() {
           background: 'rgba(0,0,0,0.4)',
           zIndex: 1
         }} />
-        
+
         {/* Contenu centré sur la vidéo */}
         <Box sx={{
           position: 'relative',
@@ -304,9 +305,9 @@ export default function Services() {
           textAlign: 'center',
           color: 'white'
         }}>
-          <Typography 
-            variant="h2" 
-            sx={{ 
+          <Typography
+            variant="h2"
+            sx={{
               fontWeight: 700,
               mb: 2,
               fontSize: { xs: '2.5rem', md: '3.5rem' },
@@ -316,9 +317,9 @@ export default function Services() {
           >
             {t('features25.page_title', 'Nos Services')}
           </Typography>
-          <Typography 
-            variant="h5" 
-            sx={{ 
+          <Typography
+            variant="h5"
+            sx={{
               maxWidth: '800px',
               mx: 'auto',
               lineHeight: 1.6,
@@ -337,9 +338,9 @@ export default function Services() {
 
           <Box>
             {services.map((service, index) => (
-              <ServiceCard 
-                key={index} 
-                {...service} 
+              <ServiceCard
+                key={index}
+                {...service}
                 index={index}
               />
             ))}
