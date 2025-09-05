@@ -578,7 +578,6 @@ p {
 .thq-flex-row {
   gap: var(--space-xl);
   display: flex;
-  overflow: hidden;
   position: relative;
   align-items: center;
 }

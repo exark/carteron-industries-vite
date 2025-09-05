@@ -8,36 +8,20 @@ import { useTranslation } from "react-i18next";
 
 const itemsData = [
   {
-    key: "ai",
-    image: "/images/basket.jpg",
-  },
-  {
-    key: "astrology",
-    image: "/images/astrology.jpg",
-  },
-  {
     key: "innovation",
-    image: "/images/tracteur1.png",
+    image: "/images/chariot.jpg",
   },
   {
     key: "startup",
-    image: "/images/startup.jpg",
+    image: "/images/separee.webp",
   },
   {
     key: "work",
-    image: "/images/workhard.jpg",
+    image: "/images/application.png",
   },
   {
     key: "tech",
-    image: "/images/macbookpro.jpg",
-  },
-  {
-    key: "nature",
-    image: "/images/fleur.jpg",
-  },
-  {
-    key: "project",
-    image: "/images/projet.jpg",
+    image: "/images/Prototype.webp",
   },
 ];
 

@@ -79,45 +79,25 @@
     "about_parcours": "Docteure ingénieure en électronique et physique, Lamia Carteron fonde Carteron Industries après plus de 15 ans d'expérience en R&D dans l'optimisation de véhicules thermiques, hybrides, électriques et de machines agricoles. Elle a collaboré avec de grands noms de l'industrie automobile et du secteur agricole. Aujourd'hui, elle met son expertise au service d'une solution innovante dans le domaine du loisir, fruit d'un croisement unique entre sa passion pour l'ingénierie automobile, son goût pour le golf et sa vie de famille.",
     "about_founder": "Fondatrice",
     "about_parcours_title": "Parcours",
-    "ai": {
-      "name": "Ingénierie Système Agricole",
-      "desc": "Découvrir nos prestations en ingénierie système agricole",
-      "popup": "L'innovation au cœur des exploitations des agriculteurs. Chez CARTERON industries, nous comprenons les enjeux auxquels sont confrontés les fabricants de matériel agricole. Qu'il s'agisse d'améliorer l'efficacité de vos équipements, de répondre aux normes environnementales ou de développer des solutions innovantes, nous sommes là pour vous accompagner. Nous collaborons avec les constructeurs agroéquipements, les fabricants de tracteurs et de machines agricoles, ainsi que les équipementiers agricoles pour leur fournir des solutions sur mesure, adaptées à leurs besoins spécifiques. "
-    },
-    "astrology": {
-      "name": "Applications Web & Mobile pour Pesées Agricoles",
-      "desc": "Voir notre solution de pesée",
-      "popup": "Boostez votre productivité grâce à nos solutions innovantes. Nous proposons des solutions connectées pour l’agriculteur afin de lui permettre de tracer son travail de pesé, de suivre son inventaire, de préparer son environnement de pesé et de suivre ses activités à partir son mobile, tablette ou son ordinateur.  "
-    },
     "innovation": {
-      "name": "Chariots de Golf Électriques",
-      "desc": "Explorer le chariot de golf",
-      "popup": " Nous proposons des chariots électriques de golf légers, faciles à plier, connectés et avec un système de navigation. Notre mission est de proposer des solutions existantes sur le marché à moindre coût que nos concurrents."
+      "name": "Chariots de golf électriques nouvelle génération",
+      "desc": "Redéfinissez votre jeu sur le parcours.",
+      "popup": "Légers, pliables et intelligents. Nos chariots électriques connectés intègrent un système de navigation pour sublimer votre expérience de golf—avec des performances premium à une fraction du coût."
     },
     "startup": {
-      "name": "Poussette & Chariot Golf Hybride 2-en-1",
-      "desc": "Découvrir notre chariot hybride",
-      "popup": "à developper"
+      "name": "Chariot hybride 2-en-1",
+      "desc": "Quand le golf rencontre la famille.",
+      "popup": "Un concept unique combinant porte-sac de golf et poussette. En cours de développement, cette solution hybride est pensée pour les parents actifs qui ne veulent pas faire de compromis."
     },
     "work": {
-      "name": "Travail & Performance",
-      "desc": "Optimisez vos rendements.",
-      "popup": "Des solutions pour travailler mieux, chaque jour."
+      "name": "Performance & Productivité",
+      "desc": "Jouez plus malin, travaillez plus malin.",
+      "popup": "Du parcours au terrain, nous créons des solutions qui optimisent l’efficacité afin que vous tiriez le meilleur de chaque journée."
     },
     "tech": {
-      "name": "Technologie & Mobilité",
-      "desc": "Le numérique au service du terrain.",
-      "popup": "La technologie pour une agriculture connectée."
-    },
-    "nature": {
-      "name": "Nature & Croissance",
-      "desc": "L'importance de la biodiversité.",
-      "popup": "Préserver la nature tout en innovant."
-    },
-    "project": {
-      "name": "Projet & Vision",
-      "desc": "Construisons l'avenir ensemble.",
-      "popup": "Votre projet, notre expertise pour demain."
+      "name": "Mobilité pilotée par la technologie",
+      "desc": "Quand le digital rencontre le green.",
+      "popup": "Des outils connectés et des systèmes de mobilité intelligents qui marient technologie, golf et agriculture pour une expérience résolument moderne."
     }
   },
   "features25": {
@@ -175,22 +155,48 @@
   },
   "faq": {
     "title": "Questions Fréquemment Posées",
-    "subtitle": "Trouvez rapidement les réponses à vos questions sur nos solutions innovantes pour l'agriculture moderne et nos services d'ingénierie.",
+    "subtitle": "Découvrez tout ce qu'il faut savoir sur notre chariot de golf poussette 2-en-1 électrique.",
+    "more_questions": "Plus de questions ?",
+    "less_questions": "Moins de questions",
     "faq1": {
-      "q": "Quelles sont les solutions technologiques proposées par Carteron Industries ?",
-      "a": "Carteron Industries propose une gamme complète de solutions technologiques innovantes pour l'agriculture moderne. Nos solutions incluent des systèmes d'automatisation intelligents, des capteurs IoT pour la surveillance des cultures, des logiciels de gestion d'exploitation agricole, et des équipements de précision pour l'optimisation des ressources. Nous développons également des solutions sur mesure pour répondre aux besoins spécifiques de chaque exploitation agricole."
+      "q": "Qu’est-ce que CARTERON Industries propose exactement ?",
+      "a": "Nous développons un chariot poussette 2-en-1 électrique de golf : un équipement unique qui transporte à la fois les clubs, les accessoires de golf et un siège bébé, en toute sécurité."
     },
     "faq2": {
-      "q": "Comment puis-je bénéficier des services d'ingénierie de Carteron Industries ?",
-      "a": "Nos services d'ingénierie vous permettent d'optimiser vos processus agricoles grâce à une approche personnalisée. Nous analysons votre exploitation, identifions les points d'amélioration, et concevons des solutions sur mesure. Nos ingénieurs vous accompagnent de la conception à l'implémentation, garantissant une intégration parfaite et une formation complète de vos équipes pour maximiser les bénéfices de nos solutions."
+      "q": "Pourquoi combiner un chariot de golf et une poussette ?",
+      "a": "Parce que les parents golfeurs veulent profiter de leur passion sans compromis. Notre solution permet de jouer au golf tout en ayant son enfant à proximité, sans effort et en toute sécurité."
     },
     "faq3": {
-      "q": "Carteron Industries propose-t-il un support de maintenance pour ses solutions ?",
-      "a": "Oui, Carteron Industries propose un support de maintenance complet pour toutes ses solutions. Notre équipe technique est disponible 24h/24 et 7j/7 pour assurer le bon fonctionnement de vos équipements. Nous proposons des contrats de maintenance préventive, des interventions d'urgence, et des mises à jour logicielles régulières pour garantir la performance optimale de vos installations."
+      "q": "En quoi ce produit est-il innovant ?",
+      "a": "C’est la première fois qu’une solution hybride, motorisée, légère et sécurisée est pensée pour unir le loisir sportif et la vie familiale.\n- Motorisation électrique avec régulation de vitesse en montée/descente.\n- Structure robuste et légère, facilement pliable.\n- Transformation rapide entre mode chariot de golf et mode poussette."
     },
     "faq4": {
-      "q": "Carteron Industries peut-il personnaliser les solutions selon mes besoins spécifiques ?",
-      "a": "Absolument ! La personnalisation est au cœur de notre approche. Chaque exploitation agricole a ses spécificités, et nous adaptons nos solutions en conséquence. Nos ingénieurs travaillent en étroite collaboration avec vous pour comprendre vos besoins, analyser votre environnement de travail, et développer des solutions parfaitement adaptées à votre contexte et à vos objectifs de production."
+      "q": "Quels bénéfices pour les utilisateurs ?",
+      "a": "- Confort : fini le port du sac de golf et la poussette encombrante.\n- Santé : prévient la fatigue et les douleurs (dos, épaules).\n- Famille : permet aux parents de passer du temps de qualité avec leurs enfants.\n- Simplicité : pliage et transport faciles, autonomie d’une partie complète (18 trous et plus)."
+    },
+    "faq5": {
+      "q": "Est-ce sécurisé pour le bébé ?",
+      "a": "Oui. La sécurité est notre priorité :\n- Siège bébé conforme aux normes de puériculture.\n- Stabilité et frein moteur efficace.\n- Commandes simples et fiables pour le contrôle de la vitesse.\n- Tests réalisés avec l’appui de clubs de golf partenaires."
+    },
+    "faq6": {
+      "q": "Est-ce que les clubs de golf autorisent ce type d’équipement ?",
+      "a": "Oui, de nombreux clubs voient positivement ce type d’innovation familiale, surtout en dehors des heures de pointe. Des organisations comme l’Australian PGA et l’England Golf soutiennent déjà des initiatives similaires."
+    },
+    "faq7": {
+      "q": "Quel est le prix attendu ?",
+      "a": "Notre ambition est de proposer un excellent rapport qualité-prix : plus accessible que l’achat séparé d’un chariot premium et d’une poussette haut de gamme. Différentes gammes seront disponibles selon les besoins (familiaux, sportifs réguliers, golfeurs occasionnels)."
+    },
+    "faq8": {
+      "q": "À qui s’adresse ce produit ?",
+      "a": "- Parents golfeurs qui veulent continuer à pratiquer sans renoncer au temps familial.\n- Clubs de golf cherchant à attirer une nouvelle clientèle familiale.\n- Golfeurs seniors qui veulent partager leur passion avec leurs enfants ou petits-enfants."
+    },
+    "faq9": {
+      "q": "Pourquoi faire confiance à CARTERON Industries ?",
+      "a": "Parce que le projet est porté par Lamia Carteron, docteure ingénieure avec 15 ans d’expérience en R&D dans l’automobile et les machines agricoles. Son expertise technique, alliée à sa passion pour le golf et sa vie de famille, garantit un produit fiable, innovant et pensé dans les moindres détails."
+    },
+    "faq10": {
+      "q": "Quand le produit sera-t-il disponible ?",
+      "a": "Nous préparons actuellement la phase de développement et de tests. La mise sur le marché est prévue après validation des prototypes et certification des normes de sécurité."
     }
   },
   "testimonials": {

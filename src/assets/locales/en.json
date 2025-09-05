@@ -79,45 +79,25 @@
     "about_parcours": "PhD engineer in electronics and physics, Lamia Carteron founded Carteron Industries after more than 15 years of R&D experience in optimizing thermal, hybrid, electric vehicles and agricultural machinery. She has collaborated with major names in the automotive industry and agricultural sector. Today, she puts her expertise at the service of an innovative solution in the leisure domain, the result of a unique combination between her passion for automotive engineering, her love for golf and her family life.",
     "about_founder": "Founder",
     "about_parcours_title": "Background",
-    "ai": {
-      "name": "Agricultural System Engineering",
-      "desc": "Discover our services in agricultural system engineering",
-      "popup": "Innovation at the heart of farming operations. At CARTERON Industries, we understand the challenges faced by agricultural equipment manufacturers. Whether improving the efficiency of your equipment, complying with environmental standards, or developing innovative solutions, we are here to support you. We work with farm equipment manufacturers, tractor and machinery producers, and agricultural suppliers to deliver custom-made solutions tailored to their specific needs."
-    },
-    "astrology": {
-      "name": "Web & Mobile Apps for Agricultural Weighing",
-      "desc": "View our weighing solution",
-      "popup": "Boost your productivity with our innovative solutions. We offer connected tools for farmers to track their weighing operations, monitor inventory, prepare weighing environments, and follow their activities from mobile, tablet, or computer."
-    },
     "innovation": {
-      "name": "Electric Golf Trolleys",
-      "desc": "Explore the golf trolley",
-      "popup": "We offer lightweight, foldable, connected electric golf trolleys with navigation systems. Our mission is to provide market alternatives at lower cost than our competitors."
+      "name": "Next-Gen Electric Golf Trolleys",
+      "desc": "Redefine your game on the course.",
+      "popup": "Lightweight, foldable, and smart. Our connected electric trolleys feature integrated navigation to elevate your golf experience—delivering premium performance at a fraction of the cost."
     },
     "startup": {
-      "name": "2-in-1 Stroller & Golf Trolley Hybrid",
-      "desc": "Discover our hybrid trolley",
-      "popup": "to be developed"
+      "name": "2-in-1 Hybrid Trolley",
+      "desc": "Golf meets family innovation.",
+      "popup": "A unique concept combining a golf bag carrier with a stroller design. Under development, this hybrid solution is built for active parents who don’t want to compromise."
     },
     "work": {
-      "name": "Work & Performance",
-      "desc": "Optimize your yields.",
-      "popup": "Solutions to work better every day."
+      "name": "Performance & Productivity",
+      "desc": "Smarter play, smarter work.",
+      "popup": "From course to field, we design solutions that optimize efficiency, ensuring you get more out of every day."
     },
     "tech": {
-      "name": "Technology & Mobility",
-      "desc": "Digital tools for the field.",
-      "popup": "Technology for connected agriculture."
-    },
-    "nature": {
-      "name": "Nature & Growth",
-      "desc": "The importance of biodiversity.",
-      "popup": "Preserving nature while innovating."
-    },
-    "project": {
-      "name": "Project & Vision",
-      "desc": "Let's build the future together.",
-      "popup": "Your project, our expertise for tomorrow."
+      "name": "Tech-Driven Mobility",
+      "desc": "Where digital meets the green.",
+      "popup": "Connected tools and smart mobility systems that merge technology with golf and agriculture for a truly modern experience."
     }
   },
   "features25": {
@@ -175,22 +155,48 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Find quick answers about our innovative solutions for modern agriculture and engineering services.",
+    "subtitle": "Find out everything you need to know about our 2-in-1 electric golf trolley stroller.",
+    "more_questions": "More questions?",
+    "less_questions": "Fewer questions",
     "faq1": {
-      "q": "What technology solutions does Carteron Industries offer?",
-      "a": "Carteron Industries offers a comprehensive range of innovative technology solutions for modern agriculture. Our solutions include smart automation systems, IoT sensors for crop monitoring, farm management software, and precision equipment for resource optimization. We also develop custom solutions tailored to the specific needs of each farm."
+      "q": "What exactly does CARTERON Industries offer?",
+      "a": "We are developing a 2-in-1 electric golf trolley stroller: a unique piece of equipment that safely carries both golf clubs, accessories, and a baby seat."
     },
     "faq2": {
-      "q": "How can I benefit from Carteron Industries’ engineering services?",
-      "a": "Our engineering services help optimize your agricultural processes through a personalized approach. We analyze your farm, identify areas for improvement, and design custom solutions. Our engineers support you from design to implementation, ensuring perfect integration and comprehensive training for your teams to maximize the benefits."
+      "q": "Why combine a golf trolley and a stroller?",
+      "a": "Because golfing parents want to enjoy their passion without compromise. Our solution allows you to play golf while keeping your child close by, effortlessly and safely."
     },
     "faq3": {
-      "q": "Does Carteron Industries offer maintenance support for its solutions?",
-      "a": "Yes, Carteron Industries offers full maintenance support for all its solutions. Our technical team is available 24/7 to ensure your equipment operates smoothly. We offer preventive maintenance contracts, emergency repairs, and regular software updates to guarantee optimal performance."
+      "q": "What makes this product innovative?",
+      "a": "It’s the first time a hybrid solution—motorized, lightweight, and secure—has been designed to unite sports leisure with family life.\n- Electric motorization with speed control on slopes.\n- Robust yet lightweight structure, easy to fold.\n- Quick transformation between golf trolley mode and stroller mode."
     },
     "faq4": {
-      "q": "Can Carteron Industries customize solutions to my specific needs?",
-      "a": "Absolutely! Customization is at the core of our approach. Every farm is unique, and we adapt our solutions accordingly. Our engineers work closely with you to understand your needs, assess your working environment, and develop perfectly tailored solutions."
+      "q": "What are the benefits for users?",
+      "a": "- Comfort: no more carrying a heavy golf bag and bulky stroller.\n- Health: prevents fatigue and pain (back, shoulders).\n- Family: allows parents to enjoy quality time with their children.\n- Simplicity: easy folding and transport, battery life for a full round (18 holes or more)."
+    },
+    "faq5": {
+      "q": "Is it safe for the baby?",
+      "a": "Yes. Safety is our top priority:\n- Baby seat compliant with childcare standards.\n- Stable design with efficient motor brake.\n- Simple and reliable controls for speed management.\n- Tested in collaboration with partner golf clubs."
+    },
+    "faq6": {
+      "q": "Do golf clubs allow this type of equipment?",
+      "a": "Yes, many clubs see this type of family innovation positively, especially outside peak hours. Organizations such as the Australian PGA and England Golf already support similar initiatives."
+    },
+    "faq7": {
+      "q": "What is the expected price?",
+      "a": "Our goal is to deliver great value for money: more affordable than buying both a premium trolley and a high-end stroller separately. Different ranges will be available depending on needs (families, regular golfers, occasional players)."
+    },
+    "faq8": {
+      "q": "Who is this product for?",
+      "a": "- Golfing parents who want to keep playing without giving up family time.\n- Golf clubs looking to attract a new family-oriented clientele.\n- Senior golfers who want to share their passion with children or grandchildren."
+    },
+    "faq9": {
+      "q": "Why trust CARTERON Industries?",
+      "a": "Because the project is led by Lamia Carteron, PhD engineer with 15 years of R&D experience in the automotive and agricultural machinery sectors. Her technical expertise, combined with her passion for golf and family life, ensures a reliable, innovative product designed down to the finest detail."
+    },
+    "faq10": {
+      "q": "When will the product be available?",
+      "a": "We are currently preparing the development and testing phase. Market launch is planned after prototype validation and safety certification."
     }
   },
   "testimonials": {
