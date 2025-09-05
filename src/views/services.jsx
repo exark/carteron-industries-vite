@@ -283,9 +283,7 @@ export default function Services() {
             zIndex: 0
           }}
         >
-          <source src="/videos/background-video.mp4" type="video/mp4" />
-          {/* Fallback si la vidéo ne charge pas */}
-          <source src="/videos/background-video.webm" type="video/webm" />
+          <source src="https://github.com/exark/carteron-industries-vite/releases/download/video/background-video.mp4" type="video/mp4" />
         </video>
         
         {/* Overlay sombre pour améliorer la lisibilité */}
