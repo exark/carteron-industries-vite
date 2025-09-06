@@ -420,9 +420,9 @@
 }
 .custom-prev-btn:hover,
 .custom-next-btn:hover {
-  background: #1976d2 !important;
+  background: var(--primary-blue) !important;
   color: #fff !important;
-  border-color: #1976d2 !important;
+  border-color: var(--primary-blue) !important;
 }
 @media (max-width: 1200px) {
   .custom-prev-btn,

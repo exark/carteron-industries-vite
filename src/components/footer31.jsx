@@ -43,7 +43,7 @@ const Footer31 = () => {
                   <a href="/about">{t('footer.our_company')}</a>
                 </li>
                 <li>
-                  <a href="/our-product">{t('footer.our_product')}</a>
+                  <a href="/our-product">{t('navbar.our_product')}</a>
                 </li>
               </ul>
             </div>
@@ -76,6 +76,16 @@ const Footer31 = () => {
           <div className="footer-copyright">
             {t('footer.copyright', { year: new Date().getFullYear() })}
           </div>
+          <div className="footer-developer">
+            <span className="developer-text">Developed by Ahmed Ben Hamouda</span>
+            <a href="https://portfolio-exark.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/images/Exark_war.png"
+                alt="Exark Logo"
+                className="developer-logo"
+              />
+            </a>
+          </div>
           <div className="footer-actions">
             <div className="footer-icons">
               <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -94,9 +104,6 @@ const Footer31 = () => {
                 <BsDribbble />
               </a>
             </div>
-            <button className="scroll-to-top" onClick={scrollToTop} aria-label="Scroll to top">
-              <BsArrowUp />
-            </button>
           </div>
         </div>
       </div>

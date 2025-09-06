@@ -381,3 +381,31 @@ body, html {
   font-weight: 600;
   color: #3E6AE1;
 }
+
+.footer-developer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+.developer-text {
+  font-weight: 500;
+}
+
+.developer-logo {
+  height: 60px;
+  width: auto;
+  max-width: 220px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(62, 106, 225, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: contain;
+  margin-left: 10px;
+}
+
+.developer-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(62, 106, 225, 0.15);
+}
