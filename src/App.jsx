@@ -14,22 +14,25 @@ import Services from './views/services'
 import OurProduct from './views/our-product'
 import PrivacyBanner from './components/PrivacyBanner';
 import ScrollToTop from './components/ScrollToTop';
+import SplashScreen from './components/SplashScreen';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <PrivacyBanner />
-      <Routes>
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/our-product" element={<OurProduct />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <ScrollToTop />
-    </BrowserRouter>
+    <SplashScreen>
+      <BrowserRouter>
+        <PrivacyBanner />
+        <Routes>
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/our-product" element={<OurProduct />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <ScrollToTop />
+      </BrowserRouter>
+    </SplashScreen>
   )
 }
 
