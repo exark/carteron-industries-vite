@@ -30,7 +30,6 @@ const Footer31 = () => {
               alt="Carteron Industries Logo"
               className="footer-logo"
             />
-            <div className="footer-brand-text">Carteron Industries</div>
             <p className="footer-brand-description">
               {t('footer.brand_description', 'Innovative solutions for tomorrow\'s challenges')}
             </p>
