@@ -5,6 +5,7 @@
     "testimonials": "Testimonials",
     "faq": "FAQ",
     "other": "Other",
+    "our_product": "Our Products",
     "contact": "Contact Us"
   },
   "footer": {
@@ -15,7 +16,8 @@
     "legal": "Legal Notice",
     "privacy": "Privacy Policy",
     "terms": "Terms and Conditions",
-    "copyright": "© {{year}} Carteron Industries™"
+    "copyright": "{{year}} Carteron Industries™",
+    "brand_description": "Innovative solutions for tomorrow's challenges"
   },
   "home": {
     "title": "Carteron Industries",
@@ -249,5 +251,31 @@
     "location2": "Email: lamia.benhamouda.ap@gmail.com",
     "location2Description": "Send us an email for any questions or proposals.",
     "get_directions": "Send Email"
+  },
+  "our_product": {
+    "page_title": "Our Products",
+    "page_subtitle": "Coming Soon",
+    "coming_soon_title": "Under Development",
+    "coming_soon_text": "We are currently working on our new innovative product. Check back soon to discover all the features and benefits we are preparing for you.",
+    "product_prototype_alt": "Product Prototype",
+    "features_title": "Key Features",
+    "feature1": "Ergonomic and lightweight design for easy use",
+    "feature2": "Long-lasting battery for a full day of use",
+    "feature3": "Durable materials resistant to weather conditions",
+    "feature4": "Quick folding system for easy storage",
+    "ecommerce_button": "Visit Our Online Store",
+    "specs_title": "Technical Specifications",
+    "dimensions_title": "Dimensions",
+    "dimensions_content": "45cm x 30cm x 20cm",
+    "weight_title": "Weight",
+    "weight_content": "2.5 kg",
+    "battery_title": "Battery",
+    "battery_content": "Lithium-ion, 5000mAh, 8-hour battery life",
+    "materials_title": "Materials",
+    "materials_content": "Aluminum, reinforced plastic, waterproof fabric",
+    "gallery_title": "Product Gallery",
+    "gallery_image1_alt": "Front view of product",
+    "gallery_image2_alt": "Rear view of product",
+    "gallery_image3_alt": "Product in use"
   }
 }

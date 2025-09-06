@@ -143,63 +143,76 @@ const Navbar81 = (props) => {
       ref={navbarRef}
     >
       <header data-thq="thq-navbar" className="navbar81-navbar-interactive">
-        <a href="/home" onClick={handleLogoClick} className="navbar81-navlink">
-          Carteron Industries
-        </a>
         {/* Desktop Version */}
         {isDesktop ? (
-          <div data-thq="thq-navbar-nav" className="navbar81-desktop-menu">
-            <nav className="navbar81-links1">
-              <a
-                href="#home"
-                onClick={(e) => handleAnchorClick(e, null)}
-                className="navbar81-link11 thq-body-small"
-              >
-                <span className="navbar81-text14 thq-link">
-                  {t('navbar.home')}
-                </span>
-              </a>
-              {/* <a
-                href="#temoignages"
-                onClick={(e) => handleAnchorClick(e, "temoignages")}
-                className="navbar81-link31  thq-body-small"
-              >
-                <span className="navbar81-text18 thq-link">{t('navbar.testimonials')}</span>
-              </a> */}
-              {/* Dropdown Desktop avec hover */}
-              <div
-                className="navbar81-link4-dropdown-trigger"
-                onMouseEnter={handleAutreMouseEnter}
-                onMouseLeave={handleAutreMouseLeave}
-                style={{ position: "relative" }}
-                ref={autreRef}
-              >
-                <span className="thq-body-small">
-                  <span className="navbar81-text21 thq-link">{t('navbar.services')}</span>
-                </span>
-                <div className="navbar81-icon-container1">
-                  {link5DropdownVisible ? (
-                    <div className="navbar81-container2">
-                      <svg viewBox="0 0 1024 1024" className="navbar81-icon10">
-                        <path d="M298 426h428l-214 214z"></path>
-                      </svg>
-                    </div>
-                  ) : (
-                    <div className="navbar81-container3">
-                      <svg viewBox="0 0 1024 1024" className="navbar81-icon12">
-                        <path d="M426 726v-428l214 214z"></path>
-                      </svg>
-                    </div>
-                  )}
+          <>
+            <a href="/home" onClick={handleLogoClick} className="navbar81-navlink">
+              <span className="navbar81-title-text">Carteron Industries</span>
+            </a>
+            <div data-thq="thq-navbar-nav" className="navbar81-desktop-menu">
+              <nav className="navbar81-links1">
+                <a
+                  href="#home"
+                  onClick={(e) => handleAnchorClick(e, null)}
+                  className="navbar81-link11 thq-body-small"
+                >
+                  <span className="navbar81-text14 thq-link">
+                    {t('navbar.home')}
+                  </span>
+                </a>
+                {/* <a
+                  href="#temoignages"
+                  onClick={(e) => handleAnchorClick(e, "temoignages")}
+                  className="navbar81-link31  thq-body-small"
+                >
+                  <span className="navbar81-text18 thq-link">{t('navbar.testimonials')}</span>
+                </a> */}
+                {/* Dropdown Desktop avec hover */}
+                <div
+                  className="navbar81-link4-dropdown-trigger"
+                  onMouseEnter={handleAutreMouseEnter}
+                  onMouseLeave={handleAutreMouseLeave}
+                  style={{ position: "relative" }}
+                  ref={autreRef}
+                >
+                  <span className="thq-body-small">
+                    <span className="navbar81-text21 thq-link">{t('navbar.services')}</span>
+                  </span>
+                  <div className="navbar81-icon-container1">
+                    {link5DropdownVisible ? (
+                      <div className="navbar81-container2">
+                        <svg viewBox="0 0 1024 1024" className="navbar81-icon10">
+                          <path d="M298 426h428l-214 214z"></path>
+                        </svg>
+                      </div>
+                    ) : (
+                      <div className="navbar81-container3">
+                        <svg viewBox="0 0 1024 1024" className="navbar81-icon12">
+                          <path d="M426 726v-428l214 214z"></path>
+                        </svg>
+                      </div>
+                    )}
                 </div>
               </div>
-              <a
-                href="#faq"
-                onClick={(e) => handleAnchorClick(e, "faq")}
-                className="navbar81-link32  thq-body-small"
-              >
-                <span className="navbar81-text26 thq-link">{t('navbar.faq')}</span>
-              </a>
+                <a
+                  href="/our-product"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setLink5DropdownVisible(false); // Ferme le mega menu
+                    navigate("/our-product");
+                    setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+                  }}
+                  className="navbar81-link32 thq-body-small"
+                >
+                  <span className="navbar81-text26 thq-link">{t('navbar.our_product')}</span>
+                </a>
+                <a
+                  href="#faq"
+                  onClick={(e) => handleAnchorClick(e, "faq")}
+                  className="navbar81-link32 thq-body-small"
+                >
+                  <span className="navbar81-text26 thq-link">{t('navbar.faq')}</span>
+                </a>
             </nav>
             <div className="navbar81-buttons1">
               <Button
@@ -233,6 +246,7 @@ const Navbar81 = (props) => {
               <LanguageSwitcher />
             </div>
           </div>
+          </>
         ) : (
           // MOBILE/TABLETTE
           <>
@@ -314,6 +328,18 @@ const Navbar81 = (props) => {
                         </svg>
                       </button>
                     </div>
+                    <a
+                      href="/our-product"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setDrawerOpen(false);
+                        navigate("/our-product");
+                        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+                      }}
+                      className="mobile-menu-link"
+                    >
+                      {t('navbar.our_product')}
+                    </a>
                     <a
                       href="#faq"
                       onClick={(e) => handleMobileNav(e, "faq")}

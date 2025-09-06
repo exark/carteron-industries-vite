@@ -5,6 +5,7 @@
     "testimonials": "Témoignages",
     "faq": "FAQ",
     "other": "autre",
+    "our_product": "Nos Produits",
     "contact": "Contactez-nous"
   },
   "footer": {
@@ -15,7 +16,8 @@
     "legal": "Mentions légales",
     "privacy": "Politique de confidentialité",
     "terms": "Conditions générales",
-    "copyright": "© {{year}} Carteron Industries™"
+    "copyright": "{{year}} Carteron Industries™",
+    "brand_description": "Des solutions innovantes pour les défis de demain"
   },
   "home": {
     "title": "Carteron Industries",
@@ -249,5 +251,31 @@
     "location2": "Email : lamia.benhamouda.ap@gmail.com",
     "location2Description": "Envoyez-nous un email pour toute question ou proposition.",
     "get_directions": "Envoyer email"
+  },
+  "our_product": {
+    "page_title": "Nos Produits",
+    "page_subtitle": "Bientôt disponible",
+    "coming_soon_title": "En cours de développement",
+    "coming_soon_text": "Nous travaillons actuellement sur notre nouveau produit innovant. Revenez bientôt pour découvrir toutes les fonctionnalités et avantages que nous préparons pour vous.",
+    "product_prototype_alt": "Prototype du Produit",
+    "features_title": "Caractéristiques principales",
+    "feature1": "Design ergonomique et léger pour une utilisation facile",
+    "feature2": "Batterie longue durée pour une journée complète d'utilisation",
+    "feature3": "Matériaux durables et résistants aux intempéries",
+    "feature4": "Système de pliage rapide pour un rangement facile",
+    "ecommerce_button": "Visiter notre boutique en ligne",
+    "specs_title": "Spécifications techniques",
+    "dimensions_title": "Dimensions",
+    "dimensions_content": "45cm x 30cm x 20cm",
+    "weight_title": "Poids",
+    "weight_content": "2.5 kg",
+    "battery_title": "Batterie",
+    "battery_content": "Lithium-ion, 5000mAh, autonomie de 8 heures",
+    "materials_title": "Matériaux",
+    "materials_content": "Aluminium, plastique renforcé, tissu imperméable",
+    "gallery_title": "Galerie de produits",
+    "gallery_image1_alt": "Vue avant du produit",
+    "gallery_image2_alt": "Vue arrière du produit",
+    "gallery_image3_alt": "Produit en utilisation"
   }
 }
