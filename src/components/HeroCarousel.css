@@ -214,6 +214,8 @@
   align-items: stretch;
   justify-content: center;
   transition: box-shadow 0.3s;
+  cursor: pointer;
+  user-select: none;
 }
 
 /* Corrige le collage visuel du premier/dernier slide en loop Embla */

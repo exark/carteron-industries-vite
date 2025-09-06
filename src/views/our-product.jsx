@@ -238,22 +238,39 @@ export default function OurProduct() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
-          background: 'linear-gradient(135deg, #0b2244 0%, #21517a 100%)'
+          color: 'white'
         }}
       >
-        {/* Overlay pattern */}
+        {/* Video Background */}
+        <Box
+          component="video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0
+          }}
+        >
+          <source src="https://github.com/exark/carteron-industries-vite/releases/download/video/background-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </Box>
+
+        {/* Dark overlay for better text readability */}
         <Box sx={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          opacity: 0.1,
-          backgroundImage: 'url("/images/Prototype.webp")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(8px)'
+          background: 'rgba(0,0,0,0.4)',
+          zIndex: 1
         }} />
 
         {/* Content */}
@@ -447,33 +464,6 @@ export default function OurProduct() {
 
           {/* Services Section */}
           <Box sx={{ mt: 10, mb: 6 }}>
-            <Typography
-              variant="h3"
-              component="h2"
-              sx={{
-                fontWeight: 700,
-                mb: 6,
-                color: '#0b2244',
-                textAlign: 'center'
-              }}
-            >
-              {t('features25.page_title', 'Nos Services')}
-            </Typography>
-            
-            <Typography
-              variant="h6"
-              sx={{
-                maxWidth: '800px',
-                mx: 'auto',
-                mb: 6,
-                textAlign: 'center',
-                color: '#555',
-                lineHeight: 1.6
-              }}
-            >
-              {t('features25.page_subtitle', 'Découvrez nos solutions innovantes')}
-            </Typography>
-
             <Box>
               {services.map((service, index) => (
                 <ServiceCard

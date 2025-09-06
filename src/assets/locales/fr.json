@@ -1,7 +1,6 @@
 {
   "navbar": {
     "home": "Accueil",
-    "services": "Nos services",
     "testimonials": "Témoignages",
     "faq": "FAQ",
     "other": "autre",
@@ -11,7 +10,6 @@
   "footer": {
     "about": "À propos",
     "our_company": "Notre entreprise",
-    "our_services": "Nos services",
     "follow_us": "Suivez-nous",
     "legal": "Mentions légales",
     "privacy": "Politique de confidentialité",
@@ -21,7 +19,6 @@
   },
   "home": {
     "title": "Carteron Industries",
-    "services_title": "Nos services",
     "accompagnement_title": "Accompagnement",
     "testimonials_title": "Témoignages",
     "faq_title": "FAQ",

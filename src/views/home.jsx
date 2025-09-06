@@ -42,7 +42,7 @@ const Home = () => {
       <Navbar81></Navbar81>
       <HeroCarousel></HeroCarousel>
 
-      <div id="services" className="home-services">
+      <div id="our-product" className="home-services">
         <Features25></Features25>
       </div>
       <div id="accompagnement">

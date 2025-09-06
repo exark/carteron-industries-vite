@@ -172,6 +172,12 @@ const Navbar81 = (props) => {
                   className="navbar81-link4-dropdown-trigger"
                   onMouseEnter={handleAutreMouseEnter}
                   onMouseLeave={handleAutreMouseLeave}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setLink5DropdownVisible(false);
+                    navigate("/our-product");
+                    setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+                  }}
                   style={{ position: "relative" }}
                 >
                   <span className="thq-body-small">

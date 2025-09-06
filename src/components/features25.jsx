@@ -22,7 +22,7 @@ function FeatureCard({ title, description, image, buttonLabel }) {
         overflow: 'hidden',
         cursor: 'pointer'
       }}
-      onClick={() => navigate("/services")}
+      onClick={() => navigate("/our-product")}
     >
       <CardMedia
         component="img"
@@ -70,7 +70,7 @@ function FeatureCard({ title, description, image, buttonLabel }) {
             variant="contained"
             onClick={(e) => {
               e.stopPropagation();
-              navigate("/services");
+              navigate("/our-product");
             }}
             sx={{
               background: "linear-gradient(135deg, #1976D2 0%, #1565C0 100%)",

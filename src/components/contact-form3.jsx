@@ -171,7 +171,7 @@ export default function ContactForm3() {
         <Fade in={!isSmallScreen} timeout={400} unmountOnExit>
           <div className="contact-form3-imgbox">
             <img
-              src="/images/contact-form-image.jpg"
+              src="/images/terrein1.webp"
               alt="Contact entreprise"
               className="contact-form3-img"
             />
