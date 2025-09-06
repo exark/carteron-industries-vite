@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useMemo } from 'react'
+import React, { useState, Fragment, useMemo, useEffect, useRef } from 'react'
 
 import PropTypes from 'prop-types'
 
@@ -6,6 +6,8 @@ import './faq9.css'
 import { useTranslation } from 'react-i18next';
 
 const FAQ9 = ({ fAQ9Id = '' }) => {
+  // Reference to the FAQ container
+  const faqRef = useRef(null);
   const { t, i18n } = useTranslation();
   
   // Dynamically get all FAQ items from the current language
@@ -37,6 +39,9 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
   // Dynamic state management for FAQ visibility
   const [faqVisibility, setFaqVisibility] = useState({});
   const [showAllFaqs, setShowAllFaqs] = useState(false);
+  const [animatingItems, setAnimatingItems] = useState([]);
+  const [exitingItems, setExitingItems] = useState([]);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   // Update visibility state when faqItems change
   React.useEffect(() => {
@@ -55,14 +60,82 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
   };
 
   const toggleShowAllFaqs = () => {
-    setShowAllFaqs(prev => !prev);
+    setIsAnimating(true);
+    
+    if (!showAllFaqs) {
+      // When showing more questions, animate them in one by one
+      const additionalItems = faqItems.slice(3);
+      
+      // Start with no additional items visible
+      setAnimatingItems([]);
+      
+      // Set state to track that we're showing all, but don't actually show them yet
+      // The items will only appear as they're added to animatingItems
+      setShowAllFaqs(true);
+      
+      // Animate each item with a delay
+      additionalItems.forEach((item, index) => {
+        setTimeout(() => {
+          // Add this item to the animating items
+          setAnimatingItems(prev => [...prev, item.id]);
+          
+          // If this is the last item, reset animation state after it completes
+          if (index === additionalItems.length - 1) {
+            setTimeout(() => {
+              // Keep all items visible after animation completes
+              setIsAnimating(false);
+            }, 1200); // Animation duration
+          }
+        }, index * 400); // Stagger each item by 400ms
+      });
+    } else {
+      // When hiding questions, animate all items out at once
+      const itemsToRemove = faqItems.slice(3);
+      
+      // Add all items to exiting state at once
+      setExitingItems(itemsToRemove.map(item => item.id));
+      
+      // Scroll to the FAQ component smoothly
+      if (faqRef.current) {
+        window.scrollTo({
+          top: faqRef.current.offsetTop - 100, // Subtract some pixels to account for any fixed headers
+          behavior: 'smooth'
+        });
+      }
+      
+      // After animation completes, reset state
+      setTimeout(() => {
+        setShowAllFaqs(false);
+        setExitingItems([]);
+        setAnimatingItems([]);
+        setIsAnimating(false);
+      }, 1200); // Match animation duration
+    }
   };
+  
+  // We don't need this effect anymore since we're handling cleanup in the toggle function
+  // Each item will be removed from animation state individually
 
-  // Get the FAQs to display (first 3 or all)
-  const faqsToDisplay = showAllFaqs ? faqItems : faqItems.slice(0, 3);
+  // Get the FAQs to display (first 3 + only those currently animating in or out)
+  const faqsToDisplay = useMemo(() => {
+    // Always show the first 3 items
+    const baseItems = faqItems.slice(0, 3);
+    
+    // Create the list of items to display
+    return faqItems.filter(item => {
+      // Always show the first 3 base items
+      const isBaseItem = item.number <= 3;
+      
+      // For additional items, only show if they're currently animating in or out
+      const isAnimatingIn = animatingItems.includes(item.id);
+      const isExiting = exitingItems.includes(item.id);
+      
+      return isBaseItem || isAnimatingIn || isExiting;
+    });
+  }, [faqItems, animatingItems, exitingItems]);
   const hasMoreFaqs = faqItems.length > 3;
   return (
-    <div id={fAQ9Id} className="faq9faq8 thq-section-padding full-width-bg">
+    <div ref={faqRef} id={fAQ9Id} className="faq9faq8 thq-section-padding full-width-bg">
       <div className="faq9-max-width thq-flex-column thq-section-max-width">
         <div className="faq9-section-title thq-flex-column">
           <div className="faq9-content">
@@ -80,8 +153,16 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
             const iconContainerClass = faqItem.number <= 4 ? `faq9-icons-container${faqItem.number}` : 'faq9-icons-container4';
             const containerClass = faqItem.number <= 4 ? `faq9-container${12 + (faqItem.number - 1) * 3}` : 'faq9-container21';
             
+            // Add animation classes for appearing/disappearing items
+            let animationClass = '';
+            if (animatingItems.includes(faqItem.id)) {
+              animationClass = 'faq9-item-entering';
+            } else if (exitingItems.includes(faqItem.id)) {
+              animationClass = 'faq9-item-exiting';
+            }
+            
             return (
-              <div key={faqItem.id} className={`${faqClass} thq-box-shadow thq-section-max-width`}>
+              <div key={faqItem.id} className={`${faqClass} thq-box-shadow thq-section-max-width ${animationClass}`}>
                 <div 
                   onClick={() => toggleFaqVisibility(faqItem.id)} 
                   className={triggerClass}
@@ -119,6 +200,7 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
             <button 
               onClick={toggleShowAllFaqs}
               className="faq9-more-button thq-button-filled"
+              disabled={isAnimating}
             >
               <span className="faq9-button-text">
                 {showAllFaqs ? t('faq.less_questions') : t('faq.more_questions')}

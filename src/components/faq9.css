@@ -61,7 +61,7 @@
   flex: 1;
   width: 100%;
   display: flex;
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to allow animations to show */
   align-items: flex-start;
   flex-shrink: 0;
   flex-direction: column;
@@ -72,8 +72,11 @@
   border-radius: var(--radius-lg);
   background: var(--neutral-white);
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
   overflow: hidden;
+  width: 100%;
+  opacity: 1;
+  max-height: 1000px;
 }
 
 .faq9-faq1:hover, .faq9-faq2:hover, .faq9-faq3:hover, .faq9-faq4:hover, .faq9-faq5:hover, .faq9-faq6:hover, .faq9-faq7:hover, .faq9-faq8:hover, .faq9-faq9:hover, .faq9-faq10:hover {
@@ -274,7 +277,7 @@
   width: 100%;
   height: 100%;
   fill: currentColor;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq9-chevron-down {
@@ -283,6 +286,57 @@
 
 .faq9-chevron-up {
   transform: rotate(180deg);
+}
+
+/* Animation for FAQ items */
+@keyframes fadeInSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  30% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeOutSlideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  70% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    margin-top: -100%; /* Collapse the space */
+  }
+}
+
+.faq9-item-entering {
+  animation: fadeInSlideDown 1.2s ease-in-out forwards;
+  will-change: opacity, transform;
+  transform-origin: top center;
+}
+
+.faq9-item-exiting {
+  animation: fadeOutSlideUp 1.2s ease-in-out forwards;
+  will-change: opacity, transform, height, margin;
+  transform-origin: top center;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Container for the button with smooth transition */
+.faq9-more-button-container {
+  transition: margin-top 1s ease-in-out;
 }
 
 /* Responsive design */
