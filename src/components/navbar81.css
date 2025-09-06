@@ -20,21 +20,66 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: color 0.2s;
-  display: inline-block;
-}
-
-/* Title container no longer needed */
-
-.navbar81-title-text {
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 6px;
   transition: all 0.2s ease;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 8px;
 }
 
-.navbar81-title-text:hover {
+/* Logo styles */
+.navbar81-logo-image {
+  height: 90px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.navbar81-logo-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.navbar81-logo-image:active {
+  transform: scale(0.95);
+}
+
+.navbar81-navlink:hover {
   background-color: rgba(11, 34, 68, 0.05);
+}
+
+.navbar81-navlink:active {
+  background-color: rgba(11, 34, 68, 0.1);
+}
+
+/* Mobile logo styles */
+.navbar81-navlink-mobile {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  margin-right: auto;
+}
+
+.navbar81-logo-image-mobile {
+  height: 75px;
+  transition: all 0.3s ease;
+}
+
+.navbar81-navlink-mobile:hover {
+  background-color: rgba(11, 34, 68, 0.05);
+}
+
+.navbar81-navlink-mobile:hover .navbar81-logo-image-mobile {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.navbar81-navlink-mobile:active {
+  background-color: rgba(11, 34, 68, 0.1);
+}
+
+.navbar81-navlink-mobile:active .navbar81-logo-image-mobile {
+  transform: scale(0.95);
 }
 
 @media (min-width: 1024px) {
@@ -43,7 +88,7 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    padding: 0;
+    padding: 8px;
     z-index: 10;
   }
   
@@ -88,7 +133,7 @@
   padding-bottom: var(--dl-layout-space-oneandhalfunits);
   justify-content: center;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 80px;
+  height: 120px;
 }
 
 .navbar81-image1 {
@@ -496,6 +541,17 @@
     padding: 16px;
     gap: 16px;
   }
+  
+  /* Ajustements pour tablette */
+  .navbar81-navbar-interactive {
+    height: 110px;
+    padding-left: var(--dl-layout-space-twounits);
+    padding-right: var(--dl-layout-space-twounits);
+  }
+  
+  .navbar81-logo-image {
+    height: 80px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -530,6 +586,17 @@
   
   .navbar81-mega-menu-text p {
     font-size: 0.75rem;
+  }
+  
+  /* Ajustements pour mobile */
+  .navbar81-navbar-interactive {
+    height: 100px;
+    padding-left: var(--dl-layout-space-unit);
+    padding-right: var(--dl-layout-space-unit);
+  }
+  
+  .navbar81-logo-image-mobile {
+    height: 65px;
   }
 }
 

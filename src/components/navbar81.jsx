@@ -147,7 +147,7 @@ const Navbar81 = (props) => {
         {isDesktop ? (
           <>
             <a href="/home" onClick={handleLogoClick} className="navbar81-navlink">
-              <span className="navbar81-title-text">Carteron Industries</span>
+              <img src="/images/LOGO.png" alt="Carteron Industries" className="navbar81-logo-image" />
             </a>
             <div data-thq="thq-navbar-nav" className="navbar81-desktop-menu">
               <nav className="navbar81-links1">
@@ -250,6 +250,9 @@ const Navbar81 = (props) => {
         ) : (
           // MOBILE/TABLETTE
           <>
+            <a href="/home" onClick={handleLogoClick} className="navbar81-navlink-mobile">
+              <img src="/images/LOGO.png" alt="Carteron Industries" className="navbar81-logo-image-mobile" />
+            </a>
             <button
               aria-label="Ouvrir le menu"
               onClick={() => setDrawerOpen(true)}
