@@ -298,7 +298,7 @@ export default function HeroCarousel() {
               <div className="about-modal-light-left-col">
                 <div className="about-modal-light-avatar-block">
                   <img
-                    src="/images/lamiaCarteron.jpeg"
+                    src="/images/Lamia Carteron.jpg"
                     alt="Portrait de Lamia Carteron"
                     className="about-modal-light-avatar-img"
                   />
