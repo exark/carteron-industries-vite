@@ -3,14 +3,226 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Chip from "@mui/material/Chip";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar81 from "../components/navbar81";
 import Footer31 from "../components/footer31";
 import "./our-product.css";
 
+function ServiceCard({ title, description, image, buttonLabel, features, index }) {
+  const { t } = useTranslation();
+
+  return (
+    <Box
+      id={`service-${index + 1}`}
+      className="service-card"
+      sx={{
+        background: '#fff',
+        borderRadius: 3,
+        boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+        overflow: 'hidden',
+        marginBottom: 4,
+        transition: 'all 0.4s ease',
+        '&:hover': {
+          transform: 'translateY(-8px)',
+          boxShadow: '0 20px 48px rgba(0,0,0,0.15)',
+        }
+      }}
+    >
+      <Grid container>
+        <Grid item xs={12} md={4}>
+          <Box sx={{
+            height: { xs: 200, md: 300 },
+            background: `url(${image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 30%',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: '#f5f5f5',
+            position: 'relative',
+            overflow: 'hidden',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(135deg, rgba(25,118,210,0.1) 0%, rgba(25,118,210,0.05) 100%)',
+              opacity: 0,
+              transition: 'opacity 0.4s ease',
+              zIndex: 1
+            },
+            '&:hover::before': {
+              opacity: 1
+            }
+          }}>
+            <Box sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%)',
+              zIndex: 2
+            }} />
+          </Box>
+        </Grid>
+
+        <Grid item xs={12} md={8}>
+          <Box sx={{
+            padding: { xs: 3, md: 4 },
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center'
+          }}>
+            <Typography
+              variant="h4"
+              component="h2"
+              sx={{
+                fontWeight: 700,
+                color: "#1a1a1a",
+                marginBottom: 3,
+                fontSize: { xs: '1.5rem', md: '2rem' }
+              }}
+            >
+              {title}
+            </Typography>
+
+            <Typography
+              variant="body1"
+              sx={{
+                color: "#666",
+                marginBottom: 4,
+                lineHeight: 1.8,
+                fontSize: '1.1rem'
+              }}
+            >
+              {description}
+            </Typography>
+
+            {features && features.length > 0 && (
+              <Box sx={{ mb: 4 }}>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 600,
+                    color: "#1976D2",
+                    mb: 2,
+                    fontSize: '1rem'
+                  }}
+                >
+                  {t('features25.features_label', 'Fonctionnalités clés :')}
+                </Typography>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                  {features.map((feature, idx) => (
+                    <Chip
+                      key={idx}
+                      label={feature}
+                      size="small"
+                      sx={{
+                        background: '#e3f2fd',
+                        color: '#1976D2',
+                        fontWeight: 500,
+                        fontSize: '0.85rem',
+                        '&:hover': {
+                          background: '#bbdefb',
+                          transform: 'translateY(-2px)',
+                          boxShadow: '0 4px 12px rgba(25,118,210,0.3)'
+                        }
+                      }}
+                    />
+                  ))}
+                </Box>
+              </Box>
+            )}
+
+            <Button
+              variant="contained"
+              size="large"
+              sx={{
+                background: "linear-gradient(135deg, #1976D2 0%, #1565C0 100%)",
+                color: "#fff",
+                fontWeight: 600,
+                borderRadius: 2,
+                textTransform: "none",
+                boxShadow: "0 4px 16px rgba(25,118,210,0.3)",
+                transition: "all 0.3s ease",
+                fontSize: '1rem',
+                padding: '12px 32px',
+                alignSelf: 'flex-start',
+                '&:hover': {
+                  background: "linear-gradient(135deg, #1565C0 0%, #0D47A1 100%)",
+                  boxShadow: "0 8px 24px rgba(25,118,210,0.4)",
+                  transform: "translateY(-2px)",
+                },
+              }}
+            >
+              {buttonLabel}
+            </Button>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+}
+
 export default function OurProduct() {
   const { t } = useTranslation();
+  const location = useLocation();
+
+  // Gestion du scroll automatique vers les sections
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          // Calculer la position avec un offset pour la navbar
+          const navbarHeight = 100; // Hauteur approximative de la navbar
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - navbarHeight - 20; // 20px d'espace supplémentaire
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
+  const services = [
+    {
+      title: t('features25.card3.title', 'Chariots de Golf Électriques'),
+      description: t('features25.card3.desc', "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l'expérience sur le green."),
+      image: "/images/serivce3.jpg",
+      buttonLabel: t('features25.card3.button', 'En savoir plus'),
+      features: [
+        t('features25.card3.features.0', 'Motorisation silencieuse'),
+        t('features25.card3.features.1', 'Navigation intuitive'),
+        t('features25.card3.features.2', 'Autonomie étendue'),
+        t('features25.card3.features.3', 'Design ergonomique'),
+        t('features25.card3.features.4', 'Technologie avancée')
+      ]
+    },
+    {
+      title: t('features25.card4.title', 'Poussette & Chariot Golf Hybride 2-en-1'),
+      description: t('features25.card4.desc', "Une innovation unique : un chariot hybride pensé pour les jeunes parents actifs, combinant les fonctions d'une poussette et d'un chariot de golf motorisé. Idéal pour concilier sport et famille sans compromis."),
+      image: "/images/service4.jpg",
+      buttonLabel: t('features25.card4.button', 'En savoir plus'),
+      features: [
+        t('features25.card4.features.0', 'Transformation rapide'),
+        t('features25.card4.features.1', 'Sécurité enfants'),
+        t('features25.card4.features.2', 'Motorisation adaptée'),
+        t('features25.card4.features.3', 'Design compact'),
+        t('features25.card4.features.4', 'Accessoires modulaires')
+      ]
+    }
+  ];
 
   return (
     <>
@@ -230,6 +442,46 @@ export default function OurProduct() {
                   {t('our_product.materials_content', 'Aluminium, plastique renforcé, tissu imperméable')}
                 </Typography>
               </Box>
+            </Box>
+          </Box>
+
+          {/* Services Section */}
+          <Box sx={{ mt: 10, mb: 6 }}>
+            <Typography
+              variant="h3"
+              component="h2"
+              sx={{
+                fontWeight: 700,
+                mb: 6,
+                color: '#0b2244',
+                textAlign: 'center'
+              }}
+            >
+              {t('features25.page_title', 'Nos Services')}
+            </Typography>
+            
+            <Typography
+              variant="h6"
+              sx={{
+                maxWidth: '800px',
+                mx: 'auto',
+                mb: 6,
+                textAlign: 'center',
+                color: '#555',
+                lineHeight: 1.6
+              }}
+            >
+              {t('features25.page_subtitle', 'Découvrez nos solutions innovantes')}
+            </Typography>
+
+            <Box>
+              {services.map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  {...service}
+                  index={index}
+                />
+              ))}
             </Box>
           </Box>
         </Container>

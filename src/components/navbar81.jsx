@@ -167,16 +167,15 @@ const Navbar81 = (props) => {
                 >
                   <span className="navbar81-text18 thq-link">{t('navbar.testimonials')}</span>
                 </a> */}
-                {/* Dropdown Desktop avec hover */}
+                {/* Our Products avec mega menu */}
                 <div
                   className="navbar81-link4-dropdown-trigger"
                   onMouseEnter={handleAutreMouseEnter}
                   onMouseLeave={handleAutreMouseLeave}
                   style={{ position: "relative" }}
-                  ref={autreRef}
                 >
                   <span className="thq-body-small">
-                    <span className="navbar81-text21 thq-link">{t('navbar.services')}</span>
+                    <span className="navbar81-text21 thq-link">{t('navbar.our_product')}</span>
                   </span>
                   <div className="navbar81-icon-container1">
                     {link5DropdownVisible ? (
@@ -192,20 +191,8 @@ const Navbar81 = (props) => {
                         </svg>
                       </div>
                     )}
+                  </div>
                 </div>
-              </div>
-                <a
-                  href="/our-product"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setLink5DropdownVisible(false); // Ferme le mega menu
-                    navigate("/our-product");
-                    setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
-                  }}
-                  className="navbar81-link32 thq-body-small"
-                >
-                  <span className="navbar81-text26 thq-link">{t('navbar.our_product')}</span>
-                </a>
                 <a
                   href="#faq"
                   onClick={(e) => handleAnchorClick(e, "faq")}
@@ -297,7 +284,7 @@ const Navbar81 = (props) => {
                     >
                       {t('navbar.testimonials')}
                     </a> */}
-                    {/* Bouton pour ouvrir le sous-menu Autre */}
+                    {/* Bouton pour ouvrir le sous-menu Our Products */}
                     <div style={{ marginBottom: 16 }}>
                       <button
                         type="button"
@@ -320,7 +307,7 @@ const Navbar81 = (props) => {
                           borderBottom: "1px solid #f0f0f0",
                         }}
                       >
-                        <span>{t('navbar.services')}</span>
+                        <span>{t('navbar.our_product')}</span>
                         <svg
                           width="20"
                           height="20"
@@ -331,18 +318,6 @@ const Navbar81 = (props) => {
                         </svg>
                       </button>
                     </div>
-                    <a
-                      href="/our-product"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setDrawerOpen(false);
-                        navigate("/our-product");
-                        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
-                      }}
-                      className="mobile-menu-link"
-                    >
-                      {t('navbar.our_product')}
-                    </a>
                     <a
                       href="#faq"
                       onClick={(e) => handleMobileNav(e, "faq")}
@@ -371,7 +346,7 @@ const Navbar81 = (props) => {
                   </button>
                 </div>
               ) : (
-                // Sous-menu Autre
+                // Sous-menu Our Products
                 <div style={{ position: "relative", height: "100%" }}>
                   <nav className="navbar81-mobile-links">
                     <div style={{ display: "flex", alignItems: "center", marginBottom: 24 }}>
@@ -402,42 +377,16 @@ const Navbar81 = (props) => {
                         aria-label="Retour au menu principal"
                         onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') setMobileSubMenuOpen(false); }}
                       >
-                        Nos services
+                        {t('navbar.our_product')}
                       </span>
                     </div>
                     <a
-                      href="/services"
+                      href="/our-product"
                       onClick={(e) => {
                         e.preventDefault();
                         setDrawerOpen(false);
                         setMobileSubMenuOpen(false);
-                        navigate("/services#service-1");
-                      }}
-                      className="mobile-menu-link"
-                      style={{ paddingLeft: "16px", borderBottom: "none" }}
-                    >
-                      {t('features25.card1.title', 'Projet SmartAgri Connect')}
-                    </a>
-                    <a
-                      href="/services"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setDrawerOpen(false);
-                        setMobileSubMenuOpen(false);
-                        navigate("/services#service-2");
-                      }}
-                      className="mobile-menu-link"
-                      style={{ paddingLeft: "16px", borderBottom: "none" }}
-                    >
-                      {t('features25.card2.title', 'Application Mobile Bovin+')}
-                    </a>
-                    <a
-                      href="/services"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setDrawerOpen(false);
-                        setMobileSubMenuOpen(false);
-                        navigate("/services#service-3");
+                        navigate("/our-product#service-1");
                       }}
                       className="mobile-menu-link"
                       style={{ paddingLeft: "16px", borderBottom: "none" }}
@@ -445,12 +394,12 @@ const Navbar81 = (props) => {
                       {t('features25.card3.title', 'Chariots de Golf Électriques')}
                     </a>
                     <a
-                      href="/services"
+                      href="/our-product"
                       onClick={(e) => {
                         e.preventDefault();
                         setDrawerOpen(false);
                         setMobileSubMenuOpen(false);
-                        navigate("/services#service-4");
+                        navigate("/our-product#service-2");
                       }}
                       className="mobile-menu-link"
                       style={{ paddingLeft: "16px", borderBottom: "none" }}
@@ -491,39 +440,7 @@ const Navbar81 = (props) => {
               className="navbar81-mega-menu-item"
               onClick={() => {
                 setLink5DropdownVisible(false);
-                navigate("/services#service-1");
-              }}
-            >
-              <img
-                src="/images/service1.jpg"
-                alt="Projet SmartAgri Connect"
-                className="navbar81-mega-menu-image"
-              />
-              <div className="navbar81-mega-menu-text">
-                <h3>{t('features25.card1.title', 'Projet SmartAgri Connect')}</h3>
-              </div>
-            </div>
-            <div 
-              className="navbar81-mega-menu-item"
-              onClick={() => {
-                setLink5DropdownVisible(false);
-                navigate("/services#service-2");
-              }}
-            >
-              <img
-                src="/images/service2.png"
-                alt="Application Mobile Bovin+"
-                className="navbar81-mega-menu-image"
-              />
-              <div className="navbar81-mega-menu-text">
-                <h3>{t('features25.card2.title', 'Application Mobile Bovin+')}</h3>
-              </div>
-            </div>
-            <div 
-              className="navbar81-mega-menu-item"
-              onClick={() => {
-                setLink5DropdownVisible(false);
-                navigate("/services#service-3");
+                navigate("/our-product#service-1");
               }}
             >
               <img
@@ -539,7 +456,7 @@ const Navbar81 = (props) => {
               className="navbar81-mega-menu-item"
               onClick={() => {
                 setLink5DropdownVisible(false);
-                navigate("/services#service-4");
+                navigate("/our-product#service-2");
               }}
             >
               <img
