@@ -173,7 +173,7 @@ export default function HeroCarousel() {
       <div className="hero-carousel-side-content">
         <h2 className="side-title">{t('carousel.side_title', 'Notre Mission')}</h2>
         <p className="side-desc">
-          {t('carousel.side_desc', 'Nous développons des solutions technologiques avancées pour optimiser les performances des machines agricoles, en intégrant des systèmes intelligents pour une agriculture plus précise et efficace.')}
+          {t('carousel.side_desc')}
         </p>
         <button
           className="meet-founder-btn"
@@ -254,7 +254,6 @@ export default function HeroCarousel() {
                         fontSize: slideDescSize,
                         margin: "auto 0 30px 0",
                         padding: "12px 18px",
-                        borderRadius: "10px",
                         background: "rgba(0,0,0,0.28)",
                         textShadow: "0 2px 8px rgba(0,0,0,0.25)",
                         textAlign: "center",

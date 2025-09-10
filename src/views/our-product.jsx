@@ -394,15 +394,15 @@ export default function OurProduct() {
                 variant="contained" 
                 color="primary"
                 size="large"
-                href="https://www.example.com/shop"
-                target="_blank"
-                rel="noopener noreferrer"
+                disabled
                 sx={{ 
                   alignSelf: { xs: 'center', md: 'flex-start' },
                   mt: 2,
-                  backgroundColor: '#0b2244',
+                  backgroundColor: '#cccccc',
+                  color: '#666666',
+                  cursor: 'not-allowed',
                   '&:hover': {
-                    backgroundColor: '#21517a'
+                    backgroundColor: '#cccccc'
                   },
                   fontWeight: 600,
                   px: 4,
