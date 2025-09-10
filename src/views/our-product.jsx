@@ -8,7 +8,7 @@ import Chip from "@mui/material/Chip";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Navbar81 from "../components/navbar81";
 import Footer31 from "../components/footer31";
 import "./our-product.css";
@@ -174,6 +174,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
 export default function OurProduct() {
   const { t } = useTranslation();
   const location = useLocation();
+  const videoRef = useRef(null);
 
   // Gestion du scroll automatique vers les sections
   useEffect(() => {
@@ -194,6 +195,58 @@ export default function OurProduct() {
       }
     }
   }, [location.hash]);
+
+  // Handle video loading for Chrome compatibility
+  useEffect(() => {
+    const video = videoRef.current;
+    const fallback = document.querySelector('.video-fallback');
+    
+    if (video && fallback) {
+      const handleCanPlay = () => {
+        video.play().then(() => {
+          // Video started playing successfully, hide fallback
+          fallback.style.display = 'none';
+          video.style.display = 'block';
+        }).catch((error) => {
+          console.warn('Video autoplay failed:', error);
+          // Keep fallback visible
+          video.style.display = 'none';
+          fallback.style.display = 'block';
+        });
+      };
+
+      const handleLoadedData = () => {
+        if (video.readyState >= 3) { // HAVE_FUTURE_DATA
+          video.play().then(() => {
+            fallback.style.display = 'none';
+            video.style.display = 'block';
+          }).catch(() => {
+            video.style.display = 'none';
+            fallback.style.display = 'block';
+          });
+        }
+      };
+
+      const handleError = () => {
+        video.style.display = 'none';
+        fallback.style.display = 'block';
+      };
+
+      // Initially hide video and show fallback
+      video.style.display = 'none';
+      fallback.style.display = 'block';
+
+      video.addEventListener('canplay', handleCanPlay);
+      video.addEventListener('loadeddata', handleLoadedData);
+      video.addEventListener('error', handleError);
+
+      return () => {
+        video.removeEventListener('canplay', handleCanPlay);
+        video.removeEventListener('loadeddata', handleLoadedData);
+        video.removeEventListener('error', handleError);
+      };
+    }
+  }, []);
 
   const services = [
     {
@@ -244,10 +297,14 @@ export default function OurProduct() {
         {/* Video Background */}
         <Box
           component="video"
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
+          controls={false}
+          disablePictureInPicture
           sx={{
             position: 'absolute',
             top: 0,
@@ -255,12 +312,38 @@ export default function OurProduct() {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            zIndex: 0
+            zIndex: 0,
+            backgroundColor: '#f0f0f0'
+          }}
+          onError={(e) => {
+            // Fallback to background image if video fails
+            e.target.style.display = 'none';
+            const fallback = e.target.nextElementSibling;
+            if (fallback && fallback.classList.contains('video-fallback')) {
+              fallback.style.display = 'block';
+            }
           }}
         >
           <source src="https://github.com/exark/carteron-industries-vite/releases/download/video/background-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </Box>
+
+        {/* Fallback background image - show by default for Chrome */}
+        <Box
+          className="video-fallback"
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundImage: 'url(/images/chariot.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 0,
+            display: 'block'
+          }}
+        />
 
         {/* Dark overlay for better text readability */}
         <Box sx={{
