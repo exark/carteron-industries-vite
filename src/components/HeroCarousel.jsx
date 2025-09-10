@@ -128,6 +128,34 @@ export default function HeroCarousel() {
     setModalOpen(true);
   };
 
+  const handleAboutOpen = () => {
+    setAboutModalOpen(true);
+  };
+
+  const handleAboutClose = () => {
+    setAboutModalOpen(false);
+  };
+
+  // Handle ESC key press
+  useEffect(() => {
+    const handleEscKey = (event) => {
+      if (event.key === 'Escape' && aboutModalOpen) {
+        handleAboutClose();
+      }
+    };
+
+    if (aboutModalOpen) {
+      document.addEventListener('keydown', handleEscKey);
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscKey);
+      document.body.style.overflow = 'unset';
+    };
+  }, [aboutModalOpen]);
+
   return (
     <div className="hero-carousel-wrapper">
       <div className="hero-carousel-side-content">
@@ -135,16 +163,15 @@ export default function HeroCarousel() {
         <p className="side-desc">
           {t('carousel.side_desc', 'Nous développons des solutions technologiques avancées pour optimiser les performances des machines agricoles, en intégrant des systèmes intelligents pour une agriculture plus précise et efficace.')}
         </p>
-        <Button
-          variant="contained"
-          color="primary"
-          className="side-btn"
-          size="large"
-          onClick={() => setAboutModalOpen(true)}
-          aria-label={t('carousel.about_aria', 'Ouvrir la fenêtre à propos')}
+        <button
+          className="meet-founder-btn"
+          onClick={handleAboutOpen}
+          aria-controls="founder-modal"
+          aria-expanded={aboutModalOpen}
+          aria-label={t('carousel.about_aria')}
         >
-          {t('carousel.about_btn', 'À propos')}
-        </Button>
+          {t('carousel.meet_founder_btn', 'Meet the Founder')}
+        </button>
       </div>
       <div className="hero-carousel-nav-outer">
         <div
@@ -270,64 +297,81 @@ export default function HeroCarousel() {
           )}
         </Box>
       </Modal>
-      {/* ----- MODAL POPUP à propos de nous ----- */}
-      <Modal
-        open={aboutModalOpen}
-        onClose={() => setAboutModalOpen(false)}
-        className="carousel-modal about-modal-light"
-        aria-labelledby="about-modal-title"
-        aria-describedby="about-modal-description"
-        closeAfterTransition
-      >
-        <Fade in={aboutModalOpen} timeout={400}>
-          <Box
-            className="carousel-modal-box about-modal-light-box"
-            sx={{ position: "relative", padding: 0, overflow: "hidden" }}
+      {/* ----- FOUNDER MODAL ----- */}
+      {aboutModalOpen && (
+        <div 
+          className="founder-modal-backdrop"
+          onClick={handleAboutClose}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="founder-modal-title"
+          id="founder-modal"
+        >
+          <div 
+            className="founder-modal-content"
+            onClick={(e) => e.stopPropagation()}
           >
-            {/* Croix de fermeture */}
             <button
-              onClick={() => setAboutModalOpen(false)}
-              className="about-modal-close-x"
-              aria-label="Fermer la fenêtre à propos"
+              onClick={handleAboutClose}
+              className="founder-modal-close"
+              aria-label={t('carousel.close', 'Close')}
             >
-              ×
+              ✕
             </button>
             
-            <div className="about-modal-light-content">
-              {/* Colonne gauche - Avatar et infos */}
-              <div className="about-modal-light-left-col">
-                <div className="about-modal-light-avatar-block">
-                  <img
-                    src="/images/Lamia Carteron.jpg"
-                    alt="Portrait de Lamia Carteron"
-                    className="about-modal-light-avatar-img"
-                  />
-                  <div className="about-modal-light-name">Lamia Carteron</div>
-                  <div className="about-modal-light-post">{t('carousel.about_founder', 'Fondatrice')}</div>
-                </div>
-              </div>
-              
-              {/* Colonne droite - Contenu */}
-              <div className="about-modal-light-right-col">
-                {/* Introduction et Parcours */}
-                <div className="about-modal-light-sections">
-                  <section className="about-modal-light-section">
-                    <div className="about-modal-light-section-desc">
-                      {t('carousel.about_intro', 'Carteron Industries, c\'est une vision moderne de l\'agriculture et de la mobilité. Fondée sur une expertise en ingénierie système, l\'entreprise développe des solutions intelligentes pour le monde agricole et les loisirs outdoor. Nous croyons en une technologie utile, durable et adaptée aux réalités du terrain.')}
-                    </div>
-                  </section>
-                  <section className="about-modal-light-section">
-                    <div className="about-modal-light-section-title">{t('carousel.about_parcours_title', 'Parcours')}</div>
-                    <div className="about-modal-light-section-desc">
-                      {t('carousel.about_parcours', 'Docteure ingénieure en électronique et physique, Lamia Carteron fonde Carteron Industries après plus de 15 ans d\'expérience en R&D dans l\'optimisation de véhicules thermiques, hybrides, électriques et de machines agricoles. Elle a collaboré avec de grands noms de l\'industrie automobile et du secteur agricole. Aujourd\'hui, elle met son expertise au service d\'une solution innovante dans le domaine du loisir, fruit d\'un croisement unique entre sa passion pour l\'ingénierie automobile, son goût pour le golf et sa vie de famille.')}
-                    </div>
-                  </section>
-                </div>
+            <div className="founder-modal-header">
+              <img
+                src="/images/Lamia Carteron.jpg"
+                alt="Lamia Carteron"
+                className="founder-avatar"
+              />
+              <div className="founder-info">
+                <h2 id="founder-modal-title" className="founder-title">
+                  Lamia Carteron — {t('carousel.about_founder', 'Founder')}
+                </h2>
+                <p className="founder-tagline">
+                  <span className="mobile-tagline">Engineering innovation for golf & family</span>
+                  <span className="desktop-tagline">Bridging automotive engineering excellence with family-centered golf innovation</span>
+                </p>
               </div>
             </div>
-          </Box>
-        </Fade>
-      </Modal>
+
+            <div className="founder-modal-body">
+              <section className="founder-section">
+                <h3 className="section-title">Vision</h3>
+                <p className="section-content">
+                  Making golf more accessible and enjoyable for families through innovative technology that combines performance with practicality.
+                </p>
+              </section>
+
+              <section className="founder-section">
+                <h3 className="section-title">Background</h3>
+                <div className="section-content">
+                  <ul className="background-list">
+                    <li>PhD in Electronics & Physics</li>
+                    <li>15+ years in automotive R&D</li>
+                    <li>Expert in electric & hybrid vehicle optimization</li>
+                    <li>Collaborated with major automotive & agricultural brands</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section className="founder-section">
+                <h3 className="section-title">Today</h3>
+                <p className="section-content">
+                  Combining passion for engineering, golf, and family life to create the revolutionary 2-in-1 electric golf stroller that transforms how parents experience the game.
+                </p>
+              </section>
+            </div>
+
+            <div className="founder-modal-footer">
+              <button className="secondary-cta-btn">
+                Discover the 2-in-1 Electric Golf Stroller
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

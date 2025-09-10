@@ -70,8 +70,10 @@
   "scroll_to_top": "Retour en haut",
   "carousel": {
     "side_title": "Nos Domaines d'Expertise",
-    "side_desc": "Chez Carteron Industries, nous plaçons l'innovation et la technologie au service de l'agriculture et du bien-être. Nos produits et services sont conçus pour répondre à des besoins concrets, avec une approche à la fois humaine et technologique.",
+    "side_desc": "Portée par l'innovation, Carteron Industries crée des solutions à la croisée du sport, de la famille et de la technologie. Nous croyons en un golf plus accessible, confortable et inclusif pour chaque génération.",
     "about_btn": "À propos",
+    "discover_btn": "Découvrir nos Produits",
+    "meet_founder_btn": "Rencontrer la Fondatrice",
     "about_aria": "Ouvrir la fenêtre à propos",
     "close": "Fermer",
     "about_intro": "Carteron Industries, c'est une vision moderne de l'agriculture et de la mobilité. Fondée sur une expertise en ingénierie système, l'entreprise développe des solutions intelligentes pour le monde agricole et les loisirs outdoor. Nous croyons en une technologie utile, durable et adaptée aux réalités du terrain.",
@@ -223,23 +225,23 @@
     }
   },
   "steps": {
-    "title": "Notre accompagnement, étape par étape",
-    "description": "Découvrez comment nous transformons vos besoins en solutions concrètes et innovantes, grâce à un parcours client fluide, humain et sur-mesure.",
+    "title": "Innovation, étape par étape",
+    "description": "Découvrez comment Carteron Industries réinvente le golf avec un chariot poussette électrique 2-en-1, pensé pour les parents passionnés de ce sport.",
     "step1": {
-      "title": "1. Prise de contact",
-      "desc": "Nous échangeons sur vos besoins, vos objectifs et vos contraintes pour bien comprendre votre projet."
+      "title": "1. Tout transporter facilement",
+      "desc": "Emportez vos clubs de golf, vos équipements et votre bébé en toute sécurité grâce à une structure légère et robuste."
     },
     "step2": {
-      "title": "2. Conception sur-mesure",
-      "desc": "Nous conçevons une solution personnalisée, adaptée à votre activité et à vos attentes."
+      "title": "2. Assistance électrique intelligente",
+      "desc": "Motorisation performante, vitesse régulée en montée et en descente, autonomie longue durée pour profiter d’un parcours complet."
     },
     "step3": {
-      "title": "3. Déploiement & tests",
-      "desc": "Nous installons, testons et ajustons la solution dans votre environnement pour garantir son efficacité."
+      "title": "3. Sécurité et confort avant tout",
+      "desc": "Siège sécurisé pour votre enfant, système de pliage pratique, freins fiables et maniabilité ergonomique pour une tranquillité d’esprit."
     },
     "step4": {
-      "title": "4. Suivi & accompagnement",
-      "desc": "Nous restons à vos côtés pour assurer la maintenance, l’évolution et la performance de votre solution dans la durée."
+      "title": "4. Le golf en famille",
+      "desc": "Jouez sans compromis : partagez votre passion avec votre enfant tout en profitant d’une expérience unique et innovante."
     }
   },
   "contact10": {

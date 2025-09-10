@@ -70,8 +70,10 @@
   "scroll_to_top": "Back to top",
   "carousel": {
     "side_title": "Our Areas of Expertise",
-    "side_desc": "At Carteron Industries, we place innovation and technology at the service of agriculture and well-being. Our products and services are designed to meet concrete needs, with both a human and technological approach.",
+    "side_desc": "Driven by innovation, Carteron Industries creates solutions at the crossroads of sport, family, and technology. We believe in making golf more accessible, comfortable, and inclusive for every generation.",
     "about_btn": "About",
+    "discover_btn": "Discover Our Products",
+    "meet_founder_btn": "Meet the Founder",
     "about_aria": "Open about window",
     "close": "Close",
     "about_intro": "Carteron Industries represents a modern vision of agriculture and mobility. Founded on systems engineering expertise, the company develops intelligent solutions for the agricultural world and outdoor leisure. We believe in useful, sustainable technology adapted to field realities.",
@@ -223,23 +225,23 @@
     }
   },
   "steps": {
-    "title": "Our Support, Step by Step",
-    "description": "Discover how we transform your needs into concrete and innovative solutions, with a smooth, human, and personalized customer journey.",
+    "title": "Innovation, Step by Step",
+    "description": "Discover how Carteron Industries is reinventing golf with a unique 2-in-1 electric stroller trolley, designed for parents who love the game.",
     "step1": {
-      "title": "1. Initial Contact",
-      "desc": "We discuss your needs, goals, and constraints to understand your project thoroughly."
+      "title": "1. Carry Everything with Ease",
+      "desc": "Transport your golf clubs, equipment, and your baby safely in one lightweight, robust structure."
     },
     "step2": {
-      "title": "2. Custom Design",
-      "desc": "We design a personalized solution tailored to your business and expectations."
+      "title": "2. Smart Electric Assistance",
+      "desc": "Motorized drive, stable speed control uphill and downhill, and long-lasting battery autonomy for a full round."
     },
     "step3": {
-      "title": "3. Deployment & Testing",
-      "desc": "We install, test, and adjust the solution in your environment to ensure efficiency."
+      "title": "3. Safety & Comfort First",
+      "desc": "Secure seat for your baby, easy folding system, stable brakes, and ergonomic handling for peace of mind."
     },
     "step4": {
-      "title": "4. Ongoing Support",
-      "desc": "We remain by your side to ensure maintenance, evolution, and performance over time."
+      "title": "4. Family-Friendly Golf",
+      "desc": "Play golf without compromise — share your passion with your child while enjoying a unique, innovative experience."
     }
   },
   "contact10": {
