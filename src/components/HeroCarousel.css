@@ -200,14 +200,18 @@
 /* Mobile styles */
 @media (max-width: 640px) {
   .founder-modal-backdrop {
-    align-items: flex-end;
-    padding: 0;
+    align-items: flex-start;
+    padding: 20px 16px;
+    overflow-y: auto;
   }
   
   .founder-modal-content {
-    border-radius: 16px 16px 0 0;
-    max-height: 85vh;
+    border-radius: 16px;
+    max-height: none;
+    height: auto;
+    min-height: auto;
     animation: slideUp 200ms ease-out;
+    margin: auto 0;
   }
 }
 
@@ -340,7 +344,8 @@
 
 .founder-modal-body {
   padding: 24px;
-  overflow: hidden;
+  overflow-y: auto;
+  flex: 1;
 }
 
 @media (max-width: 640px) {
