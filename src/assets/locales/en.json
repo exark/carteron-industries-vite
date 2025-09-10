@@ -68,6 +68,22 @@
   },
   "privacy_banner": "We do not collect any personal data for commercial or advertising purposes. Your privacy is respected.",
   "scroll_to_top": "Back to top",
+  "founder_modal": {
+    "title": "Lamia Carteron — Founder",
+    "mobile_tagline": "Engineering innovation for golf & family",
+    "desktop_tagline": "Bridging automotive engineering excellence with family-centered golf innovation",
+    "vision_title": "Vision",
+    "vision_text": "Making golf more accessible and enjoyable for families through innovative technology that combines performance with practicality.",
+    "background_title": "Background",
+    "background_items": [
+      "PhD in Electronics & Physics",
+      "15+ years in automotive R&D",
+      "Expert in electric & hybrid vehicle optimization",
+      "Collaborated with major automotive & agricultural brands"
+    ],
+    "today_title": "Today",
+    "today_text": "Combining passion for engineering, golf, and family life to create the revolutionary 2-in-1 electric golf stroller that transforms how parents experience the game."
+  },
   "carousel": {
     "side_title": "Our Areas of Expertise",
     "side_desc": "Driven by innovation, Carteron Industries creates solutions at the crossroads of sport, family, and technology. We believe in making golf more accessible, comfortable, and inclusive for every generation.",

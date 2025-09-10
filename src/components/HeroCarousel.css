@@ -125,6 +125,16 @@
   transform: scale(1.01);
 }
 
+/* Modal body lock styles */
+.modal-open {
+  overflow: hidden !important;
+  padding-right: var(--scrollbar-width, 0px) !important;
+}
+
+.modal-open html {
+  overflow: hidden !important;
+}
+
 /* Founder Modal Styles */
 .founder-modal-backdrop {
   position: fixed;
@@ -140,6 +150,9 @@
   z-index: 1000;
   padding: 16px;
   animation: fadeIn 200ms ease-out;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 @keyframes fadeIn {
@@ -255,17 +268,23 @@
 }
 
 .founder-avatar {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  transition: transform 0.3s ease;
   object-fit: cover;
-  border: 3px solid #f0f0f0;
+  border: none;
+  box-shadow: none;
+}
+
+.founder-avatar:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 640px) {
   .founder-avatar {
-    width: 64px;
-    height: 64px;
+    width: 100px;
+    height: 100px;
   }
 }
 

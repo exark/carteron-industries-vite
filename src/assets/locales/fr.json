@@ -68,6 +68,22 @@
   },
   "privacy_banner": "Nous ne collectons aucune donnée personnelle à des fins commerciales ou publicitaires. Votre vie privée est respectée.",
   "scroll_to_top": "Retour en haut",
+  "founder_modal": {
+    "title": "Lamia Carteron — Fondatrice",
+    "mobile_tagline": "Innovation d'ingénierie pour le golf et la famille",
+    "desktop_tagline": "Relier l'excellence de l'ingénierie automobile à l'innovation golfique centrée sur la famille",
+    "vision_title": "Vision",
+    "vision_text": "Rendre le golf plus accessible et agréable pour les familles grâce à une technologie innovante qui allie performance et praticité.",
+    "background_title": "Parcours",
+    "background_items": [
+      "Docteure en électronique & physique",
+      "Plus de 15 ans en R&D automobile",
+      "Experte en optimisation de véhicules électriques & hybrides",
+      "Collaboration avec de grandes marques de l'automobile et de l'agriculture"
+    ],
+    "today_title": "Aujourd'hui",
+    "today_text": "Allier passion pour l'ingénierie, le golf et la vie de famille afin de créer le chariot poussette de golf électrique 2-en-1 révolutionnaire, qui transforme l'expérience des parents sur le parcours."
+  },
   "carousel": {
     "side_title": "Nos Domaines d'Expertise",
     "side_desc": "Portée par l'innovation, Carteron Industries crée des solutions à la croisée du sport, de la famille et de la technologie. Nous croyons en un golf plus accessible, confortable et inclusif pour chaque génération.",

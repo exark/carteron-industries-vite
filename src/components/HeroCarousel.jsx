@@ -136,25 +136,37 @@ export default function HeroCarousel() {
     setAboutModalOpen(false);
   };
 
+  const handleFounderOpen = () => {
+    setFounderModalOpen(true);
+  };
+
+  const handleFounderClose = () => {
+    setFounderModalOpen(false);
+  };
+
   // Handle ESC key press
   useEffect(() => {
     const handleEscKey = (event) => {
-      if (event.key === 'Escape' && aboutModalOpen) {
-        handleAboutClose();
+      if (event.key === 'Escape') {
+        setAboutModalOpen(false);
       }
     };
 
     if (aboutModalOpen) {
       document.addEventListener('keydown', handleEscKey);
-      // Prevent body scroll when modal is open
-      document.body.style.overflow = 'hidden';
+      // Prevent body scroll and horizontal shift when modal is open
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
+      document.body.classList.add('modal-open');
     }
 
     return () => {
       document.removeEventListener('keydown', handleEscKey);
-      document.body.style.overflow = 'unset';
+      document.body.classList.remove('modal-open');
+      document.documentElement.style.removeProperty('--scrollbar-width');
     };
   }, [aboutModalOpen]);
+
 
   return (
     <div className="hero-carousel-wrapper">
@@ -327,47 +339,40 @@ export default function HeroCarousel() {
               />
               <div className="founder-info">
                 <h2 id="founder-modal-title" className="founder-title">
-                  Lamia Carteron — {t('carousel.about_founder', 'Founder')}
+                  {t('founder_modal.title', 'Lamia Carteron — Founder')}
                 </h2>
                 <p className="founder-tagline">
-                  <span className="mobile-tagline">Engineering innovation for golf & family</span>
-                  <span className="desktop-tagline">Bridging automotive engineering excellence with family-centered golf innovation</span>
+                  <span className="mobile-tagline">{t('founder_modal.mobile_tagline')}</span>
+                  <span className="desktop-tagline">{t('founder_modal.desktop_tagline')}</span>
                 </p>
               </div>
             </div>
 
             <div className="founder-modal-body">
               <section className="founder-section">
-                <h3 className="section-title">Vision</h3>
+                <h3 className="section-title">{t('founder_modal.vision_title', 'Vision')}</h3>
                 <p className="section-content">
-                  Making golf more accessible and enjoyable for families through innovative technology that combines performance with practicality.
+                  {t('founder_modal.vision_text')}
                 </p>
               </section>
 
               <section className="founder-section">
-                <h3 className="section-title">Background</h3>
+                <h3 className="section-title">{t('founder_modal.background_title', 'Background')}</h3>
                 <div className="section-content">
                   <ul className="background-list">
-                    <li>PhD in Electronics & Physics</li>
-                    <li>15+ years in automotive R&D</li>
-                    <li>Expert in electric & hybrid vehicle optimization</li>
-                    <li>Collaborated with major automotive & agricultural brands</li>
+                    {t('founder_modal.background_items', { returnObjects: true }).map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </div>
               </section>
 
               <section className="founder-section">
-                <h3 className="section-title">Today</h3>
+                <h3 className="section-title">{t('founder_modal.today_title', 'Today')}</h3>
                 <p className="section-content">
-                  Combining passion for engineering, golf, and family life to create the revolutionary 2-in-1 electric golf stroller that transforms how parents experience the game.
+                  {t('founder_modal.today_text')}
                 </p>
               </section>
-            </div>
-
-            <div className="founder-modal-footer">
-              <button className="secondary-cta-btn">
-                Discover the 2-in-1 Electric Golf Stroller
-              </button>
             </div>
           </div>
         </div>
