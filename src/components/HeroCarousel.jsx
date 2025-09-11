@@ -9,19 +9,19 @@ import { useTranslation } from "react-i18next";
 const itemsData = [
   {
     key: "innovation",
-    image: "/images/chariot.jpg",
+    image: "/images/equipement-d-a-faible-angle.jpg",
   },
   {
     key: "startup",
-    image: "/images/separee.webp",
+    image: "/images/golfeur.jpg",
   },
   {
     key: "work",
-    image: "/images/application.png",
+    image: "/images/application.jpg",
   },
   {
     key: "tech",
-    image: "/images/Prototype.webp",
+    image: "/images/motherwithbaby.jpg",
   },
 ];
 
@@ -242,7 +242,6 @@ export default function HeroCarousel() {
                         fontWeight: 700,
                         fontSize: slideTitleSize,
                         textShadow: "0 2px 14px rgba(0,0,0,0.38)",
-                        background: "rgba(0,0,0,0.35)",
                       }}
                     >
                       {item.name}
@@ -254,7 +253,6 @@ export default function HeroCarousel() {
                         fontSize: slideDescSize,
                         margin: "auto 0 30px 0",
                         padding: "12px 18px",
-                        background: "rgba(0,0,0,0.28)",
                         textShadow: "0 2px 8px rgba(0,0,0,0.25)",
                         textAlign: "center",
                       }}
