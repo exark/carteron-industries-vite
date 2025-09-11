@@ -175,7 +175,7 @@ export default function HeroCarousel() {
         <p className="side-desc">
           {t('carousel.side_desc')}
         </p>
-        <button
+        {/* <button
           className="meet-founder-btn"
           onClick={handleAboutOpen}
           aria-controls="founder-modal"
@@ -183,7 +183,7 @@ export default function HeroCarousel() {
           aria-label={t('carousel.about_aria')}
         >
           {t('carousel.meet_founder_btn', 'Meet the Founder')}
-        </button>
+        </button> */}
       </div>
       <div className="hero-carousel-nav-outer">
         <div
