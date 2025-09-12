@@ -551,6 +551,11 @@
 .embla {
   width: 100%;
 }
+@media (max-width: 1200px) {
+  .embla {
+    overflow: hidden;
+  }
+}
 .embla__container {
   display: flex;
   gap: 18px;
