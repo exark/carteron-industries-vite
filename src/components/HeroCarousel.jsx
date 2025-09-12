@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 import { Button, Modal, Box } from "@mui/material";
 import { Fade } from "@mui/material";
 import "./HeroCarousel.css";
@@ -13,16 +12,20 @@ const itemsData = [
   },
   {
     key: "startup",
-    image: "/images/golfeur.jpg",
+    image: "/images/motherwithbaby.jpg",
   },
   {
     key: "work",
-    image: "/images/application.jpg",
+    image: "/images/golfeur.jpg",
   },
   {
     key: "tech",
-    image: "/images/motherwithbaby.jpg",
+    image: "/images/application.jpg",
   },
+  {
+    key: "community",
+    image: "/images/dadwithbaby.webp",
+  }
 ];
 
 function getSlidesToShow() {
@@ -95,17 +98,8 @@ export default function HeroCarousel() {
   }, []);
 
   // Embla setup
-  const autoplay = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
-  );
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      loop: true,
-      slidesToScroll: 1,
-      align: "start",
-      dragFree: false,
-    },
-    [autoplay.current]
+    { loop: false, slidesToScroll: 1, align: "start", dragFree: false }
   );
 
   // Navigation
@@ -229,35 +223,47 @@ export default function HeroCarousel() {
                       position: "relative",
                       display: "flex",
                       flexDirection: "column",
-                      justifyContent: "flex-start",
+                      justifyContent: "flex-end",
                     }}
                   >
-                    {/* Titre en haut */}
+                    {/* Combined title and description at the bottom */}
                     <div
+                      className="slide-content-glass"
                       style={{
                         width: "100%",
-                        padding: "26px 22px 12px 22px",
-                        borderRadius: "22px 22px 0 0",
-                        color: "#fff",
-                        fontWeight: 700,
-                        fontSize: slideTitleSize,
-                        textShadow: "0 2px 14px rgba(0,0,0,0.38)",
+                        padding: "16px 20px",
+                        borderBottomLeftRadius: "22px",
+                        borderBottomRightRadius: "22px",
+                        background: "linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%)",
+                        backdropFilter: "blur(4px)",
+                        WebkitBackdropFilter: "blur(4px)",
+                        boxShadow: "0 -2px 12px rgba(0, 0, 0, 0.08)",
+                        paddingTop: "24px",
                       }}
                     >
-                      {item.name}
-                    </div>
-                    {/* Description centrée verticalement */}
-                    <div
-                      style={{
-                        color: "#fff",
-                        fontSize: slideDescSize,
-                        margin: "auto 0 30px 0",
-                        padding: "12px 18px",
-                        textShadow: "0 2px 8px rgba(0,0,0,0.25)",
-                        textAlign: "center",
-                      }}
-                    >
-                      {item.description}
+                      <div
+                        className="slide-title"
+                        style={{
+                          color: "#fff",
+                          fontWeight: 700,
+                          fontSize: slideTitleSize,
+                          marginBottom: "4px",
+                          textShadow: "0 2px 8px rgba(0,0,0,0.5)",
+                        }}
+                      >
+                        {item.name}
+                      </div>
+                      <div
+                        className="slide-description"
+                        style={{
+                          color: "rgba(255, 255, 255, 0.9)",
+                          fontSize: slideDescSize,
+                          textShadow: "0 1px 4px rgba(0,0,0,0.4)",
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {item.description}
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -450,7 +450,7 @@ const Navbar81 = (props) => {
               }}
             >
               <img
-                src="/images/serivce3.jpg"
+                src="/images/couple-jouant-au-golf-ensemble.jpg"
                 alt="Chariots de Golf Électriques"
                 className="navbar81-mega-menu-image"
               />
@@ -466,7 +466,7 @@ const Navbar81 = (props) => {
               }}
             >
               <img
-                src="/images/service4.jpg"
+                src="/images/club_de_golf.jpg"
                 alt="Poussette & Chariot Golf Hybride 2-en-1"
                 className="navbar81-mega-menu-image"
               />

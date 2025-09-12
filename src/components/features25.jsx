@@ -119,13 +119,13 @@ export default function Features25() {
       <FeatureCard
         title={t('features25.card3.title', 'Chariots de Golf Électriques')}
         description={t('features25.card3.desc', "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l'expérience sur le green.")}
-        image="/images/serivce3.jpg"
+        image="/images/couple-jouant-au-golf-ensemble.jpg"
         buttonLabel={t('features25.card3.button', 'En savoir plus')}
       />
       <FeatureCard
         title={t('features25.card4.title', 'Poussette & Chariot Golf Hybride 2-en-1')}
         description={t('features25.card4.desc', "Une innovation unique : un chariot hybride pensé pour les jeunes parents actifs, combinant les fonctions d'une poussette et d'un chariot de golf motorisé. Idéal pour concilier sport et famille sans compromis.")}
-        image="/images/service4.jpg"
+        image="/images/club_de_golf.jpg"
         buttonLabel={t('features25.card4.button', 'En savoir plus')}
       />
     </div>

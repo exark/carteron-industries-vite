@@ -252,7 +252,7 @@ export default function OurProduct() {
     {
       title: t('features25.card3.title', 'Chariots de Golf Électriques'),
       description: t('features25.card3.desc', "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l'expérience sur le green."),
-      image: "/images/serivce3.jpg",
+      image: "/images/couple-jouant-au-golf-ensemble.jpg",
       buttonLabel: t('features25.card3.button', 'En savoir plus'),
       features: [
         t('features25.card3.features.0', 'Motorisation silencieuse'),
@@ -265,7 +265,7 @@ export default function OurProduct() {
     {
       title: t('features25.card4.title', 'Poussette & Chariot Golf Hybride 2-en-1'),
       description: t('features25.card4.desc', "Une innovation unique : un chariot hybride pensé pour les jeunes parents actifs, combinant les fonctions d'une poussette et d'un chariot de golf motorisé. Idéal pour concilier sport et famille sans compromis."),
-      image: "/images/service4.jpg",
+      image: "/images/club_de_golf.jpg",
       buttonLabel: t('features25.card4.button', 'En savoir plus'),
       features: [
         t('features25.card4.features.0', 'Transformation rapide'),
@@ -426,11 +426,11 @@ export default function OurProduct() {
             <Box sx={{ flex: 1 }}>
               <Box
                 component="img"
-                src="/images/Prototype.webp"
-                alt={t('our_product.product_prototype_alt')}
+                src="/images/des-enfants-jouant-au-golf-dans-un-environnement-photorealiste.jpg"
+                
                 sx={{
                   maxWidth: '100%',
-                  maxHeight: '350px',
+                  maxHeight: '500px',
                   width: 'auto',
                   height: 'auto',
                   borderRadius: 4,

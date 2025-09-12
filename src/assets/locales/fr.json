@@ -86,7 +86,7 @@
   },
   "carousel": {
     "side_title": "Nos Domaines d'Expertise",
-    "side_desc": "Portée par l'innovation, Carteron Industries crée des solutions à la croisée du sport, de la famille et de la technologie. Nous croyons en un golf plus accessible, confortable et inclusif pour chaque génération.",
+    "side_desc": "Portée par l'innovation, Carteron Industries crée des solutions à la croisée du sport, de la famille et de la technologie. Nous inventons le premier chariot de golf électrique 2-en-1 qui transporte clubs et bébé, pour que la passion du golf se partage en famille",
     "about_btn": "À propos",
     "discover_btn": "Découvrir nos Produits",
     "meet_founder_btn": "Rencontrer la Fondatrice",
@@ -98,23 +98,28 @@
     "about_parcours_title": "Parcours",
     "innovation": {
       "name": "Chariots de golf électriques nouvelle génération",
-      "desc": "Redéfinissez votre jeu sur le parcours.",
-      "popup": "Légers, pliables et intelligents. Nos chariots électriques connectés intègrent un système de navigation pour sublimer votre expérience de golf—avec des performances premium à une fraction du coût."
+      "desc": "Redéfinir le confort et la performance sur le parcours.",
+      "popup": "Léger, facile à plier et conçu avec soin. Nos chariots électriques de nouvelle génération intègrent des fonctions intuitives pour enrichir votre expérience de jeu — offrant des performances haut de gamme sans le prix élevé habituellement associé."
     },
     "startup": {
-      "name": "Chariot hybride 2-en-1",
-      "desc": "Quand le golf rencontre la famille.",
-      "popup": "Un concept unique combinant porte-sac de golf et poussette. En cours de développement, cette solution hybride est pensée pour les parents actifs qui ne veulent pas faire de compromis."
+      "name": "Chariot Hybride 2-en-1",
+      "desc": "Quand le golf rencontre la vie de famille.",
+      "popup": "Un concept original qui associe la praticité d’un chariot de golf et le confort d’une poussette. Actuellement en développement, cette solution est pensée pour les parents qui veulent profiter du golf sans renoncer aux moments passés en famille."
     },
     "work": {
-      "name": "Performance & Productivité",
-      "desc": "Jouez plus malin, travaillez plus malin.",
-      "popup": "Du parcours au terrain, nous créons des solutions qui optimisent l’efficacité afin que vous tiriez le meilleur de chaque journée."
+      "name": "Innovation en Action",
+      "desc": "Transformer les idées en solutions concrètes.",
+      "popup": "Nous concevons des innovations pratiques qui permettent aux golfeurs et aux familles de profiter de plus de confort, de simplicité et de temps de qualité — pour que chaque partie de golf soit plus agréable et sans effort."
     },
     "tech": {
-      "name": "Mobilité pilotée par la technologie",
-      "desc": "Quand le digital rencontre le green.",
-      "popup": "Des outils connectés et des systèmes de mobilité intelligents qui marient technologie et golf pour une expérience résolument moderne."
+      "name": "Mobilité guidée par la technologie",
+      "desc": "Une technologie qui rend le golf plus agréable et accessible à tous.",
+      "popup": "Des fonctionnalités numériques innovantes et des éléments de conception intégrés qui améliorent l'expérience sur le parcours — alliant technologie moderne, confort et style."
+    },
+    "community": {
+      "name": "Un Golf Pour Tous",
+      "desc": "Rendre le golf plus accueillant pour toutes les générations.",
+      "popup": "Nous croyons que le golf doit être inclusif et familial. Notre approche encourage les clubs à adopter de nouvelles solutions qui attirent des joueurs variés, soutiennent les parents et rendent ce sport accessible au plus grand nombre — façonnons ensemble l’avenir du golf."
     }
   },
   "features25": {
@@ -144,7 +149,7 @@
     },
     "card3": {
       "title": "Chariots de Golf Électriques",
-      "desc": "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l'expérience sur le green.",
+      "desc": "Pensés pour les golfeurs exigeants, nos chariots électriques associent confort, autonomie et ergonomie. Leur motorisation silencieuse et leurs commandes intuitives transforment l’expérience de jeu sur le parcours.",
       "button": "En savoir plus",
       "features": {
         "0": "Motorisation silencieuse",
@@ -156,7 +161,7 @@
     },
     "card4": {
       "title": "Poussette & Chariot Golf Hybride 2-en-1",
-      "desc": "Une innovation unique : un chariot hybride pensé pour les jeunes parents actifs, combinant les fonctions d'une poussette et d'un chariot de golf motorisé. Idéal pour concilier sport et famille sans compromis.",
+      "desc": "Ce chariot hybride associe la praticité d’un chariot de golf et le confort d’une poussette. Actuellement en développement, il est conçu pour permettre aux parents de profiter du golf tout en gardant leur enfant à proximité — conciliant sport et vie de famille sans compromis.",
       "button": "En savoir plus",
       "features": {
         "0": "Transformation rapide",
@@ -172,48 +177,48 @@
   },
   "faq": {
     "title": "Questions Fréquemment Posées",
-    "subtitle": "Découvrez tout ce qu'il faut savoir sur notre chariot de golf poussette 2-en-1 électrique.",
-    "more_questions": "Plus de questions ?",
-    "less_questions": "Moins de questions",
+    "subtitle": "Tout ce qu’il faut savoir sur notre chariot-poussette de golf électrique 2-en-1.",
+    "more_questions": "Voir plus de questions",
+    "less_questions": "Voir moins de questions",
     "faq1": {
-      "q": "Qu’est-ce que CARTERON Industries propose exactement ?",
-      "a": "Nous développons un chariot poussette 2-en-1 électrique de golf : un équipement unique qui transporte à la fois les clubs, les accessoires de golf et un siège bébé, en toute sécurité."
+      "q": "Que propose exactement CARTERON Industries ?",
+      "a": "Nous développons un chariot-poussette de golf électrique 2-en-1 : une solution innovante qui transporte en toute sécurité vos clubs de golf, accessoires et un siège bébé, dans un seul équipement pratique."
     },
     "faq2": {
       "q": "Pourquoi combiner un chariot de golf et une poussette ?",
-      "a": "Parce que les parents golfeurs veulent profiter de leur passion sans compromis. Notre solution permet de jouer au golf tout en ayant son enfant à proximité, sans effort et en toute sécurité."
+      "a": "Parce que les parents ne devraient pas avoir à choisir entre leur passion et leur vie de famille. Notre solution permet de jouer au golf tout en gardant votre enfant près de vous, facilement et en toute sécurité."
     },
     "faq3": {
       "q": "En quoi ce produit est-il innovant ?",
-      "a": "C’est la première fois qu’une solution hybride, motorisée, légère et sécurisée est pensée pour unir le loisir sportif et la vie familiale.\n- Motorisation électrique avec régulation de vitesse en montée/descente.\n- Structure robuste et légère, facilement pliable.\n- Transformation rapide entre mode chariot de golf et mode poussette."
+      "a": "C’est l’une des premières solutions hybrides conçues pour rapprocher loisirs sportifs et vie familiale.\n- Assistance électrique avec contrôle sécurisé de la vitesse.\n- Structure légère et robuste, facile à plier.\n- Passage rapide entre le mode chariot et le mode poussette."
     },
     "faq4": {
-      "q": "Quels bénéfices pour les utilisateurs ?",
-      "a": "- Confort : fini le port du sac de golf et la poussette encombrante.\n- Santé : prévient la fatigue et les douleurs (dos, épaules).\n- Famille : permet aux parents de passer du temps de qualité avec leurs enfants.\n- Simplicité : pliage et transport faciles, autonomie d’une partie complète (18 trous et plus)."
+      "q": "Quels sont les bénéfices pour les utilisateurs ?",
+      "a": "- Confort : fini le sac de golf lourd et la poussette encombrante.\n- Santé : réduit la fatigue et les douleurs.\n- Famille : plus de temps de qualité sur le parcours avec les enfants.\n- Praticité : pliage facile et autonomie pour un parcours complet."
     },
     "faq5": {
       "q": "Est-ce sécurisé pour le bébé ?",
-      "a": "Oui. La sécurité est notre priorité :\n- Siège bébé conforme aux normes de puériculture.\n- Stabilité et frein moteur efficace.\n- Commandes simples et fiables pour le contrôle de la vitesse.\n- Tests réalisés avec l’appui de clubs de golf partenaires."
+      "a": "Oui. La sécurité est notre priorité :\n- Siège bébé conforme aux normes de puériculture.\n- Conception stable avec freinage efficace.\n- Commandes simples et fiables.\n- Des tests approfondis seront menés avec des clubs de golf partenaires avant la mise sur le marché."
     },
     "faq6": {
-      "q": "Est-ce que les clubs de golf autorisent ce type d’équipement ?",
-      "a": "Oui, de nombreux clubs voient positivement ce type d’innovation familiale, surtout en dehors des heures de pointe. Des organisations comme l’Australian PGA et l’England Golf soutiennent déjà des initiatives similaires."
+      "q": "Les clubs de golf autorisent-ils ce type d’équipement ?",
+      "a": "Oui, de nombreux clubs accueillent positivement ce type d’innovation familiale, surtout en dehors des heures de pointe. Nous travaillons en partenariat avec les clubs pour garantir leur compatibilité et leur acceptation."
     },
     "faq7": {
       "q": "Quel est le prix attendu ?",
-      "a": "Notre ambition est de proposer un excellent rapport qualité-prix : plus accessible que l’achat séparé d’un chariot premium et d’une poussette haut de gamme. Différentes gammes seront disponibles selon les besoins (familiaux, sportifs réguliers, golfeurs occasionnels)."
+      "a": "Notre ambition est d’offrir un excellent rapport qualité-prix : plus accessible que l’achat séparé d’un chariot premium et d’une poussette haut de gamme. Plusieurs versions seront proposées selon les besoins."
     },
     "faq8": {
       "q": "À qui s’adresse ce produit ?",
-      "a": "- Parents golfeurs qui veulent continuer à pratiquer sans renoncer au temps familial.\n- Clubs de golf cherchant à attirer une nouvelle clientèle familiale.\n- Golfeurs seniors qui veulent partager leur passion avec leurs enfants ou petits-enfants."
+      "a": "- Aux parents golfeurs qui veulent continuer à jouer sans renoncer au temps en famille.\n- Aux clubs de golf qui souhaitent attirer une clientèle familiale.\n- Aux grands-parents ou passionnés désireux de partager leur sport avec les plus jeunes."
     },
     "faq9": {
       "q": "Pourquoi faire confiance à CARTERON Industries ?",
-      "a": "Parce que le projet est porté par Lamia Carteron, docteure ingénieure avec 15 ans d’expérience en R&D dans l’automobile et les machines agricoles. Son expertise technique, alliée à sa passion pour le golf et sa vie de famille, garantit un produit fiable, innovant et pensé dans les moindres détails."
+      "a": "Le projet est porté par Lamia Carteron, docteure ingénieure avec 15 ans d’expérience en R&D dans l’automobile et les machines agricoles. Son expertise, alliée à sa passion pour le golf et la vie de famille, est un gage de sérieux et d’innovation."
     },
     "faq10": {
       "q": "Quand le produit sera-t-il disponible ?",
-      "a": "Nous préparons actuellement la phase de développement et de tests. La mise sur le marché est prévue après validation des prototypes et certification des normes de sécurité."
+      "a": "Nous préparons actuellement la phase de développement et de tests. La mise sur le marché aura lieu après validation des prototypes et obtention des certifications de sécurité."
     }
   },
   "testimonials": {
@@ -281,13 +286,13 @@
     "ecommerce_button": "Visiter notre boutique en ligne",
     "specs_title": "Spécifications techniques",
     "dimensions_title": "Dimensions",
-    "dimensions_content": "45cm x 30cm x 20cm",
+    "dimensions_content": "À venir",
     "weight_title": "Poids",
-    "weight_content": "2.5 kg",
+    "weight_content": "À venir",
     "battery_title": "Batterie",
-    "battery_content": "Lithium-ion, 5000mAh, autonomie de 8 heures",
+    "battery_content": "À venir",
     "materials_title": "Matériaux",
-    "materials_content": "Aluminium, plastique renforcé, tissu imperméable",
+    "materials_content": "À venir",
     "gallery_title": "Galerie de produits",
     "gallery_image1_alt": "Vue avant du produit",
     "gallery_image2_alt": "Vue arrière du produit",

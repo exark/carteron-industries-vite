@@ -86,7 +86,7 @@
   },
   "carousel": {
     "side_title": "Our Areas of Expertise",
-    "side_desc": "Driven by innovation, Carteron Industries creates solutions at the crossroads of sport, family, and technology. We believe in making golf more accessible, comfortable, and inclusive for every generation.",
+    "side_desc": "Driven by innovation, Carteron Industries creates solutions at the crossroads of sports, family, and technology. We are inventing the first 2-in-1 electric golf cart that carries both clubs and baby, so the passion for golf can be shared with the whole family.",
     "about_btn": "About",
     "discover_btn": "Discover Our Products",
     "meet_founder_btn": "Meet the Founder",
@@ -98,23 +98,23 @@
     "about_parcours_title": "Background",
     "innovation": {
       "name": "Next-Gen Electric Golf Trolleys",
-      "desc": "Redefine your game on the course.",
-      "popup": "Lightweight, foldable, and smart. Our connected electric trolleys feature integrated navigation to elevate your golf experience—delivering premium performance at a fraction of the cost."
+      "desc": "Redefining comfort and performance on the course.",
+      "popup": "Lightweight, easy to fold, and thoughtfully designed. Our next-generation electric trolleys include intuitive guidance features to enhance your golf experience — delivering premium performance without the premium price tag."
     },
     "startup": {
       "name": "2-in-1 Hybrid Trolley",
-      "desc": "Golf meets family innovation.",
-      "popup": "A unique concept combining a golf bag carrier with a stroller design. Under development, this hybrid solution is built for active parents who don’t want to compromise."
+      "desc": "When golf meets family life.",
+      "popup": "An original concept that brings together the practicality of a golf trolley and the convenience of a stroller. Currently in development, this solution is designed for parents who want to enjoy the game without giving up family time."
     },
     "work": {
-      "name": "Performance & Productivity",
-      "desc": "Smarter play, smarter work.",
-      "popup": "From course to field, we design solutions that optimize efficiency, ensuring you get more out of every day."
+      "name": "Innovation in Action",
+      "desc": "Turning ideas into everyday solutions.",
+      "popup": "We create practical innovations that help golfers and families enjoy more comfort, convenience, and quality time — making each round of golf feel effortless and more rewarding."
     },
-    "tech": {
-      "name": "Tech-Driven Mobility",
-      "desc": "Where digital meets the green.",
-      "popup": "Connected tools and smart mobility systems that merge technology with golf and agriculture for a truly modern experience."
+    "community": {
+      "name": "Golf for Everyone",
+      "desc": "Creating a more welcoming game for all generations.",
+      "popup": "We believe golf should be inclusive and family-friendly. Our approach encourages clubs to embrace new solutions that attract diverse players, support parents, and make the sport accessible to more people — shaping the future of the game together."
     }
   },
   "features25": {
@@ -144,7 +144,7 @@
     },
     "card3": {
       "title": "Electric Golf Trolleys",
-      "desc": "Designed for demanding golfers, our electric trolleys combine performance, range, and ergonomics. Developed with silent motors and intuitive navigation, they enhance the experience on the green.",
+      "desc": "Designed for passionate golfers, our electric trolleys combine comfort, range, and ergonomics. With quiet motors and intuitive controls, they transform the playing experience on the course.",
       "button": "Learn more",
       "features": {
         "0": "Silent motorization",
@@ -156,7 +156,7 @@
     },
     "card4": {
       "title": "2-in-1 Stroller & Golf Trolley Hybrid",
-      "desc": "A unique innovation: a hybrid trolley designed for active parents, combining the functionality of a stroller and a motorized golf cart. Perfect to balance sport and family without compromise.",
+      "desc": "This hybrid trolley brings together the practicality of a golf cart and the comfort of a stroller. Still in development, it is created to let parents enjoy golf while keeping their child close — balancing sport and family without compromise.",
       "button": "Learn more",
       "features": {
         "0": "Quick transformation",
@@ -172,48 +172,48 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Find out everything you need to know about our 2-in-1 electric golf trolley stroller.",
-    "more_questions": "More questions?",
-    "less_questions": "Fewer questions",
+    "subtitle": "Everything you need to know about our 2-in-1 electric golf trolley stroller.",
+    "more_questions": "Show more questions",
+    "less_questions": "Show fewer questions",
     "faq1": {
       "q": "What exactly does CARTERON Industries offer?",
-      "a": "We are developing a 2-in-1 electric golf trolley stroller: a unique piece of equipment that safely carries both golf clubs, accessories, and a baby seat."
+      "a": "We are developing a 2-in-1 electric golf trolley stroller: an innovative solution that safely carries your golf clubs, accessories, and a baby seat in one practical design."
     },
     "faq2": {
       "q": "Why combine a golf trolley and a stroller?",
-      "a": "Because golfing parents want to enjoy their passion without compromise. Our solution allows you to play golf while keeping your child close by, effortlessly and safely."
+      "a": "Because parents shouldn’t have to choose between family time and their favorite sport. Our solution lets you play golf while keeping your child close, safely and effortlessly."
     },
     "faq3": {
       "q": "What makes this product innovative?",
-      "a": "It’s the first time a hybrid solution—motorized, lightweight, and secure—has been designed to unite sports leisure with family life.\n- Electric motorization with speed control on slopes.\n- Robust yet lightweight structure, easy to fold.\n- Quick transformation between golf trolley mode and stroller mode."
+      "a": "It’s one of the first hybrid solutions designed to connect leisure and family life.\n- Electric assistance with safe speed control.\n- Lightweight yet robust frame, easy to fold.\n- Quick switch between trolley and stroller modes."
     },
     "faq4": {
       "q": "What are the benefits for users?",
-      "a": "- Comfort: no more carrying a heavy golf bag and bulky stroller.\n- Health: prevents fatigue and pain (back, shoulders).\n- Family: allows parents to enjoy quality time with their children.\n- Simplicity: easy folding and transport, battery life for a full round (18 holes or more)."
+      "a": "- Comfort: no more juggling a heavy golf bag and stroller.\n- Health: reduces fatigue and strain.\n- Family: enjoy more quality time on the course.\n- Convenience: folds easily and lasts a full round."
     },
     "faq5": {
       "q": "Is it safe for the baby?",
-      "a": "Yes. Safety is our top priority:\n- Baby seat compliant with childcare standards.\n- Stable design with efficient motor brake.\n- Simple and reliable controls for speed management.\n- Tested in collaboration with partner golf clubs."
+      "a": "Yes. Safety is our top priority:\n- Baby seat meets childcare safety standards.\n- Stable design with efficient brakes.\n- Easy-to-use controls.\n- Testing planned in collaboration with partner golf clubs."
     },
     "faq6": {
       "q": "Do golf clubs allow this type of equipment?",
-      "a": "Yes, many clubs see this type of family innovation positively, especially outside peak hours. Organizations such as the Australian PGA and England Golf already support similar initiatives."
+      "a": "Yes, many clubs welcome family-friendly solutions, especially during quieter hours. We work closely with golf clubs to ensure compatibility and acceptance."
     },
     "faq7": {
       "q": "What is the expected price?",
-      "a": "Our goal is to deliver great value for money: more affordable than buying both a premium trolley and a high-end stroller separately. Different ranges will be available depending on needs (families, regular golfers, occasional players)."
+      "a": "Our goal is to offer excellent value — more accessible than buying a premium trolley and a high-end stroller separately. Several versions will be available for different needs."
     },
     "faq8": {
       "q": "Who is this product for?",
-      "a": "- Golfing parents who want to keep playing without giving up family time.\n- Golf clubs looking to attract a new family-oriented clientele.\n- Senior golfers who want to share their passion with children or grandchildren."
+      "a": "- Parents who want to keep playing golf without sacrificing family time.\n- Clubs aiming to attract family-friendly golfers.\n- Grandparents and golf enthusiasts who want to share their passion with the next generation."
     },
     "faq9": {
       "q": "Why trust CARTERON Industries?",
-      "a": "Because the project is led by Lamia Carteron, PhD engineer with 15 years of R&D experience in the automotive and agricultural machinery sectors. Her technical expertise, combined with her passion for golf and family life, ensures a reliable, innovative product designed down to the finest detail."
+      "a": "The project is led by Lamia Carteron, PhD engineer with 15 years of R&D experience in automotive and agricultural machinery. Her expertise and passion for golf and family life ensure a carefully designed, reliable solution."
     },
     "faq10": {
       "q": "When will the product be available?",
-      "a": "We are currently preparing the development and testing phase. Market launch is planned after prototype validation and safety certification."
+      "a": "We are entering the development and testing phase. Launch will follow after prototype validation and safety certification."
     }
   },
   "testimonials": {
@@ -281,13 +281,13 @@
     "ecommerce_button": "Visit Our Online Store",
     "specs_title": "Technical Specifications",
     "dimensions_title": "Dimensions",
-    "dimensions_content": "45cm x 30cm x 20cm",
+    "dimensions_content": "To be confirmed",
     "weight_title": "Weight",
-    "weight_content": "2.5 kg",
+    "weight_content": "To be confirmed",
     "battery_title": "Battery",
-    "battery_content": "Lithium-ion, 5000mAh, 8-hour battery life",
+    "battery_content": "To be confirmed",
     "materials_title": "Materials",
-    "materials_content": "Aluminum, reinforced plastic, waterproof fabric",
+    "materials_content": "To be confirmed",
     "gallery_title": "Product Gallery",
     "gallery_image1_alt": "Front view of product",
     "gallery_image2_alt": "Rear view of product",
