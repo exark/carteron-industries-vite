@@ -292,5 +292,12 @@
     "gallery_image1_alt": "Front view of product",
     "gallery_image2_alt": "Rear view of product",
     "gallery_image3_alt": "Product in use"
+  },
+  "construction": {
+    "title": "Website Under Construction",
+    "subtitle": "We are working hard to bring you something amazing!",
+    "description": "Our team is currently developing this page. Please check back soon for updates!",
+    "go_back": "Go Back",
+    "go_home": "Go Home"
   }
 }

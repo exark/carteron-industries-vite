@@ -297,5 +297,12 @@
     "gallery_image1_alt": "Vue avant du produit",
     "gallery_image2_alt": "Vue arrière du produit",
     "gallery_image3_alt": "Produit en utilisation"
+  },
+  "construction": {
+    "title": "Site en cours de construction",
+    "subtitle": "Nous travaillons dur pour vous apporter quelque chose d'extraordinaire !",
+    "description": "Notre équipe développe actuellement cette page. Revenez bientôt pour les mises à jour !",
+    "go_back": "Retour",
+    "go_home": "Accueil"
   }
 }
