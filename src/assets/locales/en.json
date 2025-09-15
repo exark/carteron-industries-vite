@@ -69,7 +69,6 @@
   "privacy_banner": "We do not collect any personal data for commercial or advertising purposes. Your privacy is respected.",
   "scroll_to_top": "Back to top",
   "founder_modal": {
-    "title": "Lamia Carteron — Founder",
     "mobile_tagline": "Engineering innovation for golf & family",
     "desktop_tagline": "Bridging automotive engineering excellence with family-centered golf innovation",
     "vision_title": "Vision",
@@ -93,7 +92,6 @@
     "about_aria": "Open about window",
     "close": "Close",
     "about_intro": "Carteron Industries represents a modern vision of mobility. Founded on systems engineering expertise, the company develops intelligent solutions for the agricultural world and outdoor leisure. We believe in useful, sustainable technology adapted to field realities.",
-    "about_parcours": "PhD engineer in electronics and physics, Lamia Carteron founded Carteron Industries after more than 15 years of R&D experience in optimizing thermal, hybrid, electric vehicles and agricultural machinery. She has collaborated with major names in the automotive industry and agricultural sector. Today, she puts her expertise at the service of an innovative solution in the leisure domain, the result of a unique combination between her passion for automotive engineering, her love for golf and her family life.",
     "about_founder": "Founder",
     "about_parcours_title": "Background",
     "innovation": {
@@ -183,10 +181,6 @@
       "q": "Why combine a golf trolley and a stroller?",
       "a": "Because parents shouldn’t have to choose between family time and their favorite sport. Our solution lets you play golf while keeping your child close, safely and effortlessly."
     },
-    "faq3": {
-      "q": "What makes this product innovative?",
-      "a": "It’s one of the first hybrid solutions designed to connect leisure and family life.\n- Electric assistance with safe speed control.\n- Lightweight yet robust frame, easy to fold.\n- Quick switch between trolley and stroller modes."
-    },
     "faq4": {
       "q": "What are the benefits for users?",
       "a": "- Comfort: no more juggling a heavy golf bag and stroller.\n- Health: reduces fatigue and strain.\n- Family: enjoy more quality time on the course.\n- Convenience: folds easily and lasts a full round."
@@ -206,14 +200,6 @@
     "faq8": {
       "q": "Who is this product for?",
       "a": "- Parents who want to keep playing golf without sacrificing family time.\n- Clubs aiming to attract family-friendly golfers.\n- Grandparents and golf enthusiasts who want to share their passion with the next generation."
-    },
-    "faq9": {
-      "q": "Why trust CARTERON Industries?",
-      "a": "The project is led by Lamia Carteron, PhD engineer with 15 years of R&D experience in automotive and agricultural machinery. Her expertise and passion for golf and family life ensure a carefully designed, reliable solution."
-    },
-    "faq10": {
-      "q": "When will the product be available?",
-      "a": "We are entering the development and testing phase. Launch will follow after prototype validation and safety certification."
     }
   },
   "testimonials": {
@@ -263,7 +249,7 @@
   "contact10": {
     "heading1": "Contact Us",
     "content1": "Feel free to contact us for any questions or collaborations.",
-    "location2": "Email: lamia.benhamouda.ap@gmail.com",
+    "location2": "Email: carteron.industries@gmail.com",
     "location2Description": "Send us an email for any questions or proposals.",
     "get_directions": "Send Email"
   },

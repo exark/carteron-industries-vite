@@ -68,8 +68,8 @@ const Steps2 = ({ rootClassName = "" }) => {
     <div className={`steps2-container1 thq-section-padding full-width-bg ${rootClassName}`}> 
       <div className="steps2-max-width thq-section-max-width">
         <div className="steps2-section-header">
-          <h2 className="thq-heading-2">{t('steps.title')}</h2>
-          <p className="thq-body-large">
+          <h2 className="thq-heading-2 whityyy">{t('steps.title')}</h2>
+          <p className="thq-body-large whityyy">
             {t('steps.description')}
           </p>
         </div>

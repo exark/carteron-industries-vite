@@ -69,7 +69,6 @@
   "privacy_banner": "Nous ne collectons aucune donnée personnelle à des fins commerciales ou publicitaires. Votre vie privée est respectée.",
   "scroll_to_top": "Retour en haut",
   "founder_modal": {
-    "title": "Lamia Carteron — Fondatrice",
     "mobile_tagline": "Innovation d'ingénierie pour le golf et la famille",
     "desktop_tagline": "Relier l'excellence de l'ingénierie automobile à l'innovation golfique centrée sur la famille",
     "vision_title": "Vision",
@@ -93,7 +92,6 @@
     "about_aria": "Ouvrir la fenêtre à propos",
     "close": "Fermer",
     "about_intro": "Carteron Industries, c'est une vision moderne de l'agriculture et de la mobilité. Fondée sur une expertise en ingénierie système, l'entreprise développe des solutions intelligentes pour le monde agricole et les loisirs outdoor. Nous croyons en une technologie utile, durable et adaptée aux réalités du terrain.",
-    "about_parcours": "Docteure ingénieure en électronique et physique, Lamia Carteron fonde Carteron Industries après plus de 15 ans d'expérience en R&D dans l'optimisation de véhicules thermiques, hybrides, électriques et de machines agricoles. Elle a collaboré avec de grands noms de l'industrie automobile et du secteur agricole. Aujourd'hui, elle met son expertise au service d'une solution innovante dans le domaine du loisir, fruit d'un croisement unique entre sa passion pour l'ingénierie automobile, son goût pour le golf et sa vie de famille.",
     "about_founder": "Fondatrice",
     "about_parcours_title": "Parcours",
     "innovation": {
@@ -188,10 +186,6 @@
       "q": "Pourquoi combiner un chariot de golf et une poussette ?",
       "a": "Parce que les parents ne devraient pas avoir à choisir entre leur passion et leur vie de famille. Notre solution permet de jouer au golf tout en gardant votre enfant près de vous, facilement et en toute sécurité."
     },
-    "faq3": {
-      "q": "En quoi ce produit est-il innovant ?",
-      "a": "C’est l’une des premières solutions hybrides conçues pour rapprocher loisirs sportifs et vie familiale.\n- Assistance électrique avec contrôle sécurisé de la vitesse.\n- Structure légère et robuste, facile à plier.\n- Passage rapide entre le mode chariot et le mode poussette."
-    },
     "faq4": {
       "q": "Quels sont les bénéfices pour les utilisateurs ?",
       "a": "- Confort : fini le sac de golf lourd et la poussette encombrante.\n- Santé : réduit la fatigue et les douleurs.\n- Famille : plus de temps de qualité sur le parcours avec les enfants.\n- Praticité : pliage facile et autonomie pour un parcours complet."
@@ -211,14 +205,6 @@
     "faq8": {
       "q": "À qui s’adresse ce produit ?",
       "a": "- Aux parents golfeurs qui veulent continuer à jouer sans renoncer au temps en famille.\n- Aux clubs de golf qui souhaitent attirer une clientèle familiale.\n- Aux grands-parents ou passionnés désireux de partager leur sport avec les plus jeunes."
-    },
-    "faq9": {
-      "q": "Pourquoi faire confiance à CARTERON Industries ?",
-      "a": "Le projet est porté par Lamia Carteron, docteure ingénieure avec 15 ans d’expérience en R&D dans l’automobile et les machines agricoles. Son expertise, alliée à sa passion pour le golf et la vie de famille, est un gage de sérieux et d’innovation."
-    },
-    "faq10": {
-      "q": "Quand le produit sera-t-il disponible ?",
-      "a": "Nous préparons actuellement la phase de développement et de tests. La mise sur le marché aura lieu après validation des prototypes et obtention des certifications de sécurité."
     }
   },
   "testimonials": {
@@ -268,7 +254,7 @@
   "contact10": {
     "heading1": "Contactez-nous",
     "content1": "N'hésitez pas à nous contacter pour toute question ou collaboration.",
-    "location2": "Email : lamia.benhamouda.ap@gmail.com",
+    "location2": "Email : carteron.industries@gmail.com",
     "location2Description": "Envoyez-nous un email pour toute question ou proposition.",
     "get_directions": "Envoyer email"
   },

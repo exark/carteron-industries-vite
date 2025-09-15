@@ -336,13 +336,11 @@ export default function HeroCarousel() {
             
             <div className="founder-modal-header">
               <img
-                src="/images/Lamia Carteron.jpg"
-                alt="Lamia Carteron"
                 className="founder-avatar"
               />
               <div className="founder-info">
                 <h2 id="founder-modal-title" className="founder-title">
-                  {t('founder_modal.title', 'Lamia Carteron — Founder')}
+                  {t('founder_modal.title')}
                 </h2>
                 <p className="founder-tagline">
                   <span className="mobile-tagline">{t('founder_modal.mobile_tagline')}</span>
