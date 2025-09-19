@@ -8,6 +8,9 @@ const stepsKeys = [
   'step2',
   'step3',
   'step4',
+  'step5',
+  'step6',
+  'step7',
 ];
 
 const Steps2 = ({ rootClassName = "" }) => {

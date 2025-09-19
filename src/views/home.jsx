@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import Navbar81 from "../components/navbar81";
 import Features25 from "../components/features25";
 import Steps2 from "../components/steps2";
+import TrustedPartners from "../components/TrustedPartners";
 import Testimonial17 from "../components/testimonial17";
 import FAQ9 from "../components/faq9";
 import Contact10 from "../components/contact10";
@@ -42,11 +43,14 @@ const Home = () => {
       <Navbar81></Navbar81>
       <HeroCarousel></HeroCarousel>
 
-      <div id="our-product" className="home-services">
+      {/* <div id="our-product" className="home-services">
         <Features25></Features25>
-      </div>
+      </div> */}
       <div id="accompagnement">
         <Steps2></Steps2>
+      </div>
+      <div id="trusted-partners">
+        <TrustedPartners></TrustedPartners>
       </div>
       {/*
       <div id="temoignages">

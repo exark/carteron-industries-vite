@@ -19,12 +19,12 @@ const itemsData = [
     image: "/images/golfeur.jpg",
   },
   {
-    key: "tech",
-    image: "/images/application.jpg",
-  },
-  {
     key: "community",
     image: "/images/dadwithbaby.webp",
+  },
+  {
+    key: "tech",
+    image: "/images/application.jpg",
   }
 ];
 

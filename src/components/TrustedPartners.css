@@ -1,0 +1,120 @@
+/* TrustedPartners Component Styles */
+.trusted-partners-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-4xl) 0;
+  background-color: var(--neutral-white);
+  position: relative;
+}
+
+.trusted-partners-max-width {
+  width: 100%;
+  max-width: var(--max-width-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.trusted-partners-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.trusted-partners-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--neutral-900);
+  margin: 0;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.trusted-partners-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2xl);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.trusted-partners-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background-color: var(--neutral-50);
+  border-radius: var(--border-radius-lg);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 120px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.trusted-partners-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.trusted-partners-logo {
+  max-width: 100%;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.trusted-partners-item:hover .trusted-partners-logo {
+  filter: grayscale(0%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .trusted-partners-container {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .trusted-partners-max-width {
+    padding: 0 var(--space-md);
+  }
+  
+  .trusted-partners-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .trusted-partners-grid {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  
+  .trusted-partners-item {
+    height: 100px;
+    padding: var(--space-md);
+  }
+  
+  .trusted-partners-logo {
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trusted-partners-grid {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .trusted-partners-item {
+    height: 80px;
+    padding: var(--space-sm);
+  }
+  
+  .trusted-partners-logo {
+    max-height: 50px;
+  }
+}

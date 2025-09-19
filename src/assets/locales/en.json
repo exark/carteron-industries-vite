@@ -84,8 +84,8 @@
     "today_text": "Combining passion for engineering, golf, and family life to create the revolutionary 2-in-1 electric golf stroller that transforms how parents experience the game."
   },
   "carousel": {
-    "side_title": "Our Areas of Expertise",
-    "side_desc": "Driven by innovation, Carteron Industries creates solutions at the crossroads of sports, family, and technology. We are inventing the first 2-in-1 electric golf cart that carries both clubs and baby, so the passion for golf can be shared with the whole family.",
+    "side_title": "An Innovation Serving Golf and Family",
+    "side_desc": "Driven by innovation, Carteron Industries creates solutions at the crossroads of sport, family, and technology. We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely. Our motorized hybrid solution, currently in development, is specifically adapted to golf courses, combining sporting leisure with family life.",
     "about_btn": "About",
     "discover_btn": "Discover Our Products",
     "meet_founder_btn": "Meet the Founder",
@@ -95,24 +95,29 @@
     "about_founder": "Founder",
     "about_parcours_title": "Background",
     "innovation": {
-      "name": "Next-Gen Electric Golf Trolleys",
-      "desc": "Redefining comfort and performance on the course.",
-      "popup": "Lightweight, easy to fold, and thoughtfully designed. Our next-generation electric trolleys include intuitive guidance features to enhance your golf experience — delivering premium performance without the premium price tag."
+      "name": "Powered Solution",
+      "desc": "Wellness, Comfort & Ease",
+      "popup": "A solution that minimizes physical strain and prevents fatigue, allowing you to make the most of your game and your family moments."
     },
     "startup": {
       "name": "2-in-1 Hybrid Trolley",
       "desc": "When golf meets family life.",
-      "popup": "An original concept that brings together the practicality of a golf trolley and the convenience of a stroller. Currently in development, this solution is designed for parents who want to enjoy the game without giving up family time."
+      "popup": "A unique concept blending the practicality of a golf cart with the comfort of a stroller."
     },
     "work": {
-      "name": "Innovation in Action",
-      "desc": "Turning ideas into everyday solutions.",
-      "popup": "We create practical innovations that help golfers and families enjoy more comfort, convenience, and quality time — making each round of golf feel effortless and more rewarding."
+      "name": "Hybrid, Simple, and Modern Design",
+      "desc": "Unmatched folding simplicity for easy transport.",
+      "popup": "Practical innovations that allow golfers and families to enjoy more comfort, simplicity, and quality time — making every round of golf more enjoyable and effortless."
+    },
+    "tech": {
+      "name": "Premium Version",
+      "desc": "Advanced digital features",
+      "popup": "Advanced digital features and integrated design elements that improve the experience on the course — combining modern technology, comfort, and style."
     },
     "community": {
-      "name": "Golf for Everyone",
-      "desc": "Creating a more welcoming game for all generations.",
-      "popup": "We believe golf should be inclusive and family-friendly. Our approach encourages clubs to embrace new solutions that attract diverse players, support parents, and make the sport accessible to more people — shaping the future of the game together."
+      "name": "Secure Solution",
+      "desc": "Infant car seat compliant with childcare safety standards.",
+      "popup": "Parents can use the same seat in the car and on our hybrid 2-in-1 golf stroller, for more convenience."
     }
   },
   "features25": {
@@ -228,22 +233,34 @@
   },
   "steps": {
     "title": "Innovation, Step by Step",
-    "description": "Discover how Carteron Industries is reinventing golf with a unique 2-in-1 electric stroller trolley, designed for parents who love the game.",
+    "description": "Discover how Carteron Industries is reinventing golf with a motorized 2-in-1 hybrid golf stroller, designed for parents passionate about the sport. Currently in development, this solution is made for parents who want to enjoy golf without giving up precious family time. Our approach encourages golf clubs to adopt new solutions that attract a wider range of players, support parents, and make the sport accessible to every generation.",
     "step1": {
-      "title": "1. Carry Everything with Ease",
-      "desc": "Transport your golf clubs, equipment, and your baby safely in one lightweight, robust structure."
+      "title": "💡 Idea & Market Research",
+      "desc": "Identifying a real need among golfing families."
     },
     "step2": {
-      "title": "2. Smart Electric Assistance",
-      "desc": "Motorized drive, stable speed control uphill and downhill, and long-lasting battery autonomy for a full round."
+      "title": "✏️ Concept Design & Development",
+      "desc": "Defining key features and creating initial mockups."
     },
     "step3": {
-      "title": "3. Safety & Comfort First",
-      "desc": "Secure seat for your baby, easy folding system, stable brakes, and ergonomic handling for peace of mind."
+      "title": "🛠️ Prototype & Technical Development (current phase)",
+      "desc": "Creating the first functional prototype."
     },
     "step4": {
-      "title": "4. Family-Friendly Golf",
-      "desc": "Play golf without compromise — share your passion with your child while enjoying a unique, innovative experience."
+      "title": "⛳ Field Testing with Partner Clubs",
+      "desc": "Practical evaluations in real course conditions."
+    },
+    "step5": {
+      "title": "✅ Safety Certification & Compliance",
+      "desc": "Validation against childcare and sports equipment standards."
+    },
+    "step6": {
+      "title": "🚀 Pre-launch Phase",
+      "desc": "Presentations to investors, golf clubs, and pilot families."
+    },
+    "step7": {
+      "title": "🎯 Official Launch",
+      "desc": "Market release and first deliveries."
     }
   },
   "contact10": {
@@ -278,6 +295,9 @@
     "gallery_image1_alt": "Front view of product",
     "gallery_image2_alt": "Rear view of product",
     "gallery_image3_alt": "Product in use"
+  },
+  "trustedPartners": {
+    "title": "They Trust Us"
   },
   "construction": {
     "title": "Website Under Construction",
