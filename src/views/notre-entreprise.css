@@ -1,61 +1,157 @@
 /* Notre Entreprise Page Styles */
+.notre-entreprise-page { scroll-behavior: smooth; }
 
-/* Ensure smooth scrolling and proper spacing */
-.notre-entreprise-page {
-  scroll-behavior: smooth;
+/* ---------- Hero ---------- */
+.hero-section {
+  position: relative;
+  color: white;
+  text-align: center;
+  background-image: url(/images/city.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(4rem, 8vw, 6rem); /* match sx py */
+}
+.hero-section::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(11,34,68,.8) 0%, rgba(25,118,210,.7) 100%);
+  z-index: 1;
+}
+.hero-container { position: relative; z-index: 2; }
+
+/* Typography overrides need to outrank MUI defaults */
+.hero-title.MuiTypography-root {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+  color: #fff !important;
+}
+.hero-subtitle.MuiTypography-root {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  opacity: .95;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+  color: #fff !important;
 }
 
-/* Add subtle animations for cards */
+/* ---------- Main content paddings ---------- */
+.main-content {
+  padding-top: clamp(3rem, 6vw, 6rem);
+  padding-bottom: clamp(3rem, 6vw, 6rem);
+}
+
+/* ---------- CTA ---------- */
+.cta-section {
+  text-align: center;
+  margin-bottom: clamp(2rem, 6vw, 6rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.08);
+}
+.cta-title.MuiTypography-root {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #0b2244;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+}
+.cta-text.MuiTypography-root {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  color: #555;
+}
+
+/* Button: beat MUI's contained styles */
+.cta-button.MuiButton-root {
+  background-color: #0b2244 !important;
+  color: #fff !important;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 12px;
+  text-transform: none;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 16px rgba(11,34,68,.3) !important;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+.cta-button.MuiButton-root:hover {
+  background-color: #21517a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(11,34,68,.4) !important;
+}
+
+/* ---------- Vision ---------- */
+.vision-section { margin-bottom: clamp(2rem, 6vw, 6rem); text-align: center; }
+.vision-title.MuiTypography-root {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #0b2244;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+}
+.vision-text.MuiTypography-root {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #555;
+}
+
+/* ---------- Cards Grid ---------- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: clamp(2rem, 6vw, 6rem);
+}
+@media (min-width: 768px) {
+  .cards-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+.ambition-card,
+.mission-card {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.08);
+  text-align: center;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.ambition-card:hover,
+.mission-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0,0,0,.12);
+}
+.card-title.MuiTypography-root {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0b2244;
+  font-size: clamp(1.75rem, 3vw, 2rem);
+}
+.card-text.MuiTypography-root {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.7;
+  color: #555;
+}
+
+/* ---------- Animation ---------- */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-/* Apply animation to cards when they come into view */
 .mission-card,
-.ambition-card {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
+.ambition-card { animation: fadeInUp .6s ease-out forwards; }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 4rem 1rem;
-  }
-  
-  .content-section {
-    padding: 3rem 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    padding: 3rem 1rem;
-  }
-  
-  .content-section {
-    padding: 2rem 1rem;
-  }
-}
-
-/* Ensure proper text wrapping for long content */
+/* Ensure long text wraps nicely */
 .MuiTypography-root {
   word-break: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
-}
-
-/* Add subtle hover effects for interactive elements */
-.cta-button {
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
 }
