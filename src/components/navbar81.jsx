@@ -200,8 +200,33 @@ const Navbar81 = (props) => {
                   </div>
                 </div>
                 <a
-                  href="#faq"
-                  onClick={(e) => handleAnchorClick(e, "faq")}
+                  href="/notre-entreprise"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setLink5DropdownVisible(false); // Ferme le mega menu
+                    if (location.pathname === "/notre-entreprise") {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    } else {
+                      navigate("/notre-entreprise", { replace: true });
+                      setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+                    }
+                  }}
+                  className="navbar81-link31 thq-body-small"
+                >
+                  <span className="navbar81-text25 thq-link">{t('footer.our_company', 'Notre entreprise')}</span>
+                </a>
+                <a
+                  href="/faq"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setLink5DropdownVisible(false); // Ferme le mega menu
+                    if (location.pathname === "/faq") {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    } else {
+                      navigate("/faq", { replace: true });
+                      setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+                    }
+                  }}
                   className="navbar81-link32 thq-body-small"
                 >
                   <span className="navbar81-text26 thq-link">{t('navbar.faq')}</span>
@@ -325,8 +350,25 @@ const Navbar81 = (props) => {
                       </button>
                     </div>
                     <a
-                      href="#faq"
-                      onClick={(e) => handleMobileNav(e, "faq")}
+                      href="/notre-entreprise"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setDrawerOpen(false);
+                        navigate("/notre-entreprise");
+                        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+                      }}
+                      className="mobile-menu-link"
+                    >
+                      {t('footer.our_company', 'Notre entreprise')}
+                    </a>
+                    <a
+                      href="/faq"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setDrawerOpen(false);
+                        navigate("/faq");
+                        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+                      }}
                       className="mobile-menu-link"
                     >
                       {t('navbar.faq')}

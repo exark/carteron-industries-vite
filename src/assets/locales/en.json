@@ -146,19 +146,18 @@
       }
     },
     "card3": {
-      "title": "Electric Golf Trolleys",
-      "desc": "Designed for passionate golfers, our electric trolleys combine comfort, range, and ergonomics. With quiet motors and intuitive controls, they transform the playing experience on the course.",
+      "title": "Motorized Golf Trolleys",
+      "desc": "Designed for passionate golfers, our motorized trolleys combine comfort, range, and ergonomics. With quiet motors and intuitive controls, they transform the playing experience on the course.",
       "button": "Learn more",
       "features": {
         "0": "Silent motorization",
-        "1": "Intuitive navigation",
-        "2": "Extended range",
-        "3": "Ergonomic design",
-        "4": "Advanced technology"
+        "1": "Intuitive controls",
+        "2": "Ergonomic design",
+        "3": "Advanced technology"
       }
     },
     "card4": {
-      "title": "2-in-1 Stroller & Golf Trolley Hybrid",
+      "title": "2-in-1 Stroller & Golf Trolley Hybrid (Premium Version)",
       "desc": "This hybrid trolley brings together the practicality of a golf cart and the comfort of a stroller. Still in development, it is created to let parents enjoy golf while keeping their child close — balancing sport and family without compromise.",
       "button": "Learn more",
       "features": {
@@ -305,5 +304,18 @@
     "description": "Our team is currently developing this page. Please check back soon for updates!",
     "go_back": "Go Back",
     "go_home": "Go Home"
+  },
+  "notre_entreprise": {
+    "page_title": "Our Company",
+    "page_subtitle": "Innovation, passion and expertise serving family golf",
+    "cta_title": "Join the adventure",
+    "cta_text": "We are looking for partners, clubs, and investors to co-build and test this innovation. Join the adventure!",
+    "contact_button": "Contact us",
+    "vision_title": "Our Vision",
+    "vision_text": "Reinvent the golf experience so golfer parents can share their passion with their children, and clubs can attract a new family audience.",
+    "ambition_title": "Our Ambition",
+    "ambition_text": "Bring together sport, technology, and family life in a single solution.",
+    "mission_title": "Our Mission",
+    "mission_text": "Ensure a reliable, innovative, user-centric approach, thanks to our technical expertise and passion for golf."
   }
 }

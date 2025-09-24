@@ -1,0 +1,27 @@
+.faq-container1 {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: var(--neutral-white);
+}
+
+/* Ensure proper spacing between navbar and FAQ content */
+.faq-container1 > div:first-of-type {
+  margin-top: 0;
+}
+
+/* Responsive adjustments */
+@media(max-width: 991px) {
+  .faq-container1 {
+    padding-top: 0;
+  }
+}
+
+@media(max-width: 768px) {
+  .faq-container1 {
+    min-height: auto;
+  }
+}

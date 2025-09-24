@@ -146,19 +146,18 @@
       }
     },
     "card3": {
-      "title": "Chariots de Golf Électriques",
-      "desc": "Pensés pour les golfeurs exigeants, nos chariots électriques associent confort, autonomie et ergonomie. Leur motorisation silencieuse et leurs commandes intuitives transforment l’expérience de jeu sur le parcours.",
+      "title": "Chariot de Golf motorisé",
+      "desc": "Pensés pour les golfeurs exigeants, nos chariots motorisé associent confort et ergonomie. Leur motorisation silencieuse et leurs commandes intuitives transforment l’expérience de jeu sur le parcours.",
       "button": "En savoir plus",
       "features": {
         "0": "Motorisation silencieuse",
-        "1": "Navigation intuitive",
-        "2": "Autonomie étendue",
-        "3": "Design ergonomique",
-        "4": "Technologie avancée"
+        "1": "Commande intuitive",
+        "2": "Design ergonomique",
+        "3": "Technologie avancée"
       }
     },
     "card4": {
-      "title": "Poussette & Chariot Golf Hybride 2-en-1",
+      "title": "Poussette & Chariot Golf Hybride 2-en-1 (Version Premium)",
       "desc": "Ce chariot hybride associe la praticité d’un chariot de golf et le confort d’une poussette. Actuellement en développement, il est conçu pour permettre aux parents de profiter du golf tout en gardant leur enfant à proximité — conciliant sport et vie de famille sans compromis.",
       "button": "En savoir plus",
       "features": {
@@ -305,5 +304,18 @@
     "description": "Notre équipe développe actuellement cette page. Revenez bientôt pour les mises à jour !",
     "go_back": "Retour",
     "go_home": "Accueil"
+  },
+  "notre_entreprise": {
+    "page_title": "Notre Entreprise",
+    "page_subtitle": "Innovation, passion et expertise au service du golf familial",
+    "cta_title": "Rejoignez l'aventure",
+    "cta_text": "Nous recherchons des partenaires, clubs et investisseurs pour co-construire et tester cette innovation. Rejoignez l'aventure !",
+    "contact_button": "Nous contacter",
+    "vision_title": "Notre Vision",
+    "vision_text": "Réinventer l'expérience du golf afin de permettre aux parents golfeurs de partager leur passion avec leurs enfants, et aux clubs d'attirer une nouvelle clientèle familiale.",
+    "ambition_title": "Notre Ambition",
+    "ambition_text": "Réunir sport, technologie et vie familiale dans une solution unique.",
+    "mission_title": "Notre Mission",
+    "mission_text": "Garantir une approche fiable, innovante et orientée utilisateur, grâce à notre expertise technique et notre passion pour le golf."
   }
 }

@@ -1,0 +1,61 @@
+/* Notre Entreprise Page Styles */
+
+/* Ensure smooth scrolling and proper spacing */
+.notre-entreprise-page {
+  scroll-behavior: smooth;
+}
+
+/* Add subtle animations for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to cards when they come into view */
+.mission-card,
+.ambition-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 1rem;
+  }
+  
+  .content-section {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+  
+  .content-section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Ensure proper text wrapping for long content */
+.MuiTypography-root {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Add subtle hover effects for interactive elements */
+.cta-button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+}

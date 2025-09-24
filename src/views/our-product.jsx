@@ -22,151 +22,158 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
       className="service-card"
       sx={{
         background: '#fff',
-        borderRadius: 3,
-        boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+        borderRadius: 2,
+        boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
         overflow: 'hidden',
-        marginBottom: 4,
-        transition: 'all 0.4s ease',
+        marginBottom: 3,
+        transition: 'all 0.3s ease',
+        minHeight: { xs: 'auto', lg: '320px' },
+        height: 'auto',
+        width: '100%',
+        display: 'flex',
+        flexDirection: { xs: 'column', md: 'row' },
         '&:hover': {
-          transform: 'translateY(-8px)',
-          boxShadow: '0 20px 48px rgba(0,0,0,0.15)',
+          transform: 'translateY(-4px)',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
         }
       }}
     >
-      <Grid container>
-        <Grid item xs={12} md={4}>
-          <Box sx={{
-            height: { xs: 200, md: 300 },
-            background: `url(${image})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 30%',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: '#f5f5f5',
-            position: 'relative',
-            overflow: 'hidden',
-            '&::before': {
-              content: '""',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: 'linear-gradient(135deg, rgba(25,118,210,0.1) 0%, rgba(25,118,210,0.05) 100%)',
-              opacity: 0,
-              transition: 'opacity 0.4s ease',
-              zIndex: 1
-            },
-            '&:hover::before': {
-              opacity: 1
-            }
-          }}>
-            <Box sx={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: 'linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%)',
-              zIndex: 2
-            }} />
-          </Box>
-        </Grid>
+      {/* Image Section - Left Side */}
+      <Box sx={{
+        width: { xs: '100%', md: '40%' },
+        height: { xs: 160, md: '100%' },
+        background: `url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#f5f5f5',
+        position: 'relative',
+        overflow: 'hidden',
+        flexShrink: 0,
+      }}>
+        <Box sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.2) 100%)',
+          zIndex: 1
+        }} />
+      </Box>
 
-        <Grid item xs={12} md={8}>
-          <Box sx={{
-            padding: { xs: 3, md: 4 },
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center'
-          }}>
+      {/* Content Section - Right Side */}
+      <Box sx={{
+        width: { xs: '100%', md: '60%' },
+        padding: { xs: 2, md: 2.5 },
+        display: 'flex',
+        flexDirection: 'column',
+        textAlign: 'left',
+        minHeight: '320px',
+        height: 'auto'
+      }}>
+        <Box sx={{ 
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%',
+        }}>
+          <Typography
+            variant="h6"
+            component="h2"
+            sx={{
+              fontWeight: 700,
+              color: "#1a1a1a",
+              marginBottom: 2,
+              fontSize: { xs: '0.95rem', md: '1.1rem' },
+              textAlign: 'left',
+              lineHeight: 1.4,
+              wordBreak: 'break-word',
+              overflowWrap: 'break-word',
+              hyphens: 'auto'
+            }}
+          >
+            {title}
+          </Typography>
+
+          <Typography
+            variant="body2"
+            sx={{
+              color: "#666",
+              marginBottom: 2,
+              lineHeight: 1.7, // Increased line height for better readability
+              fontSize: { xs: '0.8rem', md: '0.9rem' }, // Slightly larger font on desktop
+              textAlign: 'left',
+              flexGrow: 1, // Allow text to take available space
+              minHeight: '100px', // Ensure enough space for text
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center' // Vertically center the text
+            }}
+          >
+            {description}
+          </Typography>
+
+          <Box sx={{ mb: 2, minHeight: '70px' }}>
             <Typography
-              variant="h4"
-              component="h2"
+              variant="subtitle2"
               sx={{
-                fontWeight: 700,
-                color: "#1a1a1a",
-                marginBottom: 3,
-                fontSize: { xs: '1.5rem', md: '2rem' }
+                fontWeight: 600,
+                color: "#1976D2",
+                mb: 0.8,
+                fontSize: '0.7rem',
+                textAlign: 'left'
               }}
             >
-              {title}
+              {t('features25.features_label', 'Fonctionnalités clés :')}
             </Typography>
-
-            <Typography
-              variant="body1"
-              sx={{
-                color: "#666",
-                marginBottom: 4,
-                lineHeight: 1.8,
-                fontSize: '1.1rem'
-              }}
-            >
-              {description}
-            </Typography>
-
-            {features && features.length > 0 && (
-              <Box sx={{ mb: 4 }}>
-                <Typography
-                  variant="h6"
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, justifyContent: 'flex-start' }}>
+              {features && features.slice(0, 3).map((feature, idx) => (
+                <Chip
+                  key={idx}
+                  label={feature}
+                  size="small"
                   sx={{
-                    fontWeight: 600,
-                    color: "#1976D2",
-                    mb: 2,
-                    fontSize: '1rem'
+                    background: '#e3f2fd',
+                    color: '#1976D2',
+                    fontWeight: 500,
+                    fontSize: '0.6rem',
+                    height: '18px'
                   }}
-                >
-                  {t('features25.features_label', 'Fonctionnalités clés :')}
-                </Typography>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                  {features.map((feature, idx) => (
-                    <Chip
-                      key={idx}
-                      label={feature}
-                      size="small"
-                      sx={{
-                        background: '#e3f2fd',
-                        color: '#1976D2',
-                        fontWeight: 500,
-                        fontSize: '0.85rem',
-                        '&:hover': {
-                          background: '#bbdefb',
-                          transform: 'translateY(-2px)',
-                          boxShadow: '0 4px 12px rgba(25,118,210,0.3)'
-                        }
-                      }}
-                    />
-                  ))}
-                </Box>
-              </Box>
-            )}
+                />
+              ))}
+            </Box>
+          </Box>
 
+          <Box sx={{ marginTop: 2 }}>
             <Button
               variant="contained"
-              size="large"
+              color="primary"
+              disableRipple
               sx={{
-                background: "linear-gradient(135deg, #1976D2 0%, #1565C0 100%)",
-                color: "#fff",
-                fontWeight: 600,
+                color: "#fff", 
+                fontWeight: 600, 
                 borderRadius: 2,
+                backgroundColor: "#0b2244",
                 textTransform: "none",
-                boxShadow: "0 4px 16px rgba(25,118,210,0.3)",
-                transition: "all 0.3s ease",
-                fontSize: '1rem',
-                padding: '12px 32px',
+                fontSize: '0.875rem',
+                padding: '8px 16px',
                 alignSelf: 'flex-start',
-                '&:hover': {
-                  background: "linear-gradient(135deg, #1565C0 0%, #0D47A1 100%)",
-                  boxShadow: "0 8px 24px rgba(25,118,210,0.4)",
-                  transform: "translateY(-2px)",
-                },
+                minWidth: '120px',
+                height: '40px',
+                boxShadow: "0 2px 4px rgba(11, 34, 68, 0.2)",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: "#21517a",
+                  boxShadow: "0 4px 8px rgba(11, 34, 68, 0.3)",
+                  transform: "translateY(-1px)",
+                }
               }}
             >
               {buttonLabel}
             </Button>
           </Box>
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 }
@@ -305,6 +312,7 @@ export default function OurProduct() {
           preload="metadata"
           controls={false}
           disablePictureInPicture
+          playbackRate={2}
           sx={{
             position: 'absolute',
             top: 0,
@@ -419,6 +427,19 @@ export default function OurProduct() {
             >
               {t('our_product.coming_soon_text', 'Nous travaillons actuellement sur notre nouveau produit innovant. Revenez bientôt pour découvrir toutes les fonctionnalités et avantages que nous préparons pour vous.')}
             </Typography>
+
+            <Box sx={{ mt: 8, mb: 6 }}>
+            <Grid container spacing={3} sx={{ alignItems: 'stretch' }}>
+              {services.map((service, index) => (
+                <Grid item xs={12} lg={6} key={index} sx={{ display: 'flex' }}>
+                  <ServiceCard
+                    {...service}
+                    index={index}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
           </Box>
           
           {/* Product showcase section */}
@@ -546,17 +567,7 @@ export default function OurProduct() {
           </Box>
 
           {/* Services Section */}
-          <Box sx={{ mt: 10, mb: 6 }}>
-            <Box>
-              {services.map((service, index) => (
-                <ServiceCard
-                  key={index}
-                  {...service}
-                  index={index}
-                />
-              ))}
-            </Box>
-          </Box>
+          
         </Container>
       </div>
       

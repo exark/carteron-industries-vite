@@ -6,7 +6,6 @@ import Features25 from "../components/features25";
 import Steps2 from "../components/steps2";
 import TrustedPartners from "../components/TrustedPartners";
 import Testimonial17 from "../components/testimonial17";
-import FAQ9 from "../components/faq9";
 import Contact10 from "../components/contact10";
 import Footer31 from "../components/footer31";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -57,9 +56,6 @@ const Home = () => {
         <Testimonial17></Testimonial17>
       </div>
       */}
-      <div id="faq">
-        <FAQ9></FAQ9>
-      </div>
         <Contact10></Contact10>
       <Footer31></Footer31>
     </div>
