@@ -46,7 +46,7 @@ function getSlideWidth() {
 
 function getSlideHeight() {
   const width = window.innerWidth;
-  if (width < 600) return "280px"; // Increased to 280px for better verticality on mobile
+  if (width < 600) return "350px"; // Increased to 350px for bigger mobile carousel
   if (width < 900) return "320px";
   if (width < 1200) return "400px";
   return "450px";
@@ -54,7 +54,7 @@ function getSlideHeight() {
 
 function getSlideTitleSize() {
   const width = window.innerWidth;
-  if (width < 600) return "1.25rem"; // Increased to 1.25rem for better proportion with taller carousel
+  if (width < 600) return "1.4rem"; // Increased to 1.4rem for bigger mobile carousel
   if (width < 900) return "1.4rem";
   if (width < 1200) return "1.6rem";
   return "1.45rem";
@@ -62,7 +62,7 @@ function getSlideTitleSize() {
 
 function getSlideDescSize() {
   const width = window.innerWidth;
-  if (width < 600) return "0.85rem"; // Increased to 0.85rem for better readability with taller carousel
+  if (width < 600) return "0.95rem"; // Increased to 0.95rem for bigger mobile carousel
   if (width < 900) return "0.9rem";
   if (width < 1200) return "1rem";
   return "1.13rem";
@@ -250,14 +250,14 @@ export default function HeroCarousel() {
                       className="slide-content-glass"
                       style={{
                         width: "100%",
-                        padding: window.innerWidth < 600 ? "16px 18px" : "16px 20px", // Adjusted padding for taller mobile carousel
+                        padding: window.innerWidth < 600 ? "20px 20px" : "16px 20px", // Increased padding for bigger mobile carousel
                         borderBottomLeftRadius: "22px",
                         borderBottomRightRadius: "22px",
                         background: "linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%)",
                         backdropFilter: "blur(4px)",
                         WebkitBackdropFilter: "blur(4px)",
                         boxShadow: "0 -2px 12px rgba(0, 0, 0, 0.08)",
-                        paddingTop: window.innerWidth < 600 ? "20px" : "24px", // Adjusted top padding for taller mobile carousel
+                        paddingTop: window.innerWidth < 600 ? "24px" : "24px", // Increased top padding for bigger mobile carousel
                       }}
                     >
                       <div
@@ -266,7 +266,7 @@ export default function HeroCarousel() {
                           color: "#fff",
                           fontWeight: 700,
                           fontSize: slideTitleSize,
-                          marginBottom: window.innerWidth < 600 ? "4px" : "4px", // Restored margin for better spacing in taller carousel
+                          marginBottom: window.innerWidth < 600 ? "6px" : "4px", // Increased margin for bigger mobile carousel
                           textShadow: "0 2px 8px rgba(0,0,0,0.5)",
                         }}
                       >

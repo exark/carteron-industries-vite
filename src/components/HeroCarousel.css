@@ -681,8 +681,8 @@
 }
 @media (max-width: 600px) {
   .hero-carousel-slide {
-    min-height: 500px; /* Increased to 280px for better verticality */
-    height: 500px; /* Increased to 280px for better verticality */
+    min-height: 500px !important; /* Increased to 280px for better verticality */
+    height: 500px !important; /* Increased to 280px for better verticality */
   }
   .hero-carousel-swiper-container,
   .embla {
@@ -848,8 +848,8 @@
   user-select: none;
 }
 
-/* Masquer les flèches sur tablette et mobile */
-@media (max-width: 950px) {
+/* Masquer les flèches sur tablette uniquement (garder sur mobile) */
+@media (max-width: 950px) and (min-width: 601px) {
   .custom-prev-btn,
   .custom-next-btn {
     display: none !important;
@@ -893,10 +893,12 @@
 @media (max-width: 600px) {
   .custom-prev-btn,
   .custom-next-btn {
-    width: 26px;
-    height: 26px;
-    font-size: 0.9rem;
-    margin: 0 2px;
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+    margin: 0 8px;
+    border-radius: 6px;
+    display: flex !important; /* Ensure arrows are visible on mobile */
   }
 }
 
