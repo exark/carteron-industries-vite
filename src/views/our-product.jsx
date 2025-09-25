@@ -7,13 +7,14 @@ import Grid from "@mui/material/Grid";
 import Chip from "@mui/material/Chip";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import Navbar81 from "../components/navbar81";
 import Footer31 from "../components/footer31";
+import { getAllProducts } from "../data/products";
 import "./our-product.css";
 
-function ServiceCard({ title, description, image, buttonLabel, features, index }) {
+function ServiceCard({ title, description, image, buttonLabel, features, index, onButtonClick }) {
   const { t } = useTranslation();
 
   return (
@@ -149,6 +150,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
               variant="contained"
               color="primary"
               disableRipple
+              onClick={onButtonClick}
               sx={{
                 color: "#fff", 
                 fontWeight: 600, 
@@ -181,6 +183,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index }
 export default function OurProduct() {
   const { t } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
   const videoRef = useRef(null);
 
   // Gestion du scroll automatique vers les sections
@@ -255,34 +258,23 @@ export default function OurProduct() {
     }
   }, []);
 
-  const services = [
-    {
-      title: t('features25.card3.title', 'Chariots de Golf Électriques'),
-      description: t('features25.card3.desc', "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l'expérience sur le green."),
-      image: "/images/couple-jouant-au-golf-ensemble.jpg",
-      buttonLabel: t('features25.card3.button', 'En savoir plus'),
-      features: [
-        t('features25.card3.features.0', 'Motorisation silencieuse'),
-        t('features25.card3.features.1', 'Navigation intuitive'),
-        t('features25.card3.features.2', 'Autonomie étendue'),
-        t('features25.card3.features.3', 'Design ergonomique'),
-        t('features25.card3.features.4', 'Technologie avancée')
-      ]
-    },
-    {
-      title: t('features25.card4.title', 'Poussette & Chariot Golf Hybride 2-en-1'),
-      description: t('features25.card4.desc', "Une innovation unique : un chariot hybride pensé pour les jeunes parents actifs, combinant les fonctions d'une poussette et d'un chariot de golf motorisé. Idéal pour concilier sport et famille sans compromis."),
-      image: "/images/club_de_golf.jpg",
-      buttonLabel: t('features25.card4.button', 'En savoir plus'),
-      features: [
-        t('features25.card4.features.0', 'Transformation rapide'),
-        t('features25.card4.features.1', 'Sécurité enfants'),
-        t('features25.card4.features.2', 'Motorisation adaptée'),
-        t('features25.card4.features.3', 'Design compact'),
-        t('features25.card4.features.4', 'Accessoires modulaires')
-      ]
-    }
-  ];
+  const handleServiceClick = (productSlug) => {
+    navigate(`/product/${productSlug}`);
+  };
+
+  // Get products dynamically from database
+  const productsData = getAllProducts();
+  
+  const services = productsData.map(product => ({
+    title: t(`${product.translationKey}.title`, 'Product Title'),
+    description: t(`${product.translationKey}.description`, 'Product description'),
+    image: product.images.main,
+    buttonLabel: t('features25.button', 'En savoir plus'),
+    features: product.features.slice(0, 5).map(featureKey => 
+      t(`${product.translationKey}.features.${featureKey}`, 'Feature')
+    ),
+    productSlug: product.slug
+  }));
 
   return (
     <>
@@ -312,7 +304,7 @@ export default function OurProduct() {
           preload="metadata"
           controls={false}
           disablePictureInPicture
-          playbackRate={2}
+          playbackrate={2}
           sx={{
             position: 'absolute',
             top: 0,
@@ -435,6 +427,7 @@ export default function OurProduct() {
                   <ServiceCard
                     {...service}
                     index={index}
+                    onButtonClick={() => handleServiceClick(service.productSlug)}
                   />
                 </Grid>
               ))}
@@ -447,7 +440,7 @@ export default function OurProduct() {
             <Box sx={{ flex: 1 }}>
               <Box
                 component="img"
-                src="/images/des-enfants-jouant-au-golf-dans-un-environnement-photorealiste.jpg"
+                src="/images/kidsgolf.webp"
                 
                 sx={{
                   maxWidth: '100%',

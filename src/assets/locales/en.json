@@ -317,5 +317,67 @@
     "ambition_text": "Bring together sport, technology, and family life in a single solution.",
     "mission_title": "Our Mission",
     "mission_text": "Ensure a reliable, innovative, user-centric approach, thanks to our technical expertise and passion for golf."
+  },
+  "products": {
+    "golf_trolley_hybrid": {
+      "title": "2-in-1 Stroller & Golf Trolley Hybrid",
+      "subtitle": "Premium Version",
+      "description": "A revolutionary innovation that perfectly combines the functions of a high-end stroller and a motorized golf trolley. Designed for active parents who don't want to choose between their passion for golf and time spent with their children.",
+      "features": {
+        "rapid_transformation": "Quick stroller/trolley transformation",
+        "child_safety_system": "Certified child safety system",
+        "silent_motor": "Silent and powerful motor",
+        "compact_design": "Compact and foldable design",
+        "modular_accessories": "Modular accessories included",
+        "long_battery": "Long-lasting battery (8h autonomy)",
+        "all_terrain_wheels": "All-terrain wheels with suspension",
+        "touch_interface": "Intuitive touch interface"
+      },
+      "specs": {
+        "weight": "Weight",
+        "dimensions": "Dimensions",
+        "battery": "Battery",
+        "maxSpeed": "Max Speed",
+        "capacity": "Load Capacity",
+        "ageRange": "Child Age",
+        "chargingTime": "Charging Time",
+        "warranty": "Warranty"
+      }
+    },
+    "motorized_golf_trolley": {
+      "title": "Motorized Golf Trolleys",
+      "subtitle": "Standard Version",
+      "description": "Designed for demanding golfers, our electric trolleys combine performance, autonomy and ergonomics. Developed with silent motorization and intuitive navigation, they enhance the experience on the green.",
+      "features": {
+        "silent_motor": "Silent motorization",
+        "intuitive_navigation": "Intuitive navigation",
+        "extended_autonomy": "Extended autonomy",
+        "ergonomic_design": "Ergonomic design",
+        "advanced_technology": "Advanced technology"
+      },
+      "specs": {
+        "weight": "Weight",
+        "dimensions": "Dimensions",
+        "battery": "Battery",
+        "maxSpeed": "Max Speed",
+        "capacity": "Load Capacity",
+        "chargingTime": "Charging Time",
+        "warranty": "Warranty"
+      }
+    }
+  },
+  "product_detail": {
+    "back": "Back",
+    "not_found": "Product not found",
+    "back_to_products": "Back to products",
+    "add_to_cart": "Add to cart",
+    "contact_us": "Contact us",
+    "price_note": "VAT included • Free delivery",
+    "availability": "🚧 Product under development - Available soon",
+    "features_title": "Key Features",
+    "specifications_title": "Technical Specifications",
+    "cta_title": "Interested in this product?",
+    "cta_description": "Contact us to be informed as soon as this revolutionary product becomes available. Be among the first to discover the future of family mobility on the golf course.",
+    "contact_button": "Contact us"
   }
 }

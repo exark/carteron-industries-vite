@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import "./navbar81.css";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import { getAllProducts } from "../data/products";
 
 const Navbar81 = (props) => {
   const { t } = useTranslation();
@@ -21,6 +22,9 @@ const Navbar81 = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
   const isDesktop = useMediaQuery("(min-width:1024px)");
+  
+  // Get products dynamically
+  const products = getAllProducts();
 
   // Refs pour la gestion du dropdown
   const navbarRef = useRef(null);
@@ -428,32 +432,22 @@ const Navbar81 = (props) => {
                         {t('navbar.our_product')}
                       </span>
                     </div>
-                    <a
-                      href="/our-product"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setDrawerOpen(false);
-                        setMobileSubMenuOpen(false);
-                        navigate("/our-product#service-1");
-                      }}
-                      className="mobile-menu-link"
-                      style={{ paddingLeft: "16px", borderBottom: "none" }}
-                    >
-                      {t('features25.card3.title', 'Chariots de Golf Électriques')}
-                    </a>
-                    <a
-                      href="/our-product"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setDrawerOpen(false);
-                        setMobileSubMenuOpen(false);
-                        navigate("/our-product#service-2");
-                      }}
-                      className="mobile-menu-link"
-                      style={{ paddingLeft: "16px", borderBottom: "none" }}
-                    >
-                      {t('features25.card4.title', 'Poussette & Chariot Golf Hybride 2-en-1')}
-                    </a>
+                    {products.map((product, index) => (
+                      <a
+                        key={product.id}
+                        href={`/product/${product.slug}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setDrawerOpen(false);
+                          setMobileSubMenuOpen(false);
+                          navigate(`/product/${product.slug}`);
+                        }}
+                        className="mobile-menu-link"
+                        style={{ paddingLeft: "16px", borderBottom: "none" }}
+                      >
+                        {t(`${product.translationKey}.title`, 'Product Title')}
+                      </a>
+                    ))}
                   </nav>
                   <button
                     onClick={() => {
@@ -484,38 +478,28 @@ const Navbar81 = (props) => {
           onMouseLeave={handleMegaMenuMouseLeave}
         >
           <div className="navbar81-mega-menu-content">
-            <div 
-              className="navbar81-mega-menu-item"
-              onClick={() => {
-                setLink5DropdownVisible(false);
-                navigate("/our-product#service-1");
-              }}
-            >
-              <img
-                src="/images/couple-jouant-au-golf-ensemble.jpg"
-                alt="Chariots de Golf Électriques"
-                className="navbar81-mega-menu-image"
-              />
-              <div className="navbar81-mega-menu-text">
-                <h3>{t('features25.card3.title', 'Chariots de Golf Électriques')}</h3>
+            {products.map((product, index) => (
+              <div 
+                key={product.id}
+                className="navbar81-mega-menu-item"
+                onClick={() => {
+                  setLink5DropdownVisible(false);
+                  navigate(`/product/${product.slug}`);
+                }}
+              >
+                <img
+                  src={product.images.main}
+                  alt={t(`${product.translationKey}.title`, 'Product Title')}
+                  className="navbar81-mega-menu-image"
+                />
+                <div className="navbar81-mega-menu-text">
+                  <h3>{t(`${product.translationKey}.title`, 'Product Title')}</h3>
+                  <p className="navbar81-mega-menu-description">
+                    {t(`${product.translationKey}.subtitle`, 'Product Subtitle')}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div 
-              className="navbar81-mega-menu-item"
-              onClick={() => {
-                setLink5DropdownVisible(false);
-                navigate("/our-product#service-2");
-              }}
-            >
-              <img
-                src="/images/club_de_golf.jpg"
-                alt="Poussette & Chariot Golf Hybride 2-en-1"
-                className="navbar81-mega-menu-image"
-              />
-              <div className="navbar81-mega-menu-text">
-                <h3>{t('features25.card4.title', 'Poussette & Chariot Golf Hybride 2-en-1')}</h3>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       )}

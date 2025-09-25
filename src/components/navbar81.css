@@ -383,7 +383,8 @@
   padding: 2px 0;
 }
 
-.navbar81-mega-menu-text p {
+.navbar81-mega-menu-text p,
+.navbar81-mega-menu-description {
   font-size: 0.8rem;
   color: #666;
   line-height: 1.4;

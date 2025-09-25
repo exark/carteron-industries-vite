@@ -1,0 +1,93 @@
+/* Product Detail Page Styles */
+.product-detail-page {
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+.product-hero {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem 0;
+}
+
+.product-gallery {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.product-gallery img {
+  transition: transform 0.3s ease;
+}
+
+.product-gallery:hover img {
+  transform: scale(1.05);
+}
+
+.feature-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+.spec-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.spec-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+}
+
+.spec-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12) !important;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  color: white;
+}
+
+.cta-section .MuiTypography-root {
+  color: white !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .product-hero {
+    padding: 1rem 0;
+  }
+  
+  .feature-card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Animation for feature numbers */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.feature-number {
+  animation: pulse 2s infinite;
+  animation-delay: calc(var(--index) * 0.2s);
+}

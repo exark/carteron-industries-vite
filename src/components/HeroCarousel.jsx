@@ -12,7 +12,7 @@ const itemsData = [
   },
   {
     key: "startup",
-    image: "/images/motherwithbaby.jpg",
+    image: "/images/motherwithbaby.webp",
   },
   {
     key: "work",
@@ -24,7 +24,7 @@ const itemsData = [
   },
   {
     key: "tech",
-    image: "/images/application.jpg",
+    image: "/images/application.webp",
   }
 ];
 

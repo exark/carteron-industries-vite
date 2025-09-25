@@ -317,5 +317,67 @@
     "ambition_text": "Réunir sport, technologie et vie familiale dans une solution unique.",
     "mission_title": "Notre Mission",
     "mission_text": "Garantir une approche fiable, innovante et orientée utilisateur, grâce à notre expertise technique et notre passion pour le golf."
+  },
+  "products": {
+    "golf_trolley_hybrid": {
+      "title": "Poussette & Chariot Golf Hybride 2-en-1",
+      "subtitle": "Version Premium",
+      "description": "Une innovation révolutionnaire qui combine parfaitement les fonctions d'une poussette haut de gamme et d'un chariot de golf motorisé. Conçu pour les parents actifs qui ne veulent pas choisir entre leur passion pour le golf et le temps passé avec leurs enfants.",
+      "features": {
+        "rapid_transformation": "Transformation rapide poussette/chariot",
+        "child_safety_system": "Système de sécurité enfants certifié",
+        "silent_motor": "Motorisation silencieuse et puissante",
+        "compact_design": "Design compact et pliable",
+        "modular_accessories": "Accessoires modulaires inclus",
+        "long_battery": "Batterie longue durée (8h d'autonomie)",
+        "all_terrain_wheels": "Roues tout-terrain avec suspension",
+        "touch_interface": "Interface tactile intuitive"
+      },
+      "specs": {
+        "weight": "Poids",
+        "dimensions": "Dimensions",
+        "battery": "Batterie",
+        "maxSpeed": "Vitesse max",
+        "capacity": "Capacité charge",
+        "ageRange": "Âge enfant",
+        "chargingTime": "Temps de charge",
+        "warranty": "Garantie"
+      }
+    },
+    "motorized_golf_trolley": {
+      "title": "Chariots de Golf Électriques",
+      "subtitle": "Version Standard",
+      "description": "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l'expérience sur le green.",
+      "features": {
+        "silent_motor": "Motorisation silencieuse",
+        "intuitive_navigation": "Navigation intuitive",
+        "extended_autonomy": "Autonomie étendue",
+        "ergonomic_design": "Design ergonomique",
+        "advanced_technology": "Technologie avancée"
+      },
+      "specs": {
+        "weight": "Poids",
+        "dimensions": "Dimensions",
+        "battery": "Batterie",
+        "maxSpeed": "Vitesse max",
+        "capacity": "Capacité charge",
+        "chargingTime": "Temps de charge",
+        "warranty": "Garantie"
+      }
+    }
+  },
+  "product_detail": {
+    "back": "Retour",
+    "not_found": "Produit non trouvé",
+    "back_to_products": "Retour aux produits",
+    "add_to_cart": "Ajouter au panier",
+    "contact_us": "Nous contacter",
+    "price_note": "TVA incluse • Livraison gratuite",
+    "availability": "🚧 Produit en cours de développement - Disponible prochainement",
+    "features_title": "Caractéristiques principales",
+    "specifications_title": "Spécifications techniques",
+    "cta_title": "Intéressé par ce produit ?",
+    "cta_description": "Contactez-nous pour être informé dès que ce produit révolutionnaire sera disponible. Soyez parmi les premiers à découvrir l'avenir de la mobilité familiale sur le golf.",
+    "contact_button": "Nous contacter"
   }
 }

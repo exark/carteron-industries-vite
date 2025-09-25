@@ -11,9 +11,11 @@ import Home from './views/home'
 import NotFound from './views/not-found'
 import Privacy from './views/privacy'
 import OurProduct from './views/our-product'
-import About from './views/about'
 import FAQ from './views/faq'
 import NotreEntreprise from './views/notre-entreprise'
+import ProductDetail from './views/product-detail'
+import ProductDetailDynamic from './views/product-detail-dynamic'
+import ConstructionPage from './views/construction-page'
 import PrivacyBanner from './components/PrivacyBanner';
 import ScrollToTop from './components/ScrollToTop';
 import SplashScreen from './components/SplashScreen';
@@ -27,10 +29,12 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/home" element={<Home />} />
           <Route path="/our-product" element={<OurProduct />} />
-          <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/notre-entreprise" element={<NotreEntreprise />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/product-detail" element={<ProductDetail />} />
+          <Route path="/product/:productSlug" element={<ProductDetailDynamic />} />
+          <Route path="/construction" element={<ConstructionPage />} />
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
