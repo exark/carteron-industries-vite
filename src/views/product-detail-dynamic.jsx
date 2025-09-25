@@ -26,6 +26,33 @@ export default function ProductDetailDynamic() {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
 
+  // Scroll animation observer
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll(
+      '.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right, .animate-fade-in'
+    );
+    
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      animatedElements.forEach((el) => observer.unobserve(el));
+    };
+  }, [product]);
+
   // If product not found, show 404 or redirect
   if (!product) {
     return (
@@ -77,13 +104,14 @@ export default function ProductDetailDynamic() {
           startIcon={<ArrowBackIcon />}
           onClick={handleGoBack}
           sx={{ mb: 3, color: '#0b2244' }}
+          className="animate-fade-in"
         >
           {t('product_detail.back', 'Retour')}
         </Button>
 
         {/* Product Header */}
         <Grid container spacing={4} sx={{ mb: 6 }}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} className="animate-on-scroll-left">
             <Box
               component="img"
               src={product.images.main}
@@ -99,7 +127,7 @@ export default function ProductDetailDynamic() {
             />
           </Grid>
           
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} className="animate-on-scroll-right">
             <Typography
               variant="h3"
               component="h1"
@@ -226,7 +254,7 @@ export default function ProductDetailDynamic() {
         </Grid>
 
         {/* Features Section */}
-        <Box sx={{ mb: 8 }}>
+        <Box sx={{ mb: 8 }} className="animate-on-scroll">
           <Typography
             variant="h4"
             component="h2"
@@ -244,6 +272,7 @@ export default function ProductDetailDynamic() {
             {features.map((feature, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Box
+                  className={`animate-on-scroll animate-stagger-${index + 1}`}
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
@@ -285,7 +314,7 @@ export default function ProductDetailDynamic() {
         </Box>
 
         {/* Specifications Section */}
-        <Box sx={{ mb: 8 }}>
+        <Box sx={{ mb: 8 }} className="animate-on-scroll">
           <Typography
             variant="h4"
             component="h2"
@@ -303,6 +332,7 @@ export default function ProductDetailDynamic() {
             {specifications.map((spec, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Box
+                  className={`animate-on-scroll animate-stagger-${index + 1}`}
                   sx={{
                     p: 3,
                     backgroundColor: 'white',
@@ -346,6 +376,7 @@ export default function ProductDetailDynamic() {
 
         {/* Call to Action */}
         <Box
+          className="animate-on-scroll"
           sx={{
             textAlign: 'center',
             py: 6,

@@ -28,8 +28,8 @@ function ServiceCard({ title, description, image, buttonLabel, features, index, 
         overflow: 'hidden',
         marginBottom: 3,
         transition: 'all 0.3s ease',
-        minHeight: { xs: 'auto', lg: '320px' },
-        height: 'auto',
+        minHeight: { xs: 'auto', lg: '400px' },
+        height: { xs: 'auto', lg: '400px' },
         width: '100%',
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' },
@@ -42,8 +42,8 @@ function ServiceCard({ title, description, image, buttonLabel, features, index, 
       {/* Image Section - Left Side */}
       <Box sx={{
         width: { xs: '100%', md: '40%' },
-        height: { xs: 160, md: '100%' },
-        background: `url(${image})`,
+        height: { xs: 200, md: '100%' },
+        background: image ? `url(${image})` : 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -51,14 +51,30 @@ function ServiceCard({ title, description, image, buttonLabel, features, index, 
         position: 'relative',
         overflow: 'hidden',
         flexShrink: 0,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
       }}>
+        {!image && (
+          <Typography
+            variant="body2"
+            sx={{
+              color: '#666',
+              textAlign: 'center',
+              zIndex: 2,
+              position: 'relative'
+            }}
+          >
+            Image à venir
+          </Typography>
+        )}
         <Box sx={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.2) 100%)',
+          background: image ? 'linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.2) 100%)' : 'none',
           zIndex: 1
         }} />
       </Box>
@@ -70,8 +86,8 @@ function ServiceCard({ title, description, image, buttonLabel, features, index, 
         display: 'flex',
         flexDirection: 'column',
         textAlign: 'left',
-        minHeight: '320px',
-        height: 'auto'
+        minHeight: { xs: 'auto', lg: '400px' },
+        height: '100%'
       }}>
         <Box sx={{ 
           display: 'flex',
@@ -205,6 +221,33 @@ export default function OurProduct() {
       }
     }
   }, [location.hash]);
+
+  // Scroll animation observer
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll(
+      '.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right, .animate-fade-in'
+    );
+    
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      animatedElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   // Handle video loading for Chrome compatibility
   useEffect(() => {
@@ -366,6 +409,7 @@ export default function OurProduct() {
         }}>
           <Typography
             variant="h2"
+            className="animate-fade-in"
             sx={{
               fontWeight: 700,
               mb: 2,
@@ -378,6 +422,7 @@ export default function OurProduct() {
           </Typography>
           <Typography
             variant="h5"
+            className="animate-fade-in"
             sx={{
               maxWidth: '800px',
               mx: 'auto',
@@ -394,7 +439,7 @@ export default function OurProduct() {
 
       <div className="product-page">
         <Container maxWidth="lg" sx={{ py: 8 }}>
-          <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Box sx={{ textAlign: 'center', mb: 6 }} className="animate-on-scroll">
             <Typography
               variant="h3"
               component="h1"
@@ -423,12 +468,14 @@ export default function OurProduct() {
             <Box sx={{ mt: 8, mb: 6 }}>
             <Grid container spacing={3} sx={{ alignItems: 'stretch' }}>
               {services.map((service, index) => (
-                <Grid item xs={12} lg={6} key={index} sx={{ display: 'flex' }}>
-                  <ServiceCard
-                    {...service}
-                    index={index}
-                    onButtonClick={() => handleServiceClick(service.productSlug)}
-                  />
+                <Grid item xs={12} lg={6} key={index} sx={{ display: 'flex', height: { xs: 'auto', lg: '400px' } }}>
+                  <div className={`animate-on-scroll animate-stagger-${index + 1}`} style={{ width: '100%', height: '100%' }}>
+                    <ServiceCard
+                      {...service}
+                      index={index}
+                      onButtonClick={() => handleServiceClick(service.productSlug)}
+                    />
+                  </div>
                 </Grid>
               ))}
             </Grid>
