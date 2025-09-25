@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
@@ -20,6 +20,11 @@ export default function ProductDetailDynamic() {
   const { productSlug } = useParams();
   
   const product = getProductBySlug(productSlug);
+
+  // Scroll to top instantly when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
 
   // If product not found, show 404 or redirect
   if (!product) {
@@ -137,7 +142,9 @@ export default function ProductDetailDynamic() {
                 sx={{
                   color: '#0b2244',
                   fontWeight: 700,
-                  mb: 1
+                  mb: 1,
+                  filter: 'blur(8px)',
+                  userSelect: 'none'
                 }}
               >
                 {product.pricing.price} {product.pricing.currency}
@@ -155,15 +162,25 @@ export default function ProductDetailDynamic() {
                 variant="contained"
                 size="large"
                 startIcon={<ShoppingCartIcon />}
-                disabled={product.status !== 'available'}
+                disabled={true}
                 sx={{
-                  backgroundColor: product.status === 'available' ? '#0b2244' : '#cccccc',
-                  color: product.status === 'available' ? 'white' : '#666666',
+                  backgroundColor: '#cccccc',
+                  color: '#666666',
                   px: 4,
                   py: 1.5,
                   fontWeight: 600,
+                  position: 'relative',
                   '&:hover': {
-                    backgroundColor: product.status === 'available' ? '#21517a' : '#cccccc'
+                    backgroundColor: '#cccccc'
+                  },
+                  '&::after': {
+                    content: '"↗"',
+                    position: 'absolute',
+                    top: '4px',
+                    right: '8px',
+                    fontSize: '14px',
+                    fontWeight: 'bold',
+                    color: '#999'
                   }
                 }}
               >

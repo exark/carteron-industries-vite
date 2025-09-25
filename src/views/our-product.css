@@ -28,22 +28,6 @@
   overflow: hidden;
 }
 
-.spec-item {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.spec-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.specs-container {
-  margin-top: 2rem;
-}
 
 .gallery-image-container {
   overflow: hidden;
@@ -133,10 +117,6 @@
 @media (max-width: 768px) {
   .product-hero {
     height: 50vh !important;
-  }
-  
-  .spec-item {
-    padding: 1rem;
   }
   
   .service-card {
