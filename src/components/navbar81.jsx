@@ -122,11 +122,54 @@ const Navbar81 = (props) => {
   };
 
   const [showNavbar, setShowNavbar] = useState(true);
+  const [isAtTop, setIsAtTop] = useState(true);
   const lastScrollY = useRef(window.scrollY);
+  const scrollTimeoutRef = useRef(null);
 
   useEffect(() => {
     // La navbar reste toujours visible sur tous les appareils
     setShowNavbar(true);
+    
+    // Scroll detection for transparent navbar at top
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Check if we're at the top of the page (within 50px threshold)
+      if (currentScrollY <= 50) {
+        // Immediately make transparent when at top
+        if (scrollTimeoutRef.current) {
+          clearTimeout(scrollTimeoutRef.current);
+          scrollTimeoutRef.current = null;
+        }
+        setIsAtTop(true);
+      } else {
+        // Add delay before making background solid when scrolling down
+        if (scrollTimeoutRef.current) {
+          clearTimeout(scrollTimeoutRef.current);
+        }
+        
+        scrollTimeoutRef.current = setTimeout(() => {
+          setIsAtTop(false);
+          scrollTimeoutRef.current = null;
+        }, 300); // 300ms delay before background appears
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Check initial position
+    handleScroll();
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
   }, []);
 
   // Fonction de scroll ou redirection smooth
@@ -143,7 +186,7 @@ const Navbar81 = (props) => {
 
   return (
     <header
-      className={`navbar81-container1${showNavbar ? "" : " navbar81-hidden"}`}
+      className={`navbar81-container1${showNavbar ? "" : " navbar81-hidden"}${isAtTop ? " navbar81-transparent" : " navbar81-solid"}`}
       ref={navbarRef}
     >
       <header data-thq="thq-navbar" className="navbar81-navbar-interactive">
