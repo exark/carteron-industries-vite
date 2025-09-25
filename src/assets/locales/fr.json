@@ -52,6 +52,7 @@
   },
   "privacy": {
     "title": "Politique de confidentialité",
+    "last_updated": "Dernière mise à jour : Septembre 2024",
     "intro": "Chez Carteron Industries, nous accordons une grande importance à la protection de vos données personnelles et à votre vie privée.",
     "section1_title": "1. Données collectées",
     "section1_text": "Nous ne collectons que les informations strictement nécessaires au fonctionnement du site et à la gestion de vos demandes via notre formulaire de contact (nom, adresse e-mail, message, etc.).\nAucune donnée n’est transmise à des tiers sans votre consentement.",
@@ -62,7 +63,7 @@
     "section4_title": "4. Sécurité",
     "section4_text": "Nous mettons en œuvre toutes les mesures nécessaires pour garantir la sécurité de vos données.",
     "section5_title": "5. Vos droits",
-    "section5_text": "Conformément à la réglementation en vigueur, vous disposez d’un droit d’accès, de rectification et de suppression de vos données personnelles.\nPour exercer ces droits, contactez-nous à l’adresse suivante : <a href=\"mailto:ton-email@domaine.com\">ton-email@domaine.com</a>",
+    "section5_text": "Conformément à la réglementation en vigueur, vous disposez d’un droit d’accès, de rectification et de suppression de vos données personnelles.\nPour exercer ces droits, contactez-nous à l’adresse suivante : <a href=\"mailto:carteron.industries@gmail.com\">carteron.industries@gmail.com</a>",
     "section6_title": "6. Modifications",
     "section6_text": "Cette politique de confidentialité peut être modifiée à tout moment. Nous vous invitons à la consulter régulièrement."
   },
@@ -83,6 +84,30 @@
     "today_title": "Aujourd'hui",
     "today_text": "Allier passion pour l'ingénierie, le golf et la vie de famille afin de créer le chariot poussette de golf électrique 2-en-1 révolutionnaire, qui transforme l'expérience des parents sur le parcours."
   },
+  "terms": {
+    "title": "Conditions Générales",
+    "last_updated": "Dernière mise à jour : Septembre 2024",
+    "meta_description": "Conditions générales d'utilisation des services et produits Carteron Industries.",
+    "acceptance_title": "1. Acceptation des Conditions",
+    "acceptance_text": "En accédant et en utilisant le site web et les services de Carteron Industries, vous acceptez et acceptez d'être lié par les termes et dispositions de cet accord.",
+    "services_title": "2. Utilisation des Services",
+    "services_text": "Nos services sont fournis à des fins informatives et commerciales. Vous acceptez d'utiliser nos services uniquement à des fins légales et conformément à ces conditions.",
+    "services_item1": "Vous ne devez pas utiliser nos services à des fins illégales",
+    "services_item2": "Vous ne devez pas tenter d'obtenir un accès non autorisé à nos systèmes",
+    "services_item3": "Vous ne devez pas interférer avec le bon fonctionnement de nos services",
+    "products_title": "3. Produits et Commandes",
+    "products_text": "Toutes les descriptions de produits, prix et disponibilité sont sujets à changement sans préavis. Nous nous réservons le droit de refuser ou d'annuler toute commande.",
+    "intellectual_title": "4. Propriété Intellectuelle",
+    "intellectual_text": "Tout le contenu de ce site web, y compris le texte, les graphiques, les logos, les images et les logiciels, est la propriété de Carteron Industries et est protégé par le droit d'auteur et d'autres lois sur la propriété intellectuelle.",
+    "liability_title": "5. Limitation de Responsabilité",
+    "liability_text": "Carteron Industries ne sera pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs résultant de votre utilisation de nos services.",
+    "privacy_title": "6. Confidentialité",
+    "privacy_text": "Votre vie privée est importante pour nous. Veuillez consulter notre Politique de Confidentialité, qui régit également votre utilisation de nos services.",
+    "modifications_title": "7. Modifications",
+    "modifications_text": "Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications prendront effet immédiatement après leur publication sur notre site web.",
+    "contact_title": "8. Informations de Contact",
+    "contact_text": "Si vous avez des questions concernant ces Conditions Générales, veuillez nous contacter à :"
+  },
   "carousel": {
     "side_title": "Une Innovation au service du golf et de la famille",
     "side_desc": "Portée par l'innovation, Carteron Industries crée des solutions à la croisée du sport, de la famille et de la technologie. Le premier chariot de golf poussette hybride  2-en-1, pensé pour transporter à la fois un sac de golf et un enfant, sans effort et en toute sécurité. Notre solution hybride motorisée en cours de développement est adaptée au terrain de golf, pour allier loisir sportif et vie familiale.",
@@ -98,7 +123,7 @@
     "about_parcours_title": "Parcours",
     "innovation": {
       "name": "“Solution motorisée",
-      "desc": "Santé, Confort & simplicité",
+      "desc": "Confort & simplicité",
       "popup": "Une solution pour réduire l’effort physique et prévient la fatigue, pour profiter pleinement du jeu et de la famille."
     },
     "startup": {

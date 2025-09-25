@@ -681,8 +681,8 @@
 }
 @media (max-width: 600px) {
   .hero-carousel-slide {
-    min-height: 440px;
-    height: 480px;
+    min-height: 500px; /* Increased to 280px for better verticality */
+    height: 500px; /* Increased to 280px for better verticality */
   }
   .hero-carousel-swiper-container,
   .embla {
