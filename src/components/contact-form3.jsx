@@ -26,7 +26,7 @@ const initialState = {
   company: "",
   website: "",
   message: "",
-  accept: false,
+  accept: true,
 };
 
 export default function ContactForm3() {

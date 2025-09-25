@@ -72,14 +72,14 @@
 }
 
 .custom-checkbox.MuiCheckbox-root {
-  color: #000000; /* couleur marron/beige quand décoché */
+  color: #A4BD01; /* lime green when unchecked */
 }
 .custom-checkbox.MuiCheckbox-root.Mui-checked {
-  color: #000000; /* couleur marron foncé quand coché */
+  color: #679436; /* dark green when checked */
 }
 /* Pour l'effet de survol */
 .custom-checkbox.MuiCheckbox-root:hover {
-  background-color: rgba(198, 161, 122, 0.08);
+  background-color: rgba(164, 189, 1, 0.08);
 }
 .accept-error {
   display: block;

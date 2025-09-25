@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Button, Modal, Box } from "@mui/material";
 import { Fade } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import "./HeroCarousel.css";
 import { useTranslation } from "react-i18next";
 
@@ -69,6 +70,7 @@ function getSlideDescSize() {
 
 export default function HeroCarousel() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const items = itemsData.map(item => ({
     ...item,
     name: t(`carousel.${item.key}.name`),
@@ -138,6 +140,16 @@ export default function HeroCarousel() {
     setFounderModalOpen(false);
   };
 
+  const handleOurProductsClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    setTimeout(() => {
+      navigate('/our-product');
+    }, 100);
+  };
+
   // Handle ESC key press
   useEffect(() => {
     const handleEscKey = (event) => {
@@ -169,6 +181,13 @@ export default function HeroCarousel() {
         <p className="side-desc">
           {t('carousel.side_desc')}
         </p>
+        <button
+          className="our-products-btn"
+          onClick={handleOurProductsClick}
+          aria-label={t('carousel.our_products_aria', 'Découvrir nos produits')}
+        >
+          {t('carousel.our_products_btn', 'Découvrir nos produits')}
+        </button>
         {/* <button
           className="meet-founder-btn"
           onClick={handleAboutOpen}

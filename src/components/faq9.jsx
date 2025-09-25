@@ -52,6 +52,38 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
     setFaqVisibility(initialState);
   }, [faqItems]);
 
+  // Scroll to top instantly when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
+
+  // Scroll animation observer
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll(
+      '.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right, .animate-fade-in'
+    );
+    
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      animatedElements.forEach((el) => observer.unobserve(el));
+    };
+  }, [faqItems]);  // Re-run when FAQ items change
+
   const toggleFaqVisibility = (faqId) => {
     setFaqVisibility(prev => ({
       ...prev,
@@ -137,7 +169,7 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
   return (
     <div ref={faqRef} id={fAQ9Id} className="faq9faq8 thq-section-padding full-width-bg">
       <div className="faq9-max-width thq-flex-column thq-section-max-width">
-        <div className="faq9-section-title thq-flex-column">
+        <div className="faq9-section-title thq-flex-column animate-fade-in">
           <div className="faq9-content">
             <h2 className="thq-heading-2">{t('faq.title')}</h2>
             <p className="thq-body-large">{t('faq.subtitle')}</p>
@@ -161,8 +193,12 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
               animationClass = 'faq9-item-exiting';
             }
             
+            // Determine animation class based on index for staggered effect
+            const staggerClass = index < 8 ? `animate-stagger-${index + 1}` : '';
+            const scrollAnimationClass = index % 2 === 0 ? 'animate-on-scroll-left' : 'animate-on-scroll-right';
+            
             return (
-              <div key={faqItem.id} className={`${faqClass} thq-box-shadow thq-section-max-width ${animationClass}`}>
+              <div key={faqItem.id} className={`${faqClass} thq-box-shadow thq-section-max-width ${animationClass} ${scrollAnimationClass} ${staggerClass}`}>
                 <div 
                   onClick={() => toggleFaqVisibility(faqItem.id)} 
                   className={triggerClass}
@@ -196,7 +232,7 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
           })}
         </div>
         {hasMoreFaqs && (
-          <div className="faq9-more-button-container">
+          <div className="faq9-more-button-container animate-on-scroll">
             <button 
               onClick={toggleShowAllFaqs}
               className="faq9-more-button thq-button-filled"

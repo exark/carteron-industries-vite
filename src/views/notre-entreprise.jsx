@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -12,6 +12,38 @@ import "./notre-entreprise.css";
 export default function NotreEntreprise() {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  
+  // Scroll to top instantly when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
+
+  // Scroll animation observer
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll(
+      '.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right, .animate-fade-in'
+    );
+    
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      animatedElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
   
   const handleContactClick = () => {
     window.scrollTo({
@@ -30,10 +62,10 @@ export default function NotreEntreprise() {
       {/* Hero Section */}
       <Box className="hero-section">
         <Container maxWidth="lg" className="hero-container">
-          <Typography variant="h2" component="h1" className="hero-title">
+          <Typography variant="h2" component="h1" className="hero-title animate-fade-in">
             {t('notre_entreprise.page_title', 'Notre Entreprise')}
           </Typography>
-          <Typography variant="h5" className="hero-subtitle">
+          <Typography variant="h5" className="hero-subtitle animate-fade-in">
             {t('notre_entreprise.page_subtitle', 'Innovation, passion et expertise au service du golf familial')}
           </Typography>
         </Container>
@@ -43,7 +75,7 @@ export default function NotreEntreprise() {
       <Container maxWidth="lg" className="main-content">
         
         {/* Intro CTA Section */}
-        <Box className="cta-section">
+        <Box className="cta-section animate-on-scroll">
           <Typography variant="h3" component="h2" className="cta-title">
             {t('notre_entreprise.cta_title', 'Rejoignez l\'aventure')}
           </Typography>
@@ -61,7 +93,7 @@ export default function NotreEntreprise() {
         </Box>
 
         {/* Vision Section */}
-        <Box className="vision-section">
+        <Box className="vision-section animate-on-scroll">
           <Typography variant="h3" component="h2" className="vision-title">
             {t('notre_entreprise.vision_title', 'Notre Vision')}
           </Typography>
@@ -73,7 +105,7 @@ export default function NotreEntreprise() {
         {/* Ambition & Mission Cards */}
         <Box className="cards-grid">
           {/* Ambition Card */}
-          <Box className="ambition-card">
+          <Box className="ambition-card animate-on-scroll-left animate-stagger-1">
             <Typography variant="h4" component="h2" className="card-title">
               {t('notre_entreprise.ambition_title', 'Notre Ambition')}
             </Typography>
@@ -83,7 +115,7 @@ export default function NotreEntreprise() {
           </Box>
 
           {/* Mission Card */}
-          <Box className="mission-card">
+          <Box className="mission-card animate-on-scroll-right animate-stagger-2">
             <Typography variant="h4" component="h2" className="card-title">
               {t('notre_entreprise.mission_title', 'Notre Mission')}
             </Typography>

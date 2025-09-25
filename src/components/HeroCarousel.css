@@ -120,6 +120,37 @@
   transform: scale(1.01);
 }
 
+/* New Our Products Button */
+.our-products-btn {
+  background: #A4BD01;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(164, 189, 1, 0.3);
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  text-transform: none;
+  font-family: inherit;
+  margin-top: 16px;
+}
+
+.our-products-btn:hover {
+  background: #679436;
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(164, 189, 1, 0.4);
+}
+
+.our-products-btn:focus {
+  outline-offset: 2px;
+}
+
+.our-products-btn:active {
+  transform: scale(1.01);
+}
+
 /* Modal body lock styles */
 .modal-open {
   overflow: hidden !important;

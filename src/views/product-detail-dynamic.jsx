@@ -365,6 +365,26 @@ export default function ProductDetailDynamic() {
                       color: '#333',
                       fontWeight: 500
                     }}
+                    className={
+                      (spec.label.toLowerCase().includes('dimensions') || 
+                       spec.label.toLowerCase().includes('battery') ||
+                       spec.label.toLowerCase().includes('weight') ||
+                       spec.label.toLowerCase().includes('speed') ||
+                       spec.label.toLowerCase().includes('capacity') ||
+                       spec.label.toLowerCase().includes('age') ||
+                       spec.label.toLowerCase().includes('charging') ||
+                       spec.label.toLowerCase().includes('warranty') ||
+                       spec.value === '85 x 60 x 45 cm' ||
+                       spec.value === 'Lithium-ion 36V 10Ah' ||
+                       spec.value === '6 mois - 4 ans' ||
+                       spec.value === '12 kg' ||
+                       spec.value === '6 km/h' ||
+                       spec.value === '15 kg (mode poussette) / 30 kg (mode chariot)' ||
+                       spec.value === '4-6 heures' ||
+                       spec.value === '2 ans') 
+                      ? 'blur-sensitive-info' 
+                      : ''
+                    }
                   >
                     {spec.value}
                   </Typography>

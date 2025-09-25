@@ -144,3 +144,14 @@
   animation: pulse 2s infinite;
   animation-delay: calc(var(--index) * 0.2s);
 }
+
+/* Blur effect for sensitive information */
+.blur-sensitive-info {
+  filter: blur(8px);
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
+.blur-sensitive-info:hover {
+  filter: blur(4px);
+}
