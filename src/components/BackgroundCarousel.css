@@ -49,10 +49,12 @@
 
 @media (max-width: 600px) {
   .background-carousel-container {
-    height: 70vh;
+    height: 100vh;
   }
   
   .background-carousel {
     height: 100%;
+    background-position: center 80%;
+    background-size: cover;
   }
 }
