@@ -2,7 +2,7 @@
   position: absolute;
   top: 50%;
   left: 5%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) scale(0.85);
   width: 100%;
   max-width: 600px;
   padding: 32px 24px;
@@ -107,6 +107,7 @@
   .hero-overlay-content {
     max-width: 100%;
     padding: 20px 16px;
+    transform: translateY(-50%) scale(0.85);
   }
   
   .overlay-title {
