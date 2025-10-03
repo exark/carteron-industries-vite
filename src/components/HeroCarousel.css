@@ -61,7 +61,7 @@
     align-items: center;
     width: 100vw;
     max-width: none;
-    margin-top: calc(70vh - 120px);
+    margin-top: calc(120vh - 200px);
     padding: 20px 0;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);

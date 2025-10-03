@@ -7,8 +7,7 @@ const BackgroundCarousel = () => {
       <div 
         className="background-carousel active"
         style={{
-          backgroundImage: 'url(/images/golf_image_1.webp)',
-          backgroundPosition: 'center bottom'
+          backgroundImage: 'url(/images/golf_image_1.webp)'
         }}
       />
     </div>
