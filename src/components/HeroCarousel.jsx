@@ -80,6 +80,7 @@ export default function HeroCarousel() {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeSlide, setActiveSlide] = useState(null);
   const [aboutModalOpen, setAboutModalOpen] = useState(false);
+  const [founderModalOpen, setFounderModalOpen] = useState(false);
 
   // Slides per view responsive
   const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow());
@@ -176,39 +177,7 @@ export default function HeroCarousel() {
 
   return (
     <div className="hero-carousel-wrapper">
-      <div className="hero-carousel-side-content">
-        <h2 className="side-title">{t('carousel.side_title', 'Notre Mission')}</h2>
-        <p className="side-desc">
-          {t('carousel.side_desc')}
-        </p>
-        <button
-          className="our-products-btn"
-          onClick={handleOurProductsClick}
-          aria-label={t('carousel.our_products_aria', 'Découvrir nos produits')}
-        >
-          {t('carousel.our_products_btn', 'Découvrir nos produits')}
-        </button>
-        {/* <button
-          className="meet-founder-btn"
-          onClick={handleAboutOpen}
-          aria-controls="founder-modal"
-          aria-expanded={aboutModalOpen}
-          aria-label={t('carousel.about_aria')}
-        >
-          {t('carousel.meet_founder_btn', 'Meet the Founder')}
-        </button> */}
-      </div>
       <div className="hero-carousel-nav-outer">
-        <div
-          className="custom-prev-btn hero-nav-btn"
-          tabIndex={0}
-          role="button"
-          aria-label="Précédent"
-          onClick={scrollPrev}
-          onKeyDown={onArrowKeyDown(scrollPrev)}
-        >
-          &lt;
-        </div>
         <div className="hero-carousel-swiper-container">
           <div
             className="embla"
@@ -250,14 +219,16 @@ export default function HeroCarousel() {
                       className="slide-content-glass"
                       style={{
                         width: "100%",
-                        padding: window.innerWidth < 600 ? "20px 20px" : "16px 20px", // Increased padding for bigger mobile carousel
+                        paddingLeft: "20px",
+                        paddingRight: "20px",
+                        paddingBottom: "20px",
+                        paddingTop: window.innerWidth < 600 ? "24px" : "24px", // Increased top padding for bigger mobile carousel
                         borderBottomLeftRadius: "22px",
                         borderBottomRightRadius: "22px",
                         background: "linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%)",
                         backdropFilter: "blur(4px)",
                         WebkitBackdropFilter: "blur(4px)",
                         boxShadow: "0 -2px 12px rgba(0, 0, 0, 0.08)",
-                        paddingTop: window.innerWidth < 600 ? "24px" : "24px", // Increased top padding for bigger mobile carousel
                       }}
                     >
                       <div
@@ -291,15 +262,27 @@ export default function HeroCarousel() {
           </div>
         </div>
 
-        <div
-          className="custom-next-btn hero-nav-btn"
-          tabIndex={0}
-          role="button"
-          aria-label="Suivant"
-          onClick={scrollNext}
-          onKeyDown={onArrowKeyDown(scrollNext)}
-        >
-          &gt;
+        <div className="hero-carousel-arrows">
+          <div
+            className="custom-prev-btn hero-nav-btn"
+            tabIndex={0}
+            role="button"
+            aria-label="Précédent"
+            onClick={scrollPrev}
+            onKeyDown={onArrowKeyDown(scrollPrev)}
+          >
+            &lt;
+          </div>
+          <div
+            className="custom-next-btn hero-nav-btn"
+            tabIndex={0}
+            role="button"
+            aria-label="Suivant"
+            onClick={scrollNext}
+            onKeyDown={onArrowKeyDown(scrollNext)}
+          >
+            &gt;
+          </div>
         </div>
       </div>
 

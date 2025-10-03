@@ -12,6 +12,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import "./home.css";
 import HeroCarousel from "../components/HeroCarousel";
+import BackgroundCarousel from "../components/BackgroundCarousel";
+import HeroOverlay from "../components/HeroOverlay";
 
 const Home = () => {
   const location = useLocation();
@@ -40,6 +42,8 @@ const Home = () => {
       </Helmet>
       {/* All your sections stay as-is */}
       <Navbar81></Navbar81>
+      <BackgroundCarousel></BackgroundCarousel>
+      <HeroOverlay></HeroOverlay>
       <HeroCarousel></HeroCarousel>
 
       {/* <div id="our-product" className="home-services">
@@ -56,7 +60,7 @@ const Home = () => {
         <Testimonial17></Testimonial17>
       </div>
       */}
-        <Contact10></Contact10>
+      <Contact10></Contact10>
       <Footer31></Footer31>
     </div>
   );
