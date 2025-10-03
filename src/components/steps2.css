@@ -18,7 +18,7 @@ body, html {
   background-repeat: no-repeat;
   padding: calc(var(--space-4xl) * 1.5) 0 var(--space-4xl);
   position: relative;
-  margin-top: var(--space-5xl);
+  margin-top: 0;
 }
 .whityyy {
   color: var(--neutral-white) !important;
