@@ -1,27 +1,10 @@
 .navbar81-container1 {
-  top: 0;
   width: 100%;
   display: flex;
-  z-index: 1000;
-  position: sticky;
+  z-index: 1001;
+  position: relative;
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Transparent state when at top of page */
-.navbar81-container1.navbar81-transparent {
-  background-color: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: none;
-}
-
-/* Solid state when scrolling */
-.navbar81-container1.navbar81-solid {
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar81-navlink {
@@ -96,10 +79,10 @@
 
 @media (min-width: 1024px) {
   .navbar81-navlink {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
     padding: 8px;
     z-index: 10;
   }
@@ -272,10 +255,10 @@
 
 @media (min-width: 1024px) {
   .navbar81-buttons1 {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
     z-index: 10;
   }
 }
@@ -480,14 +463,6 @@
   border-radius: 6px;
 }
 
-.navbar81-hidden {
-  transform: translateY(-100%);
-  transition: transform 0.32s cubic-bezier(.44,1.38,.76,.98);
-}
-
-.navbar81-container1 {
-  transition: transform 0.32s cubic-bezier(.44,1.38,.76,.98);
-}
 
 /* Bouton burger amélioré */
 .navbar81-burger {
@@ -672,6 +647,222 @@
   }
   .navbar81-burger {
     padding-right: 2px !important;
+  }
+}
+
+/* Simplified navbar layout */
+.navbar81-navbar-interactive {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* Logo on the right */
+.navbar81-navlink {
+  position: static !important;
+  transform: none !important;
+  z-index: 10;
+  margin-left: auto;
+}
+
+/* MENU text button on the left */
+.off-canvas-trigger.menu-text-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0b2244;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 10;
+}
+
+.off-canvas-trigger.menu-text-button:hover {
+  color: #21517a;
+  background: rgba(11, 34, 68, 0.05);
+  transform: translateX(-5px);
+}
+
+/* When menu is open, change MENU to CLOSE */
+.off-canvas-trigger.menu-text-button {
+  position: relative;
+}
+
+body.off-canvas-open .off-canvas-trigger.menu-text-button {
+  color: transparent;
+}
+
+body.off-canvas-open .off-canvas-trigger.menu-text-button::before {
+  content: 'CLOSE';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #21517a;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+
+/* Off-canvas menu panel - Fixed reveal style */
+.off-canvas-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100vh;
+  background: #0b2244;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: none;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.off-canvas-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.off-canvas-content {
+  padding: 80px 40px 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.off-canvas-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.off-canvas-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+.off-canvas-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.off-canvas-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 300;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.off-canvas-nav a:hover {
+  color: #fff;
+  padding-left: 20px;
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.off-canvas-nav a::before {
+  content: '';
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: white;
+  transition: left 0.3s ease;
+}
+
+.off-canvas-nav a:hover::before {
+  left: 0;
+}
+
+/* Remove overlay styles - no dark overlay needed */
+
+/* Background reveal effect when menu opens */
+body.off-canvas-open {
+  overflow: hidden;
+}
+
+/* Move entire page content to reveal the menu underneath */
+body.off-canvas-open .home-container1,
+body.off-canvas-open .background-carousel,
+body.off-canvas-open main,
+body.off-canvas-open .main-content {
+  transform: translateX(110px) rotate(1deg);
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Ensure smooth transition back */
+.home-container1,
+.background-carousel,
+main,
+.main-content {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .off-canvas-menu {
+    width: 300px;
+  }
+  
+  .off-canvas-content {
+    padding: 60px 30px 30px;
+  }
+  
+  .off-canvas-nav a {
+    font-size: 1.5rem;
+  }
+  
+  body.off-canvas-open .home-container1,
+  body.off-canvas-open .background-carousel,
+  body.off-canvas-open main,
+  body.off-canvas-open .main-content {
+    transform: translateX(100px) rotate(0.8deg);
+    transform-origin: left center;
+  }
+}
+
+@media (max-width: 480px) {
+  .off-canvas-menu {
+    width: 280px;
+  }
+  
+  body.off-canvas-open .home-container1,
+  body.off-canvas-open .background-carousel,
+  body.off-canvas-open main,
+  body.off-canvas-open .main-content {
+    transform: translateX(80px) rotate(0.5deg);
+    transform-origin: left center;
   }
 }
 
