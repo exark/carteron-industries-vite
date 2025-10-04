@@ -265,4 +265,53 @@
 .dropdown-item:focus {
   outline: 2px solid rgba(11, 34, 68, 0.3);
   outline-offset: 2px;
-} 
+}
+
+/* Simple Toggle Version */
+.language-switcher-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.lang-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+.lang-toggle-btn:hover {
+  opacity: 0.9;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.lang-toggle-btn.active {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+}
+
+.flag-image {
+  width: 32px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lang-separator {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0 4px;
+}

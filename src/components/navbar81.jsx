@@ -202,6 +202,9 @@ const Navbar81 = (props) => {
               {t('navbar.contact')}
             </a>
           </nav>
+          <div className="off-canvas-language-switcher">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
       

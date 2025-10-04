@@ -769,6 +769,7 @@ body.off-canvas-open .off-canvas-trigger.menu-text-button::before {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  flex: 0 0 auto;
 }
 
 .off-canvas-nav a {
@@ -802,6 +803,21 @@ body.off-canvas-open .off-canvas-trigger.menu-text-button::before {
 
 .off-canvas-nav a:hover::before {
   left: 0;
+}
+
+/* Language switcher in off-canvas menu */
+.off-canvas-language-switcher {
+  margin-top: auto;
+  padding: 30px 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.off-canvas-language-switcher > * {
+  color: white !important;
 }
 
 /* Remove overlay styles - no dark overlay needed */
