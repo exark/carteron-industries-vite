@@ -131,7 +131,7 @@ const Navbar81 = (props) => {
       <div id="main-content">
         <div id="content-front">
           {/* Top Navbar Container - now static */}
-          <div className="top-navbar-static">
+          <div className={`top-navbar-static ${location.pathname === '/home' || location.pathname === '/' ? 'transparent' : ''}`}>
             {/* Menu Button */}
             <div className="menu-button">MENU</div>
             

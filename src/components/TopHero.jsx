@@ -45,7 +45,7 @@ const TopHero = () => {
           <div className="top-hero-visual">
             <div className="top-hero-logo-container">
               <img 
-                src="public/images/BTPG.JPG" 
+                src="/images/BTPG.jpg" 
                 alt="Carteron Industries Logo"
                 className="top-hero-logo"
               />

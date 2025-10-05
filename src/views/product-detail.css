@@ -4,6 +4,7 @@
   min-height: 100vh;
 }
 
+
 /* Scroll Animation Classes */
 .animate-on-scroll {
   opacity: 0;
@@ -124,6 +125,15 @@
   
   .feature-card {
     margin-bottom: 1rem;
+  }
+  
+  /* Remove gap between navbar and content on mobile */
+  .MuiContainer-root {
+    padding-top: 0.5rem !important;
+  }
+  
+  .MuiBox-root {
+    margin-top: 0 !important;
   }
 }
 

@@ -63,7 +63,7 @@
   pointer-events: auto;
   position: relative;
   z-index: 1;
-  background-color: transparent;
+  background-color: white;
   box-shadow: none;
   -webkit-transform-origin: center 70%;
   -ms-transform-origin: center 70%;
@@ -88,8 +88,11 @@
   align-items: center;
   padding: 20px 30px;
   background: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Transparent navbar for home page */
+.top-navbar-static.transparent {
+  background: rgba(255, 255, 255, 0);
 }
 
 
@@ -112,6 +115,24 @@
 .menu-button:hover {
   background: rgba(0, 0, 0, 0.05);
   transform: translateY(-1px);
+}
+
+/* Menu button styles for transparent navbar */
+.top-navbar-static.transparent .menu-button {
+  color: #243040;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.top-navbar-static.transparent .menu-button:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.05);
+  color: #243040;
+  text-shadow: none;
+  box-shadow: none;
+  border: none;
+  outline: none;
 }
 
 /* Close button styles */
@@ -193,25 +214,44 @@
   }
   
   .top-navbar-static {
-    padding: 15px 20px;
+    padding: 18px 20px;
+  }
+  
+  .top-navbar-static.transparent {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .menu-button {
-    font-size: 1rem;
-    padding: 6px 10px;
+    font-size: 1.1rem;
+    padding: 8px 12px;
   }
   
   .close {
-    top: 20px;
-    left: 20px;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 25px;
+  }
+  
+  .close:before,
+  .close:after {
+    width: 30px;
+    height: 4px;
   }
   
   .navbar81-logo-image {
-    height: 60px;
+    height: 65px;
+  }
+  
+  #content-front {
+    padding-bottom: 25px;
   }
   
   #container {
-    padding-top: 85px; /* Reduced for mobile */
+    padding-top: 95px; /* Adjusted for larger navbar */
   }
   
   #main-content.tilt #content-front {
@@ -229,25 +269,44 @@
   }
   
   .top-navbar-static {
-    padding: 12px 18px;
+    padding: 16px 20px;
+  }
+  
+  .top-navbar-static.transparent {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .menu-button {
-    font-size: 1rem;
-    padding: 6px 10px;
+    font-size: 1.05rem;
+    padding: 7px 11px;
   }
   
   .close {
-    top: 18px;
-    left: 18px;
+    top: 12px;
+    left: 12px;
+    width: 25px;
+    height: 20px;
+  }
+  
+  .close:before,
+  .close:after {
+    width: 25px;
+    height: 3px;
   }
   
   .navbar81-logo-image {
     height: 55px;
   }
   
+  #content-front {
+    padding-bottom: 30px;
+  }
+  
   #container {
-    padding-top: 75px; /* Further reduced for smaller screens */
+    padding-top: 85px; /* Adjusted for larger navbar */
   }
   
   #main-content.tilt #content-front {
@@ -261,25 +320,44 @@
   }
   
   .top-navbar-static {
-    padding: 10px 15px;
+    padding: 14px 18px;
+  }
+  
+  .top-navbar-static.transparent {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   
   .menu-button {
-    font-size: 0.9rem;
-    padding: 6px 8px;
+    font-size: 1rem;
+    padding: 7px 10px;
   }
   
   .close {
-    top: 15px;
-    left: 15px;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 18px;
+  }
+  
+  .close:before,
+  .close:after {
+    width: 20px;
+    height: 2.5px;
   }
   
   .navbar81-logo-image {
     height: 50px;
   }
   
+  #content-front {
+    padding-bottom: 35px;
+  }
+  
   #container {
-    padding-top: 70px; /* Smallest padding for very small screens */
+    padding-top: 80px; /* Adjusted for larger navbar */
   }
   
   #main-content.tilt #content-front {

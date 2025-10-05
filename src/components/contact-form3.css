@@ -140,19 +140,44 @@
 
 @media (max-width: 900px) {
   .contact-form3-root{
-    width: 92%;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .contact-form3-container {
     flex-direction: column;
     border-radius: 18px;
+    margin: 0 auto;
+    max-width: 600px;
   }
   .contact-form3-imgbox,
   .contact-form3-paper {
     border-radius: 18px 18px 0 0;
-    padding: 32px 16px;
+    padding: 32px 20px;
   }
   .contact-form3-paper {
     border-radius: 0 0 18px 18px;
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form3-root{
+    width: 90%;
+    padding: 20px 0;
+  }
+  .contact-form3-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .contact-form3-imgbox,
+  .contact-form3-paper {
+    padding: 24px 16px;
+  }
+  .contact-form3-paper {
+    padding: 28px 20px;
   }
 }
 
