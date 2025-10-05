@@ -5,6 +5,23 @@
   justify-content: center;
   align-items: center;
   padding: 32px 0;
+  position: relative;
+  background-color: #ffffff;
+}
+
+/* Create a full-width background wrapper for contact form */
+.contact-form3-root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background-color: #ffffff;
+  z-index: -1;
 }
 
 
@@ -58,7 +75,7 @@
   margin-top: 0;
   margin-bottom: 0;
   padding: 0 8px;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-body);
 }
 
 .contact-form3-paper {
@@ -97,7 +114,7 @@
   box-shadow: 0 2px 12px rgba(80, 82, 166, 0.10), 0 1.5px 6px 0 rgba(198, 161, 122, 0.10);
   padding: 0 32px;
   font-size: 1.08rem;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-body);
   transition: background 0.3s, box-shadow 0.3s, color 0.2s;
   outline: none;
   cursor: pointer;
@@ -139,12 +156,7 @@
   }
 }
 
-body, html {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
-}
-* {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
-}
+/* Font families are now managed by CSS variables in style.css */
 
 @keyframes pop {
   0% {

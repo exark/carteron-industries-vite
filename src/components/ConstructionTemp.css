@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-family-body);
 }
 
 .construction-container {

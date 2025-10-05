@@ -1,5 +1,22 @@
 /* Notre Entreprise Page Styles */
-.notre-entreprise-page { scroll-behavior: smooth; }
+.notre-entreprise-page { 
+  scroll-behavior: smooth; 
+  background-color: #ffffff;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure body has white background when this page is active */
+body:has(.notre-entreprise-page) {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
 
 /* ---------- Hero ---------- */
 .hero-section {
@@ -13,7 +30,13 @@
   min-height: 60vh;
   display: flex;
   align-items: center;
-  padding-block: clamp(4rem, 8vw, 6rem); /* match sx py */
+  padding-block: clamp(4rem, 8vw, 6rem);
+  width: 100vw;
+  margin: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 .hero-section::before {
   content: "";
@@ -45,6 +68,42 @@
 .main-content {
   padding-top: clamp(3rem, 6vw, 6rem);
   padding-bottom: clamp(3rem, 6vw, 6rem);
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: clamp(1rem, 5vw, 3rem);
+  padding-right: clamp(1rem, 5vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Create a full-width background wrapper */
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background-color: #ffffff;
+  z-index: -1;
+}
+
+/* Override Material-UI container max-width */
+.main-content.MuiContainer-root {
+  max-width: 1200px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding-left: clamp(1rem, 5vw, 3rem) !important;
+  padding-right: clamp(1rem, 5vw, 3rem) !important;
 }
 
 /* ---------- CTA ---------- */
@@ -55,6 +114,7 @@
   background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0,0,0,.08);
+  width: 100%;
 }
 .cta-title.MuiTypography-root {
   font-weight: 700;
@@ -90,7 +150,11 @@
 }
 
 /* ---------- Vision ---------- */
-.vision-section { margin-bottom: clamp(2rem, 6vw, 6rem); text-align: center; }
+.vision-section { 
+  margin-bottom: clamp(2rem, 6vw, 6rem); 
+  text-align: center; 
+  width: 100%;
+}
 .vision-title.MuiTypography-root {
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -111,6 +175,7 @@
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: clamp(2rem, 6vw, 6rem);
+  width: 100%;
 }
 @media (min-width: 768px) {
   .cards-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }

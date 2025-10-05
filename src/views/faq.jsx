@@ -18,9 +18,10 @@ const FAQ = () => {
           content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/5538c453-0d0c-4da8-bbdf-7b23b6da0b32/3ff3de69-2ab4-4793-ac76-839bc4f6bbca?org_if_sml=1&amp;force_format=original"
         />
       </Helmet>
-      <Navbar81 />
-      <FAQ9 />
-      <Footer31 />
+      <Navbar81>
+        <FAQ9 />
+        <Footer31 />
+      </Navbar81>
     </div>
   );
 };

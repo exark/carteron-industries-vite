@@ -11,9 +11,8 @@ import Footer31 from "../components/footer31";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import "./home.css";
+import TopHero from "../components/TopHero";
 import HeroCarousel from "../components/HeroCarousel";
-import BackgroundCarousel from "../components/BackgroundCarousel";
-import HeroOverlay from "../components/HeroOverlay";
 
 const Home = () => {
   const location = useLocation();
@@ -45,8 +44,7 @@ const Home = () => {
       <Navbar81 
         homeContent={
           <Fragment>
-            <BackgroundCarousel></BackgroundCarousel>
-            <HeroOverlay></HeroOverlay>
+            <TopHero></TopHero>
             <HeroCarousel></HeroCarousel>
 
             {/* <div id="our-product" className="home-services">

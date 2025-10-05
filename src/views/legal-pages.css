@@ -3,7 +3,23 @@
 .legal-page-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-body);
+  position: relative;
+}
+
+/* Create a full-width background wrapper for legal pages */
+.legal-page-container::before {
+  content: "";
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  z-index: -1;
 }
 
 .legal-content {
@@ -16,6 +32,7 @@
   margin-top: 40px;
   margin-bottom: 40px;
   position: relative;
+  z-index: 1;
 }
 
 .legal-header {

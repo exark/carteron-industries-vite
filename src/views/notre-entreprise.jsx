@@ -56,10 +56,9 @@ export default function NotreEntreprise() {
   };
 
   return (
-    <>
-      <Navbar81 />
-
-      {/* Hero Section */}
+    <div className="notre-entreprise-page">
+      <Navbar81>
+        {/* Hero Section */}
       <Box className="hero-section">
         <Container maxWidth="lg" className="hero-container">
           <Typography variant="h2" component="h1" className="hero-title animate-fade-in">
@@ -125,9 +124,10 @@ export default function NotreEntreprise() {
           </Box>
         </Box>
 
-      </Container>
+        </Container>
 
-      <Footer31 />
-    </>
+        <Footer31 />
+      </Navbar81>
+    </div>
   );
 }

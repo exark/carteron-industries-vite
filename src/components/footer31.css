@@ -3,7 +3,7 @@
   border-top: 2px solid #3E6AE1;
   color: #232323;
   padding: 60px 0 24px 0;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-body);
   width: 100%;
   box-shadow: 0 -4px 20px 0 rgba(62, 106, 225, 0.08);
   position: relative;
@@ -293,12 +293,7 @@
   }
 }
 
-body, html {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
-}
-* {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
-}
+/* Font families are now managed by CSS variables in style.css */
 
 /* Additional footer enhancements and new elements */
 .scroll-to-top {

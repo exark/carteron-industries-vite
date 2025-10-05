@@ -9,49 +9,8 @@ const Navbar81 = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // State for menu button visibility and menu open state
-  const [menuVisible, setMenuVisible] = useState(true);
+  // State for menu open state only
   const [menuOpen, setMenuOpen] = useState(false);
-
-  // Handle scroll to hide/show menu button
-  useEffect(() => {
-    const handleScroll = (event) => {
-      let scrollY = 0;
-      
-      // Check both window scroll and main-content scroll
-      if (event.target === window || event.target === document) {
-        scrollY = window.scrollY;
-      } else if (event.target.id === 'main-content') {
-        scrollY = event.target.scrollTop;
-      }
-      
-      console.log('Scroll detected:', scrollY, 'Target:', event.target.id || 'window');
-      
-      if (scrollY > 0) {
-        // Hide menu immediately when any scroll happens
-        setMenuVisible(false);
-      } else {
-        // Show menu only when exactly at top of page
-        setMenuVisible(true);
-      }
-    };
-
-    // Listen to window scroll events
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Also listen to main-content scroll events
-    const mainContent = document.getElementById('main-content');
-    if (mainContent) {
-      mainContent.addEventListener('scroll', handleScroll, { passive: true });
-    }
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (mainContent) {
-        mainContent.removeEventListener('scroll', handleScroll);
-      }
-    };
-  }, []);
 
   // Initialize jQuery navigation on component mount
   useEffect(() => {
@@ -86,10 +45,7 @@ const Navbar81 = (props) => {
             this.$contentFront.css('transform-origin', 'center ' + equation + '%');
           },
           hamburgerFix: function (opening) {
-            // Keep menu button fixed at all times - no position changes
-            $('.menu-button').css({
-              position: 'fixed'
-            });
+            // Menu button is now part of navbar - no position changes needed
           },
           bindEvents: function () {
             this.$hamburger.on('click', this.open.bind(this));
@@ -171,26 +127,27 @@ const Navbar81 = (props) => {
         </nav>
       </div>
       
-      {/* MENU button - fixed position, hidden when scrolled or menu open */}
-      <div className="menu-button" style={{ 
-        opacity: (menuVisible && !menuOpen) ? 1 : 0, 
-        pointerEvents: (menuVisible && !menuOpen) ? 'auto' : 'none' 
-      }}>MENU</div>
-      
       {/* Main content wrapper */}
       <div id="main-content">
         <div id="content-front">
-          {/* Container for main content */}
-          <div id="container">
+          {/* Top Navbar Container - now static */}
+          <div className="top-navbar-static">
+            {/* Menu Button */}
+            <div className="menu-button">MENU</div>
+            
             {/* Logo */}
             <div className="navbar-logo">
               <a href="/home" onClick={handleLogoClick}>
                 <img src="/images/Logo.png" alt="Carteron Industries" className="navbar81-logo-image" />
               </a>
             </div>
+          </div>
+          
+          {/* Container for main content */}
+          <div id="container">
             
-            {/* Home content passed as prop */}
-            {props.homeContent}
+            {/* Page content passed as prop */}
+            {props.children || props.homeContent}
           </div>
         </div>
       </div>

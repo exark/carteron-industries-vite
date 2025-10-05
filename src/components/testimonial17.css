@@ -90,7 +90,7 @@
   position: absolute;
   left: -8px;
   top: -10px;
-  font-family: serif;
+  font-family: var(--font-family-secondary);
   opacity: 0.3;
 }
 

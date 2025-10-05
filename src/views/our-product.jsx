@@ -321,10 +321,9 @@ export default function OurProduct() {
 
   return (
     <>
-      <Navbar81 />
-
-      {/* Hero Section */}
-      <Box
+      <Navbar81>
+        {/* Hero Section */}
+        <Box
         className="product-hero"
         sx={{
           position: 'relative',
@@ -487,9 +486,10 @@ export default function OurProduct() {
           {/* Services Section */}
           
         </Container>
-      </div>
-      
-      <Footer31 />
+        </div>
+        
+        <Footer31 />
+      </Navbar81>
     </>
   );
 }

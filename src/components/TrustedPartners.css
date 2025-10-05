@@ -26,7 +26,7 @@
   font-weight: var(--font-weight-bold);
   color: var(--neutral-900);
   margin: 0;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-primary);
 }
 
 .trusted-partners-grid {

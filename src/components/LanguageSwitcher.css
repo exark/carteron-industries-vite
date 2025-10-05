@@ -13,7 +13,7 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: var(--font-family-primary);
   font-weight: 600;
   font-size: 14px;
   color: #0b2244;
@@ -82,7 +82,7 @@
   background: transparent;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: var(--font-family-primary);
   font-size: 14px;
   color: #666;
   text-align: left;
@@ -153,7 +153,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 0;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: var(--font-family-primary);
   font-weight: 600;
   color: #666;
   user-select: none;
@@ -272,7 +272,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: var(--font-family-primary);
 }
 
 .lang-toggle-btn {

@@ -1,9 +1,4 @@
-body, html {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
-}
-* {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
-}
+/* Font families are now managed by CSS variables in style.css */
 
 /* Timeline animée - Étapes du service */
 .steps2-container1 {

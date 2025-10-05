@@ -207,7 +207,7 @@
   border-radius: 10px !important;
   font-size: 0.9375rem;
   font-weight: 600;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-primary);
   text-transform: none;
   letter-spacing: 0.02em;
   line-height: 1.5;

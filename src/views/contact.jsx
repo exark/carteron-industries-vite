@@ -19,10 +19,11 @@ const Contact = () => {
           content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/5538c453-0d0c-4da8-bbdf-7b23b6da0b32/19a10c86-c4c4-4c1d-a945-c030937c573e?org_if_sml=1&amp;force_format=original"
         />
       </Helmet>
-      <Navbar81 />
-      <ContactForm3></ContactForm3>
-      <Contact10></Contact10>
-      <Footer31 />
+      <Navbar81>
+        <ContactForm3></ContactForm3>
+        <Contact10></Contact10>
+        <Footer31 />
+      </Navbar81>
     </div>
   );
 };
