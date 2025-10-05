@@ -1,135 +1,135 @@
 import React, { useState, Fragment, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import Button from "@mui/material/Button";
 import "./navbar81.css";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
-import { getAllProducts } from "../data/products";
 
 const Navbar81 = (props) => {
   const { t } = useTranslation();
-  const [link5DropdownVisible, setLink5DropdownVisible] = useState(false);
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
-  const [mobileSubMenuOpen, setMobileSubMenuOpen] = useState(false);
-  const [offCanvasOpen, setOffCanvasOpen] = useState(false);
-
   const location = useLocation();
   const navigate = useNavigate();
-  const isDesktop = useMediaQuery("(min-width:1024px)");
-  
-  // Get products dynamically
-  const products = getAllProducts();
 
-  // Handle off-canvas menu
-  const toggleOffCanvas = () => {
-    setOffCanvasOpen(!offCanvasOpen);
-  };
+  // State for menu button visibility and menu open state
+  const [menuVisible, setMenuVisible] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeOffCanvas = () => {
-    setOffCanvasOpen(false);
-  };
-
-  // Add body class when off-canvas is open
+  // Handle scroll to hide/show menu button
   useEffect(() => {
-    if (offCanvasOpen) {
-      document.body.classList.add('off-canvas-open');
-    } else {
-      document.body.classList.remove('off-canvas-open');
+    const handleScroll = (event) => {
+      let scrollY = 0;
+      
+      // Check both window scroll and main-content scroll
+      if (event.target === window || event.target === document) {
+        scrollY = window.scrollY;
+      } else if (event.target.id === 'main-content') {
+        scrollY = event.target.scrollTop;
+      }
+      
+      console.log('Scroll detected:', scrollY, 'Target:', event.target.id || 'window');
+      
+      if (scrollY > 0) {
+        // Hide menu immediately when any scroll happens
+        setMenuVisible(false);
+      } else {
+        // Show menu only when exactly at top of page
+        setMenuVisible(true);
+      }
+    };
+
+    // Listen to window scroll events
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Also listen to main-content scroll events
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      mainContent.addEventListener('scroll', handleScroll, { passive: true });
     }
     
     return () => {
-      document.body.classList.remove('off-canvas-open');
+      window.removeEventListener('scroll', handleScroll);
+      if (mainContent) {
+        mainContent.removeEventListener('scroll', handleScroll);
+      }
     };
-  }, [offCanvasOpen]);
+  }, []);
 
-  // Refs pour la gestion du dropdown
-  const navbarRef = useRef(null);
-  const megaMenuRef = useRef(null);
-  const autreRef = useRef(null);
+  // Initialize jQuery navigation on component mount
+  useEffect(() => {
+    // Wait for jQuery to be available
+    const initNavigation = () => {
+      if (typeof window.$ !== 'undefined') {
+        const navigationMenu = {
+          $window: $('#main-content'),
+          $contentFront: $('#content-front'),
+          $hamburger: $('.menu-button'),
+          offset: 1800,
+          pageHeight: $('#content-front').outerHeight(),
+          open: function () {
+            this.$window.addClass('tilt');
+            this.$hamburger.off('click');
+            $('#container, .menu-button').on('click', this.close.bind(this));
+            this.hamburgerFix(true);
+            setMenuOpen(true);
+            console.log('opening...');
+          },
+          close: function () {
+            this.$window.removeClass('tilt');
+            $('#container, .menu-button').off('click');
+            this.$hamburger.on('click', this.open.bind(this));
+            this.hamburgerFix(false);
+            setMenuOpen(false);
+            console.log('closing...');
+          },
+          updateTransformOrigin: function () {
+            const scrollTop = this.$window.scrollTop();
+            const equation = (scrollTop + this.offset) / this.pageHeight * 100;
+            this.$contentFront.css('transform-origin', 'center ' + equation + '%');
+          },
+          hamburgerFix: function (opening) {
+            // Keep menu button fixed at all times - no position changes
+            $('.menu-button').css({
+              position: 'fixed'
+            });
+          },
+          bindEvents: function () {
+            this.$hamburger.on('click', this.open.bind(this));
+            $('.close').on('click', this.close.bind(this));
+            this.$window.on('scroll', this.updateTransformOrigin.bind(this));
+          },
+          init: function () {
+            this.bindEvents();
+            this.updateTransformOrigin();
+          }
+        };
+        
+        navigationMenu.init();
+      } else {
+        // Retry if jQuery is not loaded yet
+        setTimeout(initNavigation, 100);
+      }
+    };
+    
+    initNavigation();
+  }, [setMenuOpen]);
 
-  // Gestion du hover pour le mega menu
-  const handleMegaMenuMouseEnter = () => {
-    if (isDesktop) {
-      setLink5DropdownVisible(true);
-    }
-  };
-
-  const handleMegaMenuMouseLeave = () => {
-    if (isDesktop) {
-      setLink5DropdownVisible(false);
-    }
-  };
-
-  // Gestion spécifique pour le bouton "autre"
-  const handleAutreMouseEnter = () => {
-    if (isDesktop) {
-      setLink5DropdownVisible(true);
-    }
-  };
-
-  const handleAutreMouseLeave = () => {
-    // Ne pas fermer ici, laisser le mega menu gérer la fermeture
-  };
 
   const handleLogoClick = (e) => {
     e.preventDefault();
-    setLink5DropdownVisible(false); // Ferme le mega menu
     if (location.pathname === "/home" || location.pathname === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       navigate("/home", { replace: true });
       setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
     }
-    setDrawerOpen(false);
-  };
-
-  // Fonction utilitaire pour scroller avec un offset (par exemple, hauteur de la navbar)
-  const scrollToWithOffset = (element, offset = 100) => {
-    const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
-    window.scrollTo({ top: y, behavior: "smooth" });
   };
 
   const handleAnchorClick = (e, anchorId) => {
     e.preventDefault();
-    setLink5DropdownVisible(false); // Ferme le mega menu
     if (location.pathname === "/home" || location.pathname === "/") {
       if (anchorId) {
         const el = document.getElementById(anchorId);
         if (el) {
-          scrollToWithOffset(el); // Utilise le scroll avec offset
-        }
-      } else {
-        // Si anchorId est null, remonter en haut de la page
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    } else {
-      if (anchorId) {
-        navigate("/home", { state: { anchorId } });
-      } else {
-        navigate("/home", { replace: true });
-        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
-      }
-    }
-    setDrawerOpen(false);
-  };
-
-  // Remplacer handleMobileLinkClick par une version harmonisée
-  const handleMobileNav = (e, anchorId) => {
-    e.preventDefault();
-    setDrawerOpen(false);
-    setMobileSubMenuOpen(false);
-    if (location.pathname === "/home" || location.pathname === "/") {
-      if (anchorId) {
-        const el = document.getElementById(anchorId);
-        if (el) {
-          scrollToWithOffset(el); // Utilise le scroll avec offset
+          el.scrollIntoView({ behavior: "smooth" });
         }
       } else {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -141,74 +141,60 @@ const Navbar81 = (props) => {
         navigate("/home", { replace: true });
         setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
       }
-    }
-  };
-
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [isAtTop, setIsAtTop] = useState(false);
-
-  // Fonction de scroll ou redirection smooth
-  const handleNavScroll = (anchorId) => {
-    if (location.pathname === "/home") {
-      const el = document.getElementById(anchorId);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      navigate("/home", { state: { anchorId } });
     }
   };
 
   return (
-    <header
-      className={`navbar81-container1${showNavbar ? "" : " navbar81-hidden"}${isAtTop ? " navbar81-transparent" : " navbar81-solid"}`}
-      ref={navbarRef}
-    >
-      <header data-thq="thq-navbar" className="navbar81-navbar-interactive">
-        {/* Simplified navbar with MENU on left and logo on right */}
-        <button
-          className="off-canvas-trigger menu-text-button"
-          onClick={toggleOffCanvas}
-          aria-label="Open menu"
-        >
-          MENU
-        </button>
-        
-        <a href="/home" onClick={handleLogoClick} className="navbar81-navlink">
-          <img src="/images/Logo.png" alt="Carteron Industries" className="navbar81-logo-image" />
-        </a>
-      </header>
-      
-      {/* Off-canvas menu */}
-      <div className={`off-canvas-menu ${offCanvasOpen ? 'open' : ''}`}>
-        <div className="off-canvas-content">
-          <button className="off-canvas-close" onClick={closeOffCanvas}>
-            ×
-          </button>
-          <nav className="off-canvas-nav">
-            <a href="#home" onClick={(e) => { handleAnchorClick(e, null); closeOffCanvas(); }}>
-              {t('navbar.home')}
-            </a>
-            <a href="/our-product" onClick={(e) => { e.preventDefault(); closeOffCanvas(); navigate('/our-product'); }}>
-              {t('navbar.our_product')}
-            </a>
-            <a href="/notre-entreprise" onClick={(e) => { e.preventDefault(); closeOffCanvas(); navigate('/notre-entreprise'); }}>
-              {t('footer.our_company', 'Notre entreprise')}
-            </a>
-            <a href="/faq" onClick={(e) => { e.preventDefault(); closeOffCanvas(); navigate('/faq'); }}>
-              {t('navbar.faq')}
-            </a>
-            <a href="/contact" onClick={(e) => { e.preventDefault(); closeOffCanvas(); navigate('/contact'); }}>
-              {t('navbar.contact')}
-            </a>
-          </nav>
-          <div className="off-canvas-language-switcher">
+    <Fragment>
+      {/* Paper back - the navigation menu behind main content */}
+      <div id="paper-back">
+        <nav>
+          <div className="close"></div>
+          <a href="#home" onClick={(e) => { handleAnchorClick(e, null); }}>
+            {t('navbar.home')}
+          </a>
+          <a href="/our-product" onClick={(e) => { e.preventDefault(); navigate('/our-product'); }}>
+            {t('navbar.our_product')}
+          </a>
+          <a href="/notre-entreprise" onClick={(e) => { e.preventDefault(); navigate('/notre-entreprise'); }}>
+            {t('footer.our_company', 'Notre entreprise')}
+          </a>
+          <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('/faq'); }}>
+            {t('navbar.faq')}
+          </a>
+          <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('/contact'); }}>
+            {t('navbar.contact')}
+          </a>
+          <div className="language-switcher-nav">
             <LanguageSwitcher />
+          </div>
+        </nav>
+      </div>
+      
+      {/* MENU button - fixed position, hidden when scrolled or menu open */}
+      <div className="menu-button" style={{ 
+        opacity: (menuVisible && !menuOpen) ? 1 : 0, 
+        pointerEvents: (menuVisible && !menuOpen) ? 'auto' : 'none' 
+      }}>MENU</div>
+      
+      {/* Main content wrapper */}
+      <div id="main-content">
+        <div id="content-front">
+          {/* Container for main content */}
+          <div id="container">
+            {/* Logo */}
+            <div className="navbar-logo">
+              <a href="/home" onClick={handleLogoClick}>
+                <img src="/images/Logo.png" alt="Carteron Industries" className="navbar81-logo-image" />
+              </a>
+            </div>
+            
+            {/* Home content passed as prop */}
+            {props.homeContent}
           </div>
         </div>
       </div>
-      
-    </header>
+    </Fragment>
   );
 };
 

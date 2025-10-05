@@ -31,7 +31,7 @@ const Home = () => {
     }
   }, [location, navigate]);
   return (
-    <div className="home-container1">
+    <Fragment>
       <Helmet>
         <title>Carteron Industries</title>
         <meta property="og:title" content="Carteron Industries" />
@@ -40,29 +40,35 @@ const Home = () => {
           content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/5538c453-0d0c-4da8-bbdf-7b23b6da0b32/3ff3de69-2ab4-4793-ac76-839bc4f6bbca?org_if_sml=1&amp;force_format=original"
         />
       </Helmet>
-      {/* All your sections stay as-is */}
-      <Navbar81></Navbar81>
-      <BackgroundCarousel></BackgroundCarousel>
-      <HeroOverlay></HeroOverlay>
-      <HeroCarousel></HeroCarousel>
+      
+      {/* Navbar contains both paper-back navigation and main-content structure */}
+      <Navbar81 
+        homeContent={
+          <Fragment>
+            <BackgroundCarousel></BackgroundCarousel>
+            <HeroOverlay></HeroOverlay>
+            <HeroCarousel></HeroCarousel>
 
-      {/* <div id="our-product" className="home-services">
-        <Features25></Features25>
-      </div> */}
-      <div id="accompagnement">
-        <Steps2></Steps2>
-      </div>
-      <div id="trusted-partners">
-        <TrustedPartners></TrustedPartners>
-      </div>
-      {/*
-      <div id="temoignages">
-        <Testimonial17></Testimonial17>
-      </div>
-      */}
-      <Contact10></Contact10>
-      <Footer31></Footer31>
-    </div>
+            {/* <div id="our-product" className="home-services">
+              <Features25></Features25>
+            </div> */}
+            <div id="accompagnement">
+              <Steps2></Steps2>
+            </div>
+            <div id="trusted-partners">
+              <TrustedPartners></TrustedPartners>
+            </div>
+            {/*
+            <div id="temoignages">
+              <Testimonial17></Testimonial17>
+            </div>
+            */}
+            <Contact10></Contact10>
+            <Footer31></Footer31>
+          </Fragment>
+        }
+      />
+    </Fragment>
   );
 };
 
