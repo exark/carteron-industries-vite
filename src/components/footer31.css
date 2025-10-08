@@ -8,6 +8,7 @@
   box-shadow: 0 -4px 20px 0 rgba(62, 106, 225, 0.08);
   position: relative;
   overflow: hidden;
+  margin-top: auto;
 }
 
 .footer-container {
@@ -244,6 +245,9 @@
 }
 
 @media (max-width: 768px) {
+  .custom-footer {
+    margin-top: auto;
+  }
   .footer-main,
   .footer-bottom {
     flex-direction: column;
@@ -263,7 +267,8 @@
 
 @media (max-width: 480px) {
   .custom-footer {
-    padding: 40px 0 20px 0;
+    padding: 40px 0 0 0;
+    margin-top: auto;
   }
   .footer-links-group {
     gap: 24px;
@@ -290,6 +295,9 @@
   .footer-actions {
     width: 100%;
     justify-content: center;
+  }
+  .footer-bottom {
+    padding-bottom: 20px;
   }
 }
 

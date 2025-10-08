@@ -92,6 +92,8 @@
   min-height: 100vh;
   border-top-left-radius: 16px !important;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Top Navbar Static Container */
@@ -208,7 +210,9 @@
 /* Container and logo styles */
 #container {
   position: relative;
-  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding-top: 100px; /* Space for navbar */
 }
 
@@ -282,7 +286,7 @@
   }
   
   #content-front {
-    padding-bottom: 25px;
+    padding-bottom: 0;
   }
   
   #container {
@@ -337,7 +341,7 @@
   }
   
   #content-front {
-    padding-bottom: 30px;
+    padding-bottom: 0;
   }
   
   #container {
@@ -388,7 +392,7 @@
   }
   
   #content-front {
-    padding-bottom: 35px;
+    padding-bottom: 0;
   }
   
   #container {
