@@ -113,7 +113,7 @@
     "our_products_btn": "Découvrir nos produits",
     "our_products_aria": "Découvrir nos produits",
     "about_btn": "À propos",
-    "discover_btn": "Découvrir nos Produits",
+    "discover_btn": "Découvrir plus",
     "meet_founder_btn": "Rencontrer la Fondatrice",
     "about_aria": "Ouvrir la fenêtre à propos",
     "close": "Fermer",
@@ -260,31 +260,31 @@
     "title": "Innovation, étape par étape",
     "description": "Découvrez comment Carteron Industries réinvente le golf avec un chariot poussette hybride motorisé 2-en-1, pensé pour les parents passionnés de ce sport. Actuellement en développement, cette solution est pensée pour les parents qui veulent profiter du golf sans renoncer aux moments passés en famille. Notre approche encourage les clubs à adopter de nouvelles solutions qui attirent des joueurs variés, soutiennent les parents et rendent ce sport accessible pour toute les générations.",
     "step1": {
-      "title": "💡 Idée & étude de marché",
+      "title": "Idée & étude de marché",
       "desc": "Identification d'un besoin réel chez les familles golfeuses."
     },
     "step2": {
-      "title": "✏️ Conception & design du concept",
+      "title": "Conception & design du concept",
       "desc": "Définition des fonctionnalités principales et premières maquettes."
     },
     "step3": {
-      "title": "🛠️ Prototype & développement technique (phase actuelle)",
+      "title": "Prototype & développement technique (phase actuelle)",
       "desc": "Réalisation du premier prototype fonctionnel."
     },
     "step4": {
-      "title": "⛳ Tests terrain avec clubs partenaires",
+      "title": "Tests terrain avec clubs partenaires",
       "desc": "Évaluations pratiques en conditions réelles sur parcours."
     },
     "step5": {
-      "title": "✅ Certification & conformité sécurité",
+      "title": "Certification & conformité sécurité",
       "desc": "Validation aux normes de puériculture et équipements sportifs."
     },
     "step6": {
-      "title": "🚀 Pré-lancement commercial",
+      "title": "Pré-lancement commercial",
       "desc": "Présentation aux investisseurs, clubs de golf et familles pilotes."
     },
     "step7": {
-      "title": "🎯 Lancement officiel",
+      "title": "Lancement officiel",
       "desc": "Mise sur le marché et premières livraisons."
     }
   },

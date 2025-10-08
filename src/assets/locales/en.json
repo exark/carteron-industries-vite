@@ -113,7 +113,7 @@
     "our_products_btn": "Discover Our Products",
     "our_products_aria": "Discover our products",
     "about_btn": "About",
-    "discover_btn": "Discover Our Products",
+    "discover_btn": "Discover more",
     "meet_founder_btn": "Meet the Founder",
     "about_aria": "Open about window",
     "close": "Close",
@@ -260,31 +260,31 @@
     "title": "Innovation, Step by Step",
     "description": "Discover how Carteron Industries is reinventing golf with a motorized 2-in-1 hybrid golf stroller, designed for parents passionate about the sport. Currently in development, this solution is made for parents who want to enjoy golf without giving up precious family time. Our approach encourages golf clubs to adopt new solutions that attract a wider range of players, support parents, and make the sport accessible to every generation.",
     "step1": {
-      "title": "💡 Idea & Market Research",
+      "title": "Idea & Market Research",
       "desc": "Identifying a real need among golfing families."
     },
     "step2": {
-      "title": "✏️ Concept Design & Development",
+      "title": "Concept Design & Development",
       "desc": "Defining key features and creating initial mockups."
     },
     "step3": {
-      "title": "🛠️ Prototype & Technical Development (current phase)",
+      "title": "Prototype & Technical Development (current phase)",
       "desc": "Creating the first functional prototype."
     },
     "step4": {
-      "title": "⛳ Field Testing with Partner Clubs",
+      "title": "Field Testing with Partner Clubs",
       "desc": "Practical evaluations in real course conditions."
     },
     "step5": {
-      "title": "✅ Safety Certification & Compliance",
+      "title": "Safety Certification & Compliance",
       "desc": "Validation against childcare and sports equipment standards."
     },
     "step6": {
-      "title": "🚀 Pre-launch Phase",
+      "title": "Pre-launch Phase",
       "desc": "Presentations to investors, golf clubs, and pilot families."
     },
     "step7": {
-      "title": "🎯 Official Launch",
+      "title": "Official Launch",
       "desc": "Market release and first deliveries."
     }
   },

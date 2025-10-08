@@ -1,4 +1,13 @@
 /* TopHero Component Styles */
+
+/* Custom font declaration */
+@font-face {
+  font-family: 'Entirely';
+  src: url('/Entirely.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 .top-hero-container {
   position: relative;
   width: 100%;
@@ -28,18 +37,18 @@
 }
 
 .top-hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  max-width: 1400px;
-  width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  max-width: 800px;
+  width: 100%;
   margin-bottom: 4rem;
 }
 
 .top-hero-text {
   color: white;
-  text-align: left;
+  text-align: center;
+  width: 100%;
 }
 
 .top-hero-title {
@@ -51,7 +60,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-family: 'Entirely', var(--font-family-primary), Arial, sans-serif;
 }
 
 .top-hero-subtitle {
@@ -67,7 +76,9 @@
   line-height: 1.6;
   color: #ffffff;
   margin-bottom: 2rem;
-  max-width: 450px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   font-family: var(--font-family-body);
 }
 
@@ -332,13 +343,6 @@
     min-width: 140px;
   }
   
-  .top-hero-logo-container {
-    padding: 1rem;
-  }
-  
-  .top-hero-logo {
-    max-width: 120px;
-  }
   
   .scroll-indicator {
     display: none;
@@ -370,9 +374,6 @@
     max-width: 250px;
   }
   
-  .top-hero-logo {
-    max-width: 100px;
-  }
   
   .scroll-indicator {
     display: none;

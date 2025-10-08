@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./steps2.css";
 import { useTranslation } from "react-i18next";
@@ -27,6 +27,7 @@ const stepImages = [
 
 const Steps2 = ({ rootClassName = "" }) => {
   const { t } = useTranslation();
+  const containerRef = useRef(null);
 
   const stepsData = stepsKeys.map((key, idx) => ({
     id: key,
@@ -35,8 +36,30 @@ const Steps2 = ({ rootClassName = "" }) => {
     img: stepImages[idx],
   }));
 
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        containerRef.current.style.setProperty('--mouse-x', `${x}%`);
+        containerRef.current.style.setProperty('--mouse-y', `${y}%`);
+      }
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('mousemove', handleMouseMove);
+      return () => container.removeEventListener('mousemove', handleMouseMove);
+    }
+  }, []);
+
   return (
-    <div className={`steps2-container1 thq-section-padding full-width-bg ${rootClassName}`}> 
+    <div 
+      ref={containerRef}
+      className={`steps2-container1 thq-section-padding full-width-bg ${rootClassName}`}
+    > 
       <div className="steps2-max-width thq-section-max-width">
         <div className="steps2-section-header">
           <h2 className="thq-heading-2 whityyy">{t('steps.title')}</h2>

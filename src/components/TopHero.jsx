@@ -34,22 +34,15 @@ const TopHero = () => {
       <div className="top-hero-overlay">
         <div className="top-hero-content">
           <div className="top-hero-text">
+            <h1 className="top-hero-title">
+              {t('home.title', 'Carteron Industries')}
+            </h1>
             <p className="top-hero-subtitle">
               {t('carousel.side_title', 'An Innovation Serving Golf and Family')}
             </p>
             <p className="top-hero-description">
               {t('carousel.side_desc', 'Driven by innovation, Carteron Industries creates solutions at the crossroads of sport, family, and technology. We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely. Our motorized hybrid solution, currently in development, is specifically adapted to golf courses, combining sporting leisure with family life.')}
             </p>
-          </div>
-          
-          <div className="top-hero-visual">
-            <div className="top-hero-logo-container">
-              <img 
-                src="/images/BTPG.jpg" 
-                alt="Carteron Industries Logo"
-                className="top-hero-logo"
-              />
-            </div>
           </div>
         </div>
         
@@ -61,7 +54,7 @@ const TopHero = () => {
             <span></span>
           </div>
           <p className="scroll-text">
-            {t('carousel.discover_btn', 'Discover Our Products')}
+            {t('carousel.discover_btn', 'Discover more')}
           </p>
         </div>
       </div>
