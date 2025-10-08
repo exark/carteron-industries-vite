@@ -20,5 +20,11 @@
         }
       ]
     }
-  ]
+  ],
+  "analytics": {
+    "enable": false
+  },
+  "speedInsights": {
+    "enable": false
+  }
 }

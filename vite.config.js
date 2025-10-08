@@ -5,10 +5,20 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    sourcemap: true, // Enable source maps for better debugging
+    sourcemap: process.env.NODE_ENV === 'development', // Source maps only in development
+    minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: false, // Keep console logs for Speed Insights
+        drop_console: process.env.NODE_ENV === 'production', // Remove console logs in production
+        drop_debugger: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+        },
       },
     },
   },
