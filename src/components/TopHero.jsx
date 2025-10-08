@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import './TopHero.css';
+import '../assets/fonts/fonts.css';
 
 const TopHero = () => {
   const { t } = useTranslation();

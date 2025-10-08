@@ -1,14 +1,4 @@
 /* TopHero Component Styles */
-
-/* Custom font declaration */
-@font-face {
-  font-family: 'Entirely';
-  src: url('../assets/fonts/Entirely.ttf') format('truetype'),
-       url('/Entirely.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 .top-hero-container {
   position: relative;
   width: 100%;
