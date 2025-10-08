@@ -3,7 +3,8 @@
 /* Custom font declaration */
 @font-face {
   font-family: 'Entirely';
-  src: url('/Entirely.ttf') format('truetype');
+  src: url('../assets/fonts/Entirely.ttf') format('truetype'),
+       url('/Entirely.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
