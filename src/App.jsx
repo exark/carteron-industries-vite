@@ -6,6 +6,7 @@ import {
   Navigate,
   useLocation,
 } from 'react-router-dom'
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 import Contact from './views/contact'
 import Home from './views/home'
@@ -61,6 +62,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <AppContent />
+      <SpeedInsights />
     </BrowserRouter>
   )
 }

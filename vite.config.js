@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     terserOptions: {
       compress: {
-        drop_console: true,
+        drop_console: false, // Keep console logs for Speed Insights
       },
     },
   },
