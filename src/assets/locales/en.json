@@ -47,7 +47,6 @@
     "title": "Contact Form",
     "desc": "Our team will get back to you as soon as possible.",
     "send_message": "Send Message",
-    "left_caption": "Get in touch with our team! We're here to support all your projects.",
     "email_error_send": "Error sending message. Please try again."
   },
   "privacy": {

@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 64px 0 32px; /* Increased top padding to 64px */
+  padding: 20px 0 32px; /* Reduced top padding to 20px */
   position: relative;
   background-color: #ffffff;
 }
@@ -46,6 +46,8 @@
     /* soft brown shadow */ 0 1.5px 10px 0 rgba(80, 82, 166, 0.12); /* beige highlight */
   border-radius: 18px; /* optional: smooth corners */
   border: 1.5px solid #000000; /* subtle blue border */
+  transform: scale(0.85);
+  transform-origin: center;
 }
 
 .contact-form3-imgbox {
@@ -60,7 +62,7 @@
 
 .contact-form3-img {
   width: 100%;
-  max-width: 400px;
+  max-width: 550px;
   border-radius: 14px;
   box-shadow: 0 2px 16px rgba(11,34,68,0.10);
   border: 1.5px solid #e0e0e0;
