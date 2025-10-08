@@ -291,7 +291,13 @@
   },
   "contact10": {
     "heading1": "Contact Us",
-    "content1": "Feel free to contact us for any questions or collaborations.",
+    "content1": "We are currently looking for partners and investors to make this promising project a reality.",
+    "investor_title": "Are you an investor?",
+    "investor_text": "Are you an investor and find the concept original? Join us and become an actor by investing in the development of the first prototype of our innovative product.",
+    "golf_club_title": "Are you a golf club?",
+    "golf_club_text": "You can help us by becoming a pilot golf club and accompany us in testing our prototype in a real golf course environment.",
+    "golf_family_title": "Are you a golfing family?",
+    "golf_family_text": "Become our pilot golfing family, accompany us in discovering the product and share your feelings by testing our 2-in-1 golf cart stroller.",
     "location2": "Email: carteron.industries@gmail.com",
     "location2Description": "Send us an email for any questions or proposals.",
     "get_directions": "Send Email"

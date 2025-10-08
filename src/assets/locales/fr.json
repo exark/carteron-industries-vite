@@ -291,7 +291,13 @@
   },
   "contact10": {
     "heading1": "Contactez-nous",
-    "content1": "N'hésitez pas à nous contacter pour toute question ou collaboration.",
+    "content1": "Nous recherchons aujourd'hui des partenaires et des investisseurs pour concrétiser ce projet prometteur.",
+    "investor_title": "Vous êtes un investisseur ?",
+    "investor_text": "Vous êtes un investisseur et trouvez le concept original ? Rejoignez nous et devenez acteur en investissant dans le développement du premier prototype de notre produit innovant.",
+    "golf_club_title": "Vous êtes un club de golf ?",
+    "golf_club_text": "Vous pouvez nous aider en devenant un clubs de golf pilote et nous accompagner à tester notre prototype dans un environnement réel d'un parcours de golf.",
+    "golf_family_title": "Vous êtes une famille golfeur ?",
+    "golf_family_text": "Devenez notre famille de golfeur pilote, accompagnez nous en découvrant le produit et nous faire part de vos ressenti en testant notre chariot de golf poussette 2 en 1.",
     "location2": "Email : carteron.industries@gmail.com",
     "location2Description": "Envoyez-nous un email pour toute question ou proposition.",
     "get_directions": "Envoyer email"

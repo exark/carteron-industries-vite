@@ -145,6 +145,47 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Partnership Section Styles */
+.contact10-partnership-section {
+  margin-top: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  width: 100%;
+  max-width: 800px;
+}
+
+.contact10-partnership-item {
+  background: var(--neutral-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--neutral-gray-200);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.contact10-partnership-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact10-partnership-item h3 {
+  font-size: var(--font-size-xl);
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary-blue);
+  margin-bottom: var(--space-md);
+  text-align: left;
+}
+
+.contact10-partnership-item p {
+  font-size: var(--font-size-base);
+  color: var(--neutral-gray-600);
+  line-height: var(--line-height-relaxed);
+  text-align: left;
+  margin: 0;
+}
+
 @media (max-width: 991px) {
   .contact10-max-width {
     padding: 0 var(--space-md);
@@ -178,6 +219,24 @@
     font-size: var(--font-size-lg);
     word-break: break-all;
   }
+  
+  .contact10-partnership-section {
+    margin-top: var(--space-xl);
+    gap: var(--space-lg);
+  }
+  
+  .contact10-partnership-item {
+    padding: var(--space-lg);
+  }
+  
+  .contact10-partnership-item h3 {
+    font-size: var(--font-size-lg);
+    text-align: center;
+  }
+  
+  .contact10-partnership-item p {
+    text-align: center;
+  }
 }
 
 @media (max-width: 767px) {
@@ -197,5 +256,19 @@
   }
   .contact10-text14 {
     font-size: var(--font-size-base);
+  }
+  
+  .contact10-partnership-section {
+    margin-top: var(--space-lg);
+    gap: var(--space-md);
+  }
+  
+  .contact10-partnership-item {
+    padding: var(--space-md);
+  }
+  
+  .contact10-partnership-item h3 {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-sm);
   }
 }

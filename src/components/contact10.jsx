@@ -16,6 +16,22 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
           <div className="contact10-content2">
             <h2 className="thq-heading-2">{t('contact10.heading1')}</h2>
             <p className="thq-body-large">{t('contact10.content1')}</p>
+            <div className="contact10-partnership-section">
+              <div className="contact10-partnership-item">
+                <h3 className="thq-heading-3">{t('contact10.investor_title')}</h3>
+                <p className="thq-body-large">{t('contact10.investor_text')}</p>
+              </div>
+              
+              <div className="contact10-partnership-item">
+                <h3 className="thq-heading-3">{t('contact10.golf_club_title')}</h3>
+                <p className="thq-body-large">{t('contact10.golf_club_text')}</p>
+              </div>
+              
+              <div className="contact10-partnership-item">
+                <h3 className="thq-heading-3">{t('contact10.golf_family_title')}</h3>
+                <p className="thq-body-large">{t('contact10.golf_family_text')}</p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="contact10-content3 thq-flex-row">
