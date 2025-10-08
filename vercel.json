@@ -20,5 +20,8 @@
         }
       ]
     }
-  ]
+  ],
+  "speedInsights": {
+    "enable": true
+  }
 }
