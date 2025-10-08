@@ -43,15 +43,14 @@
 }
 
 .top-hero-title {
-  font-size: 4rem;
-  font-weight: 800;
-  line-height: 1.1;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   background: linear-gradient(135deg, #ffffff 0%, #e8f4f8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-family: 'Entirely', var(--font-family-primary), Arial, sans-serif;
+  font-family: var(--font-family-primary);
+  text-transform: uppercase;
 }
 
 .top-hero-subtitle {
