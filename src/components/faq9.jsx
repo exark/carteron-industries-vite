@@ -222,7 +222,7 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
                 </div>
                 <div className={`faq9-answer ${isVisible ? 'faq9-answer-visible' : ''}`}>
                   <div className={containerClass}>
-                    <span className="thq-body-small">
+                    <span className="thq-body-small" style={{ whiteSpace: 'pre-line' }}>
                       {faqItem.answer}
                     </span>
                   </div>
