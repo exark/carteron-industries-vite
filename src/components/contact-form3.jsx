@@ -175,6 +175,9 @@ export default function ContactForm3() {
               alt="Contact entreprise"
               className="contact-form3-img"
             />
+            <Typography className="contact-form3-partnership-text">
+              {t('contact_form.partnership_text', 'Nous recherchons aujourd\'hui des partenaires et des investisseurs pour concrétiser ce projet prometteur. N\'hésitez pas à nous contacter pour toute question ou collaboration.')}
+            </Typography>
           </div>
         </Fade>
 

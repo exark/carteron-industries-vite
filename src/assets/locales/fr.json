@@ -47,7 +47,8 @@
     "title": "Formulaire de contact",
     "desc": "Notre équipe vous répondra dans les plus brefs délais.",
     "send_message": "Envoyer le message",
-    "email_error_send": "Erreur lors de l'envoi du message. Veuillez réessayer."
+    "email_error_send": "Erreur lors de l'envoi du message. Veuillez réessayer.",
+    "partnership_text": "Nous recherchons aujourd'hui des partenaires et des investisseurs pour concrétiser ce projet prometteur. N'hésitez pas à nous contacter pour toute question ou collaboration."
   },
   "privacy": {
     "title": "Politique de confidentialité",
@@ -352,8 +353,7 @@
   },
   "products": {
     "golf_trolley_hybrid": {
-      "title": "Poussette & Chariot Golf Hybride 2-en-1",
-      "subtitle": "Version Premium",
+      "title": "BTPG",
       "description": "Une innovation révolutionnaire qui combine parfaitement les fonctions d'une poussette haut de gamme et d'un chariot de golf motorisé. Conçu pour les parents actifs qui ne veulent pas choisir entre leur passion pour le golf et le temps passé avec leurs enfants.",
       "features": {
         "rapid_transformation": "Transformation rapide poussette/chariot",
@@ -377,8 +377,7 @@
       }
     },
     "motorized_golf_trolley": {
-      "title": "Chariots de Golf Électriques",
-      "subtitle": "Version Standard",
+      "title": "BTPG NAV",
       "description": "Conçus pour les golfeurs exigeants, nos chariots électriques allient performance, autonomie et ergonomie. Développés avec une motorisation silencieuse et une navigation intuitive, ils améliorent l'expérience sur le green.",
       "features": {
         "silent_motor": "Motorisation silencieuse",

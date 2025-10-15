@@ -47,7 +47,8 @@
     "title": "Contact Form",
     "desc": "Our team will get back to you as soon as possible.",
     "send_message": "Send Message",
-    "email_error_send": "Error sending message. Please try again."
+    "email_error_send": "Error sending message. Please try again.",
+    "partnership_text": "We are currently seeking partners and investors to bring this promising project to life. Feel free to contact us with any questions or collaboration opportunities."
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -352,8 +353,7 @@
   },
   "products": {
     "golf_trolley_hybrid": {
-      "title": "2-in-1 Stroller & Golf Trolley Hybrid",
-      "subtitle": "Premium Version",
+      "title": "BTPG",
       "description": "A revolutionary innovation that perfectly combines the functions of a high-end stroller and a motorized golf trolley. Designed for active parents who don't want to choose between their passion for golf and time spent with their children.",
       "features": {
         "rapid_transformation": "Quick stroller/trolley transformation",
@@ -377,8 +377,7 @@
       }
     },
     "motorized_golf_trolley": {
-      "title": "Motorized Golf Trolleys",
-      "subtitle": "Standard Version",
+      "title": "BTPG NAV",
       "description": "Designed for demanding golfers, our electric trolleys combine performance, autonomy and ergonomics. Developed with silent motorization and intuitive navigation, they enhance the experience on the green.",
       "features": {
         "silent_motor": "Silent motorization",

@@ -252,6 +252,7 @@ export default function OurProduct() {
   // Handle video loading for Chrome compatibility
   useEffect(() => {
     const video = videoRef.current;
+    videoRef.current.playbackRate = 1.5;
     const fallback = document.querySelector('.video-fallback');
     
     if (video && fallback) {

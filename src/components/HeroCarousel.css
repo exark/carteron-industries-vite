@@ -2275,3 +2275,136 @@
     font-size: 18px;
   }
 }
+
+/* Carousel Plus Indicator */
+.carousel-plus-indicator {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+  pointer-events: none; /* Allow clicks to pass through to the slide */
+}
+
+/* Animated outline circle */
+.carousel-plus-indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.carousel-plus-indicator svg {
+  color: #3E6AE1;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-carousel-slide:hover .carousel-plus-indicator {
+  transform: scale(1.15);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-carousel-slide:hover .carousel-plus-indicator::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.hero-carousel-slide:hover .carousel-plus-indicator svg {
+  transform: rotate(90deg);
+}
+
+/* Responsive adjustments for plus indicator */
+@media (max-width: 1200px) {
+  .carousel-plus-indicator {
+    width: 34px;
+    height: 34px;
+    top: 14px;
+    right: 14px;
+  }
+  
+  .carousel-plus-indicator::before {
+    width: 46px;
+    height: 46px;
+  }
+  
+  .carousel-plus-indicator svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .carousel-plus-indicator {
+    width: 32px;
+    height: 32px;
+    top: 12px;
+    right: 12px;
+  }
+  
+  .carousel-plus-indicator::before {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .carousel-plus-indicator svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-plus-indicator {
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .carousel-plus-indicator::before {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .carousel-plus-indicator svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-plus-indicator {
+    width: 28px;
+    height: 28px;
+    top: 8px;
+    right: 8px;
+  }
+  
+  .carousel-plus-indicator::before {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carousel-plus-indicator svg {
+    width: 12px;
+    height: 12px;
+  }
+}

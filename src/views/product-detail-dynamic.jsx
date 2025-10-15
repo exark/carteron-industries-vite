@@ -140,18 +140,6 @@ export default function ProductDetailDynamic() {
               >
                 {t(`${product.translationKey}.title`, 'Product Title')}
               </Typography>
-              
-              <Typography
-                variant="h5"
-                sx={{
-                  color: '#1976d2',
-                  fontWeight: 600,
-                  mb: 3
-                }}
-              >
-                {t(`${product.translationKey}.subtitle`, 'Product Subtitle')}
-              </Typography>
-              
               <Typography
                 variant="body1"
                 sx={{
