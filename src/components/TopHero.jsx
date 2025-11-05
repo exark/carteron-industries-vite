@@ -38,12 +38,14 @@ const TopHero = () => {
             <h1 className="top-hero-title">
               {t('home.title', 'Carteron Industries')}
             </h1>
-            <p className="top-hero-subtitle">
-              {t('carousel.side_title', 'An Innovation Serving Golf and Family')}
-            </p>
-            <p className="top-hero-description">
-              {t('carousel.side_desc', 'Driven by innovation, Carteron Industries creates solutions at the crossroads of sport, family, and technology. We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely. Our motorized hybrid solution, currently in development, is specifically adapted to golf courses, combining sporting leisure with family life.')}
-            </p>
+            <div className="top-hero-glass">
+              <p className="top-hero-subtitle">
+                {t('carousel.side_title', 'An Innovation Serving Golf and Family')}
+              </p>
+              <p className="top-hero-description">
+                {t('carousel.side_desc', 'Driven by innovation, Carteron Industries creates solutions at the crossroads of sport, family, and technology. We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely. Our motorized hybrid solution, currently in development, is specifically adapted to golf courses, combining sporting leisure with family life.')}
+              </p>
+            </div>
           </div>
         </div>
         

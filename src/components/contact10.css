@@ -173,7 +173,7 @@
   font-weight: var(--font-weight-semibold);
   border-radius: var(--radius-lg);
   padding: var(--space-xs) var(--space-lg);
-  background: #A4BD01;
+  background: var(--primary-blue); 
   color: var(--neutral-white);
   border: none;
   box-shadow: var(--shadow-sm);
@@ -183,7 +183,7 @@
 }
 
 .contact10-container5 a:hover {
-  background: #679436;
+  background: var(--primary-blue-light);
   color: var(--neutral-white);
   box-shadow: var(--shadow-md);
 }
