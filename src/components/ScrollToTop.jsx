@@ -1,55 +1,56 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import './ScrollToTop.css';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const scrollElementRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
-    let scrollElement = null;
-    
     const toggleVisibility = () => {
-      const mainContent = document.getElementById('main-content');
-      const scrollY = mainContent ? mainContent.scrollTop : window.scrollY;
+      let scrollY = 0;
       
-      if (scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      if (scrollElementRef.current === window) {
+        scrollY = window.scrollY;
+      } else if (scrollElementRef.current) {
+        scrollY = scrollElementRef.current.scrollTop;
       }
+      
+      setIsVisible(scrollY > 300);
     };
 
+    // Wait for DOM to be ready
     const timer = setTimeout(() => {
       const mainContent = document.getElementById('main-content');
       
       if (mainContent) {
-        scrollElement = mainContent;
+        scrollElementRef.current = mainContent;
         mainContent.addEventListener('scroll', toggleVisibility);
       } else {
-        scrollElement = window;
+        scrollElementRef.current = window;
         window.addEventListener('scroll', toggleVisibility);
       }
       
       toggleVisibility();
-    }, 100);
+    }, 300);
 
     return () => {
       clearTimeout(timer);
-      if (scrollElement) {
-        scrollElement.removeEventListener('scroll', toggleVisibility);
+      if (scrollElementRef.current) {
+        scrollElementRef.current.removeEventListener('scroll', toggleVisibility);
       }
     };
-  }, []);
+  }, [location.pathname]);
 
   const scrollToTop = () => {
-    const mainContent = document.getElementById('main-content');
-    
-    if (mainContent) {
-      mainContent.scrollTo({
+    if (scrollElementRef.current === window) {
+      window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-    } else {
-      window.scrollTo({
+    } else if (scrollElementRef.current) {
+      scrollElementRef.current.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
