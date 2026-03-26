@@ -5,6 +5,8 @@ const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    let scrollElement = null;
+    
     const toggleVisibility = () => {
       const mainContent = document.getElementById('main-content');
       const scrollY = mainContent ? mainContent.scrollTop : window.scrollY;
@@ -16,32 +18,25 @@ const ScrollToTop = () => {
       }
     };
 
-    const setupScrollListener = () => {
+    const timer = setTimeout(() => {
       const mainContent = document.getElementById('main-content');
       
       if (mainContent) {
+        scrollElement = mainContent;
         mainContent.addEventListener('scroll', toggleVisibility);
-        toggleVisibility();
-        return () => mainContent.removeEventListener('scroll', toggleVisibility);
       } else {
+        scrollElement = window;
         window.addEventListener('scroll', toggleVisibility);
-        toggleVisibility();
-        return () => window.removeEventListener('scroll', toggleVisibility);
       }
-    };
-
-    const timer = setTimeout(() => {
-      const cleanup = setupScrollListener();
-      return cleanup;
+      
+      toggleVisibility();
     }, 100);
 
     return () => {
       clearTimeout(timer);
-      const mainContent = document.getElementById('main-content');
-      if (mainContent) {
-        mainContent.removeEventListener('scroll', toggleVisibility);
+      if (scrollElement) {
+        scrollElement.removeEventListener('scroll', toggleVisibility);
       }
-      window.removeEventListener('scroll', toggleVisibility);
     };
   }, []);
 

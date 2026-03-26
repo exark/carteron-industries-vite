@@ -44,7 +44,7 @@ const TopHero = () => {
           </p>
           
           <button className="top-hero-cta" onClick={handleProductsClick}>
-            {t('carousel.products_btn', 'Explore Products')}
+            {t('carousel.our_products_btn', 'Discover Our Products')}
             <ArrowRight size={18} />
           </button>
         </div>
