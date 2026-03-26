@@ -138,7 +138,7 @@ const Navbar81 = (props) => {
             {/* Logo */}
             <div className="navbar-logo">
               <a href="/home" onClick={handleLogoClick}>
-                <img src="/images/Carteron_Industries_Transparent.webp" alt="Carteron Industries" className="navbar81-logo-image" />
+                <img src="/images/LOGO.png" alt="Carteron Industries" className="navbar81-logo-image" />
               </a>
             </div>
           </div>

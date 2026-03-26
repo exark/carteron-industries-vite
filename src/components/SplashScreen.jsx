@@ -32,7 +32,7 @@ const SplashScreen = ({ children }) => {
         <div className="splash-screen">
           <div className="splash-content">
             <img 
-              src="/images/Carteron_Industries_Transparent.webp" 
+              src="/images/LOGO.png" 
               alt="Carteron Industries Logo" 
               className="splash-logo"
             />

@@ -1,1 +1,8 @@
-/* No custom fonts - Using system fonts defined in CSS variables */
+/* Custom Fonts */
+@font-face {
+  font-family: 'Tesla';
+  src: url('./TESLA.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

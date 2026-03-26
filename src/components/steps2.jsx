@@ -73,27 +73,23 @@ const Steps2 = ({ rootClassName = "" }) => {
             <motion.div
               key={step.id}
               className="stepRow"
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -60 }}
-              viewport={{ amount: 0.3, once: false }}
+              viewport={{ amount: 0.2, once: true }}
               transition={{ 
-                duration: 0.8, 
-                ease: "easeOut",
-                delay: 0.1
+                duration: 0.4, 
+                ease: "easeOut"
               }}
             >
               {/* Image à gauche */}
               <motion.div 
                 className="stepImage"
-                initial={{ opacity: 0, x: -50, scale: 0.9 }}
-                whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                exit={{ opacity: 0, x: -50, scale: 0.9 }}
-                viewport={{ amount: 0.4, once: false }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ amount: 0.3, once: true }}
                 transition={{ 
-                  duration: 0.7, 
-                  ease: "easeOut",
-                  delay: 0.2
+                  duration: 0.3, 
+                  ease: "easeOut"
                 }}
               >
                 <img
@@ -110,14 +106,12 @@ const Steps2 = ({ rootClassName = "" }) => {
               {/* Contenu à droite */}
               <motion.div 
                 className="stepContent"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 50 }}
-                viewport={{ amount: 0.4, once: false }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ amount: 0.3, once: true }}
                 transition={{ 
-                  duration: 0.7, 
-                  ease: "easeOut",
-                  delay: 0.4
+                  duration: 0.3, 
+                  ease: "easeOut"
                 }}
               >
                 <h3>{step.title}</h3>

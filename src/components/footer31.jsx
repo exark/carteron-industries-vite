@@ -26,7 +26,7 @@ const Footer31 = () => {
         <div className="footer-main">
           <div className="footer-brand">
             <img
-              src="/images/Carteron_Industries_Transparent.webp"
+              src="/images/LOGO.png"
               alt="Carteron Industries Logo"
               className="footer-logo"
             />
