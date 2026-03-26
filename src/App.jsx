@@ -47,14 +47,18 @@ const AppContent = () => {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <ScrollToTop />
     </>
   );
 
-  return shouldShowSplash ? (
-    <SplashScreen>{routes}</SplashScreen>
-  ) : (
-    routes
+  return (
+    <>
+      {shouldShowSplash ? (
+        <SplashScreen>{routes}</SplashScreen>
+      ) : (
+        routes
+      )}
+      <ScrollToTop />
+    </>
   );
 };
 
