@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./steps2.css";
 import { useTranslation } from "react-i18next";
@@ -28,6 +28,7 @@ const stepImages = [
 const Steps2 = ({ rootClassName = "" }) => {
   const { t } = useTranslation();
   const containerRef = useRef(null);
+  const [activeStep, setActiveStep] = useState(0);
 
   const stepsData = stepsKeys.map((key, idx) => ({
     id: key,
@@ -55,6 +56,31 @@ const Steps2 = ({ rootClassName = "" }) => {
     }
   }, []);
 
+  useEffect(() => {
+    const stepElements = document.querySelectorAll('.stepRow');
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+            const index = Array.from(stepElements).indexOf(entry.target);
+            setActiveStep(index);
+          }
+        });
+      },
+      {
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+        rootMargin: '-20% 0px -20% 0px'
+      }
+    );
+
+    stepElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      stepElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <div 
       ref={containerRef}
@@ -70,23 +96,18 @@ const Steps2 = ({ rootClassName = "" }) => {
         
         <div className="stepsSequence">
           {stepsData.map((step, i) => (
-            <motion.div
+            <div
               key={step.id}
-              className="stepRow"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.2, once: true }}
-              transition={{ 
-                duration: 0.4, 
-                ease: "easeOut"
-              }}
+              className={`stepRow ${activeStep === i ? 'active' : ''}`}
             >
               {/* Image à gauche */}
               <motion.div 
                 className="stepImage"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ amount: 0.3, once: true }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ 
+                  opacity: activeStep === i ? 1 : 0.5,
+                  scale: activeStep === i ? 1 : 0.97
+                }}
                 transition={{ 
                   duration: 0.3, 
                   ease: "easeOut"
@@ -106,18 +127,20 @@ const Steps2 = ({ rootClassName = "" }) => {
               {/* Contenu à droite */}
               <motion.div 
                 className="stepContent"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ amount: 0.3, once: true }}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ 
+                  opacity: activeStep === i ? 1 : 0.3,
+                  x: activeStep === i ? 0 : 30
+                }}
                 transition={{ 
-                  duration: 0.3, 
+                  duration: 0.6, 
                   ease: "easeOut"
                 }}
               >
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
               </motion.div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -6,10 +6,12 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: calc(var(--space-4xl) * 1.5) 0 var(--space-4xl);
+  padding: 0;
   position: relative;
   margin-top: 0;
-  overflow: hidden;
+  overflow-y: auto;
+  height: auto;
+  min-height: 100vh;
   background: linear-gradient(
     135deg,
     #f8fafc 0%,
@@ -67,7 +69,12 @@
 
 .steps2-section-header {
   text-align: center;
-  margin-bottom: var(--space-3xl);
+  padding: 60px 20px 40px;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .steps2-section-header h2 {
@@ -93,10 +100,11 @@
 .stepsSequence {
   display: flex;
   flex-direction: column;
-  gap: clamp(80px, 8vw, 120px);
+  gap: 0;
   max-width: 1200px;
   margin: 0 auto;
-  padding: clamp(40px, 6vw, 80px) 0;
+  padding: 0;
+  width: 100%;
 }
 
 /* Ligne d'étape (image + contenu) */
@@ -105,12 +113,22 @@
   grid-template-columns: 1fr 1.2fr;
   gap: clamp(40px, 6vw, 80px);
   align-items: center;
-  min-height: 400px;
+  min-height: 100vh;
+  padding: 60px clamp(20px, 5vw, 80px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 /* Alternance des étapes (paires à droite) */
 .stepRow:nth-child(even) {
   grid-template-columns: 1.2fr 1fr;
+}
+
+.stepRow.active {
+  opacity: 1;
+}
+
+.stepRow:not(.active) {
+  opacity: 0.4;
 }
 
 .stepRow:nth-child(even) .stepImage {
@@ -198,11 +216,17 @@
     display: none;
   }
 
+  .steps2-section-header {
+    padding: 40px 20px;
+    min-height: 50vh;
+  }
+
   .stepRow {
     grid-template-columns: 1fr !important;
     gap: clamp(30px, 5vw, 50px);
     text-align: center;
-    min-height: auto;
+    min-height: 100vh;
+    padding: 50px 20px;
   }
   
   .stepRow:nth-child(even) .stepImage {
@@ -244,10 +268,17 @@
   }
   
   .steps2-container1 {
-    padding: var(--space-md) 0;
-    overflow: hidden;
+    padding: 0;
+    overflow-y: auto;
     width: 100%;
     max-width: 100vw;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .steps2-section-header {
+    padding: 30px 15px;
+    min-height: 40vh;
   }
   
   .steps2-max-width {
@@ -256,8 +287,8 @@
   }
   
   .stepsSequence {
-    gap: clamp(30px, 5vw, 50px);
-    padding: clamp(10px, 2vw, 20px) 0;
+    gap: 0;
+    padding: 0;
     overflow: hidden;
     position: relative;
   }
@@ -277,10 +308,11 @@
   
   /* Éliminer tout débordement sur mobile */
   .stepRow {
-    min-height: auto;
+    min-height: 100vh;
     overflow: hidden;
     position: relative;
     contain: layout;
+    padding: 40px 15px;
   }
   
   /* Limiter les animations sur mobile pour éviter le scroll */
