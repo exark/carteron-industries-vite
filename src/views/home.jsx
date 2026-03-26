@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 import Navbar81 from "../components/navbar81";
 import Features25 from "../components/features25";

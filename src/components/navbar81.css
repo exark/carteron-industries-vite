@@ -224,7 +224,7 @@
 }
 
 .navbar81-logo-image {
-  height: 95px; /* Increased from 60px */
+  height: 130px;
   transition: all 0.3s ease;
   display: block;
   background: transparent;
@@ -282,7 +282,7 @@
   }
   
   .navbar81-logo-image {
-    height: 95px;
+    height: 110px;
   }
   
   #content-front {
@@ -290,7 +290,7 @@
   }
   
   #container {
-    padding-top: 95px; /* Adjusted for larger navbar */
+    padding-top: 110px; /* Adjusted for larger navbar */
   }
   
   #main-content.tilt #content-front {
@@ -337,7 +337,7 @@
   }
   
   .navbar81-logo-image {
-    height: 85px;
+    height: 100px;
   }
   
   #content-front {
@@ -345,7 +345,7 @@
   }
   
   #container {
-    padding-top: 85px; /* Adjusted for larger navbar */
+    padding-top: 100px; /* Adjusted for larger navbar */
   }
   
   #main-content.tilt #content-front {
@@ -388,7 +388,7 @@
   }
   
   .navbar81-logo-image {
-    height: 80px;
+    height: 95px;
   }
   
   #content-front {
@@ -396,7 +396,7 @@
   }
   
   #container {
-    padding-top: 80px; /* Adjusted for larger navbar */
+    padding-top: 95px; /* Adjusted for larger navbar */
   }
   
   #main-content.tilt #content-front {
