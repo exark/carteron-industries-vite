@@ -30,7 +30,7 @@ const TopHero = () => {
         <div className="top-hero-content">
           <div className="top-hero-title">
             <img 
-              src="/images/Logo-text.webp" 
+              src="/images/LOGO.png" 
               alt="Carteron Industries"
               draggable="false"
               style={{ pointerEvents: 'none', userSelect: 'none' }}
@@ -59,11 +59,19 @@ const TopHero = () => {
               />
             </div>
           </div>
-          <div className="grid-image grid-small-bottom">
+          <div className="grid-image grid-medium">
             <div>
               <img 
                 src="/images/golf_image_1.webp" 
                 alt="Golf Course"
+              />
+            </div>
+          </div>
+          <div className="grid-image grid-small-bottom">
+            <div>
+              <img 
+                src="/images/couple-jouant-au-golf-ensemble.webp" 
+                alt="Golf Together"
               />
             </div>
           </div>

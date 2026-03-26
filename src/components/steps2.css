@@ -116,20 +116,13 @@
   align-items: center;
   min-height: 60vh;
   padding: 20px clamp(20px, 5vw, 80px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 1;
+  transition: transform 0.3s ease;
 }
 
 /* Alternance des étapes (paires à droite) */
 .stepRow:nth-child(even) {
   grid-template-columns: 1.2fr 1fr;
-}
-
-.stepRow.active {
-  opacity: 1;
-}
-
-.stepRow:not(.active) {
-  opacity: 0.4;
 }
 
 .stepRow:nth-child(even) .stepImage {
@@ -155,7 +148,7 @@
   height: clamp(280px, 40vh, 400px);
   object-fit: cover;
   display: block;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 /* Cadrage spécifique pour l'image du lancement commercial */
@@ -163,8 +156,8 @@
   object-position: center bottom;
 }
 
-.stepImage:hover img {
-  transform: scale(1.05);
+.stepRow:hover .stepImage img {
+  transform: scale(1.02);
 }
 
 /* Badge sur l'image */
@@ -334,11 +327,14 @@
     gap: 20px;
   }
   
-  /* Limiter les animations sur mobile pour éviter le scroll */
   .stepImage,
   .stepContent {
     overflow: hidden;
-    will-change: auto;
+  }
+  
+  /* Désactiver le hover sur mobile */
+  .stepRow:hover .stepImage img {
+    transform: none;
   }
   
   .stepContent {
@@ -378,11 +374,12 @@
 
 /* Réduction des animations pour l'accessibilité */
 @media (prefers-reduced-motion: reduce) {
+  .stepRow,
   .stepImage img {
     transition: none !important;
   }
   
-  .stepImage:hover img {
+  .stepRow:hover .stepImage img {
     transform: none !important;
   }
 }

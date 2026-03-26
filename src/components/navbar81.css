@@ -107,13 +107,48 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 8px 30px;
   background: #ffffff;
+}
+
+/* Ligne bleue subtile en bas de la navbar */
+.top-navbar-static::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(33, 87, 217, 0.15) 5%,
+    rgba(33, 87, 217, 0.4) 20%,
+    rgba(33, 87, 217, 0.6) 50%,
+    rgba(33, 87, 217, 0.4) 80%,
+    rgba(33, 87, 217, 0.15) 95%,
+    transparent 100%
+  );
+  pointer-events: none;
 }
 
 /* Transparent navbar for home page */
 .top-navbar-static.transparent {
-  background: rgba(255, 255, 255, 0);
+  background: #ffffff;
+}
+
+/* Ligne bleue pour la navbar transparente */
+.top-navbar-static.transparent::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(33, 87, 217, 0.15) 5%,
+    rgba(33, 87, 217, 0.4) 20%,
+    rgba(33, 87, 217, 0.6) 50%,
+    rgba(33, 87, 217, 0.4) 80%,
+    rgba(33, 87, 217, 0.15) 95%,
+    transparent 100%
+  );
 }
 
 
@@ -141,19 +176,13 @@
 /* Menu button styles for transparent navbar */
 .top-navbar-static.transparent .menu-button {
   color: #243040;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
+  background: transparent;
 }
 
 .top-navbar-static.transparent .menu-button:hover {
   transform: translateY(-1px);
   background: rgba(0, 0, 0, 0.05);
   color: #243040;
-  text-shadow: none;
-  box-shadow: none;
-  border: none;
-  outline: none;
 }
 
 /* Close button styles */
@@ -213,7 +242,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding-top: 100px; /* Space for navbar */
+  padding-top: 70px; /* Space for navbar */
 }
 
 .navbar-logo {
@@ -224,22 +253,9 @@
 }
 
 .navbar81-logo-image {
-  height: 130px;
-  transition: all 0.3s ease;
+  height: 50px;
   display: block;
   background: transparent;
-  border-radius: 8px;
-  padding: 4px;
-}
-
-.navbar81-logo-image:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.navbar81-logo-image:active {
-  transform: scale(0.95);
 }
 
 /* Responsive adjustments */
@@ -282,7 +298,7 @@
   }
   
   .navbar81-logo-image {
-    height: 110px;
+    height: 45px;
   }
   
   #content-front {
@@ -337,7 +353,7 @@
   }
   
   .navbar81-logo-image {
-    height: 100px;
+    height: 42px;
   }
   
   #content-front {
@@ -388,7 +404,7 @@
   }
   
   .navbar81-logo-image {
-    height: 95px;
+    height: 40px;
   }
   
   #content-front {
