@@ -29,6 +29,8 @@ const Steps2 = ({ rootClassName = "" }) => {
   const { t } = useTranslation();
   const containerRef = useRef(null);
   const [activeStep, setActiveStep] = useState(0);
+  const lastActiveStepRef = useRef(0);
+  const debounceTimerRef = useRef(null);
 
   const stepsData = stepsKeys.map((key, idx) => ({
     id: key,
@@ -61,22 +63,46 @@ const Steps2 = ({ rootClassName = "" }) => {
     
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-            const index = Array.from(stepElements).indexOf(entry.target);
-            setActiveStep(index);
+        // Annuler le timer précédent
+        if (debounceTimerRef.current) {
+          clearTimeout(debounceTimerRef.current);
+        }
+
+        // Debounce pour éviter les changements trop rapides
+        debounceTimerRef.current = setTimeout(() => {
+          let bestEntry = null;
+          let bestRatio = 0;
+
+          // Trouver l'élément le plus visible
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.intersectionRatio > bestRatio) {
+              bestRatio = entry.intersectionRatio;
+              bestEntry = entry;
+            }
+          });
+
+          // Seulement changer si on a un ratio suffisant et que c'est différent
+          if (bestEntry && bestRatio > 0.4) {
+            const index = Array.from(stepElements).indexOf(bestEntry.target);
+            if (index !== lastActiveStepRef.current) {
+              lastActiveStepRef.current = index;
+              setActiveStep(index);
+            }
           }
-        });
+        }, 100); // Debounce de 100ms
       },
       {
-        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-        rootMargin: '-20% 0px -20% 0px'
+        threshold: [0, 0.2, 0.4, 0.6, 0.8, 1],
+        rootMargin: '-15% 0px -15% 0px'
       }
     );
 
     stepElements.forEach((el) => observer.observe(el));
 
     return () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
       stepElements.forEach((el) => observer.unobserve(el));
     };
   }, []);
@@ -109,8 +135,9 @@ const Steps2 = ({ rootClassName = "" }) => {
                   scale: activeStep === i ? 1 : 0.97
                 }}
                 transition={{ 
-                  duration: 0.3, 
-                  ease: "easeOut"
+                  duration: 0.5, 
+                  ease: "easeInOut",
+                  delay: 0.05
                 }}
               >
                 <img
@@ -133,8 +160,9 @@ const Steps2 = ({ rootClassName = "" }) => {
                   x: activeStep === i ? 0 : 30
                 }}
                 transition={{ 
-                  duration: 0.6, 
-                  ease: "easeOut"
+                  duration: 0.5, 
+                  ease: "easeInOut",
+                  delay: 0.05
                 }}
               >
                 <h3>{step.title}</h3>
