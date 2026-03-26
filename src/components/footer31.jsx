@@ -1,12 +1,4 @@
 import React from "react";
-import {
-  BsFacebook,
-  BsInstagram,
-  BsTwitter,
-  BsGithub,
-  BsDribbble,
-  BsArrowUp,
-} from "react-icons/bs";
 import "./footer31.css";
 import { useTranslation } from "react-i18next";
 
@@ -47,17 +39,6 @@ const Footer31 = () => {
               </ul>
             </div>
             <div className="footer-links-column">
-              <div className="footer-title">{t('footer.follow_us')}</div>
-              <ul>
-                <li>
-                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Github</a>
-                </li>
-                <li>
-                  <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">Discord</a>
-                </li>
-              </ul>
-            </div>
-            <div className="footer-links-column">
               <div className="footer-title">{t('footer.legal')}</div>
               <ul>
                 <li>
@@ -84,25 +65,6 @@ const Footer31 = () => {
                 className="developer-logo"
               />
             </a>
-          </div>
-          <div className="footer-actions">
-            <div className="footer-icons">
-              <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <BsFacebook />
-              </a>
-              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <BsInstagram />
-              </a>
-              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <BsTwitter />
-              </a>
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="Github">
-                <BsGithub />
-              </a>
-              <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
-                <BsDribbble />
-              </a>
-            </div>
           </div>
         </div>
       </div>

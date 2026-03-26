@@ -59,7 +59,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 clamp(20px, 4vw, 60px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,22 +78,23 @@
 }
 
 .steps2-section-header h2 {
-  font-size: var(--font-size-4xl);
+  font-size: clamp(1.8rem, 5vw, 3rem);
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-bold);
   color: var(--primary-blue);
-  margin-bottom: var(--space-md);
+  margin-bottom: clamp(12px, 2vw, 24px);
+  line-height: 1.2;
 }
 
 .steps2-section-header p {
-  font-size: var(--font-size-lg);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--neutral-gray-600);
-  line-height: var(--line-height-relaxed);
+  line-height: 1.6;
   margin-bottom: 0;
-  max-width: 800px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 var(--space-md);
+  padding: 0 clamp(15px, 3vw, 30px);
 }
 
 /* Container séquentiel des étapes */
@@ -113,8 +114,8 @@
   grid-template-columns: 1fr 1.2fr;
   gap: clamp(40px, 6vw, 80px);
   align-items: center;
-  min-height: 100vh;
-  padding: 60px clamp(20px, 5vw, 80px);
+  min-height: 60vh;
+  padding: 20px clamp(20px, 5vw, 80px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -151,7 +152,7 @@
 
 .stepImage img {
   width: 100%;
-  height: 350px;
+  height: clamp(280px, 40vh, 400px);
   object-fit: cover;
   display: block;
   transition: transform 0.2s ease;
@@ -169,19 +170,19 @@
 /* Badge sur l'image */
 .stepBadge {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: clamp(15px, 2vw, 20px);
+  left: clamp(15px, 2vw, 20px);
   background: var(--primary-blue);
   color: var(--neutral-white);
-  width: 50px;
-  height: 50px;
+  width: clamp(45px, 6vw, 55px);
+  height: clamp(45px, 6vw, 55px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-bold);
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
   box-shadow: 0 4px 12px rgba(33, 87, 217, 0.3);
 }
 
@@ -211,22 +212,38 @@
 }
 
 /* Responsive Design */
+
+/* Tablettes et petits desktops (768px - 1200px) */
+@media (max-width: 1200px) {
+  .stepRow {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(30px, 4vw, 50px);
+    padding: 30px clamp(20px, 3vw, 40px);
+    min-height: 60vh;
+  }
+
+  .stepRow:nth-child(even) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Tablettes (768px - 980px) */
 @media (max-width: 980px) {
   .steps2-container1::after {
     display: none;
   }
 
   .steps2-section-header {
-    padding: 40px 20px;
+    padding: 50px 30px;
     min-height: 50vh;
   }
 
   .stepRow {
     grid-template-columns: 1fr !important;
-    gap: clamp(30px, 5vw, 50px);
+    gap: clamp(25px, 4vw, 40px);
     text-align: center;
-    min-height: 100vh;
-    padding: 50px 20px;
+    min-height: 60vh;
+    padding: 25px 30px;
   }
   
   .stepRow:nth-child(even) .stepImage {
@@ -239,23 +256,16 @@
   }
   
   .stepImage img {
-    height: 280px;
+    height: clamp(250px, 35vh, 320px);
   }
   
-  /* Maintenir le cadrage sur mobile */
+  /* Maintenir le cadrage sur tablette */
   .stepImage img[src*="couple-jouant-au-golf-ensemble"] {
     object-position: center bottom;
   }
-  
-  .stepBadge {
-    top: 15px;
-    left: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
 }
 
+/* Mobiles (600px et moins) */
 @media (max-width: 600px) {
   /* Prévenir le scroll horizontal global */
   body {
@@ -277,12 +287,20 @@
   }
 
   .steps2-section-header {
-    padding: 30px 15px;
-    min-height: 40vh;
+    padding: 40px 20px;
+    min-height: auto;
+  }
+
+  .steps2-section-header h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .steps2-section-header p {
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
   }
   
   .steps2-max-width {
-    padding: 0 var(--space-sm);
+    padding: 0 15px;
     overflow: hidden;
   }
   
@@ -294,11 +312,11 @@
   }
   
   .stepImage {
-    border-radius: 15px;
+    border-radius: 12px;
   }
   
   .stepImage img {
-    height: 220px;
+    height: clamp(200px, 30vh, 260px);
   }
   
   /* Maintenir le cadrage sur très petits écrans */
@@ -308,11 +326,12 @@
   
   /* Éliminer tout débordement sur mobile */
   .stepRow {
-    min-height: 100vh;
+    min-height: auto;
     overflow: hidden;
     position: relative;
     contain: layout;
-    padding: 40px 15px;
+    padding: 25px 20px;
+    gap: 20px;
   }
   
   /* Limiter les animations sur mobile pour éviter le scroll */
@@ -322,25 +341,38 @@
     will-change: auto;
   }
   
-  /* Réduire les transformations sur mobile */
-  .stepImage {
-    transform: none !important;
-  }
-  
   .stepContent {
-    transform: none !important;
+    padding: 20px 10px;
   }
-  
-  .stepBadge {
-    top: 12px;
-    left: 12px;
-    width: 35px;
-    height: 35px;
-    font-size: 0.9rem;
+
+  .stepContent h3 {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+    margin-bottom: 12px;
   }
-  
+
+  .stepContent p {
+    font-size: clamp(0.95rem, 3vw, 1.05rem);
+    line-height: 1.5;
+  }
+}
+
+/* Très petits mobiles (400px et moins) */
+@media (max-width: 400px) {
+  .steps2-section-header {
+    padding: 30px 15px;
+  }
+
+  .stepRow {
+    padding: 20px 15px;
+    gap: 18px;
+  }
+
+  .stepImage img {
+    height: clamp(180px, 28vh, 220px);
+  }
+
   .stepContent {
-    padding: clamp(15px, 3vw, 25px);
+    padding: 15px 5px;
   }
 }
 
