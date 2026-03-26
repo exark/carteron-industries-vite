@@ -38,7 +38,7 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
           <div className="contact10-container4">
             <img
               alt={location2ImageAlt}
-              src="/images/terrein1.webp"
+              src="/images/Contactus.webp"
               className="contact10-image2 thq-img-ratio-16-9"
             />
             <div className="contact10-info">

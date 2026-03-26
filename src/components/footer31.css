@@ -1,11 +1,11 @@
 .custom-footer {
   background: linear-gradient(135deg, #f8faff 0%, #eef4fd 100%);
-  border-top: 2px solid #3E6AE1;
+  border-top: 2px solid #1e3a5f;
   color: #232323;
   padding: 60px 0 24px 0;
   font-family: var(--font-family-body);
   width: 100%;
-  box-shadow: 0 -4px 20px 0 rgba(62, 106, 225, 0.08);
+  box-shadow: 0 -4px 20px 0 rgba(30, 58, 95, 0.15);
   position: relative;
   overflow: hidden;
   margin-top: auto;
@@ -44,13 +44,13 @@
   height: 4.5rem;
   margin-bottom: 0.75rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(62, 106, 225, 0.12);
+  box-shadow: 0 4px 12px rgba(30, 58, 95, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .footer-logo:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(62, 106, 225, 0.18);
+  box-shadow: 0 6px 16px rgba(30, 58, 95, 0.6);
 }
 
 .footer-brand-text {
@@ -70,7 +70,7 @@
   left: 0;
   width: 40px;
   height: 3px;
-  background: #3E6AE1;
+  background: #2e5a8a;
   border-radius: 2px;
 }
 
@@ -100,7 +100,7 @@
   display: inline-block;
   padding-bottom: 6px;
   letter-spacing: 0.6px;
-  color: #3E6AE1;
+  color: #2e5a8a;
   position: relative;
 }
 
@@ -111,7 +111,7 @@
   left: 0;
   width: 100%;
   height: 2.5px;
-  background: #3E6AE1;
+  background: #2e5a8a;
   border-radius: 4px;
   transition: width 0.3s ease;
 }
@@ -136,20 +136,16 @@
   color: #2c2c2c;
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  transition: color 0.25s ease;
   border-radius: 4px;
-  padding: 3px 6px 4px 6px; /* Add 1px bottom padding to reserve space for transform */
+  padding: 3px 6px 4px 6px;
   position: relative;
   display: inline-block;
 }
 
 .footer-links-group a:hover {
-  color: #3E6AE1;
-  text-shadow: 0 2px 8px rgba(62, 106, 225, 0.2);
-  background: #f0f5ff;
+  color: #2e5a8a;
   text-decoration: none;
-  /* Remove transform that causes layout shifts */
-  box-shadow: 0 2px 8px rgba(62, 106, 225, 0.08);
 }
 
 /* Add a pseudo-element for hover effect instead of moving the element */
@@ -162,18 +158,19 @@
   height: 2px;
   background-color: transparent;
   transform: scaleX(0);
+  transform-origin: left;
   transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
 .footer-links-group a:hover::before {
-  background-color: #3E6AE1;
+  background-color: #2e5a8a;
   transform: scaleX(1);
 }
 
 .footer-divider {
   border: none;
   height: 1.5px;
-  background: linear-gradient(90deg, rgba(62, 106, 225, 0.1), rgba(62, 106, 225, 0.5), rgba(62, 106, 225, 0.1));
+  background: linear-gradient(90deg, rgba(30, 58, 95, 0.2), rgba(46, 90, 138, 0.6), rgba(30, 58, 95, 0.2));
   margin: 40px 0 24px 0;
   width: 100%;
   max-width: none;
@@ -212,7 +209,7 @@
   width: 42px;
   height: 42px;
   background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 8px rgba(62, 106, 225, 0.08);
+  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -223,9 +220,9 @@
 
 .footer-icons a:hover {
   color: #ffffff;
-  background: #3E6AE1;
+  background: #2e5a8a;
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(62, 106, 225, 0.2);
+  box-shadow: 0 6px 12px rgba(46, 90, 138, 0.5);
 }
 
 .footer-icons a:before {
@@ -316,17 +313,17 @@
   cursor: pointer;
   color: #8590a6;
   font-size: 22px;
-  box-shadow: 0 2px 8px rgba(62, 106, 225, 0.08);
+  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.15);
   transition: all 0.25s ease;
   position: relative;
   overflow: hidden;
 }
 
 .scroll-to-top:hover {
-  background: #3E6AE1;
+  background: #2e5a8a;
   color: #ffffff;
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(62, 106, 225, 0.2);
+  box-shadow: 0 6px 12px rgba(46, 90, 138, 0.5);
 }
 
 .scroll-to-top:before {
@@ -352,7 +349,7 @@
   right: 0;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(62, 106, 225, 0.05) 0%, rgba(62, 106, 225, 0) 70%);
+  background: radial-gradient(circle, rgba(46, 90, 138, 0.1) 0%, rgba(46, 90, 138, 0) 70%);
   z-index: 1;
   border-radius: 50%;
   transform: translate(30%, -30%);
@@ -365,7 +362,7 @@
   left: 0;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(62, 106, 225, 0.05) 0%, rgba(62, 106, 225, 0) 70%);
+  background: radial-gradient(circle, rgba(46, 90, 138, 0.1) 0%, rgba(46, 90, 138, 0) 70%);
   z-index: 1;
   border-radius: 50%;
   transform: translate(-30%, 30%);
@@ -382,7 +379,7 @@
   left: 0;
   top: 0;
   font-weight: 600;
-  color: #3E6AE1;
+  color: #2e5a8a;
 }
 
 .footer-developer {
@@ -402,7 +399,7 @@
   width: auto;
   max-width: 220px;
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(62, 106, 225, 0.12);
+  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   object-fit: contain;
   margin-left: 10px;
@@ -410,5 +407,5 @@
 
 .developer-logo:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(62, 106, 225, 0.15);
+  box-shadow: 0 4px 10px rgba(46, 90, 138, 0.5);
 }
