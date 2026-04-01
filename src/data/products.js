@@ -36,7 +36,9 @@ export const products = {
       'modular_accessories',
       'long_battery',
       'all_terrain_wheels',
-      'touch_interface'
+      'mobile_app_interactive',
+      'effective_braking',
+      'childcare_standards'
     ],
     translationKey: 'products.golf_trolley_hybrid'
   }
