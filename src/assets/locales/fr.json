@@ -4,7 +4,7 @@
     "testimonials": "Témoignages",
     "faq": "FAQ",
     "other": "autre",
-    "our_product": "Nos Produits",
+    "our_product": "Notre produit",
     "contact": "Contactez-nous"
   },
   "footer": {
@@ -111,8 +111,8 @@
   "carousel": {
     "side_title": "Une Innovation au service du golf et de la famille",
     "side_desc": "Portée par l'innovation, Carteron Industries crée des solutions à la croisée du sport, de la famille et de la technologie. Le premier chariot de golf poussette hybride  2-en-1, pensé pour transporter à la fois un sac de golf et un enfant, sans effort et en toute sécurité. Notre solution hybride motorisée en cours de développement est adaptée au terrain de golf, pour allier loisir sportif et vie familiale.",
-    "our_products_btn": "Découvrir nos produits",
-    "our_products_aria": "Découvrir nos produits",
+    "our_products_btn": "Découvrir notre produit",
+    "our_products_aria": "Découvrir notre produit",
     "about_btn": "À propos",
     "discover_btn": "Découvrir plus",
     "meet_founder_btn": "Rencontrer la Fondatrice",
@@ -304,7 +304,7 @@
     "get_directions": "Envoyer email"
   },
   "our_product": {
-    "page_title": "Nos Produits",
+    "page_title": "Notre Produit",
     "page_subtitle": "Bientôt disponible",
     "coming_soon_title": "En cours de développement",
     "coming_soon_text": "Nous travaillons actuellement sur notre nouveau produit innovant. Revenez bientôt pour découvrir toutes les fonctionnalités et avantages que nous préparons pour vous.",

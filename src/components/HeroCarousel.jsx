@@ -20,10 +20,6 @@ const itemsData = [
     image: "/images/bptgreel.jpeg",
   },
   {
-    key: "community",
-    image: "/images/dadwithbaby.webp",
-  },
-  {
     key: "tech",
     image: "/images/application.webp",
   }

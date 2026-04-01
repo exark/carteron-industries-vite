@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
@@ -20,6 +20,7 @@ export default function ProductDetailDynamic() {
   const { productSlug } = useParams();
   
   const product = getProductBySlug(productSlug);
+  const [selectedImage, setSelectedImage] = useState(0);
 
   // Scroll to top instantly when component mounts
   useEffect(() => {
@@ -112,19 +113,89 @@ export default function ProductDetailDynamic() {
           {/* Product Header */}
           <Grid container spacing={4} sx={{ mb: 6 }}>
             <Grid item xs={12} md={6} className="animate-on-scroll-left">
+              {/* Main Image */}
+              <Box sx={{ 
+                position: 'relative', 
+                mb: 2,
+                height: '500px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: '#f5f5f5',
+                borderRadius: 3,
+                overflow: 'hidden'
+              }}>
+                <Box
+                  component="img"
+                  src={product.images.gallery[selectedImage]}
+                  alt={t(`${product.translationKey}.title`, 'Product')}
+                  sx={{
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    height: '500px',
+                    width: 'auto',
+                    objectFit: 'contain',
+                    borderRadius: 3,
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+                    transition: 'opacity 0.3s ease-in-out',
+                    animation: 'fadeIn 0.3s ease-in-out',
+                    '@keyframes fadeIn': {
+                      '0%': {
+                        opacity: 0
+                      },
+                      '100%': {
+                        opacity: 1
+                      }
+                    }
+                  }}
+                />
+              </Box>
+              
+              {/* Thumbnail Navigation */}
               <Box
-                component="img"
-                src={product.images.main}
-                alt={t(`${product.translationKey}.title`, 'Product')}
                 sx={{
-                  width: '100%',
-                  height: 'auto',
-                  maxHeight: '500px',
-                  objectFit: 'cover',
-                  borderRadius: 3,
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.12)'
+                  display: 'flex',
+                  gap: 1.5,
+                  overflowX: 'auto',
+                  pb: 1,
+                  '&::-webkit-scrollbar': {
+                    height: '6px'
+                  },
+                  '&::-webkit-scrollbar-track': {
+                    backgroundColor: '#f1f1f1',
+                    borderRadius: '10px'
+                  },
+                  '&::-webkit-scrollbar-thumb': {
+                    backgroundColor: '#888',
+                    borderRadius: '10px',
+                    '&:hover': {
+                      backgroundColor: '#555'
+                    }
+                  }
                 }}
-              />
+              >
+                {product.images.gallery.map((image, index) => (
+                  <Box
+                    key={index}
+                    component="img"
+                    src={image}
+                    alt={`${t(`${product.translationKey}.title`, 'Product')} ${index + 1}`}
+                    onClick={() => setSelectedImage(index)}
+                    sx={{
+                      width: '80px',
+                      height: '80px',
+                      objectFit: 'cover',
+                      borderRadius: 2,
+                      cursor: 'pointer',
+                      border: selectedImage === index ? '3px solid #0b2244' : '2px solid #e0e0e0',
+                      opacity: selectedImage === index ? 1 : 0.6,
+                      transition: 'all 0.3s ease',
+                      flexShrink: 0,
+                      backgroundColor: '#f5f5f5'
+                    }}
+                  />
+                ))}
+              </Box>
             </Grid>
             
             <Grid item xs={12} md={6} className="animate-on-scroll-right">

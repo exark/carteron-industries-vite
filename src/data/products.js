@@ -9,7 +9,9 @@ export const products = {
       main: '/images/prototype.jpeg',
       gallery: [
         '/images/prototype.jpeg',
-        '/images/kidsgolf.webp'
+        '/images/bptgreel.jpeg',
+        '/images/bptg.png',
+        '/images/bptgsimple.jpeg'
       ]
     },
     pricing: {
@@ -29,7 +31,6 @@ export const products = {
       warranty: '2 ans'
     },
     features: [
-      'child_safety_system',
       'silent_motor',
       'compact_design',
       'modular_accessories',
