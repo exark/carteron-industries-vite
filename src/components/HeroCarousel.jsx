@@ -17,7 +17,7 @@ const itemsData = [
   },
   {
     key: "work",
-    image: "/images/golfeur.jpg",
+    image: "/images/bptgreel.jpeg",
   },
   {
     key: "community",

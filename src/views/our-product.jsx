@@ -466,9 +466,9 @@ export default function OurProduct() {
             </Typography>
 
             <Box sx={{ mt: 8, mb: 6 }}>
-            <Grid container spacing={3} sx={{ alignItems: 'stretch' }}>
+            <Grid container spacing={3} sx={{ alignItems: 'stretch', justifyContent: 'center' }}>
               {services.map((service, index) => (
-                <Grid item xs={12} lg={6} key={index} sx={{ display: 'flex', height: { xs: 'auto', lg: '400px' } }}>
+                <Grid item xs={12} lg={8} key={index} sx={{ display: 'flex', height: { xs: 'auto', lg: '450px' } }}>
                   <div className={`animate-on-scroll animate-stagger-${index + 1}`} style={{ width: '100%', height: '100%' }}>
                     <ServiceCard
                       {...service}

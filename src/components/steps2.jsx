@@ -33,6 +33,7 @@ const Steps2 = ({ rootClassName = "" }) => {
     title: t(`steps.${key}.title`, `Étape ${idx + 1}`),
     desc: t(`steps.${key}.desc`, ''),
     img: stepImages[idx],
+    completed: idx < 2, // First two steps are completed
   }));
 
   useEffect(() => {
@@ -70,29 +71,42 @@ const Steps2 = ({ rootClassName = "" }) => {
         
         <div className="stepsSequence">
           {stepsData.map((step, i) => (
-            <div
-              key={step.id}
-              className="stepRow"
-            >
-              {/* Image à gauche */}
-              <div className="stepImage">
-                <img
-                  src={step.img}
-                  alt={step.title}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="stepBadge">
-                  <span>{String(i + 1).padStart(2, "0")}</span>
+            <React.Fragment key={step.id}>
+              <div
+                className={`stepRow ${step.completed ? 'stepCompleted' : ''}`}
+              >
+                {/* Image à gauche */}
+                <div className="stepImage">
+                  <img
+                    src={step.img}
+                    alt={step.title}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className={`stepBadge ${step.completed ? 'completed' : ''}`}>
+                    {step.completed ? (
+                      <span>✓</span>
+                    ) : (
+                      <span>{String(i + 1).padStart(2, "0")}</span>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Contenu à droite */}
+                <div className="stepContent">
+                  <h3>{step.title}</h3>
+                  <p>{step.desc}</p>
                 </div>
               </div>
-              
-              {/* Contenu à droite */}
-              <div className="stepContent">
-                <h3>{step.title}</h3>
-                <p>{step.desc}</p>
-              </div>
-            </div>
+              {/* Separator after completed steps group */}
+              {i === 1 && (
+                <div className="completedStepsSeparator">
+                  <div className="separatorLine"></div>
+                  <span className="separatorText">{t('steps.in_progress', 'En cours')}</span>
+                  <div className="separatorLine"></div>
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
       </div>

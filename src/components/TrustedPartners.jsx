@@ -21,6 +21,21 @@ const TrustedPartners = ({ rootClassName = "" }) => {
       name: "Région Hauts-de-France",
       logo: "/images/haut_de_france.jpg",
       alt: "Région Hauts-de-France"
+    },
+    {
+      name: "Euratechnologies",
+      logo: "/images/LOGO_EURATECHNOLOGIES.jpg",
+      alt: "Euratechnologies"
+    },
+    {
+      name: "Eurasanté",
+      logo: "/images/Eurasantélogo.jpeg",
+      alt: "Eurasanté"
+    },
+    {
+      name: "Vivalley Campus",
+      logo: "/images/logo-vivalley-campus.jpg",
+      alt: "Vivalley Campus"
     }
   ];
 

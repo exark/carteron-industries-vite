@@ -8,7 +8,7 @@
   justify-content: center;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 2rem 8rem 2rem;
-  padding-top: 100px;
+  padding-top: 90px;
   overflow: hidden;
 }
 
@@ -266,7 +266,6 @@
   
   .top-hero-container {
     padding: 2rem 3rem 3rem;
-    padding-top: 120px;
     min-height: 85vh;
   }
   
@@ -312,7 +311,6 @@
 @media (max-width: 768px) {
   .top-hero-container {
     padding: 1.5rem 2rem 2.5rem;
-    padding-top: 110px;
     min-height: 80vh;
   }
   
@@ -346,7 +344,6 @@
 @media (max-width: 600px) {
   .top-hero-container {
     padding: 1.25rem 1.5rem 2rem;
-    padding-top: 100px;
     min-height: 75vh;
   }
   
@@ -380,7 +377,6 @@
 @media (max-width: 480px) {
   .top-hero-container {
     padding: 1rem 1.25rem 1.75rem;
-    padding-top: 95px;
     min-height: 70vh;
   }
   
@@ -404,6 +400,60 @@
     max-width: 260px;
     padding: 0.825rem 1.25rem;
     font-size: 0.9rem;
+  }
+}
+
+/* Scroll Down Button - Desktop Only */
+.chevron-container {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+  z-index: 10;
+  animation: simpleBounce 2s ease-in-out infinite;
+}
+
+.chevron-container:hover {
+  animation: none;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  border-right: 2px solid #1a1a1a;
+  border-bottom: 2px solid #1a1a1a;
+  transform: rotate(45deg);
+  opacity: 0.8;
+}
+
+.chevron:nth-child(2) {
+  opacity: 0.5;
+}
+
+.chevron:nth-child(3) {
+  opacity: 0.3;
+}
+
+@keyframes simpleBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+/* Hide scroll button on mobile */
+@media (max-width: 900px) {
+  .chevron-container {
+    display: none;
   }
 }
 

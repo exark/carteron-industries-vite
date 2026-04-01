@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import './TopHero.css';
 import '../assets/fonts/fonts.css';
 
@@ -30,7 +30,7 @@ const TopHero = () => {
         <div className="top-hero-content">
           <div className="top-hero-title">
             <img 
-              src="/images/LOGO.png" 
+              src="/images/logo.svg" 
               alt="Carteron Industries"
               draggable="false"
               style={{ pointerEvents: 'none', userSelect: 'none' }}
@@ -70,12 +70,19 @@ const TopHero = () => {
           <div className="grid-image grid-small-bottom">
             <div>
               <img 
-                src="/images/couple-jouant-au-golf-ensemble.webp" 
+                src="/images/bptg.png" 
                 alt="Golf Together"
               />
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Scroll Down Button - Desktop Only */}
+      <div className="chevron-container" onClick={handleDiscoverClick}>
+        <span className="chevron"></span>
+        <span className="chevron"></span>
+        <span className="chevron"></span>
       </div>
     </div>
   );

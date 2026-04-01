@@ -18,7 +18,7 @@ const Footer31 = () => {
         <div className="footer-main">
           <div className="footer-brand">
             <img
-              src="/images/LOGO.png"
+              src="/images/logo.svg"
               alt="Carteron Industries Logo"
               className="footer-logo"
             />

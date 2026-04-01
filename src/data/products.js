@@ -6,9 +6,9 @@ export const products = {
     status: 'available', // 'available', 'coming_soon', 'construction'
     category: 'hybrid',
     images: {
-      main: '/images/club_de_golf.webp',
+      main: '/images/prototype.jpeg',
       gallery: [
-        '/images/club_de_golf.webp',
+        '/images/prototype.jpeg',
         '/images/kidsgolf.webp'
       ]
     },
@@ -29,7 +29,6 @@ export const products = {
       warranty: '2 ans'
     },
     features: [
-      'rapid_transformation',
       'child_safety_system',
       'silent_motor',
       'compact_design',
@@ -39,42 +38,6 @@ export const products = {
       'touch_interface'
     ],
     translationKey: 'products.golf_trolley_hybrid'
-  },
-  'motorized-golf-trolley': {
-    id: 'motorized-golf-trolley',
-    slug: 'motorized-golf-trolley',
-    status: 'construction',
-    category: 'golf',
-    images: {
-      main: '/images/couple-jouant-au-golf-ensemble.webp',
-      gallery: [
-        '/images/couple-jouant-au-golf-ensemble.webp'
-      ]
-    },
-    pricing: {
-      price: 1299,
-      currency: '€',
-      originalPrice: null,
-      discount: null
-    },
-    specifications: {
-      weight: '8 kg',
-      dimensions: '70 x 50 x 35 cm',
-      battery: 'Lithium-ion 24V 8Ah',
-      maxSpeed: '8 km/h',
-      capacity: '25 kg',
-      ageRange: null,
-      chargingTime: '3-4 heures',
-      warranty: '2 ans'
-    },
-    features: [
-      'silent_motor',
-      'intuitive_navigation',
-      'extended_autonomy',
-      'ergonomic_design',
-      'advanced_technology'
-    ],
-    translationKey: 'products.motorized_golf_trolley'
   }
 };
 
