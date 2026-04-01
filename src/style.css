@@ -1,24 +1,34 @@
 :root {
-  /* ===== COULEURS PRINCIPALES ===== */
-  --primary-blue: #0b2244;
-  --primary-blue-light: #21517a;
-  --primary-blue-dark: #061a2e;
+  /* ===== COULEURS WINDOWS 2000 ===== */
+  --primary-blue: #000080;         /* Classic Win2k title bar navy */
+  --primary-blue-light: #1084d0;   /* Active title bar gradient end */
+  --primary-blue-dark: #000058;    /* Darker navy */
   
-  --secondary-blue: #1976D2;
-  --secondary-blue-light: #42a5f5;
-  --secondary-blue-dark: #1565c0;
+  --secondary-blue: #0000ff;       /* Classic hyperlink blue */
+  --secondary-blue-light: #3399ff;
+  --secondary-blue-dark: #000080;
+  
+  --win-gray: #d4d0c8;             /* Classic Windows 98/2000 gray */
+  --win-gray-light: #ece9d8;       /* XP era light gray */
+  --win-gray-dark: #808080;        /* Shadow color */
+  --win-highlight: #ffffff;        /* Bevel highlight */
+  --win-shadow: #808080;           /* Bevel shadow */
+  --win-dark-shadow: #404040;      /* Darker shadow */
+  --win-teal: #008080;             /* Classic Win2k teal / taskbar */
+  --win-title-bar: #000080;        /* Title bar blue */
+  --win-title-text: #ffffff;       /* Title bar text */
   
   --neutral-white: #ffffff;
-  --neutral-gray-50: #f8fafc;
-  --neutral-gray-100: #f1f5f9;
-  --neutral-gray-200: #e2e8f0;
-  --neutral-gray-300: #cbd5e1;
-  --neutral-gray-400: #94a3b8;
-  --neutral-gray-500: #64748b;
-  --neutral-gray-600: #475569;
-  --neutral-gray-700: #334155;
-  --neutral-gray-800: #1e293b;
-  --neutral-gray-900: #0f172a;
+  --neutral-gray-50: #f0f0ea;
+  --neutral-gray-100: #ece9d8;
+  --neutral-gray-200: #d4d0c8;
+  --neutral-gray-300: #b0aba0;
+  --neutral-gray-400: #808080;
+  --neutral-gray-500: #606060;
+  --neutral-gray-600: #404040;
+  --neutral-gray-700: #303030;
+  --neutral-gray-800: #202020;
+  --neutral-gray-900: #000000;
   
   /* ===== ESPACEMENTS ===== */
   --space-xs: 4px;
@@ -47,10 +57,10 @@
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
   --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
   
-  /* ===== TYPOGRAPHIE ===== */
-  --font-family-primary: 'Gotham', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-family-secondary: 'Universal Sans', sans-serif;
-  --font-family-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* ===== TYPOGRAPHIE WINDOWS 2000 ===== */
+  --font-family-primary: 'Tahoma', 'MS Sans Serif', 'Microsoft Sans Serif', Verdana, Arial, sans-serif;
+  --font-family-secondary: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  --font-family-body: 'Tahoma', Verdana, Arial, sans-serif;
   
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -153,22 +163,23 @@ html {
 body {
   overflow-x: hidden;
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-base);
+  font-size: 11px;
   font-weight: var(--font-weight-normal);
-  color: var(--neutral-gray-800);
-  background-color: var(--neutral-white);
-  line-height: var(--line-height-normal);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #000000;
+  background-color: var(--win-gray);
+  line-height: 1.4;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+  image-rendering: pixelated;
 }
 
-/* ===== TYPOGRAPHIE ===== */
+/* ===== TYPOGRAPHIE WINDOWS 2000 ===== */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-secondary);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  color: var(--primary-blue);
-  margin-bottom: var(--space-md);
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #000080;
+  margin-bottom: 8px;
 }
 
 h1 { font-size: var(--font-size-5xl); }

@@ -1,21 +1,47 @@
+/* ============================================================
+   FOOTER - WINDOWS 2000 STYLE
+   Classic Win2k status bar / taskbar footer
+   ============================================================ */
+
 .custom-footer {
-  background: linear-gradient(135deg, #f8faff 0%, #eef4fd 100%);
-  border-top: 2px solid #1e3a5f;
-  color: #232323;
-  padding: 60px 0 24px 0;
-  font-family: var(--font-family-body);
+  /* Win2k classic gray footer */
+  background: #d4d0c8;
+  border-top: 2px solid #ffffff;
+  box-shadow: inset 0 1px 0 #ffffff;
+  color: #000000;
+  padding: 0 0 32px 0;  /* bottom padding for fixed taskbar */
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-size: 11px;
   width: 100%;
-  box-shadow: 0 -4px 20px 0 rgba(30, 58, 95, 0.15);
   position: relative;
   overflow: hidden;
   margin-top: auto;
+}
+
+/* Win2k title bar for footer */
+.custom-footer::before {
+  content: 'Carteron Industries - Footer';
+  display: block;
+  background: linear-gradient(to right, #000080 0%, #1084d0 100%);
+  color: #ffffff;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 8px;
+  text-align: left;
+  width: 100%;
+}
+
+/* Remove the decorative circles from old design */
+.custom-footer::after {
+  display: none;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  padding: 0 40px;
+  padding: 12px 24px;
   box-sizing: border-box;
   position: relative;
   z-index: 2;
@@ -28,7 +54,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 50px;
+  gap: 24px;
   position: relative;
 }
 
@@ -36,88 +62,86 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 220px;
+  min-width: 180px;
   position: relative;
 }
 
 .footer-logo {
-  height: 4.5rem;
-  margin-bottom: 0.75rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(30, 58, 95, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 3rem;
+  margin-bottom: 6px;
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+  /* Win2k inset frame for logo */
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 
 .footer-logo:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(30, 58, 95, 0.6);
+  transform: none;
+  box-shadow: none;
 }
 
 .footer-brand-text {
-  font-weight: 800;
-  letter-spacing: 1.7px;
-  font-size: 1.25rem;
-  color: #1a1a1a;
+  font-weight: bold;
+  letter-spacing: 0;
+  font-size: 12px;
+  color: #000080;
   margin-top: 4px;
   position: relative;
-  padding-bottom: 8px;
+  padding-bottom: 0;
 }
 
 .footer-brand-text:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: #2e5a8a;
-  border-radius: 2px;
+  display: none;
 }
 
 .footer-brand-description {
-  margin-top: 12px;
-  font-size: 14px;
-  color: #555;
-  line-height: 1.5;
-  max-width: 280px;
+  margin-top: 6px;
+  font-size: 11px;
+  color: #000000;
+  line-height: 1.4;
+  max-width: 240px;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
 }
 
 .footer-links-group {
   display: flex;
-  gap: 70px;
+  gap: 32px;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 .footer-links-column {
-  min-width: 140px;
+  min-width: 120px;
 }
 
+/* Win2k groupbox header style */
 .footer-title {
-  font-weight: 700;
-  font-size: 18px;
-  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 11px;
+  margin-bottom: 6px;
   display: inline-block;
-  padding-bottom: 6px;
-  letter-spacing: 0.6px;
-  color: #2e5a8a;
+  padding: 1px 4px;
+  letter-spacing: 0;
+  color: #000000;
   position: relative;
+  /* Win2k raised button for section headers */
+  background: #d4d0c8;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #808080;
+  border-bottom: 1px solid #808080;
 }
 
 .footer-title:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2.5px;
-  background: #2e5a8a;
-  border-radius: 4px;
-  transition: width 0.3s ease;
+  display: none;
 }
 
 .footer-title:hover:after {
-  width: 70%;
+  display: none;
 }
 
 .footer-links-group ul {
@@ -127,54 +151,49 @@
 }
 
 .footer-links-group li {
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   position: relative;
-  /* Remove padding transition that causes layout shifts */
 }
 
+/* Classic hyperlink blue */
 .footer-links-group a {
-  color: #2c2c2c;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.25s ease;
-  border-radius: 4px;
-  padding: 3px 6px 4px 6px;
+  color: #0000ff;
+  text-decoration: underline;
+  font-size: 11px;
+  transition: none;
+  border-radius: 0;
+  padding: 0 2px;
   position: relative;
   display: inline-block;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
 }
 
 .footer-links-group a:hover {
-  color: #2e5a8a;
-  text-decoration: none;
+  color: #ff0000;
+  text-decoration: underline;
+  background: #000080;
+  color: #ffffff;
 }
 
-/* Add a pseudo-element for hover effect instead of moving the element */
 .footer-links-group a::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background-color: transparent;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease, background-color 0.25s ease;
+  display: none;
 }
 
 .footer-links-group a:hover::before {
-  background-color: #2e5a8a;
-  transform: scaleX(1);
+  display: none;
 }
 
+/* Win2k horizontal rule */
 .footer-divider {
   border: none;
-  height: 1.5px;
-  background: linear-gradient(90deg, rgba(30, 58, 95, 0.2), rgba(46, 90, 138, 0.6), rgba(30, 58, 95, 0.2));
-  margin: 40px 0 24px 0;
+  height: 0;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #ffffff;
+  margin: 12px 0;
   width: 100%;
   max-width: none;
-  border-radius: 2px;
+  border-radius: 0;
+  background: transparent;
 }
 
 .footer-bottom {
@@ -183,35 +202,42 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 12px;
   flex-wrap: wrap;
-  font-size: 15.5px;
-  color: #6b6b6b;
+  font-size: 11px;
+  color: #000000;
   position: relative;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
 }
 
 .footer-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
 }
 
 .footer-icons a {
-  color: #8590a6;
-  font-size: 22px;
-  margin-right: 16px;
-  transition: all 0.25s ease;
+  color: #000080;
+  font-size: 11px;
+  margin-right: 8px;
+  transition: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  padding: 10px;
-  width: 42px;
-  height: 42px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.15);
+  border-radius: 0;
+  padding: 2px 6px;
+  width: auto;
+  height: auto;
+  background: #d4d0c8;
+  box-shadow: none;
   position: relative;
   overflow: hidden;
+  text-decoration: underline;
+  /* Win2k raised button */
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #808080;
+  border-bottom: 1px solid #808080;
 }
 
 .footer-icons a:last-child {
@@ -220,192 +246,158 @@
 
 .footer-icons a:hover {
   color: #ffffff;
-  background: #2e5a8a;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(46, 90, 138, 0.5);
+  background: #000080;
+  transform: none;
+  box-shadow: none;
+  border-top: 1px solid #000058;
+  border-left: 1px solid #000058;
+  border-right: 1px solid #4060a0;
+  border-bottom: 1px solid #4060a0;
 }
 
 .footer-icons a:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  display: none;
 }
 
 .footer-icons a:hover:before {
-  opacity: 1;
+  display: none;
+}
+
+/* Win2k scroll to top button */
+.scroll-to-top {
+  background: #d4d0c8;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  width: 22px;
+  height: 22px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #000000;
+  font-size: 11px;
+  box-shadow: 1px 1px 0 #808080;
+  transition: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-to-top:hover {
+  background: #d4d0c8;
+  color: #000000;
+  transform: none;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: none;
+}
+
+.scroll-to-top:before {
+  display: none;
+}
+
+.scroll-to-top:hover:before {
+  display: none;
+}
+
+.footer-copyright {
+  position: relative;
+  padding-left: 0;
+  font-size: 11px;
+}
+
+.footer-copyright:before {
+  display: none;
+}
+
+.footer-developer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #000000;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+}
+
+.developer-text {
+  font-weight: normal;
+  color: #000080;
+  text-decoration: underline;
+}
+
+.developer-logo {
+  height: 32px;
+  width: auto;
+  max-width: 100px;
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+  object-fit: contain;
+  margin-left: 4px;
+  /* Win2k inset frame */
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.developer-logo:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 @media (max-width: 768px) {
   .custom-footer {
     margin-top: auto;
   }
+  
   .footer-main,
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
+    gap: 12px;
   }
+  
   .footer-links-group {
-    gap: 32px;
+    gap: 16px;
   }
+  
   .footer-container {
-    padding: 0 20px;
-  }
-  .footer-icons {
-    margin-top: 10px;
+    padding: 10px 16px;
   }
 }
 
 @media (max-width: 480px) {
   .custom-footer {
-    padding: 40px 0 0 0;
-    margin-top: auto;
+    padding-bottom: 36px;
   }
+  
   .footer-links-group {
-    gap: 24px;
+    gap: 12px;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
+  
   .footer-container {
-    padding: 0 16px;
+    padding: 8px 12px;
   }
+  
   .footer-brand {
     width: 100%;
-    align-items: center;
-    margin-bottom: 10px;
+    align-items: flex-start;
+    margin-bottom: 4px;
   }
-  .footer-brand-text:after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
+  
   .footer-brand-description {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
   }
-  .footer-actions {
-    width: 100%;
-    justify-content: center;
-  }
+  
   .footer-bottom {
-    padding-bottom: 20px;
+    flex-direction: column;
+    padding-bottom: 12px;
   }
-}
-
-/* Font families are now managed by CSS variables in style.css */
-
-/* Additional footer enhancements and new elements */
-.scroll-to-top {
-  background: #ffffff;
-  border: none;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #8590a6;
-  font-size: 22px;
-  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.15);
-  transition: all 0.25s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.scroll-to-top:hover {
-  background: #2e5a8a;
-  color: #ffffff;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(46, 90, 138, 0.5);
-}
-
-.scroll-to-top:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.scroll-to-top:hover:before {
-  opacity: 1;
-}
-
-.custom-footer:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(46, 90, 138, 0.1) 0%, rgba(46, 90, 138, 0) 70%);
-  z-index: 1;
-  border-radius: 50%;
-  transform: translate(30%, -30%);
-}
-
-.custom-footer:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(46, 90, 138, 0.1) 0%, rgba(46, 90, 138, 0) 70%);
-  z-index: 1;
-  border-radius: 50%;
-  transform: translate(-30%, 30%);
-}
-
-.footer-copyright {
-  position: relative;
-  padding-left: 24px;
-}
-
-.footer-copyright:before {
-  content: '©';
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-weight: 600;
-  color: #2e5a8a;
-}
-
-.footer-developer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: #6b6b6b;
-}
-
-.developer-text {
-  font-weight: 500;
-}
-
-.developer-logo {
-  height: 60px;
-  width: auto;
-  max-width: 220px;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  object-fit: contain;
-  margin-left: 10px;
-}
-
-.developer-logo:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(46, 90, 138, 0.5);
 }

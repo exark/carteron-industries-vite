@@ -60,11 +60,34 @@ const Steps2 = ({ rootClassName = "" }) => {
     <div 
       ref={containerRef}
       className={`steps2-container1 thq-section-padding full-width-bg ${rootClassName}`}
+      style={{ padding: 0 }}
     > 
-      <div className="steps2-max-width thq-section-max-width">
-        <div className="steps2-section-header">
-          <h2 className="thq-heading-2 whityyy">{t('steps.title')}</h2>
-          <p className="thq-body-large whityyy">
+      {/* Win2k title bar for this section */}
+      <div style={{
+        width: '100%',
+        background: 'linear-gradient(to right, #000080 0%, #1084d0 100%)',
+        color: '#ffffff',
+        fontFamily: "'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif",
+        fontSize: '11px',
+        fontWeight: 'bold',
+        padding: '3px 8px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '6px',
+        flexShrink: 0,
+      }}>
+        <svg width="12" height="12" viewBox="0 0 12 12" style={{ flexShrink: 0 }}>
+          <rect x="0" y="0" width="12" height="12" fill="#008080"/>
+          <rect x="2" y="3" width="8" height="1" fill="#ffffff"/>
+          <rect x="2" y="5" width="8" height="1" fill="#ffffff"/>
+          <rect x="2" y="7" width="8" height="1" fill="#ffffff"/>
+        </svg>
+        Development Roadmap
+      </div>
+      <div className="steps2-max-width thq-section-max-width" style={{ padding: '16px 24px' }}>
+        <div className="steps2-section-header" style={{ paddingTop: '16px' }}>
+          <h2 className="thq-heading-2 whityyy" style={{ fontSize: '16px', fontFamily: "'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif", fontWeight: 'bold', textAlign: 'center' }}>{t('steps.title')}</h2>
+          <p className="thq-body-large whityyy" style={{ fontSize: '11px', fontFamily: "'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif", color: '#000000' }}>
             {t('steps.description')}
           </p>
         </div>

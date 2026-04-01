@@ -1,4 +1,16 @@
-/* TopHero Component Styles - Modern Asymmetric Layout */
+/* ============================================================
+   TOP HERO - WINDOWS 2000 STYLE
+   Classic Win2k "My Computer" window look with beveled panels,
+   inset/outset box-shadows, gray backgrounds, title bars
+   ============================================================ */
+
+/* Marquee scrolling banner at the top - classic IE era */
+@keyframes marqueeScroll {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Main container - Win2k desktop / window background */
 .top-hero-container {
   position: relative;
   width: 100%;
@@ -6,35 +18,76 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  padding: 2rem 8rem 2rem;
-  padding-top: 90px;
+  background: #008080;  /* Classic Win98/2k teal desktop */
+  padding: 32px 24px 32px;
+  padding-top: 42px;    /* Accounts for 22px title bar */
   overflow: hidden;
 }
 
-/* Grid Layout - Content + Image Grid */
+/* Tiled wallpaper texture effect (classic clouds/bubbles bg) */
+.top-hero-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(0, 0, 0, 0.03) 1px,
+    rgba(0, 0, 0, 0.03) 2px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Win2k "window" wrapper */
 .top-hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 1.5rem;
-  max-width: 1400px;
+  gap: 12px;
+  max-width: 960px;
   width: 100%;
-  align-items: center;
+  align-items: start;
+  position: relative;
+  z-index: 1;
 }
 
-/* Left Column - Main Content */
+/* Left panel - Win2k window pane */
 .top-hero-content {
-  max-width: 650px;
+  background: #d4d0c8;
+  /* Classic raised bevel border */
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: 1px 1px 0 #808080;
+  padding: 0;
+  max-width: 100%;
 }
 
-.top-hero-title {
-  margin-bottom: 1.5rem;
+/* Win2k title bar for left panel */
+.top-hero-content::before {
+  content: 'Carteron Industries - Welcome';
   display: block;
+  background: linear-gradient(to right, #000080 0%, #1084d0 100%);
+  color: #ffffff;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 6px;
+  letter-spacing: 0;
+}
+
+/* Title logo */
+.top-hero-title {
+  margin-bottom: 0;
+  display: block;
+  padding: 12px 12px 8px;
 }
 
 .top-hero-title img {
   width: 100%;
-  max-width: 350px;
+  max-width: 220px;
   height: auto;
   display: block;
   pointer-events: none;
@@ -42,106 +95,154 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  animation: none;
+  opacity: 1;
+  /* Keep original logo colors */
+  filter: none;
+}
+
+/* Win2k groupbox divider */
+.top-hero-title::after {
+  content: '';
+  display: block;
+  margin-top: 8px;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #ffffff;
 }
 
 .top-hero-subtitle {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #4a5568;
-  margin-bottom: 1.5rem;
-  font-family: var(--font-family-secondary);
+  font-size: 13px;
+  font-weight: bold;
+  color: #000080;
+  margin-bottom: 6px;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
   line-height: 1.4;
+  padding: 0 12px;
+  animation: none;
+  opacity: 1;
+}
+
+/* Marquee text effect for subtitle area */
+.top-hero-subtitle::before {
+  content: '>> ';
+  color: #ff0000;
+  font-weight: bold;
 }
 
 .top-hero-description {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #6b7280;
-  margin-bottom: 2.5rem;
-  max-width: 580px;
-  font-family: var(--font-family-body);
+  font-size: 11px;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 12px;
+  max-width: 100%;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  padding: 4px 12px 8px;
+  /* Win2k sunken inset panel */
+  background: #ffffff;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  margin: 0 12px 12px;
+  animation: none;
+  opacity: 1;
 }
 
+/* Win2k style button */
 .top-hero-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  background: #1a1a1a;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  font-family: var(--font-family-primary);
+  gap: 4px;
+  padding: 4px 14px;
+  background: #d4d0c8;
+  color: #000000;
+  /* Classic Win2k raised button bevel */
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: 1px 1px 0 #808080;
+  font-size: 11px;
+  font-weight: normal;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: none;
+  border-radius: 0;
+  margin: 0 12px 12px;
+  animation: none;
+  opacity: 1;
+  text-decoration: none;
 }
 
 .top-hero-cta:hover {
-  background: #2d2d2d;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #d4d0c8;
+  transform: none;
+  box-shadow: none;
+  /* Win2k pressed button (inset bevel) */
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
 }
 
 .top-hero-cta:active {
-  transform: translateY(0);
+  transform: none;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
 }
 
-/* Asymmetrical Image Grid - Style Pinterest vertical */
+/* Right panel - Image panel, Win2k style */
 .top-hero-image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(100px, auto);
-  gap: 0.75rem;
+  gap: 6px;
   height: 100%;
-  max-height: 600px;
+  max-height: 480px;
   position: relative;
-  isolation: isolate;
 }
 
-/* Hide mobile-only grid on desktop */
+/* Mobile only grid - hidden on desktop */
 .top-hero-image-grid.mobile-only {
   display: none;
 }
 
 .grid-image {
-  border-radius: 20px;
-  overflow: visible;
+  border-radius: 0;
+  overflow: hidden;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: none;
   height: 100%;
+  /* Win2k inset image frame */
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 
-/* Hover effects - Zoom subtil */
+/* Remove all hover effects on grid images */
 .grid-image:hover {
-  transform: scale(1.02);
+  transform: none;
 }
 
 .grid-image::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: -1;
+  display: none;
 }
 
 .grid-image:hover::before {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  box-shadow: none;
 }
 
 .grid-image:hover {
-  z-index: 10;
+  z-index: auto;
 }
 
 .grid-image > div {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
   position: relative;
 }
@@ -151,132 +252,118 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 20px;
+  border-radius: 0;
+  /* Classic pixelated rendering */
+  image-rendering: auto;
 }
 
-/* Small top image - Colonne 1, lignes 1-2 */
+/* Small top image */
 .grid-small-top {
   grid-column: 1;
   grid-row: 1 / 3;
-  min-height: 280px;
+  min-height: 200px;
 }
 
-/* Medium middle image - Colonne 2, lignes 1-3 (plus haute) */
+/* Medium middle image */
 .grid-medium {
   grid-column: 2;
   grid-row: 1 / 4;
-  min-height: 400px;
-  margin-top: 40px;
+  min-height: 300px;
+  margin-top: 0;
 }
 
-/* Small bottom image - Colonne 1, lignes 3-4 */
+/* Small bottom image */
 .grid-small-bottom {
   grid-column: 1;
   grid-row: 3 / 5;
-  min-height: 240px;
+  min-height: 180px;
+}
+
+/* Hide chevron scroll indicator - replaced by Win2k scrollbar */
+.chevron-container {
+  display: none;
+}
+
+/* Win2k marquee text below hero */
+.win2k-marquee {
+  width: 100%;
+  background: #000080;
+  color: #ffffff;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-size: 11px;
+  padding: 2px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+
+.win2k-marquee-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marqueeScroll 20s linear infinite;
+}
+
+/* Win2k taskbar at the bottom */
+.win2k-taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: #d4d0c8;
+  border-top: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  z-index: 9999;
+  gap: 4px;
+  /* Classic taskbar bevel */
+  box-shadow: inset 0 1px 0 #ffffff;
+}
+
+/* Disable all entrance animations for Win2k style */
+.top-hero-title {
+  animation: none;
+  opacity: 1;
+}
+
+.top-hero-subtitle {
+  animation: none;
+  opacity: 1;
+}
+
+.top-hero-description {
+  animation: none;
+  opacity: 1;
+}
+
+.top-hero-cta {
+  animation: none;
+  opacity: 1;
+}
+
+.top-hero-visual {
+  animation: none;
+  opacity: 1;
 }
 
 .scroll-indicator {
-  position: absolute;
-  bottom: 3rem;
-  left: 25%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 10;
+  animation: none;
+  opacity: 1;
 }
 
-.scroll-indicator:hover {
-  transform: translateX(-50%) translateY(-5px);
-}
-
-.scroll-arrow {
-  width: 30px;
-  height: 50px;
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-.scroll-arrow span {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-bottom: 2px solid #4a5568;
-  border-right: 2px solid #4a5568;
-  transform: rotate(45deg);
-  margin: -10px auto;
-  animation: scrollAnimation 2s infinite;
-}
-
-.scroll-arrow span:nth-child(2) {
-  animation-delay: -0.2s;
-}
-
-.scroll-arrow span:nth-child(3) {
-  animation-delay: -0.4s;
-}
-
-@keyframes scrollAnimation {
-  0% {
-    opacity: 0;
-    transform: rotate(45deg) translate(-20px, -20px);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: rotate(45deg) translate(20px, 20px);
-  }
-}
-
-.scroll-text {
-  color: #6b7280;
-  font-size: 0.875rem;
-  text-align: center;
-  margin: 0;
-  font-family: var(--font-family-body);
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .top-hero-container {
-    padding: 2rem 4rem 2rem;
-  }
-  
-  .top-hero-grid {
-    gap: 3rem;
-    grid-template-columns: 1.2fr 0.8fr;
-  }
-  
-  .top-hero-title img {
-    max-width: 300px;
-  }
-  
-  .top-hero-subtitle {
-    font-size: 1.35rem;
-  }
-  
-  .top-hero-description {
-    font-size: 1rem;
-  }
-}
-
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .top-hero-container {
-    padding: 2rem 2rem 3rem;
+    padding: 32px 8px 8px;
     min-height: auto;
-    padding-top: 120px;
   }
   
   .top-hero-grid {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 8px;
     justify-items: center;
-    text-align: center;
+    text-align: left;
   }
   
   .top-hero-content {
@@ -285,23 +372,20 @@
   }
   
   .top-hero-title {
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+    padding: 10px 10px 6px;
   }
   
   .top-hero-title img {
-    max-width: 260px;
+    max-width: 200px;
   }
   
-  /* Show mobile grid after logo */
+  /* Show mobile grid */
   .top-hero-image-grid.mobile-only {
     display: grid;
-    max-height: 400px;
+    max-height: 280px;
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto 6rem;
+    max-width: 400px;
+    margin: 0 auto;
   }
   
   /* Hide desktop grid */
@@ -310,312 +394,48 @@
   }
   
   .grid-medium {
-    margin-top: 50px;
+    margin-top: 0;
   }
   
-  .grid-small-top {
-    min-height: 180px;
-  }
-  
-  .grid-medium {
-    min-height: 280px;
-  }
-  
-  .grid-small-bottom {
-    min-height: 160px;
-  }
+  .grid-small-top { min-height: 120px; }
+  .grid-medium { min-height: 200px; }
+  .grid-small-bottom { min-height: 100px; }
   
   .top-hero-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-    margin-top: 3rem;
+    font-size: 12px;
   }
   
   .top-hero-description {
-    font-size: 0.95rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-    line-height: 1.65;
-    padding: 0 1rem;
-    margin-top: 1rem;
+    font-size: 11px;
+    padding: 4px 8px 6px;
+    margin: 0 10px 10px;
   }
   
   .top-hero-cta {
-    padding: 0.95rem 1.75rem;
-    font-size: 0.95rem;
-    margin-top: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .top-hero-container {
-    padding: 1.5rem 1.5rem 2.5rem;
-    min-height: auto;
-    padding-top: 110px;
-  }
-  
-  .top-hero-title {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .top-hero-title img {
-    max-width: 220px;
-  }
-  
-  .top-hero-image-grid.mobile-only {
-    max-height: 380px;
-    max-width: 450px;
-    margin-bottom: 5.5rem;
-  }
-  
-  .grid-small-top {
-    min-height: 160px;
-  }
-  
-  .grid-medium {
-    min-height: 260px;
-    margin-top: 45px;
-  }
-  
-  .grid-small-bottom {
-    min-height: 140px;
-  }
-  
-  .top-hero-subtitle {
-    font-size: 1.15rem;
-    margin-bottom: 1.25rem;
-    margin-top: 2.5rem;
-  }
-  
-  .top-hero-description {
-    font-size: 0.9rem;
-    margin-bottom: 1.75rem;
-    line-height: 1.6;
-    padding: 0 0.5rem;
-    margin-top: 1rem;
-  }
-  
-  .top-hero-cta {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-    padding: 0.9rem 1.5rem;
-    margin-top: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .top-hero-container {
-    padding: 1.25rem 1.25rem 2rem;
-    min-height: auto;
-    padding-top: 100px;
-  }
-  
-  .top-hero-title {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .top-hero-title img {
-    max-width: 190px;
-  }
-  
-  .top-hero-image-grid.mobile-only {
-    max-height: 340px;
-    max-width: 400px;
-    gap: 0.6rem;
-    margin-bottom: 5rem;
-  }
-  
-  .grid-small-top {
-    min-height: 140px;
-  }
-  
-  .grid-medium {
-    min-height: 240px;
-    margin-top: 40px;
-  }
-  
-  .grid-small-bottom {
-    min-height: 120px;
-  }
-  
-  .top-hero-subtitle {
-    font-size: 1.05rem;
-    margin-bottom: 1rem;
-    margin-top: 2.25rem;
-  }
-  
-  .top-hero-description {
-    font-size: 0.875rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.55;
-    padding: 0;
-    margin-top: 0.875rem;
-  }
-  
-  .top-hero-cta {
-    width: 100%;
-    max-width: 260px;
-    padding: 0.85rem 1.25rem;
-    font-size: 0.9rem;
-    margin-top: 1rem;
+    padding: 3px 12px;
+    font-size: 11px;
+    margin: 0 10px 10px;
   }
 }
 
 @media (max-width: 480px) {
   .top-hero-container {
-    padding: 1rem 1rem 1.75rem;
-    min-height: auto;
-    padding-top: 90px;
-  }
-  
-  .top-hero-title {
-    margin-top: 0.875rem;
-    margin-bottom: 1.75rem;
+    padding: 28px 6px 6px;
   }
   
   .top-hero-title img {
-    max-width: 170px;
+    max-width: 160px;
   }
   
   .top-hero-image-grid.mobile-only {
-    max-height: 300px;
+    max-height: 240px;
     max-width: 100%;
-    gap: 0.5rem;
-    margin-bottom: 9rem;
+    gap: 4px;
   }
   
-  .grid-small-top {
-    min-height: 120px;
-  }
-  
-  .grid-medium {
-    min-height: 200px;
-    margin-top: 45px;
-  }
-  
-  .grid-small-bottom {
-    min-height: 100px;
-  }
-  
-  .top-hero-subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 0.875rem;
-    margin-top: 2rem;
-  }
-  
-  .top-hero-description {
-    font-size: 0.825rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.5;
-    margin-top: 0.75rem;
-  }
-  
-  .top-hero-cta {
-    width: 100%;
-    max-width: 240px;
-    padding: 0.8rem 1.15rem;
-    font-size: 0.875rem;
-    margin-top: 0.875rem;
-  }
-}
-
-/* Scroll Down Button - Desktop Only */
-.chevron-container {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  transition: all 0.3s ease;
-  z-index: 10;
-  animation: simpleBounce 2s ease-in-out infinite;
-}
-
-.chevron-container:hover {
-  animation: none;
-  transform: translateX(-50%) translateY(5px);
-}
-
-.chevron {
-  width: 16px;
-  height: 16px;
-  border-right: 2px solid #1a1a1a;
-  border-bottom: 2px solid #1a1a1a;
-  transform: rotate(45deg);
-  opacity: 0.8;
-}
-
-.chevron:nth-child(2) {
-  opacity: 0.5;
-}
-
-.chevron:nth-child(3) {
-  opacity: 0.3;
-}
-
-@keyframes simpleBounce {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(8px);
-  }
-}
-
-/* Hide scroll button on mobile */
-@media (max-width: 900px) {
-  .chevron-container {
-    display: none;
-  }
-}
-
-/* Entrance Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.top-hero-title {
-  animation: fadeInUp 0.8s ease-out 0.2s forwards;
-  opacity: 0;
-}
-
-.top-hero-subtitle {
-  animation: fadeInUp 0.8s ease-out 0.4s forwards;
-  opacity: 0;
-}
-
-.top-hero-description {
-  animation: fadeInUp 0.8s ease-out 0.6s forwards;
-  opacity: 0;
-}
-
-.top-hero-cta {
-  animation: fadeInUp 0.8s ease-out 0.8s forwards;
-  opacity: 0;
-}
-
-.top-hero-visual {
-  animation: fadeInUp 0.8s ease-out 1s forwards;
-  opacity: 0;
-}
-
-.scroll-indicator {
-  animation: fadeInUp 0.8s ease-out 1.2s forwards;
-  opacity: 0;
+  .grid-small-top { min-height: 90px; }
+  .grid-medium { min-height: 160px; }
+  .grid-small-bottom { min-height: 80px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

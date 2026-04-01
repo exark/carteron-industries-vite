@@ -1,6 +1,8 @@
-/* Font families are now managed by CSS variables in style.css */
+/* ============================================================
+   STEPS2 - WINDOWS 2000 STYLE
+   Classic Win2k "My Computer" / Explorer panel look
+   ============================================================ */
 
-/* Timeline sticky avec colonnes - Étapes du service */
 .steps2-container1 {
   display: flex;
   flex-direction: column;
@@ -12,47 +14,27 @@
   overflow-y: auto;
   height: auto;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #f8fafc 0%,
-    #e2e8f0 25%,
-    #cbd5e1 50%,
-    #94a3b8 75%,
-    #64748b 100%
-  );
+  /* Win2k classic gray */
+  background: #d4d0c8;
+  /* Win2k window raised border */
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #404040;
 }
 
 .steps2-container1::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 1;
+  display: none;
 }
 
 .steps2-container1::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 42vw;
-  max-width: 500px;
-  height: 35vh;
-  max-height: 260px;
-  background: #232523;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 
 .whityyy {
-  color: #1e293b !important;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  /* Win2k: dark text on gray background */
+  color: #000080 !important;
+  text-shadow: none;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif !important;
 }
 
 .steps2-max-width {
@@ -69,12 +51,31 @@
 
 .steps2-section-header {
   text-align: center;
-  padding: 60px 20px 40px;
-  min-height: 60vh;
+  padding: 0 20px 24px;
+  min-height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  /* Win2k title bar for the section */
+  width: 100%;
+}
+
+/* Win2k title bar added via pseudo-element on max-width container */
+.steps2-section-header::before {
+  content: 'Development Progress - Carteron Industries';
+  display: block;
+  width: calc(100% + 40px);
+  background: linear-gradient(to right, #000080 0%, #1084d0 100%);
+  color: #ffffff;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 8px;
+  margin-bottom: 16px;
+  margin-left: -20px;
+  margin-right: -20px;
+  text-align: left;
 }
 
 .steps2-section-header h2 {
@@ -153,13 +154,18 @@
   text-align: right;
 }
 
-/* Container de l'image */
+/* Container de l'image - Win2k inset frame */
 .stepImage {
   position: relative;
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  background: var(--neutral-gray-100);
+  /* Win2k sunken image frame (inset bevel) */
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  box-shadow: none;
+  background: #d4d0c8;
 }
 
 .stepImage img {
@@ -179,31 +185,40 @@
   transform: scale(1.02);
 }
 
-/* Badge sur l'image */
+/* Badge sur l'image - Win2k raised button style */
 .stepBadge {
   position: absolute;
-  top: clamp(15px, 2vw, 20px);
-  left: clamp(15px, 2vw, 20px);
-  background: var(--primary-blue);
-  color: var(--neutral-white);
-  width: clamp(45px, 6vw, 55px);
-  height: clamp(45px, 6vw, 55px);
-  border-radius: 50%;
+  top: 8px;
+  left: 8px;
+  /* Win2k raised bevel badge */
+  background: #d4d0c8;
+  color: #000080;
+  width: 40px;
+  height: 22px;
+  border-radius: 0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: 1px 1px 0 #808080;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-family-primary);
-  font-weight: var(--font-weight-bold);
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
-  box-shadow: 0 4px 12px rgba(33, 87, 217, 0.3);
-  transition: all 0.3s ease;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  transition: none;
 }
 
-/* Completed badge with green checkmark */
+/* Completed badge - Win2k with green background */
 .stepBadge.completed {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  background: #008000;
+  color: #ffffff;
+  border-top: 2px solid #00cc00;
+  border-left: 2px solid #00cc00;
+  border-right: 2px solid #004000;
+  border-bottom: 2px solid #004000;
+  font-size: 13px;
 }
 
 /* Separator between completed and in-progress steps */
@@ -222,17 +237,22 @@
 }
 
 .separatorText {
-  font-family: var(--font-family-primary);
-  font-weight: var(--font-weight-semibold);
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  color: #64748b;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  color: #000000;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   white-space: nowrap;
-  padding: 8px 20px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2px 12px;
+  /* Win2k groupbox button */
+  background: #d4d0c8;
+  border-radius: 0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: 1px 1px 0 #808080;
 }
 
 /* Contenu de l'étape */
@@ -241,22 +261,24 @@
 }
 
 
-/* Titre de l'étape */
+/* Titre de l'étape - Win2k style */
 .stepContent h3 {
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
-  font-family: var(--font-family-secondary);
-  font-weight: var(--font-weight-bold);
-  color: var(--primary-blue);
-  margin: 0 0 16px 0;
-  line-height: 1.2;
+  font-size: 14px;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-weight: bold;
+  color: #000080;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  border-bottom: 1px solid #808080;
+  padding-bottom: 4px;
 }
 
-/* Description de l'étape */
+/* Description de l'étape - Win2k style */
 .stepContent p {
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
-  font-family: var(--font-family-body);
-  color: var(--neutral-gray-700);
-  line-height: var(--line-height-relaxed);
+  font-size: 11px;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  color: #000000;
+  line-height: 1.5;
   margin: 0;
 }
 
