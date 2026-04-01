@@ -1,3 +1,7 @@
+/* ============================================================
+   HOME PAGE - WINDOWS 2000 STYLE OVERRIDES
+   ============================================================ */
+
 .home-container1 {
   width: 100%;
   display: flex;
@@ -5,338 +9,71 @@
   align-items: center;
   flex-direction: column;
 }
- 
-.home-text10 {
-  display: inline-block;
-}
- 
-.home-text11 {
-  display: inline-block;
-}
- 
-.home-text12 {
-  display: inline-block;
-}
- 
-.home-text13 {
-  display: inline-block;
-}
- 
-.home-text14 {
-  display: inline-block;
-}
- 
-.home-text15 {
-  display: inline-block;
-}
- 
-.home-text16 {
-  display: inline-block;
-}
- 
-.home-text17 {
-  display: inline-block;
-}
- 
-.home-text18 {
-  display: inline-block;
-}
- 
-.home-text19 {
-  display: inline-block;
-}
- 
-.home-text20 {
-  display: inline-block;
-}
- 
-.home-text21 {
-  display: inline-block;
-}
- 
-.home-text22 {
-  display: inline-block;
-}
- 
-.home-text23 {
-  display: inline-block;
-}
- 
-.home-text24 {
-  display: inline-block;
-}
- 
-.home-text25 {
-  display: inline-block;
-}
- 
-.home-text26 {
-  display: inline-block;
-}
- 
-.home-text27 {
-  display: inline-block;
-}
- 
-.home-text28 {
-  display: inline-block;
-}
- 
+
 .home-services {
   align-items: stretch;
   display: block;
 }
 
+/* Win2k desktop teal background for content-front */
+#content-front {
+  background: #d4d0c8 !important;
+}
 
+/* Keep home-text classes for backward compat */
+.home-text10, .home-text11, .home-text12, .home-text13,
+.home-text14, .home-text15, .home-text16, .home-text17,
+.home-text18, .home-text19, .home-text20, .home-text21,
+.home-text22, .home-text23, .home-text24, .home-text25,
+.home-text26, .home-text27, .home-text28, .home-text29,
+.home-text30 { display: inline-block; }
 
- 
-.home-text29 {
-  display: inline-block;
-}
- 
-.home-text30 {
-  display: inline-block;
-}
- 
-.home-text31 {
-  display: inline-block;
-}
- 
-.home-text32 {
-  display: inline-block;
-}
- 
-.home-text33 {
-  display: inline-block;
-}
- 
-.home-text34 {
-  display: inline-block;
-}
- 
-.home-text35 {
-  display: inline-block;
-}
- 
-.home-text36 {
-  display: inline-block;
-}
- 
-.home-text37 {
-  display: inline-block;
-}
- 
-.home-text38 {
-  display: inline-block;
-}
- 
-.home-text39 {
-  display: inline-block;
-}
- 
-.home-text40 {
-  display: inline-block;
-}
- 
-.home-text41 {
-  display: inline-block;
-}
- 
-.home-text42 {
-  display: inline-block;
-}
- 
-.home-text43 {
-  display: inline-block;
-}
- 
-.home-text44 {
-  display: inline-block;
-}
- 
-.home-text45 {
-  display: inline-block;
-}
- 
-.home-text46 {
-  display: inline-block;
-}
- 
-.home-text47 {
-  display: inline-block;
-}
- 
-.home-text48 {
-  display: inline-block;
-}
- 
 .home-temoignage {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
- 
-.home-text49 {
-  display: inline-block;
-}
- 
-.home-text50 {
-  display: inline-block;
-}
- 
-.home-text51 {
-  display: inline-block;
-}
- 
-.home-text52 {
-  display: inline-block;
-}
- 
-.home-text53 {
-  display: inline-block;
-}
- 
-.home-text54 {
-  display: inline-block;
-}
- 
-.home-text55 {
-  display: inline-block;
-}
- 
-.home-text56 {
-  display: inline-block;
-}
- 
-.home-text57 {
-  display: inline-block;
-}
- 
-.home-text58 {
-  display: inline-block;
-}
- 
-.home-text59 {
-  display: inline-block;
-}
- 
-.home-text60 {
-  display: inline-block;
-}
- 
-.home-text61 {
-  display: inline-block;
-}
- 
-.home-text62 {
-  display: inline-block;
-}
- 
-.home-container2 {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
- 
-.home-text63 {
-  display: inline-block;
-}
- 
-.home-text64 {
-  display: inline-block;
-}
- 
-.home-text65 {
-  display: inline-block;
-}
- 
-.home-text66 {
-  display: inline-block;
-}
- 
-.home-text67 {
-  display: inline-block;
-}
- 
-.home-text68 {
-  display: inline-block;
-}
- 
-.home-text69 {
-  display: inline-block;
-}
- 
-.home-text70 {
-  display: inline-block;
-}
- 
-.home-text71 {
-  display: inline-block;
-}
- 
-.home-text72 {
-  display: inline-block;
-}
- 
-.home-text73 {
-  display: inline-block;
-}
- 
-.home-text74 {
-  display: inline-block;
-}
- 
-.home-text75 {
-  display: inline-block;
-}
- 
-.home-text76 {
-  display: inline-block;
-}
- 
-.home-text77 {
-  display: inline-block;
-}
- 
-.home-text78 {
-  display: inline-block;
-}
- 
-.home-text79 {
-  display: inline-block;
-}
- 
-.home-text80 {
-  display: inline-block;
-}
- 
-.home-text81 {
-  display: inline-block;
-}
- 
-.home-text82 {
-  display: inline-block;
-}
 
-/* Remove white background from content-front on home page to let TopHero reach the top */
-#content-front {
-  background: transparent !important;
-}
-
-/* Add white background back for sections after TopHero */
-#content-front > *:not(.top-hero-container) {
-  background: white;
-}
-
-/* Make navbar match TopHero gradient on home page */
+/* Win2k navbar overrides */
 .top-navbar-static.transparent {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  background: linear-gradient(to right, #000080 0%, #1084d0 100%) !important;
   backdrop-filter: none !important;
 }
 
-/* Adjust menu button for the new background */
 .top-navbar-static.transparent .menu-button {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
+  background: transparent;
+  color: #ffffff;
   text-shadow: none;
+}
+
+/* Win2k marquee bar below content (IE era "news ticker") */
+.win2k-news-bar {
+  width: 100%;
+  background: #000080;
+  color: #ffff00;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-size: 11px;
+  padding: 2px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.win2k-news-bar-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marqueeWin2k 25s linear infinite;
+  padding-left: 100%;
+}
+
+@keyframes marqueeWin2k {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Section divider Win2k style (horizontal rule) */
+.win2k-divider {
+  border: none;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #ffffff;
+  margin: 0;
 }

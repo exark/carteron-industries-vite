@@ -1,95 +1,83 @@
-/* Contact Section - Design homogène et élégant */
+/* ============================================================
+   CONTACT SECTION - WINDOWS 2000 STYLE
+   Classic Win2k dialog / form window
+   ============================================================ */
+
 .contact10-container1 {
   display: flex;
   position: relative;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  background: 
-    linear-gradient(
-      135deg,
-      rgba(11, 34, 68, 0.85) 0%,
-      rgba(30, 41, 59, 0.75) 50%,
-      rgba(15, 23, 42, 0.9) 100%
-    ),
-    url('/images/forest.webp');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  padding: var(--space-2xl) 0;
+  /* Win2k teal background */
+  background: #008080;
+  background-image: none;
+  background-attachment: scroll;
+  padding: 0;
   overflow: hidden;
 }
 
 .contact10-container1::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(
-      ellipse at center,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(59, 130, 246, 0.05) 30%,
-      transparent 70%
-    );
-  pointer-events: none;
-  animation: forestGlow 6s ease-in-out infinite alternate;
-}
-
-@keyframes forestGlow {
-  0% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0.7;
-    transform: scale(1.05);
-  }
+  display: none;
 }
 
 .contact10-max-width {
   width: 100%;
-  max-width: var(--max-width-lg);
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+}
+
+/* Win2k dialog window wrapper */
+.contact10-max-width::before {
+  content: 'Contact Us - Carteron Industries';
+  display: block;
+  background: linear-gradient(to right, #000080 0%, #1084d0 100%);
+  color: #ffffff;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 8px;
+  text-align: left;
 }
 
 .contact10-content1 {
   width: 100%;
-  margin-bottom: var(--space-xl);
+  margin-bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #d4d0c8;
+  padding: 16px 24px;
 }
 
 .contact10-content2 {
-  gap: var(--space-lg);
+  gap: 8px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
 }
 
 .contact10-content2 h2 {
-  font-size: var(--font-size-3xl);
-  font-family: var(--font-family-secondary);
-  font-weight: var(--font-weight-bold);
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: var(--space-md);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-weight: bold;
+  color: #000080;
+  margin-bottom: 8px;
+  text-shadow: none;
 }
 
 .contact10-content2 p {
-  font-size: var(--font-size-lg);
-  color: rgba(255, 255, 255, 0.85);
-  line-height: var(--line-height-relaxed);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 11px;
+  color: #000000;
+  line-height: 1.5;
+  text-shadow: none;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
 }
 
 .contact10-content3 {
@@ -98,32 +86,42 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
-  gap: var(--space-xl);
+  gap: 0;
+  background: #d4d0c8;
+  padding: 0 24px 16px;
 }
 
+/* Win2k "card" panel with inset border */
 .contact10-container4 {
-  background: var(--neutral-white);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--neutral-gray-200);
-  padding: var(--space-xl) var(--space-lg);
+  background: #d4d0c8;
+  border-radius: 0;
+  /* Win2k raised border */
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: 1px 1px 0 #808080;
+  padding: 12px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: var(--space-xl);
-  max-width: 1000px;
+  gap: 16px;
+  max-width: 100%;
   width: 100%;
-  min-height: 0;
-  overflow: hidden;
 }
 
 .contact10-image2 {
-  width: 200px;
-  min-width: 140px;
-  max-width: 200px;
-  height: 200px;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  width: 140px;
+  min-width: 100px;
+  max-width: 140px;
+  height: 140px;
+  border-radius: 0;
+  /* Win2k inset image frame */
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  box-shadow: none;
   margin-bottom: 0;
   object-fit: cover;
   display: block;
@@ -134,17 +132,17 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: var(--space-md);
+  gap: 6px;
   flex: 1;
   min-width: 0;
 }
 
 .contact10-text14 {
-  font-size: var(--font-size-xl);
-  font-family: var(--font-family-secondary);
-  font-weight: var(--font-weight-semibold);
-  color: var(--primary-blue);
-  margin-bottom: var(--space-xs);
+  font-size: 13px;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-weight: bold;
+  color: #000080;
+  margin-bottom: 4px;
   text-align: left;
   word-break: break-all;
   overflow-wrap: anywhere;
@@ -152,12 +150,14 @@
 }
 
 .contact10-info p {
-  font-size: var(--font-size-base);
-  color: var(--neutral-gray-600);
+  font-size: 11px;
+  color: #000000;
   text-align: left;
-  margin-bottom: var(--space-xs);
+  margin-bottom: 4px;
   max-width: 100%;
   word-break: break-word;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  line-height: 1.4;
 }
 
 .contact10-container5 {
@@ -167,59 +167,77 @@
   justify-content: flex-start;
 }
 
+/* Win2k button style */
 .contact10-container5 a {
-  min-width: 140px;
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xs) var(--space-lg);
-  background: var(--primary-blue); 
-  color: var(--neutral-white);
-  border: none;
-  box-shadow: var(--shadow-sm);
+  min-width: 80px;
+  font-size: 11px;
+  font-weight: normal;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  border-radius: 0;
+  padding: 3px 12px;
+  /* Win2k raised button */
+  background: #d4d0c8;
+  color: #000000;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: 1px 1px 0 #808080;
   text-decoration: none;
   text-align: center;
+  display: inline-block;
 }
 
-/* Partnership Section Styles */
+.contact10-container5 a:hover {
+  /* Win2k pressed button */
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: none;
+}
+
+/* Partnership Section Styles - Win2k groupbox style */
 .contact10-partnership-section {
-  margin-top: var(--space-2xl);
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: 8px;
   width: 100%;
-  max-width: 800px;
 }
 
 .contact10-partnership-item {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #ffffff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 0;
+  padding: 8px 12px;
+  /* Win2k sunken/inset groupbox */
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  box-shadow: none;
 }
 
 .contact10-partnership-item h3 {
-  font-size: var(--font-size-xl);
-  font-family: var(--font-family-secondary);
-  font-weight: var(--font-weight-semibold);
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: var(--space-md);
+  font-size: 12px;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
+  font-weight: bold;
+  color: #000080;
+  margin-bottom: 4px;
   text-align: left;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: none;
 }
 
 .contact10-partnership-item p {
-  font-size: var(--font-size-base);
-  color: rgba(255, 255, 255, 0.8);
-  line-height: var(--line-height-relaxed);
+  font-size: 11px;
+  color: #000000;
+  line-height: 1.4;
   text-align: left;
   margin: 0;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+  font-family: 'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif;
 }
 
 @media (max-width: 991px) {
@@ -227,88 +245,57 @@
     background-attachment: scroll;
   }
   
-  .contact10-max-width {
-    padding: 0 var(--space-md);
-  }
   .contact10-content3 {
     flex-direction: column;
     align-items: center;
-    gap: var(--space-lg);
+    padding: 0 12px 12px;
   }
+  
   .contact10-container4 {
     max-width: 100%;
     flex-direction: column;
     align-items: center;
-    padding: var(--space-lg) var(--space-md);
-    gap: var(--space-lg);
+    gap: 12px;
   }
+  
   .contact10-image2 {
     width: 100%;
-    max-width: 220px;
+    max-width: 200px;
     height: auto;
-    margin-bottom: var(--space-md);
+    margin-bottom: 8px;
   }
+  
   .contact10-info {
     align-items: center;
     text-align: center;
   }
+  
   .contact10-container5 {
     justify-content: center;
   }
+  
   .contact10-text14 {
-    font-size: var(--font-size-lg);
+    font-size: 12px;
     word-break: break-all;
-  }
-  
-  .contact10-partnership-section {
-    margin-top: var(--space-xl);
-    gap: var(--space-lg);
-  }
-  
-  .contact10-partnership-item {
-    padding: var(--space-lg);
-  }
-  
-  .contact10-partnership-item h3 {
-    font-size: var(--font-size-lg);
-    text-align: center;
-  }
-  
-  .contact10-partnership-item p {
-    text-align: center;
   }
 }
 
 @media (max-width: 767px) {
-  .contact10-max-width {
-    padding: 0 var(--space-sm);
-  }
   .contact10-content1 {
-    margin-bottom: var(--space-lg);
+    padding: 12px 16px;
   }
+  
   .contact10-container4 {
-    padding: var(--space-md);
+    padding: 8px;
   }
+  
   .contact10-image2 {
     max-width: 100%;
-    margin-bottom: var(--space-md);
+    margin-bottom: 8px;
     height: auto;
   }
+  
   .contact10-text14 {
-    font-size: var(--font-size-base);
-  }
-  
-  .contact10-partnership-section {
-    margin-top: var(--space-lg);
-    gap: var(--space-md);
-  }
-  
-  .contact10-partnership-item {
-    padding: var(--space-md);
-  }
-  
-  .contact10-partnership-item h3 {
-    font-size: var(--font-size-base);
-    margin-bottom: var(--space-sm);
+    font-size: 11px;
   }
 }

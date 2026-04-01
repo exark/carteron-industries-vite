@@ -173,6 +173,27 @@ export default function HeroCarousel() {
 
   return (
     <div className="hero-carousel-wrapper">
+      {/* Win2k window title bar for carousel section */}
+      <div style={{
+        width: '100%',
+        background: 'linear-gradient(to right, #000080 0%, #1084d0 100%)',
+        color: '#ffffff',
+        fontFamily: "'Tahoma', 'MS Sans Serif', Verdana, Arial, sans-serif",
+        fontSize: '11px',
+        fontWeight: 'bold',
+        padding: '3px 8px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '6px',
+        flexShrink: 0,
+      }}>
+        <svg width="12" height="12" viewBox="0 0 12 12" style={{ flexShrink: 0 }}>
+          <rect x="0" y="0" width="12" height="12" fill="#000080"/>
+          <rect x="2" y="2" width="8" height="8" fill="#4a90d9"/>
+          <rect x="4" y="4" width="4" height="4" fill="#ffffff"/>
+        </svg>
+        Photo Gallery - Carteron Industries Products
+      </div>
       <div className="hero-carousel-nav-outer">
         <div className="hero-carousel-swiper-container">
           <div
