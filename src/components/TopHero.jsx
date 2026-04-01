@@ -36,11 +36,40 @@ const TopHero = () => {
               style={{ pointerEvents: 'none', userSelect: 'none' }}
             />
           </div>
+          
+          {/* Image Grid for Mobile - appears after logo */}
+          <div className="top-hero-image-grid mobile-only">
+            <div className="grid-image grid-small-top">
+              <div>
+                <img 
+                  src="/images/kidsgolf.webp" 
+                  alt="Kids Golf"
+                />
+              </div>
+            </div>
+            <div className="grid-image grid-medium">
+              <div>
+                <img 
+                  src="/images/golf_image_1.webp" 
+                  alt="Golf Course"
+                />
+              </div>
+            </div>
+            <div className="grid-image grid-small-bottom">
+              <div>
+                <img 
+                  src="/images/bptg.png" 
+                  alt="Golf Together"
+                />
+              </div>
+            </div>
+          </div>
+          
           <p className="top-hero-subtitle">
             {t('carousel.side_title', 'An Innovation Serving Golf and Family')}
           </p>
           <p className="top-hero-description">
-            {t('carousel.side_desc', 'Driven by innovation, Carteron Industries creates solutions at the crossroads of sport, family, and technology. We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely. Our motorized hybrid solution, currently in development, is specifically adapted to golf courses, combining sporting leisure with family life.')}
+            {t('carousel.side_desc', 'Carteron Industries creates solutions at the crossroads of sport, family, and technology. We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely. Our motorized hybrid solution, currently in development, is specifically adapted to golf courses, combining sporting leisure with family life.')}
           </p>
           
           <button className="top-hero-cta" onClick={handleProductsClick}>

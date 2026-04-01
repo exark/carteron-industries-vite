@@ -15,7 +15,7 @@
 /* Grid Layout - Content + Image Grid */
 .top-hero-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 1.5rem;
   max-width: 1400px;
   width: 100%;
@@ -101,6 +101,11 @@
   isolation: isolate;
 }
 
+/* Hide mobile-only grid on desktop */
+.top-hero-image-grid.mobile-only {
+  display: none;
+}
+
 .grid-image {
   border-radius: 20px;
   overflow: visible;
@@ -161,6 +166,7 @@
   grid-column: 2;
   grid-row: 1 / 4;
   min-height: 400px;
+  margin-top: 40px;
 }
 
 /* Small bottom image - Colonne 1, lignes 3-4 */
@@ -260,13 +266,10 @@
 }
 
 @media (max-width: 900px) {
-  .top-hero-image-grid {
-    display: none;
-  }
-  
   .top-hero-container {
-    padding: 2rem 3rem 3rem;
-    min-height: 85vh;
+    padding: 2rem 2rem 3rem;
+    min-height: auto;
+    padding-top: 120px;
   }
   
   .top-hero-grid {
@@ -277,129 +280,245 @@
   }
   
   .top-hero-content {
-    max-width: 700px;
+    max-width: 100%;
+    width: 100%;
   }
   
   .top-hero-title {
     margin-bottom: 2rem;
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
   }
   
   .top-hero-title img {
-    max-width: 280px;
+    max-width: 260px;
+  }
+  
+  /* Show mobile grid after logo */
+  .top-hero-image-grid.mobile-only {
+    display: grid;
+    max-height: 400px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 6rem;
+  }
+  
+  /* Hide desktop grid */
+  .top-hero-grid > .top-hero-image-grid:not(.mobile-only) {
+    display: none;
+  }
+  
+  .grid-medium {
+    margin-top: 50px;
+  }
+  
+  .grid-small-top {
+    min-height: 180px;
+  }
+  
+  .grid-medium {
+    min-height: 280px;
+  }
+  
+  .grid-small-bottom {
+    min-height: 160px;
   }
   
   .top-hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 1.75rem;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
   }
   
   .top-hero-description {
-    font-size: 1rem;
+    font-size: 0.95rem;
     max-width: 100%;
-    margin-bottom: 2.5rem;
-    line-height: 1.7;
+    margin-bottom: 2rem;
+    line-height: 1.65;
+    padding: 0 1rem;
+    margin-top: 1rem;
   }
   
   .top-hero-cta {
-    padding: 1rem 2rem;
-    font-size: 1rem;
+    padding: 0.95rem 1.75rem;
+    font-size: 0.95rem;
+    margin-top: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .top-hero-container {
-    padding: 1.5rem 2rem 2.5rem;
-    min-height: 80vh;
+    padding: 1.5rem 1.5rem 2.5rem;
+    min-height: auto;
+    padding-top: 110px;
   }
   
-  .top-hero-content {
-    max-width: 600px;
-  }
-  
-  .top-hero-title img {
-    max-width: 240px;
-  }
-  
-  .top-hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .top-hero-description {
-    font-size: 0.95rem;
+  .top-hero-title {
+    margin-top: 1rem;
     margin-bottom: 2rem;
-    line-height: 1.65;
-  }
-  
-  .top-hero-cta {
-    width: 100%;
-    max-width: 300px;
-    justify-content: center;
-    padding: 0.95rem 1.75rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .top-hero-container {
-    padding: 1.25rem 1.5rem 2rem;
-    min-height: 75vh;
-  }
-  
-  .top-hero-content {
-    max-width: 500px;
   }
   
   .top-hero-title img {
-    max-width: 200px;
+    max-width: 220px;
+  }
+  
+  .top-hero-image-grid.mobile-only {
+    max-height: 380px;
+    max-width: 450px;
+    margin-bottom: 5.5rem;
+  }
+  
+  .grid-small-top {
+    min-height: 160px;
+  }
+  
+  .grid-medium {
+    min-height: 260px;
+    margin-top: 45px;
+  }
+  
+  .grid-small-bottom {
+    min-height: 140px;
   }
   
   .top-hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     margin-bottom: 1.25rem;
+    margin-top: 2.5rem;
   }
   
   .top-hero-description {
     font-size: 0.9rem;
     margin-bottom: 1.75rem;
     line-height: 1.6;
+    padding: 0 0.5rem;
+    margin-top: 1rem;
   }
   
   .top-hero-cta {
     width: 100%;
     max-width: 280px;
-    padding: 0.875rem 1.5rem;
-    font-size: 0.95rem;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    margin-top: 1rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .top-hero-container {
-    padding: 1rem 1.25rem 1.75rem;
-    min-height: 70vh;
+    padding: 1.25rem 1.25rem 2rem;
+    min-height: auto;
+    padding-top: 100px;
+  }
+  
+  .top-hero-title {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
   
   .top-hero-title img {
-    max-width: 180px;
+    max-width: 190px;
+  }
+  
+  .top-hero-image-grid.mobile-only {
+    max-height: 340px;
+    max-width: 400px;
+    gap: 0.6rem;
+    margin-bottom: 5rem;
+  }
+  
+  .grid-small-top {
+    min-height: 140px;
+  }
+  
+  .grid-medium {
+    min-height: 240px;
+    margin-top: 40px;
+  }
+  
+  .grid-small-bottom {
+    min-height: 120px;
   }
   
   .top-hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.05rem;
     margin-bottom: 1rem;
+    margin-top: 2.25rem;
   }
   
   .top-hero-description {
     font-size: 0.875rem;
     margin-bottom: 1.5rem;
     line-height: 1.55;
+    padding: 0;
+    margin-top: 0.875rem;
   }
   
   .top-hero-cta {
     width: 100%;
     max-width: 260px;
-    padding: 0.825rem 1.25rem;
+    padding: 0.85rem 1.25rem;
     font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-hero-container {
+    padding: 1rem 1rem 1.75rem;
+    min-height: auto;
+    padding-top: 90px;
+  }
+  
+  .top-hero-title {
+    margin-top: 0.875rem;
+    margin-bottom: 1.75rem;
+  }
+  
+  .top-hero-title img {
+    max-width: 170px;
+  }
+  
+  .top-hero-image-grid.mobile-only {
+    max-height: 300px;
+    max-width: 100%;
+    gap: 0.5rem;
+    margin-bottom: 9rem;
+  }
+  
+  .grid-small-top {
+    min-height: 120px;
+  }
+  
+  .grid-medium {
+    min-height: 200px;
+    margin-top: 45px;
+  }
+  
+  .grid-small-bottom {
+    min-height: 100px;
+  }
+  
+  .top-hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 0.875rem;
+    margin-top: 2rem;
+  }
+  
+  .top-hero-description {
+    font-size: 0.825rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+    margin-top: 0.75rem;
+  }
+  
+  .top-hero-cta {
+    width: 100%;
+    max-width: 240px;
+    padding: 0.8rem 1.15rem;
+    font-size: 0.875rem;
+    margin-top: 0.875rem;
   }
 }
 
