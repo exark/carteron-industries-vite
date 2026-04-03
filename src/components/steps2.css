@@ -128,11 +128,11 @@
 }
 
 .stepRow.stepCompleted .stepImage {
-  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.2);
+  box-shadow: 0 10px 25px rgba(122, 155, 111, 0.2);
 }
 
 .stepRow.stepCompleted .stepContent h3 {
-  color: #059669;
+  color: #7A9B6F;
 }
 
 .stepRow.stepCompleted .stepContent p {
@@ -201,8 +201,8 @@
 
 /* Completed badge with green checkmark */
 .stepBadge.completed {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+  background: linear-gradient(135deg, #7A9B6F 0%, #6B8A60 100%);
+  box-shadow: 0 4px 12px rgba(122, 155, 111, 0.4);
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
 }
 

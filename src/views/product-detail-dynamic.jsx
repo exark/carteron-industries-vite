@@ -121,7 +121,7 @@ export default function ProductDetailDynamic() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: '#f5f5f5',
+                backgroundColor: 'transparent',
                 borderRadius: 3,
                 overflow: 'hidden'
               }}>
@@ -191,7 +191,7 @@ export default function ProductDetailDynamic() {
                       opacity: selectedImage === index ? 1 : 0.6,
                       transition: 'all 0.3s ease',
                       flexShrink: 0,
-                      backgroundColor: '#f5f5f5'
+                      backgroundColor: 'transparent'
                     }}
                   />
                 ))}
