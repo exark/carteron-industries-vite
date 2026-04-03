@@ -122,29 +122,29 @@
     "about_founder": "Founder",
     "about_parcours_title": "Background",
     "innovation": {
-      "name": "Powered Solution",
-      "desc": "Comfort & Ease",
-      "popup": "A solution that minimizes physical strain and prevents fatigue, allowing you to make the most of your game and your family moments."
+      "name": "A new golf experience",
+      "desc": "Rethinking mobility on the course through a smoother, more modern solution better suited to today's needs.",
+      "popup": ""
     },
     "startup": {
-      "name": "2-in-1 Hybrid Trolley",
-      "desc": "When golf meets family life.",
-      "popup": "A unique concept blending the practicality of a golf cart with the comfort of a stroller."
+      "name": "Between technology and real use",
+      "desc": "The project relies on engineering to address concrete needs, with a user-centered approach.",
+      "popup": ""
     },
     "work": {
-      "name": "Hybrid, Simple, and Modern Design",
-      "desc": "Unmatched folding simplicity for easy transport.",
-      "popup": "Practical innovations that allow golfers and families to enjoy more comfort, simplicity, and quality time — making every round of golf more enjoyable and effortless."
+      "name": "Designed for families",
+      "desc": "A vision that seeks to bring together sporting practice, travel comfort and the child's presence in a single product.",
+      "popup": ""
     },
     "tech": {
-      "name": "Premium Version",
-      "desc": "Advanced digital features",
-      "popup": "Advanced digital features and integrated design elements that improve the experience on the course — combining modern technology, comfort, and style."
+      "name": "Intelligent assistance",
+      "desc": "Driving and braking assistance provides greater control, especially on demanding terrain.",
+      "popup": ""
     },
     "community": {
-      "name": "Secure Solution",
-      "desc": "Infant car seat compliant with childcare safety standards.",
-      "popup": "Parents can use the same seat in the car and on our hybrid 2-in-1 golf stroller, for more convenience."
+      "name": "A connected approach",
+      "desc": "The experience extends through a mobile app designed to enrich product use over time.",
+      "popup": ""
     }
   },
   "features25": {

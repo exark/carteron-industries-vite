@@ -12,6 +12,15 @@ export default function InfoSection() {
     const handleScroll = () => {
       if (!contentRef.current || !imageRef.current) return;
 
+      // Vérifier si le menu est ouvert (classe 'tilt' sur #main-content)
+      const mainContent = document.getElementById('main-content');
+      const isMenuOpen = mainContent?.classList.contains('tilt');
+      
+      // Si le menu est ouvert, ne pas recalculer la position
+      if (isMenuOpen) {
+        return;
+      }
+
       const sectionRect = contentRef.current.getBoundingClientRect();
       const containerTop = sectionRect.top;
       

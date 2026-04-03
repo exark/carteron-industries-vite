@@ -122,29 +122,29 @@
     "about_founder": "Fondatrice",
     "about_parcours_title": "Parcours",
     "innovation": {
-      "name": "Solution motorisée",
-      "desc": "Confort & simplicité",
-      "popup": "Une solution pour réduire l’effort physique et prévient la fatigue, pour profiter pleinement du jeu et de la famille."
+      "name": "Une nouvelle expérience du golf",
+      "desc": "Repenser la mobilité sur le parcours à travers une solution plus fluide, plus moderne et plus adaptée aux usages d'aujourd'hui.",
+      "popup": ""
     },
     "startup": {
-      "name": "Chariot Hybride 2-en-1",
-      "desc": "Quand le golf rencontre la vie de famille.",
-      "popup": "Un concept original qui associe la praticité d’un chariot de golf et le confort d’une poussette."
+      "name": "Entre technologie et usage réel",
+      "desc": "Le projet s'appuie sur l'ingénierie pour répondre à des besoins concrets, avec une approche centrée sur l'utilisateur.",
+      "popup": ""
     },
     "work": {
-      "name": "Design hybride, simple et moderne",
-      "desc": "une simplicité de pliage inégale pour un transport facile",
-      "popup": "Des innovations pratiques qui permettent aux golfeurs et aux familles de profiter de plus de confort, de simplicité et de temps de qualité — pour que chaque partie de golf soit plus agréable et sans effort."
+      "name": "Pensé pour les familles",
+      "desc": "Une vision qui cherche à rapprocher pratique sportive, confort de déplacement et présence de l'enfant dans un même produit.",
+      "popup": ""
     },
     "tech": {
-      "name": "Version haut de gamme",
-      "desc": "des fonctionnalités digitales avancées",
-      "popup": "Des fonctionnalités numériques innovantes et des éléments de conception intégrés qui améliorent l'expérience sur le parcours — alliant technologie moderne, confort et style."
+      "name": "Assistance intelligente",
+      "desc": "L'aide à la conduite et au freinage apporte davantage de maîtrise, notamment sur les terrains exigeants.",
+      "popup": ""
     },
     "community": {
-      "name": "Solution sécurisée",
-      "desc": "Siège auto bébé conforme aux normes de puériculture",
-      "popup": "les parents peuvent utiliser le même siège à la fois dans la voiture et sur notre chariot poussette hybride 2 en 1, pour plus de praticité."
+      "name": "Une approche connectée",
+      "desc": "L'expérience se prolonge via une application mobile conçue pour enrichir l'utilisation du produit dans le temps.",
+      "popup": ""
     }
   },
   "features25": {

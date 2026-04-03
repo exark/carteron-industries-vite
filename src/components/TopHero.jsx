@@ -10,9 +10,9 @@ const TopHero = () => {
   const navigate = useNavigate();
 
   const handleDiscoverClick = () => {
-    const heroCarouselElement = document.querySelector('.hero-carousel-wrapper');
-    if (heroCarouselElement) {
-      heroCarouselElement.scrollIntoView({ 
+    const infoSectionElement = document.querySelector('.info-section');
+    if (infoSectionElement) {
+      infoSectionElement.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
