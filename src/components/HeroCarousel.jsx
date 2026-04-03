@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { Button, Modal, Box } from "@mui/material";
-import { Fade } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./HeroCarousel.css";
 import { useTranslation } from "react-i18next";
@@ -73,10 +71,6 @@ export default function HeroCarousel() {
     description: t(`carousel.${item.key}.desc`),
     popupText: t(`carousel.${item.key}.popup`),
   }));
-  const [modalOpen, setModalOpen] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(null);
-  const [aboutModalOpen, setAboutModalOpen] = useState(false);
-  const [founderModalOpen, setFounderModalOpen] = useState(false);
 
   // Slides per view responsive
   const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow());
@@ -116,59 +110,6 @@ export default function HeroCarousel() {
     if (e.key === "Enter" || e.key === " ") cb();
   };
 
-  const handleSlideClick = (item) => {
-    setActiveSlide({ ...item });
-    setModalOpen(true);
-  };
-
-  const handleAboutOpen = () => {
-    setAboutModalOpen(true);
-  };
-
-  const handleAboutClose = () => {
-    setAboutModalOpen(false);
-  };
-
-  const handleFounderOpen = () => {
-    setFounderModalOpen(true);
-  };
-
-  const handleFounderClose = () => {
-    setFounderModalOpen(false);
-  };
-
-  const handleOurProductsClick = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-    setTimeout(() => {
-      navigate('/our-product');
-    }, 100);
-  };
-
-  // Handle ESC key press
-  useEffect(() => {
-    const handleEscKey = (event) => {
-      if (event.key === 'Escape') {
-        setAboutModalOpen(false);
-      }
-    };
-
-    if (aboutModalOpen) {
-      document.addEventListener('keydown', handleEscKey);
-      // Prevent body scroll and horizontal shift when modal is open
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
-      document.body.classList.add('modal-open');
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscKey);
-      document.body.classList.remove('modal-open');
-      document.documentElement.style.removeProperty('--scrollbar-width');
-    };
-  }, [aboutModalOpen]);
 
 
   return (
@@ -188,13 +129,6 @@ export default function HeroCarousel() {
                   style={{
                     width: slideWidth,
                   }}
-                  tabIndex={0}
-                  role="button"
-                  onClick={() => handleSlideClick(item)}
-                  onKeyDown={(e) =>
-                    (e.key === "Enter" || e.key === " ") &&
-                    handleSlideClick(item)
-                  }
                 >
                   <div
                     className="hero-carousel-slide"
@@ -210,15 +144,7 @@ export default function HeroCarousel() {
                       justifyContent: "flex-end",
                     }}
                   >
-                    {/* Plus symbol indicator */}
-                    <div className="carousel-plus-indicator">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 4V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        <path d="M4 10H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                      </svg>
-                    </div>
-
-                    {/* Combined title and description at the bottom */}
+                    {/* Combined title, description, and popup text */}
                     <div
                       className="slide-content-glass"
                       style={{
@@ -241,7 +167,7 @@ export default function HeroCarousel() {
                           color: "#fff",
                           fontWeight: 700,
                           fontSize: slideTitleSize,
-                          marginBottom: window.innerWidth < 600 ? "6px" : "4px", // Increased margin for bigger mobile carousel
+                          marginBottom: window.innerWidth < 600 ? "6px" : "4px",
                           textShadow: "0 2px 8px rgba(0,0,0,0.5)",
                         }}
                       >
@@ -254,9 +180,21 @@ export default function HeroCarousel() {
                           fontSize: slideDescSize,
                           textShadow: "0 1px 4px rgba(0,0,0,0.4)",
                           lineHeight: 1.4,
+                          marginBottom: "8px",
                         }}
                       >
                         {item.description}
+                      </div>
+                      <div
+                        className="slide-popup-text"
+                        style={{
+                          color: "rgba(255, 255, 255, 0.85)",
+                          fontSize: window.innerWidth < 600 ? "0.85rem" : "0.95rem",
+                          textShadow: "0 1px 4px rgba(0,0,0,0.4)",
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {item.popupText}
                       </div>
                     </div>
                   </div>
@@ -290,100 +228,6 @@ export default function HeroCarousel() {
         </div>
       </div>
 
-      {/* ----- MODAL POPUP pour les carousel ----- */}
-      <Modal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        aria-labelledby="carousel-modal-title"
-        aria-describedby="carousel-modal-desc"
-        className="carousel-modal"
-      >
-        <Box className="carousel-modal-box" sx={{ position: "relative" }}>
-          {/* Croix de fermeture */}
-          <button
-            onClick={() => setModalOpen(false)}
-            className="about-modal-close-x"
-            aria-label="Fermer la fenêtre"
-          >
-            ×
-          </button>
-          
-          {activeSlide && (
-            <div className="carousel-modal-content">
-              <h2 className="carousel-modal-title">{activeSlide.name}</h2>
-              <div className="carousel-modal-desc">
-                {activeSlide.popupText}
-              </div>
-            </div>
-          )}
-        </Box>
-      </Modal>
-      {/* ----- FOUNDER MODAL ----- */}
-      {aboutModalOpen && (
-        <div 
-          className="founder-modal-backdrop"
-          onClick={handleAboutClose}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="founder-modal-title"
-          id="founder-modal"
-        >
-          <div 
-            className="founder-modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={handleAboutClose}
-              className="founder-modal-close"
-              aria-label={t('carousel.close', 'Close')}
-            >
-              ✕
-            </button>
-            
-            <div className="founder-modal-header">
-              <img
-                className="founder-avatar"
-              />
-              <div className="founder-info">
-                <h2 id="founder-modal-title" className="founder-title">
-                  {t('founder_modal.title')}
-                </h2>
-                <p className="founder-tagline">
-                  <span className="mobile-tagline">{t('founder_modal.mobile_tagline')}</span>
-                  <span className="desktop-tagline">{t('founder_modal.desktop_tagline')}</span>
-                </p>
-              </div>
-            </div>
-
-            <div className="founder-modal-body">
-              <section className="founder-section">
-                <h3 className="section-title">{t('founder_modal.vision_title', 'Vision')}</h3>
-                <p className="section-content">
-                  {t('founder_modal.vision_text')}
-                </p>
-              </section>
-
-              <section className="founder-section">
-                <h3 className="section-title">{t('founder_modal.background_title', 'Background')}</h3>
-                <div className="section-content">
-                  <ul className="background-list">
-                    {t('founder_modal.background_items', { returnObjects: true }).map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </section>
-
-              <section className="founder-section">
-                <h3 className="section-title">{t('founder_modal.today_title', 'Today')}</h3>
-                <p className="section-content">
-                  {t('founder_modal.today_text')}
-                </p>
-              </section>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

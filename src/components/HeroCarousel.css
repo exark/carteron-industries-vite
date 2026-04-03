@@ -680,8 +680,6 @@
   display: flex;
   align-items: stretch;
   justify-content: center;
-  transition: box-shadow 0.3s;
-  cursor: pointer;
   user-select: none;
 }
 
@@ -712,7 +710,7 @@
   background-size: cover;
   background-position: center;
   width: 100%;
-  min-height: 500px; /* Increased base height for desktop */
+  min-height: 500px;
   height: 500px;
   border-radius: 22px;
   position: relative;
@@ -721,84 +719,14 @@
   align-items: flex-start;
   justify-content: flex-start;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-origin: center;
-  will-change: transform, box-shadow;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.hero-carousel-slide::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(93, 112, 82, 0.35); /* Green overlay #5D7052 - increased opacity */
-  border-radius: 22px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.hero-carousel-slide:hover::before {
-  opacity: 1;
-}
-
-.hero-carousel-slide:hover .slide-title,
-.hero-carousel-slide:hover .slide-description {
-  transform: translateY(-12px);
-}
-
-/* Mobile/touch support */
-.hero-carousel-slide:focus::before,
-.hero-carousel-slide:active::before {
-  opacity: 1;
-}
-
-.hero-carousel-slide:focus .slide-title,
-.hero-carousel-slide:focus .slide-description,
-.hero-carousel-slide:active .slide-title,
-.hero-carousel-slide:active .slide-description {
-  transform: translateY(-12px);
-}
-
-/* Smooth transition for text content */
 .slide-content-glass {
   position: relative;
   bottom: 0;
-  margin-top: auto; /* Ensures it sticks to bottom */
-  z-index: 2; /* Ensure glass content stays above green overlay */
-}
-
-.slide-title,
-.slide-description {
-  transition: transform 0.3s ease;
-  will-change: transform;
-  position: relative;
-  z-index: 2; /* Ensure text stays above green overlay */
-}
-
-/* Respect user's motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .hero-carousel-slide::before {
-    transition: opacity 0.1s ease;
-  }
-  
-  .slide-title,
-  .slide-description {
-    transition: transform 0.1s ease;
-  }
-  
-  .hero-carousel-slide:hover .slide-title,
-  .hero-carousel-slide:hover .slide-description,
-  .hero-carousel-slide:focus .slide-title,
-  .hero-carousel-slide:focus .slide-description,
-  .hero-carousel-slide:active .slide-title,
-  .hero-carousel-slide:active .slide-description {
-    transform: translateY(-6px); /* Reduced movement for accessibility */
-  }
+  margin-top: auto;
+  z-index: 2;
 }
 
 @media (max-width: 1200px) {
