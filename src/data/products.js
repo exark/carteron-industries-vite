@@ -10,8 +10,8 @@ export const products = {
       gallery: [
         '/images/prototype.jpeg',
         '/images/bptgreel.jpeg',
-        '/images/bptg.png',
-        '/images/bptgsimple.jpeg'
+        '/images/bptgsimple.jpeg',
+        '/images/bptg.png'
       ]
     },
     pricing: {
