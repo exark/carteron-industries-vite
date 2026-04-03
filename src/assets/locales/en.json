@@ -28,7 +28,7 @@
     "name": "Name",
     "email": "Email",
     "phone": "Phone",
-    "company": "Company",
+    "company": "Organization / Golf Club",
     "website": "Website",
     "message": "Message",
     "accept": "I accept the terms of use and privacy policy",
@@ -40,7 +40,7 @@
     "phone_error": "Enter a valid number (e.g.: +216 99 123 456 or 0612345678).",
     "phone_error_required": "Phone number is required and must be valid (e.g.: +216 99 123 456 or 0612345678).",
     "website_error": "Enter a valid URL (https://mysite.com) or leave it blank.",
-    "company_error": "Company name is too short.",
+    "company_error": "Organization name is too short.",
     "message_error": "Message must contain at least 10 characters.",
     "accept_error": "You must accept the terms.",
     "subtitle": "Get in touch with us",
@@ -52,7 +52,7 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "last_updated": "Last updated: 25 September 2024",
+    "last_updated": "Last updated: 3 April 2026",
     "intro": "At Carteron Industries, we highly value the protection of your personal data and privacy.",
     "section1_title": "1. Data Collected",
     "section1_text": "We only collect the information strictly necessary for the site's operation and to handle your requests via our contact form (name, email address, message, etc.).\nNo data is shared with third parties without your consent.",
@@ -86,7 +86,7 @@
   },
   "terms": {
     "title": "Terms and Conditions",
-    "last_updated": "Last updated: 25 September 2024",
+    "last_updated": "Last updated: 3 April 2026",
     "meta_description": "Terms and conditions for using Carteron Industries services and products.",
     "acceptance_title": "1. Acceptance of Terms",
     "acceptance_text": "By accessing and using Carteron Industries' website and services, you accept and agree to be bound by the terms and provision of this agreement.",
@@ -122,28 +122,33 @@
     "about_founder": "Founder",
     "about_parcours_title": "Background",
     "innovation": {
-      "name": "A new golf experience",
-      "desc": "Rethinking mobility on the course through a smoother, more modern solution better suited to today's needs.",
+      "name": "Rethought mobility",
+      "desc": "A new way to move around the course, designed to combine technology, ease of use and freedom of movement.",
       "popup": ""
     },
     "startup": {
-      "name": "Between technology and real use",
-      "desc": "The project relies on engineering to address concrete needs, with a user-centered approach.",
+      "name": "Golf & family life",
+      "desc": "A concept designed to allow parents to enjoy golf while keeping their child close to them, in a more peaceful setting.",
       "popup": ""
     },
     "work": {
-      "name": "Designed for families",
-      "desc": "A vision that seeks to bring together sporting practice, travel comfort and the child's presence in a single product.",
+      "name": "Useful innovation",
+      "desc": "Every design choice aims for a concrete goal: simplify the experience, reduce effort and improve everyday use.",
       "popup": ""
     },
     "tech": {
-      "name": "Intelligent assistance",
-      "desc": "Driving and braking assistance provides greater control, especially on demanding terrain.",
+      "name": "Safety at the heart of design",
+      "desc": "Stability, support and braking assistance are integrated into a confidence and peace of mind-oriented approach.",
       "popup": ""
     },
     "community": {
-      "name": "A connected approach",
-      "desc": "The experience extends through a mobile app designed to enrich product use over time.",
+      "name": "Connected experience",
+      "desc": "The mobile app accompanies the user with settings, updates and a modern approach to the product.",
+      "popup": ""
+    },
+    "terrain": {
+      "name": "Designed for the course",
+      "desc": "Uphill, downhill, movement and equipment management: the product adapts to the realities of the terrain.",
       "popup": ""
     }
   },
@@ -294,13 +299,15 @@
   },
   "contact10": {
     "heading1": "Contact Us",
-    "content1": "We are currently looking for partners and investors to make this promising project a reality.",
+    "content1": "We are currently looking for partners to make this promising project a reality.",
     "investor_title": "Are you an investor?",
     "investor_text": "Are you an investor and find the concept original? Join us and become an actor by investing in the development of the first prototype of our innovative product.",
     "golf_club_title": "Are you a golf club?",
     "golf_club_text": "You can help us by becoming a pilot golf club and accompany us in testing our prototype in a real golf course environment.",
+    "golf_club_btn": "Learn More",
     "golf_family_title": "Are you a golfing family?",
     "golf_family_text": "Become our pilot golfing family, accompany us in discovering the product and share your feelings by testing our 2-in-1 golf cart stroller.",
+    "golf_family_btn": "Join the Program",
     "location2": "Email: carteron.industries@gmail.com",
     "location2Description": "Send us an email for any questions or proposals.",
     "get_directions": "Send Email"
@@ -401,6 +408,28 @@
         "chargingTime": "Charging Time",
         "warranty": "Warranty"
       }
+    }
+  },
+  "info_section": {
+    "card1": {
+      "title": "A new golf experience",
+      "desc": "Rethinking mobility on the course through a smoother, more modern solution better suited to today's needs.",
+      "text": ""
+    },
+    "card2": {
+      "title": "Between technology and real use",
+      "desc": "The project relies on engineering to address concrete needs, with a user-centered approach.",
+      "text": ""
+    },
+    "card3": {
+      "title": "Designed for families",
+      "desc": "A vision that seeks to bring together sporting practice, travel comfort and the child's presence in a single product.",
+      "text": ""
+    },
+    "card4": {
+      "title": "Intelligent assistance",
+      "desc": "Driving and braking assistance provides greater control, especially on demanding terrain.",
+      "text": ""
     }
   },
   "product_detail": {

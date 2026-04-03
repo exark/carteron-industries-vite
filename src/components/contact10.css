@@ -1,22 +1,11 @@
-/* Contact Section - Design homogène et élégant */
+/* Contact Section - Fond dégradé vert/bleu */
 .contact10-container1 {
   display: flex;
   position: relative;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  background: 
-    linear-gradient(
-      135deg,
-      rgba(11, 34, 68, 0.85) 0%,
-      rgba(30, 41, 59, 0.75) 50%,
-      rgba(15, 23, 42, 0.9) 100%
-    ),
-    url('/images/forest.webp');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: linear-gradient(135deg, #e0f2f1 0%, #e1f5fe 50%, #f1f8e9 100%);
   padding: var(--space-2xl) 0;
   overflow: hidden;
 }
@@ -27,27 +16,18 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(
-      ellipse at center,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(59, 130, 246, 0.05) 30%,
-      transparent 70%
-    );
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(33, 87, 217, 0.15) 5%,
+    rgba(33, 87, 217, 0.4) 20%,
+    rgba(33, 87, 217, 0.6) 50%,
+    rgba(33, 87, 217, 0.4) 80%,
+    rgba(33, 87, 217, 0.15) 95%,
+    transparent 100%
+  );
   pointer-events: none;
-  animation: forestGlow 6s ease-in-out infinite alternate;
-}
-
-@keyframes forestGlow {
-  0% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0.7;
-    transform: scale(1.05);
-  }
 }
 
 .contact10-max-width {
@@ -80,16 +60,14 @@
   font-size: var(--font-size-3xl);
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-bold);
-  color: rgba(255, 255, 255, 0.95);
+  color: #0b2244;
   margin-bottom: var(--space-md);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .contact10-content2 p {
   font-size: var(--font-size-lg);
-  color: rgba(255, 255, 255, 0.85);
+  color: #4a5568;
   line-height: var(--line-height-relaxed);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .contact10-content3 {
@@ -185,41 +163,67 @@
 .contact10-partnership-section {
   margin-top: var(--space-2xl);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: var(--space-xl);
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
+  justify-content: center;
 }
 
 .contact10-partnership-item {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: #f7fafc;
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
 .contact10-partnership-item h3 {
   font-size: var(--font-size-xl);
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-semibold);
-  color: rgba(255, 255, 255, 0.95);
+  color: #0b2244;
   margin-bottom: var(--space-md);
   text-align: left;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .contact10-partnership-item p {
   font-size: var(--font-size-base);
-  color: rgba(255, 255, 255, 0.8);
+  color: #4a5568;
   line-height: var(--line-height-relaxed);
   text-align: left;
   margin: 0;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  flex: 1;
+}
+
+.contact10-partnership-btn {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
+  background: #0b2244;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(11, 34, 68, 0.2);
+}
+
+.contact10-partnership-btn:hover {
+  background: #1e3a5f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(11, 34, 68, 0.3);
+}
+
+.contact10-partnership-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(11, 34, 68, 0.2);
 }
 
 @media (max-width: 991px) {
@@ -263,6 +267,7 @@
   .contact10-partnership-section {
     margin-top: var(--space-xl);
     gap: var(--space-lg);
+    flex-direction: column;
   }
   
   .contact10-partnership-item {

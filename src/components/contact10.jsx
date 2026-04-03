@@ -2,10 +2,17 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import './contact10.css'
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 // ⬇️ On place les valeurs par défaut dans la destructuration des props
 const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleNavigateToConstruction = () => {
+    navigate('/construction');
+  };
+
   return (
     <div
       id={contact10Id}
@@ -18,39 +25,19 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
             <p className="thq-body-large">{t('contact10.content1')}</p>
             <div className="contact10-partnership-section">
               <div className="contact10-partnership-item">
-                <h3 className="thq-heading-3">{t('contact10.investor_title')}</h3>
-                <p className="thq-body-large">{t('contact10.investor_text')}</p>
-              </div>
-              
-              <div className="contact10-partnership-item">
                 <h3 className="thq-heading-3">{t('contact10.golf_club_title')}</h3>
                 <p className="thq-body-large">{t('contact10.golf_club_text')}</p>
+                <button className="contact10-partnership-btn" onClick={handleNavigateToConstruction}>
+                  {t('contact10.golf_club_btn')}
+                </button>
               </div>
               
               <div className="contact10-partnership-item">
                 <h3 className="thq-heading-3">{t('contact10.golf_family_title')}</h3>
                 <p className="thq-body-large">{t('contact10.golf_family_text')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="contact10-content3 thq-flex-row">
-          <div className="contact10-container4">
-            <img
-              alt={location2ImageAlt}
-              src="/images/Contactus.webp"
-              className="contact10-image2 thq-img-ratio-16-9"
-            />
-            <div className="contact10-info">
-              <h3 className="contact10-text14 thq-heading-3">{t('contact10.location2')}</h3>
-              <p className="thq-body-large">{t('contact10.location2Description')}</p>
-              <div className="contact10-container5">
-                <a
-                  href="mailto:carteron.industries@gmail.com"
-                  className="thq-button-flat thq-body-small"
-                >
-                  {t('contact10.get_directions')}
-                </a>
+                <button className="contact10-partnership-btn" onClick={handleNavigateToConstruction}>
+                  {t('contact10.golf_family_btn')}
+                </button>
               </div>
             </div>
           </div>

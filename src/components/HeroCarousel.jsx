@@ -11,19 +11,23 @@ const itemsData = [
   },
   {
     key: "startup",
-    image: "/images/bptgreel.jpeg",
+    image: "/images/couple-jouant-au-golf-ensemble.webp",
   },
   {
     key: "work",
-    image: "/images/motherwithbaby.webp",
+    image: "/images/bptgreel.jpeg",
   },
   {
     key: "tech",
-    image: "/images/terrain.webp",
+    image: "/images/motherwithbaby.webp",
   },
   {
     key: "community",
     image: "/images/application.webp",
+  },
+  {
+    key: "terrain",
+    image: "/images/terrain.webp",
   }
 ];
 

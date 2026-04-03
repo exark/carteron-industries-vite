@@ -5,30 +5,30 @@ import "./InfoSection.css";
 export default function InfoSection() {
   const { t } = useTranslation();
 
-  const carouselItems = [
+  const infoCards = [
     {
-      key: "innovation",
-      title: t("carousel.innovation.name"),
-      description: t("carousel.innovation.desc"),
-      text: t("carousel.innovation.popup")
+      key: "card1",
+      title: t("info_section.card1.title"),
+      description: t("info_section.card1.desc"),
+      text: t("info_section.card1.text")
     },
     {
-      key: "startup",
-      title: t("carousel.startup.name"),
-      description: t("carousel.startup.desc"),
-      text: t("carousel.startup.popup")
+      key: "card2",
+      title: t("info_section.card2.title"),
+      description: t("info_section.card2.desc"),
+      text: t("info_section.card2.text")
     },
     {
-      key: "work",
-      title: t("carousel.work.name"),
-      description: t("carousel.work.desc"),
-      text: t("carousel.work.popup")
+      key: "card3",
+      title: t("info_section.card3.title"),
+      description: t("info_section.card3.desc"),
+      text: t("info_section.card3.text")
     },
     {
-      key: "tech",
-      title: t("carousel.tech.name"),
-      description: t("carousel.tech.desc"),
-      text: t("carousel.tech.popup")
+      key: "card4",
+      title: t("info_section.card4.title"),
+      description: t("info_section.card4.desc"),
+      text: t("info_section.card4.text")
     }
   ];
 
@@ -44,7 +44,7 @@ export default function InfoSection() {
         </div>
         
         <div className="info-section-content">
-          {carouselItems.map((item, index) => (
+          {infoCards.map((item, index) => (
             <div key={item.key} className="info-card">
               <div className="info-card-header">
                 <h3 className="info-card-title">{item.title}</h3>

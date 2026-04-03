@@ -28,7 +28,7 @@
     "name": "Nom",
     "email": "Email",
     "phone": "Téléphone",
-    "company": "Société",
+    "company": "Organisation / Club de golf",
     "website": "Site web",
     "message": "Message",
     "accept": "J’accepte les conditions d’utilisation et la politique de confidentialité",
@@ -40,7 +40,7 @@
     "phone_error": "Entrez un numéro valide (ex: +216 99 123 456 ou 0612345678).",
     "phone_error_required": "Le numéro de téléphone est obligatoire et doit être valide (ex: +216 99 123 456 ou 0612345678).",
     "website_error": "Entrez une URL valide (https://monsite.com) ou laissez vide.",
-    "company_error": "Nom de société trop court.",
+    "company_error": "Nom d'organisation trop court.",
     "message_error": "Le message doit contenir au moins 10 caractères.",
     "accept_error": "Vous devez accepter les conditions.",
     "subtitle": "Prenez contact avec nous",
@@ -52,7 +52,7 @@
   },
   "privacy": {
     "title": "Politique de confidentialité",
-    "last_updated": "Dernière mise à jour : Septembre 2024",
+    "last_updated": "Dernière mise à jour : 3 Avril 2026",
     "intro": "Chez Carteron Industries, nous accordons une grande importance à la protection de vos données personnelles et à votre vie privée.",
     "section1_title": "1. Données collectées",
     "section1_text": "Nous ne collectons que les informations strictement nécessaires au fonctionnement du site et à la gestion de vos demandes via notre formulaire de contact (nom, adresse e-mail, message, etc.).\nAucune donnée n’est transmise à des tiers sans votre consentement.",
@@ -86,7 +86,7 @@
   },
   "terms": {
     "title": "Conditions Générales",
-    "last_updated": "Dernière mise à jour : Septembre 2024",
+    "last_updated": "Dernière mise à jour : 3 Avril 2026",
     "meta_description": "Conditions générales d'utilisation des services et produits Carteron Industries.",
     "acceptance_title": "1. Acceptation des Conditions",
     "acceptance_text": "En accédant et en utilisant le site web et les services de Carteron Industries, vous acceptez et acceptez d'être lié par les termes et dispositions de cet accord.",
@@ -122,28 +122,33 @@
     "about_founder": "Fondatrice",
     "about_parcours_title": "Parcours",
     "innovation": {
-      "name": "Une nouvelle expérience du golf",
-      "desc": "Repenser la mobilité sur le parcours à travers une solution plus fluide, plus moderne et plus adaptée aux usages d'aujourd'hui.",
+      "name": "Mobilité repensée",
+      "desc": "Une nouvelle façon de se déplacer sur le parcours, pensée pour allier technologie, confort d'usage et liberté de mouvement.",
       "popup": ""
     },
     "startup": {
-      "name": "Entre technologie et usage réel",
-      "desc": "Le projet s'appuie sur l'ingénierie pour répondre à des besoins concrets, avec une approche centrée sur l'utilisateur.",
+      "name": "Golf & vie familiale",
+      "desc": "Un concept imaginé pour permettre aux parents de profiter du golf tout en gardant leur enfant proche d'eux, dans un cadre plus serein.",
       "popup": ""
     },
     "work": {
-      "name": "Pensé pour les familles",
-      "desc": "Une vision qui cherche à rapprocher pratique sportive, confort de déplacement et présence de l'enfant dans un même produit.",
+      "name": "Innovation utile",
+      "desc": "Chaque choix de conception vise un objectif concret : simplifier l'expérience, réduire l'effort et améliorer l'usage au quotidien.",
       "popup": ""
     },
     "tech": {
-      "name": "Assistance intelligente",
-      "desc": "L'aide à la conduite et au freinage apporte davantage de maîtrise, notamment sur les terrains exigeants.",
+      "name": "Sécurité au cœur du design",
+      "desc": "La stabilité, le maintien et l'assistance au freinage s'intègrent dans une approche orientée confiance et tranquillité d'esprit.",
       "popup": ""
     },
     "community": {
-      "name": "Une approche connectée",
-      "desc": "L'expérience se prolonge via une application mobile conçue pour enrichir l'utilisation du produit dans le temps.",
+      "name": "Expérience connectée",
+      "desc": "L'application mobile accompagne l'utilisateur avec des réglages, des mises à jour et une approche moderne du produit.",
+      "popup": ""
+    },
+    "terrain": {
+      "name": "Conçu pour le parcours",
+      "desc": "Montées, descentes, déplacements et gestion de l'équipement : le produit s'adapte aux réalités du terrain.",
       "popup": ""
     }
   },
@@ -294,13 +299,15 @@
   },
   "contact10": {
     "heading1": "Contactez-nous",
-    "content1": "Nous recherchons aujourd'hui des partenaires et des investisseurs pour concrétiser ce projet prometteur.",
+    "content1": "Nous recherchons aujourd'hui des partenaires pour concrétiser ce projet prometteur.",
     "investor_title": "Vous êtes un investisseur ?",
     "investor_text": "Vous êtes un investisseur et trouvez le concept original ? Rejoignez nous et devenez acteur en investissant dans le développement du premier prototype de notre produit innovant.",
     "golf_club_title": "Vous êtes un club de golf ?",
     "golf_club_text": "Vous pouvez nous aider en devenant un clubs de golf pilote et nous accompagner à tester notre prototype dans un environnement réel d'un parcours de golf.",
+    "golf_club_btn": "En savoir plus",
     "golf_family_title": "Vous êtes une famille golfeur ?",
     "golf_family_text": "Devenez notre famille de golfeur pilote, accompagnez nous en découvrant le produit et nous faire part de vos ressenti en testant notre chariot de golf poussette 2 en 1.",
+    "golf_family_btn": "Rejoindre le programme",
     "location2": "Email : carteron.industries@gmail.com",
     "location2Description": "Envoyez-nous un email pour toute question ou proposition.",
     "get_directions": "Envoyer email"
@@ -401,6 +408,28 @@
         "chargingTime": "Temps de charge",
         "warranty": "Garantie"
       }
+    }
+  },
+  "info_section": {
+    "card1": {
+      "title": "Une nouvelle expérience du golf",
+      "desc": "Repenser la mobilité sur le parcours à travers une solution plus fluide, plus moderne et plus adaptée aux usages d'aujourd'hui.",
+      "text": ""
+    },
+    "card2": {
+      "title": "Entre technologie et usage réel",
+      "desc": "Le projet s'appuie sur l'ingénierie pour répondre à des besoins concrets, avec une approche centrée sur l'utilisateur.",
+      "text": ""
+    },
+    "card3": {
+      "title": "Pensé pour les familles",
+      "desc": "Une vision qui cherche à rapprocher pratique sportive, confort de déplacement et présence de l'enfant dans un même produit.",
+      "text": ""
+    },
+    "card4": {
+      "title": "Assistance intelligente",
+      "desc": "L'aide à la conduite et au freinage apporte davantage de maîtrise, notamment sur les terrains exigeants.",
+      "text": ""
     }
   },
   "product_detail": {
