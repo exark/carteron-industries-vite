@@ -30,7 +30,9 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   transition: box-shadow 0.3s ease;
   height: fit-content;
-  will-change: auto;
+  position: sticky;
+  top: 20%;
+  will-change: transform;
 }
 
 .info-section-image:hover {
@@ -118,6 +120,9 @@
   .info-section-image {
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    top: auto;
+    transform: none !important;
   }
 
   .info-card:hover {

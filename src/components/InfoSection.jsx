@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./InfoSection.css";
 
 export default function InfoSection() {
   const { t } = useTranslation();
+  const contentRef = useRef(null);
+  const imageRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!contentRef.current || !imageRef.current) return;
+
+      const sectionRect = contentRef.current.getBoundingClientRect();
+      const containerTop = sectionRect.top;
+      
+      // Calculer le déplacement basé sur la position du contenu
+      // Quand containerTop est positif (section en dessous), offset = 0
+      // Quand containerTop est négatif (on a scrollé), offset augmente
+      // Multiplicateur de 1.3 pour que l'image descende plus vite
+      const offset = Math.max(0, -containerTop * 1.3);
+      
+      setScrollProgress(offset);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial call
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const carouselItems = [
     {
@@ -32,10 +57,17 @@ export default function InfoSection() {
     }
   ];
 
+  // L'image suit directement le scroll du contenu
+  const imageTransform = `translateY(${scrollProgress}px)`;
+
   return (
     <section className="info-section">
       <div className="info-section-container">
-        <div className="info-section-image">
+        <div 
+          className="info-section-image" 
+          ref={imageRef}
+          style={{ transform: imageTransform }}
+        >
           <img 
             src="/images/prototype.jpeg" 
             alt="Prototype Carteron Industries"
@@ -43,11 +75,10 @@ export default function InfoSection() {
           />
         </div>
         
-        <div className="info-section-content">
+        <div className="info-section-content" ref={contentRef}>
           {carouselItems.map((item, index) => (
             <div key={item.key} className="info-card">
               <div className="info-card-header">
-                <span className="info-card-number">{String(index + 1).padStart(2, '0')}</span>
                 <h3 className="info-card-title">{item.title}</h3>
               </div>
               <p className="info-card-description">{item.description}</p>
