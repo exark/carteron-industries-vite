@@ -323,20 +323,7 @@
   background: transparent !important;
 }
 
-/* Add white background back for sections after TopHero */
-#content-front > *:not(.top-hero-container) {
+/* Add white background to container for sections after TopHero */
+#container {
   background: white;
-}
-
-/* Make navbar match TopHero gradient on home page */
-.top-navbar-static.transparent {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
-  backdrop-filter: none !important;
-}
-
-/* Adjust menu button for the new background */
-.top-navbar-static.transparent .menu-button {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  text-shadow: none;
 }
