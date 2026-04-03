@@ -72,10 +72,12 @@ const Navbar81 = (props) => {
   const handleLogoClick = (e) => {
     e.preventDefault();
     if (location.pathname === "/home" || location.pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const mainContent = document.getElementById('main-content');
+      if (mainContent) {
+        mainContent.scrollTo({ top: 0, behavior: "smooth" });
+      }
     } else {
-      navigate("/home", { replace: true });
-      setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+      window.location.href = "/home";
     }
   };
 
@@ -106,7 +108,7 @@ const Navbar81 = (props) => {
       <div id="paper-back">
         <nav>
           <div className="close"></div>
-          <a href="#home" onClick={(e) => { handleAnchorClick(e, null); }}>
+          <a href="#home" onClick={(e) => { e.preventDefault(); if (location.pathname === "/home" || location.pathname === "/") { const mainContent = document.getElementById('main-content'); if (mainContent) { mainContent.scrollTo({ top: 0, behavior: "smooth" }); } } else { window.location.href = "/home"; } }}>
             {t('navbar.home')}
           </a>
           <a href="/our-product" onClick={(e) => { e.preventDefault(); navigate('/our-product'); }}>
