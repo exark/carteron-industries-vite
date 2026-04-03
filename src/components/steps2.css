@@ -69,8 +69,8 @@
 
 .steps2-section-header {
   text-align: center;
-  padding: 60px 20px 40px;
-  min-height: 60vh;
+  padding: 50px 20px 30px;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -112,18 +112,18 @@
 .stepRow {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: clamp(40px, 6vw, 80px);
+  gap: clamp(30px, 4vw, 50px);
   align-items: center;
-  min-height: 60vh;
-  padding: 20px clamp(20px, 5vw, 80px);
+  min-height: 45vh;
+  padding: 15px clamp(20px, 4vw, 60px);
   opacity: 1;
   transition: transform 0.3s ease;
 }
 
 /* Completed steps styling */
 .stepRow.stepCompleted {
-  min-height: 40vh;
-  padding: 15px clamp(20px, 5vw, 80px);
+  min-height: 30vh;
+  padding: 12px clamp(20px, 4vw, 60px);
   opacity: 0.85;
 }
 
@@ -210,9 +210,9 @@
 .completedStepsSeparator {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 40px clamp(20px, 5vw, 80px);
-  margin: 20px 0;
+  gap: 15px;
+  padding: 25px clamp(20px, 4vw, 60px);
+  margin: 10px 0;
 }
 
 .separatorLine {
@@ -237,7 +237,7 @@
 
 /* Contenu de l'étape */
 .stepContent {
-  padding: clamp(20px, 4vw, 40px);
+  padding: clamp(15px, 3vw, 30px);
 }
 
 
@@ -458,4 +458,37 @@
 .steps2-max-width {
   position: relative;
   z-index: 2;
+}
+
+/* Toggle button container */
+.steps-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.steps-toggle-btn {
+  padding: 0.875rem 2rem;
+  background: rgba(11, 34, 68, 0.9);
+  color: #ffffff;
+  border: 2px solid rgba(197, 163, 122, 0.3);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-family-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.steps-toggle-btn:hover {
+  background: rgba(11, 34, 68, 1);
+  border-color: rgba(197, 163, 122, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.steps-toggle-btn:active {
+  transform: translateY(0);
 }

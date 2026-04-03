@@ -53,11 +53,48 @@
   height: 120px;
   width: 100%;
   max-width: 250px;
+  animation: partnerPulse 12s ease-in-out infinite;
+}
+
+/* Sequential animation delays for each item */
+.trusted-partners-item:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.trusted-partners-item:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.trusted-partners-item:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.trusted-partners-item:nth-child(4) {
+  animation-delay: 6s;
+}
+
+.trusted-partners-item:nth-child(5) {
+  animation-delay: 8s;
+}
+
+.trusted-partners-item:nth-child(6) {
+  animation-delay: 10s;
+}
+
+@keyframes partnerPulse {
+  0%, 83.33%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  8.33%, 16.66% {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .trusted-partners-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
 }
 
 .trusted-partners-logo {
@@ -68,10 +105,45 @@
   object-fit: contain;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
+  animation: logoColorize 12s ease-in-out infinite;
+}
+
+/* Sequential animation delays for logos */
+.trusted-partners-item:nth-child(1) .trusted-partners-logo {
+  animation-delay: 0s;
+}
+
+.trusted-partners-item:nth-child(2) .trusted-partners-logo {
+  animation-delay: 2s;
+}
+
+.trusted-partners-item:nth-child(3) .trusted-partners-logo {
+  animation-delay: 4s;
+}
+
+.trusted-partners-item:nth-child(4) .trusted-partners-logo {
+  animation-delay: 6s;
+}
+
+.trusted-partners-item:nth-child(5) .trusted-partners-logo {
+  animation-delay: 8s;
+}
+
+.trusted-partners-item:nth-child(6) .trusted-partners-logo {
+  animation-delay: 10s;
+}
+
+@keyframes logoColorize {
+  0%, 83.33%, 100% {
+    filter: grayscale(100%);
+  }
+  8.33%, 16.66% {
+    filter: grayscale(0%);
+  }
 }
 
 .trusted-partners-item:hover .trusted-partners-logo {
-  filter: grayscale(0%);
+  filter: grayscale(0%) !important;
 }
 
 /* Responsive Design */
@@ -96,15 +168,24 @@
   .trusted-partners-item {
     height: 100px;
     padding: var(--space-md);
+    animation: none !important;
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
   }
   
   .trusted-partners-logo {
     max-height: 60px;
-    filter: grayscale(0%);
+    filter: grayscale(0%) !important;
+    animation: none !important;
+  }
+  
+  .trusted-partners-item:hover {
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
   }
   
   .trusted-partners-item:hover .trusted-partners-logo {
-    filter: grayscale(0%);
+    filter: grayscale(0%) !important;
   }
 }
 
@@ -117,9 +198,14 @@
   .trusted-partners-item {
     height: 80px;
     padding: var(--space-sm);
+    animation: none !important;
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
   }
   
   .trusted-partners-logo {
     max-height: 50px;
+    filter: grayscale(0%) !important;
+    animation: none !important;
   }
 }

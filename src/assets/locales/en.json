@@ -261,6 +261,8 @@
     "title": "Innovation, Step by Step",
     "description": "Discover how Carteron Industries is reinventing golf with a motorized 2-in-1 hybrid golf stroller, designed for parents passionate about the sport. Currently in development, this solution is made for parents who want to enjoy golf without giving up precious family time. Our approach encourages golf clubs to adopt new solutions that attract a wider range of players, support parents, and make the sport accessible to every generation.",
     "in_progress": "In Progress",
+    "show_more": "Show all steps",
+    "show_less": "Show fewer steps",
     "step1": {
       "title": "Idea & Market Research",
       "desc": "Identifying a real need among golfing families."

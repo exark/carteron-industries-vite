@@ -261,6 +261,8 @@
     "title": "Innovation, étape par étape",
     "description": "Découvrez comment Carteron Industries réinvente le golf avec un chariot poussette hybride motorisé 2-en-1, pensé pour les parents passionnés de ce sport. Actuellement en développement, cette solution est pensée pour les parents qui veulent profiter du golf sans renoncer aux moments passés en famille. Notre approche encourage les clubs à adopter de nouvelles solutions qui attirent des joueurs variés, soutiennent les parents et rendent ce sport accessible pour toute les générations.",
     "in_progress": "En cours",
+    "show_more": "Voir toutes les étapes",
+    "show_less": "Voir moins d'étapes",
     "step1": {
       "title": "Idée & étude de marché",
       "desc": "Identification d'un besoin réel chez les familles golfeuses."

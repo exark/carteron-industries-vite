@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./steps2.css";
 import { useTranslation } from "react-i18next";
@@ -27,6 +27,7 @@ const stepImages = [
 const Steps2 = ({ rootClassName = "" }) => {
   const { t } = useTranslation();
   const containerRef = useRef(null);
+  const [showAllSteps, setShowAllSteps] = useState(false);
 
   const stepsData = stepsKeys.map((key, idx) => ({
     id: key,
@@ -70,44 +71,58 @@ const Steps2 = ({ rootClassName = "" }) => {
         </div>
         
         <div className="stepsSequence">
-          {stepsData.map((step, i) => (
-            <React.Fragment key={step.id}>
-              <div
-                className={`stepRow ${step.completed ? 'stepCompleted' : ''}`}
-              >
-                {/* Image à gauche */}
-                <div className="stepImage">
-                  <img
-                    src={step.img}
-                    alt={step.title}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className={`stepBadge ${step.completed ? 'completed' : ''}`}>
-                    {step.completed ? (
-                      <span>✓</span>
-                    ) : (
-                      <span>{String(i + 1).padStart(2, "0")}</span>
-                    )}
+          {stepsData.filter((step, i) => showAllSteps || i < 3).map((step, i) => {
+            const originalIndex = stepsData.indexOf(step);
+            return (
+              <React.Fragment key={step.id}>
+                <div
+                  className={`stepRow ${step.completed ? 'stepCompleted' : ''}`}
+                >
+                  {/* Image à gauche */}
+                  <div className="stepImage">
+                    <img
+                      src={step.img}
+                      alt={step.title}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className={`stepBadge ${step.completed ? 'completed' : ''}`}>
+                      {step.completed ? (
+                        <span>✓</span>
+                      ) : (
+                        <span>{String(originalIndex + 1).padStart(2, "0")}</span>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {/* Contenu à droite */}
+                  <div className="stepContent">
+                    <h3>{step.title}</h3>
+                    <p>{step.desc}</p>
                   </div>
                 </div>
-                
-                {/* Contenu à droite */}
-                <div className="stepContent">
-                  <h3>{step.title}</h3>
-                  <p>{step.desc}</p>
-                </div>
-              </div>
-              {/* Separator after completed steps group */}
-              {i === 1 && (
-                <div className="completedStepsSeparator">
-                  <div className="separatorLine"></div>
-                  <span className="separatorText">{t('steps.in_progress', 'En cours')}</span>
-                  <div className="separatorLine"></div>
-                </div>
-              )}
-            </React.Fragment>
-          ))}
+                {/* Separator after completed steps group */}
+                {originalIndex === 1 && (
+                  <div className="completedStepsSeparator">
+                    <div className="separatorLine"></div>
+                    <span className="separatorText">{t('steps.in_progress', 'En cours')}</span>
+                    <div className="separatorLine"></div>
+                  </div>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </div>
+        
+        <div className="steps-toggle-container">
+          <button 
+            className="steps-toggle-btn"
+            onClick={() => setShowAllSteps(!showAllSteps)}
+          >
+            {showAllSteps 
+              ? t('steps.show_less', 'Voir moins d\'étapes') 
+              : t('steps.show_more', 'Voir toutes les étapes')}
+          </button>
         </div>
       </div>
     </div>

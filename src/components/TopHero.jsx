@@ -58,7 +58,7 @@ const TopHero = () => {
             <div className="grid-image grid-small-bottom">
               <div>
                 <img 
-                  src="/images/bptg.png" 
+                  src="/images/bptgreel.jpeg" 
                   alt="Golf Together"
                 />
               </div>
@@ -99,7 +99,7 @@ const TopHero = () => {
           <div className="grid-image grid-small-bottom">
             <div>
               <img 
-                src="/images/bptg.png" 
+                src="/images/bptgreel.jpeg" 
                 alt="Golf Together"
               />
             </div>
