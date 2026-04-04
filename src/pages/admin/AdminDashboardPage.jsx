@@ -101,12 +101,12 @@ const AdminDashboardPage = () => {
     const events = ['mousedown', 'keydown', 'scroll', 'touchstart'];
     events.forEach(event => window.addEventListener(event, resetActivity));
 
-    // Check every minute if 1 min has passed since last activity (TEST MODE)
+    // Check every minute if 20 min has passed since last activity
     const checkInterval = setInterval(() => {
       const timeSinceActivity = Date.now() - lastActivityRef.current;
-      const oneMinute = 1 * 60 * 1000; // Changed from 20 min to 1 min for testing
+      const twentyMinutes = 20 * 60 * 1000;
 
-      if (timeSinceActivity >= oneMinute && !showTimeoutModal) {
+      if (timeSinceActivity >= twentyMinutes && !showTimeoutModal) {
         // Show warning modal
         setShowTimeoutModal(true);
         setCountdown(60);
@@ -398,7 +398,7 @@ const AdminDashboardPage = () => {
             <div className="admin-timeout-modal-icon">⏱️</div>
             <h2 className="admin-timeout-modal-title">Session inactive</h2>
             <p className="admin-timeout-modal-text">
-              Votre session est inactive depuis 1 minute (mode test).
+              Votre session est inactive depuis 20 minutes.
               <br />
               Souhaitez-vous rester connecté ?
             </p>
