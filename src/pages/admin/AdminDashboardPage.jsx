@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAdminAuth } from '../../features/admin/hooks/useAdminAuth';
 import {
   fetchSubmissions,
   fetchStats,
   signOutAdmin,
+  refreshSession,
 } from '../../features/admin/services/adminService';
 import SubmissionDetail from '../../features/admin/components/SubmissionDetail';
 import {
@@ -62,11 +63,91 @@ const AdminDashboardPage = () => {
   // Detail drawer
   const [selectedSubmission, setSelectedSubmission] = useState(null);
 
+  // Session timeout management
+  const [showTimeoutModal, setShowTimeoutModal] = useState(false);
+  const [countdown, setCountdown] = useState(60);
+  const timeoutWarningRef = useRef(null);
+  const autoLogoutRef = useRef(null);
+  const countdownRef = useRef(null);
+  const lastActivityRef = useRef(
+    parseInt(localStorage.getItem('admin_last_activity')) || Date.now()
+  );
+
   useEffect(() => {
     if (!authLoading && !session) {
       navigate('/admin/login', { replace: true });
     }
   }, [session, authLoading, navigate]);
+
+  const handleTimeoutLogout = useCallback(async () => {
+    if (countdownRef.current) clearInterval(countdownRef.current);
+    setShowTimeoutModal(false);
+    localStorage.removeItem('admin_last_activity');
+    await signOutAdmin();
+    navigate('/admin/login', { replace: true });
+  }, [navigate]);
+
+  // Session timeout: 20 min warning, then 1 min to decide
+  useEffect(() => {
+    if (!session) return;
+
+    const resetActivity = () => {
+      const now = Date.now();
+      lastActivityRef.current = now;
+      localStorage.setItem('admin_last_activity', now.toString());
+    };
+
+    // Track user activity
+    const events = ['mousedown', 'keydown', 'scroll', 'touchstart'];
+    events.forEach(event => window.addEventListener(event, resetActivity));
+
+    // Check every minute if 1 min has passed since last activity (TEST MODE)
+    const checkInterval = setInterval(() => {
+      const timeSinceActivity = Date.now() - lastActivityRef.current;
+      const oneMinute = 1 * 60 * 1000; // Changed from 20 min to 1 min for testing
+
+      if (timeSinceActivity >= oneMinute && !showTimeoutModal) {
+        // Show warning modal
+        setShowTimeoutModal(true);
+        setCountdown(60);
+
+        // Start countdown
+        countdownRef.current = setInterval(() => {
+          setCountdown(prev => {
+            if (prev <= 1) {
+              handleTimeoutLogout();
+              return 0;
+            }
+            return prev - 1;
+          });
+        }, 1000);
+      }
+    }, 60000); // Check every minute
+
+    return () => {
+      events.forEach(event => window.removeEventListener(event, resetActivity));
+      clearInterval(checkInterval);
+      if (countdownRef.current) clearInterval(countdownRef.current);
+    };
+  }, [session, showTimeoutModal, handleTimeoutLogout]);
+
+  const handleExtendSession = async () => {
+    try {
+      await refreshSession();
+      const now = Date.now();
+      lastActivityRef.current = now;
+      localStorage.setItem('admin_last_activity', now.toString());
+      setShowTimeoutModal(false);
+      if (countdownRef.current) clearInterval(countdownRef.current);
+    } catch (err) {
+      console.error('Failed to refresh session:', err);
+      handleTimeoutLogout();
+    }
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
 
   const loadData = useCallback(async () => {
     setLoading(true);
@@ -109,7 +190,7 @@ const AdminDashboardPage = () => {
       {/* Top bar */}
       <div className="admin-topbar">
         <div className="admin-topbar-left">
-          <div className="admin-topbar-logo">
+          <div className="admin-topbar-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
             <img src="/images/logo.svg" alt="Carteron Industries" />
           </div>
           <div className="admin-topbar-divider" />
@@ -308,6 +389,38 @@ const AdminDashboardPage = () => {
           onClose={() => setSelectedSubmission(null)}
           onUpdated={handleSubmissionUpdated}
         />
+      )}
+
+      {/* Session timeout modal */}
+      {showTimeoutModal && (
+        <div className="admin-timeout-modal-backdrop">
+          <div className="admin-timeout-modal">
+            <div className="admin-timeout-modal-icon">⏱️</div>
+            <h2 className="admin-timeout-modal-title">Session inactive</h2>
+            <p className="admin-timeout-modal-text">
+              Votre session est inactive depuis 1 minute (mode test).
+              <br />
+              Souhaitez-vous rester connecté ?
+            </p>
+            <div className="admin-timeout-modal-countdown">
+              Déconnexion automatique dans <strong>{countdown}</strong> seconde{countdown > 1 ? 's' : ''}
+            </div>
+            <div className="admin-timeout-modal-actions">
+              <button 
+                className="admin-timeout-btn admin-timeout-btn-extend"
+                onClick={handleExtendSession}
+              >
+                Rester connecté
+              </button>
+              <button 
+                className="admin-timeout-btn admin-timeout-btn-logout"
+                onClick={handleTimeoutLogout}
+              >
+                Me déconnecter
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
