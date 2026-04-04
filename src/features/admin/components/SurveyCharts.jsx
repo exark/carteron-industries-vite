@@ -64,14 +64,56 @@ const CustomTooltip = ({ active, payload, label }) => {
 export const SurveyTypePieChart = ({ byType }) => {
   const data = toChartData(byType).filter((d) => d.value > 0);
   if (!data.length) return <p style={{ color: '#94a3b8', fontSize: 13 }}>Pas encore de données.</p>;
+  
+  const renderLegend = (props) => {
+    const { payload } = props;
+    return (
+      <ul style={{ 
+        listStyle: 'none', 
+        padding: 0, 
+        margin: '10px 0 0 0',
+        display: 'flex',
+        justifyContent: 'center',
+        gap: '20px',
+        fontSize: '13px'
+      }}>
+        {payload.map((entry, index) => {
+          const total = data.reduce((sum, item) => sum + item.value, 0);
+          const percent = ((entry.payload.value / total) * 100).toFixed(0);
+          return (
+            <li key={`item-${index}`} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <span style={{ 
+                width: 12, 
+                height: 12, 
+                backgroundColor: entry.color,
+                borderRadius: 2,
+                display: 'inline-block'
+              }} />
+              <span style={{ color: '#475569', fontWeight: 500 }}>
+                {entry.value}: {entry.payload.value} ({percent}%)
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  };
+
   return (
     <ResponsiveContainer width="100%" height={220}>
       <PieChart>
-        <Pie data={data} cx="50%" cy="50%" outerRadius={80} dataKey="value" label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
+        <Pie 
+          data={data} 
+          cx="50%" 
+          cy="45%" 
+          outerRadius={70} 
+          dataKey="value"
+          label={false}
+        >
           {data.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
         </Pie>
         <Tooltip content={<CustomTooltip />} />
-        <Legend wrapperStyle={{ fontSize: 12 }} />
+        <Legend content={renderLegend} />
       </PieChart>
     </ResponsiveContainer>
   );
