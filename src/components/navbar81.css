@@ -56,6 +56,28 @@
   color: white !important;
 }
 
+/* Admin link — subtle, at the bottom of the nav */
+.navbar-admin-link {
+  display: block;
+  margin-top: 24px;
+  font-size: 12px !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3) !important;
+  text-decoration: none;
+  width: fit-content;
+  padding-bottom: 0 !important;
+  transition: color 0.25s ease;
+}
+
+.navbar-admin-link:hover {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.navbar-admin-link::after {
+  display: none !important;
+}
+
 /* Main content wrapper */
 #main-content {
   height: 100vh;

@@ -9,10 +9,6 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const handleNavigateToConstruction = () => {
-    navigate('/construction');
-  };
-
   return (
     <div
       id={contact10Id}
@@ -32,7 +28,7 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
                 />
                 <h3 className="thq-heading-3">{t('contact10.golf_club_title')}</h3>
                 <p className="thq-body-large">{t('contact10.golf_club_text')}</p>
-                <button className="contact10-partnership-btn" onClick={handleNavigateToConstruction}>
+                <button className="contact10-partnership-btn" onClick={() => navigate('/survey/club')}>
                   {t('contact10.golf_club_btn')}
                 </button>
               </div>
@@ -45,7 +41,7 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
                 />
                 <h3 className="thq-heading-3">{t('contact10.golf_family_title')}</h3>
                 <p className="thq-body-large">{t('contact10.golf_family_text')}</p>
-                <button className="contact10-partnership-btn" onClick={handleNavigateToConstruction}>
+                <button className="contact10-partnership-btn" onClick={() => navigate('/survey/family')}>
                   {t('contact10.golf_family_btn')}
                 </button>
               </div>

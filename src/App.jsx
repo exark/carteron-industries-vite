@@ -22,13 +22,18 @@ import ConstructionPage from './views/construction-page'
 import PrivacyBanner from './components/PrivacyBanner';
 import ScrollToTop from './components/ScrollToTop';
 import SplashScreen from './components/SplashScreen';
+import ProtectedRoute from './components/ProtectedRoute';
+import ClubSurveyPage from './pages/survey/ClubSurveyPage';
+import FamilySurveyPage from './pages/survey/FamilySurveyPage';
+import AdminLoginPage from './pages/admin/AdminLoginPage';
+import AdminDashboardPage from './pages/admin/AdminDashboardPage';
 
 const AppContent = () => {
   const location = useLocation();
   
   // Pages that should NOT show the splash screen
-  const noSplashPages = ['/privacy', '/terms'];
-  const shouldShowSplash = !noSplashPages.includes(location.pathname);
+  const noSplashPages = ['/privacy', '/terms', '/survey/club', '/survey/family', '/admin/login', '/admin/dashboard'];
+  const shouldShowSplash = !noSplashPages.some((p) => location.pathname.startsWith(p));
 
   const routes = (
     <>
@@ -44,6 +49,20 @@ const AppContent = () => {
         <Route path="/product-detail" element={<ProductDetail />} />
         <Route path="/product/:productSlug" element={<ProductDetailDynamic />} />
         <Route path="/construction" element={<ConstructionPage />} />
+        {/* Survey routes */}
+        <Route path="/survey/club" element={<ClubSurveyPage />} />
+        <Route path="/survey/family" element={<FamilySurveyPage />} />
+        {/* Admin routes */}
+        <Route path="/admin/login" element={<AdminLoginPage />} />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute>
+              <AdminDashboardPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/admin" element={<Navigate to="/admin/login" />} />
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -126,6 +126,13 @@ const Navbar81 = (props) => {
           <div className="language-switcher-nav">
             <LanguageSwitcher />
           </div>
+          <a
+            href="/admin/login"
+            className="navbar-admin-link"
+            onClick={(e) => { e.preventDefault(); navigate('/admin/login'); }}
+          >
+            Admin
+          </a>
         </nav>
       </div>
       

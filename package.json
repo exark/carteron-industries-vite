@@ -13,8 +13,10 @@
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@hookform/resolvers": "^5.2.2",
     "@mui/icons-material": "^5.18.0",
     "@mui/material": "^5.18.0",
+    "@supabase/supabase-js": "^2.101.1",
     "@tailwindcss/vite": "^4.1.11",
     "@vercel/speed-insights": "^1.2.0",
     "embla-carousel-autoplay": "^8.6.0",
@@ -26,10 +28,13 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet-async": "^3.0.0",
+    "react-hook-form": "^7.72.1",
     "react-i18next": "^15.6.1",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.2",
-    "swiper": "^11.2.10"
+    "recharts": "^3.8.1",
+    "swiper": "^11.2.10",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
