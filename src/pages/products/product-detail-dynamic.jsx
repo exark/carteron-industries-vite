@@ -8,10 +8,10 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
-import Navbar81 from "../components/navbar81";
-import Footer31 from "../components/footer31";
-import ConstructionTemp from "../components/ConstructionTemp";
-import { getProductBySlug } from "../data/products";
+import Navbar81 from "../../components/layout/navbar81";
+import Footer31 from "../../components/layout/footer31";
+import ConstructionTemp from "../../components/ui/ConstructionTemp";
+import { getProductBySlug } from "../../data/products";
 import "./product-detail.css";
 
 export default function ProductDetailDynamic() {

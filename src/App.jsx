@@ -8,21 +8,21 @@ import {
 } from 'react-router-dom'
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
-import Contact from './views/contact'
-import Home from './views/home'
-import NotFound from './views/not-found'
-import Privacy from './views/privacy'
-import Terms from './views/terms'
-import OurProduct from './views/our-product'
-import FAQ from './views/faq'
-import NotreEntreprise from './views/notre-entreprise'
-import ProductDetail from './views/product-detail'
-import ProductDetailDynamic from './views/product-detail-dynamic'
-import ConstructionPage from './views/construction-page'
-import PrivacyBanner from './components/PrivacyBanner';
-import ScrollToTop from './components/ScrollToTop';
-import SplashScreen from './components/SplashScreen';
-import ProtectedRoute from './components/ProtectedRoute';
+import Contact from './pages/contact/contact'
+import Home from './pages/home/home'
+import NotFound from './pages/error/not-found'
+import Privacy from './pages/legal/privacy'
+import Terms from './pages/legal/terms'
+import OurProduct from './pages/products/our-product'
+import FAQ from './pages/faq'
+import NotreEntreprise from './pages/company/notre-entreprise'
+import ProductDetail from './pages/products/product-detail'
+import ProductDetailDynamic from './pages/products/product-detail-dynamic'
+import ConstructionPage from './pages/error/construction-page'
+import PrivacyBanner from './components/ui/PrivacyBanner';
+import ScrollToTop from './components/ui/ScrollToTop';
+import SplashScreen from './components/ui/SplashScreen';
+import ProtectedRoute from './components/layout/ProtectedRoute';
 import ClubSurveyPage from './pages/survey/ClubSurveyPage';
 import FamilySurveyPage from './pages/survey/FamilySurveyPage';
 import AdminLoginPage from './pages/admin/AdminLoginPage';

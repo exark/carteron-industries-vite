@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import './TopHero.css';
-import '../assets/fonts/fonts.css';
+import '../../assets/fonts/fonts.css';
 
 const TopHero = () => {
   const { t } = useTranslation();

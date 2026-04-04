@@ -1,9 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-import Navbar81 from "../components/navbar81";
-import Footer31 from "../components/footer31";
-import FAQ9 from "../components/faq9";
+import Navbar81 from "../components/layout/navbar81";
+import Footer31 from "../components/layout/footer31";
+import FAQ9 from "../components/sections/faq9";
 
 import "./faq.css";
 

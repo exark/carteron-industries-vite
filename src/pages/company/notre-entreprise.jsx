@@ -5,8 +5,8 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
-import Navbar81 from "../components/navbar81";
-import Footer31 from "../components/footer31";
+import Navbar81 from "../../components/layout/navbar81";
+import Footer31 from "../../components/layout/footer31";
 import "./notre-entreprise.css";
 
 export default function NotreEntreprise() {

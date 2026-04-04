@@ -9,9 +9,9 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import Navbar81 from "../components/navbar81";
-import Footer31 from "../components/footer31";
-import { getAllProducts } from "../data/products";
+import Navbar81 from "../../components/layout/navbar81";
+import Footer31 from "../../components/layout/footer31";
+import { getAllProducts } from "../../data/products";
 import "./our-product.css";
 
 function ServiceCard({ title, description, image, buttonLabel, features, index, onButtonClick }) {

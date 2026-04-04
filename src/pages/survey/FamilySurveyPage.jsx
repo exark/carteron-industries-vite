@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Navbar81 from '../../components/navbar81';
-import Footer31 from '../../components/footer31';
+import Navbar81 from '../../components/layout/navbar81';
+import Footer31 from '../../components/layout/footer31';
 import MultiStepSurvey from '../../features/surveys/components/MultiStepSurvey';
 import { familySurveyConfig } from '../../features/surveys/config/surveyConfig';
 import '../../features/surveys/components/survey.css';

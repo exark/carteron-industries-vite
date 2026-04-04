@@ -1,7 +1,7 @@
 import React, { useState, Fragment, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./navbar81.css";
-import LanguageSwitcher from "./LanguageSwitcher";
+import LanguageSwitcher from "../ui/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 
 const Navbar81 = (props) => {

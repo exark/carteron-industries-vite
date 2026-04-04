@@ -1,12 +1,12 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-import Navbar81 from "../components/navbar81";
-import Footer31 from "../components/footer31";
+import Navbar81 from "../../components/layout/navbar81";
+import Footer31 from "../../components/layout/footer31";
 
 import "./contact.css";
-import ContactForm3 from "../components/contact-form3";
-import Contact10 from "../components/contact10";
+import ContactForm3 from "../../components/sections/contact-form3";
+import Contact10 from "../../components/sections/contact10";
 
 const Contact = () => {
   return (

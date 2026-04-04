@@ -17,7 +17,7 @@ import MuiAlert from '@mui/material/Alert';
 import Modal from '@mui/material/Modal';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import emailjs from '@emailjs/browser';
-import { EMAILJS_CONFIG } from '../config/emailjs';
+import { EMAILJS_CONFIG } from '../../config/emailjs';
 
 const initialState = {
   name: "",

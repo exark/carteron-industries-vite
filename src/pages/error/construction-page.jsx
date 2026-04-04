@@ -1,5 +1,5 @@
 import React from 'react';
-import ConstructionTemp from '../components/ConstructionTemp';
+import ConstructionTemp from '../../components/ui/ConstructionTemp';
 
 const ConstructionPage = () => {
   return <ConstructionTemp />;

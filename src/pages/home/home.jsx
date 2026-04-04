@@ -1,20 +1,20 @@
 import React, { Fragment, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
-import Navbar81 from "../components/navbar81";
-import Features25 from "../components/features25";
-import Steps2 from "../components/steps2";
-import TrustedPartners from "../components/TrustedPartners";
-import Testimonial17 from "../components/testimonial17";
-import Contact10 from "../components/contact10";
-import Footer31 from "../components/footer31";
+import Navbar81 from "../../components/layout/navbar81";
+import Features25 from "../../components/sections/features25";
+import Steps2 from "../../components/sections/steps2";
+import TrustedPartners from "../../components/sections/TrustedPartners";
+import Testimonial17 from "../../components/sections/testimonial17";
+import Contact10 from "../../components/sections/contact10";
+import Footer31 from "../../components/layout/footer31";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import "./home.css";
-import TopHero from "../components/TopHero";
-import FamilyGolfRevolution from "../components/FamilyGolfRevolution";
-import InfoSection from "../components/InfoSection";
-import HeroCarousel from "../components/HeroCarousel";
+import TopHero from "../../components/sections/TopHero";
+import FamilyGolfRevolution from "../../components/sections/FamilyGolfRevolution";
+import InfoSection from "../../components/sections/InfoSection";
+import HeroCarousel from "../../components/sections/HeroCarousel";
 
 const Home = () => {
   const location = useLocation();
