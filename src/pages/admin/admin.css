@@ -161,12 +161,14 @@
   z-index: 100;
   background: white;
   border-bottom: 1px solid #e2e8f0;
-  padding: 20px 32px;
+  padding: 16px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  min-height: 90px;
+  min-height: 70px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .admin-topbar-left {
@@ -176,7 +178,7 @@
 }
 
 .admin-topbar-logo img {
-  height: 90px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -239,6 +241,9 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   margin-bottom: 28px;
   width: fit-content;
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .admin-tab {
@@ -421,6 +426,7 @@
   color: var(--neutral-gray-500);
   border-bottom: 1px solid #e2e8f0;
   white-space: nowrap;
+  min-width: 80px;
 }
 
 .admin-table tbody tr {
@@ -441,6 +447,7 @@
   padding: 14px 16px;
   color: var(--neutral-gray-700);
   vertical-align: middle;
+  min-width: 80px;
 }
 
 .admin-td-name {
@@ -858,25 +865,122 @@
 }
 
 /* ── Responsive ──────────────────────────────────────────── */
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+  .admin-topbar {
+    padding: 12px 20px;
+    min-height: 60px;
+  }
+
+  .admin-topbar-logo img {
+    height: 50px;
+  }
+
+  .admin-content {
+    padding: 24px 20px;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .admin-charts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Mobile breakpoint */
 @media (max-width: 768px) {
   .admin-content {
-    padding: 20px 16px;
+    padding: 16px 12px;
   }
 
   .admin-topbar {
-    padding: 0 16px;
+    padding: 12px 16px;
+    min-height: auto;
+  }
+
+  .admin-topbar-left {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .admin-topbar-logo img {
+    height: 40px;
+  }
+
+  .admin-topbar-divider {
+    display: none;
+  }
+
+  .admin-topbar-title {
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .admin-topbar-email {
     display: none;
   }
 
+  .admin-topbar-right {
+    flex-shrink: 0;
+  }
+
+  .admin-signout-btn {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  .admin-tabs {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .admin-tab {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
   .admin-charts-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .admin-stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .admin-stat-card {
+    padding: 16px 14px;
+  }
+
+  .admin-stat-label {
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+  }
+
+  .admin-stat-value {
+    font-size: 1.6rem;
+  }
+
+  .admin-stat-sub {
+    font-size: 0.7rem;
+  }
+
+  .admin-chart-card {
+    padding: 18px 16px;
+  }
+
+  .admin-chart-title {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
   }
 
   .admin-drawer {
@@ -886,14 +990,69 @@
   .admin-table-toolbar {
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .admin-table-toolbar-title {
+    font-size: 0.9rem;
   }
 
   .admin-search-input {
     width: 100%;
   }
 
+  .admin-filter-select {
+    width: 100%;
+  }
+
+  .admin-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .admin-table {
+    font-size: 0.8rem;
+    min-width: 600px;
+  }
+
+  .admin-table th {
+    padding: 10px 12px;
+    font-size: 0.68rem;
+  }
+
+  .admin-table td {
+    padding: 12px 12px;
+  }
+
+  .admin-td-email {
+    font-size: 0.75rem;
+  }
+
+  .admin-badge {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+  }
+
+  .admin-view-btn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
   .admin-timeout-modal {
     padding: 32px 24px;
+  }
+
+  .admin-timeout-modal-icon {
+    font-size: 3rem;
+  }
+
+  .admin-timeout-modal-title {
+    font-size: 1.3rem;
+  }
+
+  .admin-timeout-modal-text {
+    font-size: 0.9rem;
   }
 
   .admin-timeout-modal-actions {
@@ -902,5 +1061,85 @@
 
   .admin-timeout-btn {
     width: 100%;
+    padding: 11px 24px;
+  }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 480px) {
+  .admin-content {
+    padding: 12px 8px;
+  }
+
+  .admin-topbar {
+    padding: 10px 12px;
+  }
+
+  .admin-topbar-logo img {
+    height: 35px;
+  }
+
+  .admin-topbar-title {
+    font-size: 0.75rem;
+  }
+
+  .admin-signout-btn {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .admin-stat-card {
+    padding: 12px 10px;
+  }
+
+  .admin-stat-label {
+    font-size: 0.6rem;
+  }
+
+  .admin-stat-value {
+    font-size: 1.4rem;
+  }
+
+  .admin-tab {
+    padding: 7px 12px;
+    font-size: 0.75rem;
+  }
+
+  .admin-chart-card {
+    padding: 16px 12px;
+  }
+
+  .admin-timeout-modal {
+    padding: 24px 20px;
+  }
+
+  .admin-timeout-modal-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .admin-timeout-modal-title {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .admin-timeout-modal-text {
+    font-size: 0.85rem;
+  }
+
+  .admin-timeout-modal-countdown {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .admin-timeout-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
   }
 }
