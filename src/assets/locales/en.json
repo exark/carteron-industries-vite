@@ -298,16 +298,16 @@
     }
   },
   "contact10": {
-    "heading1": "Contact Us",
+    "heading1": "Your opinion matters",
     "content1": "We are currently looking for partners to make this promising project a reality.",
     "investor_title": "Are you an investor?",
     "investor_text": "Are you an investor and find the concept original? Join us and become an actor by investing in the development of the first prototype of our innovative product.",
     "golf_club_title": "Are you a golf club?",
     "golf_club_text": "You can help us by becoming a pilot golf club and accompany us in testing our prototype in a real golf course environment.",
-    "golf_club_btn": "Learn More",
+    "golf_club_btn": "Take the survey",
     "golf_family_title": "Are you a golfing family?",
     "golf_family_text": "Become our pilot golfing family, accompany us in discovering the product and share your feelings by testing our 2-in-1 golf cart stroller.",
-    "golf_family_btn": "Join the Program",
+    "golf_family_btn": "Take the survey",
     "location2": "Email: carteron.industries@gmail.com",
     "location2Description": "Send us an email for any questions or proposals.",
     "get_directions": "Send Email"
@@ -445,5 +445,23 @@
     "cta_title": "Interested in this product?",
     "cta_description": "Contact us to be informed as soon as this revolutionary product becomes available. Be among the first to discover the future of family mobility on the golf course.",
     "contact_button": "Contact us"
+  },
+  "revolution": {
+    "title": "Golf Shouldn't End When Family Begins",
+    "intro": "Millions of parents face an impossible choice: their passion for golf, or precious time with their children. We're changing that story.",
+    "block1": {
+      "stat": "14–20M golfers in Europe alone",
+      "text": "Golf is evolving from an elite sport into a social, family-friendly lifestyle. With 31% female players and rising youth participation, the game is more inclusive than ever. Yet the industry hasn't adapted to modern family life."
+    },
+    "block2": {
+      "stat": "Young parents stop playing",
+      "text": "After a child arrives, millions of golfers reduce or abandon the sport entirely. Not by choice — but because juggling a stroller and golf equipment simply doesn't work. The joy shouldn't have to end."
+    },
+    "block3": {
+      "stat": "One product. Two worlds.",
+      "text": "CARTERON Industries is developing the world's first 2-in-1 hybrid golf trolley and baby stroller. This innovative concept will allow parents and grandparents to enjoy 18 holes with their little ones — safely, comfortably, and without compromise."
+    },
+    "conclusion": "Technology meets family. Innovation meets comfort. Golf meets parenthood.",
+    "cta": "Discover how it works →"
   }
 }

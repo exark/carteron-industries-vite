@@ -25,6 +25,11 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
             <p className="thq-body-large">{t('contact10.content1')}</p>
             <div className="contact10-partnership-section">
               <div className="contact10-partnership-item">
+                <img 
+                  src="/images/orgnanisation.webp" 
+                  alt="Golf Club Partnership" 
+                  className="contact10-partnership-image"
+                />
                 <h3 className="thq-heading-3">{t('contact10.golf_club_title')}</h3>
                 <p className="thq-body-large">{t('contact10.golf_club_text')}</p>
                 <button className="contact10-partnership-btn" onClick={handleNavigateToConstruction}>
@@ -33,6 +38,11 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
               </div>
               
               <div className="contact10-partnership-item">
+                <img 
+                  src="/images/family.webp" 
+                  alt="Family Golf Partnership" 
+                  className="contact10-partnership-image"
+                />
                 <h3 className="thq-heading-3">{t('contact10.golf_family_title')}</h3>
                 <p className="thq-body-large">{t('contact10.golf_family_text')}</p>
                 <button className="contact10-partnership-btn" onClick={handleNavigateToConstruction}>

@@ -12,6 +12,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import "./home.css";
 import TopHero from "../components/TopHero";
+import FamilyGolfRevolution from "../components/FamilyGolfRevolution";
 import InfoSection from "../components/InfoSection";
 import HeroCarousel from "../components/HeroCarousel";
 
@@ -46,6 +47,7 @@ const Home = () => {
         homeContent={
           <Fragment>
             <TopHero></TopHero>
+            <FamilyGolfRevolution></FamilyGolfRevolution>
             <InfoSection></InfoSection>
             <HeroCarousel></HeroCarousel>
 

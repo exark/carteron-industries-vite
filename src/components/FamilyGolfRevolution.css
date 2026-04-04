@@ -1,0 +1,360 @@
+/* ============================================
+   FAMILY GOLF REVOLUTION SECTION
+   ============================================ */
+
+.family-golf-revolution {
+  position: relative;
+  width: 100%;
+  padding: 120px 0 60px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  overflow: hidden;
+}
+
+.family-golf-revolution::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #2d5016, transparent);
+}
+
+.revolution-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.revolution-header {
+  text-align: center;
+  margin-bottom: 80px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.revolution-title {
+  font-family: var(--font-family-primary);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: #0b2244;
+  margin: 0 0 24px 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.revolution-intro {
+  font-family: var(--font-family-body);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: #4a5568;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ============================================
+   BLOCKS GRID
+   ============================================ */
+
+.revolution-blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.revolution-block {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(11, 34, 68, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.revolution-block:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.revolution-block:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.revolution-block:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Block 2 - Dark Blue Theme */
+.revolution-block:nth-child(2)::before {
+  background: linear-gradient(90deg, #1a3a5a, #0b2244);
+}
+
+.revolution-block:nth-child(2) .block-icon {
+  background: linear-gradient(135deg, rgba(26, 58, 90, 0.1), rgba(11, 34, 68, 0.1));
+  color: #1a3a5a;
+}
+
+.revolution-block:nth-child(2):hover .block-icon {
+  background: linear-gradient(135deg, rgba(26, 58, 90, 0.2), rgba(11, 34, 68, 0.2));
+}
+
+/* Block 3 - Dark Red Theme */
+.revolution-block:nth-child(3)::before {
+  background: linear-gradient(90deg, #8b1a1a, #5a0f0f);
+}
+
+.revolution-block:nth-child(3) .block-icon {
+  background: linear-gradient(135deg, rgba(139, 26, 26, 0.1), rgba(90, 15, 15, 0.1));
+  color: #8b1a1a;
+}
+
+.revolution-block:nth-child(3):hover .block-icon {
+  background: linear-gradient(135deg, rgba(139, 26, 26, 0.2), rgba(90, 15, 15, 0.2));
+}
+
+.revolution-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2d5016, #1a3a0f);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.revolution-block:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(11, 34, 68, 0.15);
+}
+
+.revolution-block:hover::before {
+  transform: scaleX(1);
+}
+
+/* ============================================
+   BLOCK CONTENT
+   ============================================ */
+
+.block-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(45, 80, 22, 0.1), rgba(26, 58, 15, 0.1));
+  border-radius: 50%;
+  color: #2d5016;
+  transition: all 0.4s ease;
+}
+
+.revolution-block:hover .block-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, rgba(45, 80, 22, 0.2), rgba(26, 58, 15, 0.2));
+}
+
+.block-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.block-stat {
+  font-family: var(--font-family-primary);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: #0b2244;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.block-text {
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ============================================
+   CONCLUSION
+   ============================================ */
+
+.revolution-conclusion {
+  text-align: center;
+  margin-bottom: 0;
+  animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.conclusion-text {
+  font-family: var(--font-family-secondary);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-style: italic;
+  color: #0b2244;
+  margin: 0;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0 40px;
+}
+
+.conclusion-text::before,
+.conclusion-text::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #2d5016);
+}
+
+.conclusion-text::before {
+  left: 0;
+}
+
+.conclusion-text::after {
+  right: 0;
+  background: linear-gradient(90deg, #2d5016, transparent);
+}
+
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+
+@media (max-width: 980px) {
+  .family-golf-revolution {
+    padding: 80px 0;
+  }
+
+  .revolution-container {
+    padding: 0 32px;
+  }
+
+  .revolution-header {
+    margin-bottom: 60px;
+  }
+
+  .revolution-blocks {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+
+  .revolution-block {
+    padding: 40px 28px;
+  }
+
+  .conclusion-text {
+    padding: 0 20px;
+  }
+
+  .conclusion-text::before,
+  .conclusion-text::after {
+    width: 15px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+
+@media (max-width: 600px) {
+  .family-golf-revolution {
+    padding: 60px 0;
+  }
+
+  .revolution-container {
+    padding: 0 20px;
+  }
+
+  .revolution-header {
+    margin-bottom: 40px;
+  }
+
+  .revolution-title {
+    margin-bottom: 16px;
+  }
+
+  .revolution-blocks {
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .revolution-block {
+    padding: 32px 24px;
+  }
+
+  .block-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+  }
+
+  .block-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .block-stat {
+    margin-bottom: 12px;
+  }
+
+  .conclusion-text {
+    padding: 0;
+  }
+
+  .conclusion-text::before,
+  .conclusion-text::after {
+    display: none;
+  }
+
+  .cta-link {
+    font-size: 1rem;
+    padding: 14px 28px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .revolution-block,
+  .revolution-header,
+  .revolution-conclusion,
+  .revolution-cta {
+    animation: none;
+  }
+
+  .revolution-block:hover {
+    transform: none;
+  }
+
+  .revolution-block:hover .block-icon {
+    transform: none;
+  }
+}

@@ -1,11 +1,11 @@
-/* Contact Section - Fond dégradé vert/bleu */
+/* Contact Section - Fond bleu très clair */
 .contact10-container1 {
   display: flex;
   position: relative;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  background: linear-gradient(135deg, #e0f2f1 0%, #e1f5fe 50%, #f1f8e9 100%);
+  background: #e3f2fd;
   padding: var(--space-2xl) 0;
   overflow: hidden;
 }
@@ -161,38 +161,46 @@
 
 /* Partnership Section Styles */
 .contact10-partnership-section {
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-xl);
   display: flex;
   flex-direction: row;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
   width: 100%;
-  max-width: 1200px;
+  max-width: 900px;
   justify-content: center;
 }
 
 .contact10-partnership-item {
   background: #f7fafc;
   border-radius: var(--radius-lg);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid #e2e8f0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-sm);
+}
+
+.contact10-partnership-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
 }
 
 .contact10-partnership-item h3 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-semibold);
   color: #0b2244;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   text-align: left;
 }
 
 .contact10-partnership-item p {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   color: #4a5568;
   line-height: var(--line-height-relaxed);
   text-align: left;
@@ -201,7 +209,7 @@
 }
 
 .contact10-partnership-btn {
-  margin-top: var(--space-md);
+  margin-top: var(--space-sm);
   padding: var(--space-sm) var(--space-lg);
   background: #0b2244;
   color: #ffffff;
@@ -213,6 +221,8 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(11, 34, 68, 0.2);
+  max-width: 200px;
+  align-self: center;
 }
 
 .contact10-partnership-btn:hover {
