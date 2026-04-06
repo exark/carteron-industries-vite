@@ -6,12 +6,14 @@ import {
   fetchStats,
   signOutAdmin,
   refreshSession,
+  deleteSubmission,
 } from '../../features/admin/services/adminService';
 import SubmissionDetail from '../../features/admin/components/SubmissionDetail';
 import {
   SurveyTypePieChart,
   SimpleBarChart,
   StatusBarChart,
+  CountryPieChart,
 } from '../../features/admin/components/SurveyCharts';
 import './admin.css';
 
@@ -62,6 +64,9 @@ const AdminDashboardPage = () => {
 
   // Detail drawer
   const [selectedSubmission, setSelectedSubmission] = useState(null);
+
+  // Delete confirmation modal
+  const [deleteConfirmModal, setDeleteConfirmModal] = useState(null);
 
   // Session timeout management
   const [showTimeoutModal, setShowTimeoutModal] = useState(false);
@@ -183,6 +188,33 @@ const AdminDashboardPage = () => {
     if (stats) loadData();
   };
 
+  const handleDeleteSubmission = async (id) => {
+    const submission = submissions.find(s => s.id === id);
+    setDeleteConfirmModal(submission);
+  };
+
+  const confirmDelete = async () => {
+    if (!deleteConfirmModal) return;
+    const id = deleteConfirmModal.id;
+    setDeleteConfirmModal(null);
+    
+    try {
+      await deleteSubmission(id);
+      setSubmissions((prev) => prev.filter((s) => s.id !== id));
+      if (selectedSubmission?.id === id) {
+        setSelectedSubmission(null);
+      }
+      loadData();
+    } catch (err) {
+      console.error('[AdminDashboard] Delete error:', err);
+      alert('Erreur lors de la suppression. Veuillez réessayer.');
+    }
+  };
+
+  const cancelDelete = () => {
+    setDeleteConfirmModal(null);
+  };
+
   if (authLoading) return null;
 
   return (
@@ -197,8 +229,12 @@ const AdminDashboardPage = () => {
           <span className="admin-topbar-title">Dashboard Admin</span>
         </div>
         <div className="admin-topbar-right">
-          {session?.user?.email && (
-            <span className="admin-topbar-email">{session.user.email}</span>
+          {session?.user && (
+            <span className="admin-topbar-email">
+              Bonjour {session.user.user_metadata?.full_name || 
+                       session.user.user_metadata?.name || 
+                       session.user.email?.split('@')[0]} !
+            </span>
           )}
           <button className="admin-signout-btn" onClick={handleSignOut}>
             Déconnexion
@@ -251,12 +287,16 @@ const AdminDashboardPage = () => {
                   <StatusBarChart byStatus={stats.byStatus} />
                 </ChartCard>
 
+                <ChartCard title="Répartition par pays">
+                  <CountryPieChart byCountry={stats.byCountry} />
+                </ChartCard>
+
                 <ChartCard title="Clubs — Intérêt pour tester le produit (Q4)">
-                  <SimpleBarChart data={stats.club?.q4} />
+                  <SimpleBarChart data={stats.club?.q4} color="#15803d" />
                 </ChartCard>
 
                 <ChartCard title="Familles — Intérêt produit 2-en-1 (Q5)">
-                  <SimpleBarChart data={stats.family?.q5} color="#1976D2" />
+                  <SimpleBarChart data={stats.family?.q5} color="#db2777" />
                 </ChartCard>
               </div>
             )}
@@ -266,6 +306,7 @@ const AdminDashboardPage = () => {
               submissions={submissions.slice(0, 8)}
               loading={loading}
               onView={setSelectedSubmission}
+              onDelete={handleDeleteSubmission}
               title="Dernières soumissions"
               filterType={filterType}
               setFilterType={setFilterType}
@@ -289,19 +330,19 @@ const AdminDashboardPage = () => {
 
             <div className="admin-charts-grid">
               <ChartCard title="Jeunes parents parmi les membres (Q1)">
-                <SimpleBarChart data={stats.club?.q1} />
+                <SimpleBarChart data={stats.club?.q1} color="#0891b2" />
               </ChartCard>
               <ChartCard title="Garde d'enfant = frein au golf ? (Q2)">
-                <SimpleBarChart data={stats.club?.q2} />
+                <SimpleBarChart data={stats.club?.q2} color="#7c3aed" />
               </ChartCard>
               <ChartCard title="Bénéfices perçus du produit (Q3, multi)">
-                <SimpleBarChart data={stats.club?.q3} />
+                <SimpleBarChart data={stats.club?.q3} color="#ea580c" />
               </ChartCard>
               <ChartCard title="Club intéressé pour tester (Q4)">
-                <SimpleBarChart data={stats.club?.q4} />
+                <SimpleBarChart data={stats.club?.q4} color="#15803d" />
               </ChartCard>
               <ChartCard title="Souhaitent être contactés (Q5)">
-                <SimpleBarChart data={stats.club?.q5} />
+                <SimpleBarChart data={stats.club?.q5} color="#c5a37a" />
               </ChartCard>
             </div>
 
@@ -309,6 +350,7 @@ const AdminDashboardPage = () => {
               submissions={submissions.filter((s) => s.survey_type === 'club')}
               loading={loading}
               onView={setSelectedSubmission}
+              onDelete={handleDeleteSubmission}
               title="Réponses clubs"
               filterType="club"
               setFilterType={setFilterType}
@@ -332,19 +374,19 @@ const AdminDashboardPage = () => {
 
             <div className="admin-charts-grid">
               <ChartCard title="Fréquence de jeu (Q1)">
-                <SimpleBarChart data={stats.family?.q1} color="#1976D2" />
+                <SimpleBarChart data={stats.family?.q1} color="#db2777" />
               </ChartCard>
               <ChartCard title="Jeunes enfants (Q2)">
-                <SimpleBarChart data={stats.family?.q2} color="#1976D2" />
+                <SimpleBarChart data={stats.family?.q2} color="#0891b2" />
               </ChartCard>
               <ChartCard title="Amener l'enfant sur le parcours (Q4)">
-                <SimpleBarChart data={stats.family?.q4} color="#1976D2" />
+                <SimpleBarChart data={stats.family?.q4} color="#7c3aed" />
               </ChartCard>
               <ChartCard title="Intérêt pour le produit 2-en-1 (Q5)">
-                <SimpleBarChart data={stats.family?.q5} color="#1976D2" />
+                <SimpleBarChart data={stats.family?.q5} color="#15803d" />
               </ChartCard>
               <ChartCard title="Critères importants (Q6, multi)">
-                <SimpleBarChart data={stats.family?.q6} color="#1976D2" />
+                <SimpleBarChart data={stats.family?.q6} color="#ea580c" />
               </ChartCard>
             </div>
 
@@ -352,6 +394,7 @@ const AdminDashboardPage = () => {
               submissions={submissions.filter((s) => s.survey_type === 'family')}
               loading={loading}
               onView={setSelectedSubmission}
+              onDelete={handleDeleteSubmission}
               title="Réponses familles"
               filterType="family"
               setFilterType={setFilterType}
@@ -370,6 +413,7 @@ const AdminDashboardPage = () => {
             submissions={submissions}
             loading={loading}
             onView={setSelectedSubmission}
+            onDelete={handleDeleteSubmission}
             title="Toutes les soumissions"
             filterType={filterType}
             setFilterType={setFilterType}
@@ -389,6 +433,47 @@ const AdminDashboardPage = () => {
           onClose={() => setSelectedSubmission(null)}
           onUpdated={handleSubmissionUpdated}
         />
+      )}
+
+      {/* Delete confirmation modal */}
+      {deleteConfirmModal && (
+        <div className="admin-delete-modal-backdrop" onClick={cancelDelete}>
+          <div className="admin-delete-modal" onClick={(e) => e.stopPropagation()}>
+            <h2 className="admin-delete-modal-title">Confirmer la suppression</h2>
+            <p className="admin-delete-modal-text">
+              Êtes-vous sûr de vouloir supprimer la soumission de <strong>{deleteConfirmModal.full_name}</strong> ?
+              <br />
+              <br />
+              Cette action est <strong>irréversible</strong> et supprimera définitivement toutes les données associées.
+            </p>
+            <div className="admin-delete-modal-info">
+              <div className="admin-delete-modal-info-item">
+                <span className="admin-delete-modal-info-label">Type :</span>
+                <span className={`admin-badge admin-badge--${deleteConfirmModal.survey_type}`}>
+                  {deleteConfirmModal.survey_type === 'club' ? 'Club' : 'Famille'}
+                </span>
+              </div>
+              <div className="admin-delete-modal-info-item">
+                <span className="admin-delete-modal-info-label">Date :</span>
+                <span>{formatDate(deleteConfirmModal.created_at)}</span>
+              </div>
+            </div>
+            <div className="admin-delete-modal-actions">
+              <button 
+                className="admin-delete-modal-btn admin-delete-modal-btn-cancel"
+                onClick={cancelDelete}
+              >
+                Annuler
+              </button>
+              <button 
+                className="admin-delete-modal-btn admin-delete-modal-btn-confirm"
+                onClick={confirmDelete}
+              >
+                Supprimer définitivement
+              </button>
+            </div>
+          </div>
+        </div>
       )}
 
       {/* Session timeout modal */}
@@ -428,7 +513,7 @@ const AdminDashboardPage = () => {
 
 // ── Submissions table sub-component ───────────────────────
 const SubmissionsTable = ({
-  submissions, loading, onView, title,
+  submissions, loading, onView, onDelete, title,
   filterType, setFilterType, filterStatus, setFilterStatus,
   search, setSearch, showFilters,
 }) => {
@@ -492,7 +577,7 @@ const SubmissionsTable = ({
                 <th>Pays</th>
                 <th>Type</th>
                 <th>Statut</th>
-                <th>Action</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -513,9 +598,14 @@ const SubmissionsTable = ({
                     </span>
                   </td>
                   <td onClick={(e) => e.stopPropagation()}>
-                    <button className="admin-view-btn" onClick={() => onView(sub)}>
-                      Voir
-                    </button>
+                    <div className="admin-action-buttons">
+                      <button className="admin-view-btn" onClick={() => onView(sub)}>
+                        Voir
+                      </button>
+                      <button className="admin-delete-btn" onClick={() => onDelete(sub.id)} title="Supprimer">
+                        🗑️
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}

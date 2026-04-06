@@ -89,8 +89,8 @@ export const clubSurveyConfig = {
           type: 'radio',
           required: true,
           label: {
-            fr: 'Souhaitez-vous être contacté pour un partenariat pilote ?',
-            en: 'Would you like to be contacted for a pilot partnership?',
+            fr: 'Souhaitez-vous être contacté pour un partenariat ?',
+            en: 'Would you like to be contacted for a partnership?',
           },
           options: [
             { value: 'yes', label: { fr: 'Oui', en: 'Yes' } },

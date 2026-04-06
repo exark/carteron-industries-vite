@@ -46,3 +46,9 @@ CREATE POLICY "authenticated_update_survey" ON survey_submissions
   TO authenticated
   USING (true)
   WITH CHECK (true);
+
+-- Allow authenticated users (admins) to delete submissions
+CREATE POLICY "authenticated_delete_survey" ON survey_submissions
+  FOR DELETE
+  TO authenticated
+  USING (true);

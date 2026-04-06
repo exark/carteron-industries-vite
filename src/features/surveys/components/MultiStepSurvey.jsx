@@ -56,7 +56,7 @@ const MultiStepSurvey = ({ config }) => {
     if (!contact.full_name || contact.full_name.trim().length < 2) {
       e.full_name = lang === 'fr' ? 'Nom requis (min. 2 caractères).' : 'Name required (min. 2 characters).';
     }
-    if (!contact.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.email)) {
+    if (contact.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.email)) {
       e.email = lang === 'fr' ? 'Adresse e-mail invalide.' : 'Invalid email address.';
     }
     if (!contact.country) {

@@ -45,15 +45,25 @@ export async function updateSubmissionStatus(id, status, adminNotes) {
   return data;
 }
 
+export async function deleteSubmission(id) {
+  const { error } = await supabase
+    .from('survey_submissions')
+    .delete()
+    .eq('id', id);
+  if (error) throw error;
+  return true;
+}
+
 export async function fetchStats() {
   const { data, error } = await supabase
     .from('survey_submissions')
-    .select('survey_type, status, answers, created_at');
+    .select('survey_type, status, answers, created_at, country');
   if (error) throw error;
 
   const total = data.length;
   const byType = { club: 0, family: 0 };
   const byStatus = { new: 0, contacted: 0, qualified: 0, pilot_candidate: 0, closed: 0 };
+  const byCountry = {};
 
   // Club answer tallies
   const clubQ1 = {};
@@ -72,6 +82,9 @@ export async function fetchStats() {
   data.forEach((row) => {
     byType[row.survey_type] = (byType[row.survey_type] || 0) + 1;
     byStatus[row.status] = (byStatus[row.status] || 0) + 1;
+    if (row.country) {
+      byCountry[row.country] = (byCountry[row.country] || 0) + 1;
+    }
 
     const a = row.answers || {};
 
@@ -100,6 +113,7 @@ export async function fetchStats() {
     total,
     byType,
     byStatus,
+    byCountry,
     club: { q1: clubQ1, q2: clubQ2, q3: clubQ3, q4: clubQ4, q5: clubQ5 },
     family: { q1: famQ1, q2: famQ2, q4: famQ4, q5: famQ5, q6: famQ6 },
   };

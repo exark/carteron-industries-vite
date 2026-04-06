@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { clubSurveyConfig, familySurveyConfig } from '../../surveys/config/surveyConfig';
 import { updateSubmissionStatus } from '../services/adminService';
 
@@ -47,6 +47,13 @@ const SubmissionDetail = ({ submission, onClose, onUpdated }) => {
   const [saved, setSaved] = useState(false);
   const [saveError, setSaveError] = useState(null);
 
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   const handleSave = async () => {
     setSaving(true);
     setSaved(false);
@@ -93,7 +100,13 @@ const SubmissionDetail = ({ submission, onClose, onUpdated }) => {
             <div className="admin-drawer-row">
               <span className="admin-drawer-row-label">E-mail</span>
               <span className="admin-drawer-row-value">
-                <a href={`mailto:${submission.email}`} style={{ color: 'inherit' }}>{submission.email}</a>
+                <a 
+                  href={`mailto:${submission.email}`} 
+                  className="admin-email-link"
+                  title="Cliquer pour envoyer un email"
+                >
+                  {submission.email}
+                </a>
               </span>
             </div>
             {submission.phone && (

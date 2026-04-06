@@ -4,7 +4,18 @@ import {
   PieChart, Pie, Cell, Legend,
 } from 'recharts';
 
-const COLORS = ['#0b2244', '#1976D2', '#42a5f5', '#90caf9', '#bbdefb', '#e3f2fd'];
+const COLORS = [
+  '#E63946', // Rouge vif
+  '#F77F00', // Orange éclatant
+  '#FCBF49', // Jaune doré
+  '#06A77D', // Vert émeraude
+  '#2A9D8F', // Turquoise
+  '#264653', // Bleu pétrole
+  '#457B9D', // Bleu acier
+  '#E76F51', // Corail
+  '#8338EC', // Violet électrique
+  '#FF006E', // Rose fuchsia
+];
 
 const LABEL_MAP = {
   // Survey type
@@ -41,10 +52,68 @@ const LABEL_MAP = {
   pilot_candidate: 'Pilote', closed: 'Fermé',
 };
 
+// Couleurs sémantiques pour les réponses
+const getSemanticColor = (key) => {
+  // Réponses positives - Vert émeraude
+  if (['yes', 'yes_definitely', 'yes_often', 'yes_alot'].includes(key)) {
+    return '#06A77D';
+  }
+  // Réponses négatives - Rouge vif
+  if (['no', 'not_really', 'not_yet'].includes(key)) {
+    return '#E63946';
+  }
+  // Réponses neutres/incertaines - Jaune doré
+  if (['not_sure', 'maybe', 'sometimes', 'occasionally'].includes(key)) {
+    return '#FCBF49';
+  }
+  // Réponses en projet/planning - Turquoise
+  if (['planning'].includes(key)) {
+    return '#2A9D8F';
+  }
+  // Fréquences basses - Bleu pétrole
+  if (['less_monthly'].includes(key)) {
+    return '#264653';
+  }
+  // Fréquences moyennes - Bleu acier
+  if (['1_3_monthly'].includes(key)) {
+    return '#457B9D';
+  }
+  // Fréquences élevées - Orange éclatant
+  if (['weekly'].includes(key)) {
+    return '#F77F00';
+  }
+  // Fréquences très élevées - Violet électrique
+  if (['several_weekly'].includes(key)) {
+    return '#8338EC';
+  }
+  // Critères importants (Q6) - Couleurs variées
+  const criteriaColors = {
+    safety: '#06A77D',           // Vert émeraude - priorité
+    ease_of_use: '#2A9D8F',      // Turquoise
+    child_comfort: '#FF006E',    // Rose fuchsia
+    storage: '#F77F00',          // Orange éclatant
+    design: '#8338EC',           // Violet électrique
+    price: '#FCBF49',            // Jaune doré
+  };
+  if (criteriaColors[key]) return criteriaColors[key];
+  
+  // Bénéfices (Q3) - Couleurs variées
+  const benefitsColors = {
+    attract_customers: '#2A9D8F',    // Turquoise
+    increase_frequency: '#8338EC',   // Violet électrique
+    improve_experience: '#FF006E',   // Rose fuchsia
+  };
+  if (benefitsColors[key]) return benefitsColors[key];
+  
+  // Par défaut, utiliser la palette COLORS
+  return null;
+};
+
 const toChartData = (obj) =>
   Object.entries(obj || {}).map(([key, value]) => ({
     name: LABEL_MAP[key] || key,
     value,
+    originalKey: key,
   }));
 
 const CustomTooltip = ({ active, payload, label }) => {
@@ -64,6 +133,12 @@ const CustomTooltip = ({ active, payload, label }) => {
 export const SurveyTypePieChart = ({ byType }) => {
   const data = toChartData(byType).filter((d) => d.value > 0);
   if (!data.length) return <p style={{ color: '#94a3b8', fontSize: 13 }}>Pas encore de données.</p>;
+  
+  // Couleurs spécifiques pour les types d'enquête
+  const TYPE_COLORS = {
+    'Club': '#06A77D',    // Vert émeraude
+    'Famille': '#457B9D', // Bleu acier
+  };
   
   const renderLegend = (props) => {
     const { payload } = props;
@@ -110,7 +185,7 @@ export const SurveyTypePieChart = ({ byType }) => {
           dataKey="value"
           label={false}
         >
-          {data.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
+          {data.map((entry, i) => <Cell key={i} fill={TYPE_COLORS[entry.name] || COLORS[i % COLORS.length]} />)}
         </Pie>
         <Tooltip content={<CustomTooltip />} />
         <Legend content={renderLegend} />
@@ -128,7 +203,12 @@ export const SimpleBarChart = ({ data, color = '#0b2244' }) => {
         <XAxis type="number" tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />
         <YAxis type="category" dataKey="name" width={110} tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />
         <Tooltip content={<CustomTooltip />} />
-        <Bar dataKey="value" fill={color} radius={[0, 4, 4, 0]} barSize={16} />
+        <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={16}>
+          {chartData.map((entry, index) => {
+            const semanticColor = getSemanticColor(entry.originalKey);
+            return <Cell key={`cell-${index}`} fill={semanticColor || color} />;
+          })}
+        </Bar>
       </BarChart>
     </ResponsiveContainer>
   );
@@ -138,8 +218,11 @@ export const StatusBarChart = ({ byStatus }) => {
   const data = toChartData(byStatus).filter((d) => d.value > 0);
   if (!data.length) return <p style={{ color: '#94a3b8', fontSize: 13 }}>Pas encore de données.</p>;
   const statusColors = {
-    Nouveau: '#94a3b8', Contacté: '#1d4ed8', Qualifié: '#b45309',
-    Pilote: '#15803d', Fermé: '#b91c1c',
+    Nouveau: '#8338EC',      // Violet électrique
+    Contacté: '#2A9D8F',     // Turquoise
+    Qualifié: '#F77F00',     // Orange éclatant
+    Pilote: '#06A77D',       // Vert émeraude
+    Fermé: '#E63946',        // Rouge vif
   };
   return (
     <ResponsiveContainer width="100%" height={180}>
@@ -153,6 +236,93 @@ export const StatusBarChart = ({ byStatus }) => {
           ))}
         </Bar>
       </BarChart>
+    </ResponsiveContainer>
+  );
+};
+
+export const CountryPieChart = ({ byCountry }) => {
+  const data = Object.entries(byCountry || {})
+    .map(([country, count]) => ({ name: country, value: count }))
+    .filter((d) => d.value > 0)
+    .sort((a, b) => b.value - a.value);
+  
+  if (!data.length) return <p style={{ color: '#94a3b8', fontSize: 13 }}>Pas encore de données.</p>;
+  
+  // Couleurs pétantes et diversifiées pour les pays
+  const VIBRANT_COLORS = [
+    '#E63946', // Rouge vif
+    '#F77F00', // Orange éclatant
+    '#FCBF49', // Jaune doré
+    '#06A77D', // Vert émeraude
+    '#2A9D8F', // Turquoise
+    '#264653', // Bleu pétrole
+    '#457B9D', // Bleu acier
+    '#E76F51', // Corail
+    '#8338EC', // Violet électrique
+    '#FF006E', // Rose fuchsia
+    '#3A86FF', // Bleu royal
+    '#FB5607', // Orange brûlé
+    '#FFBE0B', // Jaune soleil
+    '#06FFA5', // Vert menthe électrique
+    '#C1121F', // Rouge carmin
+  ];
+  
+  const renderLegend = (props) => {
+    const { payload } = props;
+    const total = data.reduce((sum, item) => sum + item.value, 0);
+    return (
+      <ul style={{ 
+        listStyle: 'none', 
+        padding: 0, 
+        margin: '10px 0 0 0',
+        display: 'flex',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        gap: '12px 20px',
+        fontSize: '13px'
+      }}>
+        {payload.map((entry, index) => {
+          const percent = ((entry.payload.value / total) * 100).toFixed(0);
+          return (
+            <li key={`item-${index}`} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <span style={{ 
+                width: 12, 
+                height: 12, 
+                backgroundColor: entry.color,
+                borderRadius: 2,
+                display: 'inline-block'
+              }} />
+              <span style={{ color: '#475569', fontWeight: 500 }}>
+                {entry.value}: {entry.payload.value} ({percent}%)
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  };
+
+  return (
+    <ResponsiveContainer width="100%" height={220}>
+      <PieChart>
+        <Pie 
+          data={data} 
+          cx="50%" 
+          cy="45%" 
+          outerRadius={70} 
+          dataKey="value"
+          label={false}
+        >
+          {data.map((entry, i) => (
+            <Cell 
+              key={i} 
+              fill={VIBRANT_COLORS[i % VIBRANT_COLORS.length]} 
+            />
+          ))}
+        </Pie>
+        <Tooltip content={<CustomTooltip />} />
+        <Legend content={renderLegend} />
+      </PieChart>
     </ResponsiveContainer>
   );
 };

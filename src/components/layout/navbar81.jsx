@@ -123,16 +123,16 @@ const Navbar81 = (props) => {
           <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('/contact'); }}>
             {t('navbar.contact')}
           </a>
-          <div className="language-switcher-nav">
-            <LanguageSwitcher />
-          </div>
           <a
             href="/admin/login"
             className="navbar-admin-link"
             onClick={(e) => { e.preventDefault(); navigate('/admin/login'); }}
           >
-            Admin
+            {t('navbar.login')}
           </a>
+          <div className="language-switcher-nav">
+            <LanguageSwitcher />
+          </div>
         </nav>
       </div>
       

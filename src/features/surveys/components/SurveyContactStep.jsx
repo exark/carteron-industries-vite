@@ -21,7 +21,7 @@ const SurveyContactStep = ({ values, onChange, errors, lang, includeOrganization
 
   const labels = {
     full_name:     { fr: 'Nom complet', en: 'Full name' },
-    email:         { fr: 'Adresse e-mail', en: 'Email address' },
+    email:         { fr: 'Adresse e-mail (optionnel)', en: 'Email address (optional)' },
     phone:         { fr: 'Téléphone (optionnel)', en: 'Phone (optional)' },
     country:       { fr: 'Pays', en: 'Country' },
     organization:  { fr: 'Nom du club', en: 'Club name' },
@@ -52,7 +52,7 @@ const SurveyContactStep = ({ values, onChange, errors, lang, includeOrganization
 
       <div className="survey-field-group">
         <label className="survey-field-label">
-          {t('email')} <span className="survey-required">*</span>
+          {t('email')}
         </label>
         <input
           type="email"
