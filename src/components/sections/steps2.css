@@ -57,9 +57,9 @@
 
 .steps2-max-width {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 60px);
+  padding: 0 clamp(20px, 3vw, 40px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,8 +69,8 @@
 
 .steps2-section-header {
   text-align: center;
-  padding: 50px 20px 30px;
-  min-height: 50vh;
+  padding: 40px 20px 25px;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,23 +78,23 @@
 }
 
 .steps2-section-header h2 {
-  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-bold);
   color: var(--primary-blue);
-  margin-bottom: clamp(12px, 2vw, 24px);
+  margin-bottom: clamp(10px, 1.5vw, 18px);
   line-height: 1.2;
 }
 
 .steps2-section-header p {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
   color: var(--neutral-gray-600);
   line-height: 1.6;
   margin-bottom: 0;
-  max-width: 900px;
+  max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 clamp(15px, 3vw, 30px);
+  padding: 0 clamp(15px, 2vw, 25px);
 }
 
 /* Container séquentiel des étapes */
@@ -102,7 +102,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0;
   width: 100%;
@@ -112,18 +112,18 @@
 .stepRow {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: clamp(30px, 4vw, 50px);
+  gap: clamp(25px, 3vw, 35px);
   align-items: center;
-  min-height: 45vh;
-  padding: 15px clamp(20px, 4vw, 60px);
+  min-height: 35vh;
+  padding: 12px clamp(20px, 3vw, 40px);
   opacity: 1;
   transition: transform 0.3s ease;
 }
 
 /* Completed steps styling */
 .stepRow.stepCompleted {
-  min-height: 30vh;
-  padding: 12px clamp(20px, 4vw, 60px);
+  min-height: 25vh;
+  padding: 10px clamp(20px, 3vw, 40px);
   opacity: 0.85;
 }
 
@@ -156,15 +156,15 @@
 /* Container de l'image */
 .stepImage {
   position: relative;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   background: var(--neutral-gray-100);
 }
 
 .stepImage img {
   width: 100%;
-  height: clamp(280px, 40vh, 400px);
+  height: clamp(220px, 32vh, 320px);
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
@@ -182,19 +182,19 @@
 /* Badge sur l'image */
 .stepBadge {
   position: absolute;
-  top: clamp(15px, 2vw, 20px);
-  left: clamp(15px, 2vw, 20px);
+  top: clamp(12px, 1.5vw, 16px);
+  left: clamp(12px, 1.5vw, 16px);
   background: var(--primary-blue);
   color: var(--neutral-white);
-  width: clamp(45px, 6vw, 55px);
-  height: clamp(45px, 6vw, 55px);
+  width: clamp(40px, 5vw, 48px);
+  height: clamp(40px, 5vw, 48px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-bold);
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   box-shadow: 0 4px 12px rgba(33, 87, 217, 0.3);
   transition: all 0.3s ease;
 }
@@ -203,16 +203,16 @@
 .stepBadge.completed {
   background: linear-gradient(135deg, #7A9B6F 0%, #6B8A60 100%);
   box-shadow: 0 4px 12px rgba(122, 155, 111, 0.4);
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 /* Separator between completed and in-progress steps */
 .completedStepsSeparator {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 25px clamp(20px, 4vw, 60px);
-  margin: 10px 0;
+  gap: 12px;
+  padding: 20px clamp(20px, 3vw, 40px);
+  margin: 8px 0;
 }
 
 .separatorLine {
@@ -224,36 +224,36 @@
 .separatorText {
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-semibold);
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
   color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   white-space: nowrap;
-  padding: 8px 20px;
+  padding: 6px 16px;
   background: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
+  border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Contenu de l'étape */
 .stepContent {
-  padding: clamp(15px, 3vw, 30px);
+  padding: clamp(12px, 2vw, 24px);
 }
 
 
 /* Titre de l'étape */
 .stepContent h3 {
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-bold);
   color: var(--primary-blue);
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
   line-height: 1.2;
 }
 
 /* Description de l'étape */
 .stepContent p {
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-size: clamp(0.9rem, 2vw, 1rem);
   font-family: var(--font-family-body);
   color: var(--neutral-gray-700);
   line-height: var(--line-height-relaxed);

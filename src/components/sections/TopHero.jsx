@@ -10,9 +10,9 @@ const TopHero = () => {
   const navigate = useNavigate();
 
   const handleDiscoverClick = () => {
-    const infoSectionElement = document.querySelector('.info-section');
-    if (infoSectionElement) {
-      infoSectionElement.scrollIntoView({ 
+    const familyGolfSection = document.querySelector('.family-golf-revolution');
+    if (familyGolfSection) {
+      familyGolfSection.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });

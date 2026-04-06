@@ -111,7 +111,7 @@ const AdminLoginPage = () => {
         </form>
 
         <p className="admin-login-back">
-          <a href="/contact">← Retour au site</a>
+          <a href="/">← Retour au site</a>
         </p>
       </div>
     </div>
