@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAdminAuth } from '../../features/admin/hooks/useAdminAuth';
 import {
@@ -30,21 +30,21 @@ const formatDate = (iso) => {
 };
 
 // ── Stat card ──────────────────────────────────────────────
-const StatCard = ({ label, value, sub }) => (
+const StatCard = React.memo(({ label, value, sub }) => (
   <div className="admin-stat-card">
     <p className="admin-stat-label">{label}</p>
     <p className="admin-stat-value">{value}</p>
     {sub && <p className="admin-stat-sub">{sub}</p>}
   </div>
-);
+));
 
 // ── Chart wrapper ──────────────────────────────────────────
-const ChartCard = ({ title, children }) => (
+const ChartCard = React.memo(({ title, children }) => (
   <div className="admin-chart-card">
     <p className="admin-chart-title">{title}</p>
     {children}
   </div>
-);
+));
 
 // ── Main component ─────────────────────────────────────────
 const AdminDashboardPage = () => {
@@ -154,6 +154,17 @@ const AdminDashboardPage = () => {
     navigate('/');
   };
 
+  // Optimisation: Mémoriser les soumissions filtrées
+  const clubSubmissions = useMemo(
+    () => submissions.filter((s) => s.survey_type === 'club'),
+    [submissions]
+  );
+
+  const familySubmissions = useMemo(
+    () => submissions.filter((s) => s.survey_type === 'family'),
+    [submissions]
+  );
+
   const loadData = useCallback(async () => {
     setLoading(true);
     setError(null);
@@ -165,8 +176,8 @@ const AdminDashboardPage = () => {
       setSubmissions(subs);
       setStats(statsData);
     } catch (err) {
-      setError('Erreur lors du chargement des données. Vérifiez votre connexion Supabase.');
-      console.error('[AdminDashboard]', err);
+      console.error('[AdminDashboard] Load error:', err);
+      setError('Erreur de chargement. Veuillez rafraîchir la page.');
     } finally {
       setLoading(false);
     }
@@ -347,7 +358,7 @@ const AdminDashboardPage = () => {
             </div>
 
             <SubmissionsTable
-              submissions={submissions.filter((s) => s.survey_type === 'club')}
+              submissions={clubSubmissions}
               loading={loading}
               onView={setSelectedSubmission}
               onDelete={handleDeleteSubmission}
@@ -391,7 +402,7 @@ const AdminDashboardPage = () => {
             </div>
 
             <SubmissionsTable
-              submissions={submissions.filter((s) => s.survey_type === 'family')}
+              submissions={familySubmissions}
               loading={loading}
               onView={setSelectedSubmission}
               onDelete={handleDeleteSubmission}

@@ -130,7 +130,7 @@ const CustomTooltip = ({ active, payload, label }) => {
   );
 };
 
-export const SurveyTypePieChart = ({ byType }) => {
+export const SurveyTypePieChart = React.memo(({ byType }) => {
   const data = toChartData(byType).filter((d) => d.value > 0);
   if (!data.length) return <p style={{ color: '#94a3b8', fontSize: 13 }}>Pas encore de données.</p>;
   
@@ -184,6 +184,8 @@ export const SurveyTypePieChart = ({ byType }) => {
           outerRadius={70} 
           dataKey="value"
           label={false}
+          isAnimationActive={true}
+          animationDuration={400}
         >
           {data.map((entry, i) => <Cell key={i} fill={TYPE_COLORS[entry.name] || COLORS[i % COLORS.length]} />)}
         </Pie>
@@ -192,9 +194,9 @@ export const SurveyTypePieChart = ({ byType }) => {
       </PieChart>
     </ResponsiveContainer>
   );
-};
+});
 
-export const SimpleBarChart = ({ data, color = '#0b2244' }) => {
+export const SimpleBarChart = React.memo(({ data, color = '#0b2244' }) => {
   const chartData = toChartData(data).filter((d) => d.value > 0);
   if (!chartData.length) return <p style={{ color: '#94a3b8', fontSize: 13 }}>Pas encore de données.</p>;
   return (
@@ -203,7 +205,7 @@ export const SimpleBarChart = ({ data, color = '#0b2244' }) => {
         <XAxis type="number" tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />
         <YAxis type="category" dataKey="name" width={110} tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />
         <Tooltip content={<CustomTooltip />} />
-        <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={16}>
+        <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={16} isAnimationActive={true} animationDuration={400}>
           {chartData.map((entry, index) => {
             const semanticColor = getSemanticColor(entry.originalKey);
             return <Cell key={`cell-${index}`} fill={semanticColor || color} />;
@@ -212,9 +214,9 @@ export const SimpleBarChart = ({ data, color = '#0b2244' }) => {
       </BarChart>
     </ResponsiveContainer>
   );
-};
+});
 
-export const StatusBarChart = ({ byStatus }) => {
+export const StatusBarChart = React.memo(({ byStatus }) => {
   const data = toChartData(byStatus).filter((d) => d.value > 0);
   if (!data.length) return <p style={{ color: '#94a3b8', fontSize: 13 }}>Pas encore de données.</p>;
   const statusColors = {
@@ -230,7 +232,7 @@ export const StatusBarChart = ({ byStatus }) => {
         <XAxis dataKey="name" tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />
         <YAxis tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />
         <Tooltip content={<CustomTooltip />} />
-        <Bar dataKey="value" radius={[4, 4, 0, 0]} barSize={28}>
+        <Bar dataKey="value" radius={[4, 4, 0, 0]} barSize={28} isAnimationActive={true} animationDuration={400}>
           {data.map((entry, i) => (
             <Cell key={i} fill={statusColors[entry.name] || COLORS[i % COLORS.length]} />
           ))}
@@ -238,9 +240,9 @@ export const StatusBarChart = ({ byStatus }) => {
       </BarChart>
     </ResponsiveContainer>
   );
-};
+});
 
-export const CountryPieChart = ({ byCountry }) => {
+export const CountryPieChart = React.memo(({ byCountry }) => {
   const data = Object.entries(byCountry || {})
     .map(([country, count]) => ({ name: country, value: count }))
     .filter((d) => d.value > 0)
@@ -312,6 +314,8 @@ export const CountryPieChart = ({ byCountry }) => {
           outerRadius={70} 
           dataKey="value"
           label={false}
+          isAnimationActive={true}
+          animationDuration={400}
         >
           {data.map((entry, i) => (
             <Cell 
@@ -325,4 +329,4 @@ export const CountryPieChart = ({ byCountry }) => {
       </PieChart>
     </ResponsiveContainer>
   );
-};
+});

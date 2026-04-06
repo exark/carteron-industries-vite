@@ -293,13 +293,7 @@
   font-weight: var(--font-weight-semibold);
   color: var(--neutral-gray-500);
   cursor: pointer;
-  transition: all 0.18s ease;
   white-space: nowrap;
-}
-
-.admin-tab:hover {
-  color: var(--primary-blue);
-  background: rgba(11,34,68,0.05);
 }
 
 .admin-tab.active {
@@ -323,6 +317,7 @@
   border: 1px solid #e2e8f0;
   position: relative;
   overflow: hidden;
+  will-change: auto;
 }
 
 .admin-stat-card::before {
@@ -371,6 +366,7 @@
   padding: 22px 20px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   border: 1px solid #e2e8f0;
+  will-change: auto;
 }
 
 .admin-chart-title {
