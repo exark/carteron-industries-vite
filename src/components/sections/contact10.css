@@ -60,7 +60,7 @@
   font-size: var(--font-size-3xl);
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-bold);
-  color: #0b2244;
+  color: #5D7052;
   margin-bottom: var(--space-md);
 }
 
@@ -180,6 +180,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  transition: all 0.3s ease;
+}
+
+.contact10-partnership-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-color: #0b2244;
 }
 
 .contact10-partnership-image {

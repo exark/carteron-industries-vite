@@ -383,7 +383,7 @@ export default function ContactForm3() {
             className="success-pop-anim"
           />
           <h2 id="modal-success-title" style={{
-            fontFamily: 'Montserrat, Arial, sans-serif',
+            fontFamily: 'var(--font-family-primary)',
             fontWeight: 800,
             fontSize: '1.5rem',
             color: '#0b2244',

@@ -7,6 +7,8 @@ import {
   useLocation,
 } from 'react-router-dom'
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
 
 import Contact from './pages/contact/contact'
 import Home from './pages/home/home'
@@ -27,6 +29,25 @@ import ClubSurveyPage from './pages/survey/ClubSurveyPage';
 import FamilySurveyPage from './pages/survey/FamilySurveyPage';
 import AdminLoginPage from './pages/admin/AdminLoginPage';
 import AdminDashboardPage from './pages/admin/AdminDashboardPage';
+
+// Create custom Material-UI theme with Inter font
+const theme = createTheme({
+  typography: {
+    fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    allVariants: {
+      fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    },
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        },
+      },
+    },
+  },
+});
 
 const AppContent = () => {
   const location = useLocation();
@@ -83,10 +104,13 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <AppContent />
-      <SpeedInsights />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <AppContent />
+        <SpeedInsights />
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

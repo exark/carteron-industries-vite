@@ -49,7 +49,7 @@
     "desc": "Notre équipe vous répondra dans les plus brefs délais.",
     "send_message": "Envoyer le message",
     "email_error_send": "Erreur lors de l'envoi du message. Veuillez réessayer.",
-    "partnership_text": "Nous recherchons aujourd'hui des partenaires et des investisseurs pour concrétiser ce projet prometteur. N'hésitez pas à nous contacter pour toute question ou collaboration."
+    "partnership_text": "Nous recherchons aujourd'hui des partenaires pour concrétiser ce projet prometteur. N'hésitez pas à nous contacter pour toute question ou collaboration."
   },
   "privacy": {
     "title": "Politique de confidentialité",
@@ -291,7 +291,7 @@
     },
     "step6": {
       "title": "Pré-lancement commercial",
-      "desc": "Présentation aux investisseurs, clubs de golf et familles pilotes."
+      "desc": "Présentation aux clubs de golf et familles pilotes."
     },
     "step7": {
       "title": "Lancement officiel",
@@ -299,16 +299,14 @@
     }
   },
   "contact10": {
-    "heading1": "Votre avis compte",
-    "content1": "Nous recherchons aujourd'hui des partenaires pour concrétiser ce projet prometteur.",
-    "investor_title": "Vous êtes un investisseur ?",
-    "investor_text": "Vous êtes un investisseur et trouvez le concept original ? Rejoignez nous et devenez acteur en investissant dans le développement du premier prototype de notre produit innovant.",
+    "heading1": "Et si on pouvait jouer au golf… en famille ?",
+    "content1": "On développe une solution pour profiter du golf sans avoir à choisir entre passion et vie de famille.",
     "golf_club_title": "Vous êtes un club de golf ?",
     "golf_club_text": "Vous pouvez nous aider en devenant un clubs de golf pilote et nous accompagner à tester notre prototype dans un environnement réel d'un parcours de golf.",
-    "golf_club_btn": "Répondre à l'enquête",
+    "golf_club_btn": "En savoir plus",
     "golf_family_title": "Vous êtes une famille golfeur ?",
     "golf_family_text": "Devenez notre famille de golfeur pilote, accompagnez nous en découvrant le produit et nous faire part de vos ressenti en testant notre chariot de golf poussette 2 en 1.",
-    "golf_family_btn": "Répondre à l'enquête",
+    "golf_family_btn": "En savoir plus",
     "location2": "Email : carteron.industries@gmail.com",
     "location2Description": "Envoyez-nous un email pour toute question ou proposition.",
     "get_directions": "Envoyer email"
@@ -353,8 +351,8 @@
     "page_title": "Notre Entreprise",
     "page_subtitle": "Innovation, passion et expertise au service du golf familial",
     "cta_title": "Rejoignez l'aventure",
-    "cta_text": "Nous recherchons des partenaires, clubs et investisseurs pour co-construire et tester cette innovation. Rejoignez l'aventure !",
-    "contact_button": "Nous contacter",
+    "cta_text": "Nous recherchons des partenaires et clubs pour co-construire et tester cette innovation. Rejoignez l'aventure !",
+    "contact_button": "Contactez-nous",
     "vision_title": "Notre Vision",
     "vision_text": "Réinventer l'expérience du golf afin de permettre aux parents golfeurs de partager leur passion avec leurs enfants, et aux clubs d'attirer une nouvelle clientèle familiale.",
     "ambition_title": "Notre Ambition",
@@ -438,14 +436,14 @@
     "not_found": "Produit non trouvé",
     "back_to_products": "Retour aux produits",
     "add_to_cart": "Ajouter au panier",
-    "contact_us": "Nous contacter",
+    "contact_us": "Contactez-nous",
     "price_note": "TVA incluse • Livraison gratuite",
     "availability": "🚧 Produit en cours de développement - Disponible prochainement",
     "features_title": "Caractéristiques principales",
     "specifications_title": "Spécifications techniques",
     "cta_title": "Intéressé par ce produit ?",
     "cta_description": "Contactez-nous pour être informé dès que ce produit révolutionnaire sera disponible. Soyez parmi les premiers à découvrir l'avenir de la mobilité familiale sur le golf.",
-    "contact_button": "Nous contacter"
+    "contact_button": "Contactez-nous"
   },
   "revolution": {
     "title": "Le Golf Ne Devrait Pas S'Arrêter Avec La Famille",

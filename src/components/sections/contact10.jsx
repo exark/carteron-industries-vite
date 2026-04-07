@@ -20,26 +20,34 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
             <h2 className="thq-heading-2">{t('contact10.heading1')}</h2>
             <p className="thq-body-large">{t('contact10.content1')}</p>
             <div className="contact10-partnership-section">
-              <div className="contact10-partnership-item">
+              <div 
+                className="contact10-partnership-item" 
+                onClick={() => navigate('/survey/club')}
+                style={{ cursor: 'pointer' }}
+              >
                 <img 
                   src="/images/orgnanisation.webp" 
                   alt="Golf Club Partnership" 
                   className="contact10-partnership-image"
                 />
                 <h3 className="thq-heading-3">{t('contact10.golf_club_title')}</h3>
-                <button className="contact10-partnership-btn" onClick={() => navigate('/survey/club')}>
+                <button className="contact10-partnership-btn" onClick={(e) => { e.stopPropagation(); navigate('/survey/club'); }}>
                   {t('contact10.golf_club_btn')}
                 </button>
               </div>
               
-              <div className="contact10-partnership-item">
+              <div 
+                className="contact10-partnership-item"
+                onClick={() => navigate('/survey/family')}
+                style={{ cursor: 'pointer' }}
+              >
                 <img 
                   src="/images/family.webp" 
                   alt="Family Golf Partnership" 
                   className="contact10-partnership-image"
                 />
                 <h3 className="thq-heading-3">{t('contact10.golf_family_title')}</h3>
-                <button className="contact10-partnership-btn" onClick={() => navigate('/survey/family')}>
+                <button className="contact10-partnership-btn" onClick={(e) => { e.stopPropagation(); navigate('/survey/family'); }}>
                   {t('contact10.golf_family_btn')}
                 </button>
               </div>

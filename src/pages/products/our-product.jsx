@@ -11,6 +11,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import Navbar81 from "../../components/layout/navbar81";
 import Footer31 from "../../components/layout/footer31";
+import Steps2 from "../../components/sections/steps2";
 import { getAllProducts } from "../../data/products";
 import "./our-product.css";
 
@@ -21,6 +22,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index, 
     <Box
       id={`service-${index + 1}`}
       className="service-card"
+      onClick={onButtonClick}
       sx={{
         background: '#fff',
         borderRadius: 2,
@@ -33,6 +35,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index, 
         width: '100%',
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' },
+        cursor: 'pointer',
         '&:hover': {
           transform: 'translateY(-4px)',
           boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
@@ -166,7 +169,10 @@ function ServiceCard({ title, description, image, buttonLabel, features, index, 
               variant="contained"
               color="primary"
               disableRipple
-              onClick={onButtonClick}
+              onClick={(e) => {
+                e.stopPropagation();
+                onButtonClick();
+              }}
               sx={{
                 color: "#fff", 
                 fontWeight: 600, 
@@ -438,34 +444,9 @@ export default function OurProduct() {
       </Box>
 
       <div className="product-page">
-        <Container maxWidth="lg" sx={{ py: 8 }}>
-          <Box sx={{ textAlign: 'center', mb: 6 }} className="animate-on-scroll">
-            <Typography
-              variant="h3"
-              component="h1"
-              sx={{
-                fontWeight: 700,
-                mb: 4,
-                color: '#0b2244'
-              }}
-            >
-              {t('our_product.coming_soon_title', 'En cours de développement')}
-            </Typography>
-            
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: '1.2rem',
-                lineHeight: 1.8,
-                maxWidth: '800px',
-                margin: '0 auto',
-                color: '#555'
-              }}
-            >
-              {t('our_product.coming_soon_text', 'Nous travaillons actuellement sur notre nouveau produit innovant. Revenez bientôt pour découvrir toutes les fonctionnalités et avantages que nous préparons pour vous.')}
-            </Typography>
-
-            <Box sx={{ mt: 8, mb: 6 }}>
+        <Container maxWidth="lg" sx={{ pt: 3, pb: 0 }}>
+          <Box sx={{ textAlign: 'center', mb: 0 }} className="animate-on-scroll">
+            <Box sx={{ mt: 2, mb: 0 }}>
             <Grid container spacing={3} sx={{ alignItems: 'stretch', justifyContent: 'center' }}>
               {services.map((service, index) => (
                 <Grid item xs={12} lg={8} key={index} sx={{ display: 'flex', height: { xs: 'auto', lg: '450px' } }}>
@@ -488,6 +469,9 @@ export default function OurProduct() {
           
         </Container>
         </div>
+        
+        {/* Steps Section */}
+        <Steps2 />
         
         <Footer31 />
       </Navbar81>

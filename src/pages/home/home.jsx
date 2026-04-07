@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 
 import Navbar81 from "../../components/layout/navbar81";
 import Features25 from "../../components/sections/features25";
-import Steps2 from "../../components/sections/steps2";
 import TrustedPartners from "../../components/sections/TrustedPartners";
 import Testimonial17 from "../../components/sections/testimonial17";
 import Contact10 from "../../components/sections/contact10";
@@ -54,9 +53,6 @@ const Home = () => {
             {/* <div id="our-product" className="home-services">
               <Features25></Features25>
             </div> */}
-            <div id="accompagnement">
-              <Steps2></Steps2>
-            </div>
             <div id="trusted-partners">
               <TrustedPartners></TrustedPartners>
             </div>

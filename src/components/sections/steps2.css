@@ -35,18 +35,7 @@
 }
 
 .steps2-container1::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 42vw;
-  max-width: 500px;
-  height: 35vh;
-  max-height: 260px;
-  background: #232523;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 
@@ -59,7 +48,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 3vw, 40px);
+  padding: 0 clamp(20px, 3vw, 40px) 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +58,7 @@
 
 .steps2-section-header {
   text-align: center;
-  padding: 40px 20px 25px;
+  padding: 10px 20px 20px;
   min-height: 40vh;
   display: flex;
   flex-direction: column;

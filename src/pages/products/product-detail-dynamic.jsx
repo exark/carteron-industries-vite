@@ -236,12 +236,6 @@ export default function ProductDetailDynamic() {
                 >
                   {product.pricing.price} {product.pricing.currency}
                 </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{ color: '#666' }}
-                >
-                  {t('product_detail.price_note', 'TVA incluse • Livraison gratuite')}
-                </Typography>
               </Box>
 
               <Box sx={{ display: 'flex', gap: 2, mb: 4, flexWrap: 'wrap' }}>
