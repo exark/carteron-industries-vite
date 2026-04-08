@@ -37,6 +37,12 @@ export default function ContactForm3() {
   const [submitted, setSubmitted] = React.useState(false);
   const [openSnackbar, setOpenSnackbar] = React.useState(false);
   const [modalOpen, setModalOpen] = React.useState(false);
+  
+  // Initialize EmailJS
+  React.useEffect(() => {
+    emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+  }, []);
+
   React.useEffect(() => {
     if (modalOpen) {
       const timer = setTimeout(() => setModalOpen(false), 3000);
@@ -147,16 +153,13 @@ export default function ContactForm3() {
           templateParams,
           EMAILJS_CONFIG.PUBLIC_KEY
         );
-
-        console.log('Email envoyé avec succès:', result);
+        
         setModalOpen(true);
         setForm(initialState);
         setTouched({});
         setErrors({});
         setSubmitted(false);
       } catch (error) {
-        console.error('Erreur lors de l\'envoi de l\'email:', error);
-        // Vous pouvez ajouter ici une notification d'erreur
         alert(t('contact_form.email_error_send', 'Erreur lors de l\'envoi du message. Veuillez réessayer.'));
       }
     }
