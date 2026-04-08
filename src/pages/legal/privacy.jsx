@@ -63,7 +63,7 @@ const Privacy = () => {
                 <p>{t("privacy.section6_text", "If you have any questions about this Privacy Policy, please contact us.")}</p>
                 <div className="contact-info">
                   <p><strong>Carteron Industries</strong></p>
-                  <p>Email: carteron.industries@gmail.com</p>
+                  <p>Email: ali.ahmed.benhamouda@gmail.com</p>
                 </div>
               </section>
             </div>

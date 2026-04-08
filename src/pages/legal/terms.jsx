@@ -74,7 +74,7 @@ const Terms = () => {
                 <p>{t("terms.contact_text", "If you have any questions about these Terms and Conditions, please contact us at:")}</p>
                 <div className="contact-info">
                   <p><strong>Carteron Industries</strong></p>
-                  <p>Email: carteron.industries@gmail.com</p>
+                  <p>Email: ali.ahmed.benhamouda@gmail.com</p>
                 </div>
               </section>
             </div>

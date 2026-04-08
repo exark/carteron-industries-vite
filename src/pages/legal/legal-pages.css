@@ -61,20 +61,13 @@
 .legal-sections {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 12px;
 }
 
 .legal-section {
-  background: #fafafa;
-  padding: 28px;
+  background: transparent;
+  padding: 16px 20px;
   border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.legal-section:hover {
-  background: #f7f9fc;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .legal-section h2 {
@@ -119,13 +112,13 @@
 }
 
 .legal-list li::before {
-  content: "✓";
+  content: "•";
   position: absolute;
   left: 0;
   top: 8px;
-  color: #A4BD01;
-  font-weight: bold;
-  font-size: 1.1rem;
+  color: #4a5568;
+  font-weight: normal;
+  font-size: 1.3rem;
 }
 
 .contact-info {
@@ -167,11 +160,11 @@
   }
 
   .legal-sections {
-    gap: 24px;
+    gap: 10px;
   }
 
   .legal-section {
-    padding: 20px;
+    padding: 14px 16px;
   }
 
   .legal-section h2 {
@@ -198,7 +191,7 @@
   }
 
   .legal-section {
-    padding: 16px;
+    padding: 12px 14px;
   }
 
   .legal-section h2 {
@@ -216,16 +209,6 @@
   }
 }
 
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-  .legal-section {
-    transition: none;
-  }
-  
-  .legal-section:hover {
-    transform: none;
-  }
-}
 
 /* Print styles */
 @media print {
@@ -270,12 +253,11 @@ html {
 
 /* Link styling within legal content */
 .legal-section a {
-  color: #A4BD01;
+  color: #0b2244;
   text-decoration: underline;
-  transition: color 0.2s ease;
 }
 
 .legal-section a:hover {
-  color: #679436;
-  text-decoration: none;
+  color: #0b2244;
+  text-decoration: underline;
 }
