@@ -1,0 +1,2 @@
+[functions.send-survey-confirmation]
+verify_jwt = false

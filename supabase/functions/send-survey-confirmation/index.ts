@@ -129,7 +129,7 @@ serve(async (req) => {
             <p>En attendant, n'hésitez pas à découvrir nos innovations sur notre site web :</p>
             
             <div style="text-align: center;">
-              <a href="https://www.carteronindustries.com" class="button">Visiter notre site</a>
+              <a href="https://www.carteronindustries.com" class="button" style="display: inline-block; padding: 12px 30px; background: #0b2244; color: #ffffff !important; text-decoration: none; border-radius: 6px; margin: 20px 0;">Visiter notre site</a>
             </div>
             
             <p>Cordialement,<br>

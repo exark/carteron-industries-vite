@@ -276,25 +276,31 @@ export const CountryPieChart = React.memo(({ byCountry }) => {
       <ul style={{ 
         listStyle: 'none', 
         padding: 0, 
-        margin: '10px 0 0 0',
+        margin: 0,
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
-        flexWrap: 'wrap',
-        gap: '12px 20px',
-        fontSize: '13px'
+        gap: '8px',
+        fontSize: '12px',
+        maxHeight: '200px',
+        overflowY: 'auto',
+        paddingRight: '8px',
+        minWidth: '140px',
+        maxWidth: '200px'
       }}>
         {payload.map((entry, index) => {
           const percent = ((entry.payload.value / total) * 100).toFixed(0);
           return (
             <li key={`item-${index}`} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ 
-                width: 12, 
-                height: 12, 
+                width: 10, 
+                height: 10, 
                 backgroundColor: entry.color,
                 borderRadius: 2,
-                display: 'inline-block'
+                display: 'inline-block',
+                flexShrink: 0
               }} />
-              <span style={{ color: '#475569', fontWeight: 500 }}>
+              <span style={{ color: '#475569', fontWeight: 500, fontSize: '11px', lineHeight: '1.3', wordBreak: 'break-word' }}>
                 {entry.value}: {entry.payload.value} ({percent}%)
               </span>
             </li>
@@ -309,9 +315,9 @@ export const CountryPieChart = React.memo(({ byCountry }) => {
       <PieChart>
         <Pie 
           data={data} 
-          cx="50%" 
-          cy="45%" 
-          outerRadius={70} 
+          cx="32%" 
+          cy="50%" 
+          outerRadius={60} 
           dataKey="value"
           label={false}
           isAnimationActive={true}
@@ -325,7 +331,13 @@ export const CountryPieChart = React.memo(({ byCountry }) => {
           ))}
         </Pie>
         <Tooltip content={<CustomTooltip />} />
-        <Legend content={renderLegend} />
+        <Legend 
+          content={renderLegend} 
+          layout="vertical" 
+          align="right" 
+          verticalAlign="middle"
+          wrapperStyle={{ paddingLeft: '5px', width: 'auto' }}
+        />
       </PieChart>
     </ResponsiveContainer>
   );

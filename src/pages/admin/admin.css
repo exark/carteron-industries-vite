@@ -369,6 +369,11 @@
   will-change: auto;
 }
 
+/* Carte pays avec largeur normale */
+.admin-chart-card--country {
+  grid-column: span 2;
+}
+
 .admin-chart-title {
   font-family: var(--font-family-primary);
   font-size: 0.85rem;
@@ -483,6 +488,17 @@
 
 .admin-table-wrap {
   overflow-x: auto;
+  overflow-y: auto;
+  max-height: 600px;
+  position: relative;
+  /* Masquer les barres de scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE et Edge */
+}
+
+/* Masquer la barre de scroll pour Chrome, Safari et Opera */
+.admin-table-wrap::-webkit-scrollbar {
+  display: none;
 }
 
 .admin-table {
@@ -507,6 +523,10 @@
   border-bottom: 1px solid #e2e8f0;
   white-space: nowrap;
   min-width: 80px;
+  position: sticky;
+  top: 0;
+  background: #f8fafc;
+  z-index: 10;
 }
 
 .admin-table tbody tr {
@@ -1196,6 +1216,11 @@
   .admin-charts-grid {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+
+  /* Sur mobile, la carte pays prend toute la largeur */
+  .admin-chart-card--country {
+    grid-column: span 1;
   }
 
   .admin-stats-grid {

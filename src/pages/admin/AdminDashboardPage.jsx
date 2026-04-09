@@ -40,8 +40,8 @@ const StatCard = React.memo(({ label, value, sub }) => (
 ));
 
 // ── Chart wrapper ──────────────────────────────────────────
-const ChartCard = React.memo(({ title, children }) => (
-  <div className="admin-chart-card">
+const ChartCard = React.memo(({ title, children, className }) => (
+  <div className={`admin-chart-card ${className || ''}`}>
     <p className="admin-chart-title">{title}</p>
     {children}
   </div>
@@ -315,10 +315,6 @@ const AdminDashboardPage = () => {
                   <StatusBarChart byStatus={stats.byStatus} />
                 </ChartCard>
 
-                <ChartCard title="Répartition par pays">
-                  <CountryPieChart byCountry={stats.byCountry} />
-                </ChartCard>
-
                 <ChartCard title="Clubs — Intérêt pour tester le produit (Q4)">
                   <SimpleBarChart data={stats.club?.q4} color="#15803d" />
                 </ChartCard>
@@ -326,16 +322,20 @@ const AdminDashboardPage = () => {
                 <ChartCard title="Familles — Intérêt produit 2-en-1 (Q5)">
                   <SimpleBarChart data={stats.family?.q5} color="#db2777" />
                 </ChartCard>
+
+                <ChartCard title="Répartition par pays" className="admin-chart-card--country">
+                  <CountryPieChart byCountry={stats.byCountry} />
+                </ChartCard>
               </div>
             )}
 
             {/* Recent submissions */}
             <SubmissionsTable
-              submissions={submissions.slice(0, 8)}
+              submissions={submissions.slice(0, 10)}
               loading={loading}
               onView={setSelectedSubmission}
               onDelete={handleDeleteSubmission}
-              title="Dernières soumissions"
+              title="10 dernières soumissions"
               filterType={filterType}
               setFilterType={setFilterType}
               filterStatus={filterStatus}

@@ -35,7 +35,12 @@ export async function sendSurveyConfirmationEmail({ email, full_name, survey_typ
     });
 
     if (error) {
-      console.error('[Survey] Edge function error:', error);
+      if (error.context && typeof error.context.json === 'function') {
+        const body = await error.context.json().catch(() => null);
+        console.error('[Survey] Edge function HTTP error:', error.context.status, body);
+      } else {
+        console.error('[Survey] Edge function error:', error.name, error.message, error);
+      }
       throw error;
     }
 
