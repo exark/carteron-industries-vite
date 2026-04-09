@@ -15,6 +15,7 @@ import {
   StatusBarChart,
   CountryPieChart,
 } from '../../features/admin/components/SurveyCharts';
+import { exportToCSV, exportToPDF } from '../../features/admin/utils/exportUtils';
 import './admin.css';
 
 const STATUS_LABELS = {
@@ -226,6 +227,22 @@ const AdminDashboardPage = () => {
     setDeleteConfirmModal(null);
   };
 
+  const handleExportCSV = (data) => {
+    const filename = activeTab === 'overview' ? 'all_submissions' : 
+                     activeTab === 'club' ? 'club_submissions' : 
+                     activeTab === 'family' ? 'family_submissions' : 
+                     'leads_submissions';
+    exportToCSV(data, filename);
+  };
+
+  const handleExportPDF = (data) => {
+    const filename = activeTab === 'overview' ? 'all_submissions' : 
+                     activeTab === 'club' ? 'club_submissions' : 
+                     activeTab === 'family' ? 'family_submissions' : 
+                     'leads_submissions';
+    exportToPDF(data, stats, filename);
+  };
+
   if (authLoading) return null;
 
   return (
@@ -326,6 +343,8 @@ const AdminDashboardPage = () => {
               search={search}
               setSearch={setSearch}
               showFilters={false}
+              onExportCSV={() => handleExportCSV(submissions)}
+              onExportPDF={() => handleExportPDF(submissions)}
             />
           </>
         )}
@@ -370,6 +389,8 @@ const AdminDashboardPage = () => {
               search={search}
               setSearch={setSearch}
               showFilters={true}
+              onExportCSV={() => handleExportCSV(clubSubmissions)}
+              onExportPDF={() => handleExportPDF(clubSubmissions)}
             />
           </>
         )}
@@ -414,6 +435,8 @@ const AdminDashboardPage = () => {
               search={search}
               setSearch={setSearch}
               showFilters={true}
+              onExportCSV={() => handleExportCSV(familySubmissions)}
+              onExportPDF={() => handleExportPDF(familySubmissions)}
             />
           </>
         )}
@@ -433,6 +456,8 @@ const AdminDashboardPage = () => {
             search={search}
             setSearch={setSearch}
             showFilters={true}
+            onExportCSV={() => handleExportCSV(submissions)}
+            onExportPDF={() => handleExportPDF(submissions)}
           />
         )}
       </div>
@@ -526,7 +551,7 @@ const AdminDashboardPage = () => {
 const SubmissionsTable = ({
   submissions, loading, onView, onDelete, title,
   filterType, setFilterType, filterStatus, setFilterStatus,
-  search, setSearch, showFilters,
+  search, setSearch, showFilters, onExportCSV, onExportPDF,
 }) => {
   const [localSearch, setLocalSearch] = useState(search || '');
 
@@ -571,6 +596,26 @@ const SubmissionsTable = ({
             </select>
           </>
         )}
+
+        {/* Export buttons */}
+        <div className="admin-export-buttons">
+          <button 
+            className="admin-export-btn admin-export-btn-csv"
+            onClick={onExportCSV}
+            disabled={!submissions || submissions.length === 0}
+            title="Exporter en CSV"
+          >
+            📊 CSV
+          </button>
+          <button 
+            className="admin-export-btn admin-export-btn-pdf"
+            onClick={onExportPDF}
+            disabled={!submissions || submissions.length === 0}
+            title="Exporter en PDF"
+          >
+            📄 PDF
+          </button>
+        </div>
       </div>
 
       <div className="admin-table-wrap">

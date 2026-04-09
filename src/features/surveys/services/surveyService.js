@@ -18,6 +18,13 @@ export async function sendSurveyConfirmationEmail({ email, full_name, survey_typ
     ? 'Club de Golf' 
     : 'Golfeur & Famille';
 
+  console.log('[Survey] Sending email with params:', {
+    email,
+    full_name,
+    survey_type,
+    surveyTypeLabel
+  });
+
   try {
     const { data, error } = await supabase.functions.invoke('send-survey-confirmation', {
       body: {

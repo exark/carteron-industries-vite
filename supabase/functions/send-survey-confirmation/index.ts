@@ -23,10 +23,16 @@ serve(async (req) => {
   }
 
   try {
-    const { to_email, user_name, survey_type_label }: EmailRequest = await req.json()
+    const body = await req.json()
+    console.log('Received body:', body)
+    
+    const { to_email, user_name, survey_type_label }: EmailRequest = body
+
+    console.log('Extracted values:', { to_email, user_name, survey_type_label })
 
     // Validation
     if (!to_email || !user_name || !survey_type_label) {
+      console.error('Validation failed:', { to_email, user_name, survey_type_label })
       throw new Error('Missing required fields')
     }
 
@@ -126,11 +132,10 @@ serve(async (req) => {
         'Authorization': `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Carteron Industries <noreply@carteronindustries.com>',
+        from: 'Carteron Industries <onboarding@resend.dev>',
         to: [to_email],
         subject: 'Merci pour votre participation - Carteron Industries',
         html: htmlContent,
-        reply_to: 'contact@carteronindustries.com',
       }),
     })
 
