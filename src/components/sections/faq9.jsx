@@ -57,32 +57,7 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
 
-  // Scroll animation observer
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-visible');
-        }
-      });
-    }, observerOptions);
-
-    // Observe all elements with animation classes
-    const animatedElements = document.querySelectorAll(
-      '.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right, .animate-fade-in'
-    );
-    
-    animatedElements.forEach((el) => observer.observe(el));
-
-    return () => {
-      animatedElements.forEach((el) => observer.unobserve(el));
-    };
-  }, [faqItems]);  // Re-run when FAQ items change
+  // Scroll animation observer removed - no animations on scroll
 
   const toggleFaqVisibility = (faqId) => {
     setFaqVisibility(prev => ({
@@ -148,28 +123,12 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
   // We don't need this effect anymore since we're handling cleanup in the toggle function
   // Each item will be removed from animation state individually
 
-  // Get the FAQs to display (first 3 + only those currently animating in or out)
-  const faqsToDisplay = useMemo(() => {
-    // Always show the first 3 items
-    const baseItems = faqItems.slice(0, 3);
-    
-    // Create the list of items to display
-    return faqItems.filter(item => {
-      // Always show the first 3 base items
-      const isBaseItem = item.number <= 3;
-      
-      // For additional items, only show if they're currently animating in or out
-      const isAnimatingIn = animatingItems.includes(item.id);
-      const isExiting = exitingItems.includes(item.id);
-      
-      return isBaseItem || isAnimatingIn || isExiting;
-    });
-  }, [faqItems, animatingItems, exitingItems]);
-  const hasMoreFaqs = faqItems.length > 3;
+  // Display all FAQs at once
+  const faqsToDisplay = faqItems;
   return (
     <div ref={faqRef} id={fAQ9Id} className="faq9faq8 thq-section-padding full-width-bg">
       <div className="faq9-max-width thq-flex-column thq-section-max-width">
-        <div className="faq9-section-title thq-flex-column animate-fade-in">
+        <div className="faq9-section-title thq-flex-column">
           <div className="faq9-content">
             <h2 className="thq-heading-2">{t('faq.title')}</h2>
             <p className="thq-body-large">{t('faq.subtitle')}</p>
@@ -193,12 +152,8 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
               animationClass = 'faq9-item-exiting';
             }
             
-            // Determine animation class based on index for staggered effect
-            const staggerClass = index < 8 ? `animate-stagger-${index + 1}` : '';
-            const scrollAnimationClass = index % 2 === 0 ? 'animate-on-scroll-left' : 'animate-on-scroll-right';
-            
             return (
-              <div key={faqItem.id} className={`${faqClass} thq-box-shadow thq-section-max-width ${animationClass} ${scrollAnimationClass} ${staggerClass}`}>
+              <div key={faqItem.id} className={`${faqClass} thq-box-shadow thq-section-max-width ${animationClass}`}>
                 <div 
                   onClick={() => toggleFaqVisibility(faqItem.id)} 
                   className={triggerClass}
@@ -231,27 +186,6 @@ const FAQ9 = ({ fAQ9Id = '' }) => {
             );
           })}
         </div>
-        {hasMoreFaqs && (
-          <div className="faq9-more-button-container animate-on-scroll">
-            <button 
-              onClick={toggleShowAllFaqs}
-              className="faq9-more-button thq-button-filled"
-              disabled={isAnimating}
-            >
-              <span className="faq9-button-text">
-                {showAllFaqs ? t('faq.less_questions') : t('faq.more_questions')}
-              </span>
-              <div className="faq9-button-icon">
-                <svg 
-                  viewBox="0 0 1024 1024" 
-                  className={`faq9-chevron ${showAllFaqs ? 'faq9-chevron-up' : 'faq9-chevron-down'}`}
-                >
-                  <path d="M316 426l196 196 196-196 60 60-256 256-256-256z"></path>
-                </svg>
-              </div>
-            </button>
-          </div>
-        )}
       </div>
     </div>
   )

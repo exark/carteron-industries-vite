@@ -57,16 +57,14 @@ export default function NotreEntreprise() {
         {/* ── STORY ── */}
         <section className="ne-story">
           <div className="ne-story__inner">
-            <div className="ne-story__text slide-left">
-              <span className="ne-label">Notre Histoire</span>
-              <h2 className="ne-story__heading">Nés d'une même passion.</h2>
+            <div className="ne-story__text">
+              <span className="ne-label">{t('notre_entreprise.story_label', 'Notre Histoire')}</span>
+              <h2 className="ne-story__heading">{t('notre_entreprise.story_heading', 'Nés d\'une même passion.')}</h2>
               <p className="ne-story__body">
-                Carteron Industries est née d'un constat simple : trop de parents golfeurs doivent choisir
-                entre leur sport et le temps passé en famille. Nous avons décidé de créer une solution qui
-                réconcilie ces deux mondes — sans compromis.
+                {t('notre_entreprise.story_body', 'Carteron Industries est née d\'un constat simple : trop de parents golfeurs doivent choisir entre leur sport et le temps passé en famille. Nous avons décidé de créer une solution qui réconcilie ces deux mondes — sans compromis.')}
               </p>
             </div>
-            <div className="ne-story__image slide-right">
+            <div className="ne-story__image">
               <img src="/images/bptg.png" alt="Golf familial" loading="lazy" />
             </div>
           </div>
@@ -100,23 +98,24 @@ export default function NotreEntreprise() {
         <section className="ne-values">
           <div className="ne-values__inner">
             <div className="ne-values__header slide-up">
-              <span className="ne-label">Ce qui nous guide</span>
-              <h2 className="ne-values__heading">Nos Valeurs</h2>
+              <span className="ne-label">{t('notre_entreprise.values_label', 'Ce qui nous guide')}</span>
+              <h2 className="ne-values__heading">{t('notre_entreprise.values_heading', 'Nos Valeurs')}</h2>
             </div>
             <div className="ne-values__grid">
-              {[
-                { icon: <Lightbulb size={24} />, title: 'Innovation', text: 'Repousser les limites pour créer des solutions uniques et utiles' },
-                { icon: <Heart size={24} />, title: 'Passion', text: 'L\'amour du golf et de la famille au cœur de chaque décision' },
-                { icon: <Users size={24} />, title: 'Collaboration', text: 'Co-construire avec les clubs et les familles pour un produit adapté' },
-                { icon: <CheckCircle size={24} />, title: 'Qualité', text: 'Excellence technique et sécurité sans compromis' },
-              ].map((v, i) => (
-                <div key={i} className="ne-value-item fade-in">
-                  <div className="ne-value-item__icon">{v.icon}</div>
-                  <div>
-                    <h3 className="ne-value-item__title">{v.title}</h3>
-                    <p className="ne-value-item__text">{v.text}</p>
+              {
+                [
+                  { icon: <Lightbulb size={24} />, titleKey: 'value_innovation_title', textKey: 'value_innovation_text' },
+                  { icon: <Heart size={24} />, titleKey: 'value_passion_title', textKey: 'value_passion_text' },
+                  { icon: <Users size={24} />, titleKey: 'value_collaboration_title', textKey: 'value_collaboration_text' },
+                  { icon: <CheckCircle size={24} />, titleKey: 'value_quality_title', textKey: 'value_quality_text' },
+                ].map((v, i) => (
+                  <div key={i} className="ne-value-item fade-in">
+                    <div className="ne-value-item__icon">{v.icon}</div>
+                    <div>
+                      <h3 className="ne-value-item__title">{t(`notre_entreprise.${v.titleKey}`)}</h3>
+                      <p className="ne-value-item__text">{t(`notre_entreprise.${v.textKey}`)}</p>
+                    </div>
                   </div>
-                </div>
               ))}
             </div>
           </div>

@@ -350,6 +350,9 @@
   "notre_entreprise": {
     "page_title": "Our Company",
     "page_subtitle": "Innovation, passion and expertise serving family golf",
+    "story_label": "Our Story",
+    "story_heading": "Born from a shared passion.",
+    "story_body": "Carteron Industries was born from a simple observation: too many golfer parents have to choose between their sport and time spent with family. We decided to create a solution that reconciles these two worlds — without compromise.",
     "cta_title": "Join the adventure",
     "cta_text": "We are looking for partners and clubs to co-build and test this innovation. Join the adventure!",
     "contact_button": "Contact us",
@@ -358,7 +361,17 @@
     "ambition_title": "Our Ambition",
     "ambition_text": "Bring together sport, technology, and family life in a single solution.",
     "mission_title": "Our Mission",
-    "mission_text": "Ensure a reliable, innovative, user-centric approach, thanks to our technical expertise and passion for golf."
+    "mission_text": "Ensure a reliable, innovative, user-centric approach, thanks to our technical expertise and passion for golf.",
+    "values_label": "What guides us",
+    "values_heading": "Our Values",
+    "value_innovation_title": "Innovation",
+    "value_innovation_text": "Pushing boundaries to create unique and useful solutions",
+    "value_passion_title": "Passion",
+    "value_passion_text": "Love of golf and family at the heart of every decision",
+    "value_collaboration_title": "Collaboration",
+    "value_collaboration_text": "Co-building with clubs and families for a tailored product",
+    "value_quality_title": "Quality",
+    "value_quality_text": "Technical excellence and safety without compromise"
   },
   "products": {
     "golf_trolley_hybrid": {

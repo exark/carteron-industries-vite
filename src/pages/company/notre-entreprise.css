@@ -392,10 +392,18 @@ body:has(.ne-page) {
   }
 }
 
+@media (max-width: 1000px) {
+  .ne-hero {
+    height: 65vh;
+    min-height: 450px;
+  }
+}
+
 @media (max-width: 768px) {
   .ne-hero {
-    height: 70vh;
-    padding-bottom: 4rem;
+    height: 55vh;
+    min-height: 380px;
+    padding-bottom: 3rem;
   }
 
   .ne-hero__content,
@@ -434,5 +442,32 @@ body:has(.ne-page) {
   .ne-values {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ne-hero {
+    height: 50vh;
+    min-height: 350px;
+    padding-bottom: 2.5rem;
+  }
+
+  .ne-hero__content {
+    padding: 0 1.5rem;
+  }
+
+  .ne-hero__eyebrow {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .ne-hero__title {
+    font-size: clamp(2.2rem, 5.5vw, 2.8rem);
+    margin-bottom: 1rem;
+  }
+
+  .ne-hero__sub {
+    font-size: clamp(0.85rem, 1.6vw, 1rem);
+    line-height: 1.5;
   }
 }
