@@ -34,8 +34,12 @@ export async function sendSurveyConfirmationEmail({ email, full_name, survey_typ
       },
     });
 
-    if (error) throw error;
-    console.log('[Survey] Confirmation email sent successfully to:', email);
+    if (error) {
+      console.error('[Survey] Edge function error:', error);
+      throw error;
+    }
+
+    console.log('[Survey] Confirmation email sent successfully to:', email, data);
   } catch (error) {
     console.error('[Survey] Failed to send confirmation email:', error);
     // Don't throw error - we don't want to fail the survey submission if email fails
