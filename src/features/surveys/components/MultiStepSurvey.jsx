@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import SurveyProgress from './SurveyProgress';
 import SurveyQuestion from './SurveyQuestion';
@@ -25,6 +25,16 @@ const MultiStepSurvey = ({ config }) => {
 
   const stepConfig = config.steps[currentStep - 1];
   const isContactStep = stepConfig?.type === 'contact';
+
+  // Scroll to top whenever currentStep changes
+  useEffect(() => {
+    // Scroll both window and the main-content container
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [currentStep]);
 
   const validateStep = () => {
     if (isContactStep) return validateContact();
@@ -78,13 +88,27 @@ const MultiStepSurvey = ({ config }) => {
     if (!validateStep()) return;
     if (currentStep < totalSteps) {
       setCurrentStep((s) => s + 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Smooth scroll to top
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+          mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 0);
     }
   };
 
   const handleBack = () => {
     setCurrentStep((s) => Math.max(1, s - 1));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Smooth scroll to top
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const mainContent = document.getElementById('main-content');
+      if (mainContent) {
+        mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 0);
   };
 
   const handleSubmit = async () => {

@@ -22,4 +22,4 @@ Message:
 
 ---
 Ce message a été envoyé depuis le formulaire de contact du site web Carteron Industries.
-`; 
+`;

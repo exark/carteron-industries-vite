@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Navbar81 from '../../components/layout/navbar81';
 import Footer31 from '../../components/layout/footer31';
@@ -9,6 +9,14 @@ import '../../features/surveys/components/survey.css';
 const FamilySurveyPage = () => {
   const { i18n } = useTranslation();
   const lang = i18n.language?.startsWith('fr') ? 'fr' : 'en';
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, []);
 
   const eyebrow = { fr: 'Golfeur & Famille', en: 'Golfer & Family' };
   const title = familySurveyConfig.title[lang] || familySurveyConfig.title.fr;
