@@ -4,10 +4,13 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
+const EMAIL_FROM = Deno.env.get('RESEND_FROM_EMAIL') ?? 'Carteron Industries <noreply@carteronindustries.com>'
+const EMAIL_REPLY_TO = Deno.env.get('RESEND_REPLY_TO') ?? 'contact@carteronindustries.com'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
 }
 
 interface EmailRequest {
@@ -22,12 +25,30 @@ serve(async (req) => {
     return new Response('ok', { headers: corsHeaders })
   }
 
+  if (req.method !== 'POST') {
+    return new Response(
+      JSON.stringify({ error: 'Method not allowed' }),
+      {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 405,
+      }
+    )
+  }
+
   try {
+    if (!RESEND_API_KEY) {
+      throw new Error('RESEND_API_KEY is not configured')
+    }
+
     const { to_email, user_name, survey_type_label }: EmailRequest = await req.json()
 
+    const safeEmail = to_email?.trim()
+    const safeName = user_name?.trim()
+    const safeSurveyType = survey_type_label?.trim()
+
     // Validation
-    if (!to_email || !user_name || !survey_type_label) {
-      throw new Error('Missing required fields')
+    if (!safeEmail || !safeName || !safeSurveyType) {
+      throw new Error('Missing required fields: to_email, user_name, survey_type_label')
     }
 
     // Email HTML template
@@ -87,29 +108,29 @@ serve(async (req) => {
           <div class="header">
             <h1 style="margin: 0; font-size: 24px;">Carteron Industries</h1>
           </div>
-          
+
           <div class="content">
-            <h2 style="color: #0b2244;">Bonjour ${user_name},</h2>
-            
-            <p>Merci d'avoir pris le temps de répondre à notre enquête <strong>${survey_type_label}</strong> !</p>
-            
+            <h2 style="color: #0b2244;">Bonjour ${safeName},</h2>
+
+            <p>Merci d'avoir pris le temps de répondre à notre enquête <strong>${safeSurveyType}</strong> !</p>
+
             <p>Nous avons bien reçu vos réponses et nous vous en remercions. Votre contribution est précieuse pour nous aider à développer des solutions adaptées aux besoins des golfeurs et de leurs familles.</p>
-            
+
             <div class="highlight">
               <p style="margin: 0;"><strong>Notre équipe va étudier attentivement vos retours.</strong></p>
               <p style="margin: 10px 0 0 0;">Si vous avez indiqué souhaiter être contacté pour un partenariat, nous reviendrons vers vous très prochainement.</p>
             </div>
-            
+
             <p>En attendant, n'hésitez pas à découvrir nos innovations sur notre site web :</p>
-            
+
             <div style="text-align: center;">
               <a href="https://www.carteronindustries.com" class="button">Visiter notre site</a>
             </div>
-            
+
             <p>Cordialement,<br>
             <strong>L'équipe Carteron Industries</strong></p>
           </div>
-          
+
           <div class="footer">
             <p>Cet email a été envoyé automatiquement suite à votre participation à l'enquête sur <a href="https://www.carteronindustries.com" style="color: #5D7052;">www.carteronindustries.com</a></p>
             <p>© ${new Date().getFullYear()} Carteron Industries. Tous droits réservés.</p>
@@ -119,38 +140,40 @@ serve(async (req) => {
     `
 
     // Send email via Resend
-    const res = await fetch('https://api.resend.com/emails', {
+    const resendResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Carteron Industries <noreply@carteronindustries.com>',
-        to: [to_email],
+        from: EMAIL_FROM,
+        to: [safeEmail],
         subject: 'Merci pour votre participation - Carteron Industries',
         html: htmlContent,
-        reply_to: 'contact@carteronindustries.com',
+        reply_to: EMAIL_REPLY_TO,
       }),
     })
 
-    const data = await res.json()
+    const resendData = await resendResponse.json()
 
-    if (!res.ok) {
-      throw new Error(data.message || 'Failed to send email')
+    if (!resendResponse.ok) {
+      console.error('Resend API error:', resendData)
+      throw new Error(resendData.message || 'Failed to send email via Resend')
     }
 
     return new Response(
-      JSON.stringify({ success: true, message: 'Email sent successfully' }),
+      JSON.stringify({ success: true, message: 'Email sent successfully', id: resendData.id }),
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         status: 200,
       }
     )
   } catch (error) {
-    console.error('Error sending email:', error)
+    const message = error instanceof Error ? error.message : 'Unknown error'
+    console.error('Error sending email:', message)
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: message }),
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         status: 400,
