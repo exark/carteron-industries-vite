@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Email Function</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <h1>Test Supabase Email Function</h1>
+    <button onclick="testEmailFunction()">Test Email</button>
+    <pre id="result"></pre>
+
+    <script>
+        const SUPABASE_URL = 'https://sspcfzzyzzhzffgmoefq.supabase.co'
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzcGNmenp5enpoemZmZ21vZWZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxNjI4MTEsImV4cCI6MjA5MDczODgxMX0.bOW8SqnTSAv-ljta-4RQZ6XHjVuB7MoTqJyazM8fIMc'
+
+        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+        async function testEmailFunction() {
+            const resultEl = document.getElementById('result')
+            resultEl.textContent = 'Testing...\n'
+
+            try {
+                console.log('Calling function...')
+                
+                const { data, error } = await supabaseClient.functions.invoke('send-survey-confirmation', {
+                    body: {
+                        to_email: 'test@example.com',
+                        user_name: 'Test User',
+                        survey_type_label: 'Club de Golf',
+                    },
+                })
+
+                if (error) {
+                    console.error('Error:', error)
+                    resultEl.textContent += 'ERROR:\n' + JSON.stringify(error, null, 2)
+                } else {
+                    console.log('Success:', data)
+                    resultEl.textContent += 'SUCCESS:\n' + JSON.stringify(data, null, 2)
+                }
+            } catch (err) {
+                console.error('Caught error:', err)
+                resultEl.textContent += 'CAUGHT ERROR:\n' + err.message + '\n' + err.stack
+            }
+        }
+    </script>
+</body>
+</html>

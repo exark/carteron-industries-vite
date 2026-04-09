@@ -40,7 +40,11 @@ serve(async (req) => {
       throw new Error('RESEND_API_KEY is not configured')
     }
 
-    const { to_email, user_name, survey_type_label }: EmailRequest = await req.json()
+    const body = await req.json()
+    console.log('Received body:', body)
+    
+    const { to_email, user_name, survey_type_label }: EmailRequest = body
+    console.log('Extracted values:', { to_email, user_name, survey_type_label })
 
     const safeEmail = to_email?.trim()
     const safeName = user_name?.trim()
@@ -48,6 +52,7 @@ serve(async (req) => {
 
     // Validation
     if (!safeEmail || !safeName || !safeSurveyType) {
+      console.error('Validation failed:', { to_email, user_name, survey_type_label })
       throw new Error('Missing required fields: to_email, user_name, survey_type_label')
     }
 
@@ -108,29 +113,29 @@ serve(async (req) => {
           <div class="header">
             <h1 style="margin: 0; font-size: 24px;">Carteron Industries</h1>
           </div>
-
+          
           <div class="content">
             <h2 style="color: #0b2244;">Bonjour ${safeName},</h2>
-
+            
             <p>Merci d'avoir pris le temps de répondre à notre enquête <strong>${safeSurveyType}</strong> !</p>
-
+            
             <p>Nous avons bien reçu vos réponses et nous vous en remercions. Votre contribution est précieuse pour nous aider à développer des solutions adaptées aux besoins des golfeurs et de leurs familles.</p>
-
+            
             <div class="highlight">
               <p style="margin: 0;"><strong>Notre équipe va étudier attentivement vos retours.</strong></p>
               <p style="margin: 10px 0 0 0;">Si vous avez indiqué souhaiter être contacté pour un partenariat, nous reviendrons vers vous très prochainement.</p>
             </div>
-
+            
             <p>En attendant, n'hésitez pas à découvrir nos innovations sur notre site web :</p>
-
+            
             <div style="text-align: center;">
               <a href="https://www.carteronindustries.com" class="button">Visiter notre site</a>
             </div>
-
+            
             <p>Cordialement,<br>
             <strong>L'équipe Carteron Industries</strong></p>
           </div>
-
+          
           <div class="footer">
             <p>Cet email a été envoyé automatiquement suite à votre participation à l'enquête sur <a href="https://www.carteronindustries.com" style="color: #5D7052;">www.carteronindustries.com</a></p>
             <p>© ${new Date().getFullYear()} Carteron Industries. Tous droits réservés.</p>
@@ -140,7 +145,7 @@ serve(async (req) => {
     `
 
     // Send email via Resend
-    const resendResponse = await fetch('https://api.resend.com/emails', {
+    const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -155,9 +160,9 @@ serve(async (req) => {
       }),
     })
 
-    const resendData = await resendResponse.json()
+    const resendData = await res.json()
 
-    if (!resendResponse.ok) {
+    if (!res.ok) {
       console.error('Resend API error:', resendData)
       throw new Error(resendData.message || 'Failed to send email via Resend')
     }
