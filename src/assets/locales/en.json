@@ -111,7 +111,10 @@
   },
   "carousel": {
     "side_title": "An Innovation Serving Golf and Family",
-    "side_desc": "Carteron Industries creates solutions at the crossroads of sport, family, and technology. We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely. Our motorized hybrid solution, currently in development, is specifically adapted to golf courses, combining sporting leisure with family life.",
+    "hero_line1": "Play golf.",
+    "hero_line2": "Raise your child.",
+    "hero_line3": "At the same time.",
+    "side_desc": "We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely.",
     "our_products_btn": "Discover Our Product",
     "our_products_aria": "Discover our product",
     "about_btn": "About",
@@ -225,18 +228,6 @@
     "faq5": {
       "q": "Is it safe for the baby?",
       "a": "Yes. Safety is our top priority:\n• Baby seat compliant with childcare standards.\n• Stable design with effective braking."
-    },
-    "faq6": {
-      "q": "Do golf clubs allow this type of equipment?",
-      "a": "Yes, many clubs welcome family-friendly solutions, especially during quieter hours.\n We work closely with golf clubs to ensure compatibility and acceptance."
-    },
-    "faq7": {
-      "q": "What is the expected price?",
-      "a": "Our goal is to offer excellent value — more accessible than buying a premium trolley and a high-end stroller separately.\n Several versions will be available for different needs."
-    },
-    "faq8": {
-      "q": "What are the benefits for users?",
-      "a": "• No more heavy golf bags or bulky strollers\n• Reduces fatigue and discomfort\n• More quality time on the course with your children\n• Easy to fold and designed to handle a full round of golf (18 holes and beyond)"
     }
   },
   "testimonials": {

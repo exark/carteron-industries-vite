@@ -12,6 +12,7 @@ import { useEffect, useRef } from "react";
 import Navbar81 from "../../components/layout/navbar81";
 import Footer31 from "../../components/layout/footer31";
 import Steps2 from "../../components/sections/steps2";
+import HeroCarousel from "../../components/sections/HeroCarousel";
 import { getAllProducts } from "../../data/products";
 import "./our-product.css";
 
@@ -26,7 +27,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index, 
       sx={{
         background: '#fff',
         borderRadius: 2,
-        boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+        boxShadow: 'none',
         overflow: 'hidden',
         marginBottom: 3,
         transition: 'all 0.3s ease',
@@ -38,7 +39,7 @@ function ServiceCard({ title, description, image, buttonLabel, features, index, 
         cursor: 'pointer',
         '&:hover': {
           transform: 'translateY(-4px)',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+          boxShadow: 'none',
         }
       }}
     >
@@ -386,7 +387,7 @@ export default function OurProduct() {
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundImage: 'url(/images/chariot.jpg)',
+            backgroundImage: 'url(/images/background-image.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             zIndex: 0,
@@ -443,6 +444,8 @@ export default function OurProduct() {
         </Box>
       </Box>
 
+      
+
       <div className="product-page">
         <Container maxWidth="lg" sx={{ pt: 3, pb: 0 }}>
           <Box sx={{ textAlign: 'center', mb: 0 }} className="animate-on-scroll">
@@ -471,7 +474,9 @@ export default function OurProduct() {
         </div>
         
         {/* Steps Section */}
+        <HeroCarousel />
         <Steps2 />
+        
         
         <Footer31 />
       </Navbar81>

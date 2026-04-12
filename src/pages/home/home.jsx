@@ -13,7 +13,6 @@ import "./home.css";
 import TopHero from "../../components/sections/TopHero";
 import FamilyGolfRevolution from "../../components/sections/FamilyGolfRevolution";
 import InfoSection from "../../components/sections/InfoSection";
-import HeroCarousel from "../../components/sections/HeroCarousel";
 
 const Home = () => {
   const location = useLocation();
@@ -48,8 +47,6 @@ const Home = () => {
             <TopHero></TopHero>
             <FamilyGolfRevolution></FamilyGolfRevolution>
             <InfoSection></InfoSection>
-            <HeroCarousel></HeroCarousel>
-
             {/* <div id="our-product" className="home-services">
               <Features25></Features25>
             </div> */}

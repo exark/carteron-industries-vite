@@ -111,7 +111,10 @@
   },
   "carousel": {
     "side_title": "Une Innovation au service du golf et de la famille",
-    "side_desc": "Carteron Industries crée des solutions à la croisée du sport, de la famille et de la technologie. Le premier chariot de golf poussette hybride  2-en-1, pensé pour transporter à la fois un sac de golf et un enfant, sans effort et en toute sécurité. Notre solution hybride motorisée en cours de développement est adaptée au terrain de golf, pour allier loisir sportif et vie familiale.",
+    "hero_line1": "Jouez au golf.",
+    "hero_line2": "Élevez votre enfant.",
+    "hero_line3": "En même temps.",
+    "side_desc": "Le premier chariot de golf poussette hybride  2-en-1, pensé pour transporter à la fois un sac de golf et un enfant, sans effort et en toute sécurité.",
     "our_products_btn": "Découvrir notre produit",
     "our_products_aria": "Découvrir notre produit",
     "about_btn": "À propos",
@@ -225,18 +228,6 @@
     "faq5": {
       "q": "Est-ce sécurisé pour le bébé ?",
       "a": "Oui. La sécurité est notre priorité :\n• Siège bébé conforme aux normes de puériculture.\n• Conception stable avec freinage efficace."
-    },
-    "faq6": {
-      "q": "Les clubs de golf autorisent-ils ce type d’équipement ?",
-      "a": "Oui, de nombreux clubs accueillent positivement ce type d’innovation familiale, surtout en dehors des heures de pointe.\n Nous travaillons en partenariat avec les clubs pour garantir leur compatibilité et leur acceptation."
-    },
-    "faq7": {
-      "q": "Quel est le prix attendu ?",
-      "a": "Notre ambition est d’offrir un excellent rapport qualité-prix : plus accessible que l’achat séparé d’un chariot premium et d’une poussette haut de gamme.\n Plusieurs versions seront proposées selon les besoins."
-    },
-    "faq8": {
-      "q": "Quels sont les bénéfices pour les utilisateurs ?",
-      "a": "• Fini le sac de golf lourd et la poussette encombrante\n• Réduit la fatigue et les douleurs\n• Plus de temps de qualité sur le parcours avec les enfants\n• Pliage facile et une capacité pensée pour accompagner une partie complète de golf (18 trous et au-delà)"
     }
   },
   "testimonials": {

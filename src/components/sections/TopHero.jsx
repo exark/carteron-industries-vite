@@ -28,16 +28,13 @@ const TopHero = () => {
       <div className="top-hero-grid">
         {/* Main Content */}
         <div className="top-hero-content">
+          <div className="top-hero-headline">
+            <span className="hero-line">{t('carousel.hero_line1', 'Play golf.')}</span>
+            <span className="hero-line hero-line-green">{t('carousel.hero_line2', 'Raise your child.')}</span>
+            <span className="hero-line">{t('carousel.hero_line3', 'At the same time.')}</span>
+          </div>
           {/* Image Grid for Mobile - appears after logo */}
           <div className="top-hero-image-grid mobile-only">
-            <div className="grid-image grid-small-top">
-              <div>
-                <img 
-                  src="/images/kidsgolf.webp" 
-                  alt="Kids Golf"
-                />
-              </div>
-            </div>
             <div className="grid-image grid-medium">
               <div>
                 <img 
@@ -46,19 +43,8 @@ const TopHero = () => {
                 />
               </div>
             </div>
-            <div className="grid-image grid-small-bottom">
-              <div>
-                <img 
-                  src="/images/bptgreel.jpeg" 
-                  alt="Golf Together"
-                />
-              </div>
-            </div>
           </div>
           
-          <p className="top-hero-subtitle">
-            {t('carousel.side_title', 'An Innovation Serving Golf and Family')}
-          </p>
           <p className="top-hero-description">
             {t('carousel.side_desc', 'Carteron Industries creates solutions at the crossroads of sport, family, and technology. We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely. Our motorized hybrid solution, currently in development, is specifically adapted to golf courses, combining sporting leisure with family life.')}
           </p>
@@ -69,29 +55,13 @@ const TopHero = () => {
           </button>
         </div>
 
-        {/* Asymmetrical Image Grid */}
+        {/* Image Grid */}
         <div className="top-hero-image-grid">
-          <div className="grid-image grid-small-top">
-            <div>
-              <img 
-                src="/images/kidsgolf.webp" 
-                alt="Kids Golf"
-              />
-            </div>
-          </div>
           <div className="grid-image grid-medium">
             <div>
               <img 
                 src="/images/golf_image_1.webp" 
                 alt="Golf Course"
-              />
-            </div>
-          </div>
-          <div className="grid-image grid-small-bottom">
-            <div>
-              <img 
-                src="/images/bptgreel.jpeg" 
-                alt="Golf Together"
               />
             </div>
           </div>

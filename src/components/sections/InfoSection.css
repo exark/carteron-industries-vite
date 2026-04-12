@@ -2,7 +2,7 @@
   width: 100%;
   padding: clamp(2rem, 5vw, 3.5rem) 0;
   position: relative;
-  background: #FAF3EB;
+  background: #ffffff;
 }
 
 .info-section::before {
