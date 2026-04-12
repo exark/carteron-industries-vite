@@ -12,10 +12,13 @@
 
 export const clubSurveyConfig = {
   id: 'club',
-  title: { fr: 'Enquête Club de Golf', en: 'Golf Club Survey' },
+  title: { 
+    fr: 'Une source potentielle de nouveaux revenus et une solution de fidélisation des joueurs pour les clubs de golf.', 
+    en: 'A potential new revenue stream and player retention solution for golf clubs.' 
+  },
   subtitle: {
-    fr: 'Aidez-nous à comprendre les besoins de votre club',
-    en: 'Help us understand your club\'s needs',
+    fr: '',
+    en: '',
   },
   steps: [
     {

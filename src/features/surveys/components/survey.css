@@ -32,11 +32,17 @@
 
 .survey-page-title {
   font-family: var(--font-family-primary);
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   font-weight: var(--font-weight-bold);
   color: var(--primary-blue);
   margin: 0 0 12px;
   line-height: var(--line-height-tight);
+}
+
+@media (min-width: 769px) {
+  .survey-page-title {
+    margin-top: 60px;
+  }
 }
 
 .survey-page-subtitle {

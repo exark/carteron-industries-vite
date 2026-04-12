@@ -264,6 +264,33 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
+/* Club Golf Button */
+.club-golf-button {
+  cursor: pointer;
+  font-family: var(--font-family-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #013882;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: none;
+  margin-left: auto;
+  margin-right: 32px;
+}
+
+.club-golf-button:hover {
+  background: #012a66;
+  transform: translateY(-1px);
+}
+
+.club-golf-button:active {
+  transform: translateY(0);
+}
+
 /* Container and logo styles */
 #container {
   position: relative;
@@ -276,11 +303,10 @@
   pointer-events: auto;
   display: flex;
   align-items: center;
-  margin-left: auto; /* Explicitly push to the right */
 }
 
 .navbar81-logo-image {
-  height: 50px;
+  height: 55px;
   display: block;
   background: transparent;
 }
@@ -327,6 +353,12 @@
   
   .navbar81-logo-image {
     height: 45px;
+  }
+  
+  .club-golf-button {
+    font-size: 0.8rem;
+    padding: 7px 12px;
+    margin-right: 24px;
   }
   
   #content-front {
@@ -381,6 +413,12 @@
     height: 42px;
   }
   
+  .club-golf-button {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    margin-right: 20px;
+  }
+  
   #content-front {
     padding-bottom: 0;
   }
@@ -427,6 +465,10 @@
   
   .navbar81-logo-image {
     height: 40px;
+  }
+  
+  .club-golf-button {
+    display: none;
   }
   
   #content-front {

@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: #FAF3EB;
   padding: 2rem 8rem 2rem;
   padding-top: 90px;
   overflow: hidden;
@@ -75,18 +75,7 @@
   font-weight: 500;
   font-family: var(--font-family-primary);
   cursor: pointer;
-  transition: all 0.25s ease;
   box-shadow: 0 2px 8px rgba(93, 112, 82, 0.3);
-}
-
-.top-hero-cta:hover {
-  background: #4a5f42;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(93, 112, 82, 0.4);
-}
-
-.top-hero-cta:active {
-  transform: translateY(0);
 }
 
 /* Asymmetrical Image Grid - Style Pinterest vertical */
@@ -110,13 +99,7 @@
   border-radius: 20px;
   overflow: visible;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
-}
-
-/* Hover effects - Zoom subtil */
-.grid-image:hover {
-  transform: scale(1.02);
 }
 
 .grid-image::before {
@@ -126,16 +109,7 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
-}
-
-.grid-image:hover::before {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
-}
-
-.grid-image:hover {
-  z-index: 10;
 }
 
 .grid-image > div {
@@ -185,12 +159,7 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease;
   z-index: 10;
-}
-
-.scroll-indicator:hover {
-  transform: translateX(-50%) translateY(-5px);
 }
 
 .scroll-arrow {
@@ -208,29 +177,6 @@
   border-right: 2px solid #4a5568;
   transform: rotate(45deg);
   margin: -10px auto;
-  animation: scrollAnimation 2s infinite;
-}
-
-.scroll-arrow span:nth-child(2) {
-  animation-delay: -0.2s;
-}
-
-.scroll-arrow span:nth-child(3) {
-  animation-delay: -0.4s;
-}
-
-@keyframes scrollAnimation {
-  0% {
-    opacity: 0;
-    transform: rotate(45deg) translate(-20px, -20px);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: rotate(45deg) translate(20px, 20px);
-  }
 }
 
 .scroll-text {
@@ -533,14 +479,7 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  transition: all 0.3s ease;
   z-index: 10;
-  animation: simpleBounce 2s ease-in-out infinite;
-}
-
-.chevron-container:hover {
-  animation: none;
-  transform: translateX(-50%) translateY(5px);
 }
 
 .chevron {
@@ -560,14 +499,6 @@
   opacity: 0.3;
 }
 
-@keyframes simpleBounce {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(8px);
-  }
-}
 
 /* Hide scroll button on mobile */
 @media (max-width: 900px) {

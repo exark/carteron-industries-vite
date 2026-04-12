@@ -16,8 +16,8 @@ body:has(.ne-page) {
 /* ── HERO ── */
 .ne-hero {
   position: relative;
-  height: 85vh;
-  min-height: 560px;
+  height: 60vh;
+  min-height: 450px;
   display: flex;
   align-items: flex-end;
   padding-bottom: 6rem;

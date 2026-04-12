@@ -144,10 +144,18 @@ const Navbar81 = (props) => {
             {/* Menu Button */}
             <div className="menu-button">MENU</div>
             
+            {/* Club Golf Button */}
+            <button 
+              className="club-golf-button"
+              onClick={() => navigate('/survey/club')}
+            >
+              Vous êtes un club de golf ?
+            </button>
+            
             {/* Logo */}
             <div className="navbar-logo">
               <a href="/home" onClick={handleLogoClick}>
-                <img src="/images/Logo-text.webp" alt="Carteron Industries" className="navbar81-logo-image" />
+                <img src="/images/NavbarVersion.png" alt="Carteron Industries" className="navbar81-logo-image" />
               </a>
             </div>
           </div>

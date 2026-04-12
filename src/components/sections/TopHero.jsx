@@ -28,15 +28,6 @@ const TopHero = () => {
       <div className="top-hero-grid">
         {/* Main Content */}
         <div className="top-hero-content">
-          <div className="top-hero-title">
-            <img 
-              src="/images/logo.svg" 
-              alt="Carteron Industries"
-              draggable="false"
-              style={{ pointerEvents: 'none', userSelect: 'none' }}
-            />
-          </div>
-          
           {/* Image Grid for Mobile - appears after logo */}
           <div className="top-hero-image-grid mobile-only">
             <div className="grid-image grid-small-top">
