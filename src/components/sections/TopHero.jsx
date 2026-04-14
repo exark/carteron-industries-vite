@@ -26,23 +26,24 @@ const TopHero = () => {
   return (
     <div className="top-hero-container">
       <div className="top-hero-grid">
+        {/* Image Grid for Mobile - appears first on mobile */}
+        <div className="top-hero-image-grid mobile-only">
+          <div className="grid-image grid-medium">
+            <div>
+              <img 
+                src="/images/golf_image_1.webp" 
+                alt="Golf Course"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Main Content */}
         <div className="top-hero-content">
           <div className="top-hero-headline">
             <span className="hero-line">{t('carousel.hero_line1', 'Play golf.')}</span>
             <span className="hero-line hero-line-green">{t('carousel.hero_line2', 'Raise your child.')}</span>
             <span className="hero-line">{t('carousel.hero_line3', 'At the same time.')}</span>
-          </div>
-          {/* Image Grid for Mobile - appears after logo */}
-          <div className="top-hero-image-grid mobile-only">
-            <div className="grid-image grid-medium">
-              <div>
-                <img 
-                  src="/images/golf_image_1.webp" 
-                  alt="Golf Course"
-                />
-              </div>
-            </div>
           </div>
           
           <p className="top-hero-description">
@@ -55,7 +56,7 @@ const TopHero = () => {
           </button>
         </div>
 
-        {/* Image Grid */}
+        {/* Image Grid - Desktop */}
         <div className="top-hero-image-grid">
           <div className="grid-image grid-medium">
             <div>
@@ -68,12 +69,6 @@ const TopHero = () => {
         </div>
       </div>
 
-      {/* Scroll Down Button - Desktop Only */}
-      <div className="chevron-container" onClick={handleDiscoverClick}>
-        <span className="chevron"></span>
-        <span className="chevron"></span>
-        <span className="chevron"></span>
-      </div>
     </div>
   );
 };

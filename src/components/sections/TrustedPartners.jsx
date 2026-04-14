@@ -40,7 +40,7 @@ const TrustedPartners = ({ rootClassName = "" }) => {
   ];
 
   return (
-    <div className={`trusted-partners-container ${rootClassName}`}>
+    <div className={`trusted-partners-container bg-grey-blue ${rootClassName}`}>
       <div className="trusted-partners-max-width">
         <div className="trusted-partners-header">
           <h2 className="trusted-partners-title">

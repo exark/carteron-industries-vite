@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  background: #e3f2fd;
+  background: var(--neutral-white);
   padding: var(--space-2xl) 0;
   overflow: hidden;
 }

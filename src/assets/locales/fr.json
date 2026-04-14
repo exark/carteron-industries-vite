@@ -450,19 +450,20 @@
     "contact_button": "Contactez-nous"
   },
   "revolution": {
-    "title": "Le Golf Ne Devrait Pas S'Arrêter Avec La Famille",
+    "title_start": "Le Golf Ne Devrait Pas S'Arrêter ",
+    "title_highlight": "Avec La Famille",
     "intro": "Des millions de parents font face à un choix impossible : leur passion pour le golf, ou du temps précieux avec leurs enfants. Nous changeons cette histoire.",
     "block1": {
-      "stat": "14 à 20M de golfeurs en Europe",
-      "text": "Le golf évolue d'un sport élitiste vers un loisir social et familial. Avec 31% de joueuses et une participation croissante des jeunes, le jeu est plus inclusif que jamais. Pourtant, l'industrie ne s'est pas adaptée à la vie familiale moderne."
+      "number": "La plupart",
+      "text": "des jeunes parents arrêtent le golf après leur premier enfant"
     },
     "block2": {
-      "stat": "Les jeunes parents arrêtent de jouer",
-      "text": "Après l'arrivée d'un enfant, des millions de golfeurs réduisent ou abandonnent complètement le sport. Pas par choix — mais parce que jongler entre une poussette et l'équipement de golf ne fonctionne tout simplement pas. La joie ne devrait pas s'arrêter."
+      "number": "+35%",
+      "text": "de croissance de femme golfeuses au cours de la dernière décennie"
     },
     "block3": {
-      "stat": "Un produit. Deux mondes.",
-      "text": "CARTERON Industries développe le premier chariot de golf et poussette hybride 2-en-1 au monde. Ce concept innovant permettra aux parents et grands-parents de profiter de 18 trous avec leurs petits — en toute sécurité, confortablement et sans compromis."
+      "number": "14\u201320M",
+      "text": "golfeurs actifs en Europe — un marché en pleine croissance"
     },
     "conclusion": "La technologie rencontre la famille. L'innovation rencontre le confort. Le golf rencontre la parentalité.",
     "cta": "Découvrir comment ça marche →"

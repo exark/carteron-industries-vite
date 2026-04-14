@@ -6,10 +6,12 @@ const Footer31 = () => {
   const { t } = useTranslation();
   
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
   
   return (
@@ -17,11 +19,18 @@ const Footer31 = () => {
       <div className="footer-container">
         <div className="footer-main">
           <div className="footer-brand">
-            <img
-              src="/images/logo.svg"
-              alt="Carteron Industries Logo"
-              className="footer-logo"
-            />
+            <button 
+              className="footer-logo-wrapper" 
+              onClick={scrollToTop}
+              type="button"
+              aria-label="Scroll to top"
+            >
+              <img
+                src="/images/logo.svg"
+                alt="Carteron Industries Logo"
+                className="footer-logo"
+              />
+            </button>
             <p className="footer-brand-description">
               {t('footer.brand_description', 'Innovative solutions for tomorrow\'s challenges')}
             </p>

@@ -233,14 +233,30 @@
   
   .top-hero-grid {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 0rem;
     justify-items: center;
     text-align: left;
+  }
+  
+  /* Show mobile grid after content */
+  .top-hero-image-grid.mobile-only {
+    display: grid;
+    max-height: 400px;
+    width: 100%;
+    max-width: 500px;
+    order: 1;
+  }
+  
+  /* Hide desktop grid */
+  .top-hero-grid > .top-hero-image-grid:not(.mobile-only) {
+    display: none;
   }
   
   .top-hero-content {
     max-width: 100%;
     width: 100%;
+    order: 0;
+    margin-top: 0.5rem;
   }
   
   .top-hero-title {
@@ -252,20 +268,6 @@
   
   .top-hero-title img {
     max-width: 320px;
-  }
-  
-  /* Show mobile grid after logo */
-  .top-hero-image-grid.mobile-only {
-    display: grid;
-    max-height: 400px;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 6rem;
-  }
-  
-  /* Hide desktop grid */
-  .top-hero-grid > .top-hero-image-grid:not(.mobile-only) {
-    display: none;
   }
   
   .grid-medium {

@@ -187,6 +187,17 @@ p {
 }
 
 /* ===== UTILITAIRES GLOBALES ===== */
+.bg-grey-blue {
+  background-color: #eef2f7;
+}
+
+.text-gradient-green-blue {
+  background: linear-gradient(90deg, #3a9e5f 0%, #3b82c4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .container {
   width: 100%;
   max-width: var(--max-width-xl);
