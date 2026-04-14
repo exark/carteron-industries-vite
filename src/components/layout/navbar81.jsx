@@ -149,7 +149,7 @@ const Navbar81 = (props) => {
               className="club-golf-button"
               onClick={() => navigate('/survey/club')}
             >
-              Vous êtes un club de golf ?
+              {t('navbar.club_button', 'Vous êtes un club de golf ?')}
             </button>
             
             {/* Logo */}

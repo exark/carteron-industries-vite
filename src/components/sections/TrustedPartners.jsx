@@ -26,16 +26,6 @@ const TrustedPartners = ({ rootClassName = "" }) => {
       name: "Euratechnologies",
       logo: "/images/LOGO_EURATECHNOLOGIES.jpg",
       alt: "Euratechnologies"
-    },
-    {
-      name: "Eurasanté",
-      logo: "/images/Eurasantélogo.jpeg",
-      alt: "Eurasanté"
-    },
-    {
-      name: "Vivalley Campus",
-      logo: "/images/logo-vivalley-campus.jpg",
-      alt: "Vivalley Campus"
     }
   ];
 

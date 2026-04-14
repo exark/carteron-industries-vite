@@ -50,15 +50,16 @@ const Home = () => {
             {/* <div id="our-product" className="home-services">
               <Features25></Features25>
             </div> */}
-            <div id="trusted-partners">
-              <TrustedPartners></TrustedPartners>
-            </div>
+            
             {/*
             <div id="temoignages">
               <Testimonial17></Testimonial17>
             </div>
             */}
             <Contact10></Contact10>
+            <div id="trusted-partners">
+              <TrustedPartners></TrustedPartners>
+            </div>
             <Footer31></Footer31>
           </Fragment>
         }

@@ -66,8 +66,11 @@ const MultiStepSurvey = ({ config }) => {
     if (!contact.full_name || contact.full_name.trim().length < 2) {
       e.full_name = lang === 'fr' ? 'Nom requis (min. 2 caractères).' : 'Name required (min. 2 characters).';
     }
-    if (contact.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.email)) {
-      e.email = lang === 'fr' ? 'Adresse e-mail invalide.' : 'Invalid email address.';
+    if (!contact.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.email)) {
+      e.email = lang === 'fr' ? 'Adresse e-mail requise.' : 'Email address required.';
+    }
+    if (!contact.phone || contact.phone.trim().length < 5) {
+      e.phone = lang === 'fr' ? 'Téléphone requis (min. 5 caractères).' : 'Phone required (min. 5 characters).';
     }
     if (!contact.country) {
       e.country = lang === 'fr' ? 'Pays requis.' : 'Country required.';

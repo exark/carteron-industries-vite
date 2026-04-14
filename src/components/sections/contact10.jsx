@@ -17,7 +17,9 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
       <div className="contact10-max-width thq-section-max-width">
         <div className="contact10-content1 thq-flex-row">
           <div className="contact10-content2">
-            <h2 className="thq-heading-2">{t('contact10.heading1')}</h2>
+            <h2 className="thq-heading-2">
+              {t('contact10.heading1_prefix', 'Et si on pouvait jouer au golf…')} <span className="text-gradient-green-blue">{t('contact10.heading1_highlight', 'en famille')}</span> {t('contact10.heading1_suffix', '?')}
+            </h2>
             <p className="thq-body-large">{t('contact10.content1')}</p>
             <div className="contact10-partnership-section">
               <div 

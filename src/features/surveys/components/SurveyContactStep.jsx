@@ -21,8 +21,8 @@ const SurveyContactStep = ({ values, onChange, errors, lang, includeOrganization
 
   const labels = {
     full_name:     { fr: 'Nom complet', en: 'Full name' },
-    email:         { fr: 'Adresse e-mail (optionnel)', en: 'Email address (optional)' },
-    phone:         { fr: 'Téléphone (optionnel)', en: 'Phone (optional)' },
+    email:         { fr: 'Adresse e-mail', en: 'Email address' },
+    phone:         { fr: 'Téléphone', en: 'Phone' },
     country:       { fr: 'Pays', en: 'Country' },
     organization:  { fr: 'Nom du club', en: 'Club name' },
     consent_label: {
@@ -52,7 +52,7 @@ const SurveyContactStep = ({ values, onChange, errors, lang, includeOrganization
 
       <div className="survey-field-group">
         <label className="survey-field-label">
-          {t('email')}
+          {t('email')} <span className="survey-required">*</span>
         </label>
         <input
           type="email"
@@ -65,7 +65,9 @@ const SurveyContactStep = ({ values, onChange, errors, lang, includeOrganization
       </div>
 
       <div className="survey-field-group">
-        <label className="survey-field-label">{t('phone')}</label>
+        <label className="survey-field-label">
+          {t('phone')} <span className="survey-required">*</span>
+        </label>
         <input
           type="tel"
           className={`survey-field-input ${errors.phone ? 'error' : ''}`}

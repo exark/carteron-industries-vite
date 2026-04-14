@@ -290,8 +290,11 @@
     }
   },
   "contact10": {
-    "heading1": "What if we could play golf… with family?",
-    "content1": "We're developing a solution to enjoy golf without having to choose between passion and family life.",
+    "heading1": "What if we could play golf... as a family?",
+    "heading1_prefix": "What if we could play golf...",
+    "heading1_highlight": "as a family",
+    "heading1_suffix": "?",
+    "content1": "We are developing a solution to enjoy golf without having to choose between passion and family life.",
     "golf_club_title": "Are you a golf club?",
     "golf_club_text": "You can help us by becoming a pilot golf club and accompany us in testing our prototype in a real golf course environment.",
     "golf_club_btn": "Explore the opportunity",

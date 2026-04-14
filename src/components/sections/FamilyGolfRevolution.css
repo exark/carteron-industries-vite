@@ -89,46 +89,46 @@
   animation-delay: 0.3s;
 }
 
-/* Block 2 - Dark Blue Theme */
+/* Block 2 - Green Theme */
 .revolution-block:nth-child(2)::before {
-  background: linear-gradient(90deg, #1a3a5a, #0b2244);
-}
-
-.revolution-block:nth-child(2) .block-icon {
-  background: linear-gradient(135deg, rgba(26, 58, 90, 0.1), rgba(11, 34, 68, 0.1));
-  color: #1a3a5a;
-}
-
-.revolution-block:nth-child(2):hover .block-icon {
-  background: linear-gradient(135deg, rgba(26, 58, 90, 0.2), rgba(11, 34, 68, 0.2));
-}
-
-/* Block 1 - Dark Red Theme */
-.revolution-block:nth-child(1)::before {
-  background: linear-gradient(90deg, #8b1a1a, #5a0f0f);
-}
-
-.revolution-block:nth-child(1) .block-icon {
-  background: linear-gradient(135deg, rgba(139, 26, 26, 0.1), rgba(90, 15, 15, 0.1));
-  color: #8b1a1a;
-}
-
-.revolution-block:nth-child(1):hover .block-icon {
-  background: linear-gradient(135deg, rgba(139, 26, 26, 0.2), rgba(90, 15, 15, 0.2));
-}
-
-/* Block 3 - Green Theme */
-.revolution-block:nth-child(3)::before {
   background: linear-gradient(90deg, #2d5016, #1a3a0f);
 }
 
-.revolution-block:nth-child(3) .block-icon {
+.revolution-block:nth-child(2) .block-icon {
   background: linear-gradient(135deg, rgba(45, 80, 22, 0.1), rgba(26, 58, 15, 0.1));
   color: #2d5016;
 }
 
-.revolution-block:nth-child(3):hover .block-icon {
+.revolution-block:nth-child(2):hover .block-icon {
   background: linear-gradient(135deg, rgba(45, 80, 22, 0.2), rgba(26, 58, 15, 0.2));
+}
+
+/* Block 1 - Dark Blue Theme */
+.revolution-block:nth-child(1)::before {
+  background: linear-gradient(90deg, #1a3a5a, #0b2244);
+}
+
+.revolution-block:nth-child(1) .block-icon {
+  background: linear-gradient(135deg, rgba(26, 58, 90, 0.1), rgba(11, 34, 68, 0.1));
+  color: #1a3a5a;
+}
+
+.revolution-block:nth-child(1):hover .block-icon {
+  background: linear-gradient(135deg, rgba(26, 58, 90, 0.2), rgba(11, 34, 68, 0.2));
+}
+
+/* Block 3 - Dark Red Theme */
+.revolution-block:nth-child(3)::before {
+  background: linear-gradient(90deg, #8b1a1a, #5a0f0f);
+}
+
+.revolution-block:nth-child(3) .block-icon {
+  background: linear-gradient(135deg, rgba(139, 26, 26, 0.1), rgba(90, 15, 15, 0.1));
+  color: #8b1a1a;
+}
+
+.revolution-block:nth-child(3):hover .block-icon {
+  background: linear-gradient(135deg, rgba(139, 26, 26, 0.2), rgba(90, 15, 15, 0.2));
 }
 
 .revolution-block::before {

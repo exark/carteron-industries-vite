@@ -291,6 +291,9 @@
   },
   "contact10": {
     "heading1": "Et si on pouvait jouer au golf… en famille ?",
+    "heading1_prefix": "Et si on pouvait jouer au golf…",
+    "heading1_highlight": "en famille",
+    "heading1_suffix": "?",
     "content1": "On développe une solution pour profiter du golf sans avoir à choisir entre passion et vie de famille.",
     "golf_club_title": "Vous êtes un club de golf ?",
     "golf_club_text": "Vous pouvez nous aider en devenant un clubs de golf pilote et nous accompagner à tester notre prototype dans un environnement réel d'un parcours de golf.",
