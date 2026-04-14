@@ -50,10 +50,19 @@ const TopHero = () => {
             {t('carousel.side_desc', 'Carteron Industries creates solutions at the crossroads of sport, family, and technology. We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely. Our motorized hybrid solution, currently in development, is specifically adapted to golf courses, combining sporting leisure with family life.')}
           </p>
           
-          <button className="top-hero-cta" onClick={handleProductsClick}>
-            {t('carousel.our_products_btn', 'Discover Our Products')}
-            <ArrowRight size={18} />
-          </button>
+          <div className="top-hero-buttons-container">
+            <button className="top-hero-cta" onClick={handleProductsClick}>
+              {t('carousel.our_products_btn', 'Discover Our Products')}
+              <ArrowRight size={18} />
+            </button>
+            
+            <button 
+              className="top-hero-club-button"
+              onClick={() => navigate('/survey/club')}
+            >
+              {t('navbar.club_button', 'Vous êtes un club de golf ?')}
+            </button>
+          </div>
         </div>
 
         {/* Image Grid - Desktop */}

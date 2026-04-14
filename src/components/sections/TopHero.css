@@ -83,6 +83,7 @@
 .top-hero-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
   background: #5D7052;
@@ -94,6 +95,36 @@
   font-family: var(--font-family-primary);
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(93, 112, 82, 0.3);
+}
+
+.top-hero-buttons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.top-hero-club-button {
+  display: none;
+  cursor: pointer;
+  font-family: var(--font-family-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #013882;
+  background: #ffffff;
+  padding: 12px 24px;
+  border: 2px solid #013882;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+.top-hero-club-button:hover {
+  background: #f0f7ff;
+  transform: translateY(-1px);
+  border-color: #012a66;
+  color: #012a66;
 }
 
 /* Asymmetrical Image Grid - Style Pinterest vertical */
@@ -256,7 +287,7 @@
     max-width: 100%;
     width: 100%;
     order: 0;
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
   
   .top-hero-title {
@@ -287,11 +318,11 @@
   }
   
   .hero-line {
-    font-size: 3.2rem;
+    font-size: 2.9rem;
   }
   
   .top-hero-description {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     max-width: 100%;
     margin-bottom: 2rem;
     line-height: 1.65;
@@ -306,7 +337,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .top-hero-container {
     padding: 1.5rem 1.5rem 2.5rem;
     min-height: auto;
@@ -342,11 +373,11 @@
   }
   
   .hero-line {
-    font-size: 2.9rem;
+    font-size: 2.6rem;
   }
   
   .top-hero-description {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-bottom: 1.75rem;
     line-height: 1.6;
     padding: 0 0.5rem;
@@ -358,6 +389,18 @@
     max-width: 280px;
     justify-content: center;
     padding: 0.9rem 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .top-hero-buttons-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .top-hero-club-button {
+    display: inline-flex;
+    font-size: 1rem;
+    padding: 10px 20px;
     margin-top: 1rem;
   }
 }
@@ -403,7 +446,7 @@
   }
   
   .top-hero-description {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     margin-bottom: 1.5rem;
     line-height: 1.55;
     padding: 0;
@@ -413,9 +456,22 @@
   .top-hero-cta {
     width: 100%;
     max-width: 260px;
+    justify-content: center;
     padding: 0.85rem 1.25rem;
     font-size: 0.9rem;
     margin-top: 1rem;
+  }
+  
+  .top-hero-buttons-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .top-hero-club-button {
+    display: inline-flex;
+    font-size: 0.95rem;
+    padding: 9px 18px;
+    margin-top: 0.75rem;
   }
 }
 
@@ -460,7 +516,7 @@
   }
   
   .top-hero-description {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 1.25rem;
     line-height: 1.5;
     margin-top: 0.75rem;
@@ -469,9 +525,22 @@
   .top-hero-cta {
     width: 100%;
     max-width: 240px;
+    justify-content: center;
     padding: 0.8rem 1.15rem;
     font-size: 0.875rem;
     margin-top: 0.875rem;
+  }
+  
+  .top-hero-buttons-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .top-hero-club-button {
+    display: inline-flex;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    margin-top: 0.75rem;
   }
 }
 
