@@ -79,7 +79,7 @@ body:has(.ne-page) {
 
 /* ── STORY ── */
 .ne-story {
-  padding: 8rem 3rem;
+  padding: 3rem 3rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -145,7 +145,7 @@ body:has(.ne-page) {
 /* ── VISION / MISSION (numbered) ── */
 .ne-vm {
   background: #f7f7f5;
-  padding: 8rem 3rem;
+  padding: 2rem 3rem;
 }
 
 .ne-vm__inner {
@@ -204,7 +204,7 @@ body:has(.ne-page) {
 
 /* ── VALUES ── */
 .ne-values {
-  padding: 8rem 3rem;
+  padding: 5rem 3rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -234,6 +234,19 @@ body:has(.ne-page) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem 3rem;
+  position: relative;
+}
+
+.ne-values__grid::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, #ebebeb 30%, transparent 45%, transparent 55%, #ebebeb 70%);
+  opacity: 0.5;
+  transform: translateX(-50%);
 }
 
 .ne-value-item {
@@ -283,7 +296,7 @@ body:has(.ne-page) {
   padding: 7rem 3rem;
   background-image: url(/images/couple-jouant-au-golf-ensemble.webp);
   background-size: cover;
-  background-position: center center;
+  background-position: center 70%;
   overflow: hidden;
 }
 

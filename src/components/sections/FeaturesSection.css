@@ -60,6 +60,17 @@
   justify-content: center;
   margin-bottom: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.feature-icon-wrapper:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon-wrapper:hover svg {
+  transform: rotate(5deg);
 }
 
 .feature-icon-wrapper svg {

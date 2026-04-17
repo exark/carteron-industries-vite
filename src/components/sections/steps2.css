@@ -154,7 +154,7 @@
 
 /* Cadrage spécifique pour l'image du lancement commercial */
 .stepImage img[src*="couple-jouant-au-golf-ensemble"] {
-  object-position: center bottom;
+  object-position: center 70%;
 }
 
 .stepRow:hover .stepImage img {
@@ -307,7 +307,7 @@
   
   /* Maintenir le cadrage sur tablette */
   .stepImage img[src*="couple-jouant-au-golf-ensemble"] {
-    object-position: center bottom;
+    object-position: center 30%;
   }
 }
 
@@ -367,7 +367,7 @@
   
   /* Maintenir le cadrage sur très petits écrans */
   .stepImage img[src*="couple-jouant-au-golf-ensemble"] {
-    object-position: center bottom;
+    object-position: center 30%;
   }
   
   /* Éliminer tout débordement sur mobile */

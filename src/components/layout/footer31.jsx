@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./footer31.css";
 import { useTranslation } from "react-i18next";
 
@@ -26,7 +27,7 @@ const Footer31 = () => {
               aria-label="Scroll to top"
             >
               <img
-                src="/images/logo.svg"
+                src="/images/logo.webp"
                 alt="Carteron Industries Logo"
                 className="footer-logo"
               />
@@ -40,13 +41,13 @@ const Footer31 = () => {
               <div className="footer-title">{t('footer.navigation')}</div>
               <ul>
                 <li>
-                  <a href="/">{t('navbar.home')}</a>
+                  <Link to="/">{t('navbar.home')}</Link>
                 </li>
                 <li>
-                  <a href="/our-product">{t('navbar.our_product')}</a>
+                  <Link to="/our-product">{t('navbar.our_product')}</Link>
                 </li>
                 <li>
-                  <a href="/notre-entreprise">{t('footer.our_company')}</a>
+                  <Link to="/notre-entreprise">{t('footer.our_company')}</Link>
                 </li>
               </ul>
             </div>
@@ -54,13 +55,13 @@ const Footer31 = () => {
               <div className="footer-title">{t('footer.support')}</div>
               <ul>
                 <li>
-                  <a href="/faq">{t('navbar.faq')}</a>
+                  <Link to="/faq">{t('navbar.faq')}</Link>
                 </li>
                 <li>
-                  <a href="/contact">{t('navbar.contact')}</a>
+                  <Link to="/contact">{t('navbar.contact')}</Link>
                 </li>
                 <li>
-                  <a href="/admin/login">{t('footer.login')}</a>
+                  <Link to="/admin/login">{t('footer.login')}</Link>
                 </li>
               </ul>
             </div>
@@ -72,9 +73,9 @@ const Footer31 = () => {
             {t('footer.copyright', { year: new Date().getFullYear() })}
           </div>
           <div className="footer-legal-links">
-            <a href="/privacy-policy">{t('footer.privacy_policy', 'Privacy Policy')}</a>
+            <Link to="/privacy">{t('footer.privacy_policy', 'Privacy Policy')}</Link>
             <span className="footer-separator">•</span>
-            <a href="/terms-of-service">{t('footer.terms_of_service', 'Terms of Service')}</a>
+            <Link to="/terms">{t('footer.terms_of_service', 'Terms of Service')}</Link>
           </div>
           <div className="footer-developer">
             <span className="developer-text">Developed by Ahmed Ben Hamouda</span>

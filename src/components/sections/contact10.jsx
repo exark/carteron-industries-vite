@@ -56,6 +56,22 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
             </div>
           </div>
         </div>
+
+        {/* CTA Section - Intéressé par ce produit */}
+        <div className="contact10-cta-section">
+          <h2 className="contact10-cta-title">
+            {t('contact10.cta_title', 'Intéressé par ce produit ?')}
+          </h2>
+          <p className="contact10-cta-description">
+            {t('contact10.cta_description', 'Contactez-nous pour être informé dès que ce produit révolutionnaire sera disponible. Soyez parmi les premiers à découvrir l\'avenir de la mobilité familiale sur le golf.')}
+          </p>
+          <button 
+            className="contact10-cta-btn"
+            onClick={() => navigate('/contact')}
+          >
+            {t('contact10.cta_button', 'Contactez-nous')}
+          </button>
+        </div>
       </div>
     </div>
   )

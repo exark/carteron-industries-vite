@@ -8,8 +8,7 @@ export default function SolutionSection() {
   const badges = [
     { key: "badge1", text: t("solution_section.badge1") },
     { key: "badge2", text: t("solution_section.badge2") },
-    { key: "badge3", text: t("solution_section.badge3") },
-    { key: "badge4", text: t("solution_section.badge4") }
+    { key: "badge3", text: t("solution_section.badge3") }
   ];
 
   return (

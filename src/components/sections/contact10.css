@@ -70,6 +70,60 @@
   line-height: var(--line-height-relaxed);
 }
 
+/* CTA Section - Intéressé par ce produit */
+.contact10-cta-section {
+  width: 100%;
+  text-align: center;
+  padding: var(--space-3xl) var(--space-xl);
+  background-color: #f8f9fa;
+  border-radius: var(--radius-xl);
+  margin-top: var(--space-2xl);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact10-cta-title {
+  font-size: var(--font-size-2xl);
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-bold);
+  color: #0b2244;
+  margin-bottom: var(--space-md);
+}
+
+.contact10-cta-description {
+  font-size: var(--font-size-base);
+  color: #666;
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact10-cta-btn {
+  padding: var(--space-md) var(--space-2xl);
+  background-color: #0b2244;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(11, 34, 68, 0.2);
+}
+
+.contact10-cta-btn:hover {
+  background-color: #21517a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(11, 34, 68, 0.3);
+}
+
+.contact10-cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(11, 34, 68, 0.2);
+}
+
 .contact10-content3 {
   width: 100%;
   display: flex;
@@ -299,6 +353,18 @@
   .contact10-partnership-item p {
     text-align: center;
   }
+
+  .contact10-cta-section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .contact10-cta-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .contact10-cta-description {
+    font-size: var(--font-size-sm);
+  }
 }
 
 @media (max-width: 767px) {
@@ -332,5 +398,23 @@
   .contact10-partnership-item h3 {
     font-size: var(--font-size-base);
     margin-bottom: var(--space-sm);
+  }
+
+  .contact10-cta-section {
+    padding: var(--space-xl) var(--space-sm);
+  }
+
+  .contact10-cta-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .contact10-cta-description {
+    font-size: var(--font-size-sm);
+  }
+
+  .contact10-cta-btn {
+    padding: var(--space-sm) var(--space-lg);
+    width: 100%;
+    max-width: 280px;
   }
 }
