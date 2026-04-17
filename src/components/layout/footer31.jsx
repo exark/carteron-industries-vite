@@ -71,6 +71,11 @@ const Footer31 = () => {
           <div className="footer-copyright">
             {t('footer.copyright', { year: new Date().getFullYear() })}
           </div>
+          <div className="footer-legal-links">
+            <a href="/privacy-policy">{t('footer.privacy_policy', 'Privacy Policy')}</a>
+            <span className="footer-separator">•</span>
+            <a href="/terms-of-service">{t('footer.terms_of_service', 'Terms of Service')}</a>
+          </div>
           <div className="footer-developer">
             <span className="developer-text">Developed by Ahmed Ben Hamouda</span>
             <a href="https://portfolio-exark.vercel.app/" target="_blank" rel="noopener noreferrer">
