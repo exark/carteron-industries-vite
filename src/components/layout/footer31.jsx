@@ -37,24 +37,30 @@ const Footer31 = () => {
           </div>
           <div className="footer-links-group">
             <div className="footer-links-column">
-              <div className="footer-title">{t('footer.about')}</div>
+              <div className="footer-title">{t('footer.navigation')}</div>
               <ul>
                 <li>
-                  <a href="/notre-entreprise">{t('footer.our_company')}</a>
+                  <a href="/">{t('navbar.home')}</a>
                 </li>
                 <li>
                   <a href="/our-product">{t('navbar.our_product')}</a>
                 </li>
+                <li>
+                  <a href="/notre-entreprise">{t('footer.our_company')}</a>
+                </li>
               </ul>
             </div>
             <div className="footer-links-column">
-              <div className="footer-title">{t('footer.legal')}</div>
+              <div className="footer-title">{t('footer.support')}</div>
               <ul>
                 <li>
-                  <a href="/privacy">{t('footer.privacy')}</a>
+                  <a href="/faq">{t('navbar.faq')}</a>
                 </li>
                 <li>
-                  <a href="/terms">{t('footer.terms')}</a>
+                  <a href="/contact">{t('navbar.contact')}</a>
+                </li>
+                <li>
+                  <a href="/admin/login">{t('footer.login')}</a>
                 </li>
               </ul>
             </div>

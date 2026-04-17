@@ -33,6 +33,9 @@ const TrustedPartners = ({ rootClassName = "" }) => {
     <div className={`trusted-partners-container bg-grey-blue ${rootClassName}`}>
       <div className="trusted-partners-max-width">
         <div className="trusted-partners-header">
+          <span className="trusted-partners-label">
+            {t('trustedPartners.label')}
+          </span>
           <h2 className="trusted-partners-title">
             {t('trustedPartners.title')}
           </h2>

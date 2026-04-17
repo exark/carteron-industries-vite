@@ -12,9 +12,12 @@
     "about": "À propos",
     "our_company": "Notre entreprise",
     "follow_us": "Suivez-nous",
+    "navigation": "Navigation",
+    "support": "Support",
     "legal": "Mentions légales",
     "privacy": "Politique de confidentialité",
     "terms": "Conditions générales",
+    "login": "Connexion",
     "copyright": "{{year}} Carteron Industries™",
     "brand_description": "Des solutions innovantes pour les défis de demain"
   },
@@ -332,6 +335,7 @@
     "gallery_image3_alt": "Produit en utilisation"
   },
   "trustedPartners": {
+    "label": "NOS PARTENAIRES",
     "title": "Ils nous font confiance"
   },
   "construction": {
@@ -438,6 +442,36 @@
       "text": ""
     }
   },
+  "solution_section": {
+    "label": "LA SOLUTION",
+    "title_line1": "Un produit.",
+    "title_line2": "Deux mondes.",
+    "description": "Carteron est le premier appareil hybride au monde qui se transforme en toute transparence d'un chariot de golf électrique en une poussette certifiée — et inversement. Conçu pour le parcours, pensé pour votre enfant.",
+    "badge1": "Certifié Sécurité Enfant",
+    "badge2": "Motorisé Électrique",
+    "badge3": "Adapté Terrain Golf",
+    "badge4": "Transformation En Un Clic"
+  },
+  "features_section": {
+    "label": "CARACTÉRISTIQUES",
+    "title": "Conçu pour les deux mondes.",
+    "feature1": {
+      "title": "Assistance Électrique",
+      "desc": "Moteur puissant pour les montées et le freinage. Parcourez 18 trous sans effort avec votre enfant à vos côtés."
+    },
+    "feature2": {
+      "title": "Adapté Terrain Golf",
+      "desc": "Roues tout-terrain et suspension conçues spécifiquement pour les fairways, roughs et chemins de golf."
+    },
+    "feature3": {
+      "title": "Design Ergonomique",
+      "desc": "Guidon réglable, centre de gravité bas et répartition équilibrée du poids pour une stabilité maximale."
+    },
+    "feature4": {
+      "title": "Sécurité Enfant Prioritaire",
+      "desc": "Harnais 5 points, capote anti-UV, cadre à absorption de chocs. Répond aux normes de sécurité enfant les plus élevées d'Europe."
+    }
+  },
   "product_detail": {
     "back": "Retour",
     "not_found": "Produit non trouvé",
@@ -453,6 +487,7 @@
     "contact_button": "Contactez-nous"
   },
   "revolution": {
+    "label": "L'OPPORTUNITÉ",
     "title_start": "Le Golf Ne Devrait Pas S'Arrêter ",
     "title_highlight": "Avec La Famille",
     "intro": "Des millions de parents font face à un choix impossible : leur passion pour le golf, ou du temps précieux avec leurs enfants. Nous changeons cette histoire.",

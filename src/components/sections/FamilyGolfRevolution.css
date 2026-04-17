@@ -35,6 +35,17 @@
   animation: fadeInUp 0.8s ease-out;
 }
 
+.revolution-label {
+  font-size: clamp(0.7rem, 1vw, 0.8rem);
+  font-weight: 600;
+  color: #5D7052;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--font-family-primary);
+  display: block;
+  margin-bottom: 1rem;
+}
+
 .revolution-title {
   font-family: var(--font-family-primary);
   font-size: clamp(1.5rem, 2.5vw, 1.875rem);

@@ -473,8 +473,10 @@ export default function OurProduct() {
         </Container>
         </div>
         
-        {/* Steps Section */}
+        {/* Hero Carousel Section */}
         <HeroCarousel />
+        
+        {/* Steps Section */}
         <Steps2 />
         
         

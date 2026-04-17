@@ -21,6 +21,17 @@
   margin-bottom: var(--space-3xl);
 }
 
+.trusted-partners-label {
+  font-size: clamp(0.7rem, 1vw, 0.8rem);
+  font-weight: 600;
+  color: #5D7052;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--font-family-primary);
+  display: block;
+  margin-bottom: 1rem;
+}
+
 .trusted-partners-title {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);

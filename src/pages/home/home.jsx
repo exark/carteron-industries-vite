@@ -12,7 +12,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./home.css";
 import TopHero from "../../components/sections/TopHero";
 import FamilyGolfRevolution from "../../components/sections/FamilyGolfRevolution";
-import InfoSection from "../../components/sections/InfoSection";
+import SolutionSection from "../../components/sections/SolutionSection";
+import FeaturesSection from "../../components/sections/FeaturesSection";
 
 const Home = () => {
   const location = useLocation();
@@ -46,7 +47,8 @@ const Home = () => {
           <Fragment>
             <TopHero></TopHero>
             <FamilyGolfRevolution></FamilyGolfRevolution>
-            <InfoSection></InfoSection>
+            <SolutionSection></SolutionSection>
+            <FeaturesSection></FeaturesSection>
             {/* <div id="our-product" className="home-services">
               <Features25></Features25>
             </div> */}

@@ -10,6 +10,7 @@ const FamilyGolfRevolution = () => {
       <div className="revolution-container">
         
         <header className="revolution-header">
+          <span className="revolution-label">{t('revolution.label')}</span>
           <h2 className="revolution-title">
             {t('revolution.title_start')}
             <span className="text-gradient-green-blue">{t('revolution.title_highlight')}</span>

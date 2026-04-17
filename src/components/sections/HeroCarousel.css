@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: #ffffff;
+  background: var(--neutral-gray-100);
   gap: 20px;
   padding: 30px 0;
   position: relative;

@@ -12,9 +12,12 @@
     "about": "About",
     "our_company": "Our Company",
     "follow_us": "Follow Us",
+    "navigation": "Navigation",
+    "support": "Support",
     "legal": "Legal Notice",
     "privacy": "Privacy Policy",
     "terms": "Terms and Conditions",
+    "login": "Login",
     "copyright": "{{year}} Carteron Industries™",
     "brand_description": "Innovative solutions for tomorrow's challenges"
   },
@@ -332,6 +335,7 @@
     "gallery_image3_alt": "Product in use"
   },
   "trustedPartners": {
+    "label": "OUR PARTNERS",
     "title": "They Trust Us"
   },
   "construction": {
@@ -438,6 +442,36 @@
       "text": ""
     }
   },
+  "solution_section": {
+    "label": "THE SOLUTION",
+    "title_line1": "One product.",
+    "title_line2": "Two worlds.",
+    "description": "Carteron is the world's first hybrid device that transforms seamlessly from an electric golf trolley into a certified baby stroller — and back. Engineered for the course, designed for your child.",
+    "badge1": "Child Safety Certified",
+    "badge2": "Electric Motorized",
+    "badge3": "Golf-Terrain Ready",
+    "badge4": "One-Click Transform"
+  },
+  "features_section": {
+    "label": "FEATURES",
+    "title": "Engineered for both worlds.",
+    "feature1": {
+      "title": "Electric Assistance",
+      "desc": "Powerful motor handles hills and braking. Navigate 18 holes effortlessly with your child alongside you."
+    },
+    "feature2": {
+      "title": "Golf-Terrain Adapted",
+      "desc": "All-terrain wheels and suspension designed specifically for fairways, roughs, and cart paths."
+    },
+    "feature3": {
+      "title": "Ergonomic Design",
+      "desc": "Adjustable handlebar, low center of gravity, and balanced weight distribution for maximum stability."
+    },
+    "feature4": {
+      "title": "Child Safety First",
+      "desc": "5-point harness, UV canopy, shock-absorbing frame. Meets the highest child safety standards in Europe."
+    }
+  },
   "product_detail": {
     "back": "Back",
     "not_found": "Product not found",
@@ -453,6 +487,7 @@
     "contact_button": "Contact us"
   },
   "revolution": {
+    "label": "THE OPPORTUNITY",
     "title_start": "Golf Shouldn't End ",
     "title_highlight": "When Family Begins",
     "intro": "Millions of parents face an impossible choice: their passion for golf, or precious time with their children. We're changing that story.",
