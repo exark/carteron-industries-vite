@@ -31,7 +31,7 @@ const TopHero = () => {
           <div className="grid-image grid-medium">
             <div>
               <img 
-                src="/images/golf_image_1.webp" 
+                src="/images/Kids_golf.webp" 
                 alt="Golf Course"
               />
             </div>
@@ -70,7 +70,7 @@ const TopHero = () => {
           <div className="grid-image grid-medium">
             <div>
               <img 
-                src="/images/golf_image_1.webp" 
+                src="/images/Kids_golf.webp" 
                 alt="Golf Course"
               />
             </div>

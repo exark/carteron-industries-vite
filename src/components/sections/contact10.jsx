@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 // ⬇️ On place les valeurs par défaut dans la destructuration des props
-const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) => {
+const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact', hideCta = false }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -58,7 +58,7 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
         </div>
 
         {/* CTA Section - Intéressé par ce produit */}
-        <div className="contact10-cta-section">
+        {!hideCta && <div className="contact10-cta-section">
           <h2 className="contact10-cta-title">
             {t('contact10.cta_title', 'Intéressé par ce produit ?')}
           </h2>
@@ -71,7 +71,7 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact' }) =>
           >
             {t('contact10.cta_button', 'Contactez-nous')}
           </button>
-        </div>
+        </div>}
       </div>
     </div>
   )

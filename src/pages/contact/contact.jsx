@@ -21,7 +21,7 @@ const Contact = () => {
       </Helmet>
       <Navbar81>
         <ContactForm3></ContactForm3>
-        <Contact10></Contact10>
+        <Contact10 hideCta></Contact10>
         <Footer31 />
       </Navbar81>
     </div>
