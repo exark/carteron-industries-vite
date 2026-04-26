@@ -158,28 +158,6 @@
   pointer-events: none;
 }
 
-/* Transparent navbar for home page */
-.top-navbar-static.transparent {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(15px) saturate(150%);
-  -webkit-backdrop-filter: blur(15px) saturate(150%);
-}
-
-/* Ligne bleue pour la navbar transparente */
-.top-navbar-static.transparent::after {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(33, 87, 217, 0.15) 5%,
-    rgba(33, 87, 217, 0.4) 20%,
-    rgba(33, 87, 217, 0.6) 50%,
-    rgba(33, 87, 217, 0.4) 80%,
-    rgba(33, 87, 217, 0.15) 95%,
-    transparent 100%
-  );
-}
-
-
 /* MENU button styles - now in navbar */
 .menu-button {
   cursor: pointer;
@@ -199,18 +177,6 @@
 .menu-button:hover {
   background: rgba(0, 0, 0, 0.05);
   transform: translateY(-1px);
-}
-
-/* Menu button styles for transparent navbar */
-.top-navbar-static.transparent .menu-button {
-  color: #243040;
-  background: transparent;
-}
-
-.top-navbar-static.transparent .menu-button:hover {
-  transform: translateY(-1px);
-  background: rgba(0, 0, 0, 0.05);
-  color: #243040;
 }
 
 /* Close button styles */
@@ -325,14 +291,6 @@
     gap: 16px;
   }
   
-  .top-navbar-static.transparent {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(15px) saturate(150%);
-    -webkit-backdrop-filter: blur(15px) saturate(150%);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  }
-  
   .menu-button {
     font-size: 1.1rem;
     padding: 8px 12px;
@@ -388,14 +346,6 @@
     gap: 14px;
   }
   
-  .top-navbar-static.transparent {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(15px) saturate(150%);
-    -webkit-backdrop-filter: blur(15px) saturate(150%);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  }
-  
   .menu-button {
     font-size: 1.05rem;
     padding: 7px 11px;
@@ -445,14 +395,6 @@
     gap: 12px;
   }
   
-  .top-navbar-static.transparent {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(15px) saturate(150%);
-    -webkit-backdrop-filter: blur(15px) saturate(150%);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  }
-  
   .menu-button {
     font-size: 1rem;
     padding: 7px 10px;
@@ -473,14 +415,6 @@
   
   .navbar81-logo-image {
     height: 40px;
-  }
-  
-  .navbar-logo {
-    margin-left: auto;
-  }
-  
-  .club-golf-button {
-    display: none;
   }
 }
 
@@ -505,5 +439,197 @@
 }
 
 
+/* ============================================
+   DESKTOP-ONLY ELEMENTS — hidden by default
+   ============================================ */
+.desktop-nav-links,
+.desktop-lang-switcher {
+  display: none;
+}
 
 
+/* ============================================
+   PREMIUM DESKTOP NAVBAR  (>= 1024px)
+   Horizontal layout: Logo · Links · CTA · Lang
+   ============================================ */
+@media (min-width: 1024px) {
+  /* Layout reset */
+  .top-navbar-static {
+    height: 78px;
+    padding: 0 clamp(28px, 4vw, 56px);
+    gap: 0;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 1px 0 rgba(11, 34, 68, 0.06), 0 8px 24px rgba(11, 34, 68, 0.04);
+    animation: navbarFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  .top-navbar-static.transparent {
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  /* Hide mobile MENU trigger */
+  .top-navbar-static .menu-button {
+    display: none;
+  }
+
+  /* Order: Logo › Links (centered) › CTA › Lang */
+  .top-navbar-static .navbar-logo  { order: 1; margin: 0; flex: 0 0 auto; }
+  .top-navbar-static .desktop-nav-links { order: 2; }
+  .top-navbar-static .club-golf-button  { order: 3; flex: 0 0 auto; }
+  .top-navbar-static .desktop-lang-switcher { order: 4; flex: 0 0 auto; }
+
+  .navbar81-logo-image {
+    height: 50px;
+  }
+
+  /* Nav links — centered in the remaining space between logo and actions */
+  .desktop-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    gap: clamp(20px, 2.4vw, 38px);
+    margin: 0 clamp(16px, 2vw, 32px);
+    height: 100%;
+  }
+
+  .desktop-nav-links a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 2px;
+    font-family: var(--font-family-primary);
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #1f2937;
+    letter-spacing: 0.005em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* Underline — shown only for the active page (no hover animation) */
+  .desktop-nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 22px;
+    height: 1.5px;
+    background-color: var(--primary-blue, #0b2244);
+  }
+
+  .desktop-nav-links a.active {
+    color: var(--primary-blue, #0b2244);
+    font-weight: 600;
+  }
+
+  .desktop-nav-links a:focus-visible {
+    outline: 2px solid rgba(11, 34, 68, 0.4);
+    outline-offset: 6px;
+    border-radius: 2px;
+  }
+
+  /* CTA "Vous êtes un club de golf ?" — TopHero-style, blue, no hover */
+  .top-navbar-static .club-golf-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-left: 0;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    font-family: var(--font-family-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    background: var(--primary-blue, #0b2244);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(11, 34, 68, 0.3);
+    transition: none;
+    transform: none;
+  }
+
+  .top-navbar-static .club-golf-button:hover,
+  .top-navbar-static .club-golf-button:active {
+    background: var(--primary-blue, #0b2244);
+    transform: none;
+    box-shadow: 0 2px 8px rgba(11, 34, 68, 0.3);
+  }
+
+  .top-navbar-static .club-golf-button:focus-visible {
+    outline: 2px solid rgba(11, 34, 68, 0.45);
+    outline-offset: 3px;
+  }
+
+  /* Language switcher — discrete, separated by hairline */
+  .desktop-lang-switcher {
+    display: flex;
+    align-items: center;
+    margin-left: 18px;
+    padding-left: 18px;
+    border-left: 1px solid rgba(11, 34, 68, 0.14);
+    height: 28px;
+  }
+
+  .desktop-lang-switcher .language-switcher-toggle { gap: 4px; }
+
+  .desktop-lang-switcher .lang-toggle-btn {
+    padding: 4px 6px;
+    border-radius: 4px;
+    opacity: 0.55;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+  }
+
+  .desktop-lang-switcher .lang-toggle-btn:hover {
+    opacity: 0.9;
+    background: rgba(11, 34, 68, 0.04);
+    transform: none;
+  }
+
+  .desktop-lang-switcher .lang-toggle-btn.active {
+    opacity: 1;
+    background: transparent;
+    transform: none;
+  }
+
+  .desktop-lang-switcher .flag-image {
+    width: 22px;
+    height: 16px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .desktop-lang-switcher .lang-separator {
+    color: rgba(11, 34, 68, 0.22);
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0 2px;
+  }
+}
+
+/* Slightly tighter rhythm on smaller desktops */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .desktop-nav-links { gap: 22px; margin-left: 28px; }
+  .desktop-nav-links a { font-size: 0.88rem; }
+  .top-navbar-static .club-golf-button { padding: 9px 18px; font-size: 0.82rem; }
+}
+
+/* Subtle entrance */
+@keyframes navbarFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .top-navbar-static { animation: none; }
+  .desktop-nav-links a,
+  .desktop-nav-links a::after,
+  .top-navbar-static .club-golf-button,
+  .navbar81-logo-image { transition: none; }
+}

@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useRef, useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./navbar81.css";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
@@ -8,9 +8,6 @@ const Navbar81 = (props) => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
-
-  // State for menu open state only
-  const [menuOpen, setMenuOpen] = useState(false);
 
   // Initialize jQuery navigation on component mount
   useEffect(() => {
@@ -28,16 +25,12 @@ const Navbar81 = (props) => {
             this.$hamburger.off('click');
             $('#container, .menu-button').on('click', this.close.bind(this));
             this.hamburgerFix(true);
-            setMenuOpen(true);
-            console.log('opening...');
           },
           close: function () {
             this.$window.removeClass('tilt');
             $('#container, .menu-button').off('click');
             this.$hamburger.on('click', this.open.bind(this));
             this.hamburgerFix(false);
-            setMenuOpen(false);
-            console.log('closing...');
           },
           updateTransformOrigin: function () {
             const scrollTop = this.$window.scrollTop();
@@ -66,7 +59,7 @@ const Navbar81 = (props) => {
     };
     
     initNavigation();
-  }, [setMenuOpen]);
+  }, []);
 
 
   const handleLogoClick = (e) => {
@@ -81,25 +74,24 @@ const Navbar81 = (props) => {
     }
   };
 
-  const handleAnchorClick = (e, anchorId) => {
+  // Desktop navbar helpers
+  const isHome = location.pathname === "/home" || location.pathname === "/";
+  const isActive = (path) => {
+    if (path === "/home") return isHome;
+    return location.pathname === path || location.pathname.startsWith(path + "/");
+  };
+  const goHome = (e) => {
     e.preventDefault();
-    if (location.pathname === "/home" || location.pathname === "/") {
-      if (anchorId) {
-        const el = document.getElementById(anchorId);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+    if (isHome) {
+      const mainContent = document.getElementById("main-content");
+      if (mainContent) mainContent.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      if (anchorId) {
-        navigate("/home", { state: { anchorId } });
-      } else {
-        navigate("/home", { replace: true });
-        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
-      }
+      navigate("/home");
     }
+  };
+  const goTo = (e, path) => {
+    e.preventDefault();
+    navigate(path);
   };
 
   return (
@@ -141,22 +133,66 @@ const Navbar81 = (props) => {
         <div id="content-front">
           {/* Top Navbar Container - now static */}
           <div className={`top-navbar-static ${location.pathname === '/home' || location.pathname === '/' ? 'transparent' : ''}`}>
-            {/* Menu Button */}
+            {/* Menu Button (mobile/tablet only) */}
             <div className="menu-button">MENU</div>
-            
+
             {/* Club Golf Button */}
-            <button 
+            <button
               className="club-golf-button"
               onClick={() => navigate('/survey/club')}
             >
               {t('navbar.club_button', 'Vous êtes un club de golf ?')}
             </button>
-            
+
             {/* Logo */}
             <div className="navbar-logo">
               <a href="/home" onClick={handleLogoClick}>
                 <img src="/images/NavbarVersion.png" alt="Carteron Industries" className="navbar81-logo-image" />
               </a>
+            </div>
+
+            {/* Desktop-only horizontal nav links */}
+            <nav className="desktop-nav-links" aria-label="Navigation principale">
+              <a
+                href="#home"
+                onClick={goHome}
+                className={isActive('/home') ? 'active' : ''}
+              >
+                {t('navbar.home')}
+              </a>
+              <a
+                href="/our-product"
+                onClick={(e) => goTo(e, '/our-product')}
+                className={isActive('/our-product') ? 'active' : ''}
+              >
+                {t('navbar.our_product')}
+              </a>
+              <a
+                href="/notre-entreprise"
+                onClick={(e) => goTo(e, '/notre-entreprise')}
+                className={isActive('/notre-entreprise') ? 'active' : ''}
+              >
+                {t('footer.our_company', 'Notre entreprise')}
+              </a>
+              <a
+                href="/faq"
+                onClick={(e) => goTo(e, '/faq')}
+                className={isActive('/faq') ? 'active' : ''}
+              >
+                {t('navbar.faq')}
+              </a>
+              <a
+                href="/contact"
+                onClick={(e) => goTo(e, '/contact')}
+                className={isActive('/contact') ? 'active' : ''}
+              >
+                {t('navbar.contact')}
+              </a>
+            </nav>
+
+            {/* Desktop-only language switcher */}
+            <div className="desktop-lang-switcher">
+              <LanguageSwitcher />
             </div>
           </div>
           
