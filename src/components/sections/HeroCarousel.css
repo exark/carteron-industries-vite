@@ -737,6 +737,10 @@
   will-change: transform;
 }
 
+.hero-carousel-slide.slide-left-align {
+  background-position: left center;
+}
+
 .slide-content-glass {
   position: relative;
   bottom: 0;

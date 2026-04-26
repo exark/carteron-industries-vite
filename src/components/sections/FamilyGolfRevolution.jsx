@@ -39,8 +39,15 @@ const FamilyGolfRevolution = () => {
           <article className="revolution-block">
             <div className="block-icon">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="3 17 9 11 13 15 21 7"/>
-                <polyline points="15 7 21 7 21 13"/>
+                <path d="M8 2v4"/>
+                <path d="M16 2v4"/>
+                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                <path d="M3 10h18"/>
+                <path d="M8 14h.01"/>
+                <path d="M12 14h.01"/>
+                <path d="M16 14h.01"/>
+                <path d="M8 18h.01"/>
+                <path d="M12 18h.01"/>
               </svg>
             </div>
             <div className="block-number">{t('revolution.block2.number')}</div>
@@ -50,11 +57,25 @@ const FamilyGolfRevolution = () => {
           <article className="revolution-block">
             <div className="block-icon">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
               </svg>
             </div>
             <div className="block-number">{t('revolution.block3.number')}</div>
             <p className="block-text">{t('revolution.block3.text')}</p>
+          </article>
+
+          <article className="revolution-block">
+            <div className="block-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <line x1="17" x2="22" y1="8" y2="13"/>
+                <line x1="22" x2="17" y1="8" y2="13"/>
+              </svg>
+            </div>
+            <div className="block-number">{t('revolution.block4.number')}</div>
+            <p className="block-text">{t('revolution.block4.text')}</p>
           </article>
 
         </div>

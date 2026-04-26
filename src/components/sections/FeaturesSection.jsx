@@ -56,7 +56,11 @@ export default function FeaturesSection() {
     <section className="features-section">
       <div className="features-container">
         <span className="features-label">{t("features_section.label")}</span>
-        <h2 className="features-title">{t("features_section.title")}</h2>
+        <h2 className="features-title">
+          {t("features_section.title_line1")}
+          <br />
+          <span className="text-gradient-green-blue">{t("features_section.title_line2")}</span>
+        </h2>
         
         <div className="features-grid">
           {features.map((feature, index) => (

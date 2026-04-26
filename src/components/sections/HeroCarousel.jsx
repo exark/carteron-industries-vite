@@ -11,19 +11,15 @@ const itemsData = [
   },
   {
     key: "startup",
-    image: "/images/couple-jouant-au-golf-ensemble.webp",
+    image: "/images/golf_couple.webp",
   },
   {
     key: "work",
-    image: "/images/bptgreel.jpeg",
+    image: "/images/golf_app_phone.webp",
   },
   {
     key: "tech",
     image: "/images/motherwithbaby.webp",
-  },
-  {
-    key: "community",
-    image: "/images/application.webp",
   },
   {
     key: "terrain",
@@ -105,7 +101,7 @@ export default function HeroCarousel() {
               {items.slice(0, 6).map((item, idx) => (
                 <div className="embla__slide" key={idx}>
                   <div
-                    className="hero-carousel-slide"
+                    className={`hero-carousel-slide ${item.key === 'work' ? 'slide-left-align' : ''}`}
                     style={{ backgroundImage: `url(${item.image})` }}
                   >
                     <div className="slide-content-glass">

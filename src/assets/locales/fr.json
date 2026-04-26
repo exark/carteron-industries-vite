@@ -6,7 +6,8 @@
     "other": "autre",
     "our_product": "Notre produit",
     "contact": "Contactez-nous",
-    "login": "Se connecter"
+    "login": "Se connecter",
+    "club_button": "Club de golf ou distributeur ?"
   },
   "footer": {
     "about": "À propos",
@@ -146,11 +147,6 @@
     "tech": {
       "name": "Sécurité au cœur du design",
       "desc": "La stabilité, le maintien et l'assistance au freinage s'intègrent dans une approche orientée confiance et tranquillité d'esprit.",
-      "popup": ""
-    },
-    "community": {
-      "name": "Expérience connectée",
-      "desc": "L'application mobile accompagne l'utilisateur avec des réglages, des mises à jour et une approche moderne du produit.",
       "popup": ""
     },
     "terrain": {
@@ -297,7 +293,9 @@
     "heading1_prefix": "Et si on pouvait jouer au golf…",
     "heading1_highlight": "en famille",
     "heading1_suffix": "?",
-    "content1": "On développe une solution pour profiter du golf sans avoir à choisir entre passion et vie de famille.",
+    "heading_prefix": "Offrez une expérience",
+    "heading_highlight": "sportive et familiale",
+    "content1": "Découvrez comment le golf peut devenir plus familial, plus accessible et plus rentable — choisissez votre profil et partagez votre intérêt en quelques instants.",
     "golf_club_title": "Vous êtes un club de golf ?",
     "golf_club_text": "Vous pouvez nous aider en devenant un clubs de golf pilote et nous accompagner à tester notre prototype dans un environnement réel d'un parcours de golf.",
     "golf_club_btn": "Explorer l'opportunité",
@@ -443,19 +441,11 @@
       "text": ""
     }
   },
-  "solution_section": {
+  "features_section": {
     "label": "LA SOLUTION",
+    "title": "Conçu pour les deux mondes.",
     "title_line1": "Un produit.",
     "title_line2": "Deux mondes.",
-    "description": "Carteron Industries est le premier appareil hybride au monde qui se transforme en toute transparence d'un chariot de golf électrique en une poussette certifiée — et inversement. Conçu pour le parcours, pensé pour votre enfant.",
-    "badge1": "Certifié Sécurité Enfant",
-    "badge2": "Motorisé Électrique",
-    "badge3": "Adapté Terrain Golf",
-    "badge4": "Transformation En Un Clic"
-  },
-  "features_section": {
-    "label": "CARACTÉRISTIQUES",
-    "title": "Conçu pour les deux mondes.",
     "feature1": {
       "title": "Assistance Électrique",
       "desc": "Moteur puissant pour les montées et le freinage. Parcourez 18 trous sans effort avec votre enfant à vos côtés."
@@ -488,25 +478,50 @@
     "contact_button": "Contactez-nous"
   },
   "business_impact": {
+    "eyebrow": "B2B · Pour les clubs de golf",
     "subtitle_start": "Les ",
     "subtitle_highlight": "bénéfices",
     "subtitle_end": " pour les clubs de golfs",
     "description": "Avantage concurrentiel, offrez à vos membres un moment partagé en famille.",
     "benefit1": {
+      "eyebrow": "Nouveau segment",
       "title": "Conquérez un nouveau segment de clientèle",
-      "description": "Les jeunes parents (25–45 ans) représentent un marché inexploité considérable. Donnez-leur une raison de choisir votre club."
+      "description": "Les jeunes parents (25–45 ans) représentent un marché inexploité considérable. Donnez-leur une raison de choisir votre club.",
+      "tag1": "25–45 ans",
+      "tag2": "CSP+",
+      "tag3": "Décideurs"
     },
     "benefit2": {
+      "eyebrow": "Utilisation",
       "title": "Augmentez l'utilisation du parcours",
       "description": "Les parents qui ne pouvaient plus jouer réservent à nouveau. Remplissez les créneaux creux et augmentez le nombre de parties jouées."
     },
     "benefit3": {
+      "eyebrow": "Différenciation",
       "title": "Positionnement premium",
-      "description": "Soyez le premier club de votre région à proposer une innovation family-friendly. Gagnez en visibilité médiatique et en bouche-à-oreille."
+      "description": "Soyez le premier club de votre région à proposer une innovation family-friendly. Gagnez en visibilité médiatique et en bouche-à-oreille.",
+      "tag": "Innovation 2025"
     },
     "benefit4": {
+      "eyebrow": "Fidélisation",
       "title": "Améliorez la fidélisation et les revenus",
       "description": "Les membres qui peuvent venir avec leurs enfants restent plus longtemps. Réduisez le taux d'attrition et augmentez la valeur à vie de chaque abonnement."
+    },
+    "kpi": {
+      "eyebrow": "Marché cible",
+      "value": "25–45",
+      "unit": "ans",
+      "label": "Le segment qui transforme votre club",
+      "hint": "Marché à fort potentiel d'acquisition"
+    },
+    "image": {
+      "eyebrow": "Lifestyle",
+      "caption": "Une expérience pensée pour les familles modernes."
+    },
+    "cta": {
+      "eyebrow": "Devenez pionnier",
+      "title": "Faites de votre club une référence.",
+      "button": "Demander une démonstration"
     }
   },
   "revolution": {
@@ -519,12 +534,16 @@
       "text": "de fréquentation voire un arrêt de pratique de golf est constaté par les clubs de golf liée à l'arrivée d'un bébé ou d'un deuxième enfant"
     },
     "block2": {
-      "number": "+35%",
-      "text": "de croissance de femme golfeuses au cours de la dernière décennie"
+      "number": "Âge Croissant",
+      "text": "L'âge moyen des golfeurs continue d'augmenter. Les clubs peinent à recruter des membres de moins de 40 ans, menaçant leur viabilité à long terme."
     },
     "block3": {
-      "number": "14\u201320M",
-      "text": "golfeurs actifs en Europe — un marché en pleine croissance"
+      "number": "Aucune Différenciation",
+      "text": "La plupart des clubs offrent la même expérience. Il n'y a pas d'innovation pour se démarquer ou conquérir de nouvelles démographies."
+    },
+    "block4": {
+      "number": "Familles Absentes",
+      "text": "Les parents avec de jeunes enfants ne trouvent pas de solutions de garde qui leur permettent de jouer. Ils annulent leur adhésion ou ne s'inscrivent jamais."
     },
     "conclusion": "La technologie rencontre la famille. L'innovation rencontre le confort. Le golf rencontre la parentalité.",
     "cta": "Découvrir comment ça marche →"

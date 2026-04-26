@@ -103,7 +103,7 @@ const Navbar81 = (props) => {
           <a href="#home" onClick={(e) => { e.preventDefault(); if (location.pathname === "/home" || location.pathname === "/") { const mainContent = document.getElementById('main-content'); if (mainContent) { mainContent.scrollTo({ top: 0, behavior: "smooth" }); } } else { window.location.href = "/home"; } }}>
             {t('navbar.home')}
           </a>
-          <a href="/our-product" onClick={(e) => { e.preventDefault(); navigate('/our-product'); }} style={{display: 'none'}}>
+          <a href="/our-product" onClick={(e) => { e.preventDefault(); navigate('/our-product'); }}>
             {t('navbar.our_product')}
           </a>
           <a href="/notre-entreprise" onClick={(e) => { e.preventDefault(); navigate('/notre-entreprise'); }}>
@@ -164,7 +164,6 @@ const Navbar81 = (props) => {
                 href="/our-product"
                 onClick={(e) => goTo(e, '/our-product')}
                 className={isActive('/our-product') ? 'active' : ''}
-                style={{display: 'none'}}
               >
                 {t('navbar.our_product')}
               </a>

@@ -18,7 +18,7 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact', hide
         <div className="contact10-content1 thq-flex-row">
           <div className="contact10-content2">
             <h2 className="thq-heading-2">
-              {t('contact10.heading1_prefix', 'Et si on pouvait jouer au golf…')} <span className="text-gradient-green-blue">{t('contact10.heading1_highlight', 'en famille')}</span> {t('contact10.heading1_suffix', '?')}
+              {t('contact10.heading_prefix')} <span className="text-gradient-green-blue">{t('contact10.heading_highlight')}</span>
             </h2>
             <p className="thq-body-large">{t('contact10.content1')}</p>
             <div className="contact10-partnership-section">
@@ -28,7 +28,7 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact', hide
                 style={{ cursor: 'pointer' }}
               >
                 <img 
-                  src="/images/orgnanisation.webp" 
+                  src="/images/clubhouse.webp" 
                   alt="Golf Club Partnership" 
                   className="contact10-partnership-image"
                 />
@@ -44,7 +44,7 @@ const Contact10 = ({ contact10Id = '', location2ImageAlt = 'Email Contact', hide
                 style={{ cursor: 'pointer' }}
               >
                 <img 
-                  src="/images/family.webp" 
+                  src="/images/famillewalk.jpeg" 
                   alt="Family Golf Partnership" 
                   className="contact10-partnership-image"
                 />

@@ -13,7 +13,6 @@ import "./home.css";
 import TopHero from "../../components/sections/TopHero";
 import FamilyGolfRevolution from "../../components/sections/FamilyGolfRevolution";
 import BusinessImpact from "../../components/sections/BusinessImpact";
-import SolutionSection from "../../components/sections/SolutionSection";
 import FeaturesSection from "../../components/sections/FeaturesSection";
 
 const Home = () => {
@@ -49,7 +48,6 @@ const Home = () => {
             <TopHero></TopHero>
             <FamilyGolfRevolution></FamilyGolfRevolution>
             <BusinessImpact></BusinessImpact>
-            <SolutionSection></SolutionSection>
             <FeaturesSection></FeaturesSection>
             {/* <div id="our-product" className="home-services">
               <Features25></Features25>

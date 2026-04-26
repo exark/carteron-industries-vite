@@ -6,7 +6,8 @@
     "other": "Other",
     "our_product": "Our Product",
     "contact": "Contact Us",
-    "login": "Login"
+    "login": "Login",
+    "club_button": "Golf club or distributor?"
   },
   "footer": {
     "about": "About",
@@ -146,11 +147,6 @@
     "tech": {
       "name": "Safety at the heart of design",
       "desc": "Stability, support and braking assistance are integrated into a confidence and peace of mind-oriented approach.",
-      "popup": ""
-    },
-    "community": {
-      "name": "Connected experience",
-      "desc": "The mobile app accompanies the user with settings, updates and a modern approach to the product.",
       "popup": ""
     },
     "terrain": {
@@ -297,7 +293,9 @@
     "heading1_prefix": "What if we could play golf...",
     "heading1_highlight": "as a family",
     "heading1_suffix": "?",
-    "content1": "We are developing a solution to enjoy golf without having to choose between passion and family life.",
+    "heading_prefix": "Offer a",
+    "heading_highlight": "sporting and family experience",
+    "content1": "Discover how golf can become more family-friendly, more accessible and more profitable — choose your profile and share your interest in just a few moments.",
     "golf_club_title": "Are you a golf club?",
     "golf_club_text": "You can help us by becoming a pilot golf club and accompany us in testing our prototype in a real golf course environment.",
     "golf_club_btn": "Explore the opportunity",
@@ -443,19 +441,11 @@
       "text": ""
     }
   },
-  "solution_section": {
+  "features_section": {
     "label": "THE SOLUTION",
+    "title": "Engineered for both worlds.",
     "title_line1": "One product.",
     "title_line2": "Two worlds.",
-    "description": "Carteron Industries is the world's first hybrid device that transforms seamlessly from an electric golf trolley into a certified baby stroller — and back. Engineered for the course, designed for your child.",
-    "badge1": "Child Safety Certified",
-    "badge2": "Electric Motorized",
-    "badge3": "Golf-Terrain Ready",
-    "badge4": "One-Click Transform"
-  },
-  "features_section": {
-    "label": "FEATURES",
-    "title": "Engineered for both worlds.",
     "feature1": {
       "title": "Electric Assistance",
       "desc": "Powerful motor handles hills and braking. Navigate 18 holes effortlessly with your child alongside you."
@@ -488,25 +478,49 @@
     "contact_button": "Contact us"
   },
   "business_impact": {
+    "eyebrow": "B2B · For golf clubs",
     "subtitle_start": "The ",
     "subtitle_highlight": "benefits",
     "subtitle_end": " for golf clubs",
     "description": "Competitive advantage, offer your members a shared family moment.",
     "benefit1": {
+      "eyebrow": "New segment",
       "title": "Unlock a New Customer Segment",
-      "description": "Young parents (25–45) represent a massive untapped market. Give them a reason to choose your club."
+      "description": "Young parents (25–45) represent a massive untapped market. Give them a reason to choose your club.",
+      "tag1": "Ages 25–45",
+      "tag2": "High income",
+      "tag3": "Decision makers"
     },
     "benefit2": {
+      "eyebrow": "Utilization",
       "title": "Increase Course Utilization",
       "description": "Parents who couldn't play now book tee times. Fill off-peak slots and boost overall rounds played."
     },
     "benefit3": {
+      "eyebrow": "Differentiation",
       "title": "Premium Positioning",
       "description": "Be the first club in your region to offer family-friendly innovation. Earn media coverage and word-of-mouth."
     },
     "benefit4": {
+      "eyebrow": "Retention",
       "title": "Improve Retention & Revenue",
       "description": "Members who can bring their children stay longer. Reduce churn and increase lifetime membership value."
+    },
+    "kpi": {
+      "eyebrow": "Target market",
+      "value": "25–45",
+      "unit": "yrs",
+      "label": "The segment that redefines your club",
+      "hint": "High-potential acquisition market"
+    },
+    "image": {
+      "eyebrow": "Lifestyle",
+      "caption": "An experience designed for modern families."
+    },
+    "cta": {
+      "eyebrow": "Become a pioneer",
+      "title": "Make your club a reference.",
+      "button": "Request a demo"
     }
   },
   "revolution": {
@@ -519,12 +533,16 @@
       "text": "in attendance or even a cessation of golf practice is observed by golf clubs linked to the arrival of a baby or a second child"
     },
     "block2": {
-      "number": "+35%",
-      "text": "growth in women golfers over the last decade"
+      "number": "Aging Members",
+      "text": "The average golfer age continues to rise. Clubs struggle to recruit under-40 members, threatening long-term sustainability."
     },
     "block3": {
-      "number": "14\u201320M",
-      "text": "active golfers in Europe — a growing market"
+      "number": "No Differentiation",
+      "text": "Most clubs offer the same experience. There's no innovation to stand out or win new demographics."
+    },
+    "block4": {
+      "number": "Families Stay Away",
+      "text": "Parents with young children can't find childcare solutions that let them play. They cancel memberships or never join."
     },
     "conclusion": "Technology meets family. Innovation meets comfort. Golf meets parenthood.",
     "cta": "Discover how it works →"
