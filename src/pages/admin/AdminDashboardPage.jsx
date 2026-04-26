@@ -251,7 +251,7 @@ const AdminDashboardPage = () => {
       <div className="admin-topbar">
         <div className="admin-topbar-left">
           <div className="admin-topbar-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-            <img src="/images/logo.svg" alt="Carteron Industries" />
+            <img src="/images/NavbarVersion.png" alt="Carteron Industries" />
           </div>
           <div className="admin-topbar-divider" />
           <span className="admin-topbar-title">Dashboard Admin</span>

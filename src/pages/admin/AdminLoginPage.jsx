@@ -42,7 +42,7 @@ const AdminLoginPage = () => {
       <div className="admin-login-card">
         <div className="admin-login-logo">
           <a href="/">
-            <img src="/images/logo.svg" alt="Carteron Industries" />
+            <img src="/images/logo.webp" alt="Carteron Industries" />
           </a>
         </div>
 

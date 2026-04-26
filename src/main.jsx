@@ -5,6 +5,10 @@ import { HelmetProvider } from 'react-helmet-async'
 import App from './App'
 import './style.css'
 import './assets/i18n'
+import { initImageProtection } from './utils/imageProtection'
+
+// Initialize image protection
+initImageProtection()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>

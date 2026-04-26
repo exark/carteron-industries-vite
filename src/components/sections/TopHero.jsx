@@ -31,8 +31,10 @@ const TopHero = () => {
           <div className="grid-image grid-medium">
             <div>
               <img 
-                src="/images/Kids_golf.webp" 
+                src="/images/Product.jpeg" 
                 alt="Golf Course"
+                onContextMenu={(e) => e.preventDefault()}
+                draggable={false}
               />
             </div>
           </div>
@@ -70,8 +72,10 @@ const TopHero = () => {
           <div className="grid-image grid-medium">
             <div>
               <img 
-                src="/images/Kids_golf.webp" 
+                src="/images/Product.jpeg" 
                 alt="Golf Course"
+                onContextMenu={(e) => e.preventDefault()}
+                draggable={false}
               />
             </div>
           </div>
