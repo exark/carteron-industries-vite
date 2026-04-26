@@ -114,10 +114,10 @@
   },
   "carousel": {
     "side_title": "An Innovation Serving Golf and Family",
-    "hero_line1": "Play golf",
-    "hero_line2": "Raise your child",
-    "hero_line3": "At the same time",
-    "side_desc": "We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely.",
+    "hero_line1": "Make golf a family experience.",
+    "hero_line2": "Maximize every tee time on your course.",
+    "hero_line3": "",
+    "side_desc": "Offer your members the world's first motorized hybrid golf trolley & stroller — an innovation designed to sustainably retain a new generation of golfers.",
     "our_products_btn": "Discover Our Product",
     "our_products_aria": "Discover our product",
     "about_btn": "About",
@@ -336,7 +336,8 @@
   },
   "trustedPartners": {
     "label": "OUR PARTNERS",
-    "title": "They Trust Us"
+    "title_start": "They ",
+    "title_highlight": "trust"
   },
   "construction": {
     "title": "Website Under Construction",
@@ -486,14 +487,36 @@
     "cta_description": "Contact us to be informed as soon as this revolutionary product becomes available. Be among the first to discover the future of family mobility on the golf course.",
     "contact_button": "Contact us"
   },
+  "business_impact": {
+    "subtitle_start": "The ",
+    "subtitle_highlight": "benefits",
+    "subtitle_end": " for golf clubs",
+    "description": "Competitive advantage, offer your members a shared family moment.",
+    "benefit1": {
+      "title": "Unlock a New Customer Segment",
+      "description": "Young parents (25–45) represent a massive untapped market. Give them a reason to choose your club."
+    },
+    "benefit2": {
+      "title": "Increase Course Utilization",
+      "description": "Parents who couldn't play now book tee times. Fill off-peak slots and boost overall rounds played."
+    },
+    "benefit3": {
+      "title": "Premium Positioning",
+      "description": "Be the first club in your region to offer family-friendly innovation. Earn media coverage and word-of-mouth."
+    },
+    "benefit4": {
+      "title": "Improve Retention & Revenue",
+      "description": "Members who can bring their children stay longer. Reduce churn and increase lifetime membership value."
+    }
+  },
   "revolution": {
-    "label": "THE OPPORTUNITY",
+    "label": "The challenge",
     "title_start": "Golf Shouldn't End ",
     "title_highlight": "When Family Begins",
-    "intro": "Millions of parents face an impossible choice: their passion for golf, or precious time with their children. We're changing that story.",
+    "intro": "Today, how do you welcome your members with young children, whether at the driving range or on the course?",
     "block1": {
-      "number": "Most",
-      "text": "of young parents quit golf after their first child"
+      "number": "A decrease",
+      "text": "in attendance or even a cessation of golf practice is observed by golf clubs linked to the arrival of a baby or a second child"
     },
     "block2": {
       "number": "+35%",

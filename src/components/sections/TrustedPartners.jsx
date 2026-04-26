@@ -37,7 +37,10 @@ const TrustedPartners = ({ rootClassName = "" }) => {
             {t('trustedPartners.label')}
           </span>
           <h2 className="trusted-partners-title">
-            {t('trustedPartners.title')}
+            {t('trustedPartners.title_start')}
+            <span className="text-gradient-green-blue">
+              {t('trustedPartners.title_highlight')}
+            </span>
           </h2>
         </div>
         <div className="trusted-partners-grid">

@@ -33,7 +33,7 @@
 }
 
 .trusted-partners-title {
-  font-size: var(--font-size-3xl);
+  font-size: clamp(2.3rem, 2.2vw, 1.5rem);
   font-weight: var(--font-weight-bold);
   color: var(--neutral-900);
   margin: 0;

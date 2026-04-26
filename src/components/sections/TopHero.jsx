@@ -31,7 +31,7 @@ const TopHero = () => {
           <div className="grid-image grid-medium">
             <div>
               <img 
-                src="/images/Product.jpeg" 
+                src="/images/produit.png" 
                 alt="Golf Course"
                 onContextMenu={(e) => e.preventDefault()}
                 draggable={false}
@@ -43,13 +43,12 @@ const TopHero = () => {
         {/* Main Content */}
         <div className="top-hero-content">
           <div className="top-hero-headline">
-            <span className="hero-line">{t('carousel.hero_line1', 'Play golf.')}</span>
-            <span className="hero-line hero-line-green">{t('carousel.hero_line2', 'Raise your child.')}</span>
-            <span className="hero-line">{t('carousel.hero_line3', 'At the same time.')}</span>
+            <span className="hero-line">{t('carousel.hero_line1', 'Make golf a family experience.')}</span>
+            <span className="hero-line hero-line-green">{t('carousel.hero_line2', 'Maximize every tee time on your course.')}</span>
           </div>
           
           <p className="top-hero-description">
-            {t('carousel.side_desc', 'Carteron Industries creates solutions at the crossroads of sport, family, and technology. We designed the first 2-in-1 hybrid golf stroller, made to carry both a golf bag and a child effortlessly and safely. Our motorized hybrid solution, currently in development, is specifically adapted to golf courses, combining sporting leisure with family life.')}
+            {t('carousel.side_desc', 'Offer your members the world\'s first motorized hybrid golf trolley & stroller — an innovation designed to sustainably retain a new generation of golfers.')}
           </p>
           
           <div className="top-hero-buttons-container">
@@ -72,7 +71,7 @@ const TopHero = () => {
           <div className="grid-image grid-medium">
             <div>
               <img 
-                src="/images/Product.jpeg" 
+                src="/images/produit.png" 
                 alt="Golf Course"
                 onContextMenu={(e) => e.preventDefault()}
                 draggable={false}

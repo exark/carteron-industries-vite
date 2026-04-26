@@ -24,7 +24,7 @@
 }
 
 .features-title {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(2.3rem, 2.2vw, 1.5rem);
   font-weight: 700;
   color: #0b2244;
   margin: 0 auto clamp(2rem, 3vw, 3rem);

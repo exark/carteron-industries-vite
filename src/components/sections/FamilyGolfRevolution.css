@@ -48,7 +48,7 @@
 
 .revolution-title {
   font-family: var(--font-family-primary);
-  font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+  font-size: clamp(2.3rem, 2.2vw, 1.5rem);
   font-weight: 700;
   color: #0b2244;
   margin: 0 0 16px 0;
@@ -193,12 +193,12 @@
 
 .block-number {
   font-family: var(--font-family-primary);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 800;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
   color: #0b2244;
-  margin: 0 0 4px 0;
-  line-height: 1;
-  letter-spacing: -0.03em;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .block-stat {

@@ -114,10 +114,10 @@
   },
   "carousel": {
     "side_title": "Une Innovation au service du golf et de la famille",
-    "hero_line1": "Jouez au golf",
-    "hero_line2": "Élevez votre enfant",
-    "hero_line3": "En même temps",
-    "side_desc": "Le premier chariot de golf poussette hybride  2-en-1, pensé pour transporter à la fois un sac de golf et un enfant, sans effort et en toute sécurité.",
+    "hero_line1": "Faites du golf une expérience familiale.",
+    "hero_line2": "Valorisez chaque départ sur votre parcours.",
+    "hero_line3": "",
+    "side_desc": "Offrez à vos membres le premier chariot de golf & poussette hybride motorisé au monde — une innovation pensée pour fidéliser durablement une nouvelle génération de golfeurs.",
     "our_products_btn": "Découvrir notre produit",
     "our_products_aria": "Découvrir notre produit",
     "about_btn": "À propos",
@@ -336,7 +336,8 @@
   },
   "trustedPartners": {
     "label": "NOS PARTENAIRES",
-    "title": "Ils nous font confiance"
+    "title_start": "Ils nous font ",
+    "title_highlight": "confiance"
   },
   "construction": {
     "title": "Site en cours de construction",
@@ -486,14 +487,36 @@
     "cta_description": "Contactez-nous pour être informé dès que ce produit révolutionnaire sera disponible. Soyez parmi les premiers à découvrir l'avenir de la mobilité familiale sur le golf.",
     "contact_button": "Contactez-nous"
   },
+  "business_impact": {
+    "subtitle_start": "Les ",
+    "subtitle_highlight": "bénéfices",
+    "subtitle_end": " pour les clubs de golfs",
+    "description": "Avantage concurrentiel, offrez à vos membres un moment partagé en famille.",
+    "benefit1": {
+      "title": "Conquérez un nouveau segment de clientèle",
+      "description": "Les jeunes parents (25–45 ans) représentent un marché inexploité considérable. Donnez-leur une raison de choisir votre club."
+    },
+    "benefit2": {
+      "title": "Augmentez l'utilisation du parcours",
+      "description": "Les parents qui ne pouvaient plus jouer réservent à nouveau. Remplissez les créneaux creux et augmentez le nombre de parties jouées."
+    },
+    "benefit3": {
+      "title": "Positionnement premium",
+      "description": "Soyez le premier club de votre région à proposer une innovation family-friendly. Gagnez en visibilité médiatique et en bouche-à-oreille."
+    },
+    "benefit4": {
+      "title": "Améliorez la fidélisation et les revenus",
+      "description": "Les membres qui peuvent venir avec leurs enfants restent plus longtemps. Réduisez le taux d'attrition et augmentez la valeur à vie de chaque abonnement."
+    }
+  },
   "revolution": {
-    "label": "L'OPPORTUNITÉ",
+    "label": "Le challenge",
     "title_start": "Le Golf Ne Devrait Pas S'Arrêter ",
     "title_highlight": "Avec La Famille",
-    "intro": "Des millions de parents font face à un choix impossible : leur passion pour le golf, ou du temps précieux avec leurs enfants. Nous changeons cette histoire.",
+    "intro": "Aujourd'hui, comment accueillez-vous vos membres avec des enfants en bas âge, que ce soit au practice ou sur le parcours ?",
     "block1": {
-      "number": "La plupart",
-      "text": "des jeunes parents arrêtent le golf après leur premier enfant"
+      "number": "Une baisse",
+      "text": "de fréquentation voire un arrêt de pratique de golf est constaté par les clubs de golf liée à l'arrivée d'un bébé ou d'un deuxième enfant"
     },
     "block2": {
       "number": "+35%",

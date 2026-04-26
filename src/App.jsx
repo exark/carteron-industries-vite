@@ -62,13 +62,13 @@ const AppContent = () => {
       <Routes>
         <Route path="/contact" element={<Contact />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/our-product" element={<OurProduct />} />
+        {/* <Route path="/our-product" element={<OurProduct />} /> */}
         <Route path="/faq" element={<FAQ />} />
         <Route path="/notre-entreprise" element={<NotreEntreprise />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/product-detail" element={<ProductDetail />} />
-        <Route path="/product/:productSlug" element={<ProductDetailDynamic />} />
+        {/* <Route path="/product-detail" element={<ProductDetail />} /> */}
+        {/* <Route path="/product/:productSlug" element={<ProductDetailDynamic />} /> */}
         <Route path="/construction" element={<ConstructionPage />} />
         {/* Survey routes */}
         <Route path="/survey/club" element={<ClubSurveyPage />} />
